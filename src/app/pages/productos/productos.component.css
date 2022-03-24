@@ -1,0 +1,204 @@
+/*--======= Common styles for all sections produc =======--*/
+
+.section {
+    padding: 30px 0 60px 0;
+    background-color: #FFF;
+}
+
+.section-title h2 {
+    font-size: 2.1875rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.container .content {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container-text h3 {
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.container-text h3 span {
+    color: #F02062;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    margin: 0 15px 0 0;
+    /* margin-right: 5px; */
+    font-size: 40px;
+}
+
+.container-text p {
+    padding: 0px 0px 30px 15px;
+    font-weight: 300;
+    text-align: justify;
+    font-size: 1.25rem;
+    line-height: 2;
+}
+
+.swiper {
+    width: 260px;
+    height: 350px;
+    position: relative;
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-slide {
+    background-color: #FFF;
+    border: 1px solid #BBD0D8;
+}
+
+.swiper-slide img {
+    display: block;
+}
+
+
+/*--======= PRODUCTS =======--*/
+
+.products {
+    padding: 0;
+    margin: 0;
+}
+
+.products .products-img img {
+    display: block;
+}
+
+.products .section-title h1 {
+    font-size: 2.3125rem;
+    font-weight: 700;
+}
+
+.products .section-title p {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.header-shape-1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    background-image: url(/assets/images/svg/header-shape-1.svg);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+.header-shape-2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+
+/*--======= RECARGAS SECTION=======--*/
+
+.recargas-section .container-text h3 span {
+    color: #784cfb;
+}
+
+.recargas-section .telcel {
+    border: 1px solid #2A8CEE;
+}
+
+.recargas-section .oui {
+    border: 1px solid #464D5A;
+}
+
+.recargas-section .pillofon {
+    border: 1px solid #b45559;
+}
+
+.recargas-section .unefon {
+    border: 1px solid #FFC300;
+}
+
+.recargas-section .movistar {
+    border: 1px solid #3EC121;
+}
+
+.recargas-section .att {
+    border: 1px solid #39CDEE;
+}
+
+.recargas-section .virgin {
+    border: 1px solid #e3231c;
+}
+
+.recargas-section .week {
+    border: 1px solid #74b22f;
+}
+
+.recargas-section .wimotelecom {
+    border: 1px solid #ed1c23;
+}
+
+.recargas-section .gugacom {
+    border: 1px solid #1d8ec1;
+}
+
+
+/*--======= SERVICES SECTION=======--*/
+
+.services-section .section-title h2.title:after {
+    background: #FF0066;
+}
+
+.services-section .container-text h3 span {
+    color: #FF0066;
+}
+
+
+/*--======= GIFT SECTION=======--*/
+
+.gift-section .section-title h2.title:after {
+    background: #24A148;
+}
+
+.gift-section .container-text h3 span {
+    color: #24A148;
+}
+
+.tarjetas-r .swiper-slide {
+    border: none;
+}
+
+.tarjetas-r .netflix {
+    border: 1px solid #cb0922;
+}
+
+
+/* ALL QUERY OF ALL PRODUCT PAGE*/
+
+@media (max-width: 900px) {
+    .section .produt-content {
+        width: 100%;
+        order: 2;
+    }
+    .section .swiper-custom {
+        width: 100%;
+        order: 3;
+    }
+}

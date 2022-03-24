@@ -1,0 +1,222 @@
+/*--=======Common styles for all sections contact=======--*/
+
+.contact {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #FFF;
+}
+
+.container-c {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.contact-list {
+    padding: 60px 40px 0px 40px;
+}
+
+.contact-list li {
+    margin-bottom: 30px;
+}
+
+.contact-list li h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #FFF;
+}
+
+.contact-list li h3 i {
+    color: #FFF;
+    font-size: 1.3em;
+    margin-right: 10px;
+}
+
+.contact-list li span {
+    color: #d0d3ff;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.contact-list .list-email a {
+    display: flex;
+    margin: 15px 0;
+}
+
+.contact-list li a:hover {
+    transform: translateX(10px);
+    color: #FFF;
+}
+
+.contact-list li a {
+    color: #D6D7DD;
+    transition: all 0.3s ease;
+    display: block;
+    font-size: 1.2rem;
+}
+
+.separator {
+    border-bottom: 1px solid #e8e8e8;
+    margin-bottom: 20px;
+    background-image: linear-gradient(to top, #bdc2e8 0%, #bdc2e8 1%, #e6dee9 100%);
+}
+
+.section-contact p {
+    color: #777;
+    font-weight: 500;
+    font-size: 1.3rem;
+    width: 100%;
+    padding: 0 30px;
+    display: block;
+    font-family: 'Poppins', sans-serif;
+}
+
+.section-contact p>strong {
+    color: #000;
+}
+
+
+/*--======= contact pagaqui =======--*/
+
+.contact-pagaqui .container-c .contact-left {
+    background-color: #3F4BDD;
+    width: 35%;
+    order: 10;
+    border: none;
+    line-height: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 7px;
+}
+
+.contact-pagaqui .contact-left h2 {
+    font-size: 2.1em;
+    font-weight: 800;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #fff;
+    margin: 40px 0 0 0;
+    text-transform: capitalize;
+}
+
+.contact-pagaqui .contact-right {
+    width: 65%;
+    order: 20;
+}
+
+.contact-pagaqui .contact-right p {
+    color: #777;
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+.contact-pagaqui .contact-right p span {
+    color: #0e2431;
+    font-weight: 700;
+}
+
+.contact-pagaqui .contact-img {
+    position: relative;
+}
+
+.contact-pagaqui .contact-right img {
+    width: 400px;
+    border-radius: 10px;
+    display: block;
+    margin: auto auto;
+}
+
+
+/*--======= contact recargaki=======--*/
+
+.contact-recargaki .contact-left {
+    width: 65%;
+    order: 1;
+}
+
+.contact-recargaki .contact-left p {
+    color: #777;
+    font-size: 1.3em;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+.contact-recargaki .contact-left p span {
+    color: #0e2431;
+    font-weight: 700;
+}
+
+.contact-recargaki .contact-left img {
+    width: 400px;
+    border-radius: 10px;
+    display: block;
+    margin: auto auto;
+}
+
+.contact-recargaki .container-c .contact-right {
+    background-color: #0D9041;
+    width: 35%;
+    order: 2;
+    border: none;
+    line-height: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 7px;
+}
+
+.contact-recargaki .contact-right h2 {
+    font-size: 2.1em;
+    font-weight: 800;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #fff;
+    margin: 40px 0 0 0;
+    text-transform: capitalize;
+}
+
+.contact-recargaki .contact-right .contact-list li span {
+    color: #e5fbe5;
+}
+
+
+/*--======= responsive contact =======--*/
+
+@media(max-width: 768px) {
+    .contact .container-c {
+        flex-direction: column;
+    }
+    /*--======= contact pagaqui=======--*/
+    .contact-pagaqui .container-c .contact-left {
+        order: 40;
+        width: 100%;
+    }
+    .contact-pagaqui .container-c .contact-right {
+        order: 30;
+        width: 100%;
+    }
+    .contact-right {
+        margin-top: 30px;
+    }
+    /*--======= contact recargaki =======--*/
+    .contact-recargaki .container-c .contact-left {
+        width: 100%;
+        order: 3;
+    }
+    .contact-recargaki .container-c .contact-right {
+        width: 100%;
+        order: 4;
+    }
+}
+
+@media(max-width: 520px) {
+    .contact {
+        padding: 10px 10px;
+    }
+}

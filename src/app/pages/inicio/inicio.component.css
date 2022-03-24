@@ -1,0 +1,590 @@
+/*--======= presentation-content =======--*/
+
+.presentation-content {
+    --mainColor: #64bcf4;
+    --hoverColor: #5bacdf;
+    --backgroundColor: #f1f8fc;
+    --darkOne: #312f3a;
+}
+
+.presentation-content img {
+    width: 100%;
+}
+
+.presentation-content h1 {
+    font-weight: bold;
+}
+
+.big-wrapper {
+    position: relative;
+    padding: 1.7rem 0 2rem;
+    width: 100%;
+    min-height: 50vh;
+    overflow: hidden;
+    background-color: var(--backgroundColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.presentation-content .container-p {
+    position: relative;
+    max-width: 81rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 3rem;
+    z-index: 10;
+}
+
+.presentation-content .cta a.btn-insc {
+    display: inline-block;
+    padding: 0.9rem 1.9rem;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: var(--mainColor);
+    border-radius: 16px;
+    text-transform: capitalize;
+    transition: 0.3s;
+}
+
+.presentation-content .cta a.btn-insc {
+    background-color: var(--hoverColor);
+    transform: scale(1);
+}
+
+.presentation-content .showcase-area .container-p {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+}
+
+.presentation-content .big-title {
+    font-size: 1.4rem;
+    color: var(--darkOne);
+    text-transform: capitalize;
+    line-height: 1.4;
+    font-weight: bold;
+}
+
+.showcase-area .btn-insc {
+    box-shadow: 0 0 40px 2px rgba(0, 0, 0, 0.05);
+}
+
+.presentation-content .person {
+    width: 123%;
+    transform: translate(15%, 25px);
+}
+
+.presentation-content .shape {
+    position: absolute;
+    z-index: 0;
+    width: 500px;
+    bottom: -180px;
+    left: -15px;
+    opacity: 0.1;
+}
+
+
+/*--======= botton up =======--*/
+
+.button-up:hover {
+    transform: scale(1.1);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+
+/*--======= Advantage =======--*/
+
+.advantage {
+    align-items: center;
+    border: 1px solid #7FB3D5;
+    border-radius: 10px;
+    background-color: #FFF;
+}
+
+.advantage .advantage-img img {
+    margin: auto;
+    display: block;
+}
+
+.advantage .section-title h3 {
+    font-weight: 600;
+}
+
+.advantage .advantage-list .list-title {
+    margin-bottom: 5px;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 1.7rem;
+}
+
+.advantage .advantage-list .text {
+    padding: 0px 0px 30px 15px;
+    font-size: 1.3rem;
+    line-height: 2;
+}
+
+.advantage .advantage-list span {
+    color: #1842BA;
+}
+
+
+/*--======= FOR BUSINESS =======--*/
+
+.for-business {
+    padding: 30px 0 60px 0;
+    background-color: #FFF;
+}
+
+.for-business .section-title h2 {
+    font-weight: 600;
+}
+
+.for-business .section-title p {
+    font-size: 1.30rem;
+    font-weight: bold;
+}
+
+.for-business .container-content {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.for-business .container-content .bx {
+    font-size: 2.1875rem;
+}
+
+.for-business .container-text {
+    width: 48%;
+}
+
+.for-business .container-text h3 {
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.for-business .container-text h3 span {
+    color: #F02062;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    margin-right: 5px;
+}
+
+.for-business .container-text p {
+    padding: 0px 0px 30px 15px;
+    text-align: justify;
+    font-size: 1.3rem;
+}
+
+
+/*--======= Statistics =======--*/
+
+.records {
+    position: relative;
+    background-color: #784cfb;
+    padding: 5.2rem 0;
+    border-radius: 5px;
+}
+
+.records .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
+}
+
+.record-circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 4px solid #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #333;
+}
+
+.record-circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 4px solid #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+}
+
+.number {
+    font-weight: 400;
+    font-size: 2.35rem;
+}
+
+.sub-title {
+    font-weight: 400;
+    font-size: 1.12rem;
+    text-transform: uppercase;
+}
+
+
+/*--======= OUR PRODUCTS =======--*/
+
+.our-products {
+    position: relative
+}
+
+.our-products .section-title h3.title {
+    text-align: center;
+    display: block;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.our-products .section-title p.text {
+    font-weight: bold;
+    text-align: center;
+}
+
+.our-products .card-item .card-body {
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: all 0.25s;
+    background-color: #FFFFFF;
+}
+
+.our-products .card-item .card-body img {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.our-products .card-item .card-body:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-item .card-description h4 {
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+}
+
+.card-item .card-description p {
+    font-size: 1.25rem;
+}
+
+.our-products .card-item .bar {
+    width: 100px;
+    height: 6px;
+    position: relative;
+    left: 50%;
+    bottom: 15px;
+    transform: translateX(-50%);
+    background-color: #4a90e2;
+    border-radius: 0px 0px 10px 10px;
+    display: none;
+    animation: bar 0.5s;
+}
+
+.our-products .card-item:hover .bar {
+    display: block;
+}
+
+
+/* modal */
+
+.learn-more-btn {
+    color: #777;
+    cursor: pointer;
+    transition: .3s ease;
+    background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: 500;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section {
+    position: relative;
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0rem 2rem 2rem;
+}
+
+.product-modal {
+    z-index: 9999;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s ease;
+}
+
+.product-modal.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.product-modal-body {
+    position: relative;
+    background: #FFF;
+    max-width: 600px;
+    margin: 20px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 10%);
+    transform: translateY(-50px);
+    transition: .5s ease
+}
+
+.product-modal.active .product-modal-body {
+    transform: translateY(0);
+}
+
+.product-modal-body .modal-close-btn {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    margin: 20px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.product-modal-body h3 {
+    font-size: 2em;
+}
+
+.product-modal-body h4 {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 15px 0 10px;
+}
+
+.product-modal-body ul li {
+    margin-top: 15px;
+}
+
+.product-modal-body ul li i {
+    color: #6a59d1;
+    margin-right: 3px;
+}
+
+
+/*--======= ABOUT US=======--*/
+
+.about-us {
+    background-color: #FFFFFF;
+}
+
+.about-us .about-img img {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.about-us .text {
+    font-family: sans-serif;
+}
+
+.about-us .row .col-lg-6 .about-title {
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 64px;
+}
+
+.about-us .row .col-lg-6 a {
+    background-color: #1842BA;
+    border: none;
+    display: block;
+    margin: 40px auto;
+    width: 280px;
+    border-radius: 10px;
+}
+
+
+/*--======= REGISTRATION =======--*/
+
+.registration .section-title h3 {
+    font-weight: 600;
+}
+
+.registration .item-description .item-title {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.registration img {
+    width: 100%;
+}
+
+
+/*--======= ALL ANIMATIONS =======--*/
+
+@keyframes bar {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 100px;
+    }
+}
+
+
+/*--======= ALL RESPONSIVE SECTIONS=======--*/
+
+@media (max-width: 1280px) {
+    /*--======= STATISTICS =======--*/
+    .record-circle {
+        width: 150px;
+        height: 150px;
+        border-width: 3px;
+    }
+    .record-circle .number {
+        font-size: 1.8rem;
+    }
+    .record-circle .sub-title {
+        font-size: 0.9rem;
+    }
+    .section-title .text {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 900px) {
+    /*--======= ADVANTAGE =======--*/
+    .advantage .advantage-content {
+        width: 100%;
+    }
+    .advantage .advantage-img {
+        width: 100%;
+    }
+    .advantage .advantage-img img {
+        width: 300px;
+    }
+    /*--======= FOR BUSINESS =======--*/
+    .for-business .container-content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .for-business .container-text {
+        width: 90%;
+    }
+    .for-business .img-businnes {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 870px) {
+    /*--======= PRESENTATION =======--*/
+    .presentation-content .showcase-area {
+        padding: 2.5rem 0;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    .presentation-content .showcase-area .container-p {
+        grid-template-columns: 1fr;
+        justify-content: center;
+        grid-gap: 2rem;
+    }
+    .presentation-content .big-title {
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+    .presentation-content .text {
+        font-size: 1rem;
+        margin: 1.4rem 0 1.5rem;
+    }
+    .presentation-content .person {
+        width: 100%;
+        transform: none;
+    }
+    .presentation-content .shape {
+        bottom: -180px;
+        left: -150px;
+    }
+}
+
+@media (max-width: 850px) {
+    /*--======= STATISTICS =======--*/
+    .records .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    /*--======= STATISTICS =======--*/
+    .records .container {
+        grid-template-columns: 1fr;
+    }
+    .records .half-circle {
+        top: 50%;
+        left: 50px;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    /*--======= PRESENTATION =======--*/
+    .presentation-content .container-P {
+        padding: 0 1.5rem;
+    }
+    .presentation-content .big-title {
+        font-size: 0.9rem;
+    }
+    .presentation-content .text {
+        margin: 1.1rem 0 1.5rem;
+    }
+    .presentation-content .showcase-area .btn-insc {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    /*--======= FOR BUSINESS=======--*/
+    .for-business .img-businnes {
+        margin-bottom: 60px;
+        width: 99%;
+    }
+    .for-business .container-text {
+        width: 95%;
+    }
+}
+
+@keyframes appear {
+    0% {
+        clip-path: circle(30% at -25% -25%);
+    }
+    100% {
+        clip-path: circle(150% at 0 0);
+    }
+}

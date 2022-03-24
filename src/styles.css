@@ -1,1 +1,315 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+/*  Estilos Generales */
+
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2) format('woff2');
+    font-display: swap;
+}
+
+body {
+    background-color: #f1f8fc;
+    font-family: "Poppins", sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-title .text {
+    max-width: 600px;
+    margin: 0 auto !important;
+    color: #7a7a7a;
+}
+
+.title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1rem;
+    line-height: 1;
+    font-size: 2.8rem;
+    margin-bottom: 0.6rem;
+}
+
+.title:before {
+    content: attr(data-title);
+    display: block;
+    margin-bottom: 0.4rem;
+    color: #784cfb;
+    font-size: 1.375rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.title:after {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: #784cfb;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.text {
+    font-size: 1.25rem;
+    color: #7a7a7a;
+    line-height: 1.6;
+}
+
+
+/* footer */
+
+footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 50px;
+    background-color: #111;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .container-foot {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+footer .container-foot .sec {
+    width: 30%;
+    padding: 0 15px;
+}
+
+footer .container-foot h2 {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+footer .container-foot h2:before {
+    position: absolute;
+    content: "";
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #F00;
+}
+
+footer p {
+    color: #999;
+}
+
+.social-container {
+    margin-top: 20px;
+    display: flex;
+}
+
+.social-container li {
+    list-style: none;
+}
+
+.social-container li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-container li:nth-child(1) a {
+    background-color: #3B5998;
+}
+
+.social-container li:nth-child(2) a {
+    background-color: #00ACEE;
+}
+
+.social-container li:nth-child(3) a {
+    background: #833ab4;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.social-container li:nth-child(4) a {
+    background: #e52d27;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #b31217, #e52d27);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #b31217, #e52d27);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.social-container li:hover a {
+    background: #151515;
+    padding-bottom: 15px;
+}
+
+.social-container li a .icon-r {
+    color: #FFF;
+    font-size: 20px;
+}
+
+.attention ul li {
+    padding: 10px 0;
+}
+
+.attention ul li span {
+    color: #7a7a7a;
+}
+
+.attention ul li span i {
+    color: #fff;
+    padding: 0 5px;
+    font-size: 20px;
+}
+
+.contact .info {
+    position: relative;
+}
+
+.contact .info li {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.contact .info li span:nth-child(1) {
+    color: #FFF;
+    font-size: 20px;
+    margin-right: 10px
+}
+
+.contact .info li span {
+    text-decoration: none;
+    color: #999;
+}
+
+.contact .info li .bx {
+    font-size: 25px;
+}
+
+.contact .info li:hover .bx-footer {
+    animation: tada 1.5s infinite;
+}
+
+.contact .info li a {
+    color: #999;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact .info li a:hover {
+    color: #FFF;
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+.copyright {
+    width: 100%;
+    background-color: #181818;
+    padding: 8px 180px;
+    text-align: center;
+    color: #999;
+}
+
+.copyright a {
+    color: #FFFFFF;
+}
+
+
+/* fin footer */
+
+
+/* Responsive text*/
+
+@media (max-width: 1280px) {
+    .title {
+        font-size: 2.1rem;
+        padding-bottom: 0.65rem;
+    }
+    .title:before {
+        margin-bottom: 0.2rem;
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+    }
+    .title:after {
+        height: 3.5px;
+        width: 70px;
+    }
+    .section-header .text {
+        max-width: 500px;
+    }
+    .text {
+        font-size: 1rem;
+    }
+}
+
+
+/* fin responsive text */
+
+@media(max-width: 768px) {
+    footer .container-foot .sec {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+
+/* footer responsive */
+
+@media (max-width: 991px) {
+    footer {
+        padding: 40px;
+    }
+    .copyright {
+        padding: 8px 40px;
+    }
+}
+
+
+/* fin footer responsive */
+
+
+/*  Responsive text */
+
+@media (max-width: 560px) {
+    .title {
+        font-size: 1.8rem;
+    }
+    .text {
+        font-size: 1.3rem;
+    }
+}

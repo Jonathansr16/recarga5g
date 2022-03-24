@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-light sticky-top" #minav>
+    <div class="container">
+        <a class="navbar-brand" [routerLink]="['/']">
+            <picture>
+                <source type="image/webp" srcset="assets/images/logo_nav.webp">
+                <source type="image/png" srcset="assets/images/logo_nav.png">
+                <img src="assets/images/logo_nav.png" height="70px" class="img_nav" alt="Recargas Electrónicas">
+            </picture>
+        </a>
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="toggler-icon top-bar"></span>
+            <span class="toggler-icon middle-bar"></span>
+            <span class="toggler-icon bottom-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link link tebel-sedang" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio &nbsp;&nbsp;</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link tebel-sedang" [routerLink]="['productos']" routerLinkActive="active">Productos &nbsp;&nbsp;</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle link tebel-sedang" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Reportar Depositos &nbsp;&nbsp;
+                        <i class="icon-row bx bxs-chevron-down"></i>
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><a class="dropdown-item" [routerLink]="['pagaqui']" routerLinkActive="active">PagaQui</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['recargaki']" routerLinkActive="active">Recargaki / Planetaemx</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link tebel-sedang" [routerLink]="['inscripcion']" routerLinkActive="active">Inscripción &nbsp;&nbsp;</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link tebel-sedang" [routerLink]="['contacto']" routerLinkActive="active">Contacto &nbsp;&nbsp;</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle link tebel-sedang" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">  Ayuda
+                        <i class="icon-row bx bxs-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" [routerLink]="['faqs']" routerLinkActive="active">Preguntas Frecuentes &nbsp;&nbsp;</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</nav>

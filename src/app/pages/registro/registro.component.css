@@ -1,0 +1,28 @@
+.section-inscription {
+    padding: 0;
+    margin: 0;
+}
+
+.section-inscription .img-inscription img {
+    display: block;
+}
+
+.header-shape-1 {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 50%;
+    height: 50%;
+    background-image: url(/assets/images/svg/header-shape-1.svg);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+.header-shape-2 {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    z-index: -1;
+}

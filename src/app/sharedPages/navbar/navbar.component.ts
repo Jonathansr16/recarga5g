@@ -9,6 +9,7 @@ import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 export class NavbarComponent {
 
   @ViewChild('minav') navbar: ElementRef;
+  @ViewChild('btnBar') btnNav: ElementRef;
   constructor(@Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) private platformId, private renderer2: Renderer2) {
     
    }
@@ -22,7 +23,7 @@ export class NavbarComponent {
       if (this.document.body.scrollTop > 20 || this.document.documentElement.scrollTop > 20) {
         this.renderer2.addClass(scrollnav, 'shadow');
         this.renderer2.addClass(scrollnav, 'bg-white'); 
-        this.renderer2.removeClass(scrollnav, 'mt-3'); 
+  
         } else {
           this.renderer2.removeClass(scrollnav, 'shadow');
           this.renderer2.removeClass(scrollnav, 'bg-white');
@@ -31,7 +32,10 @@ export class NavbarComponent {
         }
 
       }
+
+  
   }
+
 
 
 }

@@ -17,7 +17,7 @@
                         Vende Recargas (Por Internet, WhatsApp, desde tu Smartphone) o vía SMS gratuito. Empieza generar flujo de clientes a tu negocio
                     </h2>
                     <div class="cta">
-                        <a routerLink="/inscripcion" class="btn-insc">Inscribirme</a>
+                        <a routerLink="/registro" class="btn-insc">Registrarme</a>
                     </div>
                 </div>
 
@@ -170,9 +170,8 @@
                         <h4 class="title-description">Desktop</h4>
                         <p class="text">Accede a tu plataforma desde tu navegador de tu preferencia</p>
                     </div>
-
                     <div class="learn-more-btn " (click)="closeBtnModal()">Leer Más
-                        <i class="fas fa-long-arrow-alt-right "></i>
+                        <i class="bx bx-right-arrow-alt"></i>
                     </div>
                 </div>
                 <div class="product-modal flex-center">
@@ -180,13 +179,15 @@
                         <i class="bx bx-x modal-close-btn "></i>
                         <h3>Desktop</h3>
                         <h4>¿Como puedes vender?</h4>
-                        <p>Equipo</p>
-                        <h4>que ofrecemos</h4>
+                        <p>Vende recargas electrónicas desde la plataforma web</p>
+                        <h4>¿Que necesitas?</h4>
                         <ul>
-                            <li><i class="fas fa-check-circle "></i>Ganancias por cada recarga</li>
-                            <li><i class="fas fa-check-circle "></i>Comisión fija</li>
-                            <li><i class="fas fa-check-circle "></i>Recarga con unico saldo a cualquier compañia</li>
-                            <li><i class="fas fa-check-circle "></i>Promociones</li>
+                            <li><i class="bx bx-desktop"></i>Equipo de computo</li>
+                            <li><i class="bx bx-wifi"></i>Conexión a internet</li>
+                            <li><i class="bx bxs-window-alt"></i>Navegador web</li>
+                            <li><i class="bx bxs-user-detail"></i>Datos de acceso
+                                <a [routerLink]="['/registro']">Registrate aqui!</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -198,11 +199,48 @@
                     <img src="assets/images/svg/phone.svg " class="card-img-top" alt="phone" width="320px">
                     <div class="card-description ">
                         <h4 class="title-description">SmartPhone</h4>
-                        <p class="text">Descarga la App para tu celular desde la tienda oficial</p>
-
+                        <p class="text">Empieza a vender descargando la App para tu celular desde la tienda oficial</p>
+                    </div>
+                    <div class="learn-more-btn " (click)="closeBtnModal()">Leer Más
+                        <i class="bx bx-right-arrow-alt"></i>
                     </div>
                 </div>
+                <div class="product-modal flex-center">
+                    <div class=" product-modal-body ">
+                        <i class="bx bx-x modal-close-btn "></i>
+                        <h3>SmartPhone</h3>
+                        <h4>¿Como puedes vender via Smarpthone?</h4>
+                        <p>Vende recargas desde tu dispositivo movil android o IOS descargando la App</p>
+                        <h4>¿Que necesita?</h4>
+                        <ul class="step-list">
+                            <li><i class='bx bxs-devices'></i>Descargar la App:</li>
 
+                            <li class="sub-list">
+                                <ul class="sub-container">
+                                    <li class="sub-item">
+                                        <span><i class='bx bxl-play-store'></i><a href="#" target="_blank">Pagaqui</a></span>
+                                    </li>
+
+                                    <li class="sub-item">
+                                        <span><i class='bx bxl-play-store'></i><a href="#" target="_blank">recargaki</a></span>
+                                    </li>
+
+                                    <li class="sub-item">
+                                        <span><i class='bx bxl-apple'></i><a href="#" target="_blank">Pagaqui</a></span>
+                                    </li>
+
+                                    <li class="sub-item">
+                                        <span><i class='bx bxl-apple'></i><a href="#" target="_blank">Recargaki</a></span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><i class="bx bxs-user-detail"></i>Datos de acceso
+                                <a [routerLink]="['/registro']">Registrate aqui!</a>
+                            </li>
+                            <li> <i class="bx bx-badge-check"></i> Listo!! podras comenzar a realizar tus ventas</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4 card-item ">
@@ -212,7 +250,27 @@
                     <div class="card-description ">
                         <h4 class="title-description">SMS</h4>
                         <p class="text">Desde tu telefono movil realiza recargas enviando un simple SMS</p>
-
+                    </div>
+                    <div class="learn-more-btn " (click)="closeBtnModal()">Leer Más
+                        <i class="bx bx-right-arrow-alt"></i>
+                    </div>
+                </div>
+                <div class="product-modal flex-center">
+                    <div class=" product-modal-body ">
+                        <i class="bx bx-x modal-close-btn "></i>
+                        <h3>SMS</h3>
+                        <h4>¿Como puedes vender via SMS?</h4>
+                        <p>Vende recargas a todos tus clientes enviando desde tu celular SMS</p>
+                        <h4>Lo que necesitas</h4>
+                        <ul>
+                            <li><i class="bx bx-mobile-alt"></i>Telefono celular</li>
+                            <li><i class="bx bxs-user-detail"></i>Datos de acceso
+                                <a [routerLink]="['/registro']">Registrate aqui!!</a>
+                            </li>
+                            <li><i class="bx bx-window-open"></i>Vincular tu numero celular a la plataforma</li>
+                            <li><i class="bx bx-coin-stack"></i>Saldo suficiente</li>
+                            <li> <i class="bx bx-badge-check"></i> Listo!! podras comenzar a realizar recargas a cualquier compañia</li>
+                        </ul>
                     </div>
                 </div>
 

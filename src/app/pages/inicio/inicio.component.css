@@ -3,7 +3,6 @@
 .presentation-content {
     --mainColor: #64bcf4;
     --hoverColor: #5bacdf;
-    --backgroundColor: #f1f8fc;
     --darkOne: #312f3a;
 }
 
@@ -21,7 +20,7 @@
     width: 100%;
     min-height: 50vh;
     overflow: hidden;
-    background-color: var(--backgroundColor);
+    background-color: var(--backg-body);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -42,15 +41,10 @@
     color: #fff;
     font-weight: bold;
     font-size: 18px;
-    background-color: var(--mainColor);
+    background-image: var(--color-btn);
     border-radius: 16px;
     text-transform: capitalize;
     transition: 0.3s;
-}
-
-.presentation-content .cta a.btn-insc {
-    background-color: var(--hoverColor);
-    transform: scale(1);
 }
 
 .presentation-content .showcase-area .container-p {
@@ -311,7 +305,7 @@
     color: #777;
     cursor: pointer;
     transition: .3s ease;
-    background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+    background-image: var(--color-btn);
     color: #FFFFFF;
     text-align: center;
     font-weight: 500;
@@ -395,7 +389,46 @@
 
 .product-modal-body ul li i {
     color: #6a59d1;
-    margin-right: 3px;
+    margin-right: 5px;
+    font-size: 28px;
+}
+
+.step-list .sub-list {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.sub-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.sub-list .sub-item {
+    font-size: 20px;
+    width: 50%;
+    margin: 30px 0;
+}
+
+.sub-list .sub-item .bx {
+    font-size: 20px;
+}
+
+.sub-list .sub-item a {
+    font-size: 1.125rem;
+}
+
+.sub-list .sub-item:nth-child(even) a {
+    color: rgb(77, 187, 77);
+}
+
+.sub-list .sub-item:nth-child(even) .bx {
+    color: #058C0B;
 }
 
 
@@ -422,7 +455,7 @@
 }
 
 .about-us .row .col-lg-6 a {
-    background-color: #1842BA;
+    background-image: var(--color-btn);
     border: none;
     display: block;
     margin: 40px auto;

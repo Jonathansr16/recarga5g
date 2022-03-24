@@ -1,5 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root {
+    /*--======= Background color body =======--*/
+    --backg-body: #f1f8fc;
+    /*--======= Btn color =======--*/
+    --color-btn: linear-gradient(120deg, #8f97f7 0%, #5b7cf3 100%);
+    /*--======= color text=======--*/
+    --sub-text: #7a7a7a;
+    /*--======= pseudo color =======--*/
+    --pseudo-color: #784cfb;
+}
+
 
 /*  Estilos Generales */
 
@@ -16,7 +27,7 @@ html {
 }
 
 body {
-    background-color: #f1f8fc;
+    background-color: var(--backg-body);
     font-family: "Poppins", sans-serif;
 }
 
@@ -52,7 +63,7 @@ a {
     content: attr(data-title);
     display: block;
     margin-bottom: 0.4rem;
-    color: #784cfb;
+    color: var(--pseudo-color);
     font-size: 1.375rem;
     font-weight: 500;
     text-transform: uppercase;
@@ -65,7 +76,7 @@ a {
     width: 90px;
     height: 5px;
     border-radius: 3px;
-    background-color: #784cfb;
+    background-color: var(--pseudo-color);
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);

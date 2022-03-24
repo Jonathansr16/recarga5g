@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'productos', component: ProductosComponent },
   { path: 'pagaqui', component: PagaquiComponent },
   { path: 'recargaki', component: RecargakiComponent },
-  { path: 'inscripcion', component: RegistroComponent},
+  { path: 'registro', component: RegistroComponent},
   { path: 'contacto', component: ContactoComponent },
   { path: 'faqs', component: FaqsComponent },
     { path: '**',  redirectTo: 'inicio' },

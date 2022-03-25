@@ -15,7 +15,7 @@ import { GoogleTagManagerModule } from 'angular-google-tag-manager';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     RouterModule,
     SharedPagesModule,

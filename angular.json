@@ -17,7 +17,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/recarga5g",
+                        "outputPath": "dist/recarga5g/browser",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -100,6 +100,64 @@
                         ],
                         "scripts": []
                     }
+                },
+                "server": {
+                    "builder": "@angular-devkit/build-angular:server",
+                    "options": {
+                        "outputPath": "dist/recarga5g/server",
+                        "main": "server.ts",
+                        "tsConfig": "tsconfig.server.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "outputHashing": "media",
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.prod.ts"
+                                }
+                            ]
+                        },
+                        "development": {
+                            "optimization": true,
+                            "sourceMap": true,
+                            "extractLicenses": false
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "serve-ssr": {
+                    "builder": "@nguniversal/builders:ssr-dev-server",
+                    "configurations": {
+                        "development": {
+                            "browserTarget": "recarga5g:build:development",
+                            "serverTarget": "recarga5g:server:development"
+                        },
+                        "production": {
+                            "browserTarget": "recarga5g:build:production",
+                            "serverTarget": "recarga5g:server:production"
+                        }
+                    },
+                    "defaultConfiguration": "development"
+                },
+                "prerender": {
+                    "builder": "@nguniversal/builders:prerender",
+                    "options": {
+                        "routes": [
+                            "/"
+                        ]
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "recarga5g:build:production",
+                            "serverTarget": "recarga5g:server:production"
+                        },
+                        "development": {
+                            "browserTarget": "recarga5g:build:development",
+                            "serverTarget": "recarga5g:server:development"
+                        }
+                    },
+                    "defaultConfiguration": "production"
                 }
             }
         }

@@ -27,6 +27,7 @@
                             "src/assets"
                         ],
                         "styles": [
+                            "node_modules/bootstrap/dist/css/bootstrap.min.css",
                             "src/styles.css",
                             "node_modules/swiper/swiper-bundle.min.css"
                         ],
@@ -55,8 +56,9 @@
                         },
                         "development": {
                             "buildOptimizer": false,
-                            "optimization": false,
+                            "optimization": true,
                             "vendorChunk": true,
+                            "aot": true,
                             "extractLicenses": false,
                             "sourceMap": true,
                             "namedChunks": true

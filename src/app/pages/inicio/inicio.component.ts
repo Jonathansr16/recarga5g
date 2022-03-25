@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { MetaTagService } from 'src/app/services/meta-tag.service';
 
 @Component({
   selector: 'app-inicio',
@@ -12,9 +14,20 @@ export class InicioComponent{
   servicios:number=0;
   anos:number=0;
 
-  constructor() { }
+  constructor(private metaTag: MetaTagService, private titie: Title) { 
 
-  
+    let titleInicio: string = "recarga5g.com - Venta de recargas electrónicas hasta 7.5% de comisión";
+    this.titie.setTitle(titleInicio);
+    this.metaTag.generarTag( {
+      ogtitle: "recarga5g.com - Venta de recargas electrónicas hasta 7.5% de comisión",
+      description: "Vende recargar a cualquier compañía telefónica, paga servicios de todos tus clientes y pines electrónicos. Telcel, unefon, Izzi, CFE, Google Play, Spotify y muchos mas!!.",
+      keywords: "recargas electronicas, recarga telcel, pago de servicios, tarjeta de regalo, pines electronicos",
+      ogdescription: "Vende recargar a cualquier compañía telefónica, paga servicios de todos tus clientes y pines electrónicos. Telcel, unefon, Izzi, CFE, Google Play, Spotify y muchos mas!!.",
+      slug: "inicio"
+    })
+  }
+
+
 
   contador1: any = setInterval( () => {
 

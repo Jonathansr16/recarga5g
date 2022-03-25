@@ -35,7 +35,7 @@ export class MetaTagService {
     this.meta.updateTag({ property: 'og:height', content: "400" });
     // Twiiter
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
-    this.meta.updateTag({ name: 'twitter:url', content: 'https://recarga5g.com/#/' });
+    this.meta.updateTag({ name: 'twitter:url',  content: `https://recarga5g.com/#/${config.slug}` });
     this.meta.updateTag({ name: 'twitter:title', content: 'Vende recargas electrónicas, paga servicios y tarjetas de regalo 7% de comisión' });
     this.meta.updateTag({ name: 'twitter:image', content: 'https://recarga5g.com/logo_recargas-800x400.png' });
    

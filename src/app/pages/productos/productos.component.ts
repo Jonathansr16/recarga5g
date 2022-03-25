@@ -19,14 +19,14 @@ SwiperCore.use([EffectCards]);
 export class ProductosComponent implements OnInit {
 
   constructor(private title: Title, private metaTag: MetaTagService) { 
-    let t:string= "Nuestros Productos - Conoce y vende todos los productos que tenemos para ti";
+    let t:string= "Nuestros Productos - Venta de recargas a cualquier compaña hasta 7.5% de comisión";
     this.title.setTitle(t);
 
     this.metaTag.generarTag({
-      description: "Recargas Electronicas, Pago de Servicios, Tarjetas de regalo: Telcel, Virgin, CFE, Google Play, Netflix, Steam, Nintendo",
-      keywords: "recargas electronicas, recarga telcel, pagar servicio, pagar recibo telmex, tarjeta de regalo, pines electronicos",
-      ogtitle: "Conoce y vende todos los productos que tenemos para ti",
-      ogdescription: "Recargas Electronicas, Pago de Servicios, Tarjetas de regalo: Telcel, Virgin, CFE, Google Play, Netflix, Steam, Nintendo",
+      ogtitle: "Nuestros Productos - Venta de recargas a cualquier compaña hasta 7.5% de comisión ",
+      description: "Recargas Electrónicas, Pago de Servicios, Tarjetas de regalo: Telcel, Virgin, CFE, Google Play, Netflix, Steam, etc .Todo lo que requieras para tu negocio!!",
+      keywords: "recargas electronicas, recarga telcel, pagar servicio, pagar recibo telmex, tarjeta de regalo, Google Play",
+      ogdescription: "Recargas Electrónicas, Pago de Servicios, Tarjetas de regalo: Telcel, Virgin, CFE, Google Play, Netflix, Steam, etc .Todo lo que requieras para tu negocio!!",
       slug: "productos"
     });
 

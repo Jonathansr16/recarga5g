@@ -378,57 +378,24 @@
 }
 
 .product-modal-body h4 {
-    font-size: 1.3em;
+    font-size: 1.5em;
     font-weight: 600;
     margin: 15px 0 10px;
 }
 
+.product-modal-body p {
+    font-size: 1.3rem;
+}
+
 .product-modal-body ul li {
     margin-top: 15px;
+    font-size: 1.3rem;
 }
 
 .product-modal-body ul li i {
     color: #6a59d1;
     margin-right: 5px;
     font-size: 28px;
-}
-
-.step-list .sub-list {
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.sub-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-
-.sub-list .sub-item {
-    font-size: 20px;
-    width: 50%;
-    margin: 30px 0;
-}
-
-.sub-list .sub-item .bx {
-    font-size: 20px;
-}
-
-.sub-list .sub-item a {
-    font-size: 1.125rem;
-}
-
-.sub-list .sub-item:nth-child(even) a {
-    color: rgb(77, 187, 77);
-}
-
-.sub-list .sub-item:nth-child(even) .bx {
-    color: #058C0B;
 }
 
 

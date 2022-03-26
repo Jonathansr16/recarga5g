@@ -22,7 +22,6 @@ export class AppComponent {
 
             this.wowService.init();
                   
-         
           if(isPlatformBrowser (this.platformId))  {
             this.gtmservice.addGtmToDom();
            }

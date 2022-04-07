@@ -13,6 +13,9 @@ import { FaqsComponent } from './faqs/faqs.component';
 //MODULES
 import { RouterModule } from '@angular/router';
 
+//SERVICES
+import { MetaTagService } from './services/meta-tag.service';
+
 
 @NgModule({
   declarations: [
@@ -36,6 +39,7 @@ import { RouterModule } from '@angular/router';
     RegistroComponent,
     ContactoComponent,
     FaqsComponent
-  ]
+  ],
+  providers: [MetaTagService],
 })
 export class PagesModule { }

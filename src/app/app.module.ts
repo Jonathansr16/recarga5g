@@ -5,10 +5,13 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 
+//SERVICES
+
+
+//MODULES
 import { SharedPagesModule } from './sharedPages/shared-pages.module';
 import { PagesModule } from './pages/pages.module';
-import { GoogleTagManagerModule } from 'angular-google-tag-manager';
-
+// import { GoogleTagManagerModule } from 'angular-google-tag-manager';
 
 @NgModule({
   declarations: [
@@ -20,10 +23,9 @@ import { GoogleTagManagerModule } from 'angular-google-tag-manager';
     RouterModule,
     SharedPagesModule,
     PagesModule,
-    GoogleTagManagerModule.forRoot({
-      id: 'GTM-T3D7SX5',
-    })
-  
+    // GoogleTagManagerModule.forRoot({
+    //   id: 'GTM-T3D7SX5',
+    // })
   ],
   providers: [],
   bootstrap: [AppComponent]

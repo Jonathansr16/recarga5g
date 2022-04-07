@@ -1,15 +1,15 @@
-import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { GoogleTagManagerService } from 'angular-google-tag-manager';
 import { NgwWowService } from 'ngx-wow';
 import { Router, NavigationEnd } from '@angular/router';
+// import { GoogleTagManagerService } from 'angular-google-tag-manager';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent  implements OnInit{
   title = 'recarga5g';
 
   showButtom = false;
@@ -17,26 +17,25 @@ export class AppComponent {
 
   constructor (private wowService: NgwWowService, @Inject(DOCUMENT) private document: Document,
                 @Inject(PLATFORM_ID) private platformId,
-                private gtmservice: GoogleTagManagerService,
-                private router: Router) {
-
+                // private gtmService: GoogleTagManagerService,
+                private router: Router) 
+      {
+         
             this.wowService.init();
                   
-          if(isPlatformBrowser (this.platformId))  {
-            this.gtmservice.addGtmToDom();
-           }
+            // this.gtmService.addGtmToDom();
+      }
 
-         this.router.events.forEach(item => {
-          if (item instanceof NavigationEnd) {
-              const gtmTag = {
-                  event: 'page',
-                  pageName: item.url
-              };
-    
-              this.gtmservice.pushTag(gtmTag);
-          }
-      });
-
+  ngOnInit(): void {
+    this.router.events.forEach(item => {
+      if (item instanceof NavigationEnd) {
+          const gtmTag = {
+              event: 'page',
+              pageName: item.url
+          };
+          // this.gtmService.pushTag(gtmTag);
+      }
+  });
   }
 
   @HostListener('window:scroll')
@@ -50,7 +49,6 @@ export class AppComponent {
 
 
   onScrollTop():void {
- 
     if(isPlatformBrowser (this.platformId)) {
       this.document.documentElement.scrollTop = 0;
     }

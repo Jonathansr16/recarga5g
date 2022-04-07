@@ -12,7 +12,6 @@ import { RegistroComponent } from './pages/registro/registro.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
-  { path: 'inicio', component: InicioComponent },
   { path: 'productos', component: ProductosComponent },
   { path: 'pagaqui', component: PagaquiComponent },
   { path: 'recargaki', component: RecargakiComponent },
@@ -20,6 +19,7 @@ const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'faqs', component: FaqsComponent },
   { path: '**',  redirectTo: 'inicio' },
+  
 ];
 
 @NgModule({

@@ -90,15 +90,20 @@
     border: 1px solid #7FB3D5;
     border-radius: 10px;
     background-color: #FFF;
+    overflow: hidden;
+}
+
+.advantage .container-fluid {
+    position: relative;
+}
+
+.advantage .advantage-img {
+    position: relative;
 }
 
 .advantage .advantage-img img {
     margin: auto;
     display: block;
-}
-
-.advantage .section-title h3 {
-    font-weight: 600;
 }
 
 .advantage .advantage-list .list-title {
@@ -116,6 +121,13 @@
 
 .advantage .advantage-list span {
     color: #1842BA;
+}
+
+.advantage .points1 {
+    width: 200px;
+    top: 82%;
+    right: -1%;
+    opacity: 0.2;
 }
 
 
@@ -229,97 +241,110 @@
 
 /*--======= OUR PRODUCTS =======--*/
 
-.our-products {
-    position: relative
-}
-
-.our-products .section-title h3.title {
-    text-align: center;
-    display: block;
-    text-transform: capitalize;
-    font-weight: 600;
-}
-
-.our-products .section-title p.text {
-    font-weight: bold;
-    text-align: center;
-}
-
-.our-products .card-item .card-body {
-    border-radius: 8px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+section.section {
+    padding: 7rem 0;
     overflow: hidden;
-    transition: all 0.25s;
-    background-color: #FFFFFF;
+    background-color: #FFF;
 }
 
-.our-products .card-item .card-body img {
-    max-width: 300px;
-    width: 100%;
+.services .container {
+    z-index: 5;
+    max-width: 92rem;
+    padding: 0 4rem;
     margin: 0 auto;
-    display: block;
 }
 
-.our-products .card-item .card-body:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
-.card-item .card-description h4 {
-    color: #333;
-    font-weight: 600;
-    text-align: center;
-}
-
-.card-item .card-description p {
-    font-size: 1.25rem;
-}
-
-.our-products .card-item .bar {
-    width: 100px;
-    height: 6px;
+.card-wrap {
     position: relative;
-    left: 50%;
-    bottom: 15px;
-    transform: translateX(-50%);
-    background-color: #4a90e2;
-    border-radius: 0px 0px 10px 10px;
-    display: none;
-    animation: bar 0.5s;
+    margin: 1.7rem 0.8rem;
 }
 
-.our-products .card-item:hover .bar {
-    display: block;
-}
-
-
-/* modal */
-
-.learn-more-btn {
-    color: #777;
-    cursor: pointer;
-    transition: .3s ease;
-    background-image: var(--color-btn);
-    color: #FFFFFF;
+.card {
+    position: relative;
+    width: 100%;
+    max-width: 330px;
+    min-height: 520px;
+    background-color: var(--light-three);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    font-weight: 500;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
+    padding: 3rem 2rem;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:before {
+    content: attr(data-card);
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 6rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--main-color);
+    opacity: 0.025;
+}
+
+.card:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--main-color);
+    transition: 0.3s;
+}
+
+.card-wrap:hover .card {
+    transform: translateY(-15px);
+}
+
+.card-wrap:hover .card:after {
+    height: 8px;
+}
+
+.icon {
+    width: 310px;
+    height: 227px;
+    margin-bottom: 1.7rem;
+}
+
+.card .title-sm {
+    line-height: 0.8;
+}
+
+.card .text {
+    font-size: 1.15rem;
+    margin: 1.8rem 0;
+}
+
+.services .points1 {
+    bottom: -50px;
+    left: -125px;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.services .points2 {
+    bottom: -70px;
+    right: -65px;
+    opacity: 0.2;
+    pointer-events: none;
 }
 
 .flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.section {
-    position: relative;
-    max-width: 1150px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0rem 2rem 2rem;
 }
 
 .product-modal {
@@ -364,26 +389,23 @@
     right: 0;
     margin: 20px;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 40px;
+    color: #FF0066;
 }
 
 .product-modal-body h3 {
-    font-size: 2em;
+    color: #8A3FFC;
+    border-bottom: 1px solid #5050dd;
+    text-align: center;
 }
 
 .product-modal-body h4 {
-    font-size: 1.5em;
     font-weight: 600;
     margin: 15px 0 10px;
 }
 
-.product-modal-body p {
-    font-size: 1.3rem;
-}
-
 .product-modal-body ul li {
     margin-top: 15px;
-    font-size: 1.3rem;
 }
 
 .product-modal-body ul li i {
@@ -400,13 +422,7 @@
 }
 
 .about-us .about-img img {
-    width: 100%;
-    max-width: 500px;
     margin: 0 auto;
-}
-
-.about-us .text {
-    font-family: sans-serif;
 }
 
 .about-us .row .col-lg-6 .about-title {
@@ -472,6 +488,32 @@
     .section-title .text {
         max-width: 500px;
     }
+    .services .card {
+        min-height: 390px;
+        max-width: 290px;
+        padding: 2.2rem 1.5rem;
+    }
+    .services .icon {
+        width: 285px;
+        height: 202px;
+        margin-bottom: 0.8rem;
+    }
+    .services .card .text {
+        font-size: 0.9rem;
+        margin: 1rem 0;
+    }
+    .services .card:before {
+        font-size: 5rem;
+    }
+    .services .card-wrap {
+        margin: 1rem 0.6rem;
+    }
+    .services .points1 {
+        left: -60px;
+    }
+    .points-sq {
+        width: 150px;
+    }
 }
 
 @media (max-width: 900px) {
@@ -496,6 +538,10 @@
     }
     .for-business .img-businnes {
         width: 90%;
+    }
+    .advantage .points {
+        width: 100px;
+        left: 65%;
     }
 }
 
@@ -533,6 +579,10 @@
     /*--======= STATISTICS =======--*/
     .records .container {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .advantage .points {
+        top: 60%;
+        left: 59%;
     }
 }
 

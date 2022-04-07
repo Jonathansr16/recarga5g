@@ -4,7 +4,7 @@
         <picture>
             <source type="image/webp" srcset="assets/images/shape.webp" sizes="500px">
             <source type="image/png" srcset="assets/images/shape.png" sizes="500px">
-            <img src="assets/images/shape.png" class="shape img-fluid" alt="shape" width="500">
+            <img src="assets/images/shape.png" class="shape img-fluid" alt="shape" width="500" height="355">
         </picture>
 
         <div class="showcase-area">
@@ -25,7 +25,7 @@
                     <picture>
                         <source type="image/webp" srcset="assets/images/person.webp" sizes="738px">
                         <source type="image/png" srcset="assets/images/person.png" sizes="738px">
-                        <img src="assets/images/person.png" alt="Person image" class="person" width="738">
+                        <img src="assets/images/person.png" alt="Recargas 7.5 de comisión, recargas telcel, telcel, recargas 5G, comisión por recarga" class="person" width="738">
                     </picture>
                 </div>
             </div>
@@ -34,13 +34,11 @@
 </section>
 
 <!-- SECTION ADVANTAGE -->
-<section class="advantage mt-5 mb-5">
+<section class="advantage">
     <div class="container-fluid">
-
-
         <div class="card2 row g-0 wow animate__animated animate__fadeInUp">
             <div class="section-title mt-3">
-                <h3 class="title" data-title="Beneficios">¿Por qué te conviene quedarte con nosotros?</h3>
+                <h3 class="title" data-title="Beneficios">¿Por qué te conviene afiliarte con nosotros?</h3>
             </div>
 
             <div class="col-md-8 advantage-content">
@@ -69,12 +67,15 @@
                         </li>
                     </ul>
                 </div>
+
+
             </div>
             <div class="col-md-4 advantage-img">
+                <img src="assets/images/points3.png" class="points points1 points-sq" alt="shape" />
                 <picture>
                     <source type="image/webp" srcset="assets/images/banner_ventajas.webp" sizes="450px">
                     <source type="image/png" srcset="assets/images/banner_ventajas.png" sizes="450px">
-                    <img src="assets/images/banner_ventajas.png" alt="Ventajas" class="img-fluid" width="450" loading="lazy">
+                    <img src="assets/images/banner_ventajas.png" alt="Ventajas por afiliarte, servicio con menos intermitencia, comisión mas alta del mercado" class="img-fluid" width="450" height="530" loading="lazy">
                 </picture>
             </div>
         </div>
@@ -95,8 +96,9 @@
         <picture>
             <source type="image/webp" srcset="assets/images/banner_negocio.webp" sizes="636px">
             <source type="image/png" srcset="assets/images/banner_negocio.png" sizes="636px">
-            <img src="assets/images/banner_negocio.png" class="img-businnes img-fluid" width="636" height="837" alt="banner negocio" loading="lazy">
+            <img src="assets/images/banner_negocio.png" class="img-businnes img-fluid" width="636" height="837" alt="venta de recargas para todo tipo de negocio" loading="lazy">
         </picture>
+
         <div class="container-text">
             <h3><span class="bx bx-badge-check"></span>todo en uno</h3>
             <p class="text">Vende tiempo aire a cualquier compañia de tus clientes, paga los servicios que necesites & pines electrónicos, desde tu celular o computadora, todo lo que necesites en una sola plataforma adaptada a tus necesidades </p>
@@ -150,33 +152,35 @@
 <!-- FIN STATISTICS -->
 
 
-<!-- SECTION OUR PRODUCTS -->
-<section class="our-products section mt-5 mb-5">
-    <div class="container wow animate__animated animate__fadeInUp">
 
+
+<section class="services section" id="services">
+    <div class="container">
         <div class="section-title">
-            <h3 class="title">¿Cómo puedo vender en mi negocio?</h3>
+            <h3 class="title" data-title="What I Do">Modo de venta</h3>
             <p class="text">
-                Elije la mejor forma que se adapte a ti para vender
+                Elije la mejor forma que se adapte a tu negocio para vender
             </p>
         </div>
-        <div class="row g-3 justify-content-evenly">
 
-            <div class="col-12 col-md-6 col-lg-4 card-item">
-                <div class="bar"></div>
-                <div class="card-body">
-                    <img src="assets/images/svg/desktop.svg" class="card-img-top" alt="desktop" width="320px">
-                    <div class="card-description">
-                        <h4 class="title-description">Desktop</h4>
-                        <p class="text">Accede a tu plataforma desde tu navegador de tu preferencia</p>
-                    </div>
-                    <div class="learn-more-btn " (click)="closeBtnModal()">Leer Más
-                        <i class="bx bx-right-arrow-alt"></i>
+        <div class="cards">
+            <div class="card-wrap">
+                <img src="assets/images/points3.png" class="points points1 points-sq" alt="shape" />
+                <div class="card" data-card="Desktop">
+                    <div class="card-content z-index">
+                        <img src="assets/images/svg/desktop.svg" class="icon" width="310" height="227" alt="vende recargas via sms a cualquier compañia de telefonia movil">
+                        <h3 class="title-sm">Desktop</h3>
+                        <p class="text">
+                            Vende <strong>Recargas Electrónicas, Paga servicios de tus clientes y tarjetas de regalo </strong> desde tu computadora accediendo a la plataforma desde tu navegador favorito.
+                        </p>
+                        <div class="learn-more-btn btn small" (click)="closeBtnModal()">Leer Más
+                            <i class="bx bx-right-arrow-alt"></i>
+                        </div>
                     </div>
                 </div>
                 <div class="product-modal flex-center">
-                    <div class=" product-modal-body ">
-                        <i class="bx bx-x modal-close-btn "></i>
+                    <div class=" product-modal-body">
+                        <i class="bx bx-x modal-close-btn"></i>
                         <h3>Desktop</h3>
                         <h4>¿Como puedes vender?</h4>
                         <p>Vende recargas electrónicas desde la plataforma web</p>
@@ -193,16 +197,17 @@
                 </div>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-4 card-item ">
-                <div class="bar "></div>
-                <div class="card-body ">
-                    <img src="assets/images/svg/phone.svg " class="card-img-top" alt="phone" width="320px">
-                    <div class="card-description ">
-                        <h4 class="title-description">SmartPhone</h4>
-                        <p class="text">Empieza a vender descargando la App para tu celular desde la tienda oficial</p>
-                    </div>
-                    <div class="learn-more-btn " (click)="closeBtnModal()">Leer Más
-                        <i class="bx bx-right-arrow-alt"></i>
+            <div class="card-wrap">
+                <div class="card" data-card="Phone">
+                    <div class="card-content z-index">
+                        <img src="assets/images/svg/phone.svg" class="icon" alt="vende recargas via sms a cualquier compañia de telefonia movil">
+                        <h3 class="title-sm">Smarthphone</h3>
+                        <p class="text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores suscipit nobis dolore?
+                        </p>
+                        <div class="learn-more-btn btn small" (click)="closeBtnModal()">Leer Más
+                            <i class="bx bx-right-arrow-alt"></i>
+                        </div>
                     </div>
                 </div>
                 <div class="product-modal flex-center">
@@ -224,16 +229,18 @@
                 </div>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-4 card-item ">
-                <div class="bar "></div>
-                <div class="card-body ">
-                    <img src="assets/images/svg/sms.svg " class="card-img-top" alt="sms" width="320px">
-                    <div class="card-description ">
-                        <h4 class="title-description">SMS</h4>
-                        <p class="text">Desde tu telefono movil realiza recargas enviando un simple SMS</p>
-                    </div>
-                    <div class="learn-more-btn " (click)="closeBtnModal()">Leer Más
-                        <i class="bx bx-right-arrow-alt"></i>
+            <div class="card-wrap">
+                <img src="./img/shapes/points3.png" class="points points2 points-sq" alt="" />
+                <div class="card" data-card="SMS">
+                    <div class="card-content z-index">
+                        <img src="assets/images/svg/sms.svg" class="icon" alt="vende recargas via sms a cualquier compañia de telefonia movil" width="320" height="227">
+                        <h3 class="title-sm">SMS</h3>
+                        <p class="text">
+                            Vende desde tu telefono movil recargas a cualquier compañia enviando simplemente un SMS
+                        </p>
+                        <div class="learn-more-btn btn small" (click)="closeBtnModal()">Leer Más
+                            <i class="bx bx-right-arrow-alt"></i>
+                        </div>
                     </div>
                 </div>
                 <div class="product-modal flex-center">
@@ -254,23 +261,21 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 </section>
-<!-- FIN OUR PRODUCTS -->
 
 
 <!-- SECTION ABOUT US -->
 <section class="about-us ">
-    <div class="about-container px-3 py-2 col-xxl-8 wow animate__animated animate__fadeInUp ">
+    <div class="about-container px-3 py-2  wow animate__animated animate__fadeInUp ">
         <div class="row flex-lg-row-reverse align-items-center justify-content-center g-5 py-2 ">
             <div class="col-lg-6 about-img">
                 <picture>
                     <source type="image/webp" srcset="assets/images/logos_companies.webp" sizes="500px">
                     <source type="image/png" srcset="assets/images/logos_companies.png" sizes="500px">
-                    <img src="assets/images/logos_companies.png " class="d-block mx-lg-auto img-fluid " width="500 " height="500 " loading="lazy" alt="compañias ">
+                    <img src="assets/images/logos_companies.png " class="d-block mx-lg-auto img-fluid " width="500" height="500" loading="lazy" alt="compañias para venta de recargas, Pago de servicios: Telcel, Telmex, IZZI, CFE">
                 </picture>
             </div>
             <div class="col-lg-6 about-description">
@@ -278,7 +283,7 @@
                 <p class="text ">Ofrecemos la <strong>venta de tiempo airede celulares de las principales compañías de México.</strong> Usted puede vender tiempo aire desde su tienda, farmacia, ciber, casa, etc. únicamente necesita tener un dispositivo con acceso a Internet
                     (pagina web) o un celular para la venta vía mensaje de texto. No esperes mas y contrata nuestros servicios e incrementa tus ventas considerablemente con esta gran oportunidad de atraer nuevos clientes a tu negocio.
                 </p>
-                <a [routerLink]="['/productos']" class="btn btn-primary btn-lg">Leer Más</a>
+                <a [routerLink]="['/productos']" class="btn small">Leer Más</a>
             </div>
         </div>
     </div>
@@ -299,7 +304,7 @@
                     <picture>
                         <source type="image/webp" srcset="assets/images/icon-registro.webp">
                         <source type="image/png" srcset="assets/images/icon-registro.png">
-                        <img src="assets/images/icon-registro.png " width="20" height="30" alt="registro">
+                        <img src="assets/images/icon-registro.png " width="20" height="30" alt="Registrate a recargas Electrónicas">
                     </picture>
                 </div>
                 <div>

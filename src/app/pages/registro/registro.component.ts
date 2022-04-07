@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { MetaTagService } from 'src/app/services/meta-tag.service';
+import { MetaTagService } from 'src/app/pages/services/meta-tag.service';
 
 @Component({
   selector: 'app-registro',

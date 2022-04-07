@@ -1,6 +1,6 @@
-.main-content {
+/* .main-content {
     margin-top: 4rem;
-}
+} */
 
 .bottom-up {
     width: 50px;
@@ -110,11 +110,5 @@
     }
     .container-contact {
         bottom: 65px;
-    }
-}
-
-@media (max-width: 991px) {
-    .main-content {
-        margin-top: 10rem;
     }
 }

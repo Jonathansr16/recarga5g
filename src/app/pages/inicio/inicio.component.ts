@@ -7,26 +7,30 @@ import { MetaTagService } from 'src/app/pages/services/meta-tag.service';
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css']
 })
-export class InicioComponent{
+export class InicioComponent implements OnInit{
 
   clientes: number=1000;
   ventas: number=0;
   servicios:number=0;
   anos:number=0;
 
-  constructor(private metaTag: MetaTagService, private titie: Title) { 
+  constructor(private metaTag: MetaTagService, private title: Title) { 
 
-    let titleInicio: string = "recarga5g.com - Venta de recargas electrónicas hasta 7.5% de comisión";
-    this.titie.setTitle(titleInicio);
-    this.metaTag.generarTag( {
-      ogtitle: "recarga5g.com - Venta de recargas electrónicas hasta 7.5% de comisión",
-      description: "Vende recargar a cualquier compañía telefónica, paga servicios de todos tus clientes y pines electrónicos. Telcel, unefon, Izzi, CFE, Google Play, Spotify y muchos mas!!.",
-      keywords: "recargas electronicas, recarga telcel, pago de servicios, tarjeta de regalo, pines electronicos",
-      ogdescription: "Vende recargar a cualquier compañía telefónica, paga servicios de todos tus clientes y pines electrónicos. Telcel, unefon, Izzi, CFE, Google Play, Spotify y muchos mas!!.",
-      slug: "inicio"
-    })
   }
 
+  ngOnInit(): void {
+    
+    let titleInicio: string = "recarga5g.com | Venta de recargas electrónicas hasta 7.5% de comisión, todas las compañías CFE, Telmex, IZZI";
+    this.title.setTitle(titleInicio);
+
+    this.metaTag.generarTag({
+      description: "Vende recargar a cualquier compañía telefónica, paga servicios de todos tus clientes y pines electrónicos. Telcel, unefon, Izzi, CFE, Google Play, Spotify y muchos mas!!.",
+      keywords: "recargas electronicas, 5g, recargas 5g, recarga telcel, pago de servicios, tarjeta de regalo, pines electronicos, telcel, google play",
+      ogtitle: "recarga5g.com | Venta de recargas electrónicas hasta 7.5% de comisión, todas las compañías CFE, Telmex, IZZI",
+      ogdescription: "Vende recargar a cualquier compañía telefónica, paga servicios de todos tus clientes y pines electrónicos. Telcel, unefon, Izzi, CFE, Google Play, Spotify y muchos mas!!.",
+      slug: ""
+    });
+  }
 
 
   contador1: any = setInterval( () => {

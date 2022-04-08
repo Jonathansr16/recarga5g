@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent},
   { path: 'contacto', component: ContactoComponent },
   { path: 'faqs', component: FaqsComponent },
-  { path: '**',  redirectTo: 'inicio' },
+  { path: '**',  redirectTo: '' },
   
 ];
 

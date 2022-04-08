@@ -12,22 +12,30 @@ export class MetaTagService {
   generarTag(config){
 
     config = {
+      author: "Recargas Electrónicas",
+      email: "tae.celular@gmail.com",
+      robots: "index, follow",
       description: "",
-      ogtitle: "Vende recargas electrónicas, paga servicios y tarjetas de regalo 7% de comisión",
-      ogdescription: "Vende desde tu celular, computadora o vía SMS gratuito. Empieza a generar guanacias y nuevos clientes a tu negocio!!",
-      keywords: "recargas electrónicas, pago de servicios, telcel, tarjetas de regalo, pines electronicos",
+      keywords: "",
+      ogtitle: "",
+      ogdescription: "",
       image: "https://recarga5g.com/logo_recargas-800x400.png",
+      ogsite_name: "RECARGAS ELECTRÓNICAS MÉXICO",
       slug: "",
       ...config    
   }
 
     //Primary Meta Tag
-    this.meta.updateTag({ property: "description", content: config.description, lang: "esp" });
-    this.meta.updateTag({ property: "keywords", content: config.keywords, lang: "esp" });
-    this.meta.updateTag({ property: "og:locale", content: "es_ES" });
+    this.meta.updateTag({ name: 'author', content: config.author});
+    this.meta.updateTag({ name: 'email', content: config.email});
+    this.meta.updateTag({ name: 'robots', content: config.robots});
+    this.meta.updateTag({ name: 'description', content: config.description, lang: "esp" });
+    this.meta.updateTag({ name: 'keywords', content: config.keywords, lang: "esp" });
+    this.meta.updateTag({ name: 'og:locale', content: "es_ES" });
   // Open Graph / Facebook 
     this.meta.updateTag({ property: 'og:type', content: 'website' });
     this.meta.updateTag({ property: 'og:url', content: `https://recarga5g.com/${config.slug}` });
+    this.meta.updateTag({ property: 'og:site_name', content: config.ogsite_name});
     this.meta.updateTag({ property: 'og:title', content: config.ogtitle });
     this.meta.updateTag({ property: 'og:description', content: config.ogdescription });
     this.meta.updateTag({ property: 'og:image', content: config.image });

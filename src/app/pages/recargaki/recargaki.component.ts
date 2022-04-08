@@ -16,7 +16,7 @@ export class RecargakiComponent  {
 
     this.metaTag.generarTag({
       description: "Si eres usuario de Recargaki o Planetaemx. Reportar todos tus depósitos en nuestra pagina web. Llenando un formulario correspondiente a tu ticket de deposito/transferencia.",
-      keywords: "reportar deposito para recargar saldo",
+      keywords: "reportar deposito para recargar saldo, cuentas bancarias planetaemx, cuentas bancarias recargaki, planetaemx, recargaki",
       ogtitle: "recarga5g.com - Reporte de deposito y transferencias Recargaki/Planetaemxvía Web",
       ogdescription: "Si eres usuario de Recargaki o Planetaemx. Reportar todos tus depósitos en nuestra pagina web. Llenando un formulario correspondiente a tu ticket de deposito/transferencia.",
       slug: "recargaki"

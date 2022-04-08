@@ -2,6 +2,8 @@ import { Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/c
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { NgwWowService } from 'ngx-wow';
 import { Router, NavigationEnd } from '@angular/router';
+import { MetaTagService } from './pages/services/meta-tag.service';
+import { Meta, Title } from '@angular/platform-browser';
 // import { GoogleTagManagerService } from 'angular-google-tag-manager';
 
 @Component({
@@ -10,32 +12,35 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent  implements OnInit{
-  title = 'recarga5g';
+
 
   showButtom = false;
   private scrollHeight = 500;
 
   constructor (private wowService: NgwWowService, @Inject(DOCUMENT) private document: Document,
-                @Inject(PLATFORM_ID) private platformId,
+                @Inject(PLATFORM_ID) private platformId,  private title: Title,
                 // private gtmService: GoogleTagManagerService,
-                private router: Router) 
+                private router: Router, private metaTag: MetaTagService) 
       {
-         
             this.wowService.init();
                   
-            // this.gtmService.addGtmToDom();
+            
       }
 
   ngOnInit(): void {
+
+ 
     this.router.events.forEach(item => {
       if (item instanceof NavigationEnd) {
           const gtmTag = {
               event: 'page',
               pageName: item.url
           };
-          // this.gtmService.pushTag(gtmTag);
+       
       }
   });
+
+
   }
 
   @HostListener('window:scroll')

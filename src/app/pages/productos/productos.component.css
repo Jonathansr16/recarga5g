@@ -9,6 +9,12 @@
     background-color: #FFF;
 }
 
+.separator {
+    border-bottom: 1px solid #e8e8e8;
+    margin-bottom: 20px;
+    background-image: linear-gradient(to top, #bdc2e8 0%, #bdc2e8 1%, #e6dee9 100%);
+}
+
 .section-title h2 {
     font-size: 2.1875rem;
     font-weight: 600;
@@ -89,19 +95,17 @@
     position: absolute;
 }
 
-.shape {
-    opacity: 0.3;
-    position: absolute;
-    z-index: -1;
-    border-radius: 50%;
+.shapes {
+    width: 250px;
+    height: 250px;
+    z-index: 1;
+    background-color: rgba(119, 75, 251, 0.479);
 }
 
 
 /*--======= PRODUCTS =======--*/
 
 .products {
-    padding: 0;
-    margin: 0;
     overflow: hidden;
     position: relative;
 }
@@ -172,8 +176,21 @@
 
 /*--======= RECARGAS SECTION=======--*/
 
+.recargas-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.recargas-section .container-text {
+    position: relative;
+}
+
 .recargas-section .container-text h3 span {
     color: #784cfb;
+}
+
+.recargas-section .swiper-custom {
+    position: relative;
 }
 
 .recargas-section .telcel {
@@ -216,8 +233,23 @@
     border: 1px solid #1d8ec1;
 }
 
+.recargas-section .shape-1 {
+    top: -11%;
+    right: -6%;
+}
+
+.recargas-section .shape-2 {
+    bottom: -11%;
+    left: -6%;
+}
+
 
 /*--======= SERVICES SECTION=======--*/
+
+.services-section {
+    position: relative;
+    overflow: hidden;
+}
 
 .services-section .section-title h2.title:after {
     background: #FF0066;
@@ -227,8 +259,31 @@
     color: #FF0066;
 }
 
+.services-section .shapes {
+    background-color: rgba(255, 0, 102, 0.466);
+}
+
+.services-section .shape-1 {
+    top: -11%;
+    right: -6%;
+}
+
+.services-section .shape-2 {
+    bottom: -11%;
+    left: -6%;
+}
+
 
 /*--======= GIFT SECTION=======--*/
+
+.gift-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.gift-section .swiper-custom {
+    position: relative;
+}
 
 .gift-section .section-title h2.title:after {
     background: #24A148;
@@ -238,12 +293,17 @@
     color: #24A148;
 }
 
-.tarjetas-r .swiper-slide {
-    border: none;
+.gift-section .netflix {
+    border: 1px solid #cb0922;
 }
 
-.tarjetas-r .netflix {
-    border: 1px solid #cb0922;
+.gift-section .shapes {
+    background-color: rgba(36, 161, 71, 0.466);
+}
+
+.gift-section .shape-1 {
+    top: -11%;
+    right: -6%;
 }
 
 
@@ -276,6 +336,10 @@
     .section .swiper-custom {
         width: 100%;
         order: 3;
+    }
+    .shapes {
+        width: 200px;
+        height: 200px;
     }
 }
 

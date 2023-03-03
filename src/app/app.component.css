@@ -1,0 +1,90 @@
+/* ============= SCROLL TOP BTN ============= */
+
+.scrollTop__btn {
+    z-index: 1000;
+    position: fixed;
+    right: 0;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--color-primary);
+    color: #FFF;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scrollTop__i {
+    font-size: 20px;
+}
+
+
+/* ============= BTN CONTACT ============= */
+
+#btn-mas {
+    display: none;
+}
+
+.list-contact__container {
+    position: fixed;
+    bottom: 120px;
+    right: 20px;
+    z-index: 100;
+}
+
+.list-contact__a,
+.btn-mas__label {
+    display: block;
+    text-decoration: none;
+    background-color: #cc2b2b;
+    color: #fff;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+    transition: all 500ms ease;
+}
+
+
+/* .redes a:hover {
+    background: #fff;
+    color: #cc2b2b;
+} */
+
+.list-contact__a {
+    margin-bottom: -15px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 25px;
+}
+
+#btn-mas:checked~.list-contact a {
+    margin-bottom: 10px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.btn-mas__label {
+    cursor: pointer;
+    background: #f44141;
+    font-size: 23px;
+    animation: none;
+}
+
+.btn-mas label:hover {
+    animation: tada 2s infinite;
+}
+
+.list-contact__what:hover {
+    background-color: hsl(120, 86%, 28%);
+    animation: tada 2s ease;
+}
+
+.list-contact__phone:hover {
+    background-color: hsl(252deg 3% 21%);
+    animation: tada 2s ease;
+}

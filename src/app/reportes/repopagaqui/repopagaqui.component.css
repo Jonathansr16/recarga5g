@@ -1,0 +1,97 @@
+.repo-titular {
+    text-align: center;
+}
+
+.repo-titular__p {
+    line-height: 1.6em;
+    margin-bottom: 1.5em;
+}
+
+.repo-titular__strong {
+    color: var(--color-primary);
+    font-weight: var(--font-600);
+}
+
+.repo-titular__span {
+    font-weight: var(--font-700);
+}
+
+.repo-pagaqui__container {
+    grid-template-columns: 1.5fr 1fr;
+}
+
+.pagaqui__formulario {
+    margin-bottom: 1.8em;
+}
+
+.pagaqui__frame {
+    height: 950px;
+}
+
+.pagaqui-steps {
+    height: 100%;
+}
+
+.pagaqui-item {
+    background-color: var(--back-card);
+    box-shadow: var(--shadow);
+    max-width: 400px;
+    padding: 0.75em 0.50em;
+    position: sticky;
+    top: 100px;
+    margin: 5rem auto;
+    border-radius: 10px;
+}
+
+.pagaqui-item__h2 {
+    padding: 1rem 0;
+    font-weight: var(--font-600);
+    text-align: center;
+    color: var(--color-title);
+    font-size: 1.3rem;
+}
+
+.pagaqui-item__i {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-size: 2.4rem;
+    padding: 0 0.25em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.pagaqui-item__span {
+    display: block;
+    padding: 0.75em 0.55em;
+    color: var(--color-title);
+    text-align: center;
+}
+
+@media screen and (max-width: 992px) {
+    .pagaqui__formulario {
+        order: 4;
+    }
+    .pagaqui__steps {
+        order: 3;
+    }
+    .pagaqui-item {
+        margin: 1em auto;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .repo-titular {
+        text-align: left;
+    }
+    .pagaqui-item__h2 {
+        font-size: 1.1rem;
+    }
+    .pagaqui-item__span {
+        font-size: 0.90rem;
+    }
+}

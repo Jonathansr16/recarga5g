@@ -1,0 +1,59 @@
+<div class="posts">
+
+    <div class="post-banner">
+        <div class="post-banner__container container">
+            <div class="post-banner__title">
+                <a routerLink="/" class="post-banner__a post-banner__a--home">Home</a>
+                <span class="post-banner__icon"> > </span>
+                <span class="post-banner__span">Ayuda</span>
+                <span class="post-banner__icon"> > </span>
+                <a routerLink="/ayuda/blog" class="post-banner__a">Blog</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="post__container container">
+        <div class="post">
+            <div class="post__box" *ngIf="post$ | async as post">
+
+                <h1 class="post__h1"> {{post.fields.title }}</h1>
+
+                <picture class="post__picture">
+                    <img [src]="post.fields.imgArticle.fields.file.url" class="post__img" width="854" height="378" alt="{{post.fields.title }}">
+                </picture>
+
+                <div class="post__author--img">
+                    Foto: <span class="post__author--span"> 
+                        {{ post.fields.author }}
+                    </span>
+                </div>
+
+                <div class="post__detail">
+                    <span class="post__span">
+                        <i class='post__i bx bx-calendar bx-icon'></i>
+                        <p class="post__p--author">{{ post.fields.date | date: 'mediumDate' }}</p>
+                </span>
+
+                    <span class="post__span">
+                    <i class='post__i bx bxs-user bx-icon'></i>
+                    <p class="post__p--author">{{ post.fields.author }}</p>
+                </span>
+                </div>
+
+                <div class="post__content">
+
+                    <div class="article__p" [innerHtml]=" post.fields.content | markdown">
+                        <!-- {{ post.fields.content} -->
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <a routerLink="/ayuda/blog" class="post-btn">
+            <i class='bx bx-left-arrow-circle post-btn__i'></i> Regresar
+        </a>
+
+    </div>
+</div>

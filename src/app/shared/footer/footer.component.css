@@ -1,0 +1,241 @@
+.footer {
+    width: 100%;
+    background-color: var(--back-footer);
+    font-family: 'Raleway', 'Poppins', sans-serif;
+}
+
+.footer__container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 1rem;
+    padding: 50px 20px;
+}
+
+.footer__sec {
+    padding: 0 15px;
+    height: 100%;
+}
+
+.footer__h2 {
+    position: relative;
+    margin-bottom: 15px;
+    font-size: 1.375rem;
+    font-weight: bold;
+}
+
+.footer__h2:before {
+    position: absolute;
+    content: "";
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--color-primary);
+}
+
+.footer__ul {
+    padding: 10px 0;
+}
+
+.footer__li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo {
+    margin-bottom: 2rem;
+}
+
+.footer__p {
+    text-align: justify;
+    font-size: 1.0625rem;
+    line-height: 24px;
+    font-weight: 500;
+    color: var(--color-title);
+}
+
+.footer-logo__img {
+    max-width: 320px;
+    height: 120px;
+    margin: auto;
+}
+
+.contacto__li {
+    display: flex;
+}
+
+.footer__a {
+    transition: transform .310s ease;
+    color: var(--color-a);
+}
+
+.footer__a:hover {
+    transform: translateY(-5px);
+    color: var(--color-primary);
+}
+
+.social__ul {
+    display: flex;
+}
+
+.social__a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.footer__span {
+    padding: 0 6px;
+    color: var(--color-title);
+}
+
+.social__a {
+    background-color: rgb(43, 46, 55);
+}
+
+.social__li:hover a {
+    background: #151515;
+    padding-bottom: 15px;
+}
+
+.footer__i {
+    color: var(--color-gray);
+    font-size: 25px;
+    font-weight: var(--font-500);
+}
+
+.footer__i--arrow {
+    color: var(--color-primary);
+}
+
+.social__i {
+    color: #FFF;
+}
+
+.footer-app__p {
+    font-weight: 700;
+}
+
+.footer-app__i {
+    padding: 0 0.5em;
+}
+
+.footer-app__a {
+    font-weight: bold;
+    transform: perspective(1px) translateZ(0);
+}
+
+.footer-app__a:hover {
+    animation-name: button-push;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+}
+
+.footer-app__a--pagaqui {
+    color: hsl(254, 76%, 59%);
+}
+
+.footer-app__a--recargaki {
+    color: hsl(120, 63%, 39%);
+}
+
+.footer-app__picture {
+    transition: transform 300ms ease-out;
+}
+
+.footer-app__picture:hover {
+    transform: translateY(-10px);
+}
+
+.footer-app__img {
+    object-fit: contain;
+    max-width: 120px;
+}
+
+
+/* ============= FOOTER  DROPDOWN ============= */
+
+.footer__li--submenu {
+    position: relative;
+}
+
+.footer__li--submenu:hover>.footer-dropdown {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.footer-dropdown {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 220px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: var(--back-card);
+    padding: 10px 0;
+    border-top: 3px solid var(--color-primary);
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 10
+}
+
+.footer-dropdown__li {
+    display: block;
+}
+
+.footer-dropdown__a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-a);
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+}
+
+.copyright {
+    border-top: 1px solid var(--color-gray);
+}
+
+.copyright__container {
+    margin-top: 1rem;
+}
+
+.copyright__left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 992px) {
+    .footer__container {
+        grid-template-columns: 1fr;
+    }
+    .copyright__container {
+        flex-wrap: wrap;
+    }
+    .social__ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+    }
+    .social__li {
+        margin: 1rem 0;
+    }
+}

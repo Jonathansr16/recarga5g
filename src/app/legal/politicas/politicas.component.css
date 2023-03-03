@@ -1,0 +1,179 @@
+.devolucion-pagaqui {
+    color: hsl(225, 57%, 48%);
+}
+
+.devolucion-recargaki {
+    color: hsl(120, 100%, 25%);
+}
+
+.devoluciones__h1 {
+    font-weight: var(--font-600);
+}
+
+.devoluciones-content {
+    background-color: var(--back-card);
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+    padding: 1.5em 1em;
+}
+
+.devoluciones-content__p {
+    font-size: 1.2rem;
+    margin-bottom: 0.55em;
+}
+
+.devoluciones-items,
+.p-aplicacion-items {
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+}
+
+.devoluciones-item,
+.p-aplicacion-item {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 1em;
+    padding: 0 0.55em;
+}
+
+.devoluciones-item__number,
+.p-aplicacion-item__number {
+    font-weight: var(--font-600);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0.35em;
+    position: relative;
+    color: #6666ed;
+    font-size: 1.1rem;
+}
+
+.devoluciones-item__number:before,
+.p-aplicacion-item__number:before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgb(12 79 224 / 22%);
+}
+
+.devoluciones-item__p,
+.p-aplicacion-item__p {
+    padding: 0 1em;
+}
+
+
+/* ============ SECCION  DEVOLUCIONES RECARGAS ============  */
+
+.devoluciones-recargas__p {
+    line-height: 2;
+    text-align: justify;
+}
+
+
+/* ============ SECCION  DEVOLUCIONES RECARGAS ============  */
+
+.aplicacion__p {
+    line-height: 2;
+    text-align: left;
+}
+
+.aplicacion-horario__strong {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    display: block;
+    margin: 0.75em;
+}
+
+.aplicacion-horario__p {
+    text-align: center;
+    padding-top: 0.55em;
+}
+
+.aplicacion-aviso {
+    height: 100%;
+}
+
+.aplicacion-aviso__h4 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #f5aa21;
+    text-align: center;
+    margin-bottom: 0.75em;
+}
+
+.aplicacion-aviso__p {
+    line-height: 2;
+}
+
+
+/* ============ SECCION  POLITICAS APLICACION ============  */
+
+.p-aplicacion__p {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.p-aplicacion-items {
+    padding: 1em 0;
+}
+
+.p-aplicacion-item {
+    margin-bottom: 1.8em;
+}
+
+.p-aplicacion-item__number {
+    color: hsl(0, 79%, 66%);
+}
+
+.p-aplicacion-item__number:before {
+    background-color: hsla(2, 90%, 46%, 0.22);
+}
+
+
+/* ============ SECCION  TERMINOS SERVICIOS  ============  */
+
+.terminos-serv-item {
+    margin-bottom: 1em;
+    padding: 0 0.55em;
+}
+
+.terminos-serv__e,
+.terminos-serv__i {
+    font-size: 1.7rem;
+    position: relative;
+    color: #fff;
+}
+
+.terminos-serv__e:before,
+.terminos-serv__i:before {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.terminos-serv__i:before {
+    background-color: #4cd74c;
+}
+
+.terminos-serv__e:before {
+    background-color: #ed4f4f;
+}
+
+.terminos-serv__p {
+    padding-left: 3em;
+}

@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+
+<div class="scrollTop__btn animate__animated animate__fadeInUp" (click)="onScrollTop()" *ngIf="showBtnScroll">
+    <i class='bx bx-up-arrow-alt scrollTop__i'></i>
+</div>
+
+<div class="list-contact__container">
+    <input type="checkbox" id="btn-mas">
+    <div class="list-contact">
+        <a href="https://wa.me/522712141938/?text=Recargas%20Electronicas" class="bx bxl-whatsapp list-contact__a list-contact__what" target="_blank" rel="noopener" aria-label="WhatsApp"></a>
+        <a href="tel:2717140102" class="bx bxs-phone-call list-contact__a  list-contact__phone" aria-label="Telefono"></a>
+        <!-- <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-pinterest"></a> -->
+    </div>
+    <div class="btn-mas">
+        <label for="btn-mas" class="bx bx-support btn-mas__label"></label>
+    </div>
+</div>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

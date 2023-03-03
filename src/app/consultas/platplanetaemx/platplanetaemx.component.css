@@ -1,0 +1,49 @@
+.title-recargaki {
+    color: #3fab3f;
+    font-weight: 700;
+}
+
+
+/* ============ SECTION COMISION  ============  */
+
+.comision__wrapper {
+    background-color: var( --back-comisionRecargaki);
+}
+
+
+/* ============ SECTION ACTIVITIES  ============  */
+
+.shapeRecargaki {
+    background-color: hsl(125, 41%, 57%);
+}
+
+.Recargaki-Planetamex,
+.RecargakiColor {
+    color: #126112;
+    font-weight: var(--font-600);
+}
+
+
+/* ============ SECTION CUENTAS ============  */
+
+.cuentas-wrapper {
+    background-color: var(--back-cuentasRecargaki);
+}
+
+
+/* ============ SECTION DOWNLOAD ============  */
+
+.download-app__container {
+    background-color: hsl(146deg 64% 29%)
+}
+
+
+/* ============ SECTION  ACCESO ============  */
+
+.acceso__item {
+    margin: auto;
+}
+
+.acceso__a {
+    font-size: 1.4rem;
+}

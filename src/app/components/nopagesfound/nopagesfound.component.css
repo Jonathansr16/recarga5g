@@ -1,0 +1,151 @@
+.nofound {
+    background: url('/assets/img/bg_purple.png');
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.nofound__text {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.nofound__h2,
+.nofound__h3,
+.nofound__a {
+    color: #fff;
+}
+
+.nofound__h2 {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 0.7;
+    margin-bottom: 1.5rem;
+}
+
+.nofound__h3 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.nofound__a {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    margin: auto;
+    z-index: 1;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    margin-top: 1.5em;
+}
+
+.nofound__a:hover {
+    background-color: var(--color-primary);
+    transform: scale(1.05);
+    padding: 0.33em;
+}
+
+.nofound__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8rem;
+    position: relative;
+    z-index: 20;
+}
+
+.earth {
+    position: absolute;
+    top: 25%;
+    left: 50px;
+}
+
+.earth__img {
+    width: 200px;
+    height: 200px;
+}
+
+.moon {
+    position: absolute;
+    left: 15%;
+    top: 15%;
+}
+
+.moon__img {
+    width: 150px;
+    height: 150px;
+}
+
+.astronaut {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    z-index: 10;
+    will-change: transform;
+    animation: move-astronaut 20s infinite linear both alternate;
+}
+
+.astronaut__img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    animation: rotate-astronaut 200s infinite linear both alternate;
+}
+
+.glowing_stars {
+    background: url(/assets/img/svg/overlay_stars.svg);
+    background-repeat: repeat;
+    background-size: contain;
+    background-position: left top;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* ============ RESPONSIVE NO PAGE FOUND ============  */
+
+@media screen and (max-width: 1050px) {
+    .nofound__h2 {
+        font-size: 10rem;
+        line-height: 1;
+    }
+    .nofound__h3 {
+        font-size: 2.5rem;
+    }
+    .nofound__content {
+        margin-top: 20rem;
+    }
+    .moon {
+        left: 30%;
+        top: 10%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .nofound__content {
+        margin-top: 0;
+    }
+}
+
+
+/* ============ ANIMATION ============  */
+
+@keyframes rotate-astronaut {
+    100% {
+        transform: rotate(-720deg);
+    }
+}
+
+@keyframes move-astronaut {
+    100% {
+        transform: translate(-160px, 160px);
+    }
+}

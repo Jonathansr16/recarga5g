@@ -1,0 +1,146 @@
+.backPagaqui {
+    background-color: var(--back-comisionPagaqui);
+}
+
+.title-pagaqui {
+    color: #3458c0;
+    font-weight: 700;
+}
+
+
+/* ============ SECTION COMISION PAGAQUI  ============  */
+
+.comision--pagaqui {
+    background-color: var(--back-comisionPagaqui);
+}
+
+.shapePagaqui {
+    background-color: hsl(198, 59%, 64%);
+}
+
+.video-popup {
+    position: fixed;
+    padding: 30px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-backdrop-filter: blue(10px);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+
+.video-popup__open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.comision-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comision-btns .btn__pagaqui {
+    padding: 0 1rem;
+}
+
+.comsion-btns__play {
+    height: 50px;
+    width: 50px;
+    border-radius: 32px;
+    background-color: var(--color-primary);
+    animation: bounceTop 3s ease infinite;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.comsion-btns__play:hover {
+    animation: pulse 2s ease infinite;
+}
+
+.comision-btns__i {
+    font-size: 2rem;
+}
+
+.videoPagaqui {
+    display: block;
+}
+
+.video-popup__inner {
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+}
+
+.video-popup__close {
+    position: absolute;
+    right: 0;
+    top: -30px;
+    height: 30px;
+    width: 30px;
+    font-size: 1.9rem;
+    background-color: rgb(224, 73, 73);
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.video-box {
+    height: 0;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+
+.video-box__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ============ SECTION COMISION PAGAQUI ============  */
+
+.backPagqui {
+    background-color: hsla(214, 100%, 89%, 0.388);
+}
+
+.shapePagaqui {
+    background-color: hsl(198, 59%, 64%);
+}
+
+.Pagaqui,
+.PagaquiColor {
+    color: #6666ed;
+    font-weight: var(--font-600);
+}
+
+
+/* ============ SECTION CUENTAS ============  */
+
+.cuentas--pagaqui {
+    background-color: var(--back-cuentasPagaqui);
+}
+
+
+/* ============ SECTION DOWNLOAD ============  */
+
+.download-app {
+    background-color: hsl(225, 51%, 54%);
+    box-shadow: var(--shadow);
+    padding: 20px 0;
+}

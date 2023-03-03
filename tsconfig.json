@@ -1,0 +1,47 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@inicio/*":   ["src/app/inicio/*"],
+      "@shared/*":   ["src/app/shared/*"],
+      "@services/*": ["src/app/services/*"],
+      "@productos/*":["src/app/productos/*"],
+      "@components/*": ["src/app/components/*"],
+      "@ayuda/*": ["src/app/ayuda/*"],
+      "@legal/*": ["src/app/legal/*"],
+      "@consultas/*": ["src/app/consultas/*"],
+      "@reportes/*": ["src/app/reportes/*"],
+      "@directives/*": ["src/app/directives/*"],
+      
+      "@pipes/*": ["src/app/pipes/*"]
+    },
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noImplicitAny": false,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2017",
+    "module": "es2020",
+    "lib": [
+      "es2020",
+      "dom"
+    ]
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}

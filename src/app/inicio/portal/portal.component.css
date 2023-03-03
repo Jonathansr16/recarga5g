@@ -1,0 +1,1027 @@
+/* ============ SECCION HOME BANNER ============  */
+
+.wrapper-container {
+    position: relative;
+   
+    display: grid;
+    grid-template-columns: 40% 60%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .wrapper-text__h1 {
+    font-size: 3.5rem;
+    font-size: 600;
+} */
+
+.wrapper-titular__span {
+    font-size: 1.5rem;
+    color: rgb(231, 55, 55);
+    font-weight: bold;
+}
+
+.wrapper-titular__h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.wrapper-titular__p {
+    font-size: 1.5rem;
+    line-height: 32px;
+}
+.wrapper-text__dinamic {
+    color: var(--c-custom);
+}
+
+
+.wrapper-action {
+    column-gap: 3em;
+}
+
+
+/* ============ SECCION GEOGRAPHY ============  */
+
+.geography {
+    position: relative;
+}
+
+.geography__container {
+    margin: auto;
+    height: 100%;
+}
+
+.geography-content {
+    padding: 1em;
+    background-color: hsla(0, 0%, 0%, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.geography-box {
+    position: relative;
+    background-image: url(/assets/img/map.png);
+    background-size: contain;
+    width: 100%;
+    height: 80vh;
+    background-position: center;
+    background-repeat: no-repeat
+}
+
+
+/* ============ SECCION SERVICIOS ============  */
+
+.servicios {
+    margin: 4rem 0;
+}
+
+.servicios__container {
+    position: relative;
+    overflow: hidden;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.servicios__h2 {
+    margin-bottom: 0.55rem;
+    font-weight: bold;
+}
+
+.servicios__p {
+    text-align: center;
+}
+
+
+
+
+
+
+.servicios__a {
+    background-color: hsl(239deg 75% 60%);
+    padding: 1em;
+    border-radius: 10px;
+    color: #FFF;
+    margin: 3em 0;
+    width: 50%;
+    text-align: center;
+}
+
+.servicios-swiper {
+    height: 700px;
+}
+
+
+/* ============ SECCION BENEFICIOS ============  */
+
+.beneficios {
+    position: relative;
+}
+
+.beneficios-items {
+    padding: 2px 10px;
+    border-radius: 20px;
+    /* background-color: var(--back-card); */
+    box-shadow: 0 10px 10px hsla(0, 0%, 0%, 0.05);
+}
+
+.beneficios-item {
+    padding: 1.1em;
+}
+
+.beneficios-item-titular {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    flex-flow: row wrap;
+}
+
+.beneficios-item__h4 {
+    padding: 0 0.9rem;
+    font-weight: var(--font-600);
+    color: var(--color--a);
+    font-size: var(--h3-font-size);
+}
+
+.beneficios-item__p {
+    color: var(--color-title);
+}
+
+.beneficios-item__i {
+    color: var(--color-primary);
+    width: 30px;
+    height: 30px;
+    font-size: 2.2em;
+    padding-right: 0.25rem;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    font-weight: 800;
+}
+
+.beneficios-img__img {
+    max-width: 450px;
+    margin: auto;
+}
+
+
+/* ============ SECTION  NOTIFICACION DEPOSITOS ============  */
+
+.notf {
+    background-color: var(--back-depositos);
+    box-shadow: var(--shadow);
+}
+
+.notf__container {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.notf-titular__h3 {
+    font-size: 2rem;
+    font-weight: var(--font-600);
+    line-height: 1.3;
+    margin-bottom: 0.55rem;
+}
+
+.notf-titular__p {
+    font-size: 1.1rem;
+    line-height: 2;
+    text-align: justify;
+    color: var(--color-title);
+}
+
+.notf-image__img {
+    width: 100%;
+    height: 470px;
+    position: relative;
+    bottom: -50px;
+}
+
+
+/* ============ SECCION NEGOCIO  ============  */
+
+.neogocio__container {
+    gap: 4em;
+}
+
+.negocio__h3 {
+    font-weight: bold;
+}
+
+.negocio__p {
+    margin: 1em 0 3em;
+}
+
+.negocio__right {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2em;
+}
+
+.negocio-category {
+    background-color: var(--back-card);
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: transform 300ms ease;
+}
+
+.negocio-category__h4 {
+    font-weight: bold;
+    padding: 0.25em 0;
+}
+
+.negocio-category__img {
+    width: 40px;
+    height: 40px;
+}
+
+
+/* ============ SECCION METODOS ============  */
+
+.metodos {
+    background-color: #6D5FD4;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+.metodosOverlay {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    bottom: 0;
+    top: auto;
+    background-color: rgba(255, 255, 255, .911);
+    opacity: 1;
+    transition: background .3s, border-radius .3s, opacity .3s;
+}
+
+.metodosContainer {
+    flex-direction: column;
+}
+
+.metodosTitular {
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 2em;
+}
+
+.metodosTitularContent__h3 {
+    font-size: 48px;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.metodosTitularBtn {
+    margin: auto;
+}
+
+.metodosItems {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+    z-index: 1;
+}
+
+.metodosItem {
+    background-color: var(--back-card);
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+    padding: 2.5em;
+}
+
+.metodosItemIcon__i {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    font-weight: var(--font-500);
+}
+
+.metodosItem__h4 {
+    font-size: 1.3rem;
+    font-weight: var(--font-600);
+    margin: 0.55em 0;
+}
+
+.metodosItemContent__p {
+    margin: 1em 0;
+}
+
+
+/* 
+.metodos-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    grid-gap: 2rem;
+}
+
+.metodos-card__wrap {
+    position: relative;
+    margin: 1.7rem 0.8rem;
+    background-color: var(--back-card);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.metodos-card {
+    position: relative;
+    background-color: var(--light-three);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.metodos-card:before {
+    content: attr(data-card);
+    position: absolute;
+    top: 15px;
+    right: 8px;
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--color-primary);
+    opacity: 0.025;
+}
+
+.metodos-card:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-primary);
+    transition: 0.3s;
+}
+
+.metodos-card__wrap:hover .metodos-card {
+    transform: translateY(-15px);
+}
+
+.metodos-card__wrap:hover .metodos-card:after {
+    height: 8px;
+}
+
+.metodos-card__img {
+    width: 310px;
+    height: 227px;
+    margin: auto;
+}
+
+.metodos-card__h3 {
+    font-weight: var(--font-600);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.metodos-card__p {
+    margin-top: 1rem;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 0.65em;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.metodos-plataformas__ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+}
+
+.metodos-plataformas__img {
+    transition: transform 300ms ease-out;
+    width: 120px;
+}
+
+.metodos-plataformas__img:hover {
+    transform: translateY(-10px);
+}
+
+.metodos-apps__ul {
+    flex-flow: row wrap;
+}
+
+.metodos-apps__li {
+    transition: transform 300ms ease-out;
+    max-width: 180px;
+}
+
+.metodos-apps__li:hover {
+    transform: translateY(-10px);
+}
+
+.metodos-modal--pagaqui {
+    color: hsl(235deg 76% 58%);
+}
+
+.metodos-modal--recargaki {
+    color: hsl(120, 100%, 25%);
+} */
+
+
+/* ============ SECTION DOWNLOAD PLATAFORMAS============  */
+
+.download {
+    margin: 4em 0;
+    background-color: hsl(225deg 48% 53%);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.download-plataformas__container {
+    padding: 3rem;
+}
+
+.download-plataformas__type {
+    margin: auto;
+}
+
+.download-plataformas__h4 {
+    color: #fff;
+    text-align: left;
+    /* font-size: 2rem; */
+}
+
+.download-plataformas__img {
+    width: 250px;
+    transition: transform 300ms ease-out;
+}
+
+.download-plataformas__img:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+}
+
+.download-plataformas__p {
+    color: #fff;
+    /* font-size: 1.2rem; */
+    line-height: 40px;
+}
+
+.download-plataformas__h5 {
+    color: #fff;
+    /* font-size: 1.4em; */
+    text-align: center;
+}
+
+.dowload-apps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+
+/* ============ SECCION ABOUT  ============  */
+
+.about {
+    position: relative;
+    overflow: hidden;
+}
+
+.about__p {
+    line-height: 2;
+    text-align: justify;
+}
+
+.about__strong {
+    font-weight: var(--font-600);
+}
+
+.about__shape {
+    position: absolute;
+    background-color: var(--color-light-1);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.about__shape--1 {
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+}
+
+.about__shape--2 {
+    top: -125px;
+    right: -75px;
+    width: 400px;
+    height: 400px;
+}
+
+.about-logo {
+    position: relative;
+}
+
+.icons__container {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    top: 73px;
+    left: 77px;
+}
+
+.about__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* font-size: 30px; */
+}
+
+.about-logo__img {
+    max-width: 430px;
+    margin: auto;
+    object-fit: contain;
+}
+
+
+/* ============ SECCION HISTORY ============  */
+
+.history {
+    background-color: var(--back-history);
+    position: relative;
+}
+
+.history__icon {
+    background-image: url("../../../assets/img/icon-expression.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 60px;
+    left: 50px;
+}
+
+.history__content {
+    flex-direction: column;
+}
+
+.history__h3 {
+    /* font-size: 2.5rem; */
+    font-weight: var(--font-600);
+    line-height: 1.3;
+    margin: 1.5rem 0;
+}
+
+.history__h5 {
+    /* font-size: 1.5rem; */
+    font-weight: var(--font-600);
+}
+
+.history__p {
+    line-height: 2;
+}
+
+.history__img {
+    height: 500px;
+    width: 500px;
+}
+
+
+/* ============ RESPONSIVE RECORDS  ============  */
+
+.records {
+    margin: 2rem 0;
+}
+
+.records-title__h3 {
+    line-height: 1.3;
+    /* font-size: 35px; */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+.records-items {
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 150px 150px;
+    grid-gap: 2rem;
+}
+
+.records-item {
+    background-color: var(--back-record);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 0.55rem 0;
+}
+
+.records-item__title {
+    text-align: center;
+}
+
+.records-item__icon {
+    margin: 0 0.55rem;
+}
+
+.records-item__i {
+    font-size: 3rem;
+    color: var(--color-text);
+}
+
+.records-item__span {
+    font-weight: var(--font-600);
+    font-size: 1.6rem;
+    margin-bottom: 0.20rem;
+    color: var(--color-text);
+}
+
+.records-item__p {
+    font-size: 1.2rem;
+}
+
+
+/* ============ SECCION STEPS ============  */
+
+.steps__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+.step-item__content {
+    text-align: center;
+    padding: 1.875em;
+    position: relative;
+    z-index: 1;
+}
+
+.step-item__line {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 50%;
+    top: 60px;
+    border: 1px dashed var(--color-light-3);
+    z-index: -1;
+}
+
+.step-item__number {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    line-height: 60px;
+    text-align: center;
+    background-color: var(--color-secondary);
+    /* font-size: 1.5rem; */
+    color: #FFF;
+    font-weight: var(--font-500);
+}
+
+.steps-item__h3 {
+    margin: 1.25rem 0;
+    /* font-size: 1.3rem; */
+    font-weight: var(--font-500);
+    text-transform: capitalize;
+}
+
+.steps-item__p {
+    /* font-size: 1rem; */
+    font-weight: 300;
+    text-align: justify;
+}
+
+
+/* ============= SECTION REGISTRO ============= */
+
+.registro-items {
+    position: relative;
+    display: grid;
+    grid-template-columns: 280px 280px;
+    grid-template-rows: 220px 220px;
+    column-gap: 2.5rem;
+    row-gap: 37px;
+    margin-right: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.registro-item {
+    position: relative;
+    padding: 1.25rem;
+    border-radius: 10px;
+    background-color: var(--back-card);
+    box-shadow: var(--shadow);
+    transition: 0.4s transform;
+}
+
+.registro-item:nth-of-type(1)::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    top: 1px;
+    border-radius: 10px;
+    left: 0;
+    background-color: #D6B1FF;
+}
+
+.registro-item:nth-of-type(2)::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    top: 1px;
+    border-radius: 10px;
+    left: 0;
+    background-color: #75E3EA;
+}
+
+.registro-item:nth-of-type(3)::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    top: 1px;
+    border-radius: 10px;
+    left: 0;
+    background-color: #a0b0ff;
+}
+
+.registro-item:nth-of-type(4)::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    top: 1px;
+    border-radius: 10px;
+    left: 0;
+    background-color: #ff90b7;
+}
+
+.registro-item__span {
+    margin: 1.25rem 0;
+    /* font-size: 1.3rem; */
+    font-weight: var(--font-500);
+    text-transform: capitalize;
+    color: var(--color-title);
+}
+
+.registro-item__p {
+    /* font-size: 1rem; */
+    font-weight: 300;
+    text-align: justify;
+    margin-top: 0.55rem;
+}
+
+.registro-item__i {
+    /* font-size: 1.90rem; */
+}
+
+.registro-item:nth-child(1) .registro-item__i {
+    color: #D6B1FF;
+}
+
+.registro-item:nth-child(2) .registro-item__i {
+    color: #75E3EA;
+}
+
+.registro-item:nth-child(3) .registro-item__i {
+    color: #a0b0ff;
+}
+
+.registro-item:nth-child(4) .registro-item__i {
+    color: #ff90b7;
+}
+
+.registro-btn {
+    margin: 2rem 0;
+}
+
+.registro-btn__a {
+    width: 250px;
+}
+
+.registro-image__picture {
+    height: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.registro-image__img {
+    max-width: 450px;
+}
+
+
+/* ============ RESPONSIVE MAIN HOME  ============  */
+
+@media screen and (max-width: 992px) {
+    /* ============ SECTION HOME BANNER ============  */
+    .showcase-area {
+        grid-template-columns: 1fr;
+        padding: 2.5rem 0;
+    }
+    .showcase-left__h1 {
+        /* font-size: 1.5rem; */
+        text-align: center;
+        padding: 1rem;
+    }
+    .showcase-left__p {
+        padding: 1rem;
+        /* font-size: 1rem; */
+        text-align: center;
+    }
+    .showcase-right__img {
+        max-width: 550px;
+        margin: auto;
+    }
+    /* ============ SECTION SERVICIOS ============  */
+ 
+ 
+    .servicios__shapes {
+        width: 30px;
+        height: 200px;
+    }
+    .servicios-swiper {
+        height: auto;
+    }
+    /* ============ SECTION METODOS ============  */
+    .metodos__h3.title {
+        /* font-size: 1.5rem; */
+    }
+    .metodos-card__p {
+        /* font-size: 1rem; */
+        text-align: justify;
+    }
+    .metodos-modal-body {
+        height: 100%;
+        overflow-y: scroll;
+    }
+    /* ============ SECTION DOWNLOAD PLATAFORMAS============  */
+    .download-plataformas__p {
+        /* font-size: 1rem; */
+    }
+    .download-plataformas__img {
+        width: 180px;
+        object-fit: contain;
+    }
+    .download-plataformas__h5 {
+        /* font-size: 1.1rem; */
+    }
+    /* ============ SECTION ABOUT============  */
+    .about__shape--2 {
+        width: 300px;
+        height: 300px;
+    }
+    .about__p.text {
+        /* font-size: 1rem; */
+    }
+    /* ============ SECTION ABOUT ============  */
+    .history__h3 {
+        /* font-size: 2rem; */
+        text-align: center;
+    }
+    .history__p.text {
+        font-size: 1rem;
+        text-align: justify;
+    }
+    .history__img {
+        height: 100%;
+        width: 100%;
+    }
+    /* ============ SECTION RECORD ============  */
+    .records-title__h3 {
+        text-align: center;
+        /* font-size: 1.5rem; */
+    }
+    .records-title__p {
+        text-align: center;
+        /* font-size: 1rem; */
+    }
+    .records-item__p {
+        font: 1rem;
+    }
+    .records-item__i {
+        /* font-size: 2rem; */
+    }
+    .records-item__span {
+        /* font-size: 1.2rem; */
+    }
+    /* ============ SECTION REGISTRO ============  */
+    .registro-items {
+        grid-template-columns: 220px 220px;
+        margin-right: 0;
+    }
+    .registro-item__span {
+        /* font-size: 1rem; */
+    }
+    .registro-item__p {
+        /* font-size: 0.88rem; */
+    }
+    .registro-item__i {
+        font-size: 1.5rem;
+    }
+    .registro-image__img {
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .showcase-left__h1 {
+        text-align: left;
+    }
+    .showcase__btn {
+        flex-wrap: wrap;
+    }
+    .showcase-left__p {
+        text-align: left;
+    }
+    .btn-home__registro {
+        margin-bottom: 2.5em;
+    }
+    /* ============ SECTION  NOTIFICACION DEPOSITOS ============  */
+    .notificacion-depositos-content__h3 {
+        /* font-size: 1.3rem; */
+    }
+    .notificacion-depositos-content__p {
+        /* font-size: 0.90rem; */
+    }
+    .notificacion-depositos-image__img {
+        width: 320px;
+        height: 320px;
+    }
+    /* ============ SECTION  NEGOCIO ============  */
+    .negocio__right {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* ============ SECCION METODOS ============  */
+    .metodos-modal__h3 {
+        /* font-size: 1.2rem; */
+    }
+    .metodos-modal__h4 {
+        /* font-size: 1rem; */
+    }
+    .metodos-modal__p {
+        /* font-size: 1rem */
+    }
+    .metodos-modal__li {
+        font-size: 1rem;
+    }
+    .metodos-apps__li {
+        width: 120px;
+    }
+    /* ============ SECTION DOWNLOAD PLATAFORMAS============  */
+    .download-plataformas__container {
+        padding: 0.55em;
+    }
+    .download-plataformas__h4 {
+        font-size: 1.3rem;
+    }
+    .download-plataformas__h5 {
+        /* font-size: 1rem; */
+    }
+    /* ============ SECCION HISTORY ============  */
+    .history__h3 {
+        /* font-size: 1.5rem; */
+        text-align: left;
+    }
+    .history__p {
+        text-align: left;
+    }
+    /* ============ SECTION RECORDS ============  */
+    .records-items {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-gap: 2.5em;
+    }
+    /* ============ SECTION REGISTRO ============  */
+    .registro-items {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .negocio__right {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

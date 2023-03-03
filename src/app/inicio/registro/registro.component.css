@@ -1,0 +1,97 @@
+.registro__form {
+    margin-top: 3em;
+    order: 2;
+}
+
+.registro__frame {
+    height: 1100px;
+}
+
+.registro__steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    column-gap: 4em;
+    row-gap: 2em;
+    position: relative;
+    order: 3;
+}
+
+.registro__steps:before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0.07;
+    border: 12px solid var(--color-primary);
+}
+
+.registro-item {
+    background-color: var(--back-card);
+    padding: 1em .70em;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: transform 300ms ease;
+}
+
+.registro-item:hover {
+    transform: translateY(-10px);
+}
+
+.registro-item__h3 {
+    margin: 0.5em;
+    text-align: center;
+    font-weight: var(--font-500);
+    font-size: 1.1rem;
+}
+
+.registro-item__p {
+    text-align: left;
+}
+
+.registro-item__i {
+    background-color: var(--color-primary);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    margin: auto;
+    font-size: 1.7rem;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ============ RESPONSIVE REGISTRO  ============  */
+
+@media screen and (max-width: 992px) {
+    .registro-content {
+        grid-template-columns: 1fr;
+    }
+    .registro__form {
+        order: 5;
+    }
+    .registro__steps {
+        margin-top: 3rem;
+        order: 4;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .registro__steps {
+        grid-template-columns: 1fr;
+    }
+}

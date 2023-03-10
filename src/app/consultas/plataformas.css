@@ -96,7 +96,7 @@
 .activities-item {
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     margin-bottom: 1em;
     z-index: 1;
     position: relative;

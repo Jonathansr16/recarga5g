@@ -33,7 +33,7 @@
 .p-aplicacion-item {
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     margin-bottom: 1em;
     padding: 0 0.55em;
 }

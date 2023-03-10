@@ -1,8 +1,10 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component,HostBinding, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { NavigationEnd, Router, Routes } from '@angular/router';
 
 import { GoogleTagManagerService } from 'angular-google-tag-manager';
+
+
 
 @Component({
   selector: 'app-root',
@@ -16,10 +18,13 @@ export class AppComponent  implements OnInit{
   showBtnScroll: boolean = false;
   private scrollHeight = 700;
 
+  @HostBinding('class') componetCssClass: any;
+
   constructor(@Inject(DOCUMENT) private document: Document,
     @Inject(PLATFORM_ID) private platform_id: Object,
     private gtmService: GoogleTagManagerService,
     private router: Router,
+   
   ) {
     if(isPlatformBrowser (this.platform_id)) { 
       this.gtmService.addGtmToDom();
@@ -55,4 +60,6 @@ ngOnInit(): void {
       this.document.documentElement.scrollTop = 0;
     }
   }
+
+
 }

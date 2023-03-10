@@ -4,8 +4,7 @@ import { CommonModule } from '@angular/common';
 //COMPONENT
 import { PortalComponent } from './portal/portal.component';
 import { RegistroComponent } from './registro/registro.component';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import { MaterialModule } from '../material/material.module';
 
 //MODULES
 
@@ -16,9 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
   ],
   imports: [
     CommonModule,
-    MatButtonModule,
-    MatIconModule
-  
+    MaterialModule
   ], 
 })
 export class InicioModule { }

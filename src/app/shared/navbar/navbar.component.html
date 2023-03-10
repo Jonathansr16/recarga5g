@@ -1,5 +1,4 @@
-
-    <P>
+<P>
     <mat-toolbar class="navbar" color="primary">
       <div class="container navbar-container flex align-center justify-between">
        
@@ -10,6 +9,10 @@
           </button>
         </div>
 
+        <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+      
         <div class="navbar-menu">
 
           <button class="navbar-menu__button" mat-button [matMenuTriggerFor]="menu">Plataformas</button>
@@ -42,7 +45,19 @@
               <button mat-menu-item>Blog</button>
           </mat-menu>
         </div>
+
+        <div class="theme">
+          <button (click)="themeBtn()" class="theme__btn light" mat-icon-button matTooltip="Seleccione para cambiar de tema para la pagina" aria-label="Example icon button with a palette icon">
+            <mat-icon class="theme__icon theme__icon-sun" fontIcon="sunny"></mat-icon>
+            <mat-icon class="theme__icon theme__icon-moon" fontIcon="dark_mode"></mat-icon>
+          </button>
+  
+        </div>
+
+
         <button mat-flat-button color="warn">Registrarme</button>
       </div>
 </mat-toolbar>
 </P>
+
+

@@ -1,18 +1,38 @@
 @use '@angular/material' as mat;
+
 @include mat.core();
 
-
-// $config-headline-1: mat.define-typography-config(
-//     $font-family: 'Gilroy-extra-bold',
-//     $headline-1: mat.define-typography-level(112px, 112px, 300, $letter-spacing: -0.05em),
-// );
-
-
-
- 
-
-
-
-// @include mat.typography-hierarchy($config-headline-1);
+//LIGHT THEME CUSTOM
+$light-theme: mat.define-light-theme(
+    (
+    color: (
+        primary: mat.define-palette(mat.$red-palette, 500),
+        accent: mat.define-palette(mat.$pink-palette, A200),
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+    ));
 
 
+//DARK THEME CUSTOM
+$dark-theme: mat.define-dark-theme(
+
+(
+    color: (
+        primary: mat.define-palette(mat.$indigo-palette, 500),
+        accent: mat.define-palette(mat.$pink-palette, A200),
+    ),
+));
+
+
+.light-theme {
+    @include mat.all-component-themes($light-theme);
+    background-color: #fff;
+    color: #222;
+}
+
+.dark-theme {
+    @include mat.all-component-colors($dark-theme);
+    background-color: #222;
+    color: #fff;
+}

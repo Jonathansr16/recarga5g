@@ -33,6 +33,7 @@
     "angular-google-tag-manager": "^1.7.0",
     "contentful": "^9.3.3",
     "express": "^4.18.2",
+    "lodash-es": "^4.17.21",
     "marked": "^4.2.12",
     "ngx-pagination": "^6.0.3",
     "ngx-sharebuttons": "^11.0.0",

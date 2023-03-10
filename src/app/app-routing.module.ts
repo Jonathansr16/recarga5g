@@ -42,6 +42,7 @@ const routes: Routes = [
   { 
     path: 'registro', component: RegistroComponent 
   },
+   { path: 'plataformas', loadChildren: () => import('./plataformas/plataformas.module').then(m => m.PlataformasModule) },
   //404 NO PAGE FOUND
     // { path: '**', component: NopagesfoundComponent },
 ];

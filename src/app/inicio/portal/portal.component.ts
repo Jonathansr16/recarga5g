@@ -28,9 +28,7 @@ export class PortalComponent implements OnInit {
 
     if (isPlatformBrowser(this.plataform_id)) {
       //DINAMIC TEXT
-      const textDinamic = this.document.querySelector(
-        '.home-text__dinamic'
-      );
+      const textDinamic = this.document.querySelector('.wrapper-titular__dinamic');
 
       const writter = new Typewriter(textDinamic, {
         loop: true,
@@ -73,21 +71,21 @@ export class PortalComponent implements OnInit {
   btnMetodo(): void {
 
     if (isPlatformBrowser(this.plataform_id)) {
-     
+
       const metodoModal = this.document.querySelectorAll(".metodos-modal");
       const learMoreBtns = this.document.querySelectorAll(".btn-more");
       const productsCloseBtn = this.document.querySelectorAll(".modal-close-btn");
-  
+
       var productModal: any = function (modalclick: any) {
         metodoModal[modalclick].classList.add('activeModal');
       }
-  
+
       learMoreBtns.forEach((learMoreBtn, i) => {
         learMoreBtn.addEventListener("click", () => {
           productModal(i);
         });
       });
-  
+
       productsCloseBtn.forEach((modalCloseBtn) => {
         modalCloseBtn.addEventListener("click", () => {
           metodoModal.forEach((ModelView) => {

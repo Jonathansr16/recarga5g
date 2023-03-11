@@ -4,7 +4,7 @@ import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-repoplanetaemx',
   templateUrl: './repoplanetaemx.component.html',
-  styleUrls: ['./repoplanetaemx.component.css']
+  styleUrls: ['./repoplanetaemx.component.scss']
 })
 export class RepoplanetaemxComponent implements OnInit {
 

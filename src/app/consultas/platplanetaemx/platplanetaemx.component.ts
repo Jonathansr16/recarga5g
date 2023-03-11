@@ -8,7 +8,7 @@ import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-platplanetaemx',
   templateUrl: './platplanetaemx.component.html',
-  styleUrls: ['./platplanetaemx.component.css', '../plataformas.css']
+  styleUrls: ['./platplanetaemx.component.scss', '../plataformas.scss']
 })
 export class PlatplanetaemxComponent implements OnInit {
 

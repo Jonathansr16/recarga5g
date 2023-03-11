@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PlataformasRoutingModule } from './plataformas-routing.module';
-import { PlataformasComponent } from './plataformas.component';
+import { PagaquiComponent } from './pagaqui/pagaqui.component';
+import { PlanetaemxComponent } from './planetaemx/planetaemx.component';
 
 
 @NgModule({
   declarations: [
-    PlataformasComponent
+    PagaquiComponent,
+    PlanetaemxComponent
   ],
   imports: [
     CommonModule,

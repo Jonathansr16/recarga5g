@@ -4,7 +4,7 @@ import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-condiciones',
   templateUrl: './condiciones.component.html',
-  styleUrls: ['./condiciones.component.css']
+  styleUrls: ['./condiciones.component.scss']
 })
 export class CondicionesComponent implements OnInit {
 

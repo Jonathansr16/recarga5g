@@ -4,7 +4,7 @@ import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-politicas',
   templateUrl: './politicas.component.html',
-  styleUrls: ['./politicas.component.css']
+  styleUrls: ['./politicas.component.scss']
 })
 export class PoliticasComponent implements OnInit {
 

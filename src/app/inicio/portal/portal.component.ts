@@ -11,7 +11,7 @@ import Typewriter from 't-writer.js';
 @Component({
   selector: 'app-portal',
   templateUrl: './portal.component.html',
-  styleUrls: ['./portal.component.css']
+  styleUrls: ['./portal.component.scss']
 })
 export class PortalComponent implements OnInit {
 

@@ -8,7 +8,7 @@ import { ContentfulService } from '@services/contentful.service';
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.css'],
+  styleUrls: ['./post.component.scss'],
   template: '<div [innerHTML]="somehtmlCode"> </div>',
   encapsulation: ViewEncapsulation.None,
 })

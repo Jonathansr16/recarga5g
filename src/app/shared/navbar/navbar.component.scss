@@ -1,0 +1,112 @@
+@import "_mixin";
+
+.header {
+    &__container {
+        // background-color: orange ;
+        width: 100%;
+        position: relative;
+        @include flexible(flex, row, wrap, space-between, center);
+    }
+}
+
+.header-logo {
+    // background-color: aliceblue;
+
+    &__img {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        margin-right: 5px;
+    }
+
+    &__span {
+        font-weight: 500;
+    }
+}
+
+.nav {
+    // background-color: lavenderblush;
+    &__close,
+    &__register {
+        display: none;
+        pointer-events: none;
+    }
+
+    @include responsive(950px) {
+        pointer-events: none;
+        position: fixed;
+        right: -100%;
+        top: 0;
+        width: 75%;
+        height: 100%;
+        z-index: 10;
+        transition: right 0.4s;
+      
+        &__close,
+        &__register {
+            display: block;
+            pointer-events: auto;
+        }
+
+        &--active {
+            right: 0;
+            pointer-events: auto;
+        }
+
+        .nav-list {
+            @include flexible(flex, column, nowrap, center, center);
+            row-gap: 3em;
+            background-color: lightblue;
+            backdrop-filter: blur(10px);
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .nav__close {
+        position: absolute;
+        top: 1em;
+        right: 1.5em;
+    }
+}
+
+.r-bottons {
+    @include flexible(flex, row, nowrap, flex-end, center);
+    column-gap: 1em;
+    &__bar {
+        display: none;
+        @include responsive(950px) {
+            display: block;
+        }
+    }
+}
+
+.r-theme {
+    border-radius: 50%;
+    @include flexible(flex, row, nowrap, space-between, center);
+
+    &.light {
+        background: linear-gradient(45deg, hsl(7, 100%, 71%), hsl(46, 100%, 65%));
+    }
+
+    &.dark {
+        background: linear-gradient(45deg, hsl(225, 100%, 60%), hsl(296, 80%, 40%));
+    }
+
+    &__icon {
+        overflow: visible;
+        display: none;
+    }
+}
+
+.r-theme.light .r-theme__icon-sun,
+.r-theme.dark .r-theme__icon-moon {
+    display: block;
+}
+
+.r-theme,
+.r-bottons__a {
+    @include responsive(950px) {
+        display: none;
+    }
+}

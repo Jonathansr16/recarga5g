@@ -1,63 +1,72 @@
-<P>
-    <mat-toolbar class="navbar" color="primary">
-      <div class="container navbar-container flex align-center justify-between">
+
+    <mat-toolbar class="header" role="headidng" color="primary">
+      <div class="container header__container">
        
-        <div class="navbar-logo">
-          <button mat-button href="https://www.google.com/" class="navbar-logo__a" target="_blank">
-            <img src="/assets/img/icon-recarga/android-icon-72x72.png" class="navbar-logo__img" alt="">
-            <span class="navbar-logo__span">Recarga5g.com</span>
+          <button routerLink="/" mat-button class="header-logo" target="_blank">
+            <img src="/assets/img/icon-recarga/android-icon-72x72.png" class="header-logo__img" alt="">
+            <span class="header-logo__span">Recarga5g.com</span>
           </button>
-        </div>
-
-        <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
-          <mat-icon>menu</mat-icon>
-        </button>
       
-        <div class="navbar-menu">
+      
+        <div class="nav" [ngClass]="{ 'nav--active': active}">
 
-          <button class="navbar-menu__button" mat-button [matMenuTriggerFor]="menu">Plataformas</button>
+            <div class="nav-list">
+              <button class="nav-list__button" mat-button [matMenuTriggerFor]="menu">Plataformas</button>
 
-          <mat-menu class="navbar-menu__submenu" #menu="matMenu">
-            <button mat-menu-item>Pagaqui</button>
-            <button mat-menu-item>Planetaemx</button>
-          </mat-menu>
+              <mat-menu class="nav-submenu" #menu="matMenu">
+                <a class="nav-submenu__a" routerLink="plataformas/pagaqui" mat-menu-item>Pagaqui</a>
+                <a class="nav-submenu__a" routerLink="plataformas/planetaemx" mat-menu-item>Planetaemx</a>
+              </mat-menu>
+              
+              <button class="na-list__button" mat-button [matMenuTriggerFor]="consultar">Consultar</button>
           
-          <button class="navbar-menu__button" mat-button [matMenuTriggerFor]="consultar">Consultar</button>
-          
-          <mat-menu class="navbar-menu__submenu" #consultar="matMenu">
-            <button mat-menu-item>Como vender recargas</button>
-            <button mat-menu-item>Como vender pago de servicios</button>
-            <button mat-menu-item>Como vender pines electrónicos</button>
-          </mat-menu>
-          
-          
-          <button class="navbar-menu__button" mat-button [mat-menu-trigger-for]="notificar">Notificar</button>
-          <mat-menu #notificar="matMenu">
-              <button mat-menu-item>Deposito Pagaqui</button>
-              <button mat-menu-item>Deposito Planetaemx</button>
-          
-          </mat-menu>
-          
-          <button class="navbar-menu__button" mat-button [mat-menu-trigger-for]="ayuda">Ayuda</button>
-          <mat-menu class="navbar-menu__submenu" #ayuda="matMenu">
-              <button mat-menu-item>Preguntas frecuentes</button>
-              <button mat-menu-item>Contacto</button>
-              <button mat-menu-item>Blog</button>
-          </mat-menu>
+              <mat-menu class="nav-submenu" #consultar="matMenu">
+                <a class="nav-submenu__a" mat-menu-item>Como vender recargas</a>
+                <a class="nav-submenu__a" mat-menu-item>Como vender pago de servicios</a>
+                <a class="nav-submenu__a"mat-menu-item>Como vender pines electrónicos</a>
+              </mat-menu>
+              
+              
+              <button class="nav-list__button" mat-button [mat-menu-trigger-for]="notificar">Notificar</button>
+            
+              <mat-menu class="nav-submenu" #notificar="matMenu">
+                  <a class="nav-submenu__a" mat-menu-item>Deposito Pagaqui</a>
+                  <a class="nav-submenu__a" mat-menu-item>Deposito Planetaemx</a>
+              </mat-menu>
+              
+              <button class="nav__button" mat-button [mat-menu-trigger-for]="ayuda">Ayuda</button>
+             
+              <mat-menu class="nav-submenu" #ayuda="matMenu">
+                  <a class="nav-submenu__a" mat-menu-item>Preguntas frecuentes</a>
+                  <a class="nav-submenu__a" mat-menu-item>Contacto</a>
+                  <a class="nav-submenu__a" mat-menu-item>Blog</a>
+              </mat-menu>
+    
+              <button class="nav__close" (click)="disabledNav()" mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                <mat-icon>close</mat-icon>
+              </button>
+    
+              <a class="nav__register" mat-flat-button color="accent">Registrarme</a>
+    
+            </div>
+     
         </div>
 
-        <div class="theme">
-          <button (click)="themeBtn()" class="theme__btn light" mat-icon-button matTooltip="Seleccione para cambiar de tema para la pagina" aria-label="Example icon button with a palette icon">
-            <mat-icon class="theme__icon theme__icon-sun" fontIcon="sunny"></mat-icon>
-            <mat-icon class="theme__icon theme__icon-moon" fontIcon="dark_mode"></mat-icon>
+        <div class="r-bottons">
+          <button class="r-theme light" (click)="themeBtn()" mat-icon-button matTooltip="Seleccione para cambiar de tema para la pagina" aria-label="Example icon button with a palette icon">
+            <mat-icon class="r-theme__icon r-theme__icon-sun" fontIcon="sunny"></mat-icon>
+            <mat-icon class="r-theme__icon r-theme__icon-moon" fontIcon="dark_mode"></mat-icon>
           </button>
   
+          <a class="r-bottons__a" mat-flat-button color="accent">Registrarme</a>
+          <button (click)="activeNav()" class="r-bottons__bar" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+            <mat-icon fontIcon="grid_view"></mat-icon>
+          </button>
         </div>
 
 
-        <button mat-flat-button color="warn">Registrarme</button>
       </div>
 </mat-toolbar>
-</P>
+
 
 

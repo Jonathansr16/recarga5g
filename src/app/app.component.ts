@@ -9,7 +9,7 @@ import { GoogleTagManagerService } from 'angular-google-tag-manager';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent  implements OnInit{
   title = 'recarga5g.com';

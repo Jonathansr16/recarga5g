@@ -7,7 +7,7 @@ import { PlataformasService, services } from '@services/plataformas.service';
 @Component({
   selector: 'app-platpagaqui',
   templateUrl: './platpagaqui.component.html',
-  styleUrls: ['./platpagaqui.component.css', '../plataformas.css']
+  styleUrls: ['./platpagaqui.component.scss', '../plataformas.scss']
 })
 export class PlatpagaquiComponent implements OnInit {
 

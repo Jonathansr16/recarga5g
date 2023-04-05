@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router'; 
-
-import {MatButtonModule} from '@angular/material/button';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatIconModule} from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTooltipModule } from '@angular/material/tooltip';
-
-//COMPONENTS
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+
+//* Components of Angular Material
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { MaterialModule } from '@shared/material/material.module';
 
 @NgModule({
   declarations: [
@@ -20,12 +18,11 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     CommonModule,
     RouterModule,
+    MaterialModule,
     MatToolbarModule,
-    MatButtonModule,
     MatMenuModule,
-    MatIconModule,
     MatTooltipModule,
-   
+    MaterialModule
   ],  exports: [
     NavbarComponent,
     FooterComponent 

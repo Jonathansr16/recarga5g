@@ -4,18 +4,16 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@inicio/*":   ["src/app/inicio/*"],
+      "@inicio/*":   ["src/app/modules/inicio/*"],
+      "@productos/*":["src/app/modules/productos/*"],
+      "@consultas/*": ["src/app/modules/consultas/*"],
+      "@plataformas/*": ["src/app/modules/plataformas/*"],
+      "@legal/*": ["src/app/modules/legal/*"],
+      "@reportes/*": ["src/app/modules/reportes/*"],
+      "@ayuda/*": ["src/app/modules/ayuda/*"],
       "@shared/*":   ["src/app/shared/*"],
-      "@services/*": ["src/app/services/*"],
-      "@productos/*":["src/app/productos/*"],
       "@components/*": ["src/app/components/*"],
-      "@ayuda/*": ["src/app/ayuda/*"],
-      "@legal/*": ["src/app/legal/*"],
-      "@consultas/*": ["src/app/consultas/*"],
-      "@reportes/*": ["src/app/reportes/*"],
-      "@directives/*": ["src/app/directives/*"],
-      
-      "@pipes/*": ["src/app/pipes/*"]
+      "@core/*": ["src/app/core/*"],
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

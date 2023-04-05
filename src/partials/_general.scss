@@ -1,9 +1,29 @@
+@import "_mixin";
 
+@font-face {
+    font-family: "robotoBlack";
+    src: url("../assets/font/Roboto-Black.woff");
+}
 
+@font-face {
+    font-family: "robotoBold";
+    src: url("../assets/font/Roboto-Bold.woff");
+}
 
-// ============ LAYOUT =============
+@font-face {
+    font-family: "robotoMedium";
+    src: url("../assets/font/Roboto-Medium.woff");
+}
 
+@font-face {
+    font-family: "robotoRegular";
+    src: url("../assets/font/Roboto-Regular.woff");
+}
 
+@font-face {
+    font-family: "nunitoRegular";
+    src: url("../assets/font/Nunito-Regular.woff");
+}
 
 .mtop-5 {
     margin-top: 5.5rem;
@@ -13,92 +33,192 @@
     margin-bottom: 3rem;
 }
 
-.text-center {
-    text-align: center;
+body {
+    min-height: 100vh;
+    font-size: 100%;
+    font-smooth: always;
+    color: rgb(60, 64, 67);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
-
-.text-left {
-    text-align: left;
-}
-
 
 // ============ SCROLL BAR =============
 
 ::-webkit-scrollbar {
-    width: .8rem;
-    border-radius: .5rem;
+    width: 0.8rem;
+    border-radius: 0.5rem;
     background-color: hsl(228, 8%, 76%);
 }
 
- ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color: #d50000;
 }
 
- ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background-color: hsl(228, 8%, 54%);
 }
 
-
 // ============= TITLE =============
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "robotoRegular", sans-serif;
+    color: var(--c-title);
+}
 
-.title {
-    text-transform: uppercase;
-    font-size: 2rem;
+p,
+span {
+    font-family: "nunitoRegular";
+    color: var(--c-text);
+    font-size: 1rem;
+}
+
+
+.type-span {
+    font-size: 2.2rem;
+    color: var(--c-primary);
+}
+
+
+button,
+a {
+    font-family: "robotoMedium";
+    font-size: 1rem;
     letter-spacing: 0.5px;
-    padding: 1rem 1.25rem;
-    margin-top: 1rem;
-    line-height: 1.4;
-    margin-bottom: 0.75rem;
-    font-weight: var(--font-500);
-    position: relative;
-    text-align: center;
+    color: var(--c-title);
 }
 
-.title:before {
-    content: "";
-    position: absolute;
-    width: 6px;
-    height: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-left: -8px;
-    background-color: var(--c-custom);
+//? Estilos predefinos para toda las paginas obtenidos de material desing
+.bigTitle {
+    font-family: "robotoBlack", sans-serif;
+    font-size: 3rem;
+    letter-spacing: -1.5px;
+    color: var(--c-title);
 }
 
-.subtitle {
-    color: var(--color-title);
-    text-transform: uppercase;
-    font-size: 1.8rem;
-    font-weight: var(--font-500);
+
+.headline-1, .headline-2, .headline-3,  .headline-5, .subtitle-1 {
+    font-family: "robotoRegular", sans-serif;
+     color: var(--c-title);
+}
+
+.headline-6, .subtitle-2, .button {
+    font-family: "robotoMedium", sans-serif;
+     color: var(--c-title);
+
+}
+// .headline-1,
+// .headline-2,
+// .headline-3,
+// .headline-4,
+// .headline-5,
+// .headline-6,
+// .subtitle-1,
+// .subtitle-2 {
+//     font-family: "robotoMedium", sans-serif;
+//     color: var(--ctitle);
+// }
+
+.body-1,
+.body-2 {
+    font-family: "nunitoRegular", sans-serif;
+    color: var(--c-text);
+}
+
+.headline-1,
+.headline-2 {
+    font-weight: 300;
+}
+
+.headline-3,
+.headline-4,
+.headline-5,
+.subtitle-1,
+.body-1,
+.body-2 {
+    font-weight: 400;
+}
+
+.headline-6,
+.subtitle-2,
+.button {
+    font-weight: 500;
+}
+
+.headline-1 {
+    font-size: 6.1rem;
+    letter-spacing: -1.5px;
+}
+
+.headline-2 {
+    font-size: 3.8rem;
+    letter-spacing: -0.5px;
+}
+
+.headline-3 {
+    font-size: 3rem;
+    letter-spacing: 0px;
+}
+
+.headline-4 {
+    font-size: 2.1rem;
+    letter-spacing: 0.25px;
+}
+
+.headline-5 {
+    font-size: 1.5rem;
+    letter-spacing: 0px;
+}
+
+.headline-6 {
+    font-weight: 500;
+    font-size: 1.25rem;
+    letter-spacing: 0.15px;
+}
+
+.subtitle-1 {
+    font-size: 1rem;
+    letter-spacing: 0.15px;
+}
+
+.subtitle-2 {
+    font-size: 0.875;
+    letter-spacing: 0.1px;
+}
+
+.body-1 {
+    font-size: 1.06rem;
     letter-spacing: 0.5px;
-    padding: 1rem 1.25rem;
-    margin-top: 1rem;
-    margin-bottom: 0.75rem;
-    position: relative;
-    line-height: 1.5;
 }
 
-.subtitle::before {
-    content: "";
-    position: absolute;
-    width: 5px;
-    height: 50%;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    background-color: var(--color-light-3);
+.body-2 {
+    font-size: 0.9375;
+    letter-spacing: 0.25px;
 }
 
-
-
-.titular {
-    font-size: 2.5rem;
-    font-weight: var(--font-semi-bold);
-    margin-bottom: 1.5rem;
-    line-height: 1.3;
+.button,
+.mdc-button__label {
+    font-family: "robotoRegular", sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    color: #fff;
 }
 
+.mdc-button--raised.radius-20 {
+    border-radius: 20px;
+}
 
+.c-primary {
+    color: var(--c-primary);
+}
+
+.my-button {
+    @include flexible(flex, row, nowrap, center, center);
+    column-gap: 0.11em;
+}
 // ============= BANNER =============
 
 .banner__img {
@@ -106,27 +226,27 @@
     box-shadow: var(--shadow);
 }
 
-
-
+//* Modo responsive para Desktop, table y movile
 
 @media screen and (min-width: 1024px) {
-    .container{
-            width: 90%;
-            max-width: 80rem;
-            margin: 0 auto;
-        
-    }
-    .grid-mobile {
-        grid-template-columns: 1fr 1fr;
+    .container {
+        width: 90%;
+        max-width: 80rem;
+        margin-left: auto;
+        margin-right: auto;
+        @include grid(1, 1em);
     }
 }
 
-
-@media screen and (max-width: 768px) {
-
-   
+.container {
+    @include responsive(950px) {
+        grid-template-columns: 1fr;
+        margin: 2em;
+    }
 }
 
-@media scren and (max-width: 568px) {
-
+.container {
+    @include responsive(568px) {
+        margin: 1em;
+    }
 }

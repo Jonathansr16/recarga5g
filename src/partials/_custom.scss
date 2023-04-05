@@ -1,38 +1,56 @@
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 
 @include mat.core();
 
-//LIGHT THEME CUSTOM
+//* LIGHT THEME CUSTOM
 $light-theme: mat.define-light-theme(
     (
-    color: (
-        primary: mat.define-palette(mat.$red-palette, 500),
-        accent: mat.define-palette(mat.$indigo-palette, 500),
-    ),
-    typography: mat.define-typography-config(),
-    density: 0,
-    ));
+        color: (
+            primary: mat.define-palette(mat.$red-palette, 700),
+            accent: mat.define-palette(mat.$indigo-palette, 500),
+        ),
+        typography: mat.define-typography-config(),
+        density: 0,
+    )
+);
 
-
-//DARK THEME CUSTOM
+//* DARK THEME CUSTOM
 $dark-theme: mat.define-dark-theme(
+    (
+        color: (
+            primary: mat.define-palette(mat.$indigo-palette, 500),
+            accent: mat.define-palette(mat.$red-palette, 500),
+        ),
+    )
+);
 
-(
-    color: (
-        primary: mat.define-palette(mat.$indigo-palette, 500),
-        accent: mat.define-palette(mat.$pink-palette, A200),
-    ),
-));
+$button-typography: mat.define-typography-config(
+    //* Specify "Comic Sans" as the default font family for all levels.
+    $font-family: 'text',
+);
+
+// Now we have sweet buttons with Comic Sans.
+@include mat.button-typography($button-typography);
+
 
 
 .light-theme {
     @include mat.all-component-themes($light-theme);
-    background-color: #fff;
-    color: #222;
+    --c-title: #3c4043;
+    --c-text: #263238;
+    --c-primary: #3f51b5;
+    ---c-terceary: #4CAF50;
+    --c-card: #f8f9fa;
+    --c-white: #fff;
+    background-color: var(--c-white);
+
 }
 
 .dark-theme {
     @include mat.all-component-colors($dark-theme);
-    background-color: #222;
-    color: #fff;
+    --c-title: #ffffff;
+    --c-text: #e9e9ea;
+    --c-primary: #d32f2f;
+    --c-card: #2a323d;
+    background-color: #20262e;
 }

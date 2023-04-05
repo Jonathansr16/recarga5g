@@ -1,22 +1,31 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NopagesfoundComponent } from '@components/nopagesfound/nopagesfound.component';
-//HOME
-import { PortalComponent } from './inicio/portal/portal.component';
-import { RegistroComponent } from './inicio/registro/registro.component';
+import { PortalComponent } from '@inicio/pages/portal/portal.component';
+import { RegistroComponent } from '@inicio/pages/registro/registro.component';
+import { NofoundComponent } from '@components/nofound/nofound.component';
 
 const routes: Routes = [
-   //INICIO
+
    {
     path:'',
     pathMatch:'full',
-    redirectTo:'/portal'
+    redirectTo:'/'
   },
 
    { 
-    path: 'portal', component: PortalComponent 
+    path: '', component: PortalComponent 
   },
   
+  {
+  path: 'registro', component: RegistroComponent
+  },
+
+
+  {
+    path: 'plataforma',
+    loadChildren: () => import('@plataformas/plataformas.module').then(p => p.PlataformasModule)
+  },
+
   //CONSULTAS
   {
     path: 'consulta',
@@ -39,12 +48,8 @@ const routes: Routes = [
   },
 
 
-  { 
-    path: 'registro', component: RegistroComponent 
-  },
-   { path: 'plataformas', loadChildren: () => import('./plataformas/plataformas.module').then(m => m.PlataformasModule) },
-  //404 NO PAGE FOUND
-    // { path: '**', component: NopagesfoundComponent },
+ 
+    { path: '**', component: NofoundComponent },
 ];
 
 @NgModule({

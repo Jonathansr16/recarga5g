@@ -1,19 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { NopagesfoundComponent } from './nopagesfound/nopagesfound.component';
 import { RouterModule } from '@angular/router';
-
-
+import { MaterialModule } from '@shared/material/material.module';
+import { NofoundComponent } from '@components/nofound/nofound.component';
 
 @NgModule({
   declarations: [
-    NopagesfoundComponent
+    NofoundComponent
   ],
   imports: [
-    CommonModule,
-    RouterModule
-  ], exports: [
-    NopagesfoundComponent,
-  ]
+    RouterModule, 
+    MaterialModule,
+  ], 
 })
 export class ComponentsModule { }

@@ -1,4 +1,4 @@
-
+//* Hoja de reseteo para todo el documento
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +6,7 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     vertical-align: baseline;
+
 }
 
 img,
@@ -69,17 +70,6 @@ q:after {
     content: none;
 }
 
-//  ::-moz-selection {
-//     background-color: hsl(240, 100%, 81%);
-//     color: var(--color-a);
-// }
-
-//  ::selection {
-//     background-color: hsl(240, 100%, 81%);
-//     color: var(--color-a);
-// }
-
-
 
 table,
 tr,
@@ -96,13 +86,3 @@ svg {
 
 
 
-body {
-    min-height: 100vh;
-    font-size: 100%;
-    font-family: 'Roboto-light', 'Roboto-medium', 'Roboto-bold';
-    font-smooth: always;
-    color: rgb(60, 64, 67);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
- 
-}

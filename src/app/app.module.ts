@@ -1,18 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-
-//APP COMPONENT
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { NgOptimizedImage } from '@angular/common';
-//SHARED MODULE
 import { SharedModule } from '@shared/shared.module';
-//INICIO MODULE 
-import { InicioModule } from '@inicio/inicio.module';
-
 import { GoogleTagManagerModule } from 'angular-google-tag-manager';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InicioModule } from './modules/inicio/inicio.module';
 
 
 @NgModule({
@@ -21,14 +15,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     RouterModule,
-    AppRoutingModule,
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     SharedModule,
     InicioModule,
-   NgOptimizedImage,
+    AppRoutingModule,
     GoogleTagManagerModule.forRoot({
       id:  'GTM-MSRNXRP',
     }),
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
    
   ],

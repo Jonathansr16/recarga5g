@@ -1,7 +1,9 @@
 export interface productoModel {
-    id: number,
-    title: string,
+    id?: number,
+    company: string,
+    url: string,
     src: string,
-    label: string
+    label: string;
+    category?: string;
 }
 

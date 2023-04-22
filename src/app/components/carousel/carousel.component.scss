@@ -1,0 +1,21 @@
+// Required Core Stylesheet
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+
+// Optional Theme Stylesheet
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+@import '_mixin';
+
+.carousel {
+    display: block
+}
+.glide__ul {
+    @include flexible(flex, row, wrap, center, center);
+    gap: 1em;
+
+}
+.glide__img {
+   
+  
+   object-fit: contain;
+}
+

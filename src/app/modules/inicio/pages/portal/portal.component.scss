@@ -34,182 +34,174 @@
     }
 
     &-titular {
-
         &__span {
             color: var(--c-primary);
             font-weight: 600;
+            background-color: var(--c-light-primary);
+            padding: 0.553em 0.7em;
+            border-radius: 24px;
+            font-size: var(--text);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 0.55em;
         }
 
+        &__img {
+            width: 34px;
+            height: 34px;
+        }
         &__h1 {
             text-transform: uppercase;
+            font-family: "poppinsBold";
+            letter-spacing: -1px;
+            font-size: 3rem;
+            line-height: 1.22em;
+            margin-top: 0.2em;
         }
-
 
         &__titular__dinamic--dinamic {
             font-size: 2.2rem;
         }
 
         &__p {
-            font-size: 1.5rem;
-            margin: .5em 0;
+            font-size: 1.4rem;
+            margin: 0.5em 0;
         }
-
     }
 }
 
 .wrapper-action {
-    @include flexible(flex, row, wrap, space-evenly, center);   
+    @include flexible(flex, row, wrap, space-evenly, center);
 }
 
-/* ============ SECCION GEOGRAPHY ============  */
-
-.geography {
-    position: relative;
-}
-
-// .geography__container {
-//     margin: auto;
-//     height: 100%;
-// }
-
-.geography-content {
-    padding: 1em;
-    background-color: hsla(0, 0%, 0%, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-}
-
-.geography-box {
-    position: relative;
-    background-image: url(/assets/img/map.png);
-    background-size: contain;
-    width: 100%;
-    height: 80vh;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* ============ SECCION SERVICIOS ============  */
-
-.servicios {
-    margin: 4rem 0;
-}
-
-.servicios__container {
-    position: relative;
-    overflow: hidden;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.servicios__h2 {
-    margin-bottom: 0.55rem;
-    font-weight: bold;
-}
-
-.servicios__p {
-    text-align: center;
-}
-
-.servicios__a {
-    background-color: hsl(239deg 75% 60%);
-    padding: 1em;
-    border-radius: 10px;
-    color: #fff;
-    margin: 3em 0;
-    width: 50%;
-    text-align: center;
-}
-
-.servicios-swiper {
-    height: 700px;
-}
-
-/* ============ SECCION BENEFICIOS ============  */
+//* ============ SECCION BENEFICIOS ============
 
 .beneficios {
-    position: relative;
+    background-color: var(--c-card);
+
+    &-list {
+        // background-color: lightgreen;
+        margin-top: 1em;
+
+        @include grid(2, 0.5em);
+
+        @include responsive(568px) {
+            grid-template-columns: 1fr;
+        }
+
+        &__ul {
+            // background-color: lightseagreen;
+            width: 100%;
+        }
+
+        &__li {
+            // background-color: lightgreen;
+            @include flexible(flex, row, nowrap, start, center);
+            gap: 0.3em;
+            padding-bottom: 10px;
+        }
+
+        &__icon {
+            color: var(--c-primary);
+        }
+
+        &__span {
+            padding-left: 5px;
+        }
+    }
 }
 
-.beneficios-items {
-    padding: 2px 10px;
-    border-radius: 20px;
-    box-shadow: 0 10px 10px hsla(0, 0%, 0%, 0.05);
+//* ============ SECCION RAZONES ============
+.razones__container {
+    grid-template-columns: 1fr;
 }
 
-.beneficios-item {
-    padding: 1.1em;
+.razones-list {
+    &__ul {
+        // background-color: lightblue;
+        @include grid(3, 1.5em);
+
+        @include responsive(950px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include responsive(568px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__li {
+        // background-color: lemonchiffon;
+        background-color: var(--c-card);
+        border-radius: 10px;
+        padding: 1.8em;
+        box-shadow: 0 10px 10px hsl(0deg 0% 0% / 5%);
+    }
+
+    &__h4 {
+        margin-bottom: 10px;
+    }
+
+    &__icon {
+        // background-color: lavender;
+        display: block;
+        margin: 12px auto;
+        color: var(--c-primary);
+        width: 48px;
+        height: 48px;
+        font-size: 40px;
+    }
 }
 
-.beneficios-item-titular {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.5rem;
-    /* flex-flow: row wrap; */
+//* ============ SECTION INVERSION ============
+.inversion {
+    background-color: var(--c-card);
+
+    &__container {
+        grid-template-columns: 1fr;
+        margin-top: 2em;
+
+    }
+
+    &-titles__h2 {
+        text-align: center;
+    }
+
+    &-box {
+        @include grid(2, 1fr);
+
+        @include responsive(950px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &-subtitle {
+        &__h3 {
+            margin-bottom: 0.3em;
+        }
+        &__p {
+            margin-bottom: 0.9em;
+        }
+    }
+
+    &__li {
+        @include flexible(flex, row, nowrap, flex-start, center);
+        gap: 1em;
+        padding-bottom: 1em;
+    }
+
+    &__icon {
+        color: var(--c-primary);
+    }
+
+    &-right__img {
+        height: 550px;
+        object-fit: contain;
+    }
 }
 
-.beneficios-item__h4 {
-    padding: 0 0.9rem;
-    font-weight: var(--font-600);
-    color: var(--color--a);
-    font-size: var(--h3-font-size);
-}
-
-.beneficios-item__p {
-    color: var(--color-title);
-}
-
-.beneficios-item__i {
-    color: var(--color-primary);
-    width: 30px;
-    height: 30px;
-    font-size: 2.2em;
-    padding-right: 0.25rem;
-    text-align: center;
-    line-height: 30px;
-    border-radius: 50%;
-    font-weight: 800;
-}
-
-.beneficios-img__img {
-    max-width: 450px;
-    margin: auto;
-}
-
-/* ============ SECTION  NOTIFICACION DEPOSITOS ============  */
-
-.notf {
-    background-color: var(--back-depositos);
-    box-shadow: var(--shadow);
-}
-
-.notf__container {
-    padding-top: 100px;
-    padding-bottom: 50px;
-}
-
-.notf-titular__h3 {
-    font-size: 2rem;
-    font-weight: var(--font-600);
-    line-height: 1.3;
-    margin-bottom: 0.55rem;
-}
-
-.notf-titular__p {
-    font-size: 1.1rem;
-    line-height: 2;
-    text-align: justify;
-    color: var(--color-title);
-}
-
-.notf-image__img {
-    width: 100%;
-    height: 470px;
-    position: relative;
-    bottom: -50px;
-}
-
-/* ============ SECCION NEGOCIO  ============  */
+//* ============ SECCION NEGOCIO  ============
 
 .neogocio__container {
     gap: 4em;
@@ -223,18 +215,24 @@
     margin: 1em 0 3em;
 }
 
-.negocio__right {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.negocio-right {
+    @include grid(3, 1fr);
     gap: 1.2em;
+
+    @include responsive(958px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include responsive(568px) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .negocio-category {
-    background-color: var(--back-card);
+    background-color: var(--c-card);
     padding: 2em;
     border-radius: 10px;
     box-shadow: var(--shadow);
-    transition: transform 300ms ease;
 }
 
 .negocio-category__h4 {
@@ -247,206 +245,74 @@
     height: 40px;
 }
 
-/* ============ SECCION METODOS ============  */
+//* ============ SECCION METODOS ============
+.metodos__container {
+    grid-template-columns: 1fr;
+}
 
-.metodos {
-    background-color: #6d5fd4;
-    background-position: left center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding-top: 100px;
-    padding-bottom: 100px;
+.metodos-titles__h2 {
+    text-align: center
+}
+
+.metodos-items {
     position: relative;
+    @include grid(3, 1em);
+
+    @include responsive(958px) {
+        grid-template-columns: 2fr;
+    }
+
+    @include responsive(568px) {
+        grid-template-columns: 1fr;
+    }
 }
 
-.metodosOverlay {
-    position: absolute;
-    width: 100%;
-    height: 40%;
-    bottom: 0;
-    top: auto;
-    background-color: rgba(255, 255, 255, 0.911);
-    opacity: 1;
-    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
-}
+.metodos-item {
+  background-color: var(--c-card);
+  border-radius: 10px;
+  padding: 0.8em 1.5em;
 
-.metodosContainer {
-    flex-direction: column;
-}
-
-.metodosTitular {
-    margin-bottom: 40px;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    align-items: center;
-    justify-content: center;
-    grid-gap: 2em;
-}
-
-.metodosTitularContent__h3 {
-    font-size: 48px;
-    color: #fff;
-    text-transform: capitalize;
-}
-
-.metodosTitularBtn {
-    margin: auto;
-}
-
-.metodosItems {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1em;
-    z-index: 1;
-}
-
-.metodosItem {
-    background-color: var(--back-card);
-    box-shadow: var(--shadow);
-    border-radius: 10px;
-    padding: 2.5em;
-}
-
-.metodosItemIcon__i {
-    font-size: 2.5rem;
-    color: var(--color-primary);
-    font-weight: var(--font-500);
-}
-
-.metodosItem__h4 {
-    font-size: 1.3rem;
-    font-weight: var(--font-600);
-    margin: 0.55em 0;
-}
-
-.metodosItemContent__p {
-    margin: 1em 0;
-}
-
-/* 
-.metodos-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    justify-content: center;
-    grid-gap: 2rem;
-}
-
-.metodos-card__wrap {
-    position: relative;
-    margin: 1.7rem 0.8rem;
-    background-color: var(--back-card);
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-}
-
-.metodos-card {
-    position: relative;
-    background-color: var(--light-three);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  &__h4 {
     text-align: center;
-    padding: 2.5rem 1rem;
-    overflow: hidden;
-    transition: 0.3s;
+  }
+
+&__p {
+    margin-bottom: 1.5em;
 }
 
-.metodos-card:before {
-    content: attr(data-card);
-    position: absolute;
-    top: 15px;
-    right: 8px;
-    font-size: 4rem;
-    font-weight: 800;
-    line-height: 1;
-    color: var(--color-primary);
-    opacity: 0.025;
+&__button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 }
 
-.metodos-card:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 0px;
-    bottom: 0;
+
+.metodos-modal {
+    z-index: 2;
+    position: fixed;
+    top: 0;
     left: 0;
-    background-color: var(--color-primary);
-    transition: 0.3s;
-}
-
-.metodos-card__wrap:hover .metodos-card {
-    transform: translateY(-15px);
-}
-
-.metodos-card__wrap:hover .metodos-card:after {
-    height: 8px;
-}
-
-.metodos-card__img {
-    width: 310px;
-    height: 227px;
-    margin: auto;
-}
-
-.metodos-card__h3 {
-    font-weight: var(--font-600);
-    text-align: center;
-    margin-top: 1rem;
-}
-
-.metodos-card__p {
-    margin-top: 1rem;
-    text-align: left;
-    font-size: 1.1rem;
-    line-height: 1.4;
-    margin-bottom: 0.65em;
-}
-
-.flex-center {
+    width: 100%;
+    height: 100%;
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
+    background-color: rgb(19, 39, 57, 0.8);
 }
 
-.metodos-plataformas__ul {
+.metodos-modal__card {
+    position: relative;
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-flow: row wrap;
+    width: 800px;
+    height: 600px;
+    margin: 20px;
+    background-color: var(--c-card);
+    border-radius: 10px;
+    padding: 0.8em 1.5em;
 }
 
-.metodos-plataformas__img {
-    transition: transform 300ms ease-out;
-    width: 120px;
-}
-
-.metodos-plataformas__img:hover {
-    transform: translateY(-10px);
-}
-
-.metodos-apps__ul {
-    flex-flow: row wrap;
-}
-
-.metodos-apps__li {
-    transition: transform 300ms ease-out;
-    max-width: 180px;
-}
-
-.metodos-apps__li:hover {
-    transform: translateY(-10px);
-}
-
-.metodos-modal--pagaqui {
-    color: hsl(235deg 76% 58%);
-}
-
-.metodos-modal--recargaki {
-    color: hsl(120, 100%, 25%);
-} */
-
-/* ============ SECTION DOWNLOAD PLATAFORMAS============  */
+//* ============ SECTION DOWNLOAD PLATAFORMAS============  
 
 .download {
     margin: 4em 0;
@@ -712,197 +578,3 @@
     text-align: justify;
 }
 
-/* ============= SECTION REGISTRO ============= */
-
-/* ============ RESPONSIVE MAIN HOME  ============  */
-
-@media screen and (max-width: 992px) {
-    /* ============ SECTION HOME BANNER ============  */
-    .showcase-area {
-        grid-template-columns: 1fr;
-        padding: 2.5rem 0;
-    }
-    .showcase-left__h1 {
-        text-align: center;
-        padding: 1rem;
-    }
-    .showcase-left__p {
-        padding: 1rem;
-
-        text-align: center;
-    }
-    .showcase-right__img {
-        max-width: 550px;
-        margin: auto;
-    }
-    /* ============ SECTION SERVICIOS ============  */
-
-    .servicios__shapes {
-        width: 30px;
-        height: 200px;
-    }
-    .servicios-swiper {
-        height: auto;
-    }
-    /* ============ SECTION METODOS ============  */
-    .metodos__h3.title {
-        /* font-size: 1.5rem; */
-    }
-    .metodos-card__p {
-        /* font-size: 1rem; */
-        text-align: justify;
-    }
-    .metodos-modal-body {
-        height: 100%;
-        overflow-y: scroll;
-    }
-    /* ============ SECTION DOWNLOAD PLATAFORMAS============  */
-    .download-plataformas__p {
-        /* font-size: 1rem; */
-    }
-    .download-plataformas__img {
-        width: 180px;
-        object-fit: contain;
-    }
-    .download-plataformas__h5 {
-        /* font-size: 1.1rem; */
-    }
-    /* ============ SECTION ABOUT============  */
-    .about__shape--2 {
-        width: 300px;
-        height: 300px;
-    }
-    .about__p.text {
-        /* font-size: 1rem; */
-    }
-    /* ============ SECTION ABOUT ============  */
-    .history__h3 {
-        /* font-size: 2rem; */
-        text-align: center;
-    }
-    .history__p.text {
-        font-size: 1rem;
-        text-align: justify;
-    }
-    .history__img {
-        height: 100%;
-        width: 100%;
-    }
-    /* ============ SECTION RECORD ============  */
-    .records-title__h3 {
-        text-align: center;
-        /* font-size: 1.5rem; */
-    }
-    .records-title__p {
-        text-align: center;
-        /* font-size: 1rem; */
-    }
-    .records-item__p {
-        font: 1rem;
-    }
-    .records-item__i {
-        /* font-size: 2rem; */
-    }
-    .records-item__span {
-        /* font-size: 1.2rem; */
-    }
-    /* ============ SECTION REGISTRO ============  */
-    .registro-items {
-        grid-template-columns: 220px 220px;
-        margin-right: 0;
-    }
-    .registro-item__span {
-        /* font-size: 1rem; */
-    }
-    .registro-item__p {
-        /* font-size: 0.88rem; */
-    }
-    .registro-item__i {
-        font-size: 1.5rem;
-    }
-    .registro-image__img {
-        height: 100%;
-    }
-}
-
-@media screen and (max-width: 550px) {
-    .showcase-left__h1 {
-        text-align: left;
-    }
-    .showcase__btn {
-        flex-wrap: wrap;
-    }
-    .showcase-left__p {
-        text-align: left;
-    }
-    .btn-home__registro {
-        margin-bottom: 2.5em;
-    }
-    /* ============ SECTION  NOTIFICACION DEPOSITOS ============  */
-    .notificacion-depositos-content__h3 {
-        /* font-size: 1.3rem; */
-    }
-    .notificacion-depositos-content__p {
-        /* font-size: 0.90rem; */
-    }
-    .notificacion-depositos-image__img {
-        width: 320px;
-        height: 320px;
-    }
-    /* ============ SECTION  NEGOCIO ============  */
-    .negocio__right {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    /* ============ SECCION METODOS ============  */
-    .metodos-modal__h3 {
-        /* font-size: 1.2rem; */
-    }
-    .metodos-modal__h4 {
-        /* font-size: 1rem; */
-    }
-    .metodos-modal__p {
-        /* font-size: 1rem */
-    }
-    .metodos-modal__li {
-        font-size: 1rem;
-    }
-    .metodos-apps__li {
-        width: 120px;
-    }
-    /* ============ SECTION DOWNLOAD PLATAFORMAS============  */
-    .download-plataformas__container {
-        padding: 0.55em;
-    }
-    .download-plataformas__h4 {
-        font-size: 1.3rem;
-    }
-    .download-plataformas__h5 {
-        /* font-size: 1rem; */
-    }
-    /* ============ SECCION HISTORY ============  */
-    .history__h3 {
-        /* font-size: 1.5rem; */
-        text-align: left;
-    }
-    .history__p {
-        text-align: left;
-    }
-    /* ============ SECTION RECORDS ============  */
-    .records-items {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        grid-gap: 2.5em;
-    }
-    /* ============ SECTION REGISTRO ============  */
-    .registro-items {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        grid-gap: 2rem;
-    }
-}
-
-@media screen and (max-width: 410px) {
-    .negocio__right {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}

@@ -2,22 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PortalComponent } from '@inicio/pages/portal/portal.component';
 import { RegistroComponent } from '@inicio/pages/registro/registro.component';
-import { NofoundComponent } from '@components/nofound/nofound.component';
+import { NofoundComponent } from '@core/components/nofound/nofound.component';
 
 const routes: Routes = [
 
-   {
-    path:'',
-    pathMatch:'full',
-    redirectTo:'/'
-  },
+  { path: '', component: PortalComponent },
 
-   { 
-    path: '', component: PortalComponent 
-  },
-  
+  { path: 'home', component: PortalComponent },
+
   {
-  path: 'registro', component: RegistroComponent
+    path: 'registro', component: RegistroComponent
   },
 
 
@@ -48,8 +42,8 @@ const routes: Routes = [
   },
 
 
- 
-    { path: '**', component: NofoundComponent },
+
+  { path: '**', component: NofoundComponent },
 ];
 
 @NgModule({

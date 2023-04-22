@@ -1,0 +1,53 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+//* LIGHT THEME CUSTOM
+$light-theme: mat.define-light-theme(
+    (
+        color: (
+            primary: mat.define-palette(mat.$red-palette, 700),
+            accent: mat.define-palette(mat.$indigo-palette, 500),
+        ),
+        typography: mat.define-typography-config(),
+        density: 0,
+    )
+);
+
+//* DARK THEME CUSTOM
+$dark-theme: mat.define-dark-theme(
+    (
+        color: (
+            primary: mat.define-palette(mat.$indigo-palette, 500),
+            accent: mat.define-palette(mat.$red-palette, 500),
+        ),
+    )
+);
+
+
+.light-theme {
+    @include mat.all-component-themes($light-theme);
+    --c-title: hsl(250deg 11.26% 35.83%);
+    --c-text: #263238;
+    --c-primary:  #d32f2f;
+    --c-light-primary:#ffe4e4;
+    // --c-card: #f8f9fa;
+    // --c-body:  #f8f7fd;
+    --c-body: #fff;
+    --c-card: #faf8fa;
+    background: var(--c-body);
+    
+}
+
+.dark-theme {
+    @include mat.all-component-colors($dark-theme);
+    --c-title: #ffffff;
+    --c-text: #e9e9ea;
+    --c-primary: #3f51b5;
+    --c-light-primary: #e4eaff;
+    --c-body: #20262e;
+    --c-card: #2a323d;
+    background: var(--c-body);
+}
+
+

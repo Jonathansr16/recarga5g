@@ -1,6 +1,6 @@
 import { Component, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { PlataformasService, services } from '@core/services/plataformas.service';
+
 
 @Component({
   selector: 'app-pagaqui',
@@ -11,13 +11,11 @@ export class PagaquiComponent {
 
   @ViewChild('videoPagaqui') video?: ElementRef;
   public btnVideo: boolean = false;
-  services: services[] = [];
+  // services: services[] = [];
 
 
   
-  constructor(private readonly renderer2: Renderer2,  
-    private readonly plataformaService: PlataformasService,
-    private readonly title: Title) { }
+  constructor( private readonly renderer2: Renderer2, private readonly title: Title) { }
 
     /* =========== OPEN VIDEO PAGAQUI =========== */
     openVideo(): void {

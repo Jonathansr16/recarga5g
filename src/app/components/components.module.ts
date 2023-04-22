@@ -1,15 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '@shared/material/material.module';
-import { NofoundComponent } from '@components/nofound/nofound.component';
+import { ProductosComponent } from './productos/productos.component';
+import { CommonModule } from '@angular/common';
+import { CarouselComponent } from './carousel/carousel.component';
+
 
 @NgModule({
   declarations: [
-    NofoundComponent
+   ProductosComponent,
+   CarouselComponent
   ],
   imports: [
     RouterModule, 
     MaterialModule,
-  ], 
+    CommonModule
+  ], exports: [
+      ProductosComponent,
+      CarouselComponent
+  ],
+ 
 })
 export class ComponentsModule { }

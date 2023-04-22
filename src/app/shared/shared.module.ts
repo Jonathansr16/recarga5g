@@ -4,11 +4,7 @@ import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 
-//* Components of Angular Material
-import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import { MaterialModule } from '@shared/material/material.module';
+
 
 @NgModule({
   declarations: [
@@ -18,11 +14,7 @@ import { MaterialModule } from '@shared/material/material.module';
   imports: [
     CommonModule,
     RouterModule,
-    MaterialModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatTooltipModule,
-    MaterialModule
+ 
   ],  exports: [
     NavbarComponent,
     FooterComponent 

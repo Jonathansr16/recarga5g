@@ -1,4 +1,277 @@
+//* TIPOGRAFIA
+
+@font-face {
+    font-family: "poppinsBold";
+    src: url("assets/font/Poppins-ExtraBold.woff");
+}
+
+@font-face {
+    font-family: "poppinsRegular";
+    src: url("assets/font/Poppins-Regular.woff");
+}
+
+@font-face {
+    font-family: "poppinsMedium";
+    src: url("assets/font/Poppins-Medium.woff");
+}
+
+
+@font-face {
+    font-family: "poppinsLight";
+    src: url("assets/font/Poppins-Light.woff");
+}
+
+
+@font-face {
+    font-family: "nunito";
+    src: url("assets/font/Nunito-Regular.woff");
+}
+
+
 @import '_reset';
+@import "_mixin";
 @import '_custom';
-@import '_general';
+@import "_keyframe";
+
+:root {
+    --big-title: 4rem;
+    --h1-size: 2.25rem;
+    --h2-size: 1.5rem;
+    --h3-size: 1.25rem;
+    --text: 1rem;
+    --botton: .875rem;
+    --label: .813rem;
+    --c-white: #fff;
+    ---c-terceary: #4CAF50;
+    //* margin botton
+    --m-05:.5rem;
+    --m-075: 0.75rem;
+    --m: 1rem;
+    --m-2-5: 2.5rem;
+    --m-3: 3rem;
+
+    @include responsive(950px) {
+        --big-title: 2rem;
+        --h1-size: 1.5rem;
+        --h2-size: 1.25rem;
+        --h3-size: 1rem;
+        --text: .938rem;
+        --botton: .813rem
+        --label: .75rem;
+        
+    }
+}
+
+.mtop-5 {
+    margin-top: 5.5rem;
+}
+
+.mbottom-3 {
+    margin-bottom: 3rem;
+}
+
+body {
+    min-height: 100vh;
+    font-size: 100%;
+    color: rgb(60, 64, 67);
+    line-height: 1.5;
+    font-size: 1rem;
+    font-family: 'poppinsRegular', sans-serif;
+}
+
+
+//* ESTILOS PARA TITULOS Y TEXTOS
+h1, h2, h3, h4, h5, h6 {
+    color: var(--c-title);
+   font-family: 'poppinsMedium', sans-serif;
+   font-weight: bold;
+}
+
+
+button, input, p, span,a {
+    font-size: var(--botton);
+    font-family: 'poppinsRegular', sans-serif;
+}
+
+.mat-mdc-button {
+    &:hover, &:focus, &:active {
+        background-color: transparent !important;
+    }
+}
+
+
+.section__title {
+    font-size: var(--h1-size);
+    margin-bottom: var(--mb-3);
+}
+
+.subtitle {
+    font-size: var(--h2-size);
+}
+
+.text{ 
+    font-size: var(--text);
+    color: var(--c-text);
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.headline-1, .headline-2, .headline-3, .headline-4, .headline-5, .headline-6 {
+    font-family: 'PoppinsMedium';
+    color: var(--c-title);
+    font-weight: bold;
+}
+
+.headline-2 {
+    font-size: 3rem;
+    letter-spacing: -0.5px;
+}
+
+.headline-3 {
+    font-size: 2.4rem;
+    letter-spacing: 0px;
+  
+}
+
+.headline-4 {
+    font-size: 1.75rem;
+    letter-spacing: 0.25px;
+    
+}
+
+.head-4 {
+    color: var(--c-primary);
+    padding-left: 0.5em;
+    position: relative;
+}
+
+.head-4:before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 4px;
+    background: var(--c-primary);
+}
+
+.headline-5 {
+    font-size: 1.25rem;
+    letter-spacing: 0px;
+ 
+
+}
+.headline-6 {
+    font-size: 1rem;
+    letter-spacing: 0.15px;
+   
+}
+.subtitle-1 {
+    font-size: 0.875rem;
+    letter-spacing: 0.15px;
+}
+
+.body-1 {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    line-height: 28px;
+    color: var(--c-text)
+}
+
+.body-2 {
+    color: var(--c-text);
+    font-size: 0.875rem;
+    letter-spacing: 0.25px;
+    line-height: 28px
+}
+
+.my-button {
+    @include flexible(flex, row, nowrap, center, center);
+    column-gap: 0.11em;
+    color: var(--c-text);
+}
+
+
+
+.light-theme,.mat-mdc-menu-content, .light-theme .mat-mdc-menu-content .mat-mdc-menu-item .mdc-list-item__primary-text {
+font-family: 'PoppinsRegular'; 
+ font-size: var(--botton); 
+}
+
+
+.dark-theme, .mat-mdc-menu-content, .dark-theme .mat-mdc-menu-content .mat-mdc-menu-item .mdc-list-item__primary-text {
+    font-family: 'PoppinsRegular'; 
+     font-size: var(--botton); 
+    }
+    
+
+
+.mat-button-toggle-focus-overlay {
+    display: none;
+    }
+//* ============ SCROLL BAR =============
+
+::-webkit-scrollbar {
+    width: 0.8rem;
+    border-radius: 0.5rem;
+    background-color: hsl(228, 8%, 76%);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--c-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(228, 8%, 54%);
+}
+
+
+
+.type-span {
+    font-size: 2.2rem;
+    color: var(--c-primary);
+}
+
+
+//* Margenes
+
+.mb-1 {
+    margin-bottom: 1em;
+}
+
+
+.mb-1-5 {
+    margin-bottom: 1.5em;
+}
+.mb-2{
+    margin-bottom: 2em;
+}
+
+.mb-3 {
+    margin-bottom: 3em;
+}
+// ============= BANNER =============
+
+.banner__img {
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+//* Modo responsive para Desktop, table y movile
+
+.container {
+    width: 90%;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    @include grid(2, 1em);
+
+    @include responsive(950px) {
+        grid-template-columns: 1fr;
+    }
+
+}
 

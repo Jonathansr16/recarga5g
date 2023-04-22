@@ -3,11 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SharedModule } from '@shared/shared.module';
 import { GoogleTagManagerModule } from 'angular-google-tag-manager';
  import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InicioModule } from './modules/inicio/inicio.module';
-
+import { CoreModule } from '@core/core.module';
 
 @NgModule({
   declarations: [
@@ -15,8 +14,8 @@ import { InicioModule } from './modules/inicio/inicio.module';
   ],
   imports: [
     RouterModule,
-    SharedModule,
     InicioModule,
+    CoreModule,
     AppRoutingModule,
     GoogleTagManagerModule.forRoot({
       id:  'GTM-MSRNXRP',

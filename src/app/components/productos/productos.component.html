@@ -1,0 +1,21 @@
+<!-- ============= PRODUCTOS ============= -->
+<div class="productos">
+    <div class="productos__container container">
+        <h3 class="section__title">Nuestros Productos</h3>
+        <div class="productos-filter">
+
+            <div class="productos-options">
+                <button mat-raised-button class="productos-options__button" data-filter="todo">Todo</button>
+                <button mat-raised-button class="productos-options__button" data-filter="recargas">Recargas</button>
+                <button mat-raised-button class="productos-options__button" data-filter="servicios">Servicios</button>
+                <button mat-raised-button class="productos-options__button" data-filter="pines">Pines</button>
+            </div>
+
+            <div class="productos-list">
+                <div *ngFor="let item of productos" class="productos-list-item" [attr.aria-label]="item.category">
+                    <img class="productos-list-item__img" [src]="item.url" alt="">
+                </div>        
+            </div>
+        </div>
+    </div>
+</div>

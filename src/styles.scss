@@ -260,6 +260,12 @@ font-family: 'PoppinsRegular';
     box-shadow: var(--shadow);
 }
 
+//* Block scroll
+body.blockScrollModal {
+    overflow: hidden ;
+    }
+
+
 //* Modo responsive para Desktop, table y movile
 
 .container {

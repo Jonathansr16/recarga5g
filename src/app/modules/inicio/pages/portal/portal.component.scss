@@ -161,7 +161,6 @@
     &__container {
         grid-template-columns: 1fr;
         margin-top: 2em;
-
     }
 
     &-titles__h2 {
@@ -245,125 +244,80 @@
     height: 40px;
 }
 
-//* ============ SECCION METODOS ============
-.metodos__container {
-    grid-template-columns: 1fr;
-}
+//* ============ SECTION DOWNLOAD PLATAFORMAS============
 
-.metodos-titles__h2 {
-    text-align: center
-}
+// .app-recargas__container {
+//     @include grid(2, 1em);
+// }
 
-.metodos-items {
-    position: relative;
-    @include grid(3, 1em);
-
-    @include responsive(958px) {
-        grid-template-columns: 2fr;
-    }
-
-    @include responsive(568px) {
-        grid-template-columns: 1fr;
-    }
-}
-
-.metodos-item {
-  background-color: var(--c-card);
-  border-radius: 10px;
-  padding: 0.8em 1.5em;
-
-  &__h4 {
-    text-align: center;
-  }
-
-&__p {
-    margin-bottom: 1.5em;
-}
-
-&__button {
-    display: block;
+.app-recargas-img {
     margin-left: auto;
     margin-right: auto;
 }
-}
 
-
-.metodos-modal {
-    z-index: 2;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(19, 39, 57, 0.8);
-}
-
-.metodos-modal__card {
-    position: relative;
-    display: flex;
-    width: 800px;
+.app-recargas-phone {
+    width: 300px;
     height: 600px;
-    margin: 20px;
-    background-color: var(--c-card);
-    border-radius: 10px;
-    padding: 0.8em 1.5em;
+    margin: 0 15px 20px 15px;
+    border: 6px solid #37384e;
+    border-radius: 36px;
+    position: relative;
+    overflow: hidden;
+    &::before {
+        display: block;
+        position: absolute;
+        left: -35px;
+        bottom: -10px;
+        width: 380px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #000;
+        filter: blur(13px);
+        opacity: .55;
+        z-index: -1;
+        content: "";
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        background-color: #37384e;
+        top: 0px;
+        left: 50%;
+        width: 150px;
+        height: 20px;
+        margin-left: -75px;
+        border-bottom-right-radius: 18px;
+        border-bottom-left-radius: 18px;
+       
+    }
+
+
 }
 
-//* ============ SECTION DOWNLOAD PLATAFORMAS============  
-
-.download {
-    margin: 4em 0;
-    background-color: hsl(225deg 48% 53%);
-    border-radius: 10px;
-    box-shadow: var(--shadow);
+.app-recargas-slide-content {
+    position: relative;
+    z-index: -1;
 }
 
-.download-plataformas__container {
-    padding: 3rem;
+.app-recargas-slide__img{
+    height: 590px;
 }
 
-.download-plataformas__type {
-    margin: auto;
-}
 
-.download-plataformas__h4 {
-    color: #fff;
-    text-align: left;
-    /* font-size: 2rem; */
-}
-
-.download-plataformas__img {
-    width: 250px;
-    transition: transform 300ms ease-out;
-}
-
-.download-plataformas__img:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow);
-}
-
-.download-plataformas__p {
-    color: #fff;
-    /* font-size: 1.2rem; */
-    line-height: 40px;
-}
-
-.download-plataformas__h5 {
-    color: #fff;
-    /* font-size: 1.4em; */
-    text-align: center;
-}
-
-.dowload-apps {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* flex-flow: row wrap; */
-}
-
+// this prevents the usual sliding transition effect from being visible:
+.app-recargas-slides {
+    transition: none !important;
+  }
+  
+  // and this creates the fade in/out effect of the slides:
+  .app-recargas-slide {
+    opacity: 0;
+    transition: all 700ms ease-in-out;
+  }
+  li.glide__slide--active {
+    opacity: 1;
+  }
 /* ============ SECCION ABOUT  ============  */
 
 .about {
@@ -577,4 +531,3 @@
     font-weight: 300;
     text-align: justify;
 }
-

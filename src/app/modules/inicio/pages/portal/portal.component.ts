@@ -1,16 +1,17 @@
-import { Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild, AfterViewInit, Renderer2, ViewChildren, QueryList } from '@angular/core';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 
-
-//T-WRITER JS
-// @ts-ignore
-import Typewriter from 't-writer.js';
+//* Servicios importados
 import { RazonesService } from '@inicio/services/razones.service';
 import { razonesModel } from '@core/models/razones.model';
 import { NegocioService } from '@inicio/services/negocio.service';
 import { negocioModel } from '@core/models/negocios.model';
 
+
+//T-WRITER JS
+// @ts-ignore
+import Typewriter from 't-writer.js';
 
 @Component({
   selector: 'app-portal',
@@ -22,91 +23,76 @@ export class PortalComponent implements OnInit, AfterViewInit {
 
   @ViewChild('menuAbout') menuAbout?: ElementRef;
   @ViewChild('textDinamic') textDinamico?: ElementRef;
+  @ViewChild('glideApp') glide?: ElementRef;
+  
   item: razonesModel[] = [];
   negocios: negocioModel[] = [];
+  showModal = false;
 
-  constructor(private _razonesService: RazonesService, private _negocioService: NegocioService, @Inject(DOCUMENT) private document: Document,
+
+  constructor(private _razonesService: RazonesService, private _negocioService: NegocioService,
+    private renderer2: Renderer2, @Inject(DOCUMENT) private document: Document,
     @Inject(PLATFORM_ID) private plataform_id: Object,
     private readonly title: Title,
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.title.setTitle(
       'Recarga5g.com | Vende tiempo aire, pago de servicios y pines hasta un 7% de comisión'
     );
-   this.item= this._razonesService.getRazones();
-   this.negocios= this._negocioService.getNegocios();
+    this.item = this._razonesService.getRazones();
+    this.negocios = this._negocioService.getNegocios();
+  
     this.counterAnimation();
+
   }
 
   ngAfterViewInit(): void {
-    this.typewrite()
+    this.typewrite();
+    this.carouselApp();
+  
   }
 
   typewrite(): void {
 
-   const text = this.textDinamico?.nativeElement;
-   const writter = new Typewriter(text, 
-    
-    {
-    loop: true,
-    typeSpeed: 150,
-    deleteSpeed: 150,
-    typeColor: 'var(--c-primary)',
-    cursorColor: 'var(--c-title)',
-   });
+    const text = this.textDinamico?.nativeElement;
+    const writter = new Typewriter(text,
 
-   writter.strings(400,
-     'Telcel',
-     'Bait',
-     'AT&T',
-     'Movistar',
-     'IZZI',
-     'Telmex',
-     'Google play',
-     'Netflix',
-     'Cinepolis VIP',
-     'y muchos mas!!'
-   ).start();
+      {
+        loop: true,
+        typeSpeed: 150,
+        deleteSpeed: 150,
+        typeColor: 'var(--c-primary)',
+        cursorColor: 'var(--c-title)',
+      });
 
-    }
+    writter.strings(400,
+      'Telcel',
+      'Bait',
+      'AT&T',
+      'Movistar',
+      'IZZI',
+      'Telmex',
+      'Google play',
+      'Netflix',
+      'Cinepolis VIP',
+      'y muchos mas!!'
+    ).start();
+
+  }
 
   /* =========== OPEN NAV =========== */
   aboutAnimate() {
     const menu = this.menuAbout?.nativeElement;
-
     menu.classList.toggle("menuActive");
-
   }
 
-  btnMetodo(): void {
+   /* =========== CAROUSEL APP =========== */
+   carouselApp():void {
+      const glideContainer = this.glide?.nativeElement;
 
-    if (isPlatformBrowser(this.plataform_id)) {
-
-      const metodoModal = this.document.querySelectorAll(".metodos-modal");
-      const learMoreBtns = this.document.querySelectorAll(".btn-more");
-      const productsCloseBtn = this.document.querySelectorAll(".modal-close-btn");
-
-      var productModal: any = function (modalclick: any) {
-        metodoModal[modalclick].classList.add('activeModal');
-      }
-
-      learMoreBtns.forEach((learMoreBtn, i) => {
-        learMoreBtn.addEventListener("click", () => {
-          productModal(i);
-        });
-      });
-
-      productsCloseBtn.forEach((modalCloseBtn) => {
-        modalCloseBtn.addEventListener("click", () => {
-          metodoModal.forEach((ModelView) => {
-            ModelView.classList.remove("activeModal");
-          });
-        });
-      });
-    }
-
-  }
+     
+   }
 
   counterAnimation(): void {
 
@@ -148,8 +134,6 @@ export class PortalComponent implements OnInit, AfterViewInit {
       }, 4);
     }
   };
-
-
 
 
 }

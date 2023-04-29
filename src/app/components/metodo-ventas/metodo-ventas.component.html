@@ -1,0 +1,52 @@
+<!-- ============= SECCION METODOS DE VENTA ============= -->
+<div class="metodos">
+    <div class="metodos__container container">
+        <div class="metodos-titles">
+            <h2 class="metodos-titles__h2 headline-2">Como vender recargas Electrónicas</h2>
+        </div>
+        <div class="cards">
+
+            <div class="card" *ngFor="let item of metodoVentas; let i = index">
+                <div class="card-content">
+                    <img [src]="item.img" alt="" class="card-content__img">
+                    <h3 class="card-content__h3 headline-4">{{item.title1}}</h3>
+                    <p class="card-content__p body-2">{{item.description}}</p>
+                    <button #modalBtnOpen class="card-content__button" mat-raised-button color="primary"
+                        (click)="openDialog(item)">Leer mas..</button>
+                </div>
+
+                <div #modal class="modal" [ngClass]="{'activeModal': item.showModal}">
+                    <div class="modal-card">
+
+                        <mat-icon class="mat-18 modal-card__icon" (click)="closeDialog(item)" aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon>
+
+                        <div class="modal-head" *ngFor="let headers of item.modal">
+                            <img class="modal-head__img" [src]="headers.imgModal">
+
+                            <div class="modal-title" >
+                                <h4 class="modal-title__h4 headline-4">{{headers.titleModal}}</h4>
+                                <p class="moda-title__p body-1"> {{headers.descrptionModal}}</p>
+                            </div>
+                        </div>
+
+                        <div class="modal-separator"></div>
+
+                        <div class="modal-body">
+                            <ul class="modal-body__ul">
+                                <li class="modal-body__li" *ngFor="let modalList of item.list">
+                                    <mat-icon class="modal-body__icon mat-18">{{ modalList.iconName }}</mat-icon>
+                                    <p class="modal-body__p body-1">{{modalList.descriptionStep}}</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="modal-footer">
+                            <a routerLink="/registro" mat-raised-button color="primary">Registrarme</a>
+                                <button mat-button mat-dialog-close class="modal-footer__button" (click)="closeDialog(item)">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

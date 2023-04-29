@@ -1,7 +1,9 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { productoModel } from '@core/models/productos.model';
 import { ProductosService } from '@core/services/productos.service';
-import Glide, { Controls, Breakpoints, Autoplay } from '@glidejs/glide/dist/glide.modular.esm'
+
+import { Swiper, Autoplay, Pagination, Navigation, SwiperOptions} from 'swiper';
+
 
 @Component({
   selector: 'app-carousel',
@@ -11,37 +13,69 @@ import Glide, { Controls, Breakpoints, Autoplay } from '@glidejs/glide/dist/glid
 })
 export class CarouselComponent implements OnInit, AfterViewInit {
 
+  @ViewChild('productosSwiper') prodSwiper?: ElementRef;
   productos: productoModel[] = [];
-  @ViewChild('glide') glider!: ElementRef;
   
+public config: SwiperOptions = {
+  modules: [ Navigation,Pagination, Autoplay],
+ 
+  loop: true,
+  grabCursor: true,
+  mousewheel: true,
+  keyboard: true,
+  slidesPerView: 5,
+  spaceBetween: 30,
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+  },
+ speed: 2500,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 
-  config = {
-    type: "carousel",
-    startAt: 1,
-    perView: 5,
-    autoplay: true,
-    animationDuration: 2000,
+  // Responsive breakpoints
+  breakpoints: {
+  // when window width is >= 320px
+  320: {
+    slidesPerView: 2,
+    spaceBetween: 20
+  },
+
+   // when window width is >= 480px
+   550: {
+    slidesPerView: 3,
+    spaceBetween: 30
+  },
+
+    // when window width is >= 640px
+ 950: {
+  slidesPerView: 4,
+  spaceBetween: 40
+}
+  }
     
   }
 
-  constructor(private _productoService: ProductosService) { }
-
+  constructor(private _productoService: ProductosService, ) { }
   ngOnInit(): void {
     this.productos = this._productoService.getProductos();
-
   }
 
   ngAfterViewInit(): void {
-    this.carousel();
-    
+    this.carouselContinue();
   }
 
 
-  carousel(): void {
-   const glide = this.glider.nativeElement;
-    new Glide(glide, this.config).mount({ Controls, Breakpoints, Autoplay })
- 
-   
+  carouselContinue(): void {
+   const _prodSwiper= this.prodSwiper?.nativeElement;
+   new Swiper(_prodSwiper,this.config);
+
   }
 
 

@@ -6,31 +6,28 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NofoundComponent } from './components/nofound/nofound.component';
 
 //* Components of Angular Material
-import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatTooltipModule} from '@angular/material/tooltip';
+
 import { MaterialModule } from '@shared/material/material.module';
 import { ProductosService } from './services/productos.service';
+import { UpScrollComponent } from './components/up-scroll/up-scroll.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    NofoundComponent
+    NofoundComponent,
+    UpScrollComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     MaterialModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatTooltipModule,
-    MaterialModule
   ], exports: [
     HeaderComponent,
     FooterComponent,
-    NofoundComponent
+    NofoundComponent,
+    UpScrollComponent
   ],
   providers:[
    ProductosService

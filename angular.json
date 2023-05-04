@@ -41,8 +41,7 @@
 						"styles": [
 							"@angular/material/prebuilt-themes/indigo-pink.css",
 							"src/styles.scss",
-							"./node_modules/swiper/swiper-bundle.css"
-							
+							"node_modules/swiper/swiper-bundle.min.css"
 						],
 						"stylePreprocessorOptions": {
 							"includePaths": ["src/assets/scss/partials"]

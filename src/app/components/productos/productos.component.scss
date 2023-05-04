@@ -6,9 +6,17 @@
     grid-template-columns: 1fr
 }
 
+
+.productos-title {
+
+    &__h3 {
+        text-align: center;
+    }
+}
+
 .productos-options {
-    @include flexible(flex, row, nowrap, center, center );
-    column-gap: 1.5em;
+    @include flexible(flex, row, wrap, center, center );
+   gap: 1.5em;
     margin-bottom: 1.5em;
     &__button {
         background-color: var(--c-light-primary);

@@ -99,7 +99,6 @@ button, input, p, span,a {
     }
 }
 
-
 .section__title {
     font-size: var(--h1-size);
     margin-bottom: var(--mb-3);
@@ -160,14 +159,13 @@ button, input, p, span,a {
 .headline-5 {
     font-size: 1.25rem;
     letter-spacing: 0px;
- 
-
 }
+
 .headline-6 {
     font-size: 1rem;
-    letter-spacing: 0.15px;
-   
+    letter-spacing: 0.15px;  
 }
+
 .subtitle-1 {
     font-size: 0.875rem;
     letter-spacing: 0.15px;
@@ -188,30 +186,32 @@ button, input, p, span,a {
     line-height: 28px
 }
 
+//* Button
 .my-button {
     @include flexible(flex, row, nowrap, center, center);
     column-gap: 0.11em;
     color: var(--c-text);
 }
 
-
-
 .light-theme,.mat-mdc-menu-content, .light-theme .mat-mdc-menu-content .mat-mdc-menu-item .mdc-list-item__primary-text {
 font-family: 'PoppinsRegular'; 
  font-size: var(--botton); 
 }
-
 
 .dark-theme, .mat-mdc-menu-content, .dark-theme .mat-mdc-menu-content .mat-mdc-menu-item .mdc-list-item__primary-text {
     font-family: 'PoppinsRegular'; 
      font-size: var(--botton); 
     }
     
+.btn-underline {
+    text-decoration: underline;
+    font-weight: bold;
+}
 
-
-.mat-button-toggle-focus-overlay {
-    display: none;
-    }
+.btn-underline:hover {
+    text-decoration: none;
+   
+}
 //* ============ SCROLL BAR =============
 
 ::-webkit-scrollbar {

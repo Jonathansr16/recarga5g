@@ -1,5 +1,5 @@
-import { Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild, AfterViewInit, Renderer2, ViewChildren, QueryList } from '@angular/core';
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
+
 import { Title } from '@angular/platform-browser';
 
 //* Servicios importados
@@ -8,10 +8,12 @@ import { razonesModel } from '@core/models/razones.model';
 import { NegocioService } from '@inicio/services/negocio.service';
 import { negocioModel } from '@core/models/negocios.model';
 
-
+import { Swiper, Autoplay, Pagination, Navigation, SwiperOptions, EffectFade } from 'swiper';
+//* Librerias externas usadas
 //T-WRITER JS
 // @ts-ignore
 import Typewriter from 't-writer.js';
+
 
 @Component({
   selector: 'app-portal',
@@ -23,18 +25,28 @@ export class PortalComponent implements OnInit, AfterViewInit {
 
   @ViewChild('menuAbout') menuAbout?: ElementRef;
   @ViewChild('textDinamic') textDinamico?: ElementRef;
-  @ViewChild('glideApp') glide?: ElementRef;
-  
+  @ViewChild('carouselApp') _carouselApp?: ElementRef;
+  @ViewChildren('counter') counters?: QueryList<ElementRef>;
+
   item: razonesModel[] = [];
   negocios: negocioModel[] = [];
   showModal = false;
 
+  //? CONFIG OF CAROUSEL APP
+  private config: SwiperOptions = {
+    modules: [Navigation, Pagination, Autoplay, EffectFade],
+    loop: true,
+    effect: 'fade',
+    grabCursor: true,
+    slidesPerView: 1,
+    autoplay: {
+      delay: 1500,
+    },
+
+  }
 
   constructor(private _razonesService: RazonesService, private _negocioService: NegocioService,
-    private renderer2: Renderer2, @Inject(DOCUMENT) private document: Document,
-    @Inject(PLATFORM_ID) private plataform_id: Object,
-    private readonly title: Title,
-  ) { }
+              private readonly title: Title) { }
 
   ngOnInit(): void {
     this.title.setTitle(
@@ -42,15 +54,14 @@ export class PortalComponent implements OnInit, AfterViewInit {
     );
     this.item = this._razonesService.getRazones();
     this.negocios = this._negocioService.getNegocios();
-  
-    this.counterAnimation();
 
+  
   }
 
   ngAfterViewInit(): void {
     this.typewrite();
-    this.carouselApp();
-  
+    this.mycarousel();
+    this.counterAnimation();
   }
 
   typewrite(): void {
@@ -81,23 +92,21 @@ export class PortalComponent implements OnInit, AfterViewInit {
 
   }
 
-  /* =========== OPEN NAV =========== */
+  //* FUNCTION FOR OPEN MENU NAV
   aboutAnimate() {
     const menu = this.menuAbout?.nativeElement;
     menu.classList.toggle("menuActive");
   }
 
-   /* =========== CAROUSEL APP =========== */
-   carouselApp():void {
-      const glideContainer = this.glide?.nativeElement;
+  //* INIT CAROUSEL APP
+  mycarousel(): void {
+    const carousel = this._carouselApp?.nativeElement;
+    new Swiper(carousel, this.config)
+  }
 
-     
-   }
-
+  //* FUNCTIONS FOR COUNTER RECORD SECTION
   counterAnimation(): void {
 
-    if (isPlatformBrowser(this.plataform_id)) {
-      const record = this.document.querySelectorAll<HTMLElement>('.records-item__span');
       const observer = new IntersectionObserver((entries, obj) => {
         entries.forEach((entry: any) => {
           if (entry.isIntersecting) {
@@ -116,10 +125,11 @@ export class PortalComponent implements OnInit, AfterViewInit {
           rootMargin: '0px 0px -50% 0px'
         });
 
-      record.forEach(item => {
+      this.counters?.forEach(element => {
+        const item = element.nativeElement;
         observer.observe(item)
       });
-    }
+    
 
   }
 

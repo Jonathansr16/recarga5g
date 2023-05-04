@@ -1,12 +1,11 @@
-<div class="carousel-productos ">
+<div class="carousel-productos">
     <div #productosSwiper class="carousel-productos__swiper swiper">
         <div class="carousel-productos__wrapper swiper-wrapper">
                 <div *ngFor="let item of productos" class="carousel-productos__li swiper-slide">
                     <img [src]="item.url" alt="" class="carousel-productos__img">  
                </div>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+       
     </div>
 </div>
 

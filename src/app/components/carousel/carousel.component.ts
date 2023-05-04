@@ -16,7 +16,7 @@ export class CarouselComponent implements OnInit, AfterViewInit {
   @ViewChild('productosSwiper') prodSwiper?: ElementRef;
   productos: productoModel[] = [];
   
-public config: SwiperOptions = {
+private config: SwiperOptions = {
   modules: [ Navigation,Pagination, Autoplay],
  
   loop: true,
@@ -56,7 +56,7 @@ public config: SwiperOptions = {
     // when window width is >= 640px
  950: {
   slidesPerView: 4,
-  spaceBetween: 40
+  spaceBetween: 35
 }
   }
     

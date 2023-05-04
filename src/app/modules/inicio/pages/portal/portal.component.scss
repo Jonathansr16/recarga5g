@@ -245,10 +245,29 @@
 }
 
 //* ============ SECTION DOWNLOAD PLATAFORMAS============
+.app-recargas__container {
+    margin-top: 5em;
+    grid-template-columns: 1fr;
+}
 
-// .app-recargas__container {
-//     @include grid(2, 1em);
-// }
+.app-recargas__h3 {
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.app-recargas__h4 {
+    margin-left: 5px;
+    margin-bottom: 0.5em;
+    position: relative;
+}
+
+.app-recargas-content {
+    @include grid(2, 1em);
+
+    @include responsive(950px) {
+        grid-template-columns: 1fr;
+    }
+}
 
 .app-recargas-img {
     margin-left: auto;
@@ -273,13 +292,14 @@
         border-radius: 50%;
         background-color: #000;
         filter: blur(13px);
-        opacity: .55;
+        opacity: 0.55;
         z-index: -1;
         content: "";
     }
 
     &::after {
         position: absolute;
+        z-index: 1;
         content: "";
         background-color: #37384e;
         top: 0px;
@@ -289,10 +309,7 @@
         margin-left: -75px;
         border-bottom-right-radius: 18px;
         border-bottom-left-radius: 18px;
-       
     }
-
-
 }
 
 .app-recargas-slide-content {
@@ -300,24 +317,67 @@
     z-index: -1;
 }
 
-.app-recargas-slide__img{
+.app-recargas-slide__img {
     height: 590px;
 }
 
+.swiper {
+    width: 100%;
+    height: 100%;
+}
 
-// this prevents the usual sliding transition effect from being visible:
-.app-recargas-slides {
-    transition: none !important;
-  }
-  
-  // and this creates the fade in/out effect of the slides:
-  .app-recargas-slide {
-    opacity: 0;
-    transition: all 700ms ease-in-out;
-  }
-  li.glide__slide--active {
-    opacity: 1;
-  }
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+.app-recargas-list {
+    &__li {
+        margin-bottom: 20px;
+        padding: 10px 0 10px 0px;
+        counter-increment: mynumbers;
+        position: relative;
+
+        &:before {
+            content: counter(mynumbers);
+            font-size: 2em;
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            background-color: var(--c-light-primary);
+            color: var(--c-primary);
+            margin-right: 8px;
+        }
+    }
+
+    &__span {
+        background-color: var(--c-light-primary);
+        color: var(--c-primary);
+        font-size: 2em;
+        border-radius: 50%;
+        padding: 10px 5px;
+    }
+}
+
+.app-recargas-action {
+    @include flexible(flex, row, wrap, center, center);
+    gap: 3em;
+
+    &__icon {
+        order: 2;
+        width: 24px;
+        height: 24px;
+        font-size: 24px;
+    }
+}
 /* ============ SECCION ABOUT  ============  */
 
 .about {
@@ -387,44 +447,29 @@
 /* ============ SECCION HISTORY ============  */
 
 .history {
-    background-color: var(--back-history);
+    background-color: var(--c-light-primary);
     position: relative;
 }
 
-.history__icon {
-    background-image: url("/assets/img/icon-expression.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 60px;
-    left: 50px;
+.history-content {
+   position: relative;
+    @include flexible(flex, column, wrap, center, center);
+    
+    &__span {
+        background-image: url("/assets/img/icon-expression.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 100px;
+        left: -95px;
+    }
 }
 
-.history__content {
-    flex-direction: column;
-}
-
-.history__h3 {
-    /* font-size: 2.5rem; */
-    font-weight: var(--font-600);
-    line-height: 1.3;
-    margin: 1.5rem 0;
-}
-
-.history__h5 {
-    /* font-size: 1.5rem; */
-    font-weight: var(--font-600);
-}
-
-.history__p {
-    line-height: 2;
-}
-
-.history__img {
-    height: 500px;
-    width: 500px;
+.history-image__img {
+    max-height: 600px;
+    object-fit: contain;
 }
 
 /* ============ RESPONSIVE RECORDS  ============  */
@@ -433,39 +478,33 @@
     margin: 2rem 0;
 }
 
-.records-title__h3 {
-    line-height: 1.3;
-    /* font-size: 35px; */
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--color-text);
-}
+
 
 .records-items {
-    grid-template-columns: 200px 200px;
-    grid-template-rows: 150px 150px;
-    grid-gap: 2rem;
+    @include grid(2, 2em);
 }
 
 .records-item {
-    background-color: var(--back-record);
+    background-color: var(--c-card);
     border-radius: 10px;
     box-shadow: var(--shadow);
     padding: 0.55rem 0;
+
+    &__img {
+        width: 48px;
+        height: 48px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
 }
 
-.records-item__title {
+.records-item-title {
     text-align: center;
 }
 
-.records-item__icon {
-    margin: 0 0.55rem;
-}
 
-.records-item__i {
-    font-size: 3rem;
-    color: var(--color-text);
-}
+
 
 .records-item__span {
     font-weight: var(--font-600);

@@ -1,0 +1,43 @@
+<div class="app-plataformas">
+    <div class="app-plataformas__container container mb-3">
+        <span class="badge headline-5">App</span>
+        <h1 class="app-plataformas__h3 headline-3">{{plataforma.title}}</h1>
+
+        <div class="app-plataformas-box">
+
+            <div class="app-plataformas-options">
+                <div class="app-plataformas-option">
+
+                    <div class="app-plataformas-subtitle">
+                        <h3 class="app-plataformas-subtitle__h3 headline-4"> {{plataforma.subtitle}}</h3>
+                    </div>
+
+                    <ul class="app-plataformas__ul">
+                        <li class="app-plataformas__li body-1" *ngFor="let item of plataforma.options">
+                            {{item.description}}
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="app-plataformas-options">
+                    <button mat-raised-button color="primary">registrarme</button>
+                    
+                </div>
+            </div>
+
+            <div class="app-plataformas app-phone">
+                <div #carouselplataformas class="app-plataformas-swiper app-phone-swiper swiper">
+                    <div class="app-plataformas-swiper-wrapper app-phone-swiper-wrapper swiper-wrapper">
+                      
+                        <div class="app-phone-slide swiper-slide" *ngFor="let item of plataforma.images">
+                            <img [src]="item.img" class="app-plataformas-slide__img app-phone-slide__img" loading="lazy" [alt]="item.alt">
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

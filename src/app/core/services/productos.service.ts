@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { productoModel } from '@core/models/productos.model';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ProductosService {
 
   constructor() { }
@@ -10,7 +12,7 @@ export class ProductosService {
 
     {
       company: "Telcel",
-      url: "assets/img/companies/recargas/telcel.png",
+      url: "assetss/img/companies/recargas/telcel.png",
       src: "https://ik.imagekit.io/taerecargas/Recargas/Icon-companies/telcel_kVD13NUDY.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1667243126771",
       label: "",
       category: "recargas"

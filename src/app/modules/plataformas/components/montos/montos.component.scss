@@ -1,0 +1,33 @@
+@import "mixin";
+.montos {
+    background-color: var(--c-card);
+    &__container {
+        grid-template-columns: 1fr;
+    }
+
+    &__badge {
+        margin-top: 1em;
+    }
+
+    &__h2 {
+        text-align: center;
+    }
+
+    &-box {
+      
+        @include grid(2, 1em);
+        @include responsive(950px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &-right {
+        margin-left: auto;
+        margin-right: auto;
+
+        &__img {
+            height: 550px;
+            object-fit: contain;
+        }
+    }
+}

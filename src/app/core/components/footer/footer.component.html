@@ -9,153 +9,109 @@
                 </picture>
             </div>
 
-            <p class="footer__p">
+            <p class="footer__p body-2">
                 somos la empresa #1 en la venta de tiempo aire, pago de servicios y pines electrónicos, tenemos presencia en toda la republica mexicana.
             </p>
-
-
         </div>
 
         <div class="footer__sec">
-            <h2 class="footer__h2">
-                Ayuda
-            </h2>
+            <h4 class="footer__h4 headline-4"> Ayuda </h4>
 
             <ul class="footer__ul">
-                <li class="footer__li">
-                    <i class='bx bx-chevron-right footer__i footer__i--arrow'></i>
-                    <a routerLink="/ayuda/faqs" class="footer__a">Preguntas Frecuentes</a>
+                <li class="footer__li footer-option">
+                    <mat-icon aria-hidden="false" class="footer__icon" color="primary" aria-label="Example home icon" fontIcon="keyboard_arrow_right"></mat-icon>
+                    <a routerLink="/ayuda/faqs" mat-button class="footer__a">Preguntas Frecuentes</a>
                 </li>
 
-                <li class="footer__li footer__li--submenu">
-                    <i class='bx bx-chevron-right footer__i footer__i--arrow'></i>
-                    <button type="button" class="footer__a footer__a-submenu">Numeros de cuenta</button>
+                <li class="footer__li footer-option">
+                    <mat-icon aria-hidden="false" class="footer__icon" color="primary" aria-label="Example home icon" fontIcon="keyboard_arrow_right"></mat-icon>
 
+                    <button mat-button [matMenuTriggerFor]="plataformas">Plataformas</button>
+                    <mat-menu #plataformas="matMenu">
+                      <button mat-menu-item [matMenuTriggerFor]="pagaqui" >Pagaqui</button>
+                      <button mat-menu-item [matMenuTriggerFor]="planetaemx">Planetaemx</button>
+                    </mat-menu>
+                    
+                    <mat-menu #pagaqui="matMenu">
+                        <a mat-menu-item >Cuentas Bancarias</a>
+                        <a mat-menu-item>Manuales</a>
+                      </mat-menu>
 
-                    <ul class="footer-dropdown">
-                        <li class="footer__li footer-dropdown__li">
-                            <a href="assets/img/Cuentas_Pagaqui.jpg" class="footer__a" target="_blank" rel="noopener">Pagaqui</a>
-                        </li>
-
-                        <li class="footer__li footer-dropdown__li">
-                            <a href="https://recargaselectronicas.org/bancos.html" class="footer__a" target="_blank" rel="noopener">Recargaki/Planetaemx</a>
-                        </li>
-                    </ul>
-
+                      <mat-menu #planetaemx="matMenu">
+                        <a mat-menu-item href="/plataforma/planetaemx#cuentas-planetaemx">Cuentas Bancarias</a>
+                        <a mat-menu-item [routerLink]="['/plataforma/planetaemx']" fragment="cuentas-planetaemx">Manuales</a>
+                      </mat-menu>
                 </li>
 
-                <li class="footer__li">
-                    <i class='bx bx-chevron-right footer__i footer__i--arrow'></i>
-                    <a routerLink="/ayuda/contacto" class="footer__a">Contacto</a>
+                <li class="footer__li footer-option">
+                    <mat-icon aria-hidden="false" class="footer__icon" color="primary" aria-label="Example home icon" fontIcon="keyboard_arrow_right"></mat-icon>
+                    <a routerLink="/ayuda/contacto" mat-button class="footer__a">Contacto</a>
                 </li>
 
-                <li class="footer__li footer__li--submenu">
-                    <i class='bx bx-chevron-right footer__i footer__i--arrow'></i>
-                    <button class="footer__a footer__a-submenu">Manuales</button>
-
-                    <ul class="footer-dropdown">
-                        <li class="footer__li footer-dropdown__li">
-                            <a routerLink="/consulta/pagaqui" class="footer__a">Pagaqui</a>
-                        </li>
-
-                        <li class="footer__li footer-dropdown__li">
-                            <a routerLink="/consulta/planetaemx" class="footer__a">Recargaki/Planetaemx</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="footer__li">
-                    <i class='bx bx-chevron-right footer__i footer__i--arrow'></i>
-                    <a routerLink="/ayuda/blog" class="footer__a">Blog</a>
+               
+                <li class="footer__li footer-option">
+                    <mat-icon aria-hidden="false" class="footer__icon" color="primary" aria-label="Example home icon" fontIcon="keyboard_arrow_right"></mat-icon>
+                    <a routerLink="/ayuda/blog" mat-button class="footer__a">Blog</a>
                 </li>
             </ul>
 
         </div>
 
         <div class="footer__sec">
-            <h2 class="footer__h2">Legal</h2>
+            <h4 class="footer__h2 headline-4">Legal</h4>
 
             <ul class="footer__ul">
-                <li class="footer__li">
-                    <i class='bx bx-chevron-right footer__i footer__i--arrow'></i>
-                    <a routerLink="/legal/politicas" class="footer__a">Politicas</a></li>
-                <li class="footer__li">
-                    <i class='bx bx-chevron-right footer__i footer__i--arrow'></i>
-                    <a routerLink="/legal/condiciones" class="footer__a">Condiciones de uso</a></li>
-            </ul>
-
-
-            <h2 class="footer__h2">Horario de Atención</h2>
-            <ul class="footer__ul atencion">
-                <li class="footer__li atencion__li">
-                    <span class="footer__span"><i class="bx bx-time-five footer__i"></i></span>
-                    <span class="footer__span"> Lunes- Viernes 9AM a 6PM </span>
+                <li class="footer__li footer-option">
+                    <mat-icon aria-hidden="false" class="footer__icon" color="primary" aria-label="Example home icon" fontIcon="keyboard_arrow_right"></mat-icon>
+                    <a routerLink="/legal/politicas" mat-button class="footer__a">Politicas</a>
                 </li>
-                <li class="footer__li atencion__li">
-                    <span class="footer__span"><i class="bx bx-time-five footer__i"></i></span>
-                    <span class="footer__span"> Sabado 9AM a 4PM </span>
+                <li class="footer__li footer-option">
+                    <mat-icon aria-hidden="false" class="footer__icon" color="primary" aria-label="Example home icon" fontIcon="keyboard_arrow_right"></mat-icon>
+                    <a routerLink="/legal/condiciones" mat-button class="footer__a">Condiciones de uso</a>
                 </li>
             </ul>
+
         </div>
 
         <div class="footer__sec">
-            <h2 class="footer__h2">Contacto</h2>
+            <h4 class="footer__h4 headline-4">Contacto</h4>
 
             <ul class="footer__ul contacto__ul">
-                <li class="footer__li contacto__li">
-                    <span class="footer__span"><i class="bx bx-map footer__i"></i></span>
-                    <span class="footer__span"> Delegación Benito Juarez Distrito Federal México DF <br>
-                        Dirección Completa Solo Clientes Activos.</span>
+                <li class="footer__li">
+                    <span class="footer__span--direccion headline-6">Dirección</span>
+                    <p class="footer__p body-2"> Delegación Benito Juarez Distrito Federal México DF <br>
+                        Dirección Completa Solo Clientes Activos.</p>
                 </li>
 
-                <li class="footer__li contacto__li">
-                    <span class="footer__span"><i class="bx bx-footer bx-phone-call footer__i"></i></span>
+                <li class="footer__li">
+                    <span class="footer__span--direccion headline-6">Telefono:</span>
                     <a href="tel:2717140102" class="footer__a" aria-label="Telefono" rel="noopener" target="_blank">+52 2717140102</a>
                 </li>
 
-                <li class="footer__li contacto__li">
-                    <span class="footer__span"><i class="bx bx-footer bxl-whatsapp footer__i"></i></span>
+                <li class="footer__li">
+                    <span class="footer__span--direccion headline-6">WhatsApp:</span>
                     <a href="https://wa.me/522712141938" class="footer__a" aria-label="WhatsApp" rel="noopener" target="_blank">+52 2712141938</a>
                 </li>
 
-                <li class="footer__li contacto__li">
-                    <span class="footer__span"><i class="bx bx-footer bx-mail-send footer__i"></i></span>
+                <li class="footer__li">
+                    <span class="footer__span--direccion headline-6">Correo:</span>
                     <a href="mailto:tae.celular@gmail.com" class="footer__a" aria-label="Correo" rel="noopener" target="_blank">tae.celular@gmail.com</a>
                 </li>
             </ul>
         </div>
 
         <div class="footer__sec">
-            <h2 class="footer__h2">Ingresa a tu plataforma</h2>
-
-            <div class="footer-app">
-
-                <ul class="footer__ul footer-app__ul">
-                    <li class="footer__li footer-app_li">
-
-                        <a href="https://pagaqui.com.mx/Login.aspx" class="footer-app__a footer-app__a--pagaqui" aria-label="Pagaqui para tu celular o table android" target="_blank" rel="noopener">
-                            <picture class="footer-app__picture">
-                                <source type="image/webp" srcset="https://ik.imagekit.io/taerecargas/Recargas/Icon-companies/logo_pagaqui_fNmbqLfXi.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1667321470999">
-                                <source type="image/png" srcset="assets/img/icon-companies/logo_pagaqui.png">
-                                <img src="/assets/img/icon-companies/logo_pagaqui.png" class="footer-app__img" loading="lazy" width="120" height="35" alt="Ingresa a tu plataforma Pagaqui">
-                            </picture>
-                        </a>
-                    </li>
-
-                    <li class="footer__li footer-app__li">
-
-                        <a href="https://planetaemx.com/index.php" class="footer-app__a footer-app__a--recargaki" aria-label="Planetamex para tu celular o table android" target="_blank" rel="noopener">
-                            <picture class="footer-app__picture">
-                                <source type="image/webp" srcset="https://ik.imagekit.io/taerecargas/Recargas/Icon-companies/planetaemx-logo-login_RS7zapj81.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1667321682974">
-                                <source type="image/png" srcset="assets/img/icon-companies/planetaemx-logo-login.png">
-                                <img data-src="/assets/img/icon-companies/planetaemx-logo-login.png" class="footer-app__img" loading="lazy" width="120" height="90" alt="Ingresa a tu plataforma recargaki/Planetaemx">
-                            </picture>
-                        </a>
-                    </li>
-                </ul>
-
-
-            </div>
+    <h4 class="footer__h4 headline-4">Horario de Atención</h4>
+            <ul class="footer__ul atencion">
+                <li class="footer__li atencion__li">
+                    <span class="footer__span body-2"> Lunes- Viernes 9AM a 6PM </span>
+                </li>
+                <li class="footer__li atencion__li">
+                    <span class="footer__span body-2"> Sabado 9AM a 4PM </span>
+                </li>
+            </ul>
         </div>
+
     </div>
 
     <div class="copyright">

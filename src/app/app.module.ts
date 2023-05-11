@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 import { GoogleTagManagerModule } from 'angular-google-tag-manager';
  import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { InicioModule } from './modules/inicio/inicio.module';
+import { InicioModule } from '@inicio/inicio.module';
 import { CoreModule } from '@core/core.module';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +23,6 @@ import { CoreModule } from '@core/core.module';
     BrowserAnimationsModule,
    
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,37 @@
+<div class="manuales mb-3">
+    <div class="manuales__container container">
+        <h2 class="manuales__h2 headline-2">{{manuales.title}}</h2>
+        <p class="manuales__p body-1"> <strong class="manuales__strong body-1">Recarga5g.com</strong> pone a tu disposición los siguientes manuales para que conozcas tu plataforma y 
+            puedas vender recargas bait y muchos otros mas.
+        </p>
+        <div class="manuales-box">
+            
+            <div class="manuales-left">
+                <img src="assets/img/manuales__recargas.png" loading="lazy" class="manuales-left__img" alt="">
+            </div>
+
+            <div class="manuales-right">
+                <h3 class="manuales-right__h3 headline-3">{{manuales.subtitle}}</h3>
+               <p class="manuales-right__p body-1">
+                    {{manuales.description}}
+               </p>
+
+               <div class="manuales-actions" >
+              
+                <button class="manuales-actions__btn" mat-raised-button color="primary"> 
+                    
+                    {{manuales.btns[0].titleBtn}}
+                    <mat-icon aria-hidden="false" aria-label="Example icon">{{manuales.btns[0].iconBtn}}</mat-icon>
+                </button>
+
+                <button class="manuales-actions__btn manuales-actions__btn--2 my-button btn-underline">
+                    {{manuales.btns[1].titleBtn}}
+                    <mat-icon aria-hidden="false" color="primary" aria-label="Example icon">{{manuales.btns[1].iconBtn}}></mat-icon>
+                </button>
+               </div>
+            </div>
+
+    
+        </div>
+    </div>
+</div>

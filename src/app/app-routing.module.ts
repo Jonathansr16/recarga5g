@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PortalComponent } from '@inicio/pages/portal/portal.component';
+import { HomeComponent } from '@inicio/pages/home/home.component';
 import { RegistroComponent } from '@inicio/pages/registro/registro.component';
 import { NofoundComponent } from '@core/components/nofound/nofound.component';
 
 const routes: Routes = [
 
-  { path: '', component: PortalComponent },
+  { path: '', component: HomeComponent },
 
-  { path: 'home', component: PortalComponent },
+  { path: 'home', component: HomeComponent },
 
   {
     path: 'registro', component: RegistroComponent

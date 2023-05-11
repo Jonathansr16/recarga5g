@@ -10,6 +10,8 @@ import { NofoundComponent } from './components/nofound/nofound.component';
 import { MaterialModule } from '@shared/material/material.module';
 import { ProductosService } from './services/productos.service';
 import { UpScrollComponent } from './components/up-scroll/up-scroll.component';
+import { FormsModule } from '@angular/forms';
+import { ThemeService } from './services/theme.service';
 
 
 @NgModule({
@@ -17,20 +19,22 @@ import { UpScrollComponent } from './components/up-scroll/up-scroll.component';
     HeaderComponent,
     FooterComponent,
     NofoundComponent,
-    UpScrollComponent
+    UpScrollComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     MaterialModule,
+    FormsModule
   ], exports: [
     HeaderComponent,
     FooterComponent,
     NofoundComponent,
-    UpScrollComponent
+    UpScrollComponent,
+  
   ],
   providers:[
-   ProductosService
+   ProductosService, 
   ]
 })
 export class CoreModule { }

@@ -1,18 +1,24 @@
 import { NgModule } from '@angular/core';
-import { PortalComponent } from '@inicio/pages/portal/portal.component';
-import { RegistroComponent } from '@inicio/pages/registro/registro.component';
-import { MaterialModule } from '@shared/material/material.module';
-import { ComponentsModule } from '@components/components.module';
 import { CommonModule } from '@angular/common';
+
+//* MODULOS IMPORTADOS
+import { FeatureModule } from '@feature/feature.module';
+import { MaterialModule } from '@shared/material/material.module';
+
+//* COMPONENTS
+import { HomeComponent } from '@inicio/pages/home/home.component';
+import { RegistroComponent } from '@inicio/pages/registro/registro.component';
+
+
 @NgModule({
   declarations: [
-    PortalComponent,
+    HomeComponent,
     RegistroComponent
   ],
   imports: [
    MaterialModule,
-   ComponentsModule,
-   CommonModule
+   CommonModule,
+   FeatureModule
   ], 
  
 })

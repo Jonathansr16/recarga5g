@@ -6,6 +6,7 @@
    opacity: 0;
     transition: .3s ease;
     pointer-events: none;
+   z-index: 3;
 }
 
 .isActiveScroll {

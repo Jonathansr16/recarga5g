@@ -1,49 +1,52 @@
-.title-recargaki {
-    color: #3fab3f;
-    font-weight: 700;
+@import 'mixin';
+
+.banner-plataformas__container  {
+    grid-template-columns: 1fr;
 }
 
 
-/* ============ SECTION COMISION  ============  */
+.cuentas-planetaemx {
+    @include responsive(1030px) {
+     &__thead {
+       display: none;
+     }
 
-.comision__wrapper {
-    background-color: var( --back-comisionRecargaki);
-}
+     &__tr, &__td {
+         display: block;
+         width: 100%;
+     }
 
+     &__td {
+         text-align: right;
+         padding-left: 50%;
+         position: relative;
 
-/* ============ SECTION ACTIVITIES  ============  */
+         &:before {
+             content: attr(data-label);
+             position: absolute;
+             left: 0;
+             width: 50%;
+             padding-left: 15px;
+             text-align: left;
+           
+             font-weight: bold;
+         }
+     }
+   }
 
-.shapeRecargaki {
-    background-color: hsl(125, 41%, 57%);
-}
+   @include responsive(570px) {
+     &__td {
+         text-align: center;
+         padding: 1px;
 
-.Recargaki-Planetamex,
-.RecargakiColor {
-    color: #126112;
-    font-weight: var(--font-600);
-}
-
-
-/* ============ SECTION CUENTAS ============  */
-
-.cuentas-wrapper {
-    background-color: var(--back-cuentasRecargaki);
-}
-
-
-/* ============ SECTION DOWNLOAD ============  */
-
-.download-app__container {
-    background-color: hsl(146deg 64% 29%)
-}
-
-
-/* ============ SECTION  ACCESO ============  */
-
-.acceso__item {
-    margin: auto;
-}
-
-.acceso__a {
-    font-size: 1.4rem;
+         &:before {
+             content: attr(data-label);
+             position: relative;
+             width: 100%;
+             display: block;
+             text-align: center;
+             padding: 5px; 
+         }
+     }
+   }
 }

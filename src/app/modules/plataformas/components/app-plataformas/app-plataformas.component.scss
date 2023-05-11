@@ -1,0 +1,46 @@
+@import "mixin";
+
+.app-plataformas {
+
+    &__h3 {
+        text-align: center;
+    }
+
+    &__container {
+    grid-template-columns: 1fr;
+}
+
+&-box {
+    @include grid(2, 1em);
+
+    @include responsive(950px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+&__li {
+    margin-bottom: 20px;
+    padding: 10px 0 10px 0px;
+    counter-increment: mynumbers;
+    position: relative;
+
+    &:before {
+        content: counter(mynumbers);
+        font-size: 2em;
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        border-radius: 50%;
+        text-align: center;
+        background-color: var(--c-light-primary);
+        color: var(--c-primary);
+        margin-right: 8px;
+    }
+}
+
+&-slide__img {
+    height: 589px;
+}
+
+}

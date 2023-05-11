@@ -8,8 +8,8 @@
       <div class="nav-overlay" [ngClass]="{ 'activeNavOverlay': activeNavOverlay}"></div>
       <div #nav class="nav light-theme" [ngClass]="{ 'nav--active': active}">
   
-        <div #navMenu class="nav-menu" (click)="closeOut()">
-          <a  mat-button class="nav-menu__a" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+        <div #navMenu class="nav-menu">
+          <a mat-button class="nav-menu__a" routerLink="" routerLinkActive="active" (click)="closeNav()" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
        
           <button class="nav-submenu" mat-button [matMenuTriggerFor]="plataformas">
             Plataformas
@@ -17,46 +17,46 @@
           </button>
   
           <mat-menu #plataformas="matMenu" class="submenu">
-            <a class="nav-menu__a nav-submenu__a" routerLink="plataforma/pagaqui" routerLinkActive="active" mat-menu-item>Pagaqui</a>
-            <a class="nav-menu__a nav-submenu__a" routerLink="plataforma/planetaemx" routerLinkActive="active" mat-menu-item>Planetaemx</a>
+            <a class="nav-menu__a nav-submenu__a" routerLink="plataforma/pagaqui" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Pagaqui</a>
+            <a class="nav-menu__a nav-submenu__a" routerLink="plataforma/planetaemx" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Planetaemx</a>
           </mat-menu>
   
           <button class="nav-submenu" mat-button [matMenuTriggerFor]="consultar">Consultar</button>
   
           <mat-menu #consultar="matMenu">
-            <a class="nav-submenu__a" routerLinkActive="active" mat-menu-item>Como vender recargas</a>
-            <a class="nav-submenu__a" routerLinkActive="active" mat-menu-item>Como vender pago de servicios</a>
-            <a class="nav-submenu__a" routerLinkActive="active" mat-menu-item>Como vender pines electrónicos</a>
+            <a class="nav-menu__a nav-submenu__a" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Como vender recargas</a>
+            <a class="nav-menu__a nav-submenu__a" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Como vender pago de servicios</a>
+            <a class="nav-menu__a nav-submenu__a" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Como vender pines electrónicos</a>
           </mat-menu>
   
           <button class="nav-submenu" mat-button [mat-menu-trigger-for]="notificar">Notificar</button>
   
           <mat-menu #notificar="matMenu">
-            <a class="nav-submenu__a" routerLinkActive="active" mat-menu-item>Deposito Pagaqui</a>
-            <a class="nav-submenu__a" routerLinkActive="active" mat-menu-item>Deposito Planetaemx</a>
+            <a class="nav-menu__a nav-submenu__a" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Deposito Pagaqui</a>
+            <a class="nav-menu__a nav-submenu__a" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Deposito Planetaemx</a>
           </mat-menu>
   
           <button class="nav-submenu" mat-button [mat-menu-trigger-for]="ayuda">Ayuda</button>
   
           <mat-menu #ayuda="matMenu">
-            <a class=" nav-menu__a nav-submenu__a" routerLinkActive="active" routerLink="ayuda/faqs" mat-menu-item>Preguntas frecuentes</a>
-            <a class="nav-submenu__a" routerLinkActive="active" routerLink="ayuda/contacto" mat-menu-item>Contacto</a>
-            <a class="nav-submenu__a" routerLinkActive="active" routerLink="ayuda/blog" mat-menu-item>Blog</a>
+            <a class=" nav-menu__a nav-submenu__a" routerLinkActive="active" (click)="closeNav()" routerLink="ayuda/faqs" mat-menu-item>Preguntas frecuentes</a>
+            <a class="nav-menu__a nav-submenu__a" routerLinkActive="active" (click)="closeNav()" routerLink="ayuda/contacto" mat-menu-item>Contacto</a>
+            <a class="nav-menu__a nav-submenu__a" routerLinkActive="active" (click)="closeNav()" routerLink="ayuda/blog" mat-menu-item>Blog</a>
           </mat-menu>
   
-          <button class="nav-menu__close" (click)="disabledNav()" mat-icon-button
+          <button class="nav-menu__close" (click)="closeNav()" mat-icon-button
             aria-label="Example icon button with a home icon">
             <mat-icon>close</mat-icon>
           </button>
   
-          <a class="nav-menu__register" routerLink="registro" mat-flat-button color="primary">Registrarme</a>
+          <a class="nav-menu__register" routerLink="registro" (click)="closeNav()" mat-flat-button color="primary">Registrarme</a>
   
         </div>
   
       </div>
   
       <div class="r-bottons">
-        <button #btnTheme class="r-theme light" mat-icon-button
+        <button #btnTheme [(ngModel)]="isDarkMode" (click)="toggleTheme()" class="r-theme light" mat-icon-button
           matTooltip="Seleccione para cambiar de tema para la pagina"
           aria-label="Example icon button with a palette icon">
           <mat-icon class="r-theme__icon r-theme__icon-sun" fontIcon="sunny"></mat-icon>
@@ -64,7 +64,7 @@
         </button>
   
         <a class="r-bottons__a" routerLink="registro" mat-flat-button color="primary">Registrarme</a>
-        <button (click)="activeNav()" class="r-bottons__bar" mat-icon-button
+        <button (click)="openNav()" class="r-bottons__bar" mat-icon-button
           aria-label="Example icon button with a vertical three dot icon">
           <mat-icon fontIcon="grid_view"></mat-icon>
         </button>

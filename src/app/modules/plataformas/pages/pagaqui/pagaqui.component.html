@@ -1,407 +1,184 @@
 <div class="banner-plataformas">
-    <!-- <link rel="preload" as="image" href="https://ik.imagekit.io/taerecargas/Recargas/banner_pagaqui_NtFZ3rTAe.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1667838210230" />
-    <link rel="preload" as="image" href="https://ik.imagekit.io/taerecargas/Recargas/banner-pagaqui__responsive_b7gRNr_Sg.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1667836789822" /> -->
-
-    <picture class="banner-plataformas__picture banner__desktop">
-        <source media="(min-width:1200px )" srcset="" type="image/webp">
-        <source media="screen and (min-width: 560px)" srcset="https://ik.imagekit.io/taerecargas/Recargas/banner-recargas__responsive_pGJpY0wRA.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1668276612398" type="img/webp">
-        <img src="#" class="banner-plataformas__img banner__img" width="100%" height="100%" alt="Conoce & registrate en nuestras plataformas Pagaqui y obten una comisión por cada venta que realizes en recargas & pago de servicios">
+   <div class="banner-plataformas__container container mb-3">
+    <picture class="banner-plataformas__picture">
+        <source media="(min-width:1200px)" srcset="assets/img/plataformas/pagaqui/banner_pagaqui.jpg" type="image/jpg">
+        <source media="screen and (max-width: 650px)" srcset="assets/img/plataformas/pagaqui/banner-pagaqui__responsive.jpg" type="image/jpg">
+        <img src="assets/img/plataformas/pagaqui/banner_pagaqui.jpg" class="banner-plataformas__img banner__img" width="100%" height="100%" alt="Conoce & registrate en nuestras plataformas Pagaqui y obten una comisión por cada venta que realizes en recargas & pago de servicios">
     </picture>
+   </div>
 </div>
 
-<!-- ============= SECCION CAROSUSEL ============= -->
-<!-- <div class="services mtop-5 mbottom-3 wow animate__animated animate__zoomIn">
+<!-- ============= SECCION CAROSUSEL PRODUCTOS ============= -->
+<app-carousel-productos></app-carousel-productos>
 
-    <div class="services__container container">
+<!-- ============= SECCION APP PLATAFORMAS ============= -->
+<app-plataformas [plataforma]="app"  *ngFor="let app of appPagaqui"></app-plataformas>
 
-        <h3 class="services__h3 title">Con <span class="PagaquiColor">Pagaqui</span> vende tiempo aire Telcel, Bait y todas las compañias de telefonía celular</h3>
-
-        <div class="services-content">
-            <div class="swiper services-swiper">
-
-                <div class="swiper-wrapper services-wrapper">
-                    <div class="swiper-slide services-swiper-slide" *ngFor="let service of services">
-
-                        <div class="services-item">
-
-                            <div class="service-item-image">
-                                <picture class="service-item__picture">
-                                    <img [src]="service.url" alt="item.title" width="260" height="200" loading="lazy" class="service-item__img">
-                                </picture>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="swiper-pagination services-swiper-pagination"></div>
-            </div>
-        </div>
-    </div>
-
-</div> -->
-
-<!-- ============= SECCION COMISION ============= -->
-<div class="comision comision--pagaqui  mtop-5 mbottom-3">
-
-    <div class="comision__container container">
-
-        <h3 class="comision__h3 title">OBTEN UNA COMISIÓN POR CADA VENTA QUE REALICES</h3>
-        <div class="comision__wrapper grid grid-col-2 align-center justify-center grid-mobile backPagaqui">
-
-            <div class="comision-content">
-                <h3 class="subtitle">Incrementa tus ganacias con <span class="PagaquiColor">Pagaqui</span></h3>
-                <p class="comision-content__p"> Por cada venta que realizas de tiempo aire, pin electrónico o cobro de servicios recibe un porcentaje de comisión que incrementa tus ingresos mensuales.</p>
-
-                <div class="comision-btns">
-
-                    <button class="comsion-btns__play" aria-label="Play Video" class="comsion-btns__play videoPagaqui" type="button" (click)="openVideo()">
-                        <i class='bx bx-play comision-btns__i'></i>
-                    </button>
-
-                    <a class="comision-content__a desktop__btn" class="btn__pagaqui" routerLink="/registro">
-                        Inscribirme ahora
-                        <i class='bx bx-right-arrow-alt btn-2__i icon__i--arrow icon__i--pagaqui'></i> 
-                    </a>
-
-                </div>
-
-            </div>
-
-            <div class="comision-image">
-
-                <div class="comision-image__shape shapePagaqui"></div>
-                <picture class="comision-image__picture">
-                    <img src="https://ik.imagekit.io/taerecargas/Recargas/mockup-pagaqui_s0I8Yhlpw.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1668452473652" class="comision-image__img" loading="lazy" width="390" height="736" alt="Incrementa tus ganancias con Pagaqui">
-                </picture>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="video-popup" id="videoContainer" [ngClass]="{ 'video-popup__open' :  btnVideo }">
-    <div class="video-popup__inner">
-        <i class='video-popup__close' (click)="closeVideo()">X</i>
-        <div class="video-box">
-            <iframe class="video-box__video" #videoPagaqui title="Video comisión pagaqui" [width]="400" [height]="400" id="video-pagaqui" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </div>
-</div>
-
-<!-- ============= SECCION ACTIVITIES ============= -->
-<div class="activities mtop-5 mbottom-3">
-
-    <div class="activities__container container">
-        <h3 class="activities__h3 title">Que puedes hacer con <span class="PagaquiColor">Pagaqui</span></h3>
-
-        <div class="activities__content grid grid-col-2 align-center justify-center grid-mobile">
-
-            <div class="activities-items">
-                <div class="activities-item">
-                    <span class="activities-item__number Pagaqui"> 1 </span>
-                    <h4 class="activities-item__h4"> Obtén una comisión por la venta de cada recarga Telcel, Bait, o cualquier compañía de recargas o servicios </h4>
-                </div>
-
-                <div class="activities-item">
-                    <span class="activities-item__number Pagaqui"> 2</span>
-                    <h4 class="activities-item__h4"> Genera una referencia para todos depósitos y recibe tu saldo de manera automática sin necesidad de notificarnos </h4>
-                </div>
-
-                <div class="activities-item">
-                    <span class="activities-item__number Pagaqui"> 3 </span>
-                    <h4 class="activities-item__h4"> Con un único saldo realizar recargas a cualquier compañía, paga servicios y pines electrónicos </h4>
-                </div>
-
-                <div class="activities-item">
-                    <span class="activities-item__number Pagaqui"> 4</span>
-                    <h4 class="activities-item__h4"> Cobra a tus clientes todas tus ventas de recargas, pago de servicios mediante QR, ahora podrás cobrar tus clientes mediante QR </h4>
-                </div>
-
-                <div class="activities-item">
-                    <span class="activities-item__number Pagaqui"> 5 </span>
-                    <h4 class="activities-item__h4"> Registra a todos tus puntos de venta </h4>
-                </div>
-
-                <div class="activities-item">
-                    <span class="activities-item__number Pagaqui">6</span>
-                    <h4 class="activities-item__h4">Consulta tus reportes de venta</h4>
-                </div>
-                <a routerLink='/registro' class="desktop__btn btn__pagaqui">
-                    Inscribirme ahora 
-                     <i class='bx bx-right-arrow-alt btn-2__i icon__i--arrow icon__i--pagaqui'></i> 
-                 </a>
-            </div>
-
-
-            <div class="activities-image">
-                <picture class="activities-image__picture">
-                    <img src="/assets/img/svg/plataforma__pagaqui.svg" class="activities-image__img activities-image__pagaqui" loading="lazy" width="584" height="376" alt="Características de Pagaqui, comisión por venta de recargas, inscríbeme totalmente gratis y vender tiempo aire Telcel, Bait">
-                </picture>
-            </div>
-
-        </div>
-
-    </div>
-
-
-</div>
+<!-- ============= SECCION MONTOS ============= -->
+<app-montos [monto]="monto"  *ngFor="let monto of montosPagaqui"></app-montos>
 
 <!-- ============= SECCION CUENTAS ============= -->
-<div class="cuentas cuentas--pagaqui mtop-5 mbottom-3">
+<div class="cuentas mb-3">
     <div class="cuentas__container container">
+        <span class="badge cuentas_badge headline-5">Cuentas Pagaqui
+            <mat-icon class="badge__icon" aria-hidden="false" aria-label="Example home icon" fontIcon="request_quote"></mat-icon>
+        </span>
 
-        <h3 class="cuentas__h3 title" id="cuentas" name="cuentas">Consulta todos los numeros de cuenta para depositar y vender recargas en <span class="PagaquiColor">Pagaqui</span></h3>
+        <h2 class="cuentas__h2 headline-2">Cuentas bancarias <span class="span--pagaqui headline-2">
+            Pagaqui
+        </span> 
+    </h2>
+        <p class="cuentas__p body-1">📌No se aceptan depositós con cheque de otros bancos (SALVO BUEN COBRO), Los numeros de cuenta están a nombre de <strong class="cuentas__strong body-1">TA3 SA DE CV</strong> </p>
+     
+   
+        <div class="cuentas-table">
+            <table class="cuentas__table cuentas-pagaqui__table">
+                <thead class="cuentas__thead cuentas-pagaqui__thead">
+                    <tr class="cuentas__tr cuentas-pagaqui__tr">
+                        <th class="cuentas__th cuentas-pagaqui__th headline-6">
+                            BANCO
+                        </th>
 
-        <div class="cuentas-wrapper grid grid-col-2 align-center justify-center grid-mobile">
-            <!-- Shapes -->
-            <i class='bx bx-file  plataforma-shapes__i cuentas-shapes__i--1'></i>
-            <i class='bx bx-file  plataforma-shapes__i cuentas-shapes__i--2'></i>
-            <i class='bx bxs-file-blank  plataforma-shapes__i cuentas-shapes__i--3'></i>
-            <i class='bx bxs-offer  plataforma-shapes__i cuentas-shapes__i--4'></i>
-            <i class='bx bxs-receipt  plataforma-shapes__i cuentas-shapes__i--5'></i>
-            <i class='bx bxs-wallet  plataforma-shapes__i cuentas-shapes__i--6'></i>
+                        <th class="cuentas__th cuentas-pagaqui__th headline-6">
+                            CUENTA
+                        </th>
 
-            <div class="cuentas-content">
-                <h3 class="subtitle cuentas-content__h3">
-                    Deposita un monto minimo de $300 y realiza recargas de tiempo aire a todas las compañias de telefonia disponibles en México
-                </h3>
+                        <th class="cuentas__th cuentas-pagaqui__th headline-6">
+                            CLAVE
+                        </th>
+                    </tr>
+                </thead>
 
-                <p class="cuentas-content__p text">
-                    Invierte poco y obtén excelentes comisiones, recarga nuevamente cuando lo requieras, sin pagos forzosos, anualidades ni penalizaciones, tú decides como y cuando recargar nuevamente.
-                </p>
+                <tbody class="cuenta__tbody">
+                    <tr class="cuentas__tr--body" *ngFor="let cuenta of cuentasPagaqui">
+                        <td class="cuentas__td cuentas-pagaqui__td body-1" data-label="BANCO">
+                            {{cuenta.banco | uppercase}}
+                        </td>
 
-                <a class="comision-content__a desktop__btn" class="comision-content__a desktop__btn btn__pagaqui" href="/assets/img/Cuentas_Pagaqui.jpg" target="_blank" rel="noopener">
-                    consultar cuentas
-                    <i class='bx bx-right-arrow-alt btn-2__i icon__i--arrow icon__i--pagaqui'></i> 
-                </a>
-            </div>
+                        <td class="cuentas__td cuentas-pagaqui__td body-1" data-label="CUENTA">
+                            {{cuenta.cuenta}}
+                        </td>
 
-            <div class="cuentas-image">
-                <picture class="cuentas-image__picture">
-                    <source type="image/webp" srcset="https://ik.imagekit.io/taerecargas/Recargas/img-plataformas_iSyfP5OZC.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1667251070682">
-                    <source type="image/png" srcset="assets/img/img-plataformas.png">
-                    <img src="assets/img/img-plataformas.png" class="cuentas-image__img" loading="lazy" width="500" height="500" alt="Consulta los números de cuenta para recargar saldo y vender tiempo aire a cualquier compañía ">
-                </picture>
-            </div>
+                        <td class="cuentas__td cuentas-pagaqui__td body-1" data-label="CLAVE">
+                            {{cuenta.clave}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="cuentas-referencia cuentas mb-3">
+    <div class="cuentas-referencia cuentas__container container">
+        <span class="badge cuentas_badge headline-5">Cuentas Con Referencia</span>
+        <h3 class="cuentas-referencia__h3 cuentas__h3 headline-3">Cuentas bancarias <span class="span--pagaqui headline-3">
+            Pagaqui
+        </span>  con referencia</h3>
+        <p class="cuentas-referencia__p cuentas__p body-1">📌La notificación y abono del depósito se realiza de manera automatica al hacer el pago con la referencia correcta. </p>
+        <p class="cuentas-referencia__p cuentas__p body-1">📌Para montos menores a <span class="cuentas__strong body-1">$999 pesos</span>, la plataforma le habra un cobro de $4 pesos. </p>
+        <p class="cuentas-referencia__p cuentas__p body-1">📌Para montos superiores a <span class="cuentas__strong body-1">$1,000 pesos</span> no tendrá costo alguno. </p>
+        <p class="cuentas-referencia__p cuentas__p body-1">📌Compra minima con referencia <span class="cuentas__strong body-1">$200 pesos sin centavos</span></p>
+
+        <div class="cuentas-table">
+            <table class="cuentas__table">
+                <thead class="cuentas__thead cuentas-pagaqui__thead">
+                    <tr class="cuentas__tr cuentas-pagaqui__tr">
+                        <th class="cuentas__th cuentas-pagaqui__th headline-6">
+                            BANCO
+                        </th>
+
+                        <th class="cuentas__th cuentas-pagaqui__th headline-6">
+                            CUENTA
+                        </th>
+
+                    </tr>
+                </thead>
+
+                <tbody class="cuenta__tbody">
+                    <tr class="cuentas__tr--body" *ngFor="let cuenta of cuentasPagaqui">
+                        <td class="cuentas__td cuentas-pagaqui__td body-1" data-label="BANCO">
+                            {{cuenta.banco | uppercase}}
+                        </td>
+
+                        <td class="cuentas__td cuentas-pagaqui__td body-1" data-label="CUENTA">
+                            {{cuenta.cuenta}} <span class="cuentas__strong body-1">+ Referencia</span> 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
     </div>
 </div>
 
+<!-- ============= SECCION HORARIO DEPOSITOS ============= -->
+<!-- ============= SECCION APLICACIÓN DE DEPOSITOS ============= -->
+<div class="aplicacion mb-3">
 
-<!-- ============= SECCION DOWLOAND APP ============= -->
-<div class="download-app mtop-5 mbottom-3">
+    <div class="aplicacion__container container">
+        <h2 class="aplicacion__h2 headline-2">
+            Horario
+             <span class="span--pagaqui headline-2">
+                Pagaqui
+            </span> 
+        </h2>
 
-    <div class="download-app__container container">
+        <div class="aplicacion-box">
+        <div class="aplicacion-content">
 
-        <i class='bx bx-wifi plataforma-shapes__i download-app-shapes__i--1'></i>
-        <i class='bx bx-laptop plataforma-shapes__i download-app-shapes__i--2'></i>
-        <i class='bx bx-tab plataforma-shapes__i download-app-shapes__i--3'></i>
-        <i class='bx bx-mobile-alt plataforma-shapes__i download-app-shapes__i--4'></i>
-        <i class='bx bx-devices plataforma-shapes__i  download-app-shapes__i--5'></i>
+            <p class="aplicacion-content__p aplicacion-content__p--1 body-1">Si ya realizaste algún deposito a los números de cuenta correspondiente a tu plataforma, recuerda que el siguiente paso es notificar todos tus depósitos y/o transferencias ya sea a través de nuestra página web en la sección Reportes seleccionando tu plataforma. O bien vía WhatsApp, ambos métodos son válidos elije el que mejor te convenga. Si elijes vía WhatsApp, es necesario que proporciones a tu asesor ejecutivo lo siguiente: Numero de usuario & foto o captura de tu ficha</p>
+       
+           <p class="aplicacion-content__p headline-5">
+            Aplicación de <strong class="aplicacion-content__strong">depositos Pagaqui</strong>:
+           </p>
 
+           <p class="aplicacion-content__p body-1">
+            Lunes a Viernes: <br>
+            9:00am a 6:00pm
+           </p>
 
-        <h3 class="title download-app__h3">Descarga la App para tu dispositivo movil</h3>
-
-        <p class="text download-app__p">Descarga la desde la tienda oficial de tus aplicaciones. y empieza a realizar recargas electrónicas a cualquier compañía de telefonía celular disponible en México</p>
-
-
-        <div class="dowload-apps flex  align-center justify-center">
-
-            <div class="download-app__type">
-
-                <h4 class="download-app__h4">App Pagaqui</h4>
-                <a href="https://play.google.com/store/apps/details?id=pagaqui.apppagaqui&hl=es" class="download-app__a" aria-label="descarga nuestra App Pagaqui para tu celular o tablet Android" target="_blank" rel="noopener">
-                    <picture class="download-app__picture">
-                        <source type="image/webp" srcset="https://ik.imagekit.io/taerecargas/Recargas/google-play_P7Bviv3jcA.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1667237770737">
-                        <source type="image/png" srcset="/assets/img/google-play.png">
-                        <img src="/assets/img/google-play.png" width="280" height="108" class="download-app__img lazyload" loading="lazy" alt="Ingresa a tu plataforma descargando la App oficial">
-                    </picture>
-                </a>
-            </div>
-
+           <p class="aplicacion-content__p body-1">
+            Sabados: <br>
+            9:00am a 4:00pm
+           </p>
 
         </div>
 
-    </div>
+        <div class="aplicacion-aviso">
 
+            <h3 class="aplicacion-aviso__h3 headline-3">Aviso</h3>
+            <p class="aplicacion-aviso__p body-1">
+                Recuerda que no solicitamos información confidencial como claves de acceso o nips, ni acceso a tu equipo para realizar actualizaciones, si recibes una llamada de este tipo puedes estar siendo víctima de un fraude.
+            </p>
+            <img src="/assets/img/aviso__aplicacion.png" class="aplicacion-aviso__img" loading="lazy" alt="Recargas Electronicas lider nacional en la venta de tiempo aire">
+        </div>
+    </div>
+</div>
 </div>
 
-
-<!-- ============= SECCION DEVICES ============= -->
-<div class="devices container">
-
-    <h5 class="devices__h2 title">Vende Recargas desde donde quieras</h5>
-    <div class="devices__content">
-
-        <div class="devices-left">
-
-            <div class="devices-item">
-                <div class="devices-item__icon flex align-center justify-center">
-                    <i class='bx bxs-devices devices-item__i'></i>
-                </div>
-
-                <span class="devices-item__span">Vende recarga desde cualquier dispositivo</span>
-                <p class="devices-item__p">Vende recargas, pago de servicios a todas las compañias disponibles en México.</p>
-            </div>
-
-
-            <div class="devices-item">
-                <div class="devices-item__icon flex align-center justify-center">
-                    <i class='bx bx-user-plus devices-item__i'></i>
-                </div>
-
-                <span class="devices-item__span">Registra tus puntos de venta</span>
-                <p class="devices-item__p">Registra y administra todos tus puntos de venta</p>
-            </div>
-        </div>
-
-        <div class="devices-image flex align-center justify-center">
-            <picture class="devices-image__picture">
-                <img src="/assets/img/svg/devices_pt.svg" class="devices-image__img" loading="lazy" width="346" height="285" alt="Vende tiempo aire desde tu celular, Tablet computadora o vía SMS gratuito">
-            </picture>
-        </div>
-
-        <div class="devices-right">
-            <div class="devices-item">
-                <div class="devices-item__icon flex align-center justify-center">
-                    <i class='bx bxs-offer devices-item__i'></i>
-                </div>
-
-                <span class="devices-item__span">Genera ganancias por tus ventas de recargas</span>
-                <p class="devices-item__p">Vende recargas, pago de servicios a todas las compañias disponibles en México.</p>
-            </div>
-
-
-            <div class="devices-item">
-                <div class="devices-item__icon flex align-center justify-center">
-                    <i class='bx bx-cog devices-item__i'></i>
-                </div>
-
-                <span class="devices-item__span">Soporte técnico</span>
-                <p class="devices-item__p">Tenemos varios medios de atención a nuestros clientes incluye teléfono, chat, WhatsApp y correo. Contáctanos</p>
-            </div>
+<!-- ============= SECCION POLITICAS DE APLICACIÓN DEPOSITOS ============= -->
+<div class="politicas">
+    <div class="politicas__container container">
+        <div class="politicas-title">
+            <h2 class="politicas-title__h2 headline-2">Politica de depositos Pagaqui</h2>
+            <p class="politicas-title__p headline-6">El abono de depósitos reportados en nuestra pagina web o vía WhatsApp serán aplicados según sea algunos de los siguientes criterios:</p>
+       
+            <ul class="politicas__ul">
+                <li class="politicas__li body-1" *ngFor="let politica of politicas">
+                    {{politica.condicion}}
+                </li>
+            </ul>
 
         </div>
-
     </div>
 </div>
 
-
-<!-- ============= SECCION ACCESO ============= -->
-<div class="acceso">
-    <div class="acceso__container container grid grid-col-2 align-center justify-center grid-mobile mtop-5 mbottom-3">
-
-        <div class="acceso__content">
-            <!-- <span class="sub-heading">¿Como ingreso a la plataforma para vender recargas?</span> -->
-            <h3 class="acceso__h3 heading">Accede a tu plataforma y empieza a realizar recargas, pago de servicios y pines electrónicos</h3>
-
-            <div class="acceso__items">
-
-                <div class="acceso__item">
-
-                    <h4 class="acceso__h4"> Accede a tu plataforma <span class="acceso__span PagaquiColor"> Pagaqui</span></h4>
-                    <a href="https://pagaqui.com.mx/Login.aspx" class="btn-2 acceso__a btn__pagaqui" aria-label="Ingresa a tu plataforma Pagaqui" rel="noopener" target="_blank">
-                        Pagaqui
-                        <i class='bx bx-right-arrow-alt icon__i--arrow icon__i--pagaqui'></i>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-        <div class="acceso__image">
-            <picture class="acceso__picture">
-                <source type="image/webp" srcset="https://ik.imagekit.io/taerecargas/Recargas/men-acceso_XlBZexJcE.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1667251466734">
-                <source type="image/png" srcset="/assets/img/men-acceso.png">
-                <img src="/assets/img/men-acceso.png" class="acceso__img" loading="lazy" width="584" height="389" alt="Ingresa a tu plataforma de venta de recargas a cualquier compañía de telefonía">
-            </picture>
-        </div>
-
-    </div>
-</div>
+<!-- ============= SECCION METODOS DE VENTA ============= -->
+<app-metodo-ventas></app-metodo-ventas>
 
 <!-- ============= SECCION MANUALES ============= -->
-<div class="manuales mtop-5 mbottom-3">
-    <div class="manuales__container container">
-        <h3 class="manuales__h3 title">Consulta los manuales como vender recargas electrónicas en <span class="PagaquiColor">Pagaqui</span></h3>
-
-        <div class="manuales-content grid grid-col-2 align-center justify-center grid-mobile">
-
-            <div class="manuales__description">
-
-                <p class="manuales__p subtitle">Consulta todo acerca de como puedes vender recargas & pago de servicios en <span class="PagaquiColor">Pagaqui</span> </p>
-
-                <div class="manuales-pdfs">
-                    <a class="manuales__a btn-2" class="manuales__a btn-2 btn__pagaqui" href="/assets/img/manual_pagaqui.pdf" target="_blank" rel="noopener" aria-label="consulta el manual para tu navegador de Pagaqui para vender tiempo aire"> 
-                        Descargar manual Pagaqui versión web
-                        <i class='bx bx-download manuales__i'></i>
-                    </a>
-
-                    <a class="manuales__a btn-2" class="manuales__a btn-2 btn__pagaqui" href="https://pagaqui.com.mx/Manuales.aspx" target="_blank" rel="noopener" aria-label="consulta los demas manuales de pagaqui para vender recargas electrónicas"> 
-                        Consultar manuales para version aplicacion
-                        <i class='bx bx-download manuales__i'></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="manuales-image">
-                <picture class="manuales__picture">
-                    <source type="image/webp" srcset="https://ik.imagekit.io/taerecargas/Recargas/img-manual_dwSPR_HJY.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1667251651813">
-                    <source type="image/png" srcset="/assets/img/img-manual.png">
-                    <img src="/assets/img/img-manual.png" class="manuales__img" loading="lazy" width="572" height="400" alt="Consulta los manuales para vender tiempo aire, pago de servicios y pines electrónicos">
-                </picture>
-            </div>
-
-        </div>
-    </div>
-</div>
+<app-manuales [manuales]="manual" *ngFor="let manual of manualesPagaqui"></app-manuales>
 
 <!-- ============= SECCION REGISTER ============= -->
-<div class="div register mtop-5 mbottom-3">
-    <div class="register__container container  grid-mobile">
-
-        <div class="register-items wow animate__animated animate__fadeInUp ">
-
-            <!-- register item -->
-            <div class="register-item">
-                <i class='bx bxs-user-plus register-item__i'></i>
-                <span class="register-item__span">Registrate para vender recargas</span>
-            </div>
-
-            <!-- register item -->
-            <div class="register-item">
-                <i class='bx bx-paper-plane register-item__i '></i>
-
-                <span class="register-item__span">Espera nuestro correo con toda la información para vender recargas</span>
-            </div>
-
-            <!-- register item -->
-            <div class="register-item">
-                <i class='bx bx-wallet register-item__i'></i>
-                <span class="register-item__span">Realiza un deposito minimo de $300</span>
-            </div>
-
-            <!-- register item -->
-            <div class="register-item">
-                <i class='bx bxs-offer register-item__i '></i>
-                <span class="register-item__span">Empieza a generar ganacias vendiendo recargas</span>
-            </div>
-
-
-        </div>
-
-        <!-- register info -->
-        <div class="register__info wow animate__animated animate__fadeInUp ">
-            <h2 class="register__h3 sub-heading ">¿Como me registro para vender recargas?</h2>
-
-            <h3 class="register__h2 heading">Registrate con <span class="PagaquiColor">Pagaqui</span> para vender tiempo aire, tu registro es totalmente gratuito</h3>
-            <p class="register__p text ">Empieza a vender recargas con un depósito mínimo de $300, y recarga nuevamente cuando quieras y puedas, sin penalizaciones, mensualidades ni pago forzosos.</p>
-
-            <div class="register__btns ">
-                <a class="comision-content__a desktop__btn btn__pagaqui" routerLink="/registro">
-                    Registrarme ahora
-                    <i class='bx bx-right-arrow-alt btn-2__i icon__i--arrow icon__i--pagaqui'></i> 
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+<app-register-steps></app-register-steps>

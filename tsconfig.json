@@ -12,7 +12,7 @@
       "@reportes/*": ["src/app/modules/reportes/*"],
       "@ayuda/*": ["src/app/modules/ayuda/*"],
       "@shared/*":   ["src/app/shared/*"],
-      "@components/*": ["src/app/components/*"],
+      "@feature/*": ["src/app/feature/*"],
       "@core/*": ["src/app/core/*"],
     },
     "outDir": "./dist/out-tsc",

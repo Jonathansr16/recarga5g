@@ -21,10 +21,9 @@
                 mismo!</p>
 
             <div class="wrapper-action flex align-center justify-center">
-                <a class="wrapper-action__a radius-20" mat-raised-button color="primary">Registrarme
+                <a class="wrapper-action__a radius-20" mat-raised-button color="primary" routerLink="/registro">Registrarme
                     ahora</a>
-                <a class="wrapper-action__a my-button btn-underline" href="https://www.google.com/"
-                    target="_blank">Consultar productos
+                <a class="wrapper-action__a my-button btn-underline" routerLink="/plataforma/pagaqui">Consultar productos
                     <mat-icon class="wrapper-action__icon" color="accent" aria-hidden="false"
                         aria-label="Example home icon" fontIcon="outbound"></mat-icon>
                 </a>
@@ -106,7 +105,7 @@
                 </ul>
             </div>
 
-            <a class="radius-20" mat-raised-button color="primary">Registrarme
+            <a class="radius-20" mat-raised-button color="primary" routerLink="/registro">Registrarme
                 ahora</a>
         </div>
         <div class="beneficios-left">
@@ -147,11 +146,15 @@
         </div>
 
         <div class="inversion-box">
+            <div class="inversion-right">
+                <img src="/assets/img/inversion-recargas.png" class="inversion-right__img" loading="lazy" alt="Deposita un monto minimo y empieza a vender recargas a cualquier compañia">
+            </div>
+         
             <div class="inversion-subtitle">
-                <h3 class="inversion-subtitle__h3 headline-3">Deposita un monto minimo de $300 y empieza a vender
+                <h3 class="inversion-subtitle__h3 headline-3">Deposita un monto minimo de $100 y empieza a vender
                     recargas </h3>
                 <p class="inversion-subtitle__p body-1 mb-1">
-                    puedes invertir desde $300 pesos. A través de nuestro servicio de atención a clientes te explicamos
+                    puedes invertir desde $100 pesos. A través de nuestro servicio de atención a clientes te explicamos
                     como vender recargas Telcel y de todas las compañías en tu negocio y además ganar una comisión.
                     Vender recargas es uno de los mejores negocios para ti. Muchos negocios que desean vender saldo,
                 </p>
@@ -172,9 +175,6 @@
                 </ul>
             </div>
 
-            <div class="inversion-right">
-                <img src="/assets/img/inversion-recargas.png" class="inversion-right__img" loading="lazy" alt="Deposita un monto minimo y empieza a vender recargas a cualquier compañia">
-            </div>
         </div>
     </div>
 </div>
@@ -198,7 +198,7 @@
                 un mayor flujo de clientes.
             </p>
 
-            <p class="negocio-left__p body-1">Tu registro es totalmente gratuito, si tienes dudas acerca de como vender
+            <p class="negocio-left__p body-1 mb-1">Tu registro es totalmente gratuito, si tienes dudas acerca de como vender
                 recargas o requieres mayor información contactos.</p>
 
             <a mat-raised-button color="primary" class="negocio-left__a" routerLink="/registro">

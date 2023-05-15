@@ -191,8 +191,8 @@ font-family: 'PoppinsRegular';
    margin-right: auto;
    padding: 0.5em 0.8em;
    border-radius: 12px;
-   @include flexible(flex, row, nowrap, center, center);
-   gap: 0.2em;
+   @include flexible(flex, row, wrap, center, center);
+   gap: 0.5em;
 }
 
 .badge-2 {
@@ -219,6 +219,14 @@ font-family: 'PoppinsRegular';
   width: 28px;
   height: 28px;
   font-size: 28px;
+}
+
+.span--pagaqui {
+    color: #5a70ec; 
+}
+
+.span--planetaemx {
+    color: #199356;
 }
 //* ============ SCROLL BAR =============
 
@@ -304,20 +312,6 @@ body.blockScrollModal {
     border: 6px solid #37384e;
     border-radius: 36px;
     overflow: hidden;
-    &::before {
-        display: block;
-        position: absolute;
-        left: -35px;
-        bottom: -10px;
-        width: 380px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: #000;
-        filter: blur(13px);
-        opacity: 0.55;
-        z-index: -1;
-        content: "";
-    }
 
     &::after {
         position: absolute;
@@ -333,7 +327,6 @@ body.blockScrollModal {
         border-bottom-left-radius: 18px;
     }
 }
-
 
 
 //* Modo responsive para Desktop, table y movile

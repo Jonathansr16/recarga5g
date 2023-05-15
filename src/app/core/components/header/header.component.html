@@ -56,13 +56,14 @@
       </div>
   
       <div class="r-bottons">
-        <button #btnTheme [(ngModel)]="isDarkMode" (click)="toggleTheme()" class="r-theme light" mat-icon-button
+        <button #btnTheme  class="r-theme light-btn" mat-icon-button
           matTooltip="Seleccione para cambiar de tema para la pagina"
           aria-label="Example icon button with a palette icon">
           <mat-icon class="r-theme__icon r-theme__icon-sun" fontIcon="sunny"></mat-icon>
           <mat-icon class="r-theme__icon r-theme__icon-moon" fontIcon="dark_mode"></mat-icon>
         </button>
-  
+
+
         <a class="r-bottons__a" routerLink="registro" mat-flat-button color="primary">Registrarme</a>
         <button (click)="openNav()" class="r-bottons__bar" mat-icon-button
           aria-label="Example icon button with a vertical three dot icon">

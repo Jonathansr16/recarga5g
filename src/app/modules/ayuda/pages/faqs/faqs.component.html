@@ -1,527 +1,550 @@
-<div class="banner banner-ayuda container">
-    <link rel="preload" as="image" href="https://ik.imagekit.io/taerecargas/Recargas/banner_ayuda_d3CgfbV3S.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1668634024076" />
-    <link rel="preload" as="image" href="https://ik.imagekit.io/taerecargas/Recargas/banner-ayuda__responsive_xAg0CBmgy.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1667842887509" />
+<div class="ayuda">
+    <div class="banner wrapper-faqs ayuda__container container">
 
-    <picture class="banner-ayuda__picture banner__desktop">
-        <img src="https://ik.imagekit.io/taerecargas/Recargas/banner_ayuda_d3CgfbV3S.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1668634024076" class="banner__img banner-ayuda__img" width="100%" height="100%" alt="Contactanos para obtener mayor información acerca de la venta de tiempo aire Telcel, bait, Movistar">
-    </picture>
+        <div class="wrapper-faqs-content">
+            <span class="badge wrapper__badge badge-1 headline-5">Centro de ayuda para vender recargas
+                <img src="assets/img/faqs__icon.png" class="wrapper-faqs__img"
+                    alt="Centro de ayuda para la venta de recargas">
+            </span>
+            <h1 class="wrapper-faqs__h1 headline-2">
+                <mat-icon class="wrapper-faqs__icon" aria-hidden="false" aria-label="Example home icon"
+                    fontIcon="contact_support"></mat-icon>
+                Preguntas frecuentes para vender recargas
+            </h1>
+            <p class="wrapper-faqs__p body-1">
+                Hemos recopilado una lista completa de preguntas frecuentes (FAQ) que abordan los temas más comunes
+                relacionados con la venta de recargas. Estas preguntas frecuentes están diseñadas para brindarte la
+                orientación y el conocimiento que necesitas para vender recargas electrónicas de manera efectiva.
+            </p>
 
+            <div class="wrapper-search">
+                <ul class="form__ul">
+                    <li class="form__li">
 
-    <picture class="banner-ayuda__picture banner__mobile">
-        <img src="https://ik.imagekit.io/taerecargas/Recargas/banner-ayuda__responsive_xAg0CBmgy.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1667842887509" class="banner__img banner-ayuda__img" width="100%" height="100%" alt="Consulta todas las preguntas frecuentes acerca de nuestras plataformas">
-    </picture>
+                        <input #autocompleteInput type="text" id="input" class="form__input" placeholder="Buscar...">
+
+                        <mat-icon aria-hidden="false" class="input__icon" color="primary" aria-label="Example home icon"
+                            fontIcon="manage_search"></mat-icon>
+
+                        <ul #autocompleteUl class="autocomplete-list" id="autocomplete">
+                      
+                            <li #autocompleteLi class="autocomplete-list__li" (click)="inView(item2)">Que beneficios tengo a afiliarme a Recarga5g.com</li>
+                            <li #autocompleteLi class="autocomplete-list__li" (click)="inView(item3)">Que servicios puedo vender con Recarga5g.com</li>
+                            <li #autocompleteLi class="autocomplete-list__li" (click)="inView(item4)">Como me registro para empezar a vender recargas</li>
+                            <li #autocompleteLi class="autocomplete-list__li" (click)="inView(item5)">Debo firmar algún contracto para vender recargas</li>
+                            <li #autocompleteLi class="autocomplete-list__li" (click)="inView(item6)">Tengo que pagar alguna mensualidad o anualidad para empezar a vender recargas</li>
+                            <li #autocompleteLi class="autocomplete-list__li" (click)="inView(item7)">Cuales son los montos mínimos y máximos para depósitos y/o transferencias para vender recargas</li>
+                            <li #autocompleteLi class="autocomplete-list__li" (click)="inView(item8)">Como puedo obtener un aumento en mi comision</li>
+                            <li #autocompleteLi class="autocomplete-list__li" (click)="inView(item9)">Cual es la comision por pago de servicio</li>
+
+                            <li #autocompleteLi class="autocomplete-list__li" (click)="inView(item10)">Cual es la
+                                comision por pin electrónico</li>
+                            <li #autocompleteLi class="autocomplete-list__li" (click)="inView(item11)">No puedo realizar
+                                una recarga</li>
+                            <li #autocompleteLi class="autocomplete-list__li" (click)="inView(item12)">Se me olvido mi
+                                contraseña</li>
+
+                            <li class="autocomplete-list__li" (click)="inView(item14)">Como funciona la comision en
+                                pagaqui</li>
+                            <li class="autocomplete-list__li" (click)="inView(item15)">Realice una venta y no se reflejó
+                                mi comisión en Pagaqui</li>
+                          
+                            <li class="autocomplete-list__li" (click)="inView(item17)">Que puedo hacer con pagaqui</li>
+                            <li class="autocomplete-list__li" (click)="inView(item18)">Como ingreso a Pagaqui</li>
+                            <li class="autocomplete-list__li" (click)="inView(item19)">Como descargo pagaqui para mi
+                                celular</li>
+
+                            <li class="autocomplete-list__li" (click)="inView(item21)">En donde puedo consultar las
+                                cuentas para depositar o transferir para recargar saldo en Pagaqui</li>
+                            <li class="autocomplete-list__li" (click)="inView(item22)">En donde notifico mis depositos
+                                en Pagaqui</li>
+
+                            <li class="autocomplete-list__li" (click)="inView(item24)">Como funciona la comision en
+                                Recargaki Planetaemx</li>
+
+                            <li class="autocomplete-list__li" (click)="inView(item26)">Que puedo hacer en
+                                Recargaki/Planetaemx</li>
+                            <li class="autocomplete-list__li" (click)="inView(item27)">Como ingreso a
+                                Recargaki/Planetaemx</li>
+                            <li class="autocomplete-list__li" (click)="inView(item28)">Como puedo descargar
+                                Recargaki/Planetaemx para mi teléfono celular</li>
+
+                            <li class="autocomplete-list__li" (click)="inView(item30)">En donde puedo consultar las
+                                cuentas para depositar o transferir para recargar saldo en Recargaki/Planetaemx</li>
+                            <li class="autocomplete-list__li" (click)="inView(item31)">En donde notifico mis depositos en
+                                Recargaki/Planetaemx</li> 
+                        </ul>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
 </div>
 
 <div class="faqs">
 
     <div class="faqs__container container">
 
-        <div class="faqs-titular">
-            <h1 class="faqs-titular__h1 title">Preguntas Frecuentes para vender recargas</h1>
-
-            <p class="faqs-titular__p text">
-                <span class="faqs-titular__span">recarga5g.com</span> pone a tu disposición las siguientes respuestas para ayudarte a facilitar tu negocio de venta de tiempo aire.
-            </p>
-
-            <p class="faqs-titular__p text">
-                contactanos si no resolviste todas tus dudas nuestro asesor ejecutivo te atendera para resolver todas tus dudas.
-            </p>
-        </div>
-
-        <ul class="form__ul">
-            <li class="form__li">
-
-                <input type="text" id="input" class="form__input" placeholder="Ingrese alguna pregunta" #inputSearch>
-
-                <i class='bx bx-search-alt form__i'></i>
-                <ul class="autocomplete-list" id="autocomplete">
-                    <!-- TITLE GENERAL -->
-                    <li class="autocomplete-list__li" (click)="inView(item2)">Que beneficios tengo a afiliarme a Recarga5g.com</li>
-                    <li class="autocomplete-list__li" (click)="inView(item3)">Que servicios puedo vender con Recarga5g.com</li>
-                    <li class="autocomplete-list__li" (click)="inView(item4)">Como me registro para empezar a vender recargas</li>
-                    <li class="autocomplete-list__li" (click)="inView(item5)">Debo firmar algún contracto para vender recargas</li>
-                    <li class="autocomplete-list__li" (click)="inView(item6)">Tengo que pagar alguna mensualidad o anualidad para empezar a vender recargas</li>
-                    <li class="autocomplete-list__li" (click)="inView(item7)">Cuales son los montos mínimos y máximos para depósitos y/o transferencias</li>
-                    <li class="autocomplete-list__li" (click)="inView(item8)">Como puedo obtener un aumento en mi comision</li>
-                    <li class="autocomplete-list__li" (click)="inView(item9)">Cual es la comision que puedo obtener por el pago de cada servicio con Recarga5g.com</li>
-                    <li class="autocomplete-list__li" (click)="inView(item10)">Cual es la comision que puedo obtener por el pago de cada Pin electronico con Recarga5g.com</li>
-                    <li class="autocomplete-list__li" (click)="inView(item11)">Tengo problemas para realizar una operacion</li>
-                    <li class="autocomplete-list__li" (click)="inView(item12)">Se me olvido la contraseña para acceder a mi plataforma</li>
-                    <!-- TITLE PAGAQUI - COMISIONES -->
-                    <li class="autocomplete-list__li" (click)="inView(item14)">Como funciona la comision en pagaqui</li>
-                    <li class="autocomplete-list__li" (click)="inView(item15)">Realice una venta y no se reflejó mi comisión en Pagaqui</li>
-                    <!-- TITLE PAGAQUI - PLATAFORMA -->
-                    <li class="autocomplete-list__li" (click)="inView(item17)">Que puedo hacer con pagaqui</li>
-                    <li class="autocomplete-list__li" (click)="inView(item18)">Como ingreso a Pagaqui</li>
-                    <li class="autocomplete-list__li" (click)="inView(item19)">Como descargo pagaqui para mi celular</li>
-                    <!-- TITLE PAGAQUI - NOTIFICACIÓN -->
-                    <li class="autocomplete-list__li" (click)="inView(item21)">En donde puedo consultar las cuentas para depositar o transferir para recargar saldo en Pagaqui</li>
-                    <li class="autocomplete-list__li" (click)="inView(item22)">En donde notifico mis depositos en Pagaqui</li>
-                    <!-- TITLE RECARGAKI/PLANETAEMX - COMISIONES -->
-                    <li class="autocomplete-list__li" (click)="inView(item24)">Como funciona la comision en Recargaki Planetaemx</li>
-                    <!-- TITLE RECARGAKI/PLANETAEMX - PLATAFOMRA-->
-                    <li class="autocomplete-list__li" (click)="inView(item26)">Que puedo hacer en Recargaki/Planetaemx</li>
-                    <li class="autocomplete-list__li" (click)="inView(item27)">Como ingreso a Recargaki/Planetaemx</li>
-                    <li class="autocomplete-list__li" (click)="inView(item28)">Como puedo descargar Recargaki/Planetaemx para mi teléfono celular</li>
-                    <!-- TITLE RECARGAKI/PLANETAEMX - NOTIFICACIÓN-->
-                    <li class="autocomplete-list__li" (click)="inView(item30)">En donde puedo consultar las cuentas para depositar o transferir para recargar saldo en Recargaki/Planetaemx</li>
-                    <li class="autocomplete-list__li" (click)="inView(item31)">En donde notifico mis depositos en Recargaki/Planetaemx</li>
-
-                </ul>
-
-            </li>
-
-        </ul>
-
-        <div class="faqs__all">
-            <!-- ============= FAQS TABLE CONTENT ============= -->
-
-            <div class="faqs__contents">
-
-                <div class="faqs__content">
-
-
-                    <div class="faqs-general">
-
-                        <div class="faqs-titles">
-                            <i class='bx bx-link-external faqs-title__i'></i>
-                            <h2 class="faqs__h2" #item1 id="General" (click)="inView(item1)">
-                                General
-                            </h2>
-                        </div>
-
-                        <div class="faqs-titles">
-                            <i class='bx bx-link-external faqs-title__i'></i>
-                            <h3 class="faqs__h3" #item2 id="¿Qué-beneficios-tengo-a-afiliarme?" data-subtitle="Que beneficios tengo a afiliarme a Recarga5g.com" (click)="inView(item2)">
-                                ¿Qué beneficios tengo a afiliarme a <span class="faqs__span">Recarga5g.com?</span> </h3>
-                        </div>
-
-
-                        <p class="faqs__p">Con <span class="faqs__span">Recarga5.com</span> podrás obtener un mayor flujo de clientes y generaras mayores ganancias con nuestros servicios. Es muy fácil: Regístrate gratis. Transfiere o deposita desde $300.00 pesos para tener
-                            tiempo aire en tu cuenta. Recibe inmediatamente una comisión en tiempo aire y listo ya puedes vender el total de tiempo aire.
-                        </p>
-
-
-                        <picture class="faqs__picture">
-                            <img src="/assets/img/svg/faqs__store.svg" class="faqs__img" width="748" height="400" loading="lazy" alt="Con Recarga5g.com genera un mayor flujo de clientes y ganancias ofrece venta de tiempo aire.">
-                        </picture>
-
-                        <div class="faqs-titles">
-                            <i class='bx bx-link-external faqs-title__i'></i>
-                            <h3 class="faqs__h3" data-subtitle="Que servicios puedo vender con Recarga5g.com" #item3 id="¿Qué-servicios-puedo-vender-con-recarga5g.com?" (click)="inView(item3)">
-                                ¿Qué servicios puedo vender con
-                                <span class="faqs__span">Recarga5g.com</span>?</h3>
-                        </div>
-
-
-                        <p class="faqs__p">Ofrecemos +200 compañias de servicios y recargas electrónicas disponibles en México: Telmex, Izzi, CFE, Telcel, Movistar, Unefon, Virgin Mobile, Bait, OUI, WEEX, Pillofon, AT&T, TotalPlay, Google Play, Netflix, Steam y muchos mas!!
-                        </p>
-
-                        <picture class="faqs__picture">
-                            <source type="image/webp" srcset="https://ik.imagekit.io/taerecargas/Recargas/banner_recargas_jBooZ-aPA.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1667235920565">
-                            <source type="image/png" srcset="/assets/img/icon-companies/banner_recargas.png">
-                            <img src="/assets/img/icon-companies/banner_recargas.png" class="faqs__img" width="748" height="400" loading="lazy" alt="Recarga5g.com ofrece mas de 200 compañías de servicios no esperes mas y vende tiempo aire y pago de servicios ">
-                        </picture>
-
-                        <div class="faqs-titles">
-                            <i class='bx bx-link-external faqs-title__i'></i>
-                            <h3 class="faqs__h3" data-subtitle="¿Cómo me registro para empezar a vender recargas?" #item4 id="¿Cómo-me-registro?" (click)="inView(item4)">
-                                ¿Cómo me registro para empezar a vender recargas?</h3>
-                        </div>
-
-
-                        <p class="faqs__p">Registrate totalmente gratis en la opción <a class="faqs__a" [routerLink]="['/registro']" target="_blank" rel="noopener" aria-label="Registrate con Recarga5g.com">Registrarme</a> y empieza a vender recargas a cualquier compañia
-                            ahora mismo
-
-                        </p>
-                        <picture class="faqs__picture">
-                            <img src="/assets/img/svg/faqs__registro.svg" class="faqs__img" width="748" height="400" loading="lazy" alt="Tu registro para la venta de recargas es totalmente gratuita ">
-                        </picture>
-
-                        <div class="faqs-titles">
-                            <i class='bx bx-link-external faqs-title__i'></i>
-                            <h3 class="faqs__h3" data-subtitle="¿Debo firmar algún contracto para vender recargas?" #item5 id="¿Debo-firmar-algun-contrato?" (click)="inView(item5)">¿Debo firmar algún contracto para vender recargas?</h3>
-                        </div>
-
-                        <p class="faqs__p">Tu registro es únicamente en nuestra página web, por la cual no es necesario firmar ningún documento o contrato, tú decides cuando empezar y dejar de vender recargas, recuerda que esto no generar costo alguno, penalizaciones, mensualidaes
-                            ni anualidades. Tu elección es libre de cómo y cuándo vender.
-                        </p>
-                        <div class="faqs-titles">
-                            <i class='bx bx-link-external faqs-title__i'></i>
-                            <h3 class="faqs__h3" data-subtitle="¿Tengo que pagar alguna mensualidad o anualidad para empezar a vender recargas?" #item6 id="¿Tengo-que-pagar-alguna-mensualidad?" (click)="inView(item6)">¿Tengo que pagar alguna mensualidad o anualidad para empezar a vender recargas?</h3>
-                        </div>
-
-                        <p class="faqs__p">No, los montos mínimos para depósitos y transferencias es de $300MXN, realiza nuevamente tus depósitos como y cuando quieras nuevamente, sin pago forzosos, anualidades ni penalizaciones.</p>
-
-                        <div class="faqs-titles">
-                            <i class='bx bx-link-external faqs-title__i'></i>
-                            <h3 class="faqs__h3" #item7 id="Cuales-son-los-montos-para-depositos" (click)="inView(item7)">
-                                ¿Cuáles son los montos mínimos y máximos para depósitos y/o transferencias?
-                            </h3>
-                        </div>
-
-                        <p class="faqs__p">
-                            Los montos para depósitos y transferencias son los siguientes:
-                        </p>
-
-                        <ul class="faqs__ul">
-                            <li class="faqs__li">Montos mÍnimos: $300MXN para depósitos y transferencias. </li>
-
-                            <li class="faqs__li">Montos máximos: $1,900MXN por transferencias.</li>
-
-                            <li class="faqs__li">Depositos en efectivo no hay montos máximos.</li>
-                        </ul>
-
-                        <div class="faqs-titles">
-                            <i class='bx bx-link-external faqs-title__i'></i>
-
-                            <h3 class="faqs__h3" #item8 id="Como-puedo-obtener-una-comision" (click)="inView(item8)">
-                                ¿Cómo puedo obtener un aumento en mi comisión?
-                            </h3>
-                        </div>
-
-                        <p class="faqs__p">Si eres distribuidor, manejas alguna plataforma similar o llevas 1 año con nosotros, contáctanos para reajustar tu comisión,
-                            <span class="faqs__span">Recarga5g.com</span> ofreciendo comisiones adaptadas a tus necesidades.
-                        </p>
-
-                        <div class="faqs-titles">
-                            <i class='bx bx-link-external faqs-title__i'></i>
-
-                            <h3 class="faqs__h3" #item9 id="Cual-es-comision-obtenida-pago-servicio" (click)="inView(item9)">
-                                ¿Cuál es la comisión que puedo obtener por el pago de cada servicio con Recarga5g.com?
-                            </h3>
-                        </div>
-
-                        <p class="faqs__p">La comisión para el pago de servicios es del 2% al 3% por cada pago de servicio</p>
-
-                        <div class="faqs-titles">
-                            <i class='bx bx-link-external faqs-title__i'></i>
-
-                            <h3 class="faqs__h3" #item10 id="Cual-es-la-comision-por-pin" (click)="inView(item10)">¿Cuál es la comisión que puedo obtener por la venta de pines electrónicos con Recarga5g.com?</h3>
-                        </div>
-
-
-                        <p class="faqs__p">Cada pin electrónico ofrece una comisión distinta, contacte con su ejecutivo para brindarle mayor información</p>
-
-                        <div class="faqs-titles">
-                            <i class='bx bx-link-external faqs-title__i'></i>
-
-                            <h3 class="faqs__h3" #item11 id="Tengo-problemas-para-realizar-una-operacion" (click)="inView(item11)"> Tengo problemas para realizar una operación en la plataforma, ¿Qué debo hacer?</h3>
-                        </div>
-
-
-                        <p class="faqs__p">
-                            Si presentas problemas para realizar alguna operación dentro de la plataforma, notifícalo a tu asistente ejecutivo
-                            <a href="https://wa.me/522712141938" target="_blank" rel="noopener" aria-label="Notificar problema via whatsapp" class="faqs__a">Notificar ahora.</a>, para ello debes proporcionarle:
-
-                            <span class="faqs__span--weight"> tu número de usuario, foto o captura del problema presentado y plataforma.</span>
-                        </p>
-
-                        <picture class="faqs__picture">
-                            <img src="/assets/img/svg/Call-center.svg" class="faqs__img" width="748" height="400" loading="lazy" alt="Repórtanos si presentas alguna falla o problema vía WhatsApp ">
-                        </picture>
-
-                        <div class="faqs-titles">
-                            <i class='bx bx-link-external faqs-title__i'></i>
-
-                            <h3 class="faqs__h3" #item12 id="Se-me-olvido-contraseña" (click)="inView(item12)">Se me olvido la contraseña para acceder a mi plataforma, ¿Qué debo hacer?</h3>
-                        </div>
-
-
-                        <p class="faqs__p">Si no puedes ingresar a tu plataforma o se te olvido tu contraseña, contáctanos para reestablecer tus datos de acceso
-                            <a href="https://wa.me/522712141938" target="_blank" rel="noopener" aria-label="Chatear via whatsapp" class="faqs__a">Chatear ahora.</a>
-                        </p>
-
-                    </div>
-                    <div class="faqs__separator"> </div>
-                    <div class="faqs-pagaqui">
-
-                        <div class="faqs-pagaqui__comisiones">
-
-                            <div class="faqs-titles">
-                                <i class='bx bx-link-external faqs-title__i'></i>
-
-                                <h2 class="faqs__h2 faqs__h2--pagaqui" #item13 (click)="inView(item13)">Pagaqui | Comisiones</h2>
-                            </div>
-
-                            <div class="faqs-titles">
-                                <i class='bx bx-link-external faqs-title__i'></i>
-
-                                <h3 class="faqs__h3" #item14 id="Como-funciona-la-comisión-en-Pagaqui" (click)="inView(item14)">¿Cómo funciona la comisión en pagaqui con <span class="faqs__span">Recarga5g.com?</span> </h3>
-                            </div>
-
-                            <p class="faqs__p">
-                                La comisión se aplica sobre venta, es decir, por cada venta de recarga o pago de servicio se le estará aplicando una comisión. este a su vez esta divido en 2 categorias
-                            </p>
-
-                            <p class="faqs__p">
-                                <span class="faqs__span--definition">Las comisiones directas:</span> son aquellas ventas realizadas de la cuenta principal.
-                            </p>
-
-                            <p class="faqs__p">
-                                <span class="faqs__span--definition">Las comisiones indirectas:</span> son aquellas ventas realizadas desde un punto de venta o cuenta hija.
-                            </p>
-
-
-                            <picture class="faqs__picture">
-                                <source type="image/webp" srcset="https://ik.imagekit.io/taerecargas/Recargas/estado-cuenta__pagaqui_MNIoN3_UZ.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1667252424410">
-                                <source type="image/jpg" srcset="/assets/img/estado-cuenta__pagaqui.jpg">
-                                <img src="/assets/img/estado-cuenta__pagaqui.jpg" class="faqs__img faqs__img--pagaqui" width="748" height="300" loading="lazy" alt="Consulta tus ganancias en Pagaqui">
-                            </picture>
-
-                            <div class="faqs-titles">
-                                <i class='bx bx-link-external faqs-title__i'></i>
-
-                                <h3 class="faqs__h3" #item15 id="Realice-venta-no-reflejo-pagaqui" (click)="inView(item15)">Realice una venta y no se reflejó mi comisión en Pagaqui</h3>
-                            </div>
-
-                            <p class="faqs__p">Si tu comisión no se reflejó después de realizar la venta, verifica en primera instancia que la recarga si se realizo correctamente para ello verifica en reportes el status de la venta realizada.
-                            </p>
-
-                            <picture class="faqs__picture">
-                                <img src="/assets/img/status__recarga.jfif" class="faqs__img faqs__img--recarga" width="748" height="200" loading="lazy" alt="Si tu comisión no se reflejo repórtanos tu situación">
-                            </picture>
-
-                        </div>
-
-                        <div class="faqs-pagaqui__plataforma">
-
-                            <div class="faqs-titles">
-                                <i class='bx bx-link-external faqs-title__i'></i>
-
-                                <h2 class="faqs__h2 faqs__h2--pagaqui" #item16 id="Pagaqui-plataformas" (click)="inView(item16)">Pagaqui | Plataformas</h2>
-                            </div>
-
-                            <div class="faqs-titles">
-                                <i class='bx bx-link-external faqs-title__i'></i>
-
-                                <h3 class="faqs__h3" #item17 id="Que-puedo-hacer-en-pagaqui" (click)="inView(item17)">¿Qué puedo hacer en pagaqui con <span class="faqs__span">Recarga5g.com?</span></h3>
-                            </div>
-
-                            <p class="faqs__p">
-                                Con Pagaqui con un único saldo podrás realizar recargas a cualquier compañia, pagar servicios de tus clientes y además vender pines electrónicos.
-                            </p>
-
-                            <h3 class="faqs__h3" #item18 id="Como-ingreso-a-Pagaqui" data-subtitle="¿Cómo ingreso a Pagaqui?" (click)="inView(item18)">¿Cómo ingreso a Pagaqui?</h3>
-
-
-                            <p class="faqs__p">Para acceder a la plataforma vía web de Pagaqui, lo puede hacer de este enlace:
-                                <a href="https://pagaqui.com.mx/Login.aspx" class="faqs__a" aria-label="Pagaqui" target="_blank" rel="noopener">Pagaqui</a> igualmente tendrás el link de acceso en el correo de bienvenida.
-                            </p>
-
-                            <picture class="faqs__picture">
-                                <img src="/assets/img/svg/faqs__login.svg" class="faqs__img" width="748" height="400" loading="lazy" alt="Accede a tu plataforma Pagaqui a través del siguiente enlace ">
-                            </picture>
-
-                            <div class="faqs-titles">
-                                <i class='bx bx-link-external faqs-title__i'></i>
-
-                                <h3 class="faqs__h3" #item19 id="Puedo-descargar-pagaqui-para-celular" (click)="inView(item19)">¿Puedo descargar pagaqui para mi teléfono celular?</h3>
-                            </div>
-
-                            <p class="faqs__p">La plataforma de Pagaqui se encuentra disponible en <a href="https://pagaqui.com.mx/Login.aspx" class="faqs__a" aria-label="Pagaqui versión web" target="_blank" rel="noopener">Versión web</a>, asi como disponible en la tienda
-                                oficial de Play Store
-                                <a href="https://play.google.com/store/apps/details?id=pagaqui.apppagaqui&hl=es" class="faqs__a" aria-label="Pagaqui" target="_blank" rel="noopener">Para dispositivo mobiles</a>
-                            </p>
-
-
-                        </div>
-
-                        <div class="faqs-pagaqui__cuentas">
-
-                            <div class="faqs-titles">
-                                <i class='bx bx-link-external faqs-title__i'></i>
-
-                                <h2 class="faqs__h2 faqs__h2--pagaqui" #item20 id="Pagaqui-notificacion-depositos" (click)="inView(item20)">Pagaqui | Notificación de depositos</h2>
-                            </div>
-
-                            <div class="faqs-titles">
-                                <i class='bx bx-link-external faqs-title__i'></i>
-
-                                <h3 class="faqs__h3" #item21 id="En-donde-puedo-consultar-cuentas-para-depositos-pagaqui" (click)="inView(item21)">¿En dónde puedo consultar las cuentas para depositar o transferir para recargar saldo en Pagaqui?</h3>
-                            </div>
-
-                            <p class="faqs__p">En tu correo de bienvenida podrás encontrar todos los numero de cuenta para depósitos y transferencias, igualmente podras consultarlo en el siguiente enlace:
-                                <a href="assets/img/Cuentas_Pagaqui.jpg" class="faqs__a" aria-label="Cuentas de deposito pagaqui" target="_blank" rel="noopener">
-                                    Descargar numeros de cuenta pagaqui
-                                    <i class='bx bxs-download faqs__i'></i>
-                                </a>
-                            </p>
-                            <picture class="faqs__picture">
-                                <img src="/assets/img/svg/faqs__notificacion.svg" class="faqs__img" width="748" height="400" loading="lazy" alt="Consulta en tu correo de bienvenida los números de cuenta para depositar para recargar saldo Telcel, Bait ">
-                            </picture>
-                            <div class="faqs-titles">
-                                <i class='bx bx-link-external faqs-title__i'></i>
-
-                                <h3 class="faqs__h3" #item22 id="En-donde-notifico-mis-depositos-en-pagaqui" (click)="inView(item22)">¿En dónde notifico mis pagos en Pagaqui?</h3>
-                            </div>
-
-                            <p class="faqs__p">
-                                Para reportar todos tus depósitos lo podrás realizar una de las 3 manera, que más te convenga:
-                            </p>
-
-                            <ul class="faqs__ul">
-                                <li class="faqs__li">A través de nuestra pagina web en la sección Reportes/depósitos/Pagaqui o da clic aquí.
-                                    <a routerLink="/reportes/repoPagaqui" class="faqs__a" aria-label="Reporta todos tus depositos y/o transferencia a traves de una pagina web" target="_blank" rel="noopener">Reportar deposito Pagaqui</a>
-                                </li>
-
-                                <li class="faqs__li">
-                                    Vía WhatsApp adjuntando tu número de usuario y foto o captura de tu ficha donde se visualice Fecha y hora del depósito, monto, nombre del beneficio Tag3, numero de cuenta donde se deposito y folio o número de autorización.
-
-                                    <a href="https://wa.me/522712141938" class="faqs__a" aria-label="WhatsApp" rel="noopener" target="_blank">Reportar mi deposito via WhatsApp</a>
-                                </li>
-
-                                <li class="faqs__li">
-                                    O bien puede generar un numero de referencia donde podrías realizar tus depósitos en los bancos disponibles con tu referencia, los depósitos con referencia el saldo se abona en automático en un plazo de 20min aproximadamente.
-
-                                    <a href="https://pagaqui.com.mx/generarReferencia.aspx" class="faqs__a" aria-label="Generar referencia Pagaqui" rel="noopener" target="_blank">Generar referencia.</a>
-                                </li>
-                            </ul>
-                        </div>
-
-
-                    </div>
-                    <div class="faqs__separator"> </div>
-
-                    <div class="faqs-recargaki">
-
-
-                        <div class="faqs-titles">
-                            <i class='bx bx-link-external faqs-title__i'></i>
-
-                            <h2 class="faqs__h2 faqs__h2--recargaki" #item23 id="Recargaki/Planetaemx-Comisiones" (click)="inView(item23)">Recargaki/Planetaemx | Comisiones</h2>
-                        </div>
-
-                        <div class="faqs-recargaki__comisiones">
-
-                            <div class="faqs-titles">
-                                <i class='bx bx-link-external faqs-title__i'></i>
-
-                                <h3 class="faqs__h3" #item24 id="Como-funciona-comision-recargaki" (click)="inView(item24)">¿Cómo funciona la comisión en Recargaki/Planetaemx con <span class="faqs__span">Recarga5g.com?</span></h3>
-                            </div>
-
-                            <p class="faqs__p">La comisión se aplica sobre deposito, es decir Por cada deposito que reporte en la plataforma se le estará aplicando el monto reportado + su comisión. </p>
-                            <picture class="faqs__picture">
-                                <img src="/assets/img/svg/faqs__recargaki-notificacion.svg" class="faqs__img" width="748" height="400" loading="lazy" alt="Notifícanos tus depósitos de Recargaki & Planetaemx por WhatsApp o en la sección reportar deposito">
-                            </picture>
-                        </div>
-
-                        <div class="faqs-recargaki__plataformas">
-
-                            <div class="faqs-titles">
-                                <i class='bx bx-link-external faqs-title__i'></i>
-
-                                <h2 class="faqs__h2 faqs__h2--recargaki" #item25 id="Recargaki/Planetaemx-Plataformas" (click)="inView(item25)">Recargaki/Planetaemx | Plataformas</h2>
-                            </div>
-
-                            <div class="faqs-titles">
-                                <i class='bx bx-link-external faqs-title__i'></i>
-
-                                <h3 class="faqs__h3" #item26 id="¿Que-puedo-hacer-con-recargaki" data-subtitle="¿Qué puedo hacer en Recargaki/Planetaemx con Recarga5g.com?" (click)="inView(item26)">¿Qué puedo hacer en Recargaki/Planetaemx con Recarga5g.com?</h3>
-                            </div>
-
-                            <p class="faqs__p">
-                                En recargaki/planetaemx los saldos de recargas y pago de servicios se manejan independiente, es decir que el saldo que disponga de recargas solo lo podrá utilizar para realizar recargas teléfonica, por lo tanto no para pagar servicios de sus clientes.
-                                por consecuente si desea saldo para pago de servicios, deberá enviar a su distribuidor una foto o captura de su ficha de deposito, numero de usaurio e indicarle que requiere su depósito para pago de servicios.
-                            </p>
-
-                            <div class="faqs-titles">
-                                <i class='bx bx-link-external faqs-title__i'></i>
-
-                                <h3 class="faqs__h3" #item27 id="Como-ingreso-a-recargaki" data-subtitle="¿Cómo ingreso a Recargaki/Planetaemx?" (click)="inView(item27)">¿Cómo ingreso a Recargaki/Planetaemx?</h3>
-                            </div>
-
-                            <p class="faqs__p">Para acceder a la plataforma vía web de Recargaki/Planetamemx, lo puede hacer de este enlace:
-                                <a href="https://www.recargaki.com/index.php" class="faqs__a" aria-label="Recargaki" target="_blank" rel="noopener">Recargaki</a> Para Recargas Telcel.
-                            </p>
-
-                            <p class="faqs__p">Para acceder a la plataforma vía web de Recargaki/Planetamemx, lo puede hacer de este enlace:
-                                <a href="https://www.planetaemx.com/" class="faqs__a" aria-label="Planetaemx" target="_blank" rel="noopener">Planetaemx</a> Para demás compañías, Unefon, Movistar, pago de servicios y pines electrónicos.
-                            </p>
-
-                            <p class="faqs__p">Igualmente tendrás los enlaces de acceso en el correo de bienvenida.</p>
-
-                            <picture class="faqs__picture">
-                                <img src="/assets/img/svg/faqs_recargaki-login.svg" class="faqs__img" width="748" height="400" loading="lazy" alt="Accede a tu plataforma Recargaki & Planetaemx a través del siguiente enlace">
-                            </picture>
-
-                            <h3 class="faqs__h3" #item28 id="Puedo-descargar-recargaki-para-celular" data-subtitle="¿Puedo descargar Recargaki/Planetaemx para mi teléfono celular?" (click)="inView(item28)">¿Puedo descargar Recargaki/Planetaemx para mi teléfono celular?</h3>
-
-                            <p class="faqs__p">La plataforma de Recargaki/Planetaemx se encuentra disponible en <a href="https://www.planetaemx.com/" class="faqs__a" aria-label="Pagaqui versión web" target="_blank" rel="noopener">Versión web</a>, asi como disponible en
-                                la tienda oficial de Play Store
-                                <a href="https://play.google.com/store/apps/details?id=com.techoblige.recargaki&hl=es" class="faqs__a" aria-label="planetaemx Mobile" target="_blank" rel="noopener">Para dispositivo mobiles</a>
-                            </p>
-
-                        </div>
-
-                        <div class="faqs-recargaki__notificacion">
-                            <div class="faqs-titles">
-                                <i class='bx bx-link-external faqs-title__i'></i>
-
-                                <h2 class="faqs__h2 faqs__h2--recargaki" #item29 id="Recargaki/Planetaemx" (click)="inView(item29)">Recargaki/Planetaemx | Notificación de depositos</h2>
-                            </div>
-
-                            <div class="faqs-titles">
-                                <i class='bx bx-link-external faqs-title__i'></i>
-
-                                <h3 class="faqs__h3" #item30 id="En-donde-puedo-consultar-cuentas-Recargaki/Planetaemx" data-subtitle="¿En dónde puedo consultar las cuentas para depositar o transferir para recargar saldo en Recargaki/Planetaemx?" (click)="inView(item30)">
-                                    ¿En dónde puedo consultar las cuentas para depositar o transferir para recargar saldo en Recargaki/Planetaemx?
-                                </h3>
-                            </div>
-
-                            <p class="faqs__p">
-                                Los números de cuenta lo podrás consultar directamente en la plataforma en la sección Reportar Compra, con los botones anterior y siguiente podrás ir visualizando todas las cuenta disponibles para depositar y/o transferir.
-                            </p>
-
-                            <picture class="faqs__picture">
-                                <img src="/assets/img/svg/faqs__recargaki-reporte.svg" class="faqs__img" width="748" height="400" loading="lazy" alt="Consulta en tu plataforma Recargaki & Planetaemx los números de cuenta para depositar para recargar saldo Telcel, Unefón">
-                            </picture>
-
-                            <div class="faqs-titles">
-                                <i class='bx bx-link-external faqs-title__i'></i>
-
-                                <h3 class="faqs__h3" #item31 id="En-donde-notifico-mis-depositos-recargaki" data-subtitle="¿En dónde notifico mis pagos en Recargaki/Planetaemx?" (click)="inView(item31)">
-                                    ¿En dónde notifico mis pagos en Recargaki/Planetaemx?
-                                </h3>
-                            </div>
-
-
-                            <p class="faqs__p">
-                                Para reportar todos tus depósitos lo podrás realizar una de las 3 maneras, que más te convenga:
-                            </p>
-
-                            <ul class="faqs__ul">
-                                <li class="faqs__li">
-                                    A través de nuestra pagina web en la sección Reportes/Recargaki/Planetamemx o da clic aquí.
-                                    <a routerLink="/reportes/repoPlanetaemx" class="faqs__a" aria-label="Reporta tus depositos y/o transferencias en Recargaki a traves de nuestra pagina web" target="_blank" rel="noopener">Reportar deposito Recargaki/Planetamemx</a>
-                                </li>
-
-                                <li class="faqs__li">
-                                    Vía WhatsApp adjuntando tu número de usuario y foto o captura de tu ficha donde se visualice Fecha y hora del depósito, monto, numero de cuenta donde se depósito y folio o número de autorización.
-
-                                    <a href="https://wa.me/522712141938" class="faqs__a" aria-label="WhatsApp" rel="noopener" target="_blank">Reportar mi deposito via WhatsApp</a>
-                                </li>
-
-                                <li class="faqs__li">
-                                    O bien puedes reportalos directamente en la plataforma en la <span class="faqs__span--weight">sección Reportar Compra.</span>
-                                </li>
-                            </ul>
-
-                            <picture class="faqs__picture">
-                                <source type="image/webp" srcset="https://ik.imagekit.io/taerecargas/Recargas/Reporte_planetaemx_4OL8yCojn.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1667252613418">
-                                <source type="image/jpg" srcset="/assets/img/Reporte_planetaemx.jpg">
-                                <img src="/assets/img/Reporte_planetaemx.jpg" class="faqs__img" width="748" height="400" loading="lazy" alt="Como reportar tus depósitos en la plataforma ">
-                            </picture>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+        <!-- ============= FAQS TABLE CONTENT ============= -->
+
+        <div class="faqs-box">
+
+            <div class="faqs-titles">
+                <span class="badge faqs__badge badge-1 headline-5">
+                    Preguntas Generales
+                    <img src="assets/img/FAQ__general.png" class="badge__icon" loading="lazy" alt="icon FAQ general">
+                </span>
+                <h2 #item1 class="faqs-titles__h2 headline-3">Preguntas Generales para vender recargas</h2>
             </div>
+
+            <div class="faqs-expansion-panel">
+                <mat-accordion>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item2>¿Qué beneficios tengo a afiliarme a Recarga5g.com?</h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">Con Recarga5.com podrás obtener un mayor flujo de clientes y generaras mayores
+                            ganancias con
+                            nuestros servicios. Es muy fácil: Regístrate gratis. Transfiere o deposita desde $300.00
+                            pesos para tener tiempo aire en tu cuenta. Recibe inmediatamente una comisión en tiempo aire
+                            y listo ya puedes vender el total de tiempo aire.</p>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item3> ¿Qué servicios puedo vender con Recarga5g.com?</h3>
+
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">Ofrecemos +200 compañias de servicios y recargas electrónicas disponibles en
+                            México: Telmex,
+                            Izzi, CFE, Telcel, Movistar, Unefon, Virgin Mobile, Bait, OUI, WEEX, Pillofon, AT&T,
+                            TotalPlay, Google Play, Netflix, Steam y muchos mas!!</p>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item4>¿Cómo me registro para empezar a vender recargas?</h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">Registrate totalmente gratis en la opción Registrarme y empieza a vender
+                            recargas a cualquier
+                            compañia ahora mismo</p>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item5>¿Debo firmar algún contracto para vender recargas?</h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">Tu registro es únicamente en nuestra página web, por la cual no es necesario
+                            firmar ningún
+                            documento o contrato, tú decides cuando empezar y dejar de vender recargas, recuerda que
+                            esto no generar costo alguno, penalizaciones, mensualidaes ni anualidades. Tu elección es
+                            libre de cómo y cuándo vender.</p>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item6>¿Tengo que pagar alguna mensualidad o anualidad para empezar a vender recargas?</h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">No, los montos mínimos para depósitos y transferencias es de $100MXN, realiza
+                            nuevamente tus
+                            depósitos como y cuando quieras nuevamente, sin pago forzosos, anualidades ni
+                            penalizaciones.</p>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item7>Cuáles son los montos mínimos y máximos para depósitos y/o transferencias para vender recargas?</h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">Los montos para depósitos y transferencias son los siguientes:</p>
+                        <ul class="montos-panel__ul">
+                            <li class="montos-panel__li">Montos mÍnimos: $100MXN para depósitos y transferencias.</li>
+                            <li class="montos-panel__li">Montos máximos: $1,900MXN por transferencias.</li>
+                            <li class="montos-panel__li">Depositos en efectivo no hay montos máximos.</li>
+                        </ul>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item8>¿Cómo puedo obtener un aumento en mi comisión para
+                                    vender recargas Telcel?
+                                </h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">Si eres distribuidor, manejas alguna plataforma similar o llevas 1 año con
+                            nosotros,
+                            contáctanos para reajustar tu comisión, Recarga5g.com ofreciendo comisiones adaptadas a tus
+                            necesidades.</p>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item9>¿Cuál es la comisión que puedo obtener por el pago de cada servicio Telmex, CFE con Recarga5g.com?</h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">La comisión para el pago de servicios es del 2% al 3% por cada pago de servicio</p>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item10>¿Cuál es la comisión que puedo obtener por cada pin
+                                    electrónico Google play, Spotify?</h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">Cada pin electrónico ofrece una comisión distinta, contacte con su ejecutivo para brindarle mayor información</p>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item11>No puedo realizar una recarga, ¿Qué debo hacer?</h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">Si presentas problemas para realizar alguna operación dentro de la plataforma,
+                            notifícalo a
+                            tu asistente ejecutivo Notificar ahora., para ello debes proporcionarle: tu número de
+                            usuario, foto o captura del problema presentado y plataforma.</p>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item12>Se me olvido la contraseña para acceder a mi plataforma para vender <strong>recargas Bait</strong>, ¿Qué debo hacer?
+                                </h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">
+                            Si no puedes ingresar a tu plataforma o se te olvido tu contraseña,
+                            contáctanos para reestablecer tus datos de acceso Chatear ahora.
+                        </p>
+                    </mat-expansion-panel>
+
+
+                </mat-accordion>
+            </div>
+
         </div>
-    </div>
+
+        <div class="faqs-box">
+
+            <div class="faqs-titles">
+                <span class="badge faqs__badge badge-4 headline-5">
+                    Pagaqui
+                    <img src="assets/img/FAQ__comision.png" class="badge__icon" loading="lazy" alt="icon FAQ comision por vender recargas">
+                </span>
+                <h2 #item13 class="faqs-titles__h2 headline-3"><span class="span--pagaqui headline-3">Pagaqui</span> | Comisiones</h2>
+            </div>
+
+            <div class="faqs-expansion-panel">
+                <mat-accordion>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item14>¿Cómo funciona la comisión en pagaqui con
+                                    Recarga5g.com?</h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">La comisión se aplica sobre venta, es decir, por cada venta de recarga o pago
+                            de servicio se le estará aplicando una comisión. este a su vez esta divido en 2 categorias
+
+                            Las comisiones directas: son aquellas ventas realizadas de la cuenta principal.
+
+                            Las comisiones indirectas: son aquellas ventas realizadas desde un punto de venta o cuenta
+                            hija.</p>
+                    </mat-expansion-panel>
 
 
-</div>
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item15>No se reflejo la ganancia por venta de recarga</h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">Si tu comisión no se reflejó después de realizar la venta, verifica en primera
+                            instancia que la recarga si se realizo correctamente para ello verifica en reportes el
+                            status de la venta realizada.</p>
+
+                        <img src="/assets/img/faq-recarga.jpg" alt="Comisión por venta" class="faqs-body__img">
+                    </mat-expansion-panel>
+
+                </mat-accordion>
+            </div>
+
+        </div>
+
+        <div class="faqs-box">
+
+            <div class="faqs-titles">
+                <span class="badge faqs__badge badge-2 headline-5">
+                    Plataforma para vender recargas
+                    <img src="assets/img/FAQ__plataforma.png" class="badge__icon" loading="lazy" alt="icon FAQ Plataforma para vender recargas">
+                </span>
+                <h2 #item16 class="faqs-titles__h2 headline-3"><span class="span--pagaqui headline-3">Pagaqui</span> | Plataforma</h2>
+            </div>
+
+            <div class="faqs-expansion-panel">
+                <mat-accordion>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item17>
+                                    ¿Qué puedo hacer en pagaqui con Recarga5g.com?</h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">Con Pagaqui con un único saldo podrás realizar recargas a cualquier compañia,
+                            pagar servicios de tus clientes y además vender pines electrónicos</p>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item18>¿Cómo ingreso a Pagaqui?</h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">Para acceder a la plataforma vía web de Pagaqui, lo puede hacer de este
+                            enlace: Pagaqui igualmente tendrás el link de acceso en el correo de bienvenida.</p>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item19>App Pagaqui</h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">La plataforma de Pagaqui se encuentra disponible en Versión web, asi como
+                            disponible en la tienda oficial de Play Store Para dispositivo mobiles</p>
+                    </mat-expansion-panel>
+
+                </mat-accordion>
+            </div>
+
+        </div>
+
+        <div class="faqs-box">
+
+            <div class="faqs-titles">
+                <span class="badge faqs__badge badge-5 headline-5">
+                    Notificación de depositos
+                    <img src="assets/img/FAQ__notificacion.png" class="badge__icon" loading="lazy" alt="icon FAQ notificación de depositos para vender recargas">
+                </span>
+                <h2 #item20 class="faqs-titles__h2 headline-3"><span class="span--pagaqui headline-3">Pagaqui</span> | Notificación de depositos</h2>
+            </div>
+
+            <div class="faqs-expansion-panel">
+                <mat-accordion>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item21>Cuentas para recargas Pagaqui</h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">En tu correo de bienvenida podrás encontrar todos los numero de cuenta para
+                            depósitos y transferencias, igualmente podras consultarlo en el siguiente enlace: Descargar
+                            numeros de cuenta pagaqui</p>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item22>¿En dónde reporto mis depositos en Pagaqui?</h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">
+                            Para reportar todos tus depósitos lo podrás realizar una de las 3 manera, que más te
+                            convenga:
+
+                            A través de nuestra pagina web en la sección Reportes/depósitos/Pagaqui o da clic aquí.
+                            Reportar deposito Pagaqui
+                            Vía WhatsApp adjuntando tu número de usuario y foto o captura de tu ficha donde se visualice
+                            Fecha y hora del depósito, monto, nombre del beneficio Tag3, numero de cuenta donde se
+                            deposito y folio o número de autorización.
+                            Reportar mi deposito via WhatsApp
+                            O bien puede generar un numero de referencia donde podrías realizar tus depósitos en los
+                            bancos disponibles con tu referencia, los depósitos con referencia el saldo se abona en
+                            automático en un plazo de 20min aproximadamente.
+                            Generar referencia.
+                        </p>
+                    </mat-expansion-panel>
+
+                </mat-accordion>
+            </div>
+
+        </div>
+
+        <div class="faqs-box">
+
+            <div class="faqs-titles">
+                <span class="badge faqs__badge badge-4 headline-5">
+                    Planetaemx
+                    <img src="assets/img/FAQ__comision.png" class="badge__icon" loading="lazy" alt="icon FAQ comision por vender recargas">
+                </span>
+                <h2 #item23 class="faqs-titles__h2 headline-3"><span class="span--planetaemx headline-3">Recargaki/Planetaemx</span> | Comision</h2>
+            </div>
+
+            <div class="faqs-expansion-panel">
+                <mat-accordion>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item24>¿Cómo funciona la comisión en Recargaki/Planetaemx con Recarga5g.com?</h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">La comisión se aplica sobre deposito, es decir Por cada deposito que reporte en la plataforma se le estará aplicando el monto reportado + su comisión.</p>
+                    </mat-expansion-panel>
+
+                  
+                </mat-accordion>
+            </div>
+
+        </div>
+
+        <div class="faqs-box">
+
+            <div class="faqs-titles">
+                <span class="badge faqs__badge badge-2 headline-5">
+                    Plataforma para vender recargas
+                    <img src="assets/img/FAQ__plataforma.png" class="badge__icon" loading="lazy" alt="icon FAQ Plataforma para vender recargas">
+                </span>
+                <h2 #item25 class="faqs-titles__h2 headline-3"><span class="span--planetaemx headline-3">Recargaki/Planetaemx</span> | Plataforma</h2>
+            </div>
+
+            <div class="faqs-expansion-panel">
+                <mat-accordion>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item26>¿Qué puedo hacer en Recargaki/Planetaemx con Recarga5g.com?</h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">En recargaki/planetaemx los saldos de recargas y pago de servicios se manejan independiente, es decir que el saldo que disponga de recargas solo lo podrá utilizar para realizar recargas teléfonica, por lo tanto no para pagar servicios de sus clientes. por consecuente si desea saldo para pago de servicios, deberá enviar a su distribuidor una foto o captura de su ficha de deposito, numero de usaurio e indicarle que requiere su depósito para pago de servicios.</p>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item27>¿Cómo ingreso a Recargaki/Planetaemx?</h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">Para acceder a la plataforma vía web de Recargaki/Planetamemx, lo puede hacer de este enlace: Recargaki Para Recargas Telcel.
+                       Para acceder a la plataforma vía web de Recargaki/Planetamemx, lo puede hacer de este enlace: Planetaemx Para demás compañías, Unefon, Movistar, pago de servicios y pines electrónicos.
+                    
+                       Igualmente tendrás los enlaces de acceso en el correo de bienvenida.
+                    </p>
+                    </mat-expansion-panel>
+
+                    
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item28>App Recargaki/Planetaemx?</h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">La plataforma de Recargaki/Planetaemx se encuentra disponible en Versión web, asi como disponible en la tienda oficial de Play Store Para dispositivo mobiles.</p>
+                    </mat-expansion-panel>
+                  
+                </mat-accordion>
+            </div>
+
+        </div>
+
+        <div class="faqs-box">
+
+            <div class="faqs-titles">
+                <span class="badge faqs__badge badge-5 headline-5">
+                    Notificación de depositos
+                    <img src="assets/img/FAQ__notificacion.png" class="badge__icon" loading="lazy" alt="icon FAQ notificación de depositos para vender recargas">
+                </span>
+                <h2 #item29 class="faqs-titles__h2 headline-3"><span class="span--planetaemx headline-3">Recargaki/Planetaemx</span> | Notificación de depositos</h2>
+            </div>
+
+            <div class="faqs-expansion-panel__container">
+                <mat-accordion>
+
+                    <mat-expansion-panel class="faqs" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item30>Cuentas Planetaemx</h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">Los números de cuenta lo podrás consultar directamente en la plataforma en la sección Reportar Compra, con los botones anterior y siguiente podrás ir visualizando todas las cuenta disponibles para depositar y/o transferir.</p>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3 class="faqs-head__h3" #item31>¿En dónde reporto mis depositos en Planetaemx?</h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <p class="body-1">Para reportar todos tus depósitos lo podrás realizar una de las 3 maneras, que más te convenga:
+
+                            A través de nuestra pagina web en la sección Reportes/Recargaki/Planetamemx o da clic aquí.
+                            Reportar deposito Recargaki/Planetamemx
+                            Vía WhatsApp adjuntando tu número de usuario y foto o captura de tu ficha donde se visualice Fecha y hora del depósito, monto, numero de cuenta donde se depósito y folio o número de autorización.
+                            Reportar mi deposito via WhatsApp
+                            O bien puedes reportalos directamente en la plataforma en la sección Reportar Compra.
+
+                    </p>
+
+                    <img src="/assets/img/plataformas/planetaemx/FAQ__notificación-planetaemx.jpg" alt="Notificación de depositos planetaemx" class="faqs-body__img" loading="lazy">
+                    </mat-expansion-panel>
+
+                  
+                </mat-accordion>
+            </div>
+
+        </div>
+
+        </div>
+
+ </div>
+
+

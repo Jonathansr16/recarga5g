@@ -12,7 +12,7 @@ export class ProductosService {
 
     {
       company: "Telcel",
-      url: "assetss/img/companies/recargas/telcel.png",
+      url: "assets/img/companies/recargas/telcel.png",
       src: "https://ik.imagekit.io/taerecargas/Recargas/Icon-companies/telcel_kVD13NUDY.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1667243126771",
       label: "",
       category: "recargas"
@@ -239,7 +239,7 @@ export class ProductosService {
 
     {
       company: "Cinepolis",
-      url: "assets/img/companies/pines/cinepolis90.png",
+      url: "assets/img/companies/pines/cinepolis_vip.png",
       src: "https://ik.imagekit.io/taerecargas/Recargas/Icon-companies/cinepolis90_yv53UuCLJ.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1667245957673",
       label: '',
       category: "pines"

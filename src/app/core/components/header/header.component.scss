@@ -82,13 +82,13 @@
 
     //* nav responsive
     @include responsive(1049px) {
-        &.light-theme {
+        &.light-menu {
             background-color: rgba(211, 47, 47, 0.3);
             backdrop-filter: blur(24px);
             color: #fff;
         }
 
-        &.dark-theme {
+        &.dark-menu {
             background-color: rgb(48, 63, 159, 0.3);
             backdrop-filter: blur(24px);
         }
@@ -149,11 +149,11 @@
     color: var(--c-white);
     @include flexible(flex, row, nowrap, space-between, center);
 
-    &.light {
+    &.light-btn {
         background: linear-gradient(45deg, hsl(7, 100%, 71%), hsl(46, 100%, 65%));
     }
 
-    &.dark {
+    &.dark-btn {
         background: linear-gradient(45deg, hsl(225, 100%, 60%), hsl(296, 80%, 40%));
     }
 
@@ -163,8 +163,8 @@
     }
 }
 
-.r-theme.light .r-theme__icon-sun,
-.r-theme.dark .r-theme__icon-moon {
+.r-theme.light-btn .r-theme__icon-sun,
+.r-theme.dark-btn .r-theme__icon-moon {
     display: block;
 }
 

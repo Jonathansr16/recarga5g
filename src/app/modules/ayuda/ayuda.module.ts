@@ -11,6 +11,7 @@ import { BlogComponent } from '@ayuda/pages/blog/blog.component';
 import { PostComponent } from '@ayuda/pages/post/post.component';
 //PAGINATION
 import {NgxPaginationModule} from 'ngx-pagination';
+import { MaterialModule } from '@shared/material/material.module';
 
 
 // import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
@@ -29,6 +30,10 @@ import {NgxPaginationModule} from 'ngx-pagination';
     RouterModule,
     AyudaRoutingModule,
     NgxPaginationModule,
+    MaterialModule,
+
+    
+  
     // ShareButtonsModule.withConfig({
     //   debug: true,
     // }),

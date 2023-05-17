@@ -159,8 +159,8 @@ button, input, p, span,a {
 
 //* Button
 .my-button {
-    @include flexible(flex, row, nowrap, center, center);
-    gap: 0.5em;
+    @include flexible(inline-flex, row, nowrap, center, center);
+    gap: 0.8em;
     color: var(--c-text);
 }
 

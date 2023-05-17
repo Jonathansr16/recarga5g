@@ -1,14 +1,10 @@
-@import 'mixin';
+@import "mixin";
 
 //* Hero faqs
-
 .ayuda {
-
     &__container {
         grid-template-columns: 1fr;
     }
-    // background-color: var(--c-card);
-    //  box-shadow: var(--shadow);
     padding: 132px 0 132px;
     position: relative;
 }
@@ -38,12 +34,10 @@
     }
 }
 
-
 //* faqs
 .faqs {
-
     &__container {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
     }
     &-box {
         @include grid(1, 1em);
@@ -60,35 +54,60 @@
         }
     }
 
-
-&-titles__h2 {
-    text-align: center;
-}
-    
+    &-titles__h2 {
+        text-align: center;
+    }
 
     &-expansion-panel {
         margin-bottom: 1em;
+
+        &-head__h3 {
+            font-size: 1.1rem;
+            color: var(--c-title);
+            font-weight: 500;
+        }
+
+        &-body__a {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        &-body__a:hover {
+            text-decoration: none;
+        }
+
+        &-body__li {
+            padding: 10px 0;
+        }
+
+        &-footer {
+            
+        }
+        &-footer--actions{
+            @include flexible(flex, row, wrap, flex-start, center);
+            gap: 1.5em;
+            margin-top: 1em;
+        }
+
+        &-footer--app {
+            @include flexible(flex, row, wrap, center, center);
+            gap: 1.5em;
+            margin-top: 1em;
+        }
+        
+        &-footer__img--app {
+            max-width: 200px;
+        }
     }
-
-
-&-head__h3 {
-    font-size: 1.1rem;
-    color: var(--c-title);
-    font-weight: 500;
+ 
 }
-
-}
-
-
 
 .mat-expansion-panel .mat-expansion-panel-header {
     padding: 10px 24px;
     height: auto;
-}
-
-.faqs-expansion-panel {
     background-color: var(--c-card);
 }
+
 /*============= FAQS SEARCH ============= */
 
 .form__ul {
@@ -118,7 +137,7 @@
     font-size: 1rem;
     border: 1px solid var(--c-title);
     color: var(--c-title);
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     outline: none;
     padding: 1rem;
     background: none;
@@ -128,16 +147,12 @@
     &::placeholder {
         color: var(--c-text);
     }
-
-   
 }
-
 
 /*Input focus*/
 
 .form__input:focus {
     border: 1.5px solid var(--c-primary);
-    
 }
 
 .form__input:focus::placeholder {
@@ -145,13 +160,12 @@
     font-weight: bold;
 }
 
-.form__li:hover>.autocomplete-list {
+.form__li:hover > .autocomplete-list {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
 }
-
 
 /* AUTOCOMPLETE */
 
@@ -178,7 +192,6 @@
 
     &:hover {
         background-color: var(--c-body);
-       
     }
 }
 
@@ -186,8 +199,6 @@
     display: none;
     transition: all 300ms ease;
 }
-
-
 
 .autocom-box li {
     list-style: none;
@@ -198,9 +209,6 @@
     border-radius: 3px;
 }
 
-
 .autocom-box li:hover {
     background: #efefef;
 }
-
-

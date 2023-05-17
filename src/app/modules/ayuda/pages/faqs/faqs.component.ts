@@ -1,47 +1,42 @@
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { Component, ElementRef, Inject, OnInit, PLATFORM_ID, QueryList, ViewChild, ViewChildren, Renderer2, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, ElementRef,  OnInit,  QueryList, ViewChild, ViewChildren, Renderer2, AfterViewInit, OnDestroy } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ContentfulService } from '@ayuda/services/contentful.service';
-import { FaqsService, faqsModel } from '@ayuda/services/faqs.service';
-
 
 @Component({
   selector: 'app-faqs',
   templateUrl: './faqs.component.html',
   styleUrls: ['./faqs.component.scss'],
-  providers: [ContentfulService, FaqsService]
+  providers: [ContentfulService]
 })
 export class FaqsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   public activeMenu?: boolean;
-  faqsTitle: faqsModel[] = [];
-  faqsTitleSection: faqsModel[] = [];
-  tituloSeleccionado: string = "";
+
+
   @ViewChild('autocompleteInput') _autocompleteInput?: ElementRef;
   @ViewChild('autocompleteUl') _autocompleteUl?: ElementRef;
   @ViewChildren('autocompleteLi') _autocompleteLi? : QueryList<ElementRef>
   panelOpenState = false;
-
+  item: number =0;
   constructor(
-   private faqsService: FaqsService, private readonly renderer2: Renderer2, private readonly title: Title) { }
+   private readonly renderer2: Renderer2, private readonly title: Title) { }
 
   ngOnInit(): void {
 
     this.title.setTitle('Recarga5g.com | Consulta las preguntas mas frecuentes y resuelve todas tus dudas para vender recargas, pago de servicios y pines electrónicos');
     // this.OpenScrollDropdown();
-      this.faqsTitleSection = this.faqsService.getTitlesSection();
     // this.faqsTitle = this.faqsService.getFaqs();
 
-    
- 
+
+
   }
   ngAfterViewInit(): void {
-      this.gotoTitle();
+
       this.filterData();
   }
 
   ngOnDestroy(): void {
-      
+
   }
 
   // btnDropdown(): void {
@@ -50,27 +45,16 @@ export class FaqsComponent implements OnInit, AfterViewInit, OnDestroy {
   // }
 
   /* =========== REDIRECT TITLE TO TITLE CONTENT =========== */
-  inView(e: HTMLElement): void {
+  inView(e: HTMLElement, index: number): void {
 
     e.scrollIntoView({ behavior: "smooth", block: "start", inline: "start" });
-
+    this.item = index;
   }
 
-  gotoTitle() : void {
- 
-    this._autocompleteLi?.forEach(element => {
-        
-      const title = element.nativeElement;
-       
-        this.renderer2.listen(title, "click", () => {
-        console.log(title);
-          title.scrollIntoView({ behavior: "smooth", block: "start", inline: "start" });
-        })
 
-
-    });
-  }
-
+  // setItemExpansionPanel(index: number): void {
+  //       this.item = index;
+  // }
   /* =========== OPEN OR CLOSE DROPDOWN SCROLL SIDEBAR =========== */
   // OpenScrollDropdown(): void {
 
@@ -135,7 +119,7 @@ export class FaqsComponent implements OnInit, AfterViewInit, OnDestroy {
                           list?.classList.add('autocomplete-filter');
                         } else {
                           item.classList.add('dataFilter');
-            
+
                         }
           })
 

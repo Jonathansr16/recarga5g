@@ -12,7 +12,9 @@ import { PostComponent } from '@ayuda/pages/post/post.component';
 //PAGINATION
 import {NgxPaginationModule} from 'ngx-pagination';
 import { MaterialModule } from '@shared/material/material.module';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
 
 // import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 // import { ShareIconsModule } from 'ngx-sharebuttons/icons';
@@ -31,7 +33,9 @@ import { MaterialModule } from '@shared/material/material.module';
     AyudaRoutingModule,
     NgxPaginationModule,
     MaterialModule,
-
+    ReactiveFormsModule,
+    MatNativeDateModule,
+    MatInputModule
     
   
     // ShareButtonsModule.withConfig({

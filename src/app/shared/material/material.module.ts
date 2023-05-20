@@ -8,7 +8,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatExpansionModule} from '@angular/material/expansion';
-
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -16,7 +17,8 @@ const MaterialComponents = [
   MatToolbarModule,
   MatMenuModule,
   MatTooltipModule,
-
+  MatAutocompleteModule,
+  MatFormFieldModule,
   MatExpansionModule,
 ]
 

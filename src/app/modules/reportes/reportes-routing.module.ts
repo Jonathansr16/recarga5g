@@ -4,8 +4,8 @@ import { RepopagaquiComponent } from '@reportes/pages/repopagaqui/repopagaqui.co
 import { RepoplanetaemxComponent } from '@reportes/pages/repoplanetaemx/repoplanetaemx.component';
 
 const routes: Routes = [
-  { path: 'repoPagaqui', component: RepopagaquiComponent },
-  { path: 'repoPlanetaemx', component: RepoplanetaemxComponent },
+  { path: 'reportePagaqui', component: RepopagaquiComponent },
+  { path: 'reportePlanetaemx', component: RepoplanetaemxComponent },
 ];
 
 @NgModule({

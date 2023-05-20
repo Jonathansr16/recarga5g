@@ -12,6 +12,7 @@ import { MaterialModule } from '@shared/material/material.module';
 import { HorarioPlataforamsComponent } from '@plataformas/components/horario-plataformas/horario-plataformas.component';
 import { PoliticasPlataformaComponent } from '@plataformas/components/politicas-plataformas/politicas-plataformas.component';
 
+
 @NgModule({
   declarations: [
     PagaquiComponent,

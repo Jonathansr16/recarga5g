@@ -185,7 +185,7 @@ font-family: 'PoppinsRegular';
 }
 .badge {
     background-color: var(--c-light-primary);
-    color: var(--c-primary);
+    color: var(--c-secondary);
     text-align: center;
    margin-left: auto;
    margin-right: auto;
@@ -196,7 +196,7 @@ font-family: 'PoppinsRegular';
 }
 
 .badge-2 {
-    color:#3f51b5;
+    color: var(--c-badge);
     background-color: #e4eaff;
 }
 
@@ -228,6 +228,11 @@ font-family: 'PoppinsRegular';
 .span--planetaemx {
     color: #199356;
 }
+
+.isActive {
+    color: gray;
+    background-color: var(--c-card);
+}
 //* ============ SCROLL BAR =============
 
 ::-webkit-scrollbar {
@@ -237,7 +242,7 @@ font-family: 'PoppinsRegular';
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--c-primary);
+    background-color: var(--c-secondary);
 }
 
 ::-webkit-scrollbar-thumb:hover {

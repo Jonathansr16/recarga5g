@@ -10,26 +10,20 @@
     }
 }
 
+
+
 .nav-menu__a.active {
-  
-    color: var(--c-primary);
-    background-color: var(--c-light-primary);
-    border-radius: 10px;
+    background-color: var(--c-card);
+    color: var(--c-title);
     font-weight: bold;
-    position: relative;
 }
 
 
-// .nav-menu__a.active::before {
-//     content: "";
-//     position: absolute;
-//     bottom: -0.25rem;
-//     left: 45%;
-//     width: 0.5em;
-//     height: 0.5rem;
-//     background-color: var(--c-primary);
-//     border-radius: 50%;
-// }
+::ng-deep .nav-submenu__a.active .mdc-list-item__primary-text {
+    color: var(--c-title);
+}
+
+
 
 .logo {
     &__img {
@@ -70,8 +64,8 @@
     &-menu {
         @include flexible(flex, row, nowrap, center, center);
         column-gap: 3em;
-    
-       
+
+
         &__close,
         &__register {
             display: none;

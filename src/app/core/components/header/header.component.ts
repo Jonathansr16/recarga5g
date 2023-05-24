@@ -71,7 +71,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
         localStorage.setItem("theme-btn", "light-btn");
         localStorage.setItem("theme-nav", "light-menu");
         localStorage.setItem("theme", "light-theme");
-
       }
 
     });

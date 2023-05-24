@@ -1,13 +1,34 @@
-.banner__img {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: auto;
+@import '_mixin';
+
+.hero {
+    &__container {
+        grid-template-columns: 1fr;
+    }
+
+    &__img {
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+    }
+}
+
+.contacto {
+    &__container {
+        grid-template-columns: 1fr
+    }
+
+    &-title__h1 {
+        text-align: center
+    }
 }
 
 .contacto__content {
-    grid-template-columns: 1fr 1.2fr;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  @include responsive(950px) {
+    grid-template-columns: 1fr;
+  }
+ gap: 1.5em;
+
 }
 
 .title-pagaqui {
@@ -19,7 +40,7 @@
 }
 
 .contacto-list {
-    background-color: var(--back-card);
+    background-color: var(--c-card);
     border-radius: 10px;
     padding: 60px 40px 0px 40px;
     box-shadow: var(--shadow);
@@ -27,13 +48,7 @@
 
 .contacto-item {
     margin-bottom: 30px;
-}
-
-.contacto__separator {
-    width: 100%;
-    height: 2px;
-    margin-bottom: 20px;
-    background-color: var(--color-primary);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .contacto-item__title {
@@ -45,7 +60,7 @@
 .contacto-item__h3 {
     margin-bottom: 10px;
     padding: 0 0.35em;
-    font-weight: var(--font-600);
+    font-weight: bold;
     line-height: 1.3;
 }
 
@@ -69,9 +84,6 @@
     height: 100%;
 }
 
-.contacto-right__span {
-    font-weight: var(--font-600);
-}
 
 .contacto-right__img {
     overflow: hidden;

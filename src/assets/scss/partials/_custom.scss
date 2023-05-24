@@ -29,14 +29,13 @@ $dark-theme: mat.define-dark-theme(
     @include mat.all-component-themes($light-theme);
     --c-title: hsl(250deg 11.26% 35.83%);
     --c-text: #263238;
-    --c-primary:  #d32f2f;
-    --c-light-primary:#ffe4e4;
-    --c-light-secondary:#ffe4e4;  
-    // --c-card: #f8f9fa;
-    // --c-body:  #f8f7fd;
     --c-body: #fff;
     --c-card: #faf8fa;
-    background: var(--c-body);
+    --c-primary: #c52c2c;
+    --c-secondary: #c52c2c; 
+    --c-light-primary:#ffe4e4;
+    --c-light-secondary: #ffe4e4;
+    background-color: var(--c-body);
     
 }
 
@@ -44,12 +43,13 @@ $dark-theme: mat.define-dark-theme(
     @include mat.all-component-colors($dark-theme);
     --c-title: #ffffff;
     --c-text: #e9e9ea;
-    --c-primary: #3f51b5;
-    --c-light-primary: #e4eaff;
-    --c-light-secondary:#1b295a; 
     --c-body: #20262e;
     --c-card: #2a323d;
-    background: var(--c-body);
+    --c-primary: #a0afff;
+    --c-secondary: #3f51b5;
+    --c-light-primary: #e4eaff;
+    --c-light-secondary: #3f51b5;
+    background-color: var(--c-body);
 }
 
 

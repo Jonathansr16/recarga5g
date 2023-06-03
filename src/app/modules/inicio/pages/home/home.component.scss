@@ -84,6 +84,40 @@
     row-gap: 3em;
 }
 
+
+
+.carousel-productos {
+    grid-template-columns: 1fr;
+  
+    &__img {
+      object-fit: contain;
+      max-width: 250px;
+      height: 250px;
+    }
+  }
+  
+  .carousel-productos__swiper {
+    width: 100%;
+  }
+  
+  .carousel-productos__wrapper{
+    transition-timing-function: linear;
+  }
+  
+  
+  .carousel-productos__li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  width: 250px;
+  height: 100%;
+  }
+  
+  
 //* ============ SECCION BENEFICIOS ============
 
 .beneficios {
@@ -266,29 +300,36 @@
     height: 40px;
 }
 
+//* ============ SECCION METODOS VENTA ============
+.metodos-home {
+    grid-template-columns: 1fr;
+
+    &__h2 {
+        text-align: center;
+    }
+}
+
 //* ============ SECCION ABOUT  ============
 .about {
     background-color: var(--c-card);
-}
 
-
-.about__container {
+&__container {
     padding-top: 1em;
-}
-.about-box {
-    @include flexible(flex, column, wrap, center, center);
-
+    grid-template-columns: 1fr
 }
 
-.about-right__img {
-    max-height: 550px;
-    object-fit: contain;
+&-title {
+   &__h3{
+        text-align: center;
+    }
+}
+
 }
 
 //* ============ SECCION HISTORY ============
 
 .history {
-    background-color: var(--c-light-primary);
+    background-color: var(--c-card);
     position: relative;
 }
 
@@ -306,6 +347,13 @@
         top: 100px;
         left: -95px;
     }
+
+    &__h3, &__h4 {
+        color: var(--c-primary);
+        text-align: center;
+    }
+
+  
 }
 
 .history-image__img {
@@ -354,4 +402,25 @@
 
 .records-item__p {
     font-size: 1.2rem;
+}
+
+//* ============ REGISTER HOME  ============
+.registro-home {
+    
+    @include responsive(950px) {
+
+        &__left {
+            order: 2;
+        }
+
+        &__right {
+            order: 1;
+        }
+
+    }
+    &__right {
+       
+        @include flexible(flex, column, wrap, center, flex-start);
+        gap: 1em;
+    }
 }

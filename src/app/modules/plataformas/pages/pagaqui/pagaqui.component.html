@@ -9,7 +9,7 @@
 </div>
 
 <!-- ============= SECCION CAROSUSEL PRODUCTOS ============= -->
-<app-carousel-productos></app-carousel-productos>
+<app-carousel-productos [productos]="producto" *ngFor="let producto of productosPagaqui"></app-carousel-productos>
 
 <!-- ============= SECCION APP PLATAFORMAS ============= -->
 <app-plataformas [plataforma]="app"  *ngFor="let app of appPagaqui"></app-plataformas>
@@ -112,7 +112,6 @@
     </div>
 </div>
 
-<!-- ============= SECCION HORARIO DEPOSITOS ============= -->
 <!-- ============= SECCION APLICACIÓN DE DEPOSITOS ============= -->
 <div class="aplicacion mb-3">
 
@@ -175,10 +174,33 @@
 </div>
 
 <!-- ============= SECCION METODOS DE VENTA ============= -->
-<app-metodo-ventas></app-metodo-ventas>
+<div class="metodos-pagaqui container mb-3">
+    <h2 class="metodos-pagaqui__h2 headline-2">Metodos de venta de tiempo aire</h2>
+    <app-metodo-ventas></app-metodo-ventas>
+</div>
 
 <!-- ============= SECCION MANUALES ============= -->
 <app-manuales [manuales]="manual" *ngFor="let manual of manualesPagaqui"></app-manuales>
 
 <!-- ============= SECCION REGISTER ============= -->
-<app-register-steps></app-register-steps>
+<div class="register-pagaqui">
+
+    <div class="register-pagaqui__container container">
+
+        <div class="register-pagaqui__left mb-2">
+            <app-register-steps [step]=" step" *ngFor="let step of registerStepPagaqui"></app-register-steps>
+        </div>
+
+        <div class="register-pagaqui__right">
+            <h2 class="register-pagaqui__h2 headline-4 head-4">¿Como vender recargas Telcel?</h2>
+            <h3 class="register-pagaqui__h3 headline-3">Registro para la venta de recargas con comision del 7%</h3>
+
+            <p class="register-pagaqui__p body-1 mb-1">
+                No pierdas más tiempo buscando oportunidades de negocio limitadas. Únete a nosotros y conviértete en un vendedor de recargas exitoso con comisiones excepcionales. Estamos aquí para apoyarte en cada paso del camino y ayudarte a alcanzar tus metas financieras.
+            </p>
+
+            <a class="register-pagaqui__a" routerLink="/registro" mat-raised-button color="primary">Registrarme</a>
+
+        </div>
+    </div>
+</div>

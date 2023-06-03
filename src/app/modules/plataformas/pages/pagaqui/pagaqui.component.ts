@@ -8,6 +8,10 @@ import { horarioPlataformas } from '@core/models/horario-plataformas.model';
 import { manuales } from '@core/models/manuales-plataformas.models';
 import { montos } from '@core/models/montos-plataformas.model';
 import { condicionesPlataformas } from '@core/models/politicas-plataformas.model';
+import { productoModel } from '@core/models/productos.model';
+import { registerSteps } from '@core/models/register-steps-model';
+import { ProductosService } from '@core/services/productos.service';
+import { RegisterStepsService } from '@core/services/register-steps.service';
 
 //* Servicios importados
 import { AppPlataformasService } from '@plataformas/services/app-plataformas.service';
@@ -26,31 +30,36 @@ export class PagaquiComponent implements OnInit {
 
   @ViewChild('videoPagaqui') video?: ElementRef;
   public btnVideo: boolean = false;
+  productosPagaqui: productoModel[] = [];
   appPagaqui: plataformaProductos[] = [];
   cuentasPagaqui: cuentasPagaqui[] = [];
   montosPagaqui: montos[] = [];
   manualesPagaqui: manuales[] = [];
   politicas: condicionesPlataformas[] = [];
   horarioPagaqui: horarioPlataformas[] = [];
+  registerStepPagaqui: registerSteps[] = [];
 
-  constructor(private productoPagaquiServirce: AppPlataformasService,
-    private _cuentasPagaqui: CuentasPlataformasService,
-    private _montoPagaqui: MontosPlataformasService,
-    private _manualesPagaqui: ManualesPlataformasService,
-    private _politicas: PoliticasPlataformasService,
+  constructor(
+    private readonly _productosCarouselService: ProductosService,
+    private readonly productoPagaquiServirce: AppPlataformasService,
+    private readonly _cuentasPagaqui: CuentasPlataformasService,
+    private readonly _montoPagaqui: MontosPlataformasService,
+    private readonly _manualesPagaqui: ManualesPlataformasService,
+    private readonly _politicas: PoliticasPlataformasService,
+    private readonly _stepPagaquiService: RegisterStepsService,
     private readonly renderer2: Renderer2,
     private readonly title: Title) {
-
-   
   }
 
 
   ngOnInit(): void {
+    this.productosPagaqui = this._productosCarouselService.getRecargas();
     this.appPagaqui = this.productoPagaquiServirce.getProductosPagaqui();
     this.cuentasPagaqui = this._cuentasPagaqui.getCuentasPagaqui();
     this.montosPagaqui = this._montoPagaqui.getMontoPagaqui();
     this.manualesPagaqui = this._manualesPagaqui.getManualesPagaqui();
     this.politicas = this._politicas.getPoliticas();
+    this.registerStepPagaqui = this._stepPagaquiService.getStepsPagaqui();
   }
 
   /* =========== OPEN VIDEO PAGAQUI =========== */

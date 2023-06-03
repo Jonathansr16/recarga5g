@@ -14,7 +14,7 @@ import { MatButton } from '@angular/material/button';
 })
 export class ProductosFilterComponent implements OnInit, AfterViewInit {
 
-  productos: productoModel[] = [];
+  productos: any = [];
   activeItem?: boolean;
   @ViewChild('option') option!: MatButton;
 

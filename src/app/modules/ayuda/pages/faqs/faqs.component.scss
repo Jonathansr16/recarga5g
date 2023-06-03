@@ -1,6 +1,6 @@
 @import "mixin";
 
-//* Hero faqs
+// *============= HERO FAQS ============= 
 .ayuda {
     &__container {
         grid-template-columns: 1fr;
@@ -34,7 +34,7 @@
     }
 }
 
-//* faqs
+// *============= FAQS ============= 
 .faqs {
     &__container {
         grid-template-columns: 1fr;
@@ -129,7 +129,7 @@
 
 
 
-/*============= FAQS SEARCH ============= */
+//* ============= FAQS SEARCH =============
 
 
 .search-content {
@@ -162,7 +162,7 @@
     }
 }
 
-/*Input focus*/
+// *============= INPUT FOCUS ============= 
 
 .form__input:focus {
     border: 1.5px solid var(--c-primary);
@@ -173,9 +173,7 @@
     font-weight: bold;
 }
 
-
-/* AUTOCOMPLETE */
-
+// *============= AUTOCOMPLETE ============= 
 .autocomplete-list {
     position: absolute;
     top: 49px;
@@ -212,8 +210,6 @@
     visibility: visible;
     pointer-events: auto;
 }
-
-
 
 
 .autocomplete-list__li.dataFilter {

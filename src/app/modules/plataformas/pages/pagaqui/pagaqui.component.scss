@@ -1,14 +1,11 @@
 @import "mixin";
 
+//* ============ SECTION BANNER PAGAQUI ============  
 .banner-plataformas__container{
     grid-template-columns: 1fr;
 }
 
-.backPagaqui {
-    background-color: var(--back-comisionPagaqui);
-}
-
-
+//* ============ SECTION CUENTAS PAGAQUI ============  
 .cuentas-pagaqui {
        @include responsive(650px) {
         &__thead {
@@ -55,8 +52,7 @@
       }
 }
 
-
-/* ============ SECTION COMISION PAGAQUI  ============  */
+//* ============ SECTION COMISION PAGAQUI ============ 
 
 .comision--pagaqui {
     background-color: var(--back-comisionPagaqui);
@@ -161,3 +157,31 @@
 }
 
 
+//* ============ SECTION METODOS PAGAQUI ============  
+.metodos-pagaqui {
+    grid-template-columns: 1fr;
+
+    &__h2 {
+        text-align: center;
+    }
+}
+
+//* ============ SECTION REGISTER ============  
+
+.register-pagaqui {
+
+    @include responsive(950px) {
+
+        &__left {
+            order: 2;
+        }
+        &__right {
+            order: 1;
+        }
+    }
+
+    &__right {
+        @include flexible(flex, column, wrap, center, flex-start);
+        gap: 1em;
+    }
+}

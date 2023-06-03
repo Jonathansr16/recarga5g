@@ -7,10 +7,8 @@
     justify-content: center;
     column-gap: 2.5rem;
     row-gap: 100px;
-    margin-right: 2rem;
     text-align: center;
     position: relative;
-    padding: 0.3em;
 
     @include responsive(550px) {
         order: 1;

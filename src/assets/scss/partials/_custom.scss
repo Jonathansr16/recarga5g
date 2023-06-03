@@ -27,7 +27,7 @@ $dark-theme: mat.define-dark-theme(
 
 .light-theme {
     @include mat.all-component-themes($light-theme);
-    --c-title: hsl(250deg 11.26% 35.83%);
+    --c-title: #555166;
     --c-text: #263238;
     --c-body: #fff;
     --c-card: #faf8fa;

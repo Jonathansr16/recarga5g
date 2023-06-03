@@ -1,142 +1,186 @@
-<div class="banner banner-ayuda container">
-    <link rel="preload" as="image" href="https://ik.imagekit.io/taerecargas/Recargas/banner_ayuda_d3CgfbV3S.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1668634024076" />
-    <link rel="preload" as="image" href="https://ik.imagekit.io/taerecargas/Recargas/banner-ayuda__responsive_xAg0CBmgy.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1667842887509" />
-
-    <picture class="banner-ayuda__picture banner__desktop">
-        <img src="https://ik.imagekit.io/taerecargas/Recargas/banner_ayuda_d3CgfbV3S.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1668634024076" class="banner__img banner-ayuda__img banner" width="100%" height="100%" alt="Contactanos para obtener mayor información acerca de la venta de tiempo aire Telcel, bait, Movistar">
-    </picture>
-
-
-    <picture class="banner-ayuda__picture banner__mobile">
-        <img src="https://ik.imagekit.io/taerecargas/Recargas/banner-ayuda__responsive_xAg0CBmgy.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1667842887509" class="banner__img banner-ayuda__img" width="100%" height="100%" alt="Consulta nuestro Blog">
-    </picture>
-</div>
-
+<div class="hero-blog">
+    <div class="hero-blog__container container">
+   <div class="hero-blog__title">
+                <a routerLink="/" class="hero-blog__a headline-4">Home</a>
+                <span class="hero-blog__icon headline-4"> > </span>
+                <span class="hero-blog__span headline-4">Ayuda</span>
+                <span class="hero-blog__icon headline-4"> > </span>
+                <a routerLink="/ayuda/blog" class="hero-blog__a hero-blog__a-isActive headline-4">Blog</a>
+            </div>
+    </div>
+</div> 
 
 <div class="blog">
-    <div class="blog__container container">
-        <h1 class="blog__h1 title">Lee nuestros mas recientes articulos</h1>
-        <div class="article">
-            <div class="article__group">
-                <ng-container class="article__container">
-                    <div class="article__card" *ngFor="let posts of posts$ | paginate: { itemsPerPage: 2, currentPage: p } ">
-
-                        <div class="article-image">
-                            <picture class="article__picture">
-                                <img [src]="posts.fields.imgArticle.fields.file.url" class="article__img" width="331" height="367" loading="lazy" alt="Lee nuestro articulo">
-                            </picture>
-                        </div>
-
-                        <span class="article-category__span">{{ posts.fields.category }} </span>
-
-                        <div class="article-title">
-                            <h2 class="article-title__h2">
-                                {{posts.fields.title}}
-                            </h2>
-                        </div>
-
-                        <div class="article__details">
-                            <div class="article-detail">
-                                <span class="wrapper-detail__span">
-                                    <i class='bx bxs-calendar article-detail__i'></i>
-                                    <time class="article-detail__time">
-                                        {{ posts.fields.date | date: 'mediumDate' }}
-                                    </time>
-                                </span>
-                            </div>
-
-                            <div class="article-detail">
-                                <span class="wrapper-detail__span"> 
-                                    <i class='bx bxs-user-detail article-detail__i'></i>
-                                    {{ posts.fields.author }}
-                                 </span>
-                            </div>
-
-                        </div>
-
-                        <div class="article-summary">
-                            <p class="article-sumamary__p">
-                                {{ posts.fields.summary}}
-                            </p>
-                        </div>
-
-                        <a [routerLink]="['/ayuda/blog/article', posts.sys.id]" class="article-read__a">
-                            Leer mas...
-                        </a>
-                    </div>
-                    <pagination-controls (pageChange)="p = $event" class="mypagination flex aling-center justify-center"></pagination-controls>
-                </ng-container>
+  <div class="blog__container container">
+    <h1 class="blog__h1 headline-2 title">
+      Lee nuestros mas recientes articulos
+    </h1>
+    <div class="blog__box">
+      <div class="articles">
+        <ng-container class="article__container">
+          <div
+            class="article"
+            *ngFor="
+              let posts of posts$
+                | paginate : { itemsPerPage: 2, currentPage: p }
+            "
+          >
+            <div class="article__banner">
+              <picture class="article__picture">
+                <img
+                  [src]="posts.fields.imgArticle.fields.file.url"
+                  class="article__img"
+                  width="331"
+                  height="367"
+                  loading="lazy"
+                  alt="Lee nuestro articulo"
+                />
+              </picture>
             </div>
 
-            <!-- ASIDE -->
-            <div class="aside">
-                <!-- TOPICS -->
-                <div class="topics">
+            <div class="article__content">
+              <span class="article__category button"
+                >{{ posts.fields.category }}
+              </span>
 
-                    <h2 class="topics__h2">Temas abordados</h2>
+              <h2 class="article__h2">
+                  <a [routerLink]="['/ayuda/blog/article', posts.sys.id]" class="article__a headline-5">
+                    {{ posts.fields.title }}
+                </a>
+              </h2>
+          
 
-                    <div class="topics-btn">
-                        <div class="topics-btn__icon">
-                            <i class='topics-btn__i bx bx-calendar'></i>
-                        </div>
-                        <p class="topics-btn__p">Mas Populares</p>
-                    </div>
+              <p class="article__p body-2">
+                {{ posts.fields.summary }}
+              </p>
 
-                    <div class="topics-btn">
-                        <div class="topics-btn__icon">
-                            <i class='topics__i bx bx-ghost topics-btn__i'></i>
-                        </div>
-                        <p class="topics-btn__p">Recargas Telefonicas</p>
-                    </div>
+              <div class="article__details">
+                <div class="article__profile">
+                    <mat-icon class="article__icon--profile" aria-hidden="false" aria-label="Example home icon" fontIcon="badge"></mat-icon>
+
+                  <a class="article__author body-2">
+                    {{ posts.fields.author }}
+                  </a>
                 </div>
 
-                <!-- TAGS -->
-                <div class="tags">
-                    <h2 class="tags__h2">Tags</h2>
-
-                    <div class="tags__container">
-                        <button class="tags__hashtag">#Red 5g</button>
-                        <button class="tags__hashtag">#Recargas</button>
-                        <button class="tags__hashtag">#Telefonia</button>
-                        <button class="tags__hashtag">#Telcel</button>
-                        <button class="tags__hashtag">#Operadores Móviles</button>
-                        <button class="tags__hashtag">#Chip</button>
-                        <button class="tags__hashtag">#Telmex</button>
-                        <button class="tags__hashtag">#Red</button>
-                    </div>
+                <div class="article__date">
+                  <span class="wrapper-detail__span">
+                    <p class="article__time body-2">
+                      <time class="article-detail__time">
+                        {{ posts.fields.date | date : "mediumDate" }}
+                      </time>
+                      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="schedule"></mat-icon>
+                    </p>
+                  </span>
                 </div>
-
-                <!-- SOCIAL MEDIA -->
-                <h2 class="follow__h2">Nuestras redes sociales:</h2>
-                <div class="follow">
-
-                    <div class="follow__container">
-                        <p class="follow__p">No olvides en seguirnos en nuestras redes sociales</p>
-
-                        <ul class="follow__ul">
-                            <li class="follow__li">
-                                <a href="https://www.facebook.com/recargas.electronicas.com.mx/" class="follow__a follow__a--fb" target="_blank" aria-label="Facebook" rel="noopener">
-                                    <i class="follow__i bx bxl-facebook"></i>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="https://twitter.com/recargascelular" class="follow__a follow__a--tw" target="_blank" aria-label="Twitter" rel="noopener">
-                                    <i class='follow__i bx bxl-twitter'></i>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="https://www.instagram.com/recargascelular/" class="follow__a follow__a--instagram" target="_blank" aria-label="Instagram" rel="noopener">
-                                    <i class='follow__i bx bxl-instagram-alt'></i>
-                                </a>
-                            </li>
-
-                        </ul>
-
-                    </div>
-                </div>
+              </div>
             </div>
+          </div>
+          <pagination-controls
+            (pageChange)="p = $event"
+            class="mypagination flex aling-center justify-center"
+          ></pagination-controls>
+        </ng-container>
+      </div>
+
+      <!-- ASIDE -->
+      <div class="aside">
+
+        <!-- TOPICS -->
+        <div class="topics">
+          <span class="topics__span headline-5">Temas abordados</span>
+
+          <div class="topics__btn">
+            <div class="topics__box">
+              <mat-icon
+                class="topics-btn__icon"
+                aria-hidden="false"
+                aria-label="Example home icon"
+                fontIcon="trending_up"
+              ></mat-icon>
+            </div>
+            <p class="topics__p body-2">Mas Populares</p>
+          </div>
+
+          <div class="topics__btn">
+            <div class="topics__box">
+              <mat-icon
+                class="topics-btn__icon"
+                aria-hidden="false"
+                aria-label="Example home icon"
+                fontIcon=" phonelink_ring"
+              ></mat-icon>
+            </div>
+            <p class="topics__p body-2">Recargas Telefonicas</p>
+          </div>
         </div>
+
+        <!-- TAGS -->
+        <div class="tags">
+          <h2 class="tags__span headline-5">Tags</h2>
+
+          <div class="tags__container">
+            <button class="tags__hashtag">#Red 5g</button>
+            <button class="tags__hashtag">#Recargas</button>
+            <button class="tags__hashtag">#Telefonia</button>
+            <button class="tags__hashtag">#Telcel</button>
+            <button class="tags__hashtag">#Operadores Móviles</button>
+            <button class="tags__hashtag">#Chip</button>
+            <button class="tags__hashtag">#Telmex</button>
+            <button class="tags__hashtag">#Red</button>
+          </div>
+        </div>
+
+        <!-- SOCIAL MEDIA -->
+        <h2 class="follow__h2 headline-5">Nuestras redes sociales:</h2>
+        <div class="follow">
+          <div class="follow__container">
+            <p class="follow__p body-1">
+              No olvides en seguirnos en nuestras redes sociales:
+            </p>
+
+            <ul class="follow__ul">
+              <li class="follow__li">
+                <a
+                  href="https://www.facebook.com/recargas.electronicas.com.mx/"
+                  class="follow__a follow__a--fb"
+                  target="_blank"
+                  aria-label="Facebook"
+                  rel="noopener"
+                >
+                 <img src="assets/img/social__facebook.png" class="follow__img" loading="lazy" alt="Siguenos en Facebook como recargas.electronicas.com.mx">
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="https://twitter.com/recargascelular"
+                  class="follow__a follow__a--tw"
+                  target="_blank"
+                  aria-label="Twitter"
+                  rel="noopener"
+                >
+                <img src="assets/img/social__twitter.png" class="follow__img" loading="lazy" alt="Siguenos en Facebook como recargas.electronicas.com.mx">
+
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="https://www.instagram.com/recargascelular/"
+                  class="follow__a follow__a--instagram"
+                  target="_blank"
+                  aria-label="Instagram"
+                  rel="noopener"
+                >
+                <img src="assets/img/social__instagram.png" class="follow__img" loading="lazy" alt="Siguenos en Facebook como recargas.electronicas.com.mx">
+
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

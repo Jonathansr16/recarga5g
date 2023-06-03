@@ -1,33 +1,7 @@
-<div class="register mb-3">
-    <div class="register__container container">
-        <div class="register-left">
-            <div class="register-item">
-                <img class="register-item__img" src="assets/img/register-registro.png" loading="lazy" alt="registro para la venta de recargas sin costo alguno">
-                <p class="register-item__p headline-6">Registrate para vender recargas</p>
-            </div>
-            <div class="register-item">
-                <img class="register-item__img" src="assets/img/register-correo.png" loading="lazy" alt="Ingresa a la plataforma con los datos de acceso que podras encontrar en el correo de bienvenida">
-                <p class="register-item__p headline-6">Espera nuestro correo con tus datos de acceso</p>
-            </div>
-            <div class="register-item">
-                <img class="register-item__img" src="assets/img/register-deposito.png" loading="lazy" alt="Deposita un monto minimo y notifacalo para recargar saldo">
-                <p class="register-item__p headline-6">deposita y notifica hasta un deposito minimo de $100</p>
-            </div>
-            <div class="register-item">
-                <img class="register-item__img" src="assets/img/register-ganancias.png" loading="lazy" alt="Genera ingresos extras veniendo recargas">
-                <p class="register-item__p headline-6">Listo! podras generar ganancias extras a tu negocio</p>
-            </div>
-        </div>
-
-        <div class="register-right">
-            <span class="register-right__span headline-4 head-4">¿Como me registro para vender recarga?</span>
-            <h3 class="register-right__h3 headline-3">Registrate totalmente gratis y empieza a vender recargas</h3>
-            <p class="register-right__p body-1">
-                En Recargas MX ofrecemos una amplia variedad de opciones para recargar tus dispositivos electrónicos en línea, desde la comodidad de tu hogar u oficina. Olvídate de perder tiempo haciendo fila y recarga tus dispositivos rápidamente en minutos.
-            </p>
-
-            <button mat-raised-button color="primary">Registrarme</button>
-        </div>
-
+<div class="register-left">
+    <div class="register-item" *ngFor="let item of step.item">
+        <img class="register-item__img" [src]="item.img" loading="lazy" [alt]="item.alt">
+        <p class="register-item__p headline-6">{{ item.description }}</p>
     </div>
 </div>
+

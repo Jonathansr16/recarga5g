@@ -5,9 +5,8 @@
     "baseUrl": "./",
     "paths": {
       "@inicio/*":   ["src/app/modules/inicio/*"],
-      "@productos/*":["src/app/modules/productos/*"],
-      "@consultas/*": ["src/app/modules/consultas/*"],
       "@plataformas/*": ["src/app/modules/plataformas/*"],
+      "@consultas/*": ["src/app/modules/consulta/*"],
       "@legal/*": ["src/app/modules/legal/*"],
       "@reportes/*": ["src/app/modules/reportes/*"],
       "@ayuda/*": ["src/app/modules/ayuda/*"],

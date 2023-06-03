@@ -10,7 +10,7 @@ import { DOCUMENT, isPlatformBrowser } from '@angular/common';
   styleUrls: ['./metodo-ventas.component.scss'],
   providers: [MetodosVentaService]
 })
-export class MetodoVentasComponent implements OnInit, AfterViewInit, OnDestroy{
+export class MetodoVentasComponent implements OnInit, AfterViewInit{
 
 @ViewChildren('modal') modalItems?: QueryList<ElementRef> 
 
@@ -38,17 +38,24 @@ export class MetodoVentasComponent implements OnInit, AfterViewInit, OnDestroy{
     this.isModalOpen = true;
   this._metodosService.openModal(item);
 
-  if (isPlatformBrowser(this.plataform_id)) {
-     this.document.body.classList.add('blockScrollModal');
-  }
-  }
-
-  ngOnDestroy(): void {
-  this.closeDialog()
+this.blockScrollDocument();
   }
 
   closeDialog(item = {}): void {
      this._metodosService.closeModal(item);
-     this.document.body.classList.remove('blockScrollModal');
+    
+     this.unblockScrollDocument();
+  }
+
+  blockScrollDocument():void {
+    if (isPlatformBrowser(this.plataform_id)) {
+         this.document.body.classList.add('blockScrollModal');
+       }
+  }
+
+  unblockScrollDocument():void {
+    if (isPlatformBrowser(this.plataform_id)) {
+      this.document.body.classList.remove('blockScrollModal');
+    }
   }
 }

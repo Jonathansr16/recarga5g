@@ -1,7 +1,7 @@
 
-import { Component, ElementRef, Renderer2, ViewChild, OnInit, AfterViewInit, ViewChildren, QueryList, Inject } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild, OnInit, AfterViewInit, ViewChildren, QueryList, Inject, PLATFORM_ID } from '@angular/core';
 import { MatButton } from '@angular/material/button';
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -14,20 +14,17 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   public active?: boolean;
   public activeNavOverlay?: boolean;
   @ViewChild('nav') nav?: ElementRef;
-  @ViewChild('navMenu') menu?: ElementRef;
   @ViewChild('btnTheme') _btnTheme?: MatButton;
   activeTHeme: boolean = true;
   isDarkTheme: boolean = false;
 
-  constructor(@Inject(DOCUMENT) private document: Document, private renderer2: Renderer2) {
+  constructor(@Inject(DOCUMENT) private document: Document, private renderer2: Renderer2, @Inject(PLATFORM_ID) private plataform_id: Object) {
 
   }
-
 
   ngOnInit(): void {
 
   }
-
 
   ngAfterViewInit(): void {
     this.checkTheme();
@@ -106,14 +103,27 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   openNav(): void {
     this.active = true;
     this.activeNavOverlay = true;
+
+    this.blockScrollDocument();
   }
 
   closeNav(): void {
     this.active = false;
     this.activeNavOverlay = false;
+    this.unblockScrollDocument();
   }
 
+  blockScrollDocument():void {
+    if (isPlatformBrowser(this.plataform_id)) {
+         this.document.body.classList.add('blockScrollModal');
+       }
+  }
 
+  unblockScrollDocument():void {
+    if (isPlatformBrowser(this.plataform_id)) {
+      this.document.body.classList.remove('blockScrollModal');
+    }
+  }
 
 
 }

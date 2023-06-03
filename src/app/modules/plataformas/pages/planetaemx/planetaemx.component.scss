@@ -50,3 +50,20 @@
      }
    }
 }
+
+//* ============ SECTION METODOS PLANETAEMX ============  
+.metodos-planetaemx {
+    grid-template-columns: 1fr;
+
+    &__h2 {
+        text-align: center;
+    }
+}
+
+//* ============ SECTION REGISTER PLANETAEMX ============  
+.register-planetaemx {
+    &__left {
+        @include flexible(flex, column, wrap, center, flex-start);
+        gap: 1em;
+    }
+}

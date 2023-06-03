@@ -1,13 +1,5 @@
 @import "_mixin";
 //* ============ SECCION METODOS ============
-.metodos__container {
-    grid-template-columns: 1fr;
-}
-
-.metodos-titles__h2 {
-    text-align: center
-}
-
 .cards {
     position: relative;
     @include grid(3, 1em);

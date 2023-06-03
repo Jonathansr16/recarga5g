@@ -1,6 +1,6 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import { productoModel } from '@core/models/productos.model';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import { ProductosService } from '@core/services/productos.service';
+
 
 import { Swiper, Autoplay, Pagination, Navigation, SwiperOptions} from 'swiper';
 
@@ -8,14 +8,18 @@ import { Swiper, Autoplay, Pagination, Navigation, SwiperOptions} from 'swiper';
   selector: 'app-carousel-productos',
   templateUrl: './carousel-productos.component.html',
   styleUrls: ['./carousel-productos.component.scss'],
-  providers: [ProductosService]
+
 })
 export class CarouselProductosComponent implements OnInit, AfterViewInit {
 
   @ViewChild('productosSwiper') prodSwiper?: ElementRef;
-  productos: productoModel[] = [];
+  
+  @Input() productos: any;
+  
+  constructor() { }
+
 private config: SwiperOptions = {
-  modules: [ Navigation,Pagination, Autoplay],
+  modules: [Navigation,Pagination, Autoplay],
  
   loop: true,
   grabCursor: true,
@@ -60,9 +64,8 @@ private config: SwiperOptions = {
     
   }
 
-  constructor(private _productoService: ProductosService, ) { }
+
   ngOnInit(): void {
-    this.productos = this._productoService.getProductos();
   }
 
   ngAfterViewInit(): void {

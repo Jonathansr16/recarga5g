@@ -137,9 +137,40 @@
 </div>
 
 <!-- ============= SECCION METODOS VENTA ============= -->
-<app-metodo-ventas></app-metodo-ventas>
+<div class="metodos-planetaemx container mb-3">
+    <h2 class="metodos-planetaemx__h2 headline-2">Metodos de venta de recargas multiregion</h2>
+    <app-metodo-ventas></app-metodo-ventas>
+</div>
 
 <!-- ============= SECCION MANUALES ============= -->
 <app-manuales [manuales]="manual" *ngFor="let manual of manualesPlanetaemx"></app-manuales>
+
 <!-- ============= SECCION REGISTER ============= -->
-<app-register-steps></app-register-steps>
+<div class="register-planetaemx mb-3">
+    <div class="register-planetaemx__container container">
+
+        <div class="register-planetaemx__left">
+            <h2 class="register-planetaemx__h2 headline-4 head-4">
+                ¿Como vender recargas Bait?
+            </h2>
+
+            <h3 class="register-planetaemx__h3 headline-3">
+                Venta de recargas hasta 7.5% de comisión fijo
+            </h3>
+
+            <p class="register-planetaemx__p body-1 mb-1">
+                Nuestras comisiones son simplemente excepcionales. Te brindamos la posibilidad de obtener altas ganancias por cada recarga que vendas. Cuanto más vendas, más ganarás. ¡Es así de simple!
+            </p>
+
+            <p class="register-planetaemx__p body-1 mb-1">
+                Sabemos que tu tiempo y esfuerzo son valiosos es por lo que nos aseguramos de que te sientas recompensado por tu arduo trabajo y dedicación.
+            </p>
+
+            <a class="register-planetaemx__a" routerLink="/registro" mat-raised-button color="primary">Registrarme</a>
+
+        </div>
+        <div class="register-planetaemx__right">
+            <app-register-steps [step]="step" *ngFor="let step of registerStepPlanetaemx"></app-register-steps>
+        </div>
+    </div>
+</div>

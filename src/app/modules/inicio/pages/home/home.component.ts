@@ -12,7 +12,15 @@ import { negocioModel } from '@core/models/negocios.model';
 //T-WRITER JS
 // @ts-ignore
 import Typewriter from 't-writer.js';
+// import Swiper, { Autoplay, Navigation, Pagination, SwiperOptions } from 'swiper';
 
+//*INTERFACES
+import { metodosVenta } from '@core/models/metodos-venta.model';
+import { MetodosVentaService } from '@core/services/metodos-venta.service';
+import { registerSteps } from '@core/models/register-steps-model';
+import { RegisterStepsService } from '@core/services/register-steps.service';
+import { ProductosService } from '@core/services/productos.service';
+import { productoModel } from '@core/models/productos.model';
 
 @Component({
   selector: 'app-home',
@@ -22,31 +30,86 @@ import Typewriter from 't-writer.js';
 })
 export class HomeComponent implements OnInit, AfterViewInit {
 
+  @ViewChild('productosSwiper') prodSwiper?: ElementRef;
   @ViewChild('menuAbout') menuAbout?: ElementRef;
   @ViewChild('textDinamic') textDinamico?: ElementRef;
   @ViewChildren('counter') counters?: QueryList<ElementRef>;
 
+  showModal = false;
   item: razonesModel[] = [];
   negocios: negocioModel[] = [];
-  showModal = false;
+  metodosVenta: metodosVenta[] = [];
+  stepsRegister: registerSteps[] = [];
+  productos: productoModel[] = [];
+
+  // private config: SwiperOptions = {
+  //   modules: [Navigation,Pagination, Autoplay],
+   
+  //   loop: true,
+  //   grabCursor: true,
+  //   mousewheel: true,
+  //   keyboard: true,
+  //   slidesPerView: 5,
+  //   spaceBetween: 10,
+  //   autoplay: {
+  //     delay: 0,
+  //     disableOnInteraction: false,
+  //   },
+  //  speed: 2500,
+  
+  //   // Responsive breakpoints
+  //   breakpoints: {
+  //   // when window width is >= 320px
+  //   320: {
+  //     slidesPerView: 2,
+  //     spaceBetween: 20
+  //   },
+  
+  //    // when window width is >= 480px
+  //    550: {
+  //     slidesPerView: 3,
+  //     spaceBetween: 30
+  //   },
+  
+  //     // when window width is >= 640px
+  //  950: {
+  //   slidesPerView: 4,
+  //   spaceBetween: 35
+  // }
+  //   }
+      
+  //   }
 
 
-  constructor(private _razonesService: RazonesService, private _negocioService: NegocioService,
-              private readonly title: Title) { }
+
+  constructor( private readonly _productosService: ProductosService,  private readonly _razonesService: RazonesService, private readonly _negocioService: NegocioService,
+    private readonly _metodosService: MetodosVentaService, private readonly _stepsService: RegisterStepsService,
+    private readonly title: Title) { }
 
   ngOnInit(): void {
     this.title.setTitle(
       'Recarga5g.com | Vende tiempo aire, pago de servicios y pines hasta un 7% de comisión'
     );
+
+    this.productos = this._productosService.getProductos();
+    console.log(this.productos)
     this.item = this._razonesService.getRazones();
     this.negocios = this._negocioService.getNegocios();
-
+    this.metodosVenta = this._metodosService.getmetodosVenta();
+    this.stepsRegister = this._stepsService.getStepsHome();
   }
 
   ngAfterViewInit(): void {
+    // this.carouselProductos();
     this.typewrite();
     this.counterAnimation();
   }
+
+   //* INIT CAROUSEL 
+  //  carouselProductos(): void {
+  //   const _prodSwiper= this.prodSwiper?.nativeElement;
+  //   new Swiper(_prodSwiper,this.config);
+  //  }
 
   //* INIT TYPE WRITTER
   typewrite(): void {
@@ -83,34 +146,32 @@ export class HomeComponent implements OnInit, AfterViewInit {
     menu.classList.toggle("menuActive");
   }
 
-  
-
   //* FUNCTIONS FOR COUNTER RECORD SECTION
   counterAnimation(): void {
 
-      const observer = new IntersectionObserver((entries, obj) => {
-        entries.forEach((entry: any) => {
-          if (entry.isIntersecting) {
-            let target = +entry.target.dataset.number;
-            let number = entry.target;
+    const observer = new IntersectionObserver((entries, obj) => {
+      entries.forEach((entry: any) => {
+        if (entry.isIntersecting) {
+          let target = +entry.target.dataset.number;
+          let number = entry.target;
 
-            setTimeout(() => {
-              this.updateCount(number, target);
-            }, 400);
-          }
-        });
-
-      },
-        {
-          threshold: .5,
-          rootMargin: '0px 0px -50% 0px'
-        });
-
-      this.counters?.forEach(element => {
-        const item = element.nativeElement;
-        observer.observe(item)
+          setTimeout(() => {
+            this.updateCount(number, target);
+          }, 400);
+        }
       });
-    
+
+    },
+      {
+        threshold: .5,
+        rootMargin: '0px 0px -50% 0px'
+      });
+
+    this.counters?.forEach(element => {
+      const item = element.nativeElement;
+      observer.observe(item)
+    });
+
 
   }
 

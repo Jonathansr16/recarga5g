@@ -1,68 +1,66 @@
 <!-- ============= BANNER HOME ============= -->
 <div class="section wrapper mtop-3">
-
     <span class="mat-headline-3 wrapper__shape wrapper__shape-1">RECARGAS</span>
     <span class="mat-headline-3 wrapper__shape wrapper__shape-2">SERVICIOS</span>
 
     <div class="container wrapper-container">
-
         <div class="wrapper-titular">
-
             <span class="wrapper-titular__span headline-5">con Recarga5g.com
-                <img src="assets/img/ganancias-recargas.png" class="wrapper-titular__img" alt="ganancias por la venta de recargas">
+                <img src="assets/img/ganancias-recargas.png" class="wrapper-titular__img"
+                    alt="ganancias por la venta de recargas" />
             </span>
             <h1 class="wrapper-titular__h1 bigTitle">
-               Comisión hasta un 7.5% fijo por venta de recargas.
+                Comisión hasta un 7.5% fijo por venta de recargas.
             </h1>
 
             <span #textDinamic class="wrapper-titular__dinamic"></span>
-            <p class="wrapper-titular__p body-1"> No pierdas la oportunidad de aumentar tus ingresos y brindar un servicio
-                adicional a tus clientes. ¡Regístrate en nuestro sitio web y comienza a vender recargas electrónicas hoy
-                mismo!</p>
+            <p class="wrapper-titular__p body-1">
+                No pierdas la oportunidad de aumentar tus ingresos y brindar un servicio
+                adicional a tus clientes. ¡Regístrate en nuestro sitio web y comienza a
+                vender recargas electrónicas hoy mismo!
+            </p>
 
             <div class="wrapper-action flex align-center justify-center">
-                <a class="wrapper-action__a radius-20" mat-raised-button color="primary" routerLink="/registro">Registrarme
-                    ahora</a>
-                <a class="wrapper-action__a my-button btn-underline" routerLink="/plataforma/pagaqui">Consultar productos
+                <a class="wrapper-action__a radius-20" mat-raised-button color="primary"
+                    routerLink="/registro">Registrarme ahora</a>
+                <a class="wrapper-action__a my-button btn-underline" routerLink="/plataforma/pagaqui">Consultar
+                    productos
                     <mat-icon class="wrapper-action__icon" color="accent" aria-hidden="false"
                         aria-label="Example home icon" fontIcon="outbound"></mat-icon>
                 </a>
-
             </div>
         </div>
 
         <div class="wrapper-image wow animate__animated animate__fadeInUp">
-            <img src="assets/img/mockups-mobile-and-desktop.png" alt="Venta de recargas para todo tipo de dispositivo celular, tablet, pc" loading="lazy">
+            <img src="assets/img/mockups-mobile-and-desktop.png"
+                alt="Venta de recargas para todo tipo de dispositivo celular, tablet, pc" loading="lazy" />
         </div>
-
     </div>
 </div>
 
 <!-- ============= SECCIÓN CAROUSEL PRODCUCTOS ============= -->
-<app-carousel-productos></app-carousel-productos>
+<app-carousel-productos [productos]="productosHome" *ngFor="let productosHome of productos"></app-carousel-productos>
 
 <!-- ============= SECCIÓN BENEFICIOS ============= -->
 <div class="beneficios mb-3">
     <div class="container beneficios__container">
         <div class="beneficios-right">
-       
             <div class="beneficios-titles">
                 <h3 class="beneficios-titles__h3 headline-4 head-4">Recarga Telcel</h3>
                 <h4 class="beneficios-titles__h4 headline-3">
-                    Venta de <strong class="">Recargas Telcel</strong> para cualquier negocio
+                    Venta de <strong class="">Recargas Telcel</strong> para cualquier
+                    negocio
                 </h4>
-
             </div>
 
             <p class="beneficios-right__p body-1">
-                Elije la mejor manera para que vendas recargas a travez de tu computadora o laptop ingresando al
-                portal de ventas de recargas electrónicas desde tu navegador de preferencia,por mensaje SMS gratuito
-                o descargando la aplicación
-                desde la tienda oficial.
+                Elije la mejor manera para que vendas recargas a travez de tu
+                computadora o laptop ingresando al portal de ventas de recargas
+                electrónicas desde tu navegador de preferencia,por mensaje SMS gratuito
+                o descargando la aplicación desde la tienda oficial.
             </p>
 
             <div class="beneficios-list">
-
                 <ul class="beneficios-list__ul">
                     <li class="beneficios-list__li">
                         <mat-icon class="mat-18 beneficios-list__icon">check_circle</mat-icon>
@@ -80,7 +78,6 @@
                         <mat-icon class="mat-18 beneficios-list__icon">check_circle</mat-icon>
                         <span class="beneficios-list__span body-1">Haz crecer tu negocio</span>
                     </li>
-
                 </ul>
 
                 <ul class="beneficios-list__ul beneficios-list__ul--2">
@@ -105,11 +102,11 @@
                 </ul>
             </div>
 
-            <a class="radius-20" mat-raised-button color="primary" routerLink="/registro">Registrarme
-                ahora</a>
+            <a class="radius-20" mat-raised-button color="primary" routerLink="/registro">Registrarme ahora</a>
         </div>
         <div class="beneficios-left">
-            <img src="/assets/img/negocio_recargas.png" class="beneficios-left__img" loading="lazy" alt="Descubre todos los beneficios que podras obtener vendiendo recargas electrónicas">
+            <img src="/assets/img/negocio_recargas.png" class="beneficios-left__img" loading="lazy"
+                alt="Descubre todos los beneficios que podras obtener vendiendo recargas electrónicas" />
         </div>
     </div>
 </div>
@@ -119,16 +116,20 @@
     <div class="razones__container container">
         <div class="razones-titles">
             <span class="razones-titles__span headline-4 head-4">¿Porque vender recargas Bait, Movistar</span>
-            <h3 class="razones-titles__h3 headline-3">Vende recargas electrónicas de todas las compañías de telefonía
-                celular en México</h3>
+            <h3 class="razones-titles__h3 headline-3">
+                Vende recargas electrónicas de todas las compañías de telefonía celular
+                en México
+            </h3>
         </div>
 
         <div class="razones-list">
             <ul class="razones-list__ul">
                 <li class="razones-list__li" *ngFor="let razon of item">
-                    <mat-icon class="mat-18 razones-list__icon">{{razon.nameIcon}}</mat-icon>
-                    <h4 class="razones-list__h4 headline-5">{{razon.title}}</h4>
-                    <p class="razones-list__p body-2">{{razon.description}}</p>
+                    <mat-icon class="mat-18 razones-list__icon">{{
+                        razon.nameIcon
+                        }}</mat-icon>
+                    <h4 class="razones-list__h4 headline-5">{{ razon.title }}</h4>
+                    <p class="razones-list__p body-2">{{ razon.description }}</p>
                 </li>
             </ul>
         </div>
@@ -142,64 +143,76 @@
 <div class="inversion mb-3">
     <div class="inversion__container container">
         <div class="inversion-titles mb-1-5">
-            <h2 class="inversion-titles__h2 headline-2">Montos para vender recargas</h2>
+            <h2 class="inversion-titles__h2 headline-2">
+                Montos para vender recargas
+            </h2>
         </div>
 
         <div class="inversion-box">
             <div class="inversion-right">
-                <img src="/assets/img/inversion-recargas.png" class="inversion-right__img" loading="lazy" alt="Deposita un monto minimo y empieza a vender recargas a cualquier compañia">
+                <img src="/assets/img/inversion-recargas.png" class="inversion-right__img" loading="lazy"
+                    alt="Deposita un monto minimo y empieza a vender recargas a cualquier compañia" />
             </div>
-         
+
             <div class="inversion-subtitle">
-                <h3 class="inversion-subtitle__h3 headline-3">Deposita un monto minimo de $100 y empieza a vender
-                    recargas </h3>
+                <h3 class="inversion-subtitle__h3 headline-3">
+                    Deposita un monto minimo de $100 y empieza a vender recargas
+                </h3>
                 <p class="inversion-subtitle__p body-1 mb-1">
-                    puedes invertir desde $100 pesos. A través de nuestro servicio de atención a clientes te explicamos
-                    como vender recargas Telcel y de todas las compañías en tu negocio y además ganar una comisión.
-                    Vender recargas es uno de los mejores negocios para ti. Muchos negocios que desean vender saldo,
+                    puedes invertir desde $100 pesos. A través de nuestro servicio de
+                    atención a clientes te explicamos como vender recargas Telcel y de
+                    todas las compañías en tu negocio y además ganar una comisión. Vender
+                    recargas es uno de los mejores negocios para ti. Muchos negocios que
+                    desean vender saldo,
                 </p>
 
                 <ul class="inversion__ul">
                     <li class="inversion__li">
                         <mat-icon class="mat-18 inversion__icon">verified</mat-icon>
-                        <p class="inversion__p headline-6">Sin pagos forzosos ni anualidaes</p>
+                        <p class="inversion__p headline-6">
+                            Sin pagos forzosos ni anualidaes
+                        </p>
                     </li>
                     <li class="inversion__p inversion__li">
                         <mat-icon class="mat-18 inversion__icon">verified</mat-icon>
-                        <p class="inversion__p headline-6">Deposita como y cuando quieras</p>
+                        <p class="inversion__p headline-6">
+                            Deposita como y cuando quieras
+                        </p>
                     </li>
                     <li class="inversion__p inversion__li">
                         <mat-icon class="mat-18 inversion__icon">verified</mat-icon>
-                        <p class="inversion__p headline-6">Aplicación de depositos automatico</p>
+                        <p class="inversion__p headline-6">
+                            Aplicación de depositos automatico
+                        </p>
                     </li>
                 </ul>
             </div>
-
         </div>
     </div>
 </div>
 
 <!-- ============= SECCION NEGOCIO ============= -->
 <div class="negocio mb-3">
-
     <div class="negocio__container container">
-
         <div class="negocios-left">
-
             <div class="negocio-titles">
                 <span class="negocios-titles__span headline-5 head-4">Venta de recargas para negocio</span>
-                <h2 class="negocio__h2 headline-3">Venta de recargas para todo tipo de negocio</h2>
+                <h2 class="negocio__h2 headline-3">
+                    Venta de recargas para todo tipo de negocio
+                </h2>
             </div>
 
-            <p class="negocio-left__p body-1">Ofrece venta de recargas electrónicas para cualquier tipo de negocio:
-                Tienda de
-                conveniencia, Abarrotes, Ferreterías, Farmacia, Vinaterías, Cyber, cajas de ahorros, pequeñas, medianas
-                y grandes negocios. Genera ganancias extras mientras obtienes
-                un mayor flujo de clientes.
+            <p class="negocio-left__p body-1">
+                Ofrece venta de recargas electrónicas para cualquier tipo de negocio:
+                Tienda de conveniencia, Abarrotes, Ferreterías, Farmacia, Vinaterías,
+                Cyber, cajas de ahorros, pequeñas, medianas y grandes negocios. Genera
+                ganancias extras mientras obtienes un mayor flujo de clientes.
             </p>
 
-            <p class="negocio-left__p body-1 mb-1">Tu registro es totalmente gratuito, si tienes dudas acerca de como vender
-                recargas o requieres mayor información contactos.</p>
+            <p class="negocio-left__p body-1 mb-1">
+                Tu registro es totalmente gratuito, si tienes dudas acerca de como
+                vender recargas o requieres mayor información contactos.
+            </p>
 
             <a mat-raised-button color="primary" class="negocio-left__a" routerLink="/registro">
                 Registrarme ahora!!
@@ -208,141 +221,178 @@
 
         <div class="negocio-right">
             <div *ngFor="let negocio of negocios" class="negocio-category">
-                <img [src]="negocio.nameIcon" class="negocio-category__img" width="30" height="30" loading="lazy" alt="venta de recargas para tu negocio">
-                <h4 class="negocio-category__h4 headline-6">{{negocio.typeNegocio}}</h4>
+                <img [src]="negocio.nameIcon" class="negocio-category__img" width="30" height="30" loading="lazy"
+                    alt="venta de recargas para tu negocio" />
+                <h4 class="negocio-category__h4 headline-6">
+                    {{ negocio.typeNegocio }}
+                </h4>
             </div>
         </div>
     </div>
 </div>
 
 <!-- ============= SECCION METODOS VENTA ============= -->
-<app-metodo-ventas></app-metodo-ventas>
+<div class="container metodos-home mb-3">
+    <h2 class="metodos-home__h2 headline-2">
+        Metodo de venta de recargas electrónicas
+    </h2>
+    <app-metodo-ventas></app-metodo-ventas>
+</div>
 <!-- ============= SECCION APP RECARGAS ============= -->
 <app-recargas></app-recargas>
 
 <!-- ============= SECCION ABOUT ============= -->
 <div class="about mb-3">
-
     <div class="about__container container">
-
-        <div class="about-left">
-            <div class="about-title">
-                <span class="about-title__span headline-4 head-4">Quien es Recarga5g.com?</span>
-                <h3 class="about-title__h3 headline-3">los años nos respaldan como los mejores del mercado en la venta de tiempo aire</h3>
-            </div>
-            <div class="about__content">
-                <p class="about-content__p body-1">
-                    <strong class="about-content__strong">Recarga5g.com</strong> Ofrece la <strong class="about__strong">venta
-                        de tiempo aire celulares de las principales compañías de México, pago de servicios y pines
-                        electrónicos</strong> .Usted puede vender
-                    tiempo aire desde su tienda, farmacia, ciber, casa, etc. únicamente necesita tener un dispositivo
-                    con acceso a Internet (pagina web) o un celular para la venta vía mensaje de texto. No esperes mas y
-                    contrata nuestros servicios e incrementa
-                    tus ventas considerablemente con esta gran oportunidad de atraer nuevos clientes a tu negocio.
-                </p>
-            </div>
+        <div class="about-title">
+            
+            <h3 class="about-title__h3 headline-3">
+                los años nos respaldan como los mejores del mercado en la venta de
+                tiempo aire
+            </h3>
+            <p class="about-content__p body-1">
+                <strong class="about-content__strong body-1 keyword__compani">Recarga5g.com</strong>
+                Ofrece la
+                <strong class="about__strong">venta de tiempo aire celulares de las principales compañías de
+                    México, pago de servicios y pines electrónicos</strong>
+                .Usted puede vender tiempo aire desde su tienda, farmacia, ciber, casa,
+                etc. únicamente necesita tener un dispositivo con acceso a Internet
+                (pagina web) o un celular para la venta vía mensaje de texto. No esperes
+                mas y contrata nuestros servicios e incrementa tus ventas
+                considerablemente con esta gran oportunidad de atraer nuevos clientes a
+                tu negocio
+            </p>
         </div>
 
         <div class="about-right">
-            <img src="assets/img/logos_companies.png" class="about-right__img" loading="lazy" alt="Venta de tiempo aire, pago de servicios y pines electrónicos con Recarga5g.com">
+            <!-- <img src="assets/img/Banner__map.png" class="about-right__img" loading="lazy"
+                alt="Venta de tiempo aire, pago de servicios y pines electrónicos con Recarga5g.com" /> -->
+                <picture class="about-right__picture">
+                    <source media="(min-width:1200px)" srcset="assets/img/Banner__map.png" type="image/jpg">
+                    <source media="screen and (max-width: 650px)" srcset="assets/img/Banner-map__responsive.png" type="image/jpg">
+                    <img src="assets/img/Banner__map.png" class="about-right__img" loading="lazy" alt="Trayectoria de Recarga5g.com">
+                </picture>
         </div>
     </div>
+</div>
 
-    <!-- ============= SECCION HISTORY ============= -->
-    <div class="history mtop-5 mbottom-3">
+<!-- ============= SECCION HISTORY ============= -->
+<div class="history mtop-5 mbottom-3">
+    <div class="history__container container">
+        <div class="history-content">
+            <span class="history-content__span"></span>
+            <h3 class="history-content__h3 headline-3">
+                Mas de 20 años ofreciendo nuestros servicios venta de tiempo, Telcel,
+                Movistar
+            </h3>
 
-        <div class="history__container container">
+            <p class="history-content__p body-1">
+                Nuestro equipo de trabajo tiene por objectivo brindar a todos nuestros
+                clientes la mejor atención, en el plazo menor posible. es por ello que
+                estamos en constante innovación para seguir brindandole la mejor
+                experiencia.
+            </p>
 
-            <div class="history-content">
-                <span class="history-content__span"></span>
-                <h3 class="history-content_h3 headline-3">Mas de 20 años ofreciendo nuestros servicios venta de tiempo,
-                    Telcel, Movistar</h3>
+            <h4 class="history-content__h4 headline-4">Recargas Electrónicas</h4>
+        </div>
 
-                <p class="history-content__p body-1">Nuestro equipo de trabajo tiene por objectivo brindar a todos
-                    nuestros clientes
-                    la mejor atención, en el plazo menor posible. es por ello que estamos en constante innovación para
-                    seguir brindandole la mejor experiencia.</p>
+        <div class="history-image">
+            <img src="assets/img/equipo-recargas-electronicas.png" class="history-image__img" loading="lazy" width="500"
+                height="500" alt="Mas de 20 anos ofreciendo lo mejor en el todo el territorio mexicano" />
+        </div>
+    </div>
+</div>
 
-                <h4 class="history-content__h5 headline-4">Recargas Electrónicas</h4>
+<!-- ============= SECCION RECORDS ============= -->
+<div class="records mb-3">
+    <div class="records__container container">
+        <div class="records-left">
+            <h3 class="records-left__h3 headline-3">
+                Lider nacional en la venta de tiempo aire
+            </h3>
+
+            <p class="records-left__p body-1">
+                <strong>Recarga5g.com</strong> cuenta con la trayectoria y el respaldo
+                de mas de 40,000 clientes felices en toda el territorio mexicano nos
+                catalogan como la plataforma mas estable y segura para la venta
+                <strong>recargas electrónicas Telcel, movistar & todas las compañia celular
+                </strong>
+            </p>
+        </div>
+
+        <div class="records-items">
+            <div class="records-item">
+                <img src="assets/img/group-record.png" class="records-item__img" loading="lazy"
+                    alt="40000 clientes felices" />
+
+                <div class="records-item-title">
+                    <p class="records-item-title__p headline-4">
+                        <span #counter class="records-item-title__span headline-4 counter" data-number="4000">0</span>
+                        +
+                    </p>
+                    <p class="records-item-title__p body-1">Clientes Felices</p>
+                </div>
             </div>
 
-            <div class="history-image">
-                <img src="assets/img/equipo-recargas-electronicas.png" class="history-image__img" loading="lazy"
-                    width="500" height="500" alt="Mas de 20 anos ofreciendo lo mejor en el todo el territorio mexicano">
+            <div class="records-item">
+                <img src="assets/img/trayectoria-record.png" class="records-item__img"
+                    alt="mas de 20 años en el mercado de recargas" loading="lazy" />
+
+                <div class="records-item-title">
+                    <p class="records-item-title__p headline-4">
+                        <span #counter class="records-item-title__span headline-4 counter" data-number="20">0</span>
+                        +
+                    </p>
+                    <p class="records-item-title__p body-1">Años en el mercado</p>
+                </div>
+            </div>
+
+            <div class="records-item">
+                <img src="assets/img/network-record.png" class="records-item__img" loading="lazy"
+                    alt="Recargas Electrónicas cuenta con miles de puntos de ventas, no esperas y empieza a vender recargas" />
+
+                <div class="records-item-title">
+                    <p class="records-item-title__p headline-4">
+                        <span #counter class="records-item-title__span headline-4 counter" data-number="1800">0</span>
+                        +
+                    </p>
+                    <p class="records-item-title__p body-1">Puntos de venta</p>
+                </div>
+            </div>
+
+            <div class="records-item flex align-center justify-center">
+                <img src="assets/img/empresas-record.png" class="records-item__img" loading="lazy"
+                    alt="mas de 200 compañias de servicios IZZI, TELMEX, CFE Y muchos mas!" />
+
+                <div class="records-item-title">
+                    <p class="records-item-title__p headline-4">
+                        <span #counter class="records-item__span headline-4 counter" data-number="100">0</span>
+                        +
+                    </p>
+                    <p class="records-item-title__p body-1">compañia de servicios</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
-    <!-- ============= SECCION RECORDS ============= -->
-    <div class="records mb-3">
-        <div class="records__container container">
 
-            <div class="records-left">
-                <h3 class="records-left__h3 headline-3">Lider nacional en la venta de tiempo aire</h3>
+<!-- ============= SECCION REGISTRO ============= -->
+<div class="registro-home mb-3">
 
-                <p class="records-left__p body-1"> <strong>Recarga5g.com</strong> cuenta con la trayectoria y el
-                    respaldo de
-                    mas de 40,000 clientes felices en toda el territorio mexicano nos catalogan como la plataforma mas
-                    estable y segura para la venta <strong>recargas electrónicas Telcel, movistar & todas las compañia
-                        celular </strong>
-                </p>
-            </div>
+    <div class="registro-home__container container">
 
-            <div class="records-items">
+        <div class="registro-home__left">
 
-                <div class="records-item">
+            <app-register-steps [step]="step" *ngFor="let step of stepsRegister"></app-register-steps>
+        </div>
+        <div class="registro-home__right">
+            <span class="register-home__span headline-4 head-4">¿Como me registro para vender recarga?</span>
+            <h3 class="register-home__h3 headline-3">Registrate totalmente gratis y empieza a vender recargas</h3>
+            <p class="register-home__p body-1 mb-1">
+                En <strong class="keyword__strong body-1">Recargas Electrónicas</strong> ofrecemos una amplia variedad de opciones para recargar tus dispositivos electrónicos en línea, desde la comodidad de tu hogar u oficina. Olvídate de perder tiempo haciendo fila y recarga tus dispositivos rápidamente en minutos.
+            </p>
 
-                    <img src="assets/img/group-record.png" class="records-item__img" loading="lazy" alt="40000 clientes felices">
-
-                    <div class="records-item-title">
-                        <p class="records-item-title__p headline-4">
-                            <span #counter class="records-item-title__span headline-4 counter"
-                                data-number="4000">0</span> +
-                        </p>
-                        <p class="records-item-title__p body-1">Clientes Felices</p>
-                    </div>
-                </div>
-
-                <div class="records-item">
-
-                    <img src="assets/img/trayectoria-record.png" class="records-item__img" alt="mas de 20 años en el mercado de recargas" loading="lazy">
-
-                    <div class="records-item-title">
-                        <p class="records-item-title__p headline-4">
-                            <span #counter class="records-item-title__span headline-4 counter" data-number="20">0</span>
-                            +
-                        </p>
-                        <p class="records-item-title__p body-1">Años en el mercado</p>
-                    </div>
-                </div>
-
-                <div class="records-item">
-
-                    <img src="assets/img/network-record.png" class="records-item__img" loading="lazy" alt="Recargas Electrónicas cuenta con miles de puntos de ventas, no esperas y empieza a vender recargas">
-
-                    <div class="records-item-title">
-                        <p class="records-item-title__p headline-4">
-                            <span #counter class="records-item-title__span headline-4 counter"
-                                data-number="1800">0</span> +
-                        </p>
-                        <p class="records-item-title__p body-1">Puntos de venta</p>
-                    </div>
-                </div>
-
-                <div class="records-item flex align-center justify-center">
-
-                    <img src="assets/img/empresas-record.png" class="records-item__img" loading="lazy" alt="mas de 200 compañias de servicios IZZI, TELMEX, CFE Y muchos mas!">
-
-                    <div class="records-item-title">
-                        <p class="records-item-title__p headline-4">
-                            <span #counter class="records-item__span headline-4 counter" data-number="100">0</span> +
-                        </p>
-                        <p class="records-item-title__p body-1">compañia de servicios</p>
-                    </div>
-                </div>
-            </div>
+            <a class="registro-home__a" routerLink="/registro" mat-raised-button color="primary">Registrarme</a>
         </div>
     </div>
-
-    <!-- ============= SECCION REGISTRO ============= -->
-    <app-register-steps></app-register-steps>
+</div>

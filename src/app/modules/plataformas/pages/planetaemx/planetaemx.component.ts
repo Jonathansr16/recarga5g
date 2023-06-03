@@ -7,6 +7,8 @@ import { cuentasPlanetaemx } from '@core/models/cuentas-plataformas.model';
 import { manuales } from '@core/models/manuales-plataformas.models';
 import { montos } from '@core/models/montos-plataformas.model';
 import { condicionesPlataformas } from '@core/models/politicas-plataformas.model';
+import { registerSteps } from '@core/models/register-steps-model';
+import { RegisterStepsService } from '@core/services/register-steps.service';
 //* Servicios importados
 import { AppPlataformasService } from '@plataformas/services/app-plataformas.service';
 import { CuentasPlataformasService } from '@plataformas/services/cuentas-plataformas.service';
@@ -20,20 +22,22 @@ import { PoliticasPlataformasService } from '@plataformas/services/politicas-pla
   styleUrls: ['./planetaemx.component.scss', '../plataformas.scss'],
   providers: [AppPlataformasService, MontosPlataformasService, CuentasPlataformasService, ManualesPlataformasService, PoliticasPlataformasService]
 })
-export class PlanetaemxComponent implements OnInit{
+export class PlanetaemxComponent implements OnInit {
 
   appPlanetaemx: plataformaProductos[] = [];
   montosPlanetaemx: montos[] = [];
   cuentasPlanetaemx: cuentasPlanetaemx[] = [];
   manualesPlanetaemx: manuales[] = [];
   politicas: condicionesPlataformas[] = [];
+  registerStepPlanetaemx: registerSteps[] = [];
   title: any;
 
-  constructor (private _productoPlanetaemx: AppPlataformasService,
-               private _montosPlanetaemx: MontosPlataformasService,
-               private _cuentasPlanetaemx: CuentasPlataformasService,
-               private _manualesPlanetaemx: ManualesPlataformasService,
-               private _politicas: PoliticasPlataformasService ) {
+  constructor(private readonly _productoPlanetaemx: AppPlataformasService,
+    private readonly _montosPlanetaemx: MontosPlataformasService,
+    private readonly _cuentasPlanetaemx: CuentasPlataformasService,
+    private readonly _manualesPlanetaemx: ManualesPlataformasService,
+    private readonly _politicas: PoliticasPlataformasService,
+    private readonly _registerStepService: RegisterStepsService) {
 
   }
 
@@ -42,8 +46,9 @@ export class PlanetaemxComponent implements OnInit{
     this.montosPlanetaemx = this._montosPlanetaemx.getMontosPlanetae();
     this.cuentasPlanetaemx = this._cuentasPlanetaemx.getCuentasPlanetaemx();
     this.manualesPlanetaemx = this._manualesPlanetaemx.getManualesPlanetaemx();
-  this.politicas = this._politicas.getPoliticas();
- 
+    this.politicas = this._politicas.getPoliticas();
+    this.registerStepPlanetaemx = this._registerStepService.getStepsPlanetaemx();
+
   }
 
 }

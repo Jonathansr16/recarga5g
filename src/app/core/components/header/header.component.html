@@ -6,7 +6,7 @@
       </button>
   
       <div class="nav-overlay" [ngClass]="{ 'activeNavOverlay': activeNavOverlay}"></div>
-      <div #nav class="nav light-theme" [ngClass]="{ 'nav--active': active}">
+      <div #nav class="nav light-menu" [ngClass]="{ 'nav--active': active}">
   
         <div #navMenu class="nav-menu">
           <a mat-button class="nav-menu__a menu-option" routerLink="" routerLinkActive="active" (click)="closeNav()" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
@@ -17,16 +17,16 @@
           </button>
   
           <mat-menu #plataformas="matMenu" class="submenu">
-            <a class="nav-menu__a nav-submenu__a menu-option" routerLink="plataforma/pagaqui" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Pagaqui</a>
-            <a class="nav-menu__a nav-submenu__a menu-option" routerLink="plataforma/planetaemx" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Planetaemx</a>
+            <a class="nav-menu__a nav-submenu__a menu-option" routerLink="plataforma/pagaqui" routerLinkActive="active" (click)="closeNav()"  mat-menu-item>Pagaqui</a>
+            <a class="nav-menu__a nav-submenu__a menu-option" routerLink="plataforma/planetaemx" routerLinkActive="active" (click)="closeNav()"  mat-menu-item>Planetaemx</a>
           </mat-menu>
   
           <button class="nav-submenu  menu-option" mat-button [matMenuTriggerFor]="consultar">Consultar</button>
   
           <mat-menu #consultar="matMenu">
-            <a class="nav-menu__a nav-submenu__a menu-option" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Como vender recargas</a>
-            <a class="nav-menu__a nav-submenu__a menu-option" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Como vender pago de servicios</a>
-            <a class="nav-menu__a nav-submenu__a menu-option" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Como vender pines electrónicos</a>
+            <a class="nav-menu__a nav-submenu__a menu-option"  routerLink="consulta/recargas" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Como vender recargas</a>
+            <a class="nav-menu__a nav-submenu__a menu-option"  routerLink="consulta/servicios" routerLinkActive="active" (click)="closeNav()"  mat-menu-item>Como vender pago de servicios</a>
+            <a class="nav-menu__a nav-submenu__a menu-option"  routerLink="consulta/pines" routerLinkActive="active" (click)="closeNav()"  mat-menu-item>Como vender pines electrónicos</a>
           </mat-menu>
   
           <button class="nav-submenu menu-option" mat-button [mat-menu-trigger-for]="notificar">Notificar</button>

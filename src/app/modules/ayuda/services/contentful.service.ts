@@ -24,6 +24,11 @@ export class ContentfulService {
   });
 
 
+  articles: Entry<any>[] = [];
+
+
+  searchTerm: string = '';
+
   getPosts(query?: any): Promise<Entry<any>[]> {
     return this.cdaClient.getEntries(Object.assign({
       content_type: CONFIG.contentTypeIds.blog
@@ -35,6 +40,7 @@ export class ContentfulService {
   getPost(id: string): any {
     return from (this.cdaClient.getEntry(id));
   }
+
 
 
   markdownToHtml(md: any) {

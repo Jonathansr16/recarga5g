@@ -1,0 +1,154 @@
+@import '_mixin';
+
+//* ============ SECCION SERVICIOS BANNER ============ 
+.hero-servicios {
+  &__container {
+      grid-template-columns: 1fr;
+  }
+
+  &__img {
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+  }
+}
+
+//* ============ SECCION CAROUSEL SERVICIO ============ 
+.carousel-servicio {
+    grid-template-columns: 1fr;
+
+    &__img {
+    object-fit: contain;
+    max-width: 250px;
+    height: 250px;
+    }
+}
+
+
+.carousel-servicio__swiper {
+    width: 100%;
+  }
+  
+  .carousel-servicio__wrapper{
+    transition-timing-function: linear;
+  }
+  
+  
+  .carousel-servicio__li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  width: 250px;
+  height: 100%;
+  }
+  
+
+  //* ============ SECCION METODOS DE VENTA ============ 
+  .metodos-venta {
+    grid-template-columns: 1fr;
+    margin-bottom: 3em;
+
+    &__h2 {
+      text-align: center;
+    }
+  }
+
+  //* ============ SECCION POLITICAS SERVICIOS ============ 
+  .politicas-servicio {
+    &__container {
+      grid-template-columns: 1fr;
+    }
+    &__h3 {
+      text-align: center;
+    }
+
+    &__li {
+      margin-bottom: 1.8em;
+      padding: 10px 0 10px 0px;
+      counter-increment: counterPolitica;
+      position: relative;
+
+      &::before {
+        content: counter(counterPolitica);
+        font-size: 2em;
+        width: 35px;
+        height: 35px;
+        display: inline-block;
+        line-height: 35px;
+        border-radius: 50%;
+        text-align: center;
+        background-color: var(--c-light-primary);
+        color: var(--c-secondary);
+        margin-right: 8px;
+      }
+    }
+
+  }
+
+    //* ============ SECCION REGISTRO SERVICIO ============ 
+.registro-servicio {
+  &__container {
+    grid-template-columns: 1fr;
+  }
+
+  &__h3{
+    text-align: center;
+  }
+
+  &__ul {
+    @include grid(4, 1em);
+  }
+
+  &__li {
+    position: relative;
+  }
+
+
+
+  
+  &__li:nth-child(1) &__box {
+background-color: #e4eaff;
+ 
+  }
+
+    
+  &__li:nth-child(2) &__box {
+    background-color:  #ffda9e;
+     
+      }
+
+      &__li:nth-child(3) &__box {
+        background-color:  #ff6961;
+         
+          }
+
+          &__li:nth-child(4) &__box {
+            background-color:  #77dd77;
+             
+              }
+
+  &__box {
+    @include flexible(flex, column, wrap, center, center);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+
+  &__img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  &__span {
+    display: block;
+    text-align: center;
+
+  }
+}

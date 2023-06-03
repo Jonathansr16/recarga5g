@@ -1,0 +1,209 @@
+<!-- ============= HERO RECARGAS ============= -->
+<div class="hero-servicios mb-3">
+    <div class="hero-servicios__container container">
+        <picture class="hero-servicios__picture">
+            <source media="screen and (min-width: 1200px)" srcset="assets/img/Banner-consulta-recargas.jpg"
+                type="image/jpg" />
+            <source media="screen and (max-width: 650px)" srcset="" sizes="" />
+            <img src="assets/img/Banner-consulta-recargas.jpg"
+                alt="Venta de recargas a cualquier compañia con excelentes comisiones" class="hero-servicios__img" />
+        </picture>
+    </div>
+</div>
+
+<!-- ============= SECCIÓN CAROUSEL RECARGAS ============= -->
+<!-- <div class="carousel-servicio mb-3">
+    <div #recargasSwiper class="carousel-servicio__swiper swiper">
+        <div class="carousel-servicio__wrapper swiper-wrapper">
+            <div *ngFor="let recarga of recargas" class="carousel-servicio__li swiper-slide">
+                <img [src]="recarga.url" class="carousel-servicio__img" loading="lazy"
+                    alt="Recargas Electrónicas lider en la venta de recargas, pago de servicios y pines" />
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<app-carousel-productos [productos]="recarga" *ngFor="let recarga of recargas"></app-carousel-productos>
+
+<!-- ============= SECCION RECARGAS ============= -->
+<div class="consulta-recargas mb-3">
+    <div class="consulta-recargas__container container">
+        <h1 class="consulta-recargas__h1 headline-2">
+            Venta de recargas Telcel, Bait | Recarga5g.com
+        </h1>
+
+        <div class="consulta-recargas__content">
+            <div class="consulta-recargas__left">
+                <img src="assets/img/svg/Store.svg" class="consulta-recargas__img" loading="lazy"
+                    alt="Venta de recargas para todo tipo de negocio" />
+            </div>
+
+            <div class="consulta-recargas__right">
+                <h2 class="consulta-recargas__h2 headline-4 head-4">
+                    Incrementa tus ganancias con recarga5g.com
+                </h2>
+                <h3 class="consulta-recargas__h3 headline-3">
+                    Ventas de recargas Telcel para negocios
+                </h3>
+
+                <p class="consulta-recargas__p body-1 mb-1">
+                    ¡Maximiza tus ganancias vendiendo recargas electrónicas
+                    <a href="https://www.telcel.com/" class="consulta-recargas__a btn-underline body-1" target="_blank"
+                        rel="noopener noreferrer">Telcel</a>,
+                    <a href="https://mibait.com/" class="consulta-recargas__a btn-underline body-1" target="_blank"
+                        rel="noopener noreferrer">Bait</a>,
+                    <a href="https://www.movistar.com.mx/" class="consulta-recargas__a btn-underline body-1"
+                        target="_blank" rel="noopener noreferrer">Movistar</a>,
+                    <a href="https://virginmobile.mx/" class="consulta-recargas__a btn-underline body-1" target="_blank"
+                        rel="noopener noreferrer">Virgin Mobile</a>,
+                    <a href="https://www.att.com.mx/" class="consulta-recargas__a btn-underline body-1" target="_blank"
+                        rel="noopener noreferrer">AT&T</a>,
+                    <a href="https://www.unefon.com.mx/" class="consulta-recargas__a btn-underline body-1"
+                        target="_blank" rel="noopener noreferrer">Unefon</a>, con excelentes comisiones! En
+                    <strong class="keyword__strong">Recargas5g.com</strong>, entendemos
+                    que tu éxito es nuestro éxito. Por eso, te ofrecemos una oportunidad
+                    lucrativa para aumentar tus ingresos al vender recargas.
+                </p>
+
+                <a class="consulta-recargas__registro my-button btn-underline body-1" routerLink="/registro">Registrarme
+                    <mat-icon class="consulta-recargas__icon" color="accent" aria-hidden="false"
+                        aria-label="Example home icon" fontIcon="outbound"></mat-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============= SECCION METODOS VENTAS ============= -->
+<div class="metodos-venta container mb-3">
+    <h2 class="metodos-venta__h2 headline-2">¿Como vender recargas telcel?</h2>
+    <app-metodo-ventas></app-metodo-ventas>
+</div>
+
+<!-- ============= SECCION POLITICAS RECARGAS ============= -->
+<div class="politicas-servicio mb-3">
+    <div class="politicas-servicio__container container">
+        <h3 class="politicas-servicio__h3 headline-3">
+            Politicas para aplicación de recargas
+        </h3>
+
+        <ul class="politicas-servicio__ul">
+            <li class="politicas-servicio__li body-1">
+                Capturar el numero e importe correctos es responsabilidad del usuario.
+            </li>
+
+            <li class="politicas-servicio__li body-1">
+                No hay devoluciones ni retiros de saldo una vez realizados.
+            </li>
+
+            <li class="politicas-servicio__li body-1">
+                En casos en que la recarga no se haya realizado, debera notificarlo a su
+                asistente ejecutivo, para ello debera proporcionarle su
+                <span class="politicas-servicio__span body-1 keyword__strong">usuario e imagen del error.</span>.
+            </li>
+
+            <li class="politicas-servicio__li body-1">
+                En los casos en los cuales se detecten recargas aplicadas como exitosas
+                pero no se acredite el saldo al número indicado aunque aparezca como
+                exitosa la transacción, el cliente deberá llamar de forma directa a la
+                compañía o carrier a través de cualquiera de sus Centros de Atención a
+                Clientes (CAC).
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- ============= SECCION PORQUE VENDER RECARGAS ============= -->
+<div class="recargas-why mb-3">
+    <div class="recargas-why__container container">
+        <h2 class="recargas-why__h2 headline-3">
+            Sistema de recargas mas confiable
+        </h2>
+
+        <div class="recargas-why__content">
+            <div class="recargas-why__left">
+                <span class="recargas-why__span headline-4 head-4">Mas de 20 años liderando el mercado de venta de
+                    tiempo aire</span>
+                <h3 class="recargas-why__h3 headline-3">
+                    Beneficios de vender recargas
+                </h3>
+
+                <p class="recargas-why__p body-1 mb-1">
+                    Sabemos que tu tiempo y esfuerzo son valiosos, por lo que hemos
+                    diseñado un sistema transparente y sin complicaciones para que puedas
+                    rastrear y recibir tus comisiones de manera rápida y precisa. Nos
+                    aseguramos de que te sientas recompensado por tu arduo trabajo y
+                    dedicación.
+                </p>
+
+                <div class="recargas-why__ul">
+                    <li class="recargas-why__li">
+                        <mat-icon class="recargas-why__icon" color="accent" aria-hidden="false"
+                            aria-label="Example home icon" fontIcon="add_task"></mat-icon>
+                        <p class="recargas-why__p body-1">Comisiones fijas</p>
+                    </li>
+                    <li class="recargas-why__li">
+                        <mat-icon class="recargas-why__icon" color="accent" aria-hidden="false"
+                            aria-label="Example home icon" fontIcon="add_task"></mat-icon>
+                        <p class="recargas-why__p body-1">
+                            Constante innovación agregando compañias de recargas y pago de
+                            servicios.
+                        </p>
+                    </li>
+                    <li class="recargas-why__li">
+                        <mat-icon class="recargas-why__icon" color="accent" aria-hidden="false"
+                            aria-label="Example home icon" fontIcon="add_task"></mat-icon>
+                        <p class="recargas-why__p body-1">
+                            Plataforma con menos intermitencia en el mercado.
+                        </p>
+                    </li>
+                    <li class="recargas-why__li">
+                        <mat-icon class="recargas-why__icon" color="accent" aria-hidden="false"
+                            aria-label="Example home icon" fontIcon="add_task"></mat-icon>
+                        <p class="recargas-why__p body-1">
+                            Pequeña inversion con grandes beneficios
+                        </p>
+                    </li>
+                </div>
+            </div>
+
+            <div class="recargas-why__right">
+                <img src="assets/img/svg/beneficios.svg" class="recargas-why__img" loading="lazy"
+                    alt="Beneficios de vender recargas con Recarga5g.com" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ============= SECCION REGISTRO RECARGAS ============= -->
+<div class="register-recargas mb-3">
+    <div class="register-recargas__container container">
+
+        <div class="register-recargas__left">
+            <app-register-steps [step]="step" *ngFor="let step of stepRecargas"></app-register-steps>
+        </div>
+
+        <div class="register-recargas__right">
+            <h2 class="register-recargas__h2 headline-4 head-4">
+                ¿Como vender recargas Movistar?
+            </h2>
+
+            <h3 class="register-recargas__h3 headline-3">
+                Registro para la venta de recargas movistar para cualquier tipo de negocio
+            </h3>
+
+            <p class="register-recargas__p body-1 mb-1">
+                No pierdas más tiempo buscando oportunidades de negocio limitadas. Únete a nosotros y conviértete en un vendedor de recargas exitoso con comisiones excepcionales. Estamos aquí para apoyarte en cada paso del camino y ayudarte a alcanzar tus metas financieras.
+            </p>
+
+
+            <p class="register-recargas__p body-1 mb-1">
+                ¡Aprovecha esta oportunidad y comienza a ganar más hoy mismo vendiendo recargas electrónicas con excelentes comisiones! Tu éxito está a solo un clic de distancia."
+            </p>
+            <a class="register-recargas__a body-1" routerLink="/registro" mat-raised-button color="primary">Registrarme</a>
+
+        </div>
+
+    </div>
+</div>

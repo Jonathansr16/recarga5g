@@ -20,11 +20,12 @@ const routes: Routes = [
     loadChildren: () => import('@plataformas/plataformas.module').then(p => p.PlataformasModule)
   },
 
-  //CONSULTAS
+  //* CONSULTA
   {
     path: 'consulta',
-    loadChildren: () => import('@consultas/consultas.module').then(c => c.ConsultasModule)
+    loadChildren: () => import('@consultas/consulta.module').then(c => c.ConsultaModule)
   },
+
   // REPORTES
   {
     path: 'reporte',
@@ -40,7 +41,6 @@ const routes: Routes = [
     path: 'legal',
     loadChildren: () => import('@legal/legal.module').then(l => l.LegalModule)
   },
-
 
 
   { path: '**', component: NofoundComponent },

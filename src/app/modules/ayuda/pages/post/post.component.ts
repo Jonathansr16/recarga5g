@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { ContentfulService } from '@ayuda/services/contentful.service';
+import { _countGroupLabelsBeforeOption } from '@angular/material/core';
 
 
 @Component({
@@ -26,7 +27,10 @@ export class PostComponent implements OnInit {
     this.title.setTitle('Recarga5g.com | Consulta nuestros artículos mas destacados');
 
     this.id = this.activatedRouter.snapshot.paramMap.get('id');
-    this.post$ = this.contentful.getPost(this.id)
+    this.post$ = this.contentful.getPost(this.id);
+    let vara =this.post$?.subscribe(data => {
+      console.log(data)
+    })
   }
 
 }

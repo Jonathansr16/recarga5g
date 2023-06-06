@@ -1,4 +1,5 @@
-import { Component, Renderer2, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Component, Renderer2, ViewChild, ElementRef, TemplateRef, OnInit, AfterViewInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Title } from '@angular/platform-browser';
 
 //* Interfaces importados
@@ -26,9 +27,11 @@ import { PoliticasPlataformasService } from '@plataformas/services/politicas-pla
   styleUrls: ['./pagaqui.component.scss', '../plataformas.scss'],
   providers: [AppPlataformasService, CuentasPlataformasService, MontosPlataformasService, ManualesPlataformasService, PoliticasPlataformasService]
 })
-export class PagaquiComponent implements OnInit {
+export class PagaquiComponent implements OnInit, AfterViewInit{
 
+  @ViewChild('modalTemplate') template = {} as TemplateRef<any>
   @ViewChild('videoPagaqui') video?: ElementRef;
+  showVideo: boolean= false;
   public btnVideo: boolean = false;
   productosPagaqui: productoModel[] = [];
   appPagaqui: plataformaProductos[] = [];
@@ -47,13 +50,14 @@ export class PagaquiComponent implements OnInit {
     private readonly _manualesPagaqui: ManualesPlataformasService,
     private readonly _politicas: PoliticasPlataformasService,
     private readonly _stepPagaquiService: RegisterStepsService,
+    private matDialog: MatDialog,
     private readonly renderer2: Renderer2,
     private readonly title: Title) {
   }
 
 
   ngOnInit(): void {
-    this.productosPagaqui = this._productosCarouselService.getRecargas();
+    this.productosPagaqui = this._productosCarouselService.getRecargasServicios();
     this.appPagaqui = this.productoPagaquiServirce.getProductosPagaqui();
     this.cuentasPagaqui = this._cuentasPagaqui.getCuentasPagaqui();
     this.montosPagaqui = this._montoPagaqui.getMontoPagaqui();
@@ -62,13 +66,22 @@ export class PagaquiComponent implements OnInit {
     this.registerStepPagaqui = this._stepPagaquiService.getStepsPagaqui();
   }
 
+  
+  ngAfterViewInit(): void {
+     
+  }
   /* =========== OPEN VIDEO PAGAQUI =========== */
   openVideo(): void {
-    this.btnVideo = true;
+    this.matDialog.open(this.template, {
+      width: '850px',
+      height: '500px'
+    });
+  
+    this.showVideo= true;
 
-    const repVideo = this.video?.nativeElement;
+   
 
-    this.renderer2.setAttribute(repVideo, "src", "/assets/img/comision-pagaqui.mp4")
+
   }
 
 

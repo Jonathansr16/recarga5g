@@ -14,6 +14,44 @@
 <!-- ============= SECCION APP PLATAFORMAS ============= -->
 <app-plataformas [plataforma]="app"  *ngFor="let app of appPagaqui"></app-plataformas>
 
+<!-- ============= SECCION APP PLATAFORMAS ============= -->
+<div class="comision-pagaqui mb-3">
+    <div class="comision-pagaqui__container container">
+       
+            <span class="badge comision-pagaqui__badge badge-4 headline-5">Comisión Pagaqui
+                <mat-icon class="badge__icon" aria-hidden="false" aria-label="Example home icon" fontIcon="request_quote"></mat-icon>
+            </span>
+        <h3 class="comision-pagaqui__h3 headline-3">¿Como veo mi comisión en Pagaqui?</h3>
+   
+        <p class="comision-pagaqui__p body-1">
+            Por cada venta que realizas de tiempo aire, pin electrónico o cobro de servicios recibe un porcentaje de comisión que incrementa tus ingresos mensuales.
+        </p>
+
+        <p class="body-1">
+            ¡Aprovecha esta oportunidad y comienza a ganar más hoy mismo vendiendo recargas electrónicas con excelentes comisiones! Tu éxito está a solo un clic de distancia."
+        </p>
+
+        <button (click)="openVideo()" class="comision-pagaqui__btn" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+            <mat-icon>play_arrow</mat-icon>
+        </button>
+
+        <ng-template #modalTemplate let-modalRef="modalRef">
+            <h2 mat-dialog-title>Comisión por venta de recargas</h2>
+            <mat-dialog-content class="mat-typography">
+
+                <iframe *ngIf="showVideo" title="Video comisión pagaqui" src="/assets/img/comision-pagaqui.mp4" frameborder="0" class="comision-pagaqui__iframe" width="850" height="360"></iframe>
+           
+            </mat-dialog-content>
+            <mat-dialog-actions align="end">
+              <button mat-button mat-dialog-close>Cerrar</button>
+              <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Registrarme</button>
+            </mat-dialog-actions>
+            
+
+        </ng-template>
+   </div>
+</div>
+
 <!-- ============= SECCION MONTOS ============= -->
 <app-montos [monto]="monto"  *ngFor="let monto of montosPagaqui"></app-montos>
 

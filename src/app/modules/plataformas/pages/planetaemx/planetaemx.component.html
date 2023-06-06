@@ -11,7 +11,7 @@
 </div>
 
 <!-- ============= SECCION CAROSUSEL PRODUCTOS ============= -->
-<app-carousel-productos></app-carousel-productos>
+<app-carousel-productos [productos]="producto" *ngFor="let producto of productosPlanetaemx"></app-carousel-productos>
 
 <!-- ============= SECCION APP PLATAFORMAS ============= -->
 <app-plataformas [plataforma]="app"  *ngFor="let app of appPlanetaemx"></app-plataformas>
@@ -93,7 +93,6 @@
         </div>
     </div>
 </div>
-
 
 <!-- ============= SECCION APLICACIÓN DE DEPOSITOS ============= -->
 <div class="aplicacion mb-3">

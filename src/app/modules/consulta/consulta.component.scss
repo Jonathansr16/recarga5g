@@ -12,41 +12,7 @@
   }
 }
 
-//* ============ SECCION CAROUSEL SERVICIO ============ 
-.carousel-servicio {
-    grid-template-columns: 1fr;
-
-    &__img {
-    object-fit: contain;
-    max-width: 250px;
-    height: 250px;
-    }
-}
-
-
-.carousel-servicio__swiper {
-    width: 100%;
-  }
-  
-  .carousel-servicio__wrapper{
-    transition-timing-function: linear;
-  }
-  
-  
-  .carousel-servicio__li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 18px;
-  font-size: 22px;
-  font-weight: bold;
-  color: #fff;
-  width: 250px;
-  height: 100%;
-  }
-  
-
-  //* ============ SECCION METODOS DE VENTA ============ 
+ //* ============ SECCION METODOS DE VENTA ============ 
   .metodos-venta {
     grid-template-columns: 1fr;
     margin-bottom: 3em;

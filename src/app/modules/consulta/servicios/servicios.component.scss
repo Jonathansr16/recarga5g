@@ -1,0 +1,145 @@
+
+@import '_mixin';
+
+//* ============ SECCION RECIBOS  ============ 
+.recibos {
+
+    &__right {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap:2em;
+
+        @include responsive(950px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        background-color: var(--c-card);
+        box-shadow: var(--shadow);
+        border-radius: 10px;
+        padding: 24px 29px 30px;
+        margin: 0 0 25px 0;
+        position: relative;
+        max-width: 500px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__img {
+        max-width: 90px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.5em;
+    }
+
+    &__p--item {
+        text-align: center;
+    }
+}
+
+//* ============ SECCION WHY SERVICES ============ 
+.why-services {
+    background-color: var(--c-light-secondary);
+    box-shadow: var(--shadow);
+
+    &__container {
+        grid-template-columns: 1fr;
+    }
+
+    &__h2 {
+        text-align: center;
+        color: var(--c-primary);
+    }
+
+    &__li {
+        @include flexible(flex, row, wrap, flex-start, center);
+        gap: 0.3em;
+        padding: 20px 0 15px 15px;
+    }
+
+    &__icon {
+        font-size: 40px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        text-align: center;
+        color: var(--c-primary);
+        line-height: 40px;
+    }
+
+    &__a {
+        display: block;
+        max-width: 350px;
+        text-align: center;
+        margin: 1.5em auto;
+    }
+}
+
+//* ============ SECCION HOW SERVICES ============ 
+.how-services {
+    &__li {
+        margin-bottom: 20px;
+        padding: 10px 0 10px 0px;
+        counter-increment: counterServices;
+        position: relative;
+
+        &::before{
+            content: counter(counterServices);
+            font-size: 2em;
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            background-color: var(--c-light-primary);
+            color: var(--c-primary);
+            margin-right: 8px;
+        }
+    }
+}
+
+//* ============ SECCION DEVICES SERVICES ============ 
+.devices-services {
+    &__container {
+        grid-template-columns: 1fr;
+    }
+
+    &__h3 {
+        text-align: center;
+    }
+}
+
+//* ============ SECCION POLITICAS SERVICES ============ 
+.politicas-services {
+    &__container {
+        grid-template-columns: 1fr;
+    }
+    &__h3 {
+        text-align: center;
+    }
+
+    &__li {
+        margin-bottom: 20px;
+        padding: 10px 0 10px 0px;
+        counter-increment: counterServices;
+        position: relative;
+
+        &::before{
+            content: counter(counterServices);
+            font-size: 2em;
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            background-color: var(--c-light-primary);
+            color: var(--c-primary);
+            margin-right: 8px;
+        }
+    }
+}

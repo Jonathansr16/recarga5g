@@ -1,25 +1,321 @@
-
-<!-- ============= HERO SERVKICIOS ============= -->
+<!-- ============= HERO SERVICIOS ============= -->
 <div class="hero-servicios mb-3">
-    <div class="hero-servicios__container container">
-        <picture class="hero-servicios__picture">
-            <source media="screen and (min-width: 1200px)" srcset="assets/img/Banner-consulta__servicios.png"
-                type="image/jpg" />
-            <source media="screen and (max-width: 650px)" srcset="" sizes="" />
-            <img src="assets/img/Banner-consulta__servicios.png"
-                alt="Venta de recargas a cualquier compañia con excelentes comisiones" class="hero-servicios__img" />
-        </picture>
-    </div>
+  <div class="hero-servicios__container container">
+    <picture class="hero-servicios__picture">
+      <source
+        media="screen and (min-width: 1200px)"
+        srcset="assets/img/Banner-consulta__servicios.png"
+        type="image/jpg"
+      />
+      <source media="screen and (max-width: 650px)" srcset="" sizes="" />
+      <img
+        src="assets/img/Banner-consulta__servicios.png"
+        alt="Venta de recargas a cualquier compañia con excelentes comisiones"
+        class="hero-servicios__img"
+      />
+    </picture>
+  </div>
 </div>
 
 <!-- ============= SECCIÓN CAROUSEL SERVICIOS ============= -->
-<!-- <div class="carousel-servicio mb-3">
-    <div #recargasSwiper class="carousel-servicio__swiper swiper">
-        <div class="carousel-servicio__wrapper swiper-wrapper">
-            <div *ngFor="let recarga of recargas" class="carousel-servicio__li swiper-slide">
-                <img [src]="recarga.url" class="carousel-servicio__img" loading="lazy"
-                    alt="Recargas Electrónicas lider en la venta de recargas, pago de servicios y pines" />
-            </div>
-        </div>
+<app-carousel-productos
+  [productos]="servicio"
+  *ngFor="let servicio of servicios"
+></app-carousel-productos>
+
+<!-- ============= SECCIÓN RECIBOS ============= -->
+<div class="recibos mb-3">
+  <div class="reciboss__container container">
+    <div class="recibos__left">
+      <span class="recibos__span head-4 headline-4">Pago de servicios</span>
+      <h1 class="recibos__h1 headline-3">Cobro por pago de servicios</h1>
+
+      <p class="recibos__p body-1 mb-1">
+        Con Recarga5g.com, puedes aceptar pagos de servicios de forma segura y
+        sin complicaciones. Nuestra plataforma te brinda la capacidad de
+        procesar pagos de manera fácil y rápida, ofreciendo a tus clientes una
+        opción conveniente para realizar transacciones.
+      </p>
+
+      <p class="recibos__p body-1 mb-1">
+        No importa si ofreces servicios de telefonía, televisión por cable,
+        internet o cualquier otro servicio, Recarga5g.com es la solución
+        perfecta para recibir pagos de tus clientes de manera ágil y segura.
+      </p>
+
+      <a
+        class="recibos__a radius-20"
+        mat-raised-button
+        color="primary"
+        routerLink="/registro"
+        >Registrarme ahora</a
+      >
     </div>
-</div> -->
+
+    <div class="recibos__right">
+      <div class="recibos__item">
+        <img
+          src="assets/img/process__icon.png"
+          class="recibos__img"
+          loading="lazy"
+          alt="Cobro de servicios con Recarga5g.com"
+        />
+        <p class="recibos__p--item headline-6">
+          Cobra cualquier recibo y obten una comisión.
+        </p>
+      </div>
+      <div class="recibos__item">
+        <img
+          src="assets/img/recibos__icon.png"
+          class="recibos__img"
+          loading="lazy"
+          alt="Valida y realiza +200 compañias de servicios facilmente"
+        />
+
+        <p class="recibos__p--item headline-6">
+          Recuperas tu inversión y ganas la comisión cuando cobras en tu negocio
+        </p>
+      </div>
+      <div class="recibos__item">
+        <img
+          src="assets/img/negocio__icon.png"
+          class="recibos__img"
+          loading="lazy"
+          alt="Ganancias adicionales a tu negocio"
+        />
+        <p class="recibos__p--item headline-6">
+          Tu ganancia en efectivo será la comisión adicional que cobres al
+          cliente.
+        </p>
+      </div>
+      <div class="recibos__item">
+        <img
+          src="assets/img/asesoria__icon.png"
+          class="recibos__img"
+          loading="lazy"
+          alt="Asesoria totalmente personalizada"
+        />
+        <p class="recibos__p--item headline-6">Asesoria personalizada</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============= SECCION WHY-SERVICES ============= -->
+<div class="why-services mb-3">
+  <div class="why-services__container container">
+    <h2 class="why-services__h2 headline-3">
+      Cobro de servicios de manera facil y segura
+    </h2>
+
+    <div class="why-services__items">
+      <ul class="why-services__ul">
+        <li class="why-services__li">
+          <mat-icon
+            class="why-services__icon"
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="notifications_active"
+          ></mat-icon>
+          <p class="why-services__p body-1">
+            Deposita y notifica tus depositos para pago de servicios
+          </p>
+        </li>
+
+        <li class="why-services__li">
+          <mat-icon
+            class="why-services__icon"
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="request_quote"
+          ></mat-icon>
+          <p class="why-services__p body-1">
+            El cliente te visita y presenta su recibo. Solo debes cobrar recibos
+            vigentes. No debes recibir recibos vencidos.
+          </p>
+        </li>
+
+        <li class="why-services__li">
+          <mat-icon
+            class="why-services__icon"
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="point_of_sale"
+          ></mat-icon>
+          <p class="why-services__p body-1">
+            Captura el numero de referencia en la plataforma.
+          </p>
+        </li>
+
+        <li class="why-services__li">
+          <mat-icon
+            class="why-services__icon"
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="ads_click"
+          ></mat-icon>
+          <p class="why-services__p body-1">
+            Paga cualquier recibo con unos cuantos click
+          </p>
+        </li>
+        <li class="why-services__li">
+          <mat-icon
+            class="why-services__icon"
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="ads_click"
+          ></mat-icon>
+
+          <p class="why-services__p body-1">
+            Cobra el importe del recibo de tu cliente mas tu comisión que
+            obtuviste en tu plataforma
+          </p>
+        </li>
+
+        <li class="why-services__li">
+          <mat-icon
+            class="why-services__icon"
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="list_alt"
+          ></mat-icon>
+
+          <p class="why-services__p body-1">
+            Cobra el importe del recibo de tu cliente mas tu comisión que
+            obtuviste en tu plataforma
+          </p>
+        </li>
+      </ul>
+
+      <a
+        class="why-services__a radius-20"
+        mat-raised-button
+        color="primary"
+        routerLink="/registro"
+        >Registrarme ahora</a
+      >
+    </div>
+  </div>
+</div>
+
+<!-- ============= SECCION WHO-SERVICES ============= -->
+<div class="how-services mb-3">
+  <div class="how-services__container container">
+    <div class="how-services__left">
+      <h2 class="headline-4 head-4">¿Como cobrar pago servicios?</h2>
+      <h3 class="headline-3">
+        Incrementa el flujo de clientes al recibir pago de servicios a tu
+        negocio
+      </h3>
+
+      <p class="how-services__p body-1">
+        No pierdas más tiempo lidiando con métodos de cobro anticuados. Únete a
+        Recarga5g.com y descubre una forma eficiente y confiable de cobrar por
+        tus servicios. Tu negocio se beneficiará de la comodidad y la seguridad
+        que ofrecemos.
+      </p>
+
+      <ul class="how-services__ul">
+        <li class="how-services__li body-1">
+          Captura el numero de referencia del recibo que vas a cobrar
+        </li>
+
+        <li class="how-services__li body-1">
+          Al cliente le debera cobrar el monto del recibo mas el cargo por la
+          venta mas la comisión adcional que desea obtener.
+        </li>
+
+        <li class="how-services__li body-1">
+          En la plataforma se reflejara la venta con el cargo adicional y la
+          comisión obtenida.
+        </li>
+      </ul>
+    </div>
+    <div class="how-services__right">
+      <img
+        src="assets/img/recibos.png"
+        loading="lazy"
+        class="how-services__img"
+        alt="Cobro por pago de servicios a tu negocio"
+      />
+    </div>
+  </div>
+</div>
+
+<!-- ============= SECCION METODOS SERVICES ============= -->
+<div class="devices-services mb-3">
+  <div class="devices-services__container container">
+    <h3 class="devices-services__h3 headline-3">
+      Metodos de venta para cobro de servicios
+    </h3>
+    <app-metodo-ventas></app-metodo-ventas>
+  </div>
+</div>
+
+<!-- ============= SECCION POLITICAS SERVICES ============= -->
+
+<div class="politicas-services mb-3">
+  <div class="politicas-services__container container">
+    <h3 class="politicas-services__h3 headline-3">
+      Términos y condiciones de pago de servicios
+    </h3>
+
+    <ul class="politicas-services__ul">
+      <li class="politicas-services__li body-1">
+        El pago por un recibo se registra inmediatamente. La empresa
+        correspondiente lo acredita en un plazo de 24 a 48 horas con la fecha y
+        hora de la recepción.
+      </li>
+
+      <li class="politicas-services__li body-1">
+        El sistema NO valida que la referencia sea correcta.
+      </li>
+
+      <li class="politicas-services__li body-1">
+        Capturar la referencia correcta y el importe correcto es completa
+        responsabilidad del usuario.
+      </li>
+
+      <li class="politicas-services__li body-1">
+        Al registrar el pago NO hay ningún tipo de devolución.
+      </li>
+
+      <li class="politicas-services__li body-1">
+        Si captura incorrectamente la referencia, al aceptar la transacción, se
+        realizará el cargo y no habrá ningún tipo de devolución.
+      </li>
+
+      <li class="politicas-services__li body-1">
+        Los recibos solo podrán ser cobrados a más tardar 48 horas antes de su
+        fecha de vencimiento.
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============= SECCION REGISTER SERVICES ============= -->
+<div class="register-services">
+  <div class="register-services__container container">
+    <div class="register-services__left">
+      <span class="headline-4 head-4">Registro para el cobro de servicios</span>
+      <h3 class="register-services__h3 headline-3">Cobro de recibo Telmex</h3>
+
+      <p class="register-services__p body-1">
+        No dejes pasar más tiempo valioso lidiando con complicaciones en tus
+        cobros. Únete a Recarga5g.com y descubre una forma más fácil y eficiente
+        de cobrar por tus servicios. Maximiza tu tiempo y recursos, y enfócate
+        en lo que realmente importa: hacer crecer tu negocio. ¡Haz que tus
+        cobros de servicios sean más simples y rápidos con Recarga5g.com!
+        Regístrate hoy mismo y comienza a disfrutar de la comodidad y seguridad
+        que brinda nuestra plataforma."
+      </p>
+    </div>
+
+    <div class="register-services__right">
+      <app-register-steps
+        [step]="stepService"
+        *ngFor="let stepService of registerServices"
+      ></app-register-steps>
+    </div>
+  </div>
+</div>

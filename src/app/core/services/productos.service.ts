@@ -273,11 +273,20 @@ export class ProductosService {
 
   private listProductos: any[] = [this.recargas[0].item, this.servicios[0].item, this.pines[0].item].flat();
 
+  private listRecargasServicios: any[] = [this.recargas[0].item, this.servicios[0].item].flat();
+
   private productos: productoModel[] = [
     {
      item: this.listProductos
     }
   ];
+
+  private recargasServicios: productoModel[] = [
+
+    {
+      item: this.listRecargasServicios
+    }
+  ]
 
   getRecargas(): productoModel[] {
     return this.recargas;
@@ -293,8 +302,12 @@ export class ProductosService {
 
   getProductos(): productoModel[] {
 
+
   return this.productos
   }
 
+  getRecargasServicios(): productoModel[] {
+    return this.recargasServicios;
+  }
 
 }

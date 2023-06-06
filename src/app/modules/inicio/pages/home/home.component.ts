@@ -42,45 +42,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   stepsRegister: registerSteps[] = [];
   productos: productoModel[] = [];
 
-  // private config: SwiperOptions = {
-  //   modules: [Navigation,Pagination, Autoplay],
-   
-  //   loop: true,
-  //   grabCursor: true,
-  //   mousewheel: true,
-  //   keyboard: true,
-  //   slidesPerView: 5,
-  //   spaceBetween: 10,
-  //   autoplay: {
-  //     delay: 0,
-  //     disableOnInteraction: false,
-  //   },
-  //  speed: 2500,
-  
-  //   // Responsive breakpoints
-  //   breakpoints: {
-  //   // when window width is >= 320px
-  //   320: {
-  //     slidesPerView: 2,
-  //     spaceBetween: 20
-  //   },
-  
-  //    // when window width is >= 480px
-  //    550: {
-  //     slidesPerView: 3,
-  //     spaceBetween: 30
-  //   },
-  
-  //     // when window width is >= 640px
-  //  950: {
-  //   slidesPerView: 4,
-  //   spaceBetween: 35
-  // }
-  //   }
-      
-  //   }
-
-
 
   constructor( private readonly _productosService: ProductosService,  private readonly _razonesService: RazonesService, private readonly _negocioService: NegocioService,
     private readonly _metodosService: MetodosVentaService, private readonly _stepsService: RegisterStepsService,

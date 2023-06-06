@@ -7,7 +7,9 @@ import { cuentasPlanetaemx } from '@core/models/cuentas-plataformas.model';
 import { manuales } from '@core/models/manuales-plataformas.models';
 import { montos } from '@core/models/montos-plataformas.model';
 import { condicionesPlataformas } from '@core/models/politicas-plataformas.model';
+import { productoModel } from '@core/models/productos.model';
 import { registerSteps } from '@core/models/register-steps-model';
+import { ProductosService } from '@core/services/productos.service';
 import { RegisterStepsService } from '@core/services/register-steps.service';
 //* Servicios importados
 import { AppPlataformasService } from '@plataformas/services/app-plataformas.service';
@@ -24,6 +26,7 @@ import { PoliticasPlataformasService } from '@plataformas/services/politicas-pla
 })
 export class PlanetaemxComponent implements OnInit {
 
+  productosPlanetaemx: productoModel[] = [];
   appPlanetaemx: plataformaProductos[] = [];
   montosPlanetaemx: montos[] = [];
   cuentasPlanetaemx: cuentasPlanetaemx[] = [];
@@ -32,7 +35,9 @@ export class PlanetaemxComponent implements OnInit {
   registerStepPlanetaemx: registerSteps[] = [];
   title: any;
 
-  constructor(private readonly _productoPlanetaemx: AppPlataformasService,
+  constructor(
+    private readonly _productosPlanetaemx: ProductosService,
+    private readonly _productoPlanetaemx: AppPlataformasService,
     private readonly _montosPlanetaemx: MontosPlataformasService,
     private readonly _cuentasPlanetaemx: CuentasPlataformasService,
     private readonly _manualesPlanetaemx: ManualesPlataformasService,
@@ -42,6 +47,7 @@ export class PlanetaemxComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.productosPlanetaemx = this._productosPlanetaemx.getRecargasServicios();
     this.appPlanetaemx = this._productoPlanetaemx.getProductosPlanetaemx();
     this.montosPlanetaemx = this._montosPlanetaemx.getMontosPlanetae();
     this.cuentasPlanetaemx = this._cuentasPlanetaemx.getCuentasPlanetaemx();

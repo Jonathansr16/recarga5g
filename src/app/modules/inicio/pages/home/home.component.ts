@@ -21,6 +21,7 @@ import { registerSteps } from '@core/models/register-steps-model';
 import { RegisterStepsService } from '@core/services/register-steps.service';
 import { ProductosService } from '@core/services/productos.service';
 import { productoModel } from '@core/models/productos.model';
+import { MetaTagService } from '@core/services/meta-tag.service';
 
 @Component({
   selector: 'app-home',
@@ -43,13 +44,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
   productos: productoModel[] = [];
 
 
-  constructor( private readonly _productosService: ProductosService,  private readonly _razonesService: RazonesService, private readonly _negocioService: NegocioService,
+  constructor( 
+    private readonly _productosService: ProductosService,  private readonly _razonesService: RazonesService, private readonly _negocioService: NegocioService,
     private readonly _metodosService: MetodosVentaService, private readonly _stepsService: RegisterStepsService,
+    private readonly _metaTagService: MetaTagService,
     private readonly title: Title) { }
 
   ngOnInit(): void {
     this.title.setTitle(
-      'Recarga5g.com | Vende tiempo aire, pago de servicios y pines hasta un 7% de comisión'
+      'Recarga5g.com | Vende tiempo aire, pago de servicios y pines hasta un 7.5% de comisión'
     );
 
     this.productos = this._productosService.getProductos();

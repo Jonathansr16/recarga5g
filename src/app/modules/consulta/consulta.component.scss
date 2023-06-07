@@ -2,8 +2,9 @@
 
 //* ============ SECCION SERVICIOS BANNER ============ 
 .hero-servicios {
+
   &__container {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 
   &__img {
@@ -11,6 +12,53 @@
       box-shadow: var(--shadow);
   }
 }
+
+//* ============ SECCION RECIBOS  ============ 
+.cobro-services {
+
+  &__left {
+    padding: 10px;
+  }
+  &__right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      gap:2em;
+
+      @include responsive(950px) {
+          grid-template-columns: 1fr;
+      }
+  }
+
+  &__item {
+      background-color: var(--c-card);
+      box-shadow: var(--shadow);
+      border-radius: 10px;
+      padding: 24px 29px 30px;
+      margin: 0 0 25px 0;
+      position: relative;
+      max-width: 500px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  &__img {
+      max-width: 90px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0.5em;
+  }
+
+  &__p--item {
+      text-align: center;
+  }
+
+  &__keyworld {
+    color: var(--c-primary);
+  }
+}
+
 
  //* ============ SECCION METODOS DE VENTA ============ 
   .metodos-venta {
@@ -23,98 +71,33 @@
   }
 
   //* ============ SECCION POLITICAS SERVICIOS ============ 
-  .politicas-servicio {
+  .politicas-services {
     &__container {
       grid-template-columns: 1fr;
     }
     &__h3 {
       text-align: center;
     }
-
-    &__li {
-      margin-bottom: 1.8em;
-      padding: 10px 0 10px 0px;
-      counter-increment: counterPolitica;
-      position: relative;
-
-      &::before {
-        content: counter(counterPolitica);
-        font-size: 2em;
-        width: 35px;
-        height: 35px;
-        display: inline-block;
-        line-height: 35px;
-        border-radius: 50%;
-        text-align: center;
-        background-color: var(--c-light-primary);
-        color: var(--c-secondary);
-        margin-right: 8px;
-      }
-    }
-
   }
 
-    //* ============ SECCION REGISTRO SERVICIO ============ 
-.registro-servicio {
-  &__container {
-    grid-template-columns: 1fr;
-  }
 
-  &__h3{
-    text-align: center;
-  }
-
-  &__ul {
-    @include grid(4, 1em);
-  }
-
-  &__li {
+  .list-option__li {
+    margin-bottom: 1.8em;
+    padding: 10px 0 10px 0px;
+    counter-increment: counterPolitica;
     position: relative;
+
+    &::before {
+      content: counter(counterPolitica);
+      font-size: 2em;
+      width: 35px;
+      height: 35px;
+      display: inline-block;
+      line-height: 35px;
+      border-radius: 50%;
+      text-align: center;
+      background-color: var(--c-light-primary);
+      color: var(--c-secondary);
+      margin-right: 8px;
+    }
   }
-
-
-
-  
-  &__li:nth-child(1) &__box {
-background-color: #e4eaff;
- 
-  }
-
-    
-  &__li:nth-child(2) &__box {
-    background-color:  #ffda9e;
-     
-      }
-
-      &__li:nth-child(3) &__box {
-        background-color:  #ff6961;
-         
-          }
-
-          &__li:nth-child(4) &__box {
-            background-color:  #77dd77;
-             
-              }
-
-  &__box {
-    @include flexible(flex, column, wrap, center, center);
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1em;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-  }
-
-  &__img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-  }
-
-  &__span {
-    display: block;
-    text-align: center;
-
-  }
-}

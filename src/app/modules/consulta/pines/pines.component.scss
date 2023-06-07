@@ -1,0 +1,39 @@
+//* ============ SECCION WHY PINES============ 
+@import '_mixin';
+.why-pines {
+    background-color: var(--c-light-secondary);
+    box-shadow: var(--shadow);
+
+    &__container {
+        grid-template-columns: 1fr;
+    }
+
+    &__h2 {
+        text-align: center;
+        color: var(--c-primary);
+    }
+
+    &__li {
+        @include flexible(flex, row, wrap, flex-start, center);
+        gap: 0.3em;
+        padding: 20px 0 15px 15px;
+    }
+
+    &__icon {
+        font-size: 40px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        text-align: center;
+        color: var(--c-primary);
+        line-height: 40px;
+    }
+
+    &__a {
+        display: block;
+        max-width: 350px;
+        text-align: center;
+        margin: 1.5em auto;
+    }
+
+}

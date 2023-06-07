@@ -1,0 +1,264 @@
+<!-- ============= HERO PINES ============= -->
+<div class="hero-servicios mb-3">
+    <div class="hero-servicios__container container">
+        <picture class="hero-servicios__picture">
+            <source media="screen and (min-width: 1200px)" srcset="assets/img/Banner-consulta-pines.png"
+                type="image/png" />
+            <source media="screen and (max-width: 650px)" srcset="assets/img/Banner-consulta-pines__responsive.png" type="image/png" />
+            <img src="assets/img/Banner-consulta-pines.png"
+                alt="Venta de pines electrónicos con excelentes comisiones" class="hero-servicios__img" />
+        </picture>
+    </div>
+</div>
+
+<!-- ============= CAORUSEL PINES ============= -->
+<app-carousel-productos [productos]="pin" *ngFor="let pin of pines"></app-carousel-productos>
+
+<!-- ============= SECCION COBRO PINES============= -->
+<div class="cobro-services mb-3">
+    <div class="cobro-services__container container">
+      <div class="cobro-services__left">
+        <span class="cobro-services__span head-4 headline-4">Venta de pines</span>
+        <h1 class="cobro-services__h1 headline-3"> Venta de tarjetas Google play</h1>
+  
+        <p class="cobro-services__p body-1 mb-1">
+            No importa si deseas renovar tu suscripción mensual, hacer un regalo especial o simplemente disfrutar de contenido digital sin interrupciones, ¡nuestro sitio web es tu solución! Olvídate de las tarjetas físicas y disfruta de la conveniencia de los pines electrónicos en un abrir y cerrar de ojos
+            
+            <a href="https://play.google.com/store/games?hl=es_MX&gl=US" class="consulta-recargas__a btn-underline body-1" target="_blank"
+            rel="noopener noreferrer">Google Play</a>,
+        <a href="https://open.spotify.com/" class="consulta-recargas__a btn-underline body-1" target="_blank"
+            rel="noopener noreferrer">Spotify</a>,
+        <a href="https://www.amazon.com.mx/" class="consulta-recargas__a btn-underline body-1"
+            target="_blank" rel="noopener noreferrer">Amazon</a>,
+        <a href="https://www.netflix.com/mx/" class="consulta-recargas__a btn-underline body-1" target="_blank"
+            rel="noopener noreferrer">Netflix</a>,
+        <a href="https://cinepolis.com/vip" class="consulta-recargas__a btn-underline body-1" target="_blank"
+            rel="noopener noreferrer">Cinepolis</a>.
+        </p>
+
+        <p class="body-1 mb-1">
+            ¡No esperes más! Visita nuestro sitio web y descubre el catálogo de pines electrónicos que tenemos para ti. Sumérgete en un mundo de entretenimiento y aplicaciones al alcance de tu mano. Estamos aquí para hacer tu experiencia de compra simple, segura y emocionante.
+        </p>
+        <a
+          class="cobro-services__a radius-20"
+          mat-raised-button
+          color="primary"
+          routerLink="/registro"
+          >Registrarme ahora</a
+        >
+      </div>
+  
+      <div class="cobro-services__right">
+        <div class="cobro-services__item">
+          <img
+            src="assets/img/process__icon.png"
+            class="cobro-services__img"
+            loading="lazy"
+            alt="Cobro de servicios con Recarga5g.com"
+          />
+          <p class="cobro-services__p--item headline-6">
+            Elige el pin a vender
+          </p>
+        </div>
+        <div class="cobro-services__item">
+          <img
+            src="assets/img/recibos__icon.png"
+            class="cobro-services__img"
+            loading="lazy"
+            alt="Valida y realiza +200 compañias de servicios facilmente"
+          />
+  
+          <p class="cobro-services__p--item headline-6">
+            Recupera tu inversión y ganas la comisión por la venta de cada pin
+          </p>
+        </div>
+        <div class="cobro-services__item">
+          <img
+            src="assets/img/negocio__icon.png"
+            class="cobro-services__img"
+            loading="lazy"
+            alt="Ganancias adicionales a tu negocio"
+          />
+          <p class="cobro-services__p--item headline-6">
+            Tus comisiones se iran reflejando por el monto de la venta que realices.
+          </p>
+        </div>
+        <div class="cobro-services__item">
+          <img
+            src="assets/img/asesoria__icon.png"
+            class="cobro-services__img"
+            loading="lazy"
+            alt="Asesoria totalmente personalizada"
+          />
+          <p class="cobro-services__p--item headline-6">
+            Asesoria personalizada, asesorate si tienes alguna duda
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============= SECCION HOW PINES============= -->
+  <div class="why-pines mb-3">
+    <div class="why-pines__container container">
+      <h2 class="why-pines__h2 headline-3">
+        amazon tarjetas de regalo
+      </h2>
+  
+      <div class="why-pines__items">
+        <ul class="why-pines__ul">
+          <li class="why-pines__li">
+            <mat-icon
+              class="why-pines__icon"
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="notifications_active"
+            ></mat-icon>
+            <p class="why-pines__p body-1">
+              Deposita y notifica tus depositos para servicios y pines electrónicos
+            </p>
+          </li>
+  
+          <li class="why-pines__li">
+            <mat-icon
+              class="why-pines__icon"
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="sports_esports"
+            ></mat-icon>
+            <p class="why-pines__p body-1">
+             Selecciona el pin electrónico a vender
+            </p>
+          </li>
+  
+          <li class="why-pines__li">
+            <mat-icon
+              class="why-pines__icon"
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="phone_iphone"
+            ></mat-icon>
+            <p class="why-pines__p body-1">
+              Captura el numero telefonico de tu cliente donde debera llegar el canje (PIN).
+            </p>
+          </li>
+  
+      
+          <li class="why-pines__li">
+            <mat-icon
+              class="why-pines__icon"
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="attach_money"
+            ></mat-icon>
+  
+            <p class="why-pines__p body-1">
+              Cobra el importe del pin a tu cliente
+            </p>
+          </li>
+  
+          <li class="why-pines__li">
+            <mat-icon
+              class="why-pines__icon"
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="dvr"
+            ></mat-icon>
+  
+            <p class="why-pines__p body-1">
+                Tu cliente canjea el Pin en la pagina oficial de la tarjeta de regalo
+            </p>
+          </li>
+        </ul>
+  
+        <a
+          class="why-pines__a radius-20"
+          mat-raised-button
+          color="primary"
+          routerLink="/registro"
+          >Registrarme ahora</a
+        >
+      </div>
+    </div>
+  </div>
+  
+  <!-- ============= SECCION METODOS VENTAS ============= -->
+<div class="metodos-venta container mb-3">
+    <h2 class="metodos-venta__h2 headline-2">Vender tarjetas de regalo</h2>
+    <app-metodo-ventas></app-metodo-ventas>
+</div>
+
+<!-- ============= SECCION POLITICAS RECARGAS ============= -->
+<div class="politicas-servicices mb-3">
+    <div class="politicas-services__container container">
+        <h3 class="politicas-services__h3 headline-3">
+            Términos y condiciones tarjetas de regalo
+        </h3>
+
+        <ul class="politicas-services__ul">
+          
+            <li class="politicas-services__li list-option__li body-1">
+                Solo se aceptaran depósitos o transferencias para saldo de pago de servicios en las cuentas autorizadas.
+            </li>
+
+            <li class="politicas-services__li list-option__li body-1">
+                Los depósitos o transferencias para saldo de venta de tarjetas de regalo NO se facturan.
+            </li>
+          
+            <li class="politicas-services__li list-option__li body-1">
+                Es responsabilidad del usuario ingresar los datos correctos, ya que al realizar la venta de la tarjeta de regalo no hay ningún tipo de devolución.
+            </li>
+
+       
+
+            <li class="politicas-services__li list-option__li body-1">
+                No hay devoluciones ni retiros una vez realizada la venta de tarjeta de regalo.
+            </li>
+
+            <li class="politicas-services__li list-option__li body-1">
+                En casos en que la venta de pines no se haya realizado, debera notificarlo a su
+                asistente ejecutivo, para ello debera proporcionarle su
+                <span class="politicas-services__span body-1 keyword__strong">usuario e imagen del error.</span>.
+            </li>
+
+            <li class="politicas-services__li list-option__li body-1">
+                Productos sujeto a cambios.
+            </li>
+
+
+           
+        </ul>
+    </div>
+</div>
+
+<!-- ============= SECCION REGISTRO RECARGAS ============= -->
+<div class="register-recargas mb-3">
+    <div class="register-recargas__container container">
+
+        <div class="register-recargas__left">
+            <app-register-steps [step]="step" *ngFor="let step of stepPines"></app-register-steps>
+        </div>
+
+        <div class="register-recargas__right">
+            <h2 class="register-recargas__h2 headline-4 head-4">
+                ¿Como vender tarjetas de regalo?
+            </h2>
+
+            <h3 class="register-recargas__h3 headline-3">
+                Registro para la venta de tarjetas de regalo
+            </h3>
+
+            <p class="register-recargas__p body-1 mb-1">
+                Imagina la comodidad de adquirir tus pines electrónicos desde la comodidad de tu hogar, sin necesidad de desplazarte ni esperar largas filas. Con solo unos clics, tendrás a tu alcance tarjetas electrónicas que te permitirán disfrutar de Google Play, Spotify y Netflix al máximo.
+            </p>
+
+
+            <p class="register-recargas__p body-1 mb-1">
+                Trabajamos directamente con proveedores autorizados para garantizar la calidad y seguridad de cada pin electrónico que ofrecemos. Ya sea que busques crédito para tus aplicaciones favoritas, acceso ilimitado a música o tus series y películas preferidas, ¡lo tenemos cubierto!
+            </p>
+            <a class="register-recargas__a body-1" routerLink="/registro" mat-raised-button color="primary">Registrarme</a>
+
+        </div>
+
+    </div>
+</div>

@@ -188,14 +188,14 @@ export class RegisterStepsService {
             item: [
                 {
                     img: "assets/img/register-registro.png",
-                    alt: "registro para la venta de recargas con Pagaqui sin costo alguno",
-                    description: "Registrate para vender recargas con Pagaqui",
+                    alt: "registro para la venta de tarjetas de regalo",
+                    description: "Registrate para vender tarjetas de regalo",
         
                 },
         
                 {
                     img: "assets/img/register-correo.png",
-                    alt: "Ingresa a Pagaqui con los datos de acceso que podras encontrar en el correo de bienvenida",
+                    alt: "Ingresa a la plataforma con los datos de acceso para vender pines",
                     description: "Espera nuestro correo con tus datos de acceso",
         
                 },
@@ -203,14 +203,14 @@ export class RegisterStepsService {
                 {
                     img: "assets/img/register-deposito.png",
                     alt: "Notificiación de depositos Pagaqui",
-                    description: "Deposita y notifica tus depositos Pagaqui en la plataforma",
+                    description: "Deposita y notifica tus depositos para saldo de servicios",
         
                 },
         
                 {
                     img: "assets/img/register-ganancias.png",
-                    alt: "Genera ingresos extras veniendo recargas con pagaqui",
-                    description: "Listo! podras generar ganancias por cada venta que realices",
+                    alt: "Genera ingresos extras veniendo tarjetas",
+                    description: "Listo! podras generar ganancias por cada venta de pin electrónico",
         
                 }
             ]

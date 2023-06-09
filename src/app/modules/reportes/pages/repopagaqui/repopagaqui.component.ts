@@ -3,7 +3,7 @@ import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-repopagaqui',
   templateUrl: './repopagaqui.component.html',
-  styleUrls: ['./repopagaqui.component.scss']
+  styleUrls: ['./repopagaqui.component.scss','../../reportes.component.scss']
 })
 export class RepopagaquiComponent implements OnInit {
 

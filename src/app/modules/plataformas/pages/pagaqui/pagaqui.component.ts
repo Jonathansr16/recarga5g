@@ -7,10 +7,12 @@ import { plataformaProductos } from '@core/models/app-plataformas.model';
 import { cuentasPagaqui } from '@core/models/cuentas-plataformas.model';
 import { horarioPlataformas } from '@core/models/horario-plataformas.model';
 import { manuales } from '@core/models/manuales-plataformas.models';
+import { metaTagModel } from '@core/models/meta-tag.model';
 import { montos } from '@core/models/montos-plataformas.model';
 import { condicionesPlataformas } from '@core/models/politicas-plataformas.model';
 import { productoModel } from '@core/models/productos.model';
 import { registerSteps } from '@core/models/register-steps-model';
+import { MetaTagService } from '@core/services/meta-tag.service';
 import { ProductosService } from '@core/services/productos.service';
 import { RegisterStepsService } from '@core/services/register-steps.service';
 
@@ -42,6 +44,20 @@ export class PagaquiComponent implements OnInit, AfterViewInit{
   horarioPagaqui: horarioPlataformas[] = [];
   registerStepPagaqui: registerSteps[] = [];
 
+  //? META TAG
+  tag: metaTagModel = {
+
+    title: "Recarga5g.com | Consulta como vender recargas electrónicas",
+    description: "Con un único saldo vende recargas electrónicas, pago de servicios y pines electrónicos hasta un 7% de comisión",
+    keywords: "Pagaqui, Plataforma para venta de recargas, Plataforma para venta de recargas telefonicas, comision 7%, comisión por venta de recargas, vender recargas bait, Bait, venta de recargas bait, tiempo aire bait, vender recargas bait",
+    url: "recarga5g.com/plataforma/pagaqui",
+    type: "website",
+    image: "/assets/img/Venta-recargas.png",
+    card: "summary_large_image",
+    creator: "@recargascelular"
+  }
+
+
   constructor(
     private readonly _productosCarouselService: ProductosService,
     private readonly productoPagaquiServirce: AppPlataformasService,
@@ -50,6 +66,7 @@ export class PagaquiComponent implements OnInit, AfterViewInit{
     private readonly _manualesPagaqui: ManualesPlataformasService,
     private readonly _politicas: PoliticasPlataformasService,
     private readonly _stepPagaquiService: RegisterStepsService,
+    private readonly _metaTagService: MetaTagService,
     private matDialog: MatDialog,
     private readonly renderer2: Renderer2,
     private readonly title: Title) {
@@ -57,6 +74,11 @@ export class PagaquiComponent implements OnInit, AfterViewInit{
 
 
   ngOnInit(): void {
+
+    this.title.setTitle(
+      'Recarga5g.com | Consulta para vender recargas electrónicas'
+    );
+
     this.productosPagaqui = this._productosCarouselService.getRecargasServicios();
     this.appPagaqui = this.productoPagaquiServirce.getProductosPagaqui();
     this.cuentasPagaqui = this._cuentasPagaqui.getCuentasPagaqui();
@@ -64,6 +86,18 @@ export class PagaquiComponent implements OnInit, AfterViewInit{
     this.manualesPagaqui = this._manualesPagaqui.getManualesPagaqui();
     this.politicas = this._politicas.getPoliticas();
     this.registerStepPagaqui = this._stepPagaquiService.getStepsPagaqui();
+  
+    this._metaTagService.generateTags( {
+      title: this.tag.title,
+      description: this.tag.description,
+      keywords: this.tag.keywords,
+      url: this.tag.url,
+      type: this.tag.type,
+      image: this.tag.image,
+      card: this.tag.card,
+      creator: this.tag.creator
+    })
+  
   }
 
   
@@ -78,10 +112,6 @@ export class PagaquiComponent implements OnInit, AfterViewInit{
     });
   
     this.showVideo= true;
-
-   
-
-
   }
 
 
@@ -91,8 +121,7 @@ export class PagaquiComponent implements OnInit, AfterViewInit{
 
     const stopVideo = this.video?.nativeElement;
 
-    this.renderer2.removeAttribute(stopVideo, "src")
-
+    this.renderer2.removeAttribute(stopVideo, "src");
   }
 
 

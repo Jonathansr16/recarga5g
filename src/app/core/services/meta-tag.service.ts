@@ -31,7 +31,7 @@ import { Meta } from "@angular/platform-browser";
     //? Generamos los nuevas meta tags
     this.meta.addTag( { property: 'title', content: tag.title});
     this.meta.addTag( { property: 'description', content: tag.description});
-    this.meta.addTag( { property: 'description', content: tag.keywords});
+    this.meta.addTag( { property: 'keywords', content: tag.keywords});
     //* FACEBOOK
     this.meta.addTag( { property: 'og:url', content: tag.url});
     this.meta.addTag( { property: 'og:title', content: tag.title});
@@ -40,7 +40,7 @@ import { Meta } from "@angular/platform-browser";
     this.meta.addTag( { property: 'og:image', content: tag.image});
     //* TWITTER
     this.meta.addTag( { property: 'twitter:card', content: tag.card});
-    this.meta.addTag( { property: 'twitter:site', content: tag.site});
+    this.meta.addTag( { property: 'twitter:site', content: tag.url});
     this.meta.addTag( { property: 'twitter:creator', content: tag.creator});
     this.meta.addTag( { property: 'twitter:title', content: tag.title});
     this.meta.addTag( { property: 'twitter:description', content: tag.description});

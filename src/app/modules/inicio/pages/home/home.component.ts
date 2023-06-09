@@ -12,7 +12,6 @@ import { negocioModel } from '@core/models/negocios.model';
 //T-WRITER JS
 // @ts-ignore
 import Typewriter from 't-writer.js';
-// import Swiper, { Autoplay, Navigation, Pagination, SwiperOptions } from 'swiper';
 
 //*INTERFACES
 import { metodosVenta } from '@core/models/metodos-venta.model';
@@ -22,6 +21,7 @@ import { RegisterStepsService } from '@core/services/register-steps.service';
 import { ProductosService } from '@core/services/productos.service';
 import { productoModel } from '@core/models/productos.model';
 import { MetaTagService } from '@core/services/meta-tag.service';
+import { metaTagModel } from '@core/models/meta-tag.model';
 
 @Component({
   selector: 'app-home',
@@ -43,6 +43,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
   stepsRegister: registerSteps[] = [];
   productos: productoModel[] = [];
 
+  //? META TAG
+ tag: metaTagModel = {
+  title: 'Recarga5g.com | Vende tiempo aire, pago de servicios y pines hasta un 7.5% de comisión',
+  description: 'Vende recargar a cualquier compañía telefónica hasta 7.5% de comisión fija, paga servicios de todos tus clientes y pines electrónicos. Telcel, Unefón, Izzi, CFE, Google Play, Spotify y muchos más!',
+  keywords: "Venta de recargas, recargas electrónicas, recargas telefónicas, recargas telcel, recargas electronicas telcel, venta de recargas telcel, recargas electronicas 7.5% comision, comision 7.5, comision 7.5 por la venta de recargas, vender recargas, tiempo aire telcel, Telcel",
+  url: 'recarga5g.com',
+  type: 'website',
+  image: '/assets/img/Venta-recargas.png',
+  card: 'summary_large_image',
+  creator: '@recargascelular'
+ }
 
   constructor( 
     private readonly _productosService: ProductosService,  private readonly _razonesService: RazonesService, private readonly _negocioService: NegocioService,
@@ -56,24 +67,29 @@ export class HomeComponent implements OnInit, AfterViewInit {
     );
 
     this.productos = this._productosService.getProductos();
-    console.log(this.productos)
     this.item = this._razonesService.getRazones();
     this.negocios = this._negocioService.getNegocios();
     this.metodosVenta = this._metodosService.getmetodosVenta();
     this.stepsRegister = this._stepsService.getStepsHome();
+
+    this._metaTagService.generateTags({
+      title: this.tag.title,
+      description: this.tag.description,
+      keywords: this.tag.keywords,
+      url: this.tag.url,
+      type: this.tag.type,
+      image: this.tag.image,
+      card: this.tag.card,
+      creator: this.tag.creator
+    })
   }
 
   ngAfterViewInit(): void {
-    // this.carouselProductos();
+   
     this.typewrite();
     this.counterAnimation();
   }
 
-   //* INIT CAROUSEL 
-  //  carouselProductos(): void {
-  //   const _prodSwiper= this.prodSwiper?.nativeElement;
-  //   new Swiper(_prodSwiper,this.config);
-  //  }
 
   //* INIT TYPE WRITTER
   typewrite(): void {

@@ -32,8 +32,8 @@
           <button class="nav-submenu menu-option" mat-button [mat-menu-trigger-for]="notificar">Notificar</button>
   
           <mat-menu #notificar="matMenu">
-            <a class="nav-menu__a nav-submenu__a menu-option" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Deposito Pagaqui</a>
-            <a class="nav-menu__a nav-submenu__a menu-option" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Deposito Planetaemx</a>
+            <a class="nav-menu__a nav-submenu__a menu-option" routerLink="reporte/reportePagaqui" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Deposito Pagaqui</a>
+            <a class="nav-menu__a nav-submenu__a menu-option" routerLink="reporte/reportePlanetaemx" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Deposito Planetaemx</a>
           </mat-menu>
   
           <button class="nav-submenu  menu-option" mat-button [mat-menu-trigger-for]="ayuda">Ayuda</button>

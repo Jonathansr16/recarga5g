@@ -1,9 +1,9 @@
-import { Component, ElementRef,  OnInit,  QueryList, ViewChild, ViewChildren, AfterViewInit, OnDestroy, Renderer2 } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, ElementRef,  OnInit,  QueryList, ViewChild, ViewChildren, AfterViewInit, Renderer2 } from '@angular/core';
+
 import { Title } from '@angular/platform-browser';
 import { ContentfulService } from '@ayuda/services/contentful.service';
 import { FaqsService, faqHead } from '@ayuda/services/faqs.service';
-import { Observable, map, startWith } from 'rxjs';
+import { metaTagModel } from '@core/models/meta-tag.model';
 
 @Component({
   selector: 'app-faqs',
@@ -11,21 +11,28 @@ import { Observable, map, startWith } from 'rxjs';
   styleUrls: ['./faqs.component.scss'],
   providers: [ContentfulService, FaqsService]
 })
-export class FaqsComponent implements OnInit, AfterViewInit, OnDestroy {
-
-  public activeMenu?: boolean;
-
+export class FaqsComponent implements OnInit, AfterViewInit {
 
   @ViewChild('autocompleteInput') _autocompleteInput?: ElementRef;
   @ViewChild('autocompleteUl') _autocompleteUl?: ElementRef;
   @ViewChildren('autocompleteLi') _autocompleteLi? : QueryList<ElementRef>
   panelOpenState = false;
   item: number =0;
-  
   itemFaq: faqHead[] = [];
 
-  // filteredOptions?: Observable<faqHead[]>
-  // formControl = new FormControl('');
+    //? META TAG
+    tag: metaTagModel = {
+
+      title: "Recarga5g.com | Preguntas frecuentes para vender recargas electrónicas con excelentes comisiones",
+      description: "Asesórate con nosotros sobre como puede vender recargas electrónicas: Telcel, Bait Movistar y mucho mas!. Con excelentes comisiones",
+      keywords: "Preguntas frecuentes, recarga5g.com, FAQS recargas",
+      url: "recarga5g.com/ayuda/faqs",
+      type: "website",
+      image: "/assets/img/Venta-recargas.png",
+      card: "summary_large_image",
+      creator: "@recargascelular"
+    }
+  
 
   constructor( private titleFaq: FaqsService,private readonly renderer2: Renderer2, private readonly title: Title) { }
 
@@ -35,28 +42,13 @@ export class FaqsComponent implements OnInit, AfterViewInit, OnDestroy {
    this.itemFaq= this.titleFaq.gettitleFaqs();
 
 
-    // this.filteredOptions = this.formControl.valueChanges.pipe(
-    //   startWith(''), map(value => this._FILTER(value || ''))
-    // )
   }
 
-  // private _FILTER(value: string): faqHead[] {
-  //     const searchValue = value.toLocaleLowerCase();
-    
-  //     return this.itemFaq.filter(option =>  option.title.toLocaleLowerCase().includes(searchValue));
-  // }
 
   ngAfterViewInit(): void {
 
        this.filterData();
   }
-
-  ngOnDestroy(): void {
-
-  }
-
- 
-
   /* =========== REDIRECT TITLE TO TITLE CONTENT =========== */
   inView(e: HTMLElement, index: number): void {
 

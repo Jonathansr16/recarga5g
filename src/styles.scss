@@ -3,22 +3,26 @@
 @font-face {
     font-family: "poppinsBold";
     src: url("assets/font/Poppins-ExtraBold.woff");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "poppinsRegular";
     src: url("assets/font/Poppins-Regular.woff");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "poppinsMedium";
     src: url("assets/font/Poppins-Medium.woff");
+    font-display: swap;
 }
 
 
 @font-face {
     font-family: "poppinsLight";
     src: url("assets/font/Poppins-Light.woff");
+    font-display: swap;
 }
 
 
@@ -124,6 +128,7 @@ button, input, p, span,a {
 .headline-6 {
     font-size: 1rem;
     letter-spacing: 0.15px;  
+    font-weight: 500;
 }
 
 .subtitle-1 {
@@ -233,6 +238,25 @@ font-family: 'PoppinsRegular';
     color: gray;
     background-color: var(--c-card);
 }
+
+
+
+.img-custom::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 55%;
+    height: 100%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    background-color: var(--c-secondary);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .25), 0 3px 10px 7px rgba(0, 0, 0, 0.13);
+    opacity: .8;
+    outline: 10px solid var(--c-light-primary);
+}
+
+
 //* ============ SCROLL BAR =============
 
 ::-webkit-scrollbar {

@@ -1,158 +1,140 @@
+@import "_mixin";
+
 .nofound {
-    background: url('/assets/img/bg_purple.png');
-    background-repeat: repeat-x;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
+  background: url("/assets/img/bg_purple.png");
+  background-repeat: repeat-x;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  @include responsive(950px) {
+    .nofound__h2 {
+      font-size: 10rem;
+      line-height: 1;
+    }
+    .nofound__h3 {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__container {
+    grid-template-columns: 1fr;
     width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.nofound-content {
-    text-align: center;
-    margin-top: 3rem;
-
-    &__h2, &__h3, &__a {
-        color: #fff;
-    }
-
-    &__h2 {
-        font-size: 15rem;
-        font-weight: 700;
-        line-height: 0.7;
-        margin-bottom: 1.5rem;
-    }
-
-
-    &__h3 {
-        font-size: 4rem;
-        margin-bottom: 1.5rem;
-    }
-
-    &__a {
-        font-size: 1.5rem;
-        transition: all 0.3s ease;
-        position: relative;
-        margin: auto;
-        z-index: 1;
-        border-radius: 10px;
-        cursor: pointer;
-        box-shadow: var(--shadow);
-        margin-top: 1.5em;
-
-        &__:hover {
-            background-color: var(--color-primary);
-            transform: scale(1.05);
-            padding: 0.33em;
-        }
-    }
-}
-
-
-
-
-.nofound__content {
-    display: flex;
+    height: 100%;
     align-items: center;
     justify-content: center;
-    margin-top: 8rem;
+  }
+
+  &__content {
+    text-align: center;
+    margin-top: 3rem;
+    z-index: 3;
+  }
+
+  &__h2,
+  &__h3,
+  &__a {
+    color: #fff;
+  }
+
+  &__h2 {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 0.7;
+    margin-bottom: 1.5rem;
+  }
+
+  &__h3 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__a {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
     position: relative;
-    z-index: 20;
+    margin: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 1.5em;
+    max-width: 500px;
+    padding: 0.3em 0.5em;
+    background-color: var(--c-primary);
+    &:hover {
+      transform: scale(1.05);    
+    }
+  }
 }
 
 .earth {
-    position: absolute;
-    top: 25%;
-    left: 50px;
+  position: absolute;
+  top: 25%;
+  left: 50px;
 
-    &__img {
-        width: 200px;
-        height: 200px;
-    }
+  &__img {
+    width: 200px;
+    height: 200px;
+  }
 }
-
 
 .moon {
-    position: absolute;
-    left: 15%;
-    top: 15%;
+  position: absolute;
+  left: 15%;
+  top: 15%;
+  @include responsive(1050px) {
+    .moon {
+      left: 30%;
+      top: 10%;
+    }
 
     &__img {
-        width: 150px;
-        height: 150px;
-    }    
+      width: 150px;
+      height: 150px;
+    }
+  }
 }
-
 
 .astronaut {
-    position: absolute;
-    top: 20%;
-    left: 40%;
-    z-index: 10;
-    will-change: transform;
-    animation: move-astronaut 20s infinite linear both alternate;
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  will-change: transform;
+  animation: move-astronaut 20s infinite linear both alternate;
 
-
-    &__img {
-        width: 250px;
-        height: 250px;
-        object-fit: contain;
-        animation: rotate-astronaut 200s infinite linear both alternate;
-    }
+  &__img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+   
+    animation: rotate-astronaut 200s infinite linear both alternate;
+  }
 }
-
-
 
 .glowing_stars {
-    background: url(/assets/img/svg/overlay_stars.svg);
-    background-repeat: repeat;
-    background-size: contain;
-    background-position: left top;
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
+  background: url(/assets/img/svg/overlay_stars.svg);
+  background-repeat: repeat;
+  background-size: contain;
+  background-position: left top;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-
-
-/* ============ RESPONSIVE NO PAGE FOUND ============  */
-
-@media screen and (max-width: 1050px) {
-    .nofound__h2 {
-        font-size: 10rem;
-        line-height: 1;
-    }
-    .nofound__h3 {
-        font-size: 2.5rem;
-    }
-    .nofound__content {
-        margin-top: 20rem;
-    }
-    .moon {
-        left: 30%;
-        top: 10%;
-    }
-}
-
-@media screen and (max-width: 550px) {
-    .nofound__content {
-        margin-top: 0;
-    }
-}
-
 
 /* ============ ANIMATION ============  */
 
 @keyframes rotate-astronaut {
-    100% {
-        transform: rotate(-720deg);
-    }
+  100% {
+    transform: rotate(-720deg);
+  }
 }
 
 @keyframes move-astronaut {
-    100% {
-        transform: translate(-160px, 160px);
-    }
+  100% {
+    transform: translate(-160px, 160px);
+  }
 }

@@ -3,7 +3,7 @@
 <div class="cards">
     <div class="card" *ngFor="let item of metodoVentas; let i = index">
         <div class="card-content">
-            <img [src]="item.img" class="card-content__img" loading="lazy" [alt]="item.title1" />
+            <img [src]="item.img" class="card-content__img" width="370" height="370" loading="lazy" [alt]="item.title1" />
             <h3 class="card-content__h3 headline-4">{{ item.title1 }}</h3>
             <p class="card-content__p body-2">{{ item.description }}</p>
             <button #modalBtnOpen class="card-content__button" mat-raised-button color="primary"
@@ -14,11 +14,11 @@
 
         <div #modal class="modal" [ngClass]="{ activeModal: item.showModal }">
             <div class="modal-card">
-                <mat-icon class="mat-18 modal-card__icon" (click)="closeDialog(item)" aria-hidden="false"
+                <mat-icon class="modal-card__icon" (click)="closeDialog(item)" aria-hidden="false"
                     aria-label="Example home icon" fontIcon="close"></mat-icon>
 
                 <div class="modal-head" *ngFor="let headers of item.modal">
-                    <img class="modal-head__img" loading="lazy" [src]="headers.imgModal" [alt]="headers.titleModal" />
+                    <img class="modal-head__img" [src]="headers.imgModal"  width="90" height="90" loading="lazy" [alt]="headers.titleModal" />
 
                     <div class="modal-title">
                         <h4 class="modal-title__h4 headline-4">{{ headers.titleModal }}</h4>
@@ -29,7 +29,7 @@
                 <div class="modal-body">
                     <ul class="modal-body__ul">
                         <li class="modal-body__li" *ngFor="let modalList of item.list">
-                            <mat-icon class="modal-body__icon mat-18">{{
+                            <mat-icon class="modal-body__icon">{{
                                 modalList.iconName
                                 }}</mat-icon>
                             <p class="modal-body__p body-1">
@@ -41,8 +41,8 @@
 
                 <div class="modal-footer">
                     <a routerLink="/registro" mat-raised-button color="primary" (click)="unblockScrollDocument()">Registrarme</a>
-                    <button mat-button mat-dialog-close class="modal-footer__button" (click)="closeDialog(item)">
-                        Cancel
+                    <button mat-button class="modal-footer__button" (click)="closeDialog(item)">
+                        Cancelar
                     </button>
                 </div>
             </div>

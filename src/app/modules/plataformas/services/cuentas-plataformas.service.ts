@@ -1,12 +1,12 @@
 import { Injectable } from "@angular/core";
-import { cuentasPagaqui, cuentasPlanetaemx } from "@core/models/cuentas-plataformas.model";
+import { cuentasPagaquiModel, cuentasPlanetaemxModel } from "@core/models/cuentas-plataformas.model";
 
 
 Injectable()
 export class CuentasPlataformasService {
 
 
-    private cuentasPagaqui: cuentasPagaqui[] = [
+    private cuentasPagaqui: cuentasPagaquiModel[] = [
 
         {
             banco: "Bancomer",
@@ -39,7 +39,7 @@ export class CuentasPlataformasService {
           },  
     ];
 
-    private cuentasPlanetaemx: cuentasPlanetaemx[] = [
+    private cuentasPlanetaemx: cuentasPlanetaemxModel[] = [
 
       {
         banco: "Bancomer (EFECTIVO/TRANS/PRACT)",
@@ -98,11 +98,11 @@ export class CuentasPlataformasService {
       },
     ]
 
-    getCuentasPagaqui(): cuentasPagaqui[] {
+    getCuentasPagaqui(): cuentasPagaquiModel[] {
         return this.cuentasPagaqui;
     }
 
-    getCuentasPlanetaemx(): cuentasPlanetaemx[] {
+    getCuentasPlanetaemx(): cuentasPlanetaemxModel[] {
       return this.cuentasPlanetaemx;
     }
 } 

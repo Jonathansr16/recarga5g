@@ -3,6 +3,7 @@
 .hero {
     &__container {
         grid-template-columns: 1fr;
+        background-color: var(--c-body);
     }
 
     &__img {
@@ -16,7 +17,7 @@
         grid-template-columns: 1fr
     }
 
-    &-title__h1 {
+    &__h2 {
         text-align: center
     }
 }

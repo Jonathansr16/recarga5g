@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { plataformaProductos } from '@core/models/app-plataformas.model';
+import { plataformaProductosModel } from '@core/models/app-plataformas.model';
 
 Injectable()
 export class AppPlataformasService {
     
-    private appPagaqui: plataformaProductos[] = [
+    private appPagaqui: plataformaProductosModel[] = [
 
         {
             title: "OBTEN UNA COMISIÓN HASTA UN 7% FIJO POR VENTA REALIZADA",
@@ -42,11 +42,25 @@ export class AppPlataformasService {
                     description: "Consulta tus reportes de venta"
                 },
             ],
+
+            imgApps: [
+                {
+                    img: 'assets/img/plataformas/google-play.png',
+                    label: 'Descarga la App Pagaqui para Android y empieza a generar ganancias mientras vendes recargas',
+                    url: 'https://play.google.com/store/apps/details?id=pagaqui.apppagaqui&hl=es&pli=1'
+                },
+
+                {
+                    img: 'assets/img/plataformas/app-store.png',
+                    label: 'Descarga la App Pagaqui para IOS para vender tiempo aire',
+                    url: 'https://apps.apple.com/mx/app/pagaqui-pagos-recarga-tae/id1190948933'
+                }
+            ],
             images: [
               
                 {
                     img: "assets/img/plataformas/pagaqui/app-pagaqui__sesion.jpg",
-                    label: "Ventana home de la App Pagaqui"
+                    label: "Inicio de sesión Pagaqui"
                 },
 
                 {
@@ -56,17 +70,17 @@ export class AppPlataformasService {
 
                 {
                     img: "assets/img/plataformas/pagaqui/app-pagaqui__recarga.jpg",
-                    label: "Recargas de la App pagaqui"    
+                    label: "Ventana para recargas electrónicas Pagaqui"    
                 },
 
                 {
                     img: "assets/img/plataformas/pagaqui/app-pagaqui__opciones.jpg",
-                    label: "Recargas de la App pagaqui"    
+                    label: "Ventana de opciones Pagaqui"    
                 },
 
                 {
                     img: "assets/img/plataformas/pagaqui/app-pagaqui__servicios.jpg",
-                    label: "Recargas de la App pagaqui"    
+                    label: "Compañia para cobro de servicios con Pagaqui"    
                 },
 
             ],
@@ -75,9 +89,9 @@ export class AppPlataformasService {
         }
     ];
 
-    private appPlanetaemx: plataformaProductos[] = [
+    private appPlanetaemx: plataformaProductosModel[] = [
         {
-            title: "OBTEN UNA COMISIÓN POR DEPOSITO QUE REPORTES EN LA PLATAFORMA RECARGAKI/PLANETAMEX",
+            title: "Obtén una comisión por depósito que reportes",
             subtitle: "App Planetaemx",
             options: [
 
@@ -112,6 +126,16 @@ export class AppPlataformasService {
                     description: "registra todos tus puntos de venta y obten una comisión por la ventas que estos realicen en Planetaemx"
                 },
             ],
+
+            imgApps: [
+
+                {
+                    img: 'assets/img/plataformas/google-play.png',
+                    label: 'Descarga la App Recargaki para Android y empieza a generar ganancias mientras vendes recargas',
+                    url: 'https://play.google.com/store/apps/details?id=com.techoblige.recargaki&hl=es'
+                }
+            ],
+
             images: [
 
                 {
@@ -142,11 +166,11 @@ export class AppPlataformasService {
         }
     ]
 
-    getProductosPagaqui(): plataformaProductos[] {
+    getProductosPagaqui(): plataformaProductosModel[] {
         return this.appPagaqui;
     }
 
-    getProductosPlanetaemx():plataformaProductos[] {
+    getProductosPlanetaemx():plataformaProductosModel[] {
         return this.appPlanetaemx;
     }
 

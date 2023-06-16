@@ -3,18 +3,16 @@ import { MatDialog } from '@angular/material/dialog';
 import { Title } from '@angular/platform-browser';
 
 //* Interfaces importados
-import { plataformaProductos } from '@core/models/app-plataformas.model';
-import { cuentasPagaqui } from '@core/models/cuentas-plataformas.model';
-import { horarioPlataformas } from '@core/models/horario-plataformas.model';
-import { manuales } from '@core/models/manuales-plataformas.models';
+import { plataformaProductosModel } from '@core/models/app-plataformas.model';
+import { cuentasPagaquiModel } from '@core/models/cuentas-plataformas.model';
+import { horarioPlataformasModel } from '@core/models/horario-plataformas.model';
+import { manualesModel } from '@core/models/manuales-plataformas.models';
 import { metaTagModel } from '@core/models/meta-tag.model';
-import { montos } from '@core/models/montos-plataformas.model';
-import { condicionesPlataformas } from '@core/models/politicas-plataformas.model';
+import { montosModel } from '@core/models/montos-plataformas.model';
+import { condicionesPlataformasModel } from '@core/models/politicas-plataformas.model';
 import { productoModel } from '@core/models/productos.model';
-import { registerSteps } from '@core/models/register-steps-model';
-import { MetaTagService } from '@core/services/meta-tag.service';
-import { ProductosService } from '@core/services/productos.service';
-import { RegisterStepsService } from '@core/services/register-steps.service';
+import { registerStepsModel } from '@core/models/register-steps-model';
+
 
 //* Servicios importados
 import { AppPlataformasService } from '@plataformas/services/app-plataformas.service';
@@ -22,6 +20,9 @@ import { CuentasPlataformasService } from '@plataformas/services/cuentas-platafo
 import { ManualesPlataformasService } from '@plataformas/services/manuales-plataformas.service';
 import { MontosPlataformasService } from '@plataformas/services/montos-platafromas.service';
 import { PoliticasPlataformasService } from '@plataformas/services/politicas-plataformas.service';
+import { RegisterStepsService } from '@core/services/register-steps.service';
+import { MetaTagService } from '@core/services/meta-tag.service';
+import { ProductosService } from '@core/services/productos.service';
 
 @Component({
   selector: 'app-pagaqui',
@@ -36,25 +37,25 @@ export class PagaquiComponent implements OnInit, AfterViewInit{
   showVideo: boolean= false;
   public btnVideo: boolean = false;
   productosPagaqui: productoModel[] = [];
-  appPagaqui: plataformaProductos[] = [];
-  cuentasPagaqui: cuentasPagaqui[] = [];
-  montosPagaqui: montos[] = [];
-  manualesPagaqui: manuales[] = [];
-  politicas: condicionesPlataformas[] = [];
-  horarioPagaqui: horarioPlataformas[] = [];
-  registerStepPagaqui: registerSteps[] = [];
+  appPagaqui: plataformaProductosModel[] = [];
+  cuentasPagaqui: cuentasPagaquiModel[] = [];
+  montosPagaqui: montosModel[] = [];
+  manualesPagaqui: manualesModel[] = [];
+  politicas: condicionesPlataformasModel[] = [];
+  horarioPagaqui: horarioPlataformasModel[] = [];
+  registerStepPagaqui: registerStepsModel[] = [];
 
   //? META TAG
   tag: metaTagModel = {
 
     title: "Recarga5g.com | Consulta como vender recargas electrónicas",
     description: "Con un único saldo vende recargas electrónicas, pago de servicios y pines electrónicos hasta un 7% de comisión",
-    keywords: "Pagaqui, Plataforma para venta de recargas, Plataforma para venta de recargas telefonicas, comision 7%, comisión por venta de recargas, vender recargas bait, Bait, venta de recargas bait, tiempo aire bait, vender recargas bait",
+    keywords: "Pagaqui, cuentas Pagaqui, cuenta bancarias pagaqui, cuentas para saldo de recargas, app pagaqui, aplicación pagaqui, Plataforma para venta de recargas, Plataforma para venta de recargas telefonicas, manuales pagaqui, manual de usuario pagaqui, comision 7%, comisión por venta de recargas, Bait, venta de recargas bait, tiempo aire bait, vender recargas bait",
     url: "recarga5g.com/plataforma/pagaqui",
     type: "website",
-    image: "/assets/img/Venta-recargas.png",
     card: "summary_large_image",
-    creator: "@recargascelular"
+    creator: "@recargascelular",
+    image: "/assets/img/Venta-recargas.png",
   }
 
 
@@ -88,14 +89,7 @@ export class PagaquiComponent implements OnInit, AfterViewInit{
     this.registerStepPagaqui = this._stepPagaquiService.getStepsPagaqui();
   
     this._metaTagService.generateTags( {
-      title: this.tag.title,
-      description: this.tag.description,
-      keywords: this.tag.keywords,
-      url: this.tag.url,
-      type: this.tag.type,
-      image: this.tag.image,
-      card: this.tag.card,
-      creator: this.tag.creator
+      ...this.tag
     })
   
   }

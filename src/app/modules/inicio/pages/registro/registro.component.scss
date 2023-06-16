@@ -3,6 +3,7 @@
 //* ============ SECCION HERO REGISTRO ============ 
 .registro-hero {
     grid-template-columns: 1fr;
+    background-color: var(--c-body);
 
     &__img {
         border-radius: 10px;
@@ -29,9 +30,7 @@
     &-title {
         &__h1, &__p {
             text-align: center
-        }
-
-       
+        }   
     }
 
     &__steps {
@@ -65,8 +64,6 @@
     &__frame {
         height: 1100px;
     }
-
-
 }
 
 .registro-item {
@@ -81,5 +78,11 @@
         text-align: center;
         font-weight: bold;
         font-size: 1.1rem;
+    }
+
+    &__img {
+        margin-left: auto;
+        margin-right: auto;
+        width: 40px;
     }
 }

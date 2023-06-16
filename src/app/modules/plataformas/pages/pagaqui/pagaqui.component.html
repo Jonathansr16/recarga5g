@@ -3,7 +3,7 @@
     <picture class="banner-plataformas__picture">
         <source media="(min-width:1200px)" srcset="assets/img/plataformas/pagaqui/banner_pagaqui.jpg" type="image/jpg">
         <source media="screen and (max-width: 650px)" srcset="assets/img/plataformas/pagaqui/banner-pagaqui__responsive.jpg" type="image/jpg">
-        <img src="assets/img/plataformas/pagaqui/banner_pagaqui.jpg" class="banner-plataformas__img banner__img" width="100%" height="100%" alt="Conoce & registrate en nuestras plataformas Pagaqui y obten una comisión por cada venta que realizes en recargas & pago de servicios">
+        <img src="assets/img/plataformas/pagaqui/banner_pagaqui.jpg" class="banner-plataformas__img banner__img" width="1280" height="427" alt="Conoce & registrate en nuestras plataformas Pagaqui y obten una comisión por cada venta que realizes en recargas & pago de servicios">
     </picture>
    </div>
 </div>
@@ -39,12 +39,12 @@
             <h2 mat-dialog-title>Comisión por venta de recargas</h2>
             <mat-dialog-content class="mat-typography">
 
-                <iframe *ngIf="showVideo" title="Video comisión pagaqui" src="/assets/img/comision-pagaqui.mp4" frameborder="0" class="comision-pagaqui__iframe" width="850" height="360"></iframe>
+                <iframe *ngIf="showVideo" title="Video comisión pagaqui" src="https://ik.imagekit.io/taerecargas/Recargas/comisiones-pagaqui.mp4?updatedAt=1676500791802" frameborder="0" class="comision-pagaqui__iframe" width="850" height="360"></iframe>
            
             </mat-dialog-content>
             <mat-dialog-actions align="end">
-              <button mat-button mat-dialog-close>Cerrar</button>
-              <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Registrarme</button>
+                <button routerLink="/registro" mat-button [mat-dialog-close]="true" cdkFocusInitial>Registrarme</button>
+                <button mat-button mat-dialog-close>Cerrar</button>
             </mat-dialog-actions>
             
 
@@ -188,7 +188,10 @@
             <p class="aplicacion-aviso__p body-1">
                 Recuerda que no solicitamos información confidencial como claves de acceso o nips, ni acceso a tu equipo para realizar actualizaciones, si recibes una llamada de este tipo puedes estar siendo víctima de un fraude.
             </p>
-            <img src="/assets/img/aviso__aplicacion.png" class="aplicacion-aviso__img" loading="lazy" alt="Recargas Electronicas lider nacional en la venta de tiempo aire">
+
+            <div class="aplicacion-aviso__image img-custom">
+                <img src="/assets/img/aviso__aplicacion.png" class="aplicacion-aviso__img" width="633" height="550" loading="lazy" alt="Recargas Electronicas lider nacional en la venta de tiempo aire">
+            </div>
         </div>
     </div>
 </div>

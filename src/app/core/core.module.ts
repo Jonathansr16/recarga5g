@@ -11,6 +11,7 @@ import { MaterialModule } from '@shared/material/material.module';
 import { ProductosService } from './services/productos.service';
 import { UpScrollComponent } from './components/up-scroll/up-scroll.component';
 import { FormsModule } from '@angular/forms';
+import { ContactBtnComponent } from './components/contact-btn/contact-btn.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     NofoundComponent,
     UpScrollComponent,
+    ContactBtnComponent,
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,7 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     NofoundComponent,
     UpScrollComponent,
-  
+    ContactBtnComponent,
   ],
   providers:[
    ProductosService, 

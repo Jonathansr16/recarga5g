@@ -1,9 +1,9 @@
-export interface registerSteps {
-    item: steps[];
+export interface registerStepsModel {
+    item: stepsModel[];
 }
 
 
-export interface steps {
+export interface stepsModel {
     img: string;
     alt: string;
     description: string;

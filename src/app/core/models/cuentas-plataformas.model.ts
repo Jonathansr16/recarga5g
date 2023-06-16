@@ -1,11 +1,11 @@
-export interface cuentasPlanetaemx {
+export interface cuentasPlanetaemxModel {
     banco: string;
     cuenta: string;
     clave: string;
     nombre: string;
 }
 
-export interface cuentasPagaqui {
+export interface cuentasPagaquiModel {
     banco: string;
     cuenta: string;
     clave: string;

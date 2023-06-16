@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { metodosModal, metodosVenta } from '@core/models/metodos-venta.model';
+import { metodosModalModel, metodosVentaModel } from '@core/models/metodos-venta.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MetodosVentaService {
 
-  metodoVenta: metodosVenta[] = [
+  metodoVenta: metodosVentaModel[] = [
 
     {
       id: 1,
@@ -15,7 +15,7 @@ export class MetodosVentaService {
       description: "Para empezar a vender recargas electrónicas desde tu computadora, solo necesitas tener acceso a internet y registrarte en una plataforma de recargas electrónicas. Una vez registrado, podrás ofrecer una amplia variedad de recargas para diferentes operadoras y dispositivos electrónicos",
       modal: [
         {
-          imgModal: "assets/img/plataformas-web.gif",
+          imgModal: "assets/img/plataformas-web.png",
           titleModal: "¿Como vender recarga desde una computadora?",
           descrptionModal: "Venta de recargas AT&T desde un equipo de  computo"
         }
@@ -59,7 +59,7 @@ export class MetodosVentaService {
       description: "Con solo unos pocos toques en tu pantalla, podrás ofrecer una amplia variedad de recargas para diferentes operadoras y dispositivos electrónicos. Además, la aplicación de recargas electrónicas se encargará del procesamiento de la transacción y de la entrega de la recarga al cliente, lo que te permitirá ofrecer un servicio rápido y eficiente desde cualquier lugar.",
       modal: [
         {
-          imgModal: "assets/img/Smartphone.gif",
+          imgModal: "assets/img/smartphone.png",
           titleModal: "¿Como puedo vender recargas electrónicas desde mi celular o tablet",
           descrptionModal: "Venta de recargas AT&T desde un equipo de  computo"
         }
@@ -98,7 +98,7 @@ export class MetodosVentaService {
       description: "Vender recargas electrónicas enviando un simple SMS es una opción ideal para aquellos que no tienen acceso a una computadora o teléfono inteligente, y para aquellos que buscan una manera fácil y rápida de generar ingresos adicionales para su negocio.",
       modal: [
         {
-          imgModal: "assets/img/SMS.gif",
+          imgModal: "assets/img/sms.png",
           titleModal: "¿Como puedo vender recargas electrónicas enviando un SMS?",
           descrptionModal: "Venta de recargas AT&T desde un equipo de  computo"
         }
@@ -132,7 +132,7 @@ export class MetodosVentaService {
 
   ];
 
-  getmetodosVenta(): metodosVenta[] {
+  getmetodosVenta(): metodosVentaModel[] {
     return this.metodoVenta;
   }
 

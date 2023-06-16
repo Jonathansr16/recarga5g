@@ -1,4 +1,4 @@
-export interface horarioPlataformas {
+export interface horarioPlataformasModel {
     title: string;
     description: string
     plataforma: string;

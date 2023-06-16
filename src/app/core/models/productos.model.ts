@@ -7,8 +7,12 @@ export interface productosModel {
     id?: number,
     company: string,
     url: string,
-    src: string,
     label: string;
     category?: string;
 }
 
+export interface ImgProducto {
+    url: string;
+    label: string;
+    categoria: string;
+}

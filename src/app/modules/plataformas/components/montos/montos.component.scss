@@ -21,13 +21,19 @@
         }
     }
 
-    &-right {
-        margin-left: auto;
-        margin-right: auto;
+    &-right { 
+     position: relative;
+     margin: 1em 0;
 
+    &::before {
+        width:75%;
+    }
         &__img {
-            height: 550px;
+            max-width: 480px;
             object-fit: contain;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 }

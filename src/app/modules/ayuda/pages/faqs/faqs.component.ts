@@ -4,6 +4,7 @@ import { Title } from '@angular/platform-browser';
 import { ContentfulService } from '@ayuda/services/contentful.service';
 import { FaqsService, faqHead } from '@ayuda/services/faqs.service';
 import { metaTagModel } from '@core/models/meta-tag.model';
+import { MetaTagService } from '../../../../core/services/meta-tag.service';
 
 @Component({
   selector: 'app-faqs',
@@ -22,7 +23,6 @@ export class FaqsComponent implements OnInit, AfterViewInit {
 
     //? META TAG
     tag: metaTagModel = {
-
       title: "Recarga5g.com | Preguntas frecuentes para vender recargas electrónicas con excelentes comisiones",
       description: "Asesórate con nosotros sobre como puede vender recargas electrónicas: Telcel, Bait Movistar y mucho mas!. Con excelentes comisiones",
       keywords: "Preguntas frecuentes, recarga5g.com, FAQS recargas",
@@ -34,13 +34,16 @@ export class FaqsComponent implements OnInit, AfterViewInit {
     }
   
 
-  constructor( private titleFaq: FaqsService,private readonly renderer2: Renderer2, private readonly title: Title) { }
+  constructor( private titleFaq: FaqsService,private readonly renderer2: Renderer2, private readonly title: Title, private metaTagService: MetaTagService) { }
 
   ngOnInit(): void {
 
     this.title.setTitle('Recarga5g.com | Consulta las preguntas mas frecuentes y resuelve todas tus dudas para vender recargas, pago de servicios y pines electrónicos');
    this.itemFaq= this.titleFaq.gettitleFaqs();
 
+this.metaTagService.generateTags({
+    ...this.tag
+})
 
   }
 

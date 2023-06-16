@@ -20,7 +20,7 @@
     margin-bottom: 1.5em;
     &__button {
         background-color: var(--c-light-primary);
-        color: var(--c-primary);
+        color: var(--c-secondary);
     }
 
     &__button--isactive {
@@ -47,8 +47,23 @@
      }
 
     &-item__img {
-        width: 200px;
+        max-width: 200px;
+        max-height: 180px;
         object-fit: contain;
     }
+}
+
+.isBtnActive {
+  background-color: var(--c-secondary);
+  color: #fff;
+  
+}
+
+.producActive {
+  display: block;
+}
+
+.productHidden{
+  display: none;
 }
 

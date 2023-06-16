@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+
+//* Modelos importados
 import { productoModel } from '@core/models/productos.model';
-import { registerSteps } from '@core/models/register-steps-model';
+import { registerStepsModel } from '@core/models/register-steps-model';
+import { metaTagModel } from '@core/models/meta-tag.model';
+
+//* Servicios importados
 import { ProductosService } from '@core/services/productos.service';
 import { RegisterStepsService } from '@core/services/register-steps.service';
-import { metaTagModel } from '@core/models/meta-tag.model';
 import { MetaTagService } from '@core/services/meta-tag.service';
-import { Title } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-servicios',
@@ -15,7 +20,7 @@ import { Title } from '@angular/platform-browser';
 export class ServiciosComponent implements OnInit{
 
   servicios: productoModel[] = [];
-  registerServices: registerSteps[] = [];
+  registerServices: registerStepsModel[] = [];
   
   //? META TAG
   tag: metaTagModel = {
@@ -41,14 +46,7 @@ export class ServiciosComponent implements OnInit{
     this.registerServices = this._register.getStepsServicios();
 
     this._metaTagService.generateTags( {
-      title: this.tag.title,
-      description: this.tag.description,
-      keywords: this.tag.keywords,
-      url: this.tag.url,
-      type: this.tag.type,
-      image: this.tag.image,
-      card: this.tag.card,
-      creator: this.tag.creator
+      ...this.tag
     })
   }
 }

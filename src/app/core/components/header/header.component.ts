@@ -1,5 +1,5 @@
 
-import { Component, ElementRef, Renderer2, ViewChild, OnInit, AfterViewInit, ViewChildren, QueryList, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 
@@ -9,7 +9,7 @@ import { DOCUMENT, isPlatformBrowser } from '@angular/common';
   styleUrls: ['./header.component.scss'],
 
 })
-export class HeaderComponent implements OnInit, AfterViewInit {
+export class HeaderComponent implements AfterViewInit {
 
   public active?: boolean;
   public activeNavOverlay?: boolean;
@@ -19,10 +19,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   isDarkTheme: boolean = false;
 
   constructor(@Inject(DOCUMENT) private document: Document, private renderer2: Renderer2, @Inject(PLATFORM_ID) private plataform_id: Object) {
-
-  }
-
-  ngOnInit(): void {
 
   }
 

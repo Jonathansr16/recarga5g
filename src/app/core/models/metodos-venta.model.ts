@@ -1,22 +1,22 @@
-export interface metodosVenta {
+export interface metodosVentaModel {
     id: number;
     img: string;
     title1: string;
     description: string;
-    modal: metodosModal[];
-    list: indicacionesModal[]
+    modal: metodosModalModel[];
+    list: indicacionesModalModel[]
     showModal?: boolean;
 }
 
 
-export interface metodosModal {
+export interface metodosModalModel {
     imgModal: String;
     titleModal: string;
     descrptionModal: string;
 }
 
 
-export interface indicacionesModal {
+export interface indicacionesModalModel {
     iconName: string;
     descriptionStep: string;
 }

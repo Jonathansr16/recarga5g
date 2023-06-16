@@ -2,7 +2,7 @@
     <div class="banner wrapper-faqs ayuda__container container">
         <div class="wrapper-faqs-content">
             <span class="badge wrapper__badge badge-1 headline-5">Centro de ayuda para vender recargas
-                <img src="assets/img/faqs__icon.png" class="wrapper-faqs__img"
+                <img src="assets/img/faqs__icon.png" class="wrapper-faqs__img" loading="lazy" width="38" height="38"
                     alt="Centro de ayuda para la venta de recargas" />
             </span>
             <h1 class="wrapper-faqs__h1 headline-2">
@@ -157,7 +157,7 @@
             <div class="faqs-titles">
                 <span class="badge faqs__badge badge-1 headline-5">
                     Preguntas Generales
-                    <img src="assets/img/FAQ__general.png" class="badge__icon" loading="lazy" alt="icon FAQ general" />
+                    <img src="assets/img/FAQ__general.png" class="badge__icon" width="28" height="28" loading="lazy" alt="icon FAQ general" />
                 </span>
                 <h2 #item1 class="faqs-titles__h2 headline-4">
                     Preguntas Generales para vender recargas
@@ -206,10 +206,13 @@
                         </p>
 
                         <picture class="faqs-expansion-panel-body__picture">
-                            <source media="(min-width:1200px)" srcset="assets/img/companies/banner-recargas.png" type="image/png" />
-                            <source media="screen and (max-width: 650px)" srcset="assets/img/companies/banner-recargas__responsive.png" type="image/png" />
-                            <img src="assets/img/companies/banner-recargas.png" class="faqs-expansion-panel-body__img faqs-expansion-panel-body__img--2"
-                                loading="lazy"  alt="Compañias para la venta de recargas Telcel, Bait, Movistar y mucho mas!" />
+                            <source media="(min-width:1200px)" srcset="assets/img/companies/banner-recargas.png"
+                                type="image/png" />
+                            <source media="screen and (max-width: 650px)"
+                                srcset="assets/img/companies/banner-recargas__responsive.png" type="image/png" />
+                            <img src="assets/img/companies/banner-recargas.png"
+                                class="faqs-expansion-panel-body__img faqs-expansion-panel-body__img--2" width="1232" height="432" loading="lazy"
+                                alt="Compañias para la venta de recargas Telcel, Bait, Movistar y mucho mas!" />
                         </picture>
 
                     </mat-expansion-panel>
@@ -231,7 +234,7 @@
                         <a mat-raised-button color="primary" routerLink="/registro" rel="noopener noreferrer">
                             Registrarme ahora!
                         </a>
-                   
+
                     </mat-expansion-panel>
 
                     <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
@@ -412,7 +415,7 @@
             <div class="faqs-titles">
                 <span class="badge faqs__badge badge-2 headline-5">
                     Pagaqui
-                    <img src="assets/img/FAQ__comision.png" class="badge__icon" loading="lazy"
+                    <img src="assets/img/FAQ__comision.png" class="badge__icon" width="28" height="28" loading="lazy"
                         alt="icon FAQ comision por vender recargas" />
                 </span>
 
@@ -493,11 +496,16 @@
                             asistente ejecutivo para que pueda verificar lo sucedio
                         </p>
 
-                                <picture class="faqs-expansion-panel-body__picture">
-                                    <source media="(min-width: 1200px)" srcset="assets/img/plataformas/pagaqui/faq-recargas.png" type="image/png">
-                                    <source media="screen and (max-width: 650px)" srcset="assets/img/plataformas/pagaqui/estado-cuentas-pagaqui__responsive.png" type="image/png">
-                                    <img src="assets/img/plataformas/pagaqui/faq-recargas.png" class="faqs-expansion-panel-body__img faqs-expansion-panel-body__img--2 mb-1" loading="lazy" alt="Comision por venta de recarga">
-                                </picture>
+                        <picture class="faqs-expansion-panel-body__picture">
+                            <source media="(min-width: 1200px)" srcset="assets/img/plataformas/pagaqui/faq-recargas.png"
+                                type="image/png">
+                            <source media="screen and (max-width: 650px)"
+                                srcset="assets/img/plataformas/pagaqui/estado-cuentas-pagaqui__responsive.png"
+                                type="image/png">
+                            <img src="assets/img/plataformas/pagaqui/faq-recargas.png"
+                                class="faqs-expansion-panel-body__img faqs-expansion-panel-body__img--2 mb-1" width="850" height="257"
+                                loading="lazy" alt="Comision por venta de recarga">
+                        </picture>
                         <a href="https://api.whatsapp.com/send/?phone=522712141938&text=Recargas+Electronicas&type=phone_number&app_absent=0"
                             mat-raised-button color="primary" target="_blank" rel="noopener noreferrer">Notificar falla
                             <mat-icon class="faqs-expansion-panel-footer__icon" aria-hidden="false"
@@ -520,8 +528,13 @@
                         </p>
 
                         <div class="faqs-expansion-panel-footer faqs-expansion-panel-footer--actions">
-                            <a mat-raised-button href="assets/img/plataformas/pagaqui/manual_pagaqui.pdf"
-                                color="primary" download target="_blank" rel="noopener noreferrer">Descargar manual</a>
+
+                            <a mat-raised-button
+                                href="https://ik.imagekit.io/taerecargas/Recargas/manual-pagaqui.pdf?updatedAt=1676475533508"
+                                color="primary" download target="_blank" rel="noopener noreferrer">Version Web</a>
+                            <a mat-raised-button
+                                href="https://ik.imagekit.io/taerecargas/Recargas/manual-pagaqui_moviles_l6Hzz4IvP.pdf?updatedAt=1686332246942"
+                                color="accent" download target="_blank" rel="noopener noreferrer">Manual Aplicacion</a>
                         </div>
                     </mat-expansion-panel>
 
@@ -545,7 +558,7 @@
                                 class="faqs-expansion-panel-footer__a" target="_blank" rel="noopener noreferrer">
                                 <img src="assets/img/plataformas/google-play.png"
                                     class="faqs-expansion-panel-footer__img faqs-expansion-panel-footer__img--app"
-                                    loading="lazy"
+                                    width="200" height="74" loading="lazy"
                                     alt="Descarga la App Pagaqui desde PlayStore para venta de recargas" />
                             </a>
 
@@ -553,7 +566,7 @@
                                 class="faqs-expansion-panel-footer__a" target="_blank" rel="noopener noreferrer">
                                 <img src="assets/img/plataformas/app-store.png"
                                     class="faqs-expansion-panel-footer__img faqs-expansion-panel-footer__img--app"
-                                    loading="lazy"
+                                    width="200" height="74" loading="lazy"
                                     alt="Descarga la App Pagaqui desde la AppStore para venta de recargas" />
                             </a>
                         </div>
@@ -567,7 +580,7 @@
             <div class="faqs-titles">
                 <span class="badge faqs__badge badge-5 headline-5">
                     Notificación de depositos
-                    <img src="assets/img/FAQ__notificacion.png" class="badge__icon" loading="lazy"
+                    <img src="assets/img/FAQ__notificacion.png" width="28" height="28" class="badge__icon" loading="lazy"
                         alt="icon FAQ notificación de depositos para vender recargas" />
                 </span>
                 <h2 #item20 class="faqs-titles__h2 headline-4">
@@ -595,8 +608,8 @@
                         </p>
 
                         <img src="assets/img/plataformas/pagaqui/cuentas-pagaqui.jpg"
-                            class="faqs-expansion-panel-body__img faqs-expansion-panel-body__img--2"
-                            loading="lazy" alt="Cuentas bancarias para recargas Pagaqui" />
+                            class="faqs-expansion-panel-body__img faqs-expansion-panel-body__img--2" width="850" height="637" loading="lazy"
+                            alt="Cuentas bancarias para recargas Pagaqui" />
                     </mat-expansion-panel>
 
                     <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
@@ -692,7 +705,7 @@
                             <source media="screen and (max-width: 650px)" srcset="
                   assets/img/plataformas/pagaqui/estado-cuentas-pagaqui__responsive.png
                 " type="image/png" />
-                            <img src="assets/img/plataformas/pagaqui/estado-cuentas-pagaqui.png" loading="lazy"
+                            <img src="assets/img/plataformas/pagaqui/estado-cuentas-pagaqui.png" width="1232" height="303" loading="lazy"
                                 alt="Estado de cuenta Pagaqui" />
                         </picture>
                     </mat-expansion-panel>
@@ -705,7 +718,7 @@
             <div class="faqs-titles">
                 <span class="badge faqs__badge badge-2 headline-5">
                     Plataforma para vender recargas
-                    <img src="assets/img/FAQ__plataforma.png" class="badge__icon" loading="lazy"
+                    <img src="assets/img/FAQ__plataforma.png" class="badge__icon" width="28" height="28" loading="lazy"
                         alt="icon FAQ Plataforma para vender recargas" />
                 </span>
                 <h2 #item24 class="faqs-titles__h2 headline-4">
@@ -748,19 +761,23 @@
                         </mat-expansion-panel-header>
                         <p class="faqs-expansion-panel-body__p body-1">
                             Para acceder a la plataforma vía web de Recargaki/Planetamemx, lo
-                            puede hacer a traves de algunos de los siguientes enlace: 
+                            puede hacer a traves de algunos de los siguientes enlace:
                         </p>
 
                         <ul class="faqs-expansion-panel-body__ul">
                             <li class="faqs-expansion-panel-body__li body-1">
                                 📌 Para recargas Telcel:
-                                <a href="https://www.recargaki.com/index.php" class="faqs-expansion-panel-footer__a my-button btn-underline body-1" target="_blank" rel="noopener noreferrer">Ingresar a Recargaki</a>
-                               
+                                <a href="https://www.recargaki.com/index.php"
+                                    class="faqs-expansion-panel-footer__a my-button btn-underline body-1"
+                                    target="_blank" rel="noopener noreferrer">Ingresar a Recargaki</a>
+
                             </li>
-                        
+
                             <li class="faqs-expansion-panel-body__li body-1">
                                 📌 Para demas compañias, pago de servicios y pines electrónicos:
-                                <a href="https://planetaemx.com/index.php" class="faqs-expansion-panel-footer__a my-button btn-underline body-1" target="_blank" rel="noopener noreferrer">Ingresar a Planetaemx</a>
+                                <a href="https://planetaemx.com/index.php"
+                                    class="faqs-expansion-panel-footer__a my-button btn-underline body-1"
+                                    target="_blank" rel="noopener noreferrer">Ingresar a Planetaemx</a>
 
                             </li>
                         </ul>
@@ -799,10 +816,12 @@
                         </p>
 
                         <div class="faqs-expansion-panel-footer faqs-expansion-panel-footer--actions">
-                            <a mat-raised-button href="assets/img/plataformas/planetaemx/manual-planetaemx.pdf"
-                                color="primary" download target="_blank" rel="noopener noreferrer">Descargar manual</a>
-                            <a mat-raised-button href="assets/img/plataformas/planetaemx/manual-recargaki.pdf"
-                                color="accent" download target="_blank" rel="noopener noreferrer">Descargar manual</a>
+                            <a mat-raised-button
+                                href="https://ik.imagekit.io/taerecargas/Recargas/manual-planetaemx.pdf?updatedAt=1676475542643"
+                                color="primary" download target="_blank" rel="noopener noreferrer">manual Planetaemx</a>
+                            <a mat-raised-button
+                                href="https://ik.imagekit.io/taerecargas/Recargas/manual-recargaki.pdf?updatedAt=1676475554523"
+                                color="accent" download target="_blank" rel="noopener noreferrer">Manual Recargaki</a>
                         </div>
                     </mat-expansion-panel>
 
@@ -824,7 +843,7 @@
                         <a href="https://play.google.com/store/apps/details?id=com.techoblige.recargaki&hl=es"
                             class="faqs-expansion-panel-footer__a" target="_blank" rel="noopener noreferrer">
                             <img src="assets/img/plataformas/google-play.png"
-                                class="faqs-expansion-panel-footer__img faqs-expansion-panel-footer__img--app"
+                                class="faqs-expansion-panel-footer__img faqs-expansion-panel-footer__img--app" width="200" height="74"
                                 loading="lazy" alt="Descarga la App Recargaki desde PlayStore para venta de recargas" />
                         </a>
                     </mat-expansion-panel>
@@ -837,7 +856,7 @@
             <div class="faqs-titles">
                 <span class="badge faqs__badge badge-5 headline-5">
                     Notificación de depositos
-                    <img src="assets/img/FAQ__notificacion.png" class="badge__icon" loading="lazy"
+                    <img src="assets/img/FAQ__notificacion.png" class="badge__icon" width="28" height="28" loading="lazy"
                         alt="icon FAQ notificación de depositos para vender recargas" />
                 </span>
                 <h2 #item30 class="faqs-titles__h2 headline-4">
@@ -869,7 +888,7 @@
                         </p>
 
                         <img src="/assets/img/plataformas/planetaemx/cuentas-planetaemx.png"
-                            class="faqs-expansion-panel-body__img--2" loading="lazy"
+                            class="faqs-expansion-panel-body__img--2" width="850" height="632" loading="lazy"
                             alt="Cuentas de depositos planetaemx" />
                     </mat-expansion-panel>
 
@@ -885,28 +904,39 @@
                         <p class="faqs-expansion-panel-body__p body-1 mb-1">
                             Para reportar todos tus depósitos lo podrás realizar una de las 3
                             maneras, que más te convenga:
-                            </p>
+                        </p>
 
-                            <ul class="faqs-expansion-panel-body__ul">
-                                <li class="faqs-expansion-panel-body__li body-1">
-                                    📌 A través de 
-                                    <span class="faqs-expansion-panel-body__span body-1">nuestra pagina web: </span>
-                                    <a routerLink="/reporte/reportePlanetaemx" class="faqs-expansion-panel-footer__a my-button btn-underline body-1">Ingresar</a>
-                                </li>
-                                <li class="faqs-expansion-panel-body__li body-1">
-                                    📌 
-                                    <span class="faqs-expansion-panel-body__span body-1">Via WhatsApp</span>
-                                    djuntando tu número de usuario y foto o captura de tu ficha donde se visualice Fecha y hora del depósito, monto, numero de cuenta donde se depósito y folio o número de autorización.
-                                    <a href="https://api.whatsapp.com/send/?phone=522712141938&text&type=phone_number&app_absent=0" class="faqs-expansion-panel-footer__a my-button btn-underline body-1" target="_blank" rel="noopener noreferrer">Notificar ahora</a>
-                                </li>
-                                <li class="faqs-expansion-panel-body__li body-1">
-                                    📌
-                                    <span class="faqs-expansion-panel-body__span body-1">Desde tu portal</span>
-                                  en la sección  <span class="faqs-expansion-panel-body__span body-1">Reportar Compra</span>, con los botones <span class="faqs-expansion-panel-body__span body-1">< Anterior</span> y <span class="faqs-expansion-panel-body__span body-1"> Siguiente > </span>Busca e identifica la cuenta donde realizaste tu deposito, posteriormente llena el formulario con los datos de tu ficha.
-                                   
-                                </li>
-                            </ul>
-                        <img src="/assets/img/plataformas/planetaemx/FAQ__notificación-planetaemx.jpg" class="faqs-expansion-panel-body__img" loading="lazy" alt="Notificación de depositos planetaemx"/>
+                        <ul class="faqs-expansion-panel-body__ul">
+                            <li class="faqs-expansion-panel-body__li body-1">
+                                📌 A través de
+                                <span class="faqs-expansion-panel-body__span body-1">nuestra pagina web: </span>
+                                <a routerLink="/reporte/reportePlanetaemx"
+                                    class="faqs-expansion-panel-footer__a my-button btn-underline body-1">Ingresar</a>
+                            </li>
+                            <li class="faqs-expansion-panel-body__li body-1">
+                                📌
+                                <span class="faqs-expansion-panel-body__span body-1">Via WhatsApp</span>
+                                djuntando tu número de usuario y foto o captura de tu ficha donde se visualice Fecha y
+                                hora del depósito, monto, numero de cuenta donde se depósito y folio o número de
+                                autorización.
+                                <a href="https://api.whatsapp.com/send/?phone=522712141938&text&type=phone_number&app_absent=0"
+                                    class="faqs-expansion-panel-footer__a my-button btn-underline body-1"
+                                    target="_blank" rel="noopener noreferrer">Notificar ahora</a>
+                            </li>
+                            <li class="faqs-expansion-panel-body__li body-1">
+                                📌
+                                <span class="faqs-expansion-panel-body__span body-1">Desde tu portal</span>
+                                en la sección <span class="faqs-expansion-panel-body__span body-1">Reportar
+                                    Compra</span>, con los botones <span class="faqs-expansion-panel-body__span body-1">
+                                    < Anterior</span> y <span class="faqs-expansion-panel-body__span body-1"> Siguiente
+                                            > </span>Busca e identifica la cuenta donde realizaste tu deposito,
+                                        posteriormente llena el formulario con los datos de tu ficha.
+
+                            </li>
+                        </ul>
+                        <img src="/assets/img/plataformas/planetaemx/FAQ__notificación-planetaemx.jpg"
+                            class="faqs-expansion-panel-body__img" width="1232" height="546" loading="lazy"
+                            alt="Notificación de depositos planetaemx" />
                     </mat-expansion-panel>
                 </mat-accordion>
             </div>

@@ -1,10 +1,10 @@
 import { Injectable } from "@angular/core";
-import { condicionesPlataformas } from "@core/models/politicas-plataformas.model";
+import { condicionesPlataformasModel } from "@core/models/politicas-plataformas.model";
 
 Injectable
 export class PoliticasPlataformasService {
 
-    politicas: condicionesPlataformas[] = [
+    politicas: condicionesPlataformasModel[] = [
 
 
         {
@@ -37,7 +37,7 @@ export class PoliticasPlataformasService {
     ];
 
 
-    getPoliticas(): condicionesPlataformas[] {
+    getPoliticas(): condicionesPlataformasModel[] {
         return this.politicas;
     }
 

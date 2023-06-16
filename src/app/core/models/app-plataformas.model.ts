@@ -1,19 +1,26 @@
-export interface plataformaProductos {
+export interface plataformaProductosModel {
     title: string;
     subtitle: string,
-    options: listOptionsPlataforma[],
-    images: productosImgPlataformas[],
+    options: listOptionsPlataformaModel[],
+    imgApps?: appPlataformaModel[],
+    images: productosImgPlataformasModel[],
   
 }
 
 
-export interface listOptionsPlataforma {
+export interface listOptionsPlataformaModel {
     iconName: string;
     description: string;
 }
 
-export interface productosImgPlataformas {
+export interface productosImgPlataformasModel {
     img: string;
     label: string;
+}
+
+export interface appPlataformaModel {
+    img: string;
+    label: string;
+    url: string;
 }
 

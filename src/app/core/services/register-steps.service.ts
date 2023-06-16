@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { registerSteps } from '@core/models/register-steps-model';
+import { registerStepsModel } from '@core/models/register-steps-model';
 
 
 @Injectable({
@@ -8,7 +8,7 @@ import { registerSteps } from '@core/models/register-steps-model';
 export class RegisterStepsService {
 
 
-    private stepsHome: registerSteps[] = [
+    private stepsHome: registerStepsModel[] = [
      {
         item: [
                    {
@@ -42,7 +42,7 @@ export class RegisterStepsService {
      }
     ];
 
-    private stepsPagaqui: registerSteps[] = [
+    private stepsPagaqui: registerStepsModel[] = [
 
         {
             item: [
@@ -77,7 +77,7 @@ export class RegisterStepsService {
         }
     ]
 
-    private stepsPlanetaemx: registerSteps[] = [
+    private stepsPlanetaemx: registerStepsModel[] = [
 
       {
         item: [
@@ -112,7 +112,7 @@ export class RegisterStepsService {
       }
     ];
 
-    private stepsRecargas: registerSteps[] = [
+    private stepsRecargas: registerStepsModel[] = [
    
         {
             item: [
@@ -147,33 +147,33 @@ export class RegisterStepsService {
         }
     ];
 
-    private stepsServicios: registerSteps[] = [
+    private stepsServicios: registerStepsModel[] = [
    {
     item: [
         {
             img: "assets/img/register-registro.png",
-            alt: "registro para la venta de recargas con Pagaqui sin costo alguno",
-            description: "Registrate para vender recargas con Pagaqui",
+            alt: "registro para la venta de recargas sin costo alguno",
+            description: "Registrate para vender recargas a cualquier compañia",
 
         },
 
         {
             img: "assets/img/register-correo.png",
-            alt: "Ingresa a Pagaqui con los datos de acceso que podras encontrar en el correo de bienvenida",
+            alt: "Ingresa a tu plataforma con los datos de acceso que podras encontrar en el correo de bienvenida",
             description: "Espera nuestro correo con tus datos de acceso",
 
         },
 
         {
             img: "assets/img/register-deposito.png",
-            alt: "Notificiación de depositos Pagaqui",
-            description: "Deposita y notifica tus depositos Pagaqui en la plataforma",
+            alt: "Notificiación de depositos",
+            description: "Deposita y notifica tus depositos en la plataforma",
 
         },
 
         {
             img: "assets/img/register-ganancias.png",
-            alt: "Genera ingresos extras veniendo recargas con pagaqui",
+            alt: "Genera ingresos extras veniendo recargas",
             description: "Listo! podras generar ganancias por cada venta que realices",
 
         }
@@ -182,7 +182,7 @@ export class RegisterStepsService {
     ];
 
 
-    private stepsPines: registerSteps[] = [
+    private stepsPines: registerStepsModel[] = [
   
         {
             item: [
@@ -218,27 +218,27 @@ export class RegisterStepsService {
     ];
 
 
-    getStepsHome(): registerSteps[] {
+    getStepsHome(): registerStepsModel[] {
         return this.stepsHome;
     }
 
-    getStepsPagaqui(): registerSteps[] {
+    getStepsPagaqui(): registerStepsModel[] {
         return this.stepsPagaqui;
     }
 
-    getStepsPlanetaemx(): registerSteps[] {
+    getStepsPlanetaemx(): registerStepsModel[] {
         return this.stepsPlanetaemx;
     }
 
-    getStepsRecargas(): registerSteps[] {
+    getStepsRecargas(): registerStepsModel[] {
         return this.stepsRecargas;
     }
 
-    getStepsServicios(): registerSteps[] {
+    getStepsServicios(): registerStepsModel[] {
         return this.stepsServicios;
     }
 
-    getStepsPines(): registerSteps[] {
+    getStepsPines(): registerStepsModel[] {
         return this.stepsPines;
     }
 

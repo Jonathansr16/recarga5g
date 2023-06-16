@@ -1,12 +1,13 @@
 
-export interface manuales {
+export interface manualesModel {
     title: string;
     subtitle: string;
     description: string;
-    btns: actions[];
+    btns: actionsModel[];
 }
 
-export interface actions {
+export interface actionsModel {
     iconBtn: string;
     titleBtn: string;
+    url: string;
 }

@@ -1,7 +1,8 @@
 <!-- ============= BANNER HOME ============= -->
 <div class="section wrapper mtop-3">
-    <span class="mat-headline-3 wrapper__shape wrapper__shape-1">RECARGAS</span>
-    <span class="mat-headline-3 wrapper__shape wrapper__shape-2">SERVICIOS</span>
+  
+   <span class="wrapper__shape wrapper__shape-1 headline-2" data-card="RECARGAS"></span>
+    <span class="wrapper__shape wrapper__shape-2 headline-2" data-card="SERVICIOS"></span>
 
     <div class="container wrapper-container">
         <div class="wrapper-titular">
@@ -33,7 +34,7 @@
 
         <div class="wrapper-image wow animate__animated animate__fadeInUp">
             <img src="assets/img/mockups-mobile-and-desktop.png"
-                alt="Venta de recargas para todo tipo de dispositivo celular, tablet, pc" loading="lazy" />
+                alt="Venta de recargas para todo tipo de dispositivo celular, tablet, pc" width="768" height="768" class="wrapper-image__img" loading="lazy" />
         </div>
     </div>
 </div>
@@ -46,11 +47,11 @@
     <div class="container beneficios__container">
         <div class="beneficios-right">
             <div class="beneficios-titles">
-                <h3 class="beneficios-titles__h3 headline-4 head-4">Recarga Telcel</h3>
-                <h4 class="beneficios-titles__h4 headline-3">
+                <h2 class="beneficios-titles__h3 headline-4 head-4">Recarga Telcel</h2>
+                <h3 class="beneficios-titles__h4 headline-3">
                     Venta de <strong class="">Recargas Telcel</strong> para cualquier
                     negocio
-                </h4>
+                </h3>
             </div>
 
             <p class="beneficios-right__p body-1">
@@ -105,7 +106,7 @@
             <a class="radius-20" mat-raised-button color="primary" routerLink="/registro">Registrarme ahora</a>
         </div>
         <div class="beneficios-left">
-            <img src="/assets/img/negocio_recargas.png" class="beneficios-left__img" loading="lazy"
+            <img src="/assets/img/negocio_recargas.png" class="beneficios-left__img" width="632" height="632" loading="lazy"
                 alt="Descubre todos los beneficios que podras obtener vendiendo recargas electrónicas" />
         </div>
     </div>
@@ -149,7 +150,7 @@
         </div>
 
         <div class="inversion-box">
-            <div class="inversion-right">
+            <div class="inversion-right img-custom">
                 <img src="/assets/img/inversion-recargas.png" class="inversion-right__img" loading="lazy"
                     alt="Deposita un monto minimo y empieza a vender recargas a cualquier compañia" />
             </div>
@@ -160,7 +161,7 @@
                 </h3>
                 <p class="inversion-subtitle__p body-1 mb-1">
                     puedes invertir desde $100 pesos. A través de nuestro servicio de
-                    atención a clientes te explicamos como vender recargas Telcel y de
+                    atención a clientes te explicamos como vender <strong class="body-1 keyword__strong">recargas Telcel</strong> y de
                     todas las compañías en tu negocio y además ganar una comisión. Vender
                     recargas es uno de los mejores negocios para ti. Muchos negocios que
                     desean vender saldo,
@@ -203,7 +204,7 @@
             </div>
 
             <p class="negocio-left__p body-1">
-                Ofrece venta de recargas electrónicas para cualquier tipo de negocio:
+                Ofrece <strong class="keyword__strong body-1">venta de recargas electrónicas para cualquier tipo de negocio</strong>:
                 Tienda de conveniencia, Abarrotes, Ferreterías, Farmacia, Vinaterías,
                 Cyber, cajas de ahorros, pequeñas, medianas y grandes negocios. Genera
                 ganancias extras mientras obtienes un mayor flujo de clientes.
@@ -222,10 +223,10 @@
         <div class="negocio-right">
             <div *ngFor="let negocio of negocios" class="negocio-category">
                 <img [src]="negocio.nameIcon" class="negocio-category__img" width="30" height="30" loading="lazy"
-                    alt="venta de recargas para tu negocio" />
-                <h4 class="negocio-category__h4 headline-6">
+                    [alt]="negocio.label" />
+                <h3 class="negocio-category__h3 headline-6">
                     {{ negocio.typeNegocio }}
-                </h4>
+                </h3>
             </div>
         </div>
     </div>
@@ -265,12 +266,11 @@
         </div>
 
         <div class="about-right">
-            <!-- <img src="assets/img/Banner__map.png" class="about-right__img" loading="lazy"
-                alt="Venta de tiempo aire, pago de servicios y pines electrónicos con Recarga5g.com" /> -->
+           
                 <picture class="about-right__picture">
                     <source media="(min-width:1200px)" srcset="assets/img/Banner__map.png" type="image/jpg">
                     <source media="screen and (max-width: 650px)" srcset="assets/img/Banner-map__responsive.png" type="image/jpg">
-                    <img src="assets/img/Banner__map.png" class="about-right__img" loading="lazy" alt="Trayectoria de Recarga5g.com">
+                    <img src="assets/img/Banner__map.png" width="1200" height="572" class="about-right__img" loading="lazy" alt="Trayectoria de Recarga5g.com">
                 </picture>
         </div>
     </div>
@@ -296,7 +296,7 @@
             <h4 class="history-content__h4 headline-4">Recargas Electrónicas</h4>
         </div>
 
-        <div class="history-image">
+        <div class="history-image img-custom">
             <img src="assets/img/equipo-recargas-electronicas.png" class="history-image__img" loading="lazy" width="500"
                 height="500" alt="Mas de 20 anos ofreciendo lo mejor en el todo el territorio mexicano" />
         </div>

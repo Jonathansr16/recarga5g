@@ -1,12 +1,14 @@
 import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 //* Servicios importados
-import { RazonesService } from '@inicio/services/razones.service';
 import { razonesModel } from '@core/models/razones.model';
-import { NegocioService } from '@inicio/services/negocio.service';
 import { negocioModel } from '@core/models/negocios.model';
+import { productoModel } from '@core/models/productos.model';
+import { metodosVentaModel } from '@core/models/metodos-venta.model';
+import { registerStepsModel } from '@core/models/register-steps-model';
+import { metaTagModel } from '@core/models/meta-tag.model';
 
 //* Librerias externas usadas
 //T-WRITER JS
@@ -14,14 +16,13 @@ import { negocioModel } from '@core/models/negocios.model';
 import Typewriter from 't-writer.js';
 
 //*INTERFACES
-import { metodosVenta } from '@core/models/metodos-venta.model';
 import { MetodosVentaService } from '@core/services/metodos-venta.service';
-import { registerSteps } from '@core/models/register-steps-model';
 import { RegisterStepsService } from '@core/services/register-steps.service';
 import { ProductosService } from '@core/services/productos.service';
-import { productoModel } from '@core/models/productos.model';
 import { MetaTagService } from '@core/services/meta-tag.service';
-import { metaTagModel } from '@core/models/meta-tag.model';
+import { RazonesService } from '@inicio/services/razones.service';
+import { NegocioService } from '@inicio/services/negocio.service';
+import { CanonicalLinkService } from '@core/services/canonical-link.service';
 
 @Component({
   selector: 'app-home',
@@ -39,27 +40,31 @@ export class HomeComponent implements OnInit, AfterViewInit {
   showModal = false;
   item: razonesModel[] = [];
   negocios: negocioModel[] = [];
-  metodosVenta: metodosVenta[] = [];
-  stepsRegister: registerSteps[] = [];
+  metodosVenta: metodosVentaModel[] = [];
+  stepsRegister: registerStepsModel[] = [];
   productos: productoModel[] = [];
 
   //? META TAG
  tag: metaTagModel = {
   title: 'Recarga5g.com | Vende tiempo aire, pago de servicios y pines hasta un 7.5% de comisión',
   description: 'Vende recargar a cualquier compañía telefónica hasta 7.5% de comisión fija, paga servicios de todos tus clientes y pines electrónicos. Telcel, Unefón, Izzi, CFE, Google Play, Spotify y muchos más!',
-  keywords: "Venta de recargas, recargas electrónicas, recargas telefónicas, recargas telcel, recargas electronicas telcel, venta de recargas telcel, recargas electronicas 7.5% comision, comision 7.5, comision 7.5 por la venta de recargas, vender recargas, tiempo aire telcel, Telcel",
+  keywords: 'Venta de recargas, recargas electrónicas, recargas telefónicas, recargas telcel, recargas electronicas telcel, venta de recargas telcel, recargas electronicas 7.5% comision, comision 7.5, comision 7.5 por la venta de recargas, vender recargas, tiempo aire telcel, Telcel',
   url: 'recarga5g.com',
   type: 'website',
   image: '/assets/img/Venta-recargas.png',
   card: 'summary_large_image',
-  creator: '@recargascelular'
+  creator: '@recargascelular',
  }
 
   constructor( 
     private readonly _productosService: ProductosService,  private readonly _razonesService: RazonesService, private readonly _negocioService: NegocioService,
     private readonly _metodosService: MetodosVentaService, private readonly _stepsService: RegisterStepsService,
     private readonly _metaTagService: MetaTagService,
-    private readonly title: Title) { }
+    private linkService: CanonicalLinkService,
+    private readonly title: Title, private meta: Meta) { 
+   
+    
+    }
 
   ngOnInit(): void {
     this.title.setTitle(
@@ -73,15 +78,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.stepsRegister = this._stepsService.getStepsHome();
 
     this._metaTagService.generateTags({
-      title: this.tag.title,
-      description: this.tag.description,
-      keywords: this.tag.keywords,
-      url: this.tag.url,
-      type: this.tag.type,
-      image: this.tag.image,
-      card: this.tag.card,
-      creator: this.tag.creator
-    })
+    ...this.tag
+    }); 
+  
   }
 
   ngAfterViewInit(): void {

@@ -1,25 +1,29 @@
 <!-- ============= PRODUCTOS ============= -->
 <div class="productos mb-3">
-    <div class="productos__container container">
+  <div class="productos__container container">
 
-        <div class="productos-title">
-            <h3 class="productos-title__h3 headline-3">Nuestros Productos</h3>
-        </div>
+      <div class="productos-title">
+          <h3 class="productos-title__h3 headline-3">Nuestros Productos</h3>
+      </div>
 
-        <div class="productos-filter">
+      <div class="productos-filter">
 
-            <div class="productos-options">
-                <button mat-raised-button class="productos-options__button" data-filter="todo">Todo</button>
-                <button mat-raised-button class="productos-options__button" data-filter="recargas">Recargas</button>
-                <button mat-raised-button class="productos-options__button" data-filter="servicios">Servicios</button>
-                <button mat-raised-button class="productos-options__button" data-filter="pines">Pines</button>
-            </div>
+          <div #filters class="productos-options">
+              <button [class.isBtnActive]="btnCategoryActive === 'todo'"  (click)="filterProduct('todo')" #btnFilter mat-raised-button class="productos-options__button" data-filter="todo">Todo</button>
+              <button [class.isBtnActive]="btnCategoryActive === 'recargas'" (click)="filterProduct('recargas')" #btnFilter mat-raised-button class="productos-options__button" data-filter="recargas">Recargas</button>
+              <button [class.isBtnActive]="btnCategoryActive === 'servicios'" (click)="filterProduct('servicios')" #btnFilter mat-raised-button class="productos-options__button" data-filter="servicios">Servicios</button>
+              <button [class.isBtnActive]="btnCategoryActive === 'pines'" (click)="filterProduct('pines')" #btnFilter mat-raised-button class="productos-options__button" data-filter="pines">Pines</button>
+          </div>
 
-            <div class="productos-list">
-                <div *ngFor="let item of productos" class="productos-list-item" [attr.aria-label]="item.category">
-                    <img class="productos-list-item__img" [src]="item.url" loading="lazy" [alt]="item.category">
-                </div>        
-            </div>
-        </div>
-    </div>
+          <div class="productos-list">
+            <div #productItem *ngFor="let item of productos[0].item" class="productos-list-item" [attr.data-category]="item.category">
+              <img class="productos-list-item__img" [src]="item.url" loading="lazy" width="200" height="180" [alt]="item.category">
+          </div>     
+          
+            <!-- <div #productItem *ngFor="let item of productos[0].item" class="productos-list-item" [attr.data-category]="item.category" [hidden]="!isImageVisible(item.category)">
+                  <img class="productos-list-item__img" [src]="item.url" loading="lazy" [alt]="item.category">
+              </div>         -->
+          </div>
+      </div>
+  </div>
 </div>

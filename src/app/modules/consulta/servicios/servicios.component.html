@@ -2,79 +2,41 @@
 <div class="hero-servicios mb-3">
   <div class="hero-servicios__container container">
     <picture class="hero-servicios__picture">
-      <source
-        media="screen and (min-width: 1200px)"
-        srcset="assets/img/Banner-consulta-servicios.png"
-        type="image/jpg"
-      />
-      <source
-        media="screen and (max-width: 650px)"
-        srcset="assets/img/Banner-consulta-servicios__responsive.png"
-        sizes="image/png"
-      />
-      <img
-        src="assets/img/Banner-consulta-servicios.png"
-        alt="Venta de recargas a cualquier compañia con excelentes comisiones"
-        class="hero-servicios__img"
-      />
+      <source media="screen and (min-width: 1200px)" srcset="assets/img/Banner-consulta-servicios.png"
+        type="image/png" />
+      <source media="screen and (max-width: 650px)" srcset="assets/img/Banner-consulta-servicios__responsive.png"
+        sizes="image/png" />
+      <img src="assets/img/Banner-consulta-servicios.png" class="hero-servicios__img" width="1280" height="610"
+        alt="Venta de recargas a cualquier compañia con excelentes comisiones" />
     </picture>
   </div>
 </div>
 
 <!-- ============= SECCIÓN CAROUSEL SERVICIOS ============= -->
-<app-carousel-productos
-  [productos]="servicio"
-  *ngFor="let servicio of servicios"
-></app-carousel-productos>
+<app-carousel-productos [productos]="servicio" *ngFor="let servicio of servicios"></app-carousel-productos>
 
 <!-- ============= SECCIÓN COBRO SERVICES ============= -->
 <div class="cobro-services mb-3">
   <div class="cobro-services__container container">
     <div class="cobro-services__left">
-      <span class="cobro-services__span head-4 headline-4"
-        >Pago de servicios</span
-      >
+      <span class="cobro-services__span head-4 headline-4">Pago de servicios</span>
       <h1 class="cobro-services__h1 headline-3">Cobro por pago de servicios</h1>
 
       <p class="cobro-services__p body-1 mb-1">
-        Con Recarga5g.com, puedes aceptar pagos de servicios de forma segura y
-        sin complicaciones. Nuestra plataforma te brinda la capacidad de
-        procesar pagos de manera fácil y rápida:
-        <a
-          href="https://telmex.com/"
-          class="cobro-services__a keyword__compani btn-underline body-1"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Telmex</a
-        >,
-        <a
-          href="https://www.izzi.mx/home"
-          class="cobro-services__a keyword__compani btn-underline body-1"
-          target="_blank"
-          rel="noopener noreferrer"
-          >IZZI</a
-        >,
-        <a
-          href="https://www.cfe.mx/Pages/default.aspx"
-          class="cobro-services__a keyword__compani btn-underline body-1"
-          target="_blank"
-          rel="noopener noreferrer"
-          >CFE</a
-        >,
-        <a
-          href="https://www.totalplay.com.mx/"
-          class="cobro-services__a keyword__compani btn-underline body-1"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Total Play</a
-        >,
-        <a
-          href="https://www.sky.com.mx/"
-          class="cobro-services__a keyword__compani btn-underline body-1"
-          target="_blank"
-          rel="noopener noreferrer"
-          >SKY</a
-        >
+        Con Recarga5g.com, puedes aceptar
+        <strong class="body-1 keyword__strong">pagos de servicios</strong> de
+        forma segura y sin complicaciones. Nuestra plataforma te brinda la
+        capacidad de procesar pagos de manera fácil y rápida:
+        <a href="https://telmex.com/" class="cobro-services__a keyword__compani btn-underline body-1" target="_blank"
+          rel="noopener noreferrer">Telmex</a>,
+        <a href="https://www.izzi.mx/home" class="cobro-services__a keyword__compani btn-underline body-1"
+          target="_blank" rel="noopener noreferrer">IZZI</a>,
+        <a href="https://www.cfe.mx/Pages/default.aspx" class="cobro-services__a keyword__compani btn-underline body-1"
+          target="_blank" rel="noopener noreferrer">CFE</a>,
+        <a href="https://www.totalplay.com.mx/" class="cobro-services__a keyword__compani btn-underline body-1"
+          target="_blank" rel="noopener noreferrer">Total Play</a>,
+        <a href="https://www.sky.com.mx/" class="cobro-services__a keyword__compani btn-underline body-1"
+          target="_blank" rel="noopener noreferrer">SKY</a>
         ofreciendo a tus clientes una opción conveniente para realizar
         transacciones.
       </p>
@@ -82,65 +44,42 @@
       <p class="cobro-services__p body-1 mb-1">
         No importa si ofreces servicios de telefonía, televisión por cable,
         internet o cualquier otro servicio,
-        <strong class="cobro-services__strong keyword__strong keyword__compani"
-          >Recarga5g.com</strong
-        >
+        <strong class="cobro-services__strong keyword__strong keyword__compani">Recarga5g.com</strong>
         es la solución perfecta para recibir pagos de tus clientes de manera
         ágil y segura.
       </p>
 
-      <a
-        class="cobro-services__a radius-20"
-        mat-raised-button
-        color="primary"
-        routerLink="/registro"
-        >Registrarme ahora</a
-      >
+      <a class="cobro-services__a radius-20" mat-raised-button color="primary" routerLink="/registro">Registrarme
+        ahora</a>
     </div>
 
     <div class="cobro-services__right">
       <div class="cobro-services__item">
-        <img
-          src="assets/img/process__icon.png"
-          class="cobro-services__img"
-          loading="lazy"
-          alt="Cobro de servicios con Recarga5g.com"
-        />
+        <img src="assets/img/process__icon.png" class="cobro-services__img" width="90" height="90" loading="lazy"
+          alt="Cobro de servicios con Recarga5g.com" />
         <p class="cobro-services__p--item headline-6">
           Cobra cualquier recibo y obten una comisión.
         </p>
       </div>
       <div class="cobro-services__item">
-        <img
-          src="assets/img/recibos__icon.png"
-          class="cobro-services__img"
-          loading="lazy"
-          alt="Valida y realiza +200 compañias de servicios facilmente"
-        />
+        <img src="assets/img/recibos__icon.png" class="cobro-services__img" width="90" height="90" loading="lazy"
+          alt="Valida y realiza +200 compañias de servicios facilmente" />
 
         <p class="cobro-services__p--item headline-6">
           Recuperas tu inversión y ganas la comisión cuando cobras en tu negocio
         </p>
       </div>
       <div class="cobro-services__item">
-        <img
-          src="assets/img/negocio__icon.png"
-          class="cobro-services__img"
-          loading="lazy"
-          alt="Ganancias adicionales a tu negocio"
-        />
+        <img src="assets/img/negocio__icon.png" class="cobro-services__img" width="90" height="90" loading="lazy"
+          alt="Ganancias adicionales a tu negocio" />
         <p class="cobro-services__p--item headline-6">
           Tu ganancia en efectivo será la comisión adicional que cobres al
           cliente.
         </p>
       </div>
       <div class="cobro-services__item">
-        <img
-          src="assets/img/asesoria__icon.png"
-          class="cobro-services__img"
-          loading="lazy"
-          alt="Asesoria totalmente personalizada"
-        />
+        <img src="assets/img/asesoria__icon.png" class="cobro-services__img" width="90" height="90" loading="lazy"
+          alt="Asesoria totalmente personalizada" />
         <p class="cobro-services__p--item headline-6">Asesoria personalizada</p>
       </div>
     </div>
@@ -157,24 +96,16 @@
     <div class="why-services__items">
       <ul class="why-services__ul">
         <li class="why-services__li">
-          <mat-icon
-            class="why-services__icon"
-            aria-hidden="false"
-            aria-label="Example home icon"
-            fontIcon="notifications_active"
-          ></mat-icon>
+          <mat-icon class="why-services__icon" aria-hidden="false" aria-label="Example home icon"
+            fontIcon="notifications_active"></mat-icon>
           <p class="why-services__p body-1">
             Deposita y notifica tus depositos para pago de servicios
           </p>
         </li>
 
         <li class="why-services__li">
-          <mat-icon
-            class="why-services__icon"
-            aria-hidden="false"
-            aria-label="Example home icon"
-            fontIcon="request_quote"
-          ></mat-icon>
+          <mat-icon class="why-services__icon" aria-hidden="false" aria-label="Example home icon"
+            fontIcon="request_quote"></mat-icon>
           <p class="why-services__p body-1">
             El cliente te visita y presenta su recibo. Solo debes cobrar recibos
             vigentes. No debes recibir recibos vencidos.
@@ -182,35 +113,23 @@
         </li>
 
         <li class="why-services__li">
-          <mat-icon
-            class="why-services__icon"
-            aria-hidden="false"
-            aria-label="Example home icon"
-            fontIcon="point_of_sale"
-          ></mat-icon>
+          <mat-icon class="why-services__icon" aria-hidden="false" aria-label="Example home icon"
+            fontIcon="point_of_sale"></mat-icon>
           <p class="why-services__p body-1">
             Captura el numero de referencia en la plataforma.
           </p>
         </li>
 
         <li class="why-services__li">
-          <mat-icon
-            class="why-services__icon"
-            aria-hidden="false"
-            aria-label="Example home icon"
-            fontIcon="ads_click"
-          ></mat-icon>
+          <mat-icon class="why-services__icon" aria-hidden="false" aria-label="Example home icon"
+            fontIcon="ads_click"></mat-icon>
           <p class="why-services__p body-1">
             Paga cualquier recibo con unos cuantos click
           </p>
         </li>
         <li class="why-services__li">
-          <mat-icon
-            class="why-services__icon"
-            aria-hidden="false"
-            aria-label="Example home icon"
-            fontIcon="ads_click"
-          ></mat-icon>
+          <mat-icon class="why-services__icon" aria-hidden="false" aria-label="Example home icon"
+            fontIcon="ads_click"></mat-icon>
 
           <p class="why-services__p body-1">
             Cobra el importe del recibo de tu cliente mas tu comisión que
@@ -219,12 +138,8 @@
         </li>
 
         <li class="why-services__li">
-          <mat-icon
-            class="why-services__icon"
-            aria-hidden="false"
-            aria-label="Example home icon"
-            fontIcon="list_alt"
-          ></mat-icon>
+          <mat-icon class="why-services__icon" aria-hidden="false" aria-label="Example home icon"
+            fontIcon="list_alt"></mat-icon>
 
           <p class="why-services__p body-1">
             Cobra el importe del recibo de tu cliente mas tu comisión que
@@ -233,13 +148,8 @@
         </li>
       </ul>
 
-      <a
-        class="why-services__a radius-20"
-        mat-raised-button
-        color="primary"
-        routerLink="/registro"
-        >Registrarme ahora</a
-      >
+      <a class="why-services__a radius-20" mat-raised-button color="primary" routerLink="/registro">Registrarme
+        ahora</a>
     </div>
   </div>
 </div>
@@ -256,10 +166,7 @@
 
       <p class="recibo-services__p body-1">
         No pierdas más tiempo lidiando con métodos de cobro anticuados. Únete a
-        <strong
-          class="recibo-services__strong keyword__strong keyword__compani body-1"
-          >Recarga5g.com</strong
-        >
+        <strong class="recibo-services__strong keyword__strong keyword__compani body-1">Recarga5g.com</strong>
         y descubre una forma eficiente y confiable de cobrar por tus servicios.
         Tu negocio se beneficiará de la comodidad y la seguridad que ofrecemos.
       </p>
@@ -281,12 +188,8 @@
       </ul>
     </div>
     <div class="recibo-services__right">
-      <img
-        src="assets/img/recibos.png"
-        loading="lazy"
-        class="recibo-services__img"
-        alt="Cobro por pago de servicios a tu negocio"
-      />
+      <img src="assets/img/recibos.png" class="recibo-services__img" width="633" height="633" loading="lazy" 
+        alt="Cobro por pago de servicios a tu negocio" />
     </div>
   </div>
 </div>
@@ -353,9 +256,7 @@
       <p class="register-services__p body-1 mb-1">
         No dejes pasar más tiempo valioso lidiando con complicaciones en tus
         cobros. Únete a
-        <strong class="keyword__strong keyword__compani body-1"
-          >Recargas5g.com</strong
-        >
+        <strong class="keyword__strong keyword__compani body-1">Recargas5g.com</strong>
         y descubre una forma más fácil y eficiente de cobrar por tus servicios.
         Maximiza tu tiempo y recursos, y enfócate en lo que realmente importa:
         hacer crecer tu negocio.
@@ -363,26 +264,17 @@
 
       <p class="register-services__p body-1 mb-1">
         ¡Haz que tus cobros de servicios sean más simples y rápidos con
-        <strong class="keyword__strong keyword__compani body-1"
-          >Recargas5g.com</strong
-        >! Regístrate hoy mismo y comienza a disfrutar de la comodidad y
+        <strong class="keyword__strong keyword__compani body-1">Recargas5g.com</strong>! Regístrate hoy mismo y comienza
+        a disfrutar de la comodidad y
         seguridad que brinda nuestra plataforma."
       </p>
 
-      <a
-        class="register-services__a radius-20"
-        mat-raised-button
-        color="primary"
-        routerLink="/registro"
-        >Registrarme ahora</a
-      >
+      <a class="register-services__a radius-20" mat-raised-button color="primary" routerLink="/registro">Registrarme
+        ahora</a>
     </div>
 
     <div class="register-services__right mb-3">
-      <app-register-steps
-        [step]="stepService"
-        *ngFor="let stepService of registerServices"
-      ></app-register-steps>
+      <app-register-steps [step]="stepService" *ngFor="let stepService of registerServices"></app-register-steps>
     </div>
   </div>
 </div>

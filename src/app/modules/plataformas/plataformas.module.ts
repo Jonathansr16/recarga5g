@@ -9,8 +9,6 @@ import { MontosComponent } from '@plataformas/components/montos/montos.component
 import { ManualesComponent } from '@plataformas/components/manuales/manuales.component';
 import { AppPlataformasComponent } from '@plataformas/components/app-plataformas/app-plataformas.component';
 import { MaterialModule } from '@shared/material/material.module';
-import { HorarioPlataforamsComponent } from '@plataformas/components/horario-plataformas/horario-plataformas.component';
-import { PoliticasPlataformaComponent } from '@plataformas/components/politicas-plataformas/politicas-plataformas.component';
 
 
 @NgModule({
@@ -20,8 +18,6 @@ import { PoliticasPlataformaComponent } from '@plataformas/components/politicas-
     AppPlataformasComponent,
     MontosComponent,
     ManualesComponent,
-    HorarioPlataforamsComponent,
-    PoliticasPlataformaComponent
   ],
   imports: [
     CommonModule,

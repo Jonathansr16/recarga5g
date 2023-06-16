@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { ContentfulService } from '@ayuda/services/contentful.service';
 import { _countGroupLabelsBeforeOption } from '@angular/material/core';
-
+import { MetaTagService } from '@core/services/meta-tag.service';
+// import { metaTagModel } from '@core/models/meta-tag.model';
 
 @Component({
   selector: 'app-post',
@@ -19,8 +20,8 @@ export class PostComponent implements OnInit {
   id: any = '';
   post$: Observable<any> | undefined;
 
-
-  constructor(private router: Router, private activatedRouter: ActivatedRoute, private contentful: ContentfulService, private readonly title: Title) { }
+  constructor(private activatedRouter: ActivatedRoute, private contentful: ContentfulService, private readonly title: Title,
+              private readonly meta: MetaTagService) { }
 
   ngOnInit(): void {
 
@@ -28,8 +29,18 @@ export class PostComponent implements OnInit {
 
     this.id = this.activatedRouter.snapshot.paramMap.get('id');
     this.post$ = this.contentful.getPost(this.id);
-    let vara =this.post$?.subscribe(data => {
-      console.log(data)
+    this.post$?.subscribe(data => {
+      
+      this.meta.generateTags({
+        title: data.fields.title,
+        description: data.fields.summary,
+        keywords: data.fields.category,
+        url: `recarga5g.com/blog/article/${data.sys.id}`,
+        type: 'article',
+        image: data.fields.imgArticle.fields.file.url,
+        card: 'summary_large_image',
+        creator: '@recargascelular',
+      })
     })
   }
 

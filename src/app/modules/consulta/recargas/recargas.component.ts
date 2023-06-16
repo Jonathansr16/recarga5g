@@ -1,8 +1,12 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+
+//* Modelos importados
 import { metaTagModel } from '@core/models/meta-tag.model';
 import { productoModel } from '@core/models/productos.model';
-import { registerSteps } from '@core/models/register-steps-model';
+import { registerStepsModel } from '@core/models/register-steps-model';
+
+//* Servicios importados
 import { MetaTagService } from '@core/services/meta-tag.service';
 import { ProductosService } from '@core/services/productos.service';
 import { RegisterStepsService } from '@core/services/register-steps.service';
@@ -17,7 +21,7 @@ export class RecargasComponent implements OnInit {
 
   @ViewChild('recargasSwiper')tae?: ElementRef;
   recargas: productoModel[] = [];
-  stepRecargas: registerSteps[] = [];
+  stepRecargas: registerStepsModel[] = [];
 
   
   //? META TAG
@@ -44,14 +48,7 @@ export class RecargasComponent implements OnInit {
       this.title.setTitle('Recarga5g.com | Como vender recargas en todas las compañias nacionales')
    
       this._metaTagService.generateTags( {
-        title: this.tag.title,
-        description: this.tag.description,
-        keywords: this.tag.keywords,
-        url: this.tag.url,
-        type: this.tag.type,
-        image: this.tag.image,
-        card: this.tag.card,
-        creator: this.tag.creator
+      ...this.tag
       });
 
         this.recargas= this._recargasService.getRecargas();

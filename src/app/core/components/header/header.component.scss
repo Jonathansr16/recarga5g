@@ -13,14 +13,14 @@
 
 
 .nav-menu__a.active {
-    background-color: var(--c-card);
-    color: var(--c-title);
+    background-color: var(--c-light-primary) ;
+    color: var(--c-secondary);
     font-weight: bold;
 }
 
 
 ::ng-deep .nav-submenu__a.active .mdc-list-item__primary-text {
-    color: var(--c-title);
+    color: var(--c-secondary);
 }
 
 
@@ -46,7 +46,7 @@
     width: 0;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 10;
     display: none;
 }
 
@@ -92,7 +92,7 @@
         top: 0;
         width: 75%;
         height: 100%;
-        z-index: 10;
+        z-index: 11;
         transition: right 0.4s;
 
 

@@ -7,7 +7,7 @@
         <div class="manuales-box">
             
             <div class="manuales-left">
-                <img src="assets/img/manuales__recargas.png" loading="lazy" class="manuales-left__img" alt="">
+                <img src="assets/img/manuales__recargas.png" loading="lazy" class="manuales-left__img" width="633" height="550" alt="Consulta los manuales para que puedas venter recargas con excelentes comisiones">
             </div>
 
             <div class="manuales-right">
@@ -18,16 +18,17 @@
 
                <div class="manuales-actions mb-2">
               
-                <button class="manuales-actions__btn" mat-raised-button color="primary"> 
+                <a class="manuales-actions__btn" mat-raised-button color="primary" target="_blank" [href]="manuales.btns[0].url" rel="noopener noreferrer"> 
                     
                     {{manuales.btns[0].titleBtn}}
                     <mat-icon aria-hidden="false" aria-label="Example icon">{{manuales.btns[0].iconBtn}}</mat-icon>
-                </button>
+                </a>
 
-                <button class="manuales-actions__btn manuales-actions__btn--2 my-button btn-underline">
+                <a class="manuales-actions__btn manuales-actions__btn--2 my-button btn-underline" target="_blank" [href]="manuales.btns[1].url" rel="noopener noreferrer">
                     {{manuales.btns[1].titleBtn}}
                     <mat-icon aria-hidden="false" color="primary" aria-label="Example icon">{{manuales.btns[1].iconBtn}}></mat-icon>
-                </button>
+                </a>
+ 
                </div>
             </div>
 

@@ -12,7 +12,6 @@ export class ContactoComponent implements OnInit {
 
     //? META TAG
     tag: metaTagModel = {
-
       title: "Recarga5g.com | Consulta como vender recargas electrónicas",
       description: "Contactamos por alguno de nuestros medios de contacto para asesorarte para que puedas generar ganancias vendiendo recargas telefónicas a cualquier tipo de compañía.",
       keywords: "Contacto para venta de recargas, Contacto Pagaqui, Contacto Planetaemx, Contacto Recargaki, Contacto recargas electrónicas, Recarga5g.com, Contacto para vender recargas elecrtrónicas con excelentes comisiones",
@@ -29,14 +28,7 @@ export class ContactoComponent implements OnInit {
     this.title.setTitle('Recarga5g.com | Contáctanos por cualquier de nuestros medios de contacto para asesorarte y obtener más información para vender recargas a cualquier compañia con excelentes comisiones');
  
     this._metaTagService.generateTags( {
-      title: this.tag.title,
-      description: this.tag.description,
-      keywords: this.tag.keywords,
-      url: this.tag.url,
-      type: this.tag.type,
-      image: this.tag.image,
-      card: this.tag.card,
-      creator: this.tag.creator
+      ...this.tag
     })
 
   }

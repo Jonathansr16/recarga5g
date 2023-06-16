@@ -1,9 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef, Inject, Renderer2, PLATFORM_ID, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren, QueryList, ElementRef, Renderer2 } from '@angular/core';
 import { ProductosService } from '@core/services/productos.service';
-import { productoModel } from '@core/models/productos.model';
-import { DOCUMENT } from '@angular/common';
 import { MatButton } from '@angular/material/button';
-
 
 
 @Component({
@@ -12,70 +9,52 @@ import { MatButton } from '@angular/material/button';
   styleUrls: ['./productos-filter.component.scss'],
   providers: [ProductosService]
 })
-export class ProductosFilterComponent implements OnInit, AfterViewInit {
+export class ProductosFilterComponent implements OnInit {
 
-  productos: any = [];
-  activeItem?: boolean;
-  @ViewChild('option') option!: MatButton;
+  productos: any[] = [];
+  categorias: string[] = ['Todos', 'Recargas', 'Servicios', 'Pines']; // Reemplaza con tus categorías
 
+   @ViewChildren('btnFilter') btnsFilter?: QueryList<MatButton>;
+  @ViewChildren('productItem') itemsProduct?: QueryList<ElementRef>
+  @ViewChild('filters') option!: ElementRef;
 
-  constructor(private _productoService: ProductosService, @Inject(DOCUMENT) private document: Document,
-    @Inject(PLATFORM_ID) private plataform_id: Object, private renderer: Renderer2) { 
+  @ViewChild('productContainer') product?:ElementRef;
 
-    }
+  selectedCategory: string = 'todo';
+  btnCategoryActive: string = 'todo'
+  constructor(private _productoService: ProductosService, private renderer2: Renderer2 ) { }
 
   ngOnInit(): void {
     this.productos = this._productoService.getProductos();
-    
-    // this.activeFilter();
-
-  }
-
-  ngAfterViewInit(): void {
  
-    this.activeFilter()
-
-
-
   }
 
-  activeFilter() {
+ filterProduct(category: string) {
 
-    const btnFilter = this.document.querySelectorAll('.productos-options__button');
-    const item = this.document.querySelectorAll('.productos-list-item');
-   
-    for (let i = 0; i < btnFilter.length; i++) {
+  this.btnCategoryActive = category;
 
-      btnFilter[i].addEventListener("click", () => {
+this.itemsProduct?.forEach(element => {
+  const imageCategory = element.nativeElement.getAttribute('data-category');
+  this.renderer2.removeClass(element.nativeElement, 'hiddenItem');
+  this.renderer2.addClass(element.nativeElement, 'showItem');
+  if(category === 'todo' || imageCategory === category) {
 
-        for (let j = 0; j < btnFilter.length; j++) {
-          btnFilter[j].classList.remove('productos-options__button--isactive');
-        }
+    this.renderer2.removeClass(element.nativeElement, 'hiddenItem');
+    this.renderer2.addClass(element.nativeElement, 'showItem');
+      // element.nativeElement.hidden = false;
 
-        btnFilter[i].classList.add('productos-options__button--isactive');
-        const dataFilter = btnFilter[i].getAttribute('data-filter');
-  
-        for (let k = 0; k < item.length; k++) {
-
-          item[k].classList.remove('showItem');
-          item[k].classList.add('hiddenItem');
-          
-          if ((item[k].getAttribute('aria-label') == dataFilter) || (dataFilter == "todo")) {
-            item[k].classList.remove('hiddenItem');
-            item[k].classList.add('showItem');
-          } else {
-           
-          }
-
-        }
-   
-        
-      });
-
-    }
-
+  } else {
+    // element.nativeElement.hidden = true;
+    this.renderer2.removeClass(element.nativeElement, 'showItem');
+    this.renderer2.addClass(element.nativeElement, 'hiddenItem');
   }
+});
+ 
+ }
 
+//  isImageVisible(category: string): boolean {
+//     return category === 'todo' || category === this.selectedCategory;
+//  }
 
 
 }

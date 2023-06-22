@@ -39,6 +39,7 @@ export class BlogComponent implements OnInit {
     
     this.contenfulService.getPosts().then((posts: any) => {
       this.posts$= posts
+      console.log(posts)
     });
 
     this.meta.generateTags({

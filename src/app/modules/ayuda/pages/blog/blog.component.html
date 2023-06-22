@@ -1,14 +1,14 @@
-<div class="hero-blog">
-    <div class="hero-blog__container container">
-   <div class="hero-blog__title">
-                <a routerLink="/" class="hero-blog__a headline-4">Home</a>
-                <span class="hero-blog__icon headline-4"> > </span>
-                <span class="hero-blog__span headline-4">Ayuda</span>
-                <span class="hero-blog__icon headline-4"> > </span>
-                <a routerLink="/ayuda/blog" class="hero-blog__a hero-blog__a-isActive headline-4">Blog</a>
-            </div>
+<div class="hero-blog wow animate__animated animate__fadeInDown">
+  <div class="hero-blog__container container">
+    <div class="hero-blog__title">
+      <a routerLink="/" class="hero-blog__a headline-4">Home</a>
+      <span class="hero-blog__icon headline-4"> > </span>
+      <span class="hero-blog__span headline-4">Ayuda</span>
+      <span class="hero-blog__icon headline-4"> > </span>
+      <a routerLink="/ayuda/blog" class="hero-blog__a hero-blog__a-isActive headline-4">Blog</a>
     </div>
-</div> 
+  </div>
+</div>
 
 <div class="blog">
   <div class="blog__container container">
@@ -17,70 +17,78 @@
     </h1>
     <div class="blog__box">
       <div class="articles">
-        <ng-container class="article__container">
-          <div
-            class="article"
-            *ngFor="
-              let posts of posts$
-                | paginate : { itemsPerPage: 4, currentPage: p }
-            "
-          >
+        <ng-container *ngIf="posts$.length > 1; else blogEmpty" class="article__container">
+          <div class="article" *ngFor="
+              let posts of posts$ | paginate : { itemsPerPage: 4, currentPage: p }">
             <div class="article__banner">
               <picture class="article__picture">
-                <img
-                  [src]="posts.fields.imgArticle.fields.file.url"
-                  class="article__img"
-                  width="331"
-                  height="367"
-                  loading="lazy"
-                  alt="Lee nuestro articulo"
-                />
+                <img [src]="posts.fields.imgArticle.fields.file.url" class="article__img" width="331" height="367"
+                  loading="lazy" alt="Lee nuestro articulo" />
               </picture>
             </div>
 
             <div class="article__content">
-              <span class="article__category button"
-                >{{ posts.fields.category }}
+              <span class="article__category button">{{ posts.fields.category }}
               </span>
 
               <h2 class="article__h2">
-                  <a [routerLink]="['/ayuda/blog/article', posts.sys.id]" class="article__a headline-5">
-                    {{ posts.fields.title }}
+                <a [routerLink]="['/ayuda/blog/article', posts.sys.id]" class="article__a headline-5">
+                  {{ posts.fields.title }}
                 </a>
               </h2>
-          
+
 
               <p class="article__p body-2">
                 {{ posts.fields.summary }}
               </p>
 
-              <div class="article__details">
+          
                 <div class="article__profile">
-                    <mat-icon class="article__icon--profile" aria-hidden="false" aria-label="Example home icon" fontIcon="badge"></mat-icon>
 
-                  <a class="article__author body-2">
-                    {{ posts.fields.author }}
-                  </a>
-                </div>
+                  <div class="article__authorBox">
+                    <img appNoImage [src]="posts.fields.imgAuthor?.fields.file.url" class="article__authorImg"
+                      loading="lazy" alt="post recargas5.com">
+                  </div>
 
-                <div class="article__date">
-                  <span class="wrapper-detail__span">
-                    <p class="article__time body-2">
-                      <time class="article-detail__time">
-                        {{ posts.fields.date | date : "mediumDate" }}
-                      </time>
-                      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="schedule"></mat-icon>
-                    </p>
-                  </span>
+
+                  <div class="article__date">
+
+                    <a [href]="posts.fields.urlAuthor" class="article__author body-2" target="_blank"
+                      rel="noopener noreferrer">
+                      {{ posts.fields.author }}
+                    </a>
+                
+                      <div class="article__time body-2">
+                        <time class="article-detail__time">
+                          {{ posts.fields.date | date : "mediumDate" }}
+                        </time>
+
+                        <mat-icon aria-hidden="false" class="article__icon" aria-label="Example home icon"
+                          fontIcon="schedule">
+                        </mat-icon>
+                      </div>
+  
                 </div>
               </div>
             </div>
           </div>
-          <pagination-controls
-            (pageChange)="p = $event"
-            class="mypagination flex aling-center justify-center"
-          ></pagination-controls>
+          <pagination-controls (pageChange)="p = $event"
+            class="mypagination flex aling-center justify-center"></pagination-controls>
         </ng-container>
+
+        <ng-template #blogEmpty>
+
+          <div class="info">
+
+            <mat-icon class="info__icon" aria-hidden="false" aria-label="Example info icon" fontIcon="info"></mat-icon>
+            <span class="info__title headline-6">Info</span>
+            <span class="info__description body-1">UPPS! al parecer estas al dia, vuelve mas tarde 😉👌</span>
+
+            <!-- <span class="info__description body-1">Sin novedad por el momento vuelve mas tarde..</span> -->
+          </div>
+
+        </ng-template>
+
       </div>
 
       <!-- ASIDE -->
@@ -92,24 +100,16 @@
 
           <div class="topics__btn">
             <div class="topics__box">
-              <mat-icon
-                class="topics-btn__icon"
-                aria-hidden="false"
-                aria-label="Example home icon"
-                fontIcon="trending_up"
-              ></mat-icon>
+              <mat-icon class="topics-btn__icon" aria-hidden="false" aria-label="Example home icon"
+                fontIcon="trending_up"></mat-icon>
             </div>
             <p class="topics__p body-2">Mas Populares</p>
           </div>
 
           <div class="topics__btn">
             <div class="topics__box">
-              <mat-icon
-                class="topics-btn__icon"
-                aria-hidden="false"
-                aria-label="Example home icon"
-                fontIcon=" phonelink_ring"
-              ></mat-icon>
+              <mat-icon class="topics-btn__icon" aria-hidden="false" aria-label="Example home icon"
+                fontIcon=" phonelink_ring"></mat-icon>
             </div>
             <p class="topics__p body-2">Recargas Telefonicas</p>
           </div>
@@ -141,39 +141,27 @@
 
             <ul class="follow__ul">
               <li class="follow__li">
-                <a
-                  href="https://www.facebook.com/recargas.electronicas.com.mx/"
-                  class="follow__a follow__a--fb"
-                  target="_blank"
-                  aria-label="Facebook"
-                  rel="noopener"
-                >
-                 <img src="assets/img/social__facebook.png" class="follow__img" loading="lazy" alt="Siguenos en Facebook como recargas.electronicas.com.mx">
+                <a href="https://www.facebook.com/recargas.electronicas.com.mx/" class="follow__a follow__a--fb"
+                  target="_blank" aria-label="Facebook" rel="noopener">
+                  <img src="assets/img/social__facebook.png" class="follow__img" loading="lazy"
+                    alt="Siguenos en Facebook como recargas.electronicas.com.mx">
                 </a>
               </li>
 
               <li>
-                <a
-                  href="https://twitter.com/recargascelular"
-                  class="follow__a follow__a--tw"
-                  target="_blank"
-                  aria-label="Twitter"
-                  rel="noopener"
-                >
-                <img src="assets/img/social__twitter.png" class="follow__img" loading="lazy" alt="Siguenos en Facebook como recargas.electronicas.com.mx">
+                <a href="https://twitter.com/recargascelular" class="follow__a follow__a--tw" target="_blank"
+                  aria-label="Twitter" rel="noopener">
+                  <img src="assets/img/social__twitter.png" class="follow__img" loading="lazy"
+                    alt="Siguenos en Facebook como recargas.electronicas.com.mx">
 
                 </a>
               </li>
 
               <li>
-                <a
-                  href="https://www.instagram.com/recargascelular/"
-                  class="follow__a follow__a--instagram"
-                  target="_blank"
-                  aria-label="Instagram"
-                  rel="noopener"
-                >
-                <img src="assets/img/social__instagram.png" class="follow__img" loading="lazy" alt="Siguenos en Facebook como recargas.electronicas.com.mx">
+                <a href="https://www.instagram.com/recargascelular/" class="follow__a follow__a--instagram"
+                  target="_blank" aria-label="Instagram" rel="noopener">
+                  <img src="assets/img/social__instagram.png" class="follow__img" loading="lazy"
+                    alt="Siguenos en Facebook como recargas.electronicas.com.mx">
 
                 </a>
               </li>

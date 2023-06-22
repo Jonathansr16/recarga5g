@@ -97,33 +97,33 @@ export class AppPlataformasService {
 
                 {
                     iconName: "1",
-                    description: "Obtén una comisión por cada deposito que reportes en la plataforma"
+                    description: "Obtén una comisión por cada deposito que reportes en la plataforma."
                 },
 
                 {
                     iconName: "2",
-                    description: "Reporta tu pago directamente en la plataforma y recibe el saldo correspondiente y la comisión en tiempo aire"
+                    description: "Reporta tu pago directamente en la plataforma y recibe el saldo correspondiente y la comisión en tiempo aire."
                 },
 
 
                 {
                     iconName: "3",
-                    description: "Consulta las cuentas bancarias autorizadas en la plataforma"
+                    description: "Consulta las cuentas bancarias autorizadas en la plataforma."
                 },
 
                 {
                     iconName: "4",
-                    description: "Recarga saldo para recargas y saldo para pago de servicios"
+                    description: "Recarga saldo para recargas y saldo para pago de servicios."
                 },
 
                 {
                     iconName: "5",
-                    description: "Consulta el status de todos tus reporte de depositos"
+                    description: "Consulta el status de todos tus reportes de depósitos."
                 },
 
                 {
                     iconName: "6",
-                    description: "registra todos tus puntos de venta y obten una comisión por la ventas que estos realicen en Planetaemx"
+                    description: "registra todos tus puntos de venta y obtén una comisión por la venta que estos realicen en Planetaemx"
                 },
             ],
 

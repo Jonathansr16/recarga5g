@@ -1,146 +1,140 @@
-@import '_mixin';
+@import "_mixin";
 
 .hero {
-    &__container {
-        grid-template-columns: 1fr;
-        background-color: var(--c-body);
-    }
+  &__container {
+    grid-template-columns: 1fr;
+    background-color: var(--c-body);
+  }
 
-    &__img {
-        border-radius: 10px;
-        box-shadow: var(--shadow);
-    }
+  &__img {
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+  }
 }
 
 .contacto {
-    &__container {
-        grid-template-columns: 1fr
-    }
+  &__container {
+    grid-template-columns: 1fr;
+  }
 
-    &__h2 {
-        text-align: center
-    }
+  &__h2 {
+    text-align: center;
+  }
 }
 
 .contacto {
-    &__container {
-        grid-template-columns: 1fr;
-    }
+  &__container {
+    grid-template-columns: 1fr;
+  }
 
-    &__h1 {
-        text-align: center
-    }
+  &__h1 {
+    text-align: center;
+  }
 
-    &__options {
-       @include flexible(flex, row, wrap, space-evenly, center);
-       gap: 1.5em;
-    }
+  &__options {
+    @include flexible(flex, row, wrap, space-evenly, center);
+    gap: 1.5em;
+  }
 
-    &__item {
-        background-color: var(--c-card);
-        border-radius: 12px;
-        box-shadow: var(--shadow);
-        max-width: 350px;
-        padding: 35px 30px;
-    }
+  &__item {
+    background-color: var(--c-card);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    max-width: 350px;
+    padding: 35px 30px;
+  }
 
-
-    &__box-icon {
-        position: relative;
-        margin-bottom: 25px;
-        @include flexible(flex, column, nowrap, center, center)
-
-    }
-   &__icon {
+  &__box-icon {
+    position: relative;
+    margin-bottom: 25px;
+    @include flexible(flex, column, nowrap, center, center);
+  }
+  &__icon {
     background-color: var(--c-light-primary);
     font-size: 35px;
     width: 75px;
     height: 75px;
     line-height: 75px;
     border-radius: 50%;
-    @include flexible(flex, column, nowrap, center, center)
-   }
+    @include flexible(flex, column, nowrap, center, center);
+  }
 
-    &__h3 {
-        text-align: center;
-        color: var(--c-primary);
-    }
+  &__h3 {
+    text-align: center;
+    color: var(--c-primary);
+  }
 
-
-    &__a {
-        margin-top: 15px;
-        text-align: center;
-        display: block;
-    }
+  &__a {
+    margin-top: 15px;
+    text-align: center;
+    display: block;
+  }
 }
 
 .info {
-    &__container {
-        grid-template-columns: 1fr;
-         background-image: url('/assets/img/recarga5g-ubicacion.png');
-        width: 100%;
-        height: 650px;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;  
-        box-shadow: var(--shadow);
-        border-radius: 12px;
-       position: relative;
-    }
-    
-    &__box {
-       max-width: 350px;
-       @include flexible(flex, column, wrap, center, center);
-       background-color: var(--c-card);
-       position: relative;
-    }
+  &__container {
+    grid-template-columns: 1fr;
+    background-image: url("/assets/img/recarga5g-ubicacion.webp");
+    width: 100%;
+    height: 650px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: var(--shadow);
+    border-radius: 12px;
+    position: relative;
+  }
 
-    &__card {
-        margin-bottom: 1em;
-        text-align: center;
-    }
+  &__box {
+    max-width: 350px;
+    @include flexible(flex, column, wrap, center, center);
+    background-color: var(--c-card);
+    position: relative;
+  }
 
-    &__h4 {
-        color: var(--c-primary);
-        display: inline-flex;
-        gap: 0.3em
-    }
+  &__card {
+    margin-bottom: 1em;
+    text-align: center;
+  }
 
-    &__img {
-        width: 30px;
-        object-fit: contain;
-    }
+  &__h4 {
+    color: var(--c-primary);
+    display: inline-flex;
+    gap: 0.3em;
+  }
 
-    &__btn {
-        max-width: 350px;
-        width: 100%;
-        position: absolute;
-        bottom: 50px;
-        right: 50px;
-       box-shadow: var(--c-primary) 0px 1px 20px;
-       @include responsive(400px) {
-        bottom: 0;
-        left: 0;
-       }
+  &__img {
+    width: 30px;
+    object-fit: contain;
+  }
+
+  &__btn {
+    max-width: 350px;
+    width: 100%;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    box-shadow: var(--c-primary) 0px 1px 20px;
+    @include responsive(400px) {
+      bottom: 0;
+      left: 0;
     }
+  }
 }
 
 .tachuela {
-    position: absolute;
-    top: 0;
-    right: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
 
-    &__img {
-        max-width: 100px;
-        transform: rotate(45deg);
-    }
+  &__img {
+    max-width: 100px;
+    transform: rotate(45deg);
+  }
 }
 
-
-
-
 // .sociales {
-   
+
 //     &__ul {
 //         height: 100%;
 //         @include flexible(flex, row, wrap, flex-end, flex-end);

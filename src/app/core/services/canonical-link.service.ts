@@ -51,6 +51,28 @@ import { Inject, Injectable, RendererFactory2 } from "@angular/core";
         const attr: string = tag.rel ? 'rel' : 'hreflang';
         return `${attr}="${tag[attr]}"`;
     }
+
+    removeCanonicalLink() {
+        try {
+            const renderer = this.rendererFactory.createRenderer(this.document, {
+                id: '-1',
+                encapsulation: ViewEncapsulation.None,
+                styles: [],
+                data: {}
+            });
+            const canonical = document.querySelector("link[rel='canonical']")
+            const head = this.document.head;
+
+            if (head === null) {
+                throw new Error('<head> not found within DOCUMENT.');
+            }
+            if (!!canonical) {
+                renderer.removeChild(head, canonical);
+            }
+        } catch (e) {
+            console.error('Error within linkService : ', e);
+        }
+}
     }
     
      export declare type LinkDefinition = {

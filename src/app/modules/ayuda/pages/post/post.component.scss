@@ -28,10 +28,10 @@
     padding: 45px 90px;
     position: relative;
   }
-&-content {
-  border-bottom: 2px solid #ddd7d7;
-  margin-bottom: 1em;
-}
+  &-content {
+    border-bottom: 2px solid #ddd7d7;
+    margin-bottom: 1em;
+  }
   &__h1 {
     text-align: center;
     margin: 0.5em 0;
@@ -43,6 +43,10 @@
     @include flexible(flex, row, wrap, space-between, center);
     padding: 0 1em;
 
+    &__a:hover {
+      color: var(--c-primary);
+      text-decoration: underline;
+    }
     &__author,
     &__time {
       display: inline-flex;
@@ -53,10 +57,33 @@
       font-weight: bold;
     }
   }
+
+  &-categorias {
+    &__p {
+      text-align: center;
+    }
+    &__ul {
+      @include flexible(flex, row, wrap, center, center);
+      gap: 1em;
+    }
+
+    &__li {
+      background-color: var(--c-light-primary);
+      border-radius: 10px;
+      padding: 5px 8px;
+      color: var(--c-secondary);
+      font-weight: bold;
+    }
+
+    &__icon {
+      width: 20px;
+      height: 20px;
+      font-size: 20px;
+    }
+  }
 }
 
 .post-description {
-
   h2 {
     color: var(--c-title);
     font-size: 2rem;
@@ -70,13 +97,13 @@
     &::before {
       content: "";
       position: absolute;
-      // top: 0;
+
       top: 50%;
       left: 0px;
       width: 4px;
-      // height: 50%;
+
       height: 28px;
-      // transform: translateY(50%);
+
       background-color: var(--c-primary);
     }
   }
@@ -136,12 +163,14 @@
     color: var(--c-title);
 
     @include responsive(850px) {
-        thead {
-            display: none;
-        }
-        tbody, tr, td {
-            display: block;
-        }
+      thead {
+        display: none;
+      }
+      tbody,
+      tr,
+      td {
+        display: block;
+      }
     }
   }
 
@@ -151,13 +180,8 @@
     color: var(--c-secondary);
     padding: 0.5em 0;
     font-size: 1rem;
-
   }
 
-   tr{
-//    @include flexible(flex, row, wrap, center, center);
-
-  }
   th {
     padding: 1rem;
     text-transform: uppercase;
@@ -172,109 +196,6 @@
   }
 
   tr:nth-child(even) {
-        background-color: var(--c-body);
-     }
-
+    background-color: var(--c-body);
+  }
 }
-
-// .post__span {
-//     margin-right: 18px;
-// }
-
-// .post__p {
-//     text-align: justify;
-//     margin: 10px 0 14px;
-//     line-height: 27px;
-// }
-
-// .post__img {
-//     border-radius: 25px;
-//     padding: 0.55rem 0;
-// }
-
-// .post__content {
-//     /* padding: 24px 30px 43px 33px; */
-//     border-bottom-left-radius: 5px;
-//     border-bottom-right-radius: 5px;
-// }
-
-// .post__content h2 {
-//     font-weight: var(--font-700);
-//     line-height: 1.3;
-//     margin: 1.6rem;
-//     font-size: var(--h2-font-size);
-//     position: relative;
-// }
-
-// .post__content h2:before,
-// .post__content h3:before {
-//     content: "";
-//     position: absolute;
-//     top: 0;
-//     left: -7px;
-//     width: 4px;
-//     height: 100%;
-//     background-color: var(--color-primary);
-// }
-
-// .post__content h3 {
-//     font-weight: 700;
-//     margin: 1rem 0;
-//     font-size: var(--h3-font-size);
-//     position: relative;
-//     margin-left: 1em;
-// }
-
-// .post__content p {
-//     font-size: 1.2rem;
-//     line-height: 2;
-//     text-align: justify;
-// }
-
-// .post__content strong {
-//     font-weight: 600;
-// }
-
-// }
-
-// .post__content td {
-//     padding: 1rem;
-//     font-size: 0.90rem;
-// }
-
-// .post__content tr:nth-child(even) {
-//     background-color: hsl(254deg 100% 97%);
-// }
-
-// .post__content li {
-//     list-style: disc;
-//     margin: 1.5rem 2.5rem;
-// }
-
-// @media screen and (max-width: 850px) {
-//     .post__h1 {
-//         font-size: 1.5rem;
-//     }
-//     .post__content p {
-//         font-size: 1rem;
-//         text-align: left;
-//     }
-//     .post__content thead {
-//         display: none;
-//     }
-//     .post__content tbody,
-//     .post__content tr,
-//     .post__content td {
-//         display: block;
-//         width: 100%;
-//     }
-// }
-
-// @media screen and (max-width: 550px) {
-//     .post__box {
-//         padding: 1.3em 1em;
-//     }
-//     .post__img {
-//         object-fit: contain;
-//     }
-// }

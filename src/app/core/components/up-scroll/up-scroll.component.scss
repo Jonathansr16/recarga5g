@@ -1,16 +1,16 @@
-.scroll-btn{
-    position: fixed;
-    bottom: 50px;
-    right: 50px;
-      visibility: hidden;
-   opacity: 0;
-    transition: .3s ease;
-    pointer-events: none;
-   z-index: 3;
+.scroll-btn {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease;
+  pointer-events: none;
+  z-index: 3;
 }
 
 .isActiveScroll {
-   opacity: 1;
-   visibility: visible;
-   pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }

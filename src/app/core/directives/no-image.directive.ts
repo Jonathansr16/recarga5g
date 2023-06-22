@@ -9,10 +9,10 @@ export class NoImageDirective {
 
 
   @HostListener('error')
-  onloadImgDefault(): void {
+  onloadImgDefault() {
     const element = this.elementRef.nativeElement;
-  console.log(element);
-    element.src = 'assets/img/noImage.jpg';
+  console.log('Esta imagen esta rota:' + element);
+    element.src = '/assets/img/profile.png';
   }
  
 }

@@ -10,6 +10,8 @@ import { ManualesComponent } from '@plataformas/components/manuales/manuales.com
 import { AppPlataformasComponent } from '@plataformas/components/app-plataformas/app-plataformas.component';
 import { MaterialModule } from '@shared/material/material.module';
 
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { MaterialModule } from '@shared/material/material.module';
   imports: [
     CommonModule,
     MaterialModule,
+    MatDialogModule,
     FeatureModule,
     PlataformasRoutingModule
   ]

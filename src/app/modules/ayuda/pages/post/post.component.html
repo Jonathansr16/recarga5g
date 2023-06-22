@@ -1,4 +1,4 @@
-<div class="post">
+<div class="post wow animate__animated animate__fadeInUp">
   <div class="post__container container" *ngIf="post$ | async as post">
     <!-- ============= POST BANNER ============= -->
     <div class="post-banner">
@@ -26,7 +26,11 @@
              aria-label="Example home icon"
              fontIcon="badge"
            ></mat-icon>
-           <p class="post-details__p body-2">Foto: {{ post.fields.author }}</p>
+           <p class="post-details__p body-2">Foto: 
+            <a class="post-details__a body-2" [href]="post.fields.urlAuthor" target="_blank" rel="noopener noreferrer">
+              {{ post.fields.author }}
+            </a>
+           </p>
          </div>
  
          <div class="post-details__time">
@@ -45,25 +49,40 @@
        </div>
  
        <div class="post-description">
-         <!-- <div [innerHtml]=" post.fields.content | markdown"></div> -->
+       
          <div [innerHtml]="post.fields.content | markdown"></div>
        </div>
    </div>
 
-   <p class="headline-6">Comparte esta nota!</p>
+   <div class="post__footer">
 
-   <share-buttons class="post-share" [theme]="'default'"
-   [include]="['facebook','twitter','telegram','messenger','whatsapp','sms','email','print','copy']"
-   [show]="5"
-   [showText]="true"
-   [title]="post.fields.title"
-   [description]="post.fields.imgArticle.fields.description"
-   [image]="post.fields.imgArticle.fields.file.url" 
-   ></share-buttons>
+    <div class="post-categorias">
+        <p class="post-categorias__p headline-6">Temas:</p>
+      <ul class="post-categorias__ul mb-1">
+        <li class="post-categorias__li body-2" *ngFor="let categoria of post.metadata.tags">
+
+          <mat-icon class="post-categorias__icon" aria-hidden="false" aria-label="Example tag icon" fontIcon="sell"></mat-icon>
+            {{categoria.sys.id}}
+
+        </li>
+      </ul>
+      
+    </div>
+
+    <div class="post-shared">
+      <p class="post-shared__p headline-6">Comparte esta nota!</p>
+   
+      <share-buttons class="post-share" [theme]="'default'"
+      [include]="['facebook','twitter','telegram','messenger','whatsapp','sms','email','print','copy']"
+      [show]="5"
+      [showText]="true"
+      [title]="post.fields.title"
+      [description]="post.fields.imgArticle.fields.description"
+      [image]="post.fields.imgArticle.fields.file.url" 
+      ></share-buttons>
+    </div>
    </div>
-    <!-- [image]="post.fields.imgArticle.fields.file.url"
-  </div>
-  <a routerLink="/ayuda/blog" class="post-btn">
-    <i class="bx bx-left-arrow-circle post-btn__i"></i> Regresar
-  </a> -->
+
+   </div>
+
 </div>

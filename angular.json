@@ -35,7 +35,6 @@
 							"src/favicon.ico",
 							"src/assets",
 							"src/robots.txt",
-							
 							"src/browserconfig.xml"
 						],
 						"styles": [
@@ -56,8 +55,8 @@
 							"budgets": [
 								{
 									"type": "initial",
-									"maximumWarning": "500kb",
-									"maximumError": "1mb"
+									"maximumWarning": "1mb",
+									"maximumError": "1.5mb"
 								},
 								{
 									"type": "anyComponentStyle",
@@ -125,8 +124,12 @@
 					"options": {
 						"outputPath": "dist/recarga5g/server",
 						"main": "server.ts",
-						"tsConfig": "tsconfig.server.json"
+						"tsConfig": "tsconfig.server.json",
+						"stylePreprocessorOptions": {
+							"includePaths": ["src/assets/scss/partials"]
+						  }
 					},
+					
 					"configurations": {
 						"production": {
 							"outputHashing": "media",

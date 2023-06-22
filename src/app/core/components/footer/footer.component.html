@@ -28,19 +28,13 @@
 
                     <button mat-button [matMenuTriggerFor]="plataformas">Plataformas</button>
                     <mat-menu #plataformas="matMenu">
-                      <button mat-menu-item [matMenuTriggerFor]="pagaqui" >Pagaqui</button>
-                      <button mat-menu-item [matMenuTriggerFor]="planetaemx">Planetaemx</button>
+                      <button mat-menu-item routerLink="/plataforma/pagaqui">Pagaqui</button>
+                      <button mat-menu-item routerLink="/plataforma/planetaemx">Planetaemx</button>
                     </mat-menu>
                     
-                    <mat-menu #pagaqui="matMenu">
-                        <a mat-menu-item >Cuentas Bancarias</a>
-                        <a mat-menu-item>Manuales</a>
-                      </mat-menu>
+                  
 
-                      <mat-menu #planetaemx="matMenu">
-                        <a mat-menu-item href="/plataforma/planetaemx#cuentas-planetaemx">Cuentas Bancarias</a>
-                        <a mat-menu-item [routerLink]="['/plataforma/planetaemx']" fragment="cuentas-planetaemx">Manuales</a>
-                      </mat-menu>
+                    
                 </li>
 
                 <li class="footer__li footer-option">
@@ -128,26 +122,22 @@
 
             <ul class="social__ul">
                 <li class="social__li">
-                    <a href="https://www.facebook.com/recargas.electronicas.com.mx/" class="social__a" aria-label="Facebook" target="_blank" rel="noopener">
-                        <i class="bx bxl-facebook footer__i social__i"></i>
+                    <a href="https://www.facebook.com/recargas.electronicas.com.mx/"  matTooltip="Siguenos en Facebook" matTooltipPosition="above" class="social__a" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/img/social__facebook.png" class="social__img" width="35" height="35" loading="lazy" alt="red social recargas5g.com">
                     </a>
                 </li>
                 <li class="social__li">
-                    <a href="https://twitter.com/recargascelular" class="social__a" aria-label="Twiiter" target="_blank" rel="noopener">
-                        <i class="bx bxl-twitter footer__i social__i"></i>
+                    <a href="https://twitter.com/recargascelular" class="social__a"  matTooltip="Siguenos en Twitter" matTooltipPosition="above" aria-label="Twiiter" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/img/social__twitter.png" class="social__img" width="35" height="35" loading="lazy" alt="red social recargas5g.com">
                     </a>
                 </li>
                 <li class="social__li">
-                    <a href="https://www.instagram.com/recargascelular/" class="social__a" aria-label="Instagram" target="_blank" rel="noopener">
-                        <i class="bx bxl-instagram footer__i social__i">
-                        </i>
+                    <a href="https://www.instagram.com/recargascelular/" class="social__a"  matTooltip="Siguenos en Instagram" matTooltipPosition="above" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/img/social__instagram.png" class="social__img" width="35" height="35" loading="lazy" alt="red social recargas5g.com">
                     </a>
                 </li>
-                <li class="social__li">
-                    <a href="https://www.youtube.com/channel/UCkhtvMXYh2g4POHlvrXNgVQ?view_as=subscriber" class="social__a" aria-label="YouTube" target="_blank" rel="noopener">
-                        <i class="bx bxl-youtube footer__i social__i"></i>
-                    </a>
-                </li>
+               
+          
             </ul>
         </div>
     </div>

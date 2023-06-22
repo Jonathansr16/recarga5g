@@ -1,56 +1,54 @@
-@import "mixin";
+@import "_mixin";
 
 .app-plataformas {
+  &__h1 {
+    text-align: center;
+  }
 
-    &__h1 {
-        text-align: center;
-    }
-
-    &__container {
+  &__container {
     grid-template-columns: 1fr;
-}
+  }
 
-&-box {
+  &-box {
     @include grid(2, 1em);
 
     @include responsive(950px) {
-        grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
     }
-}
+  }
 
-&__options {
-    @include flexible(flex, row, wrap, center, center );
+  &__options {
+    @include flexible(flex, row, wrap, center, center);
     gap: 1em;
-}
-&__img {
+  }
+  &__img {
     max-width: 180px;
     height: 70px;
     object-fit: contain;
-}
+  }
 
-&__li {
+  &__li {
     margin-bottom: 20px;
     padding: 10px 0 10px 0px;
     counter-increment: mynumbers;
     position: relative;
 
     &:before {
-        content: counter(mynumbers);
-        font-size: 2em;
-        display: inline-block;
-        width: 35px;
-        height: 35px;
-        line-height: 35px;
-        border-radius: 50%;
-        text-align: center;
-        background-color: var(--c-light-primary);
-        color: var(--c-secondary);
-        margin-right: 8px;
+      content: counter(mynumbers);
+      font-size: 2em;
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      line-height: 35px;
+      border-radius: 50%;
+      text-align: center;
+      background-color: var(--c-light-primary);
+      color: var(--c-secondary);
+      margin-right: 8px;
     }
-}
+  }
 
-&-slide__img {
+  &-slide__img {
     height: 589px;
-}
-
+  }
 }

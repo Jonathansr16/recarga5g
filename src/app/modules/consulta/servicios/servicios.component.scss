@@ -1,54 +1,59 @@
+@import "_mixin";
 
-@import '_mixin';
-
-//* ============ SECCION WHY SERVICES ============ 
+//* ============ SECCION WHY SERVICES ============
 .why-services {
-    background-color: var(--c-light-secondary);
-    box-shadow: var(--shadow);
+  background-color: var(--c-light-secondary);
+  box-shadow: var(--shadow);
 
-    &__container {
-        grid-template-columns: 1fr;
-    }
+  &__container {
+    grid-template-columns: 1fr;
+  }
 
-    &__h2 {
-        text-align: center;
-        color: var(--c-primary);
-    }
+  &__h2 {
+    text-align: center;
+    color: var(--c-primary);
+  }
 
-    &__li {
-        @include flexible(flex, row, wrap, flex-start, center);
-        gap: 0.3em;
-        padding: 20px 0 15px 15px;
-    }
+  &__li {
+    @include flexible(flex, row, wrap, flex-start, center);
+    gap: 0.3em;
+    padding: 20px 0 15px 15px;
+  }
 
-    &__icon {
-        font-size: 40px;
-        height: 40px;
-        width: 40px;
-        border-radius: 50%;
-        text-align: center;
-        color: var(--c-primary);
-        line-height: 40px;
-    }
+  &__icon {
+    font-size: 40px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    text-align: center;
+    color: var(--c-primary);
+    line-height: 40px;
+  }
 
-    &__a {
-        display: block;
-        max-width: 350px;
-        text-align: center;
-        margin: 1.5em auto;
-    }
+  &__a {
+    display: block;
+    max-width: 350px;
+    text-align: center;
+    margin: 1.5em auto;
+  }
 }
 
+//* ============ SECCION RECIBO SERVICES ============
+.recibo-services {
+  &__img {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
-//* ============ SECCION DEVICES SERVICES ============ 
+//* ============ SECCION DEVICES SERVICES ============
 .devices-services {
-    &__container {
-        grid-template-columns: 1fr;
-    }
+  &__container {
+    grid-template-columns: 1fr;
+  }
 
-    &__h3 {
-        text-align: center;
-    }
+  &__h3 {
+    text-align: center;
+  }
 }
-
-//* ============ SECCION POLITICAS SERVICES ============ 

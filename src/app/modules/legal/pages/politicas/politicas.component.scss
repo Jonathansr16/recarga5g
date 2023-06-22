@@ -3,121 +3,117 @@
 //* ============ SECCION POLITICAS DEVOLUCIÓN RECARGA5G.COM ============
 
 .terminos {
-    &__container {
-        grid-template-columns: 1fr;
+  &__container {
+    grid-template-columns: 1fr;
+  }
+
+  &__h1 {
+    text-align: center;
+  }
+
+  &__h2 {
+    margin: 1em;
+    text-align: center;
+  }
+
+  &__li {
+    margin-bottom: 1.8em;
+    padding: 10px 0 10px 0px;
+    counter-increment: counterTerminos;
+    position: relative;
+
+    &::before {
+      content: counter(counterTerminos);
+      font-size: 2em;
+      width: 35px;
+      height: 35px;
+      display: inline-block;
+      line-height: 35px;
+      border-radius: 50%;
+      text-align: center;
+      background-color: var(--c-light-primary);
+      color: var(--c-secondary);
+      margin-right: 8px;
     }
+  }
 
-    &__h1 {
-         text-align: center;
-    }
-
-    &__h2 {
-        margin: 1em;
-        text-align: center;
-    }
-
-    &__li {
-        margin-bottom: 1.8em;
-        padding: 10px 0 10px 0px;
-        counter-increment: counterTerminos;
-        position: relative;
-
-        &::before {
-            content: counter(counterTerminos);
-            font-size: 2em;
-            width: 35px;
-            height: 35px;
-            display: inline-block;
-            line-height: 35px;
-            border-radius: 50%;
-            text-align: center;
-            background-color: var(--c-light-primary);
-            color: var(--c-secondary);
-            margin-right: 8px;
-          }
-    }
-
-
-        &__box {
-            background-color: var(--c-card);
-            padding: 1em;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-          }
-
-
+  &__box {
+    background-color: var(--c-card);
+    padding: 1em;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+  }
 }
 
 .terminos ::ng-deep span.mdc-tab__text-label {
-    color: var(--c-title);
+  color: var(--c-title);
 }
 
-::ng-deep .dark-theme .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
-    color: var(--c-primary);
+::ng-deep
+  .dark-theme
+  .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active
+  .mdc-tab__text-label {
+  color: var(--c-primary);
 }
-
-
 
 ::ng-deep .mat-mdc-tab-labels {
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 //* ============ SECCION DEVOLUCIONES RECARGAS | RECARGA5G.COM ============
-.dev-recargas{
-    &__container {
-        grid-template-columns: 1fr;
-    }
+.dev-recargas {
+  &__container {
+    grid-template-columns: 1fr;
+  }
 
-    &__h3 {
-        text-align: center;
-    }
+  &__h3 {
+    text-align: center;
+  }
 }
 
 .aplicacion {
-    &__container {
-        grid-template-columns: 1fr;
+  &__container {
+    grid-template-columns: 1fr;
+  }
+
+  &__h3 {
+    text-align: center;
+  }
+
+  &__content {
+    @include grid(2, 3em);
+    @include responsive(950px) {
+      grid-template-columns: 1fr;
     }
+  }
 
-    &__h3 {
-        text-align: center;
-    }
+  &__p--horario,
+  &__text,
+  &-aviso__h4 {
+    text-align: center;
+  }
 
-    &__content {
-        @include grid(2, 3em);
-        @include responsive(950px) {
-            grid-template-columns: 1fr;
-        }
-    }
+  &__p--horario {
+    @include flexible(flex, row, wrap, center, center);
+    gap: 0.5em;
+  }
+  &__p--2 {
+    text-align: justify;
+  }
 
-    &__p--horario, &__text, &-aviso__h4 {
-        text-align: center;
-    }
+  &__img {
+    max-width: 30px;
+  }
 
+  &-aviso__h4 {
+    color: var(--c-primary);
+    @include flexible(flex, row, wrap, center, center);
+    gap: 0.3em;
+  }
 
-    &__p--horario {
-        @include flexible(flex, row, wrap, center, center);
-        gap: .5em;
-    }
-    &__p--2 {
-        text-align: justify;
-    }
-
-    &__img {
-        max-width: 30px;
-    }
-
-    &-aviso__h4 {
-        color: var(--c-primary);
-        @include flexible(flex, row, wrap, center, center);
-        gap: .3em
-    }
-
-    &-aviso__img {
-        max-width: 45px;
-    }
-
-
+  &-aviso__img {
+    max-width: 45px;
+  }
 }
-
 
 //     &__content {
 //         background-color: var(--c-card);
@@ -138,8 +134,6 @@
 // .devoluciones__h1 {
 //     font-weight: var(--font-600);
 // }
-
-
 
 // .devoluciones-content__p {
 //     font-size: 1.2rem;
@@ -192,14 +186,12 @@
 //     padding: 0 1em;
 // }
 
-
 // /* ============ SECCION  DEVOLUCIONES RECARGAS ============  */
 
 // .devoluciones-recargas__p {
 //     line-height: 2;
 //     text-align: justify;
 // }
-
 
 // /* ============ SECCION  DEVOLUCIONES RECARGAS ============  */
 
@@ -237,7 +229,6 @@
 //     line-height: 2;
 // }
 
-
 // /* ============ SECCION  POLITICAS APLICACION ============  */
 
 // .p-aplicacion__p {
@@ -261,7 +252,6 @@
 // .p-aplicacion-item__number:before {
 //     background-color: hsla(2, 90%, 46%, 0.22);
 // }
-
 
 // /* ============ SECCION  TERMINOS SERVICIOS  ============  */
 

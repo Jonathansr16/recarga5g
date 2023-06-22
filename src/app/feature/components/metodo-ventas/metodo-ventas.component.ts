@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChildren, ElementRef, Inject, PLATFORM_ID,  QueryList, } from '@angular/core';
+import { Component, OnInit, ViewChildren, ElementRef, Inject, PLATFORM_ID, QueryList, Renderer2 } from '@angular/core';
 
 import { MetodosVentaService } from '@core/services/metodos-venta.service';
 import { metodosVentaModel } from '@core/models/metodos-venta.model';
@@ -19,6 +19,7 @@ export class MetodoVentasComponent implements OnInit{
 
   constructor(private _metodosService: MetodosVentaService, 
               @Inject(DOCUMENT) private document: Document, 
+              private renderer2: Renderer2,
               @Inject(PLATFORM_ID) private plataform_id: Object) {}
 
   ngOnInit(): void {
@@ -41,13 +42,15 @@ this.blockScrollDocument();
 
   blockScrollDocument():void {
     if (isPlatformBrowser(this.plataform_id)) {
-         this.document.body.classList.add('blockScrollModal');
+      this.renderer2.addClass(this.document.body, 'blockScrollModal')
+        //  this.document.body.classList.add('blockScrollModal');
        }
   }
 
   unblockScrollDocument():void {
     if (isPlatformBrowser(this.plataform_id)) {
-      this.document.body.classList.remove('blockScrollModal');
+      this.renderer2.removeClass(this.document.body, 'blockScrollModal')
+      // this.document.body.classList.remove('blockScrollModal');
     }
   }
 }

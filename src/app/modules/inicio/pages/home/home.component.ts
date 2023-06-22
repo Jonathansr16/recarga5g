@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, ViewChildren, QueryList, OnChanges, SimpleChanges } from '@angular/core';
 
 import { Meta, Title } from '@angular/platform-browser';
 
@@ -77,9 +77,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.metodosVenta = this._metodosService.getmetodosVenta();
     this.stepsRegister = this._stepsService.getStepsHome();
 
+    this.linkService.removeCanonicalLink();
+    this.linkService.addTag( { rel: 'canonical', href: 'https://recarga5g.com/'} );
+
+
     this._metaTagService.generateTags({
     ...this.tag
     }); 
+
   
   }
 

@@ -31,6 +31,7 @@ export class PostComponent implements OnInit {
     this.post$ = this.contentful.getPost(this.id);
     this.post$?.subscribe(data => {
       
+      console.log(data)
       this.meta.generateTags({
         title: data.fields.title,
         description: data.fields.summary,

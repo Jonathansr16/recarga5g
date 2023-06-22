@@ -1,102 +1,90 @@
-@import '_mixin';
+@import "_mixin";
 
-
-
-//* ============ SECCION CONSULTA RECARGAS ============ 
+//* ============ SECCION CONSULTA RECARGAS ============
 .consulta-recargas {
-    &__container {
-        grid-template-columns: 1fr;
-        background-color: var(--c-body);
+  &__container {
+    grid-template-columns: 1fr;
+    background-color: var(--c-body);
+  }
 
-    }
+  &__h1 {
+    text-align: center;
+  }
 
-    &__h1 {
-        text-align: center;
+  &__content {
+    @include grid(2, 1em);
+    @include responsive(950px) {
+      grid-template-columns: 1fr;
     }
+  }
 
-    &__content {
-        @include grid(2, 1em);
-        @include responsive(950px) {
-            grid-template-columns: 1fr;
-        }
-    }
+  &__a {
+    color: var(--c-primary);
+  }
 
-    &__a {
-        color: var(--c-primary);
-    }
+  &__img {
+    max-width: 550px;
+  }
 
-    &__img {
-        max-width: 550px;
-    }
-
-    &__registro {
-        color: var(--c-primary);
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  &__registro {
+    color: var(--c-primary);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
-
-
-//* ============ SECCION PORQUE VENDER RECARGAS ============ 
+//* ============ SECCION PORQUE VENDER RECARGAS ============
 .recargas-why {
-    
-    &__container {
-        grid-template-columns: 1fr;
-    }
+  &__container {
+    grid-template-columns: 1fr;
+  }
 
-    &__h2 {
-        text-align: center;
-    }
+  &__h2 {
+    text-align: center;
+  }
 
-    &__content {
-        @include grid(2, 1em);
-        @include responsive(950px) {
-            grid-template-columns: 1fr;
-        }
+  &__content {
+    @include grid(2, 1em);
+    @include responsive(950px) {
+      grid-template-columns: 1fr;
     }
+  }
 
-    &__li {
-        display: inline-flex;
-        gap: 0.3em;
-        padding: 0 0 20px 8px;
+  &__li {
+    display: inline-flex;
+    gap: 0.3em;
+    padding: 0 0 20px 8px;
+  }
+
+  &__right {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  &__img {
+    max-width: 500px;
+  }
+}
+
+//* ============ SECCION RECARGAS NACIONALES ============
+.recargas-nacionales {
+  &__actions {
+    @include flexible(flex, row, wrap, center, center);
+    gap: 2em;
+  }
+}
+
+// //* ============ SECCION REGISTER STEPS RECARGAS ============
+.register-recargas {
+  @include responsive(950px) {
+    &__left {
+      order: 3;
     }
 
     &__right {
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-
+      order: 2;
     }
-
-    &__img {
-        max-width: 500px;
-    }
+  }
 }
-
-
-//* ============ SECCION RECARGAS NACIONALES ============ 
-.recargas-nacionales {
-    &__actions {
-        @include flexible(flex, row, wrap, center, center);
-        gap: 2em;
-    }
-}
-
-// //* ============ SECCION REGISTER STEPS RECARGAS ============ 
-.register-recargas {
-    
-    @include responsive(950px) {
-
-        &__left {
-            order: 3;
-        }
-    
-        &__right {
-    order: 2;
-        }
-    }
-    
-}
-

@@ -3,22 +3,19 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AyudaRoutingModule } from '@ayuda/ayuda-routing.module';
 import { MarkdownPipe } from '@core/pipes/markdown.pipe';
-
-//AYUDA
+//* COMPONENT
 import { ContactoComponent } from '@ayuda/pages/contacto/contacto.component';
 import { FaqsComponent } from '@ayuda/pages/faqs/faqs.component';
 import { BlogComponent } from '@ayuda/pages/blog/blog.component';
 import { PostComponent } from '@ayuda/pages/post/post.component';
 
-//PAGINATION
+//* MODULES
 import {NgxPaginationModule} from 'ngx-pagination';
 import { MaterialModule } from '@shared/material/material.module';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatInputModule } from '@angular/material/input';
-
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+import { NoImageDirective } from '@core/directives/no-image.directive';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -26,7 +23,8 @@ import { ShareIconsModule } from 'ngx-sharebuttons/icons';
     FaqsComponent,
     BlogComponent,
     PostComponent,
-    MarkdownPipe
+    MarkdownPipe,
+    NoImageDirective
   ],
   imports: [
     CommonModule,
@@ -34,9 +32,7 @@ import { ShareIconsModule } from 'ngx-sharebuttons/icons';
     AyudaRoutingModule,
     NgxPaginationModule,
     MaterialModule,
-    ReactiveFormsModule,
-    MatNativeDateModule,
-    MatInputModule,
+    MatExpansionModule,
     ShareButtonsModule.withConfig({
       debug: true
     }),

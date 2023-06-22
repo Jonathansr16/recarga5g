@@ -1,8 +1,6 @@
 import { Component, ElementRef,  OnInit,  QueryList, ViewChild, ViewChildren, AfterViewInit, Renderer2 } from '@angular/core';
 
 import { Title } from '@angular/platform-browser';
-import { ContentfulService } from '@ayuda/services/contentful.service';
-import { FaqsService, faqHead } from '@ayuda/services/faqs.service';
 import { metaTagModel } from '@core/models/meta-tag.model';
 import { MetaTagService } from '../../../../core/services/meta-tag.service';
 
@@ -10,7 +8,7 @@ import { MetaTagService } from '../../../../core/services/meta-tag.service';
   selector: 'app-faqs',
   templateUrl: './faqs.component.html',
   styleUrls: ['./faqs.component.scss'],
-  providers: [ContentfulService, FaqsService]
+
 })
 export class FaqsComponent implements OnInit, AfterViewInit {
 
@@ -19,7 +17,7 @@ export class FaqsComponent implements OnInit, AfterViewInit {
   @ViewChildren('autocompleteLi') _autocompleteLi? : QueryList<ElementRef>
   panelOpenState = false;
   item: number =0;
-  itemFaq: faqHead[] = [];
+
 
     //? META TAG
     tag: metaTagModel = {
@@ -34,12 +32,12 @@ export class FaqsComponent implements OnInit, AfterViewInit {
     }
   
 
-  constructor( private titleFaq: FaqsService,private readonly renderer2: Renderer2, private readonly title: Title, private metaTagService: MetaTagService) { }
+  constructor(private readonly renderer2: Renderer2, private readonly title: Title, private metaTagService: MetaTagService) { }
 
   ngOnInit(): void {
 
     this.title.setTitle('Recarga5g.com | Consulta las preguntas mas frecuentes y resuelve todas tus dudas para vender recargas, pago de servicios y pines electrónicos');
-   this.itemFaq= this.titleFaq.gettitleFaqs();
+
 
 this.metaTagService.generateTags({
     ...this.tag

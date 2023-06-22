@@ -53,6 +53,7 @@ body {
     line-height: 1.5;
     font-size: 1rem;
     font-family: 'poppinsRegular', sans-serif;
+ 
 }
 
 
@@ -261,12 +262,16 @@ font-family: 'PoppinsRegular';
 
 ::-webkit-scrollbar {
     width: 0.8rem;
+    scrollbar-width: auto;
     border-radius: 0.5rem;
     background-color: hsl(228, 8%, 76%);
+    
+
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: var(--c-secondary);
+   
 }
 
 ::-webkit-scrollbar-thumb:hover {

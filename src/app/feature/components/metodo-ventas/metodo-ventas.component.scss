@@ -1,144 +1,133 @@
 @import "_mixin";
+
 //* ============ SECCION METODOS ============
 .cards {
-    position: relative;
-    @include grid(3, 1em);
+  position: relative;
+  @include grid(3, 1em);
 
-    @include responsive(958px) {
-        grid-template-columns: 2fr;
-    }
+  @include responsive(958px) {
+    grid-template-columns: 2fr;
+  }
 
-    @include responsive(568px) {
-        grid-template-columns: 1fr;
-    }
+  @include responsive(568px) {
+    grid-template-columns: 1fr;
+  }
 }
 
-
 .card {
-    background-color: var(--c-card);
-    border-radius: 10px;
-    padding: 0.8em 1.5em;
-  }
-  
-   .card-content{
-      &__h3 {
-          text-align: center;
-        }
-      
-      &__p {
-          margin-bottom: 1.5em;
-      }
-      
-      &__button {
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-      }
+  background-color: var(--c-card);
+  border-radius: 10px;
+  padding: 0.8em 1.5em;
+}
 
-      &__img {
-        max-width: 370px;
-        max-height: 370px;
-      }
-    }
-  
+.card-content {
+  &__h3 {
+    text-align: center;
+  }
+
+  &__p {
+    margin-bottom: 1.5em;
+  }
+
+  &__button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__img {
+    max-width: 370px;
+    max-height: 370px;
+  }
+}
 
 .modal {
-    z-index: 8;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(19, 39, 57, 0.5);
-   visibility: hidden;
-   opacity: 0;
-    transition: .3s ease;
-  
+  z-index: 8;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(19, 39, 57, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease;
 }
 
 .modal.activeModal {
-   visibility: visible;
-   opacity: 1;
-  
+  visibility: visible;
+  opacity: 1;
 }
 
-
-.modal.activeModal  .modal-card {
-    transform: translateY(-50px);
+.modal.activeModal .modal-card {
+  transform: translateY(-50px);
 }
 
 .modal-card {
-    position: relative;
-    @include flexible(flex, column, nowrap, flex-start, flex-start);
-    max-width: 800px;
-    width: 100%;
-    height: auto;
-    margin: 20px;
-    background-color: var(--c-card);
-    border-radius: 10px;
-    padding: 1.5em 1.8em;
-    transform: translateY(0px);
-    transition: .5s ease;
+  position: relative;
+  @include flexible(flex, column, nowrap, flex-start, flex-start);
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  margin: 20px;
+  background-color: var(--c-card);
+  border-radius: 10px;
+  padding: 1.5em 1.8em;
+  transform: translateY(0px);
+  transition: 0.5s ease;
 
-&__icon {
+  &__icon {
     position: absolute;
     top: 20px;
     right: 20px;
     cursor: pointer;
     color: var(--c-title);
-}
+  }
 }
 
 .modal-head {
-    // background-color: lightgoldenrodyellow;
-    width: 100%;
-    margin-bottom: 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
-    &__img {
-        width: 90px;
-        height: 90px;
-        // background-color: lavender;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  &__img {
+    width: 90px;
+    height: 90px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .modal-separator {
-    border: 1px solid gray;
+  border: 1px solid gray;
 }
 
 .modal-body {
-    // background-color: lightblue;
-    width: 100%;
+  width: 100%;
 
-    &__icon {
-        font-size: 28px;
-        width: 39px;
-        height: auto;
-        background-color: var(--c-light-primary);
-        border-radius: 10px;
-        color: var(--c-secondary);
-        padding: 0.2em;
-    }
+  &__icon {
+    font-size: 28px;
+    width: 39px;
+    height: auto;
+    background-color: var(--c-light-primary);
+    border-radius: 10px;
+    color: var(--c-secondary);
+    padding: 0.2em;
+  }
 }
 
-.modal-footer{
-    // background-color: lightpink;
-    @include flexible(flex, row, wrap, flex-end, flex-end );
-    gap: 1.5em;
-    width: 100%;
-    height: 100%;
+.modal-footer {
+  @include flexible(flex, row, wrap, flex-end, flex-end);
+  gap: 1.5em;
+  width: 100%;
+  height: 100%;
 }
-
-
-
 
 .modal-body__li {
-    @include flexible(flex, row, nowrap, flex-start, center );
-    gap: .5em;
-    padding-bottom: 1.25em;
+  @include flexible(flex, row, nowrap, flex-start, center);
+  gap: 0.5em;
+  padding-bottom: 1.25em;
 }

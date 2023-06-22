@@ -1,90 +1,89 @@
-.floating{
-    position: fixed;
-    bottom: 100px;
-    left: 50px;
-    height: 100px;
-    display: grid;
-    place-items: center;
-    z-index: 7;
+.floating {
+  position: fixed;
+  bottom: 100px;
+  left: 50px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  z-index: 7;
 
-    &__container{
-        position: relative;
+  &__container {
+    position: relative;
+  }
+
+  &__toggle,
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--c-secondary);
+  }
+
+  &__toggle {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(0.95);
     }
+  }
 
-    &__toggle,
-    &__icon{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        background-color: var(--c-secondary);
+  &__icon {
+    transition: transform 0.8s ease-in-out;
+  }
+
+  &__icon {
+    color: #fff;
+  }
+
+  &__img {
+    width: 35px;
+    height: 35px;
+  }
+
+  &__link {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.8s ease-in-out, opacity 0.6s;
+    z-index: 1;
+
+    &:nth-child(1) {
+      transition-delay: 0.1s;
     }
-
-    &__toggle{
-        width: 50px;
-        height: 50px;
-        font-size: 2rem;
-        color: #fff;
-        position: relative;
-        cursor: pointer;
-        transition: transform .3s;
-
-        &:hover{
-          
-            transform: scale(.95);
-        }
+    &:nth-child(2) {
+      transition-delay: 0.2s;
     }
-
-    &__icon {
-        transition: transform .8s ease-in-out;
+    &:nth-child(3) {
+      transition-delay: 0.3s;
     }
-
-    &__icon {
-        color: #fff;
-    }
-
-    &__img{
-        width: 35px;
-        height: 35px;
-    }
- 
-    &__link{
-        position: absolute;
-        inset: 0;
-        margin: auto;
-        opacity: 0;
-        pointer-events: none;
-        transition: transform .8s ease-in-out, opacity .6s;
-        z-index: 1;
-
-        &:nth-child(1){
-           transition-delay: .1s;
-        }
-        &:nth-child(2){
-            transition-delay: .2s;
-        }
-        &:nth-child(3){
-            transition-delay: .3s;
-        }
-    }
+  }
 }
 
-//* Rotate toggle 
-.active.floating__toggle i{
-    transform: rotate(135deg);
+//* Rotate toggle
+.active.floating__toggle i {
+  transform: rotate(135deg);
 }
 
 //* Move icons
-.active ~ ul .floating__link{
-    opacity: 1;
-    pointer-events: auto;
+.active ~ ul .floating__link {
+  opacity: 1;
+  pointer-events: auto;
 }
-.active ~ ul .floating__link:nth-child(1){
-    transform: translate(3.8rem, -5rem);
+.active ~ ul .floating__link:nth-child(1) {
+  transform: translate(3.8rem, -5rem);
 }
-.active ~ ul .floating__link:nth-child(2){
-    transform: translate(5.5rem);
+.active ~ ul .floating__link:nth-child(2) {
+  transform: translate(5.5rem);
 }
-.active ~ ul .floating__link:nth-child(3){
-    transform: translate(3.5rem, 3.5rem);
+.active ~ ul .floating__link:nth-child(3) {
+  transform: translate(3.5rem, 3.5rem);
 }

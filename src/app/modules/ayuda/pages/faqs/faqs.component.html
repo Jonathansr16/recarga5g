@@ -1,4 +1,4 @@
-<div class="ayuda">
+<div class="ayuda  wow animate__animated animate__fadeInUp">
     <div class="banner wrapper-faqs ayuda__container container">
         <div class="wrapper-faqs-content">
             <span class="badge wrapper__badge badge-1 headline-5">Centro de ayuda para vender recargas
@@ -21,7 +21,7 @@
             <div class="wrapper-search">
                 <ul class="search__ul">
                     <li class="search__li">
-                        <input #autocompleteInput type="text" id="search" class="form__input" placeholder="Buscar..." />
+                        <input #autocompleteInput type="text" id="search" autocomplete="off" class="form__input" placeholder="Buscar..." />
 
                         <ul #autocompleteUl class="autocomplete-list" id="autocomplete">
                             <!-- PREGUNTAS GENERALES -->
@@ -127,22 +127,8 @@
                     </li>
                 </ul>
 
-                <!-- <form class="example-form" >
-                    <mat-form-field class="example-full-width">
-                        <mat-label>Buscar..</mat-label>
-                        <input type="text"
-                               placeholder="Pick one"
-                               aria-label="Number"
-                               matInput
-                               [formControl]="formControl"
-                               [matAutocomplete]="auto">
-                        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-                          <mat-option *ngFor="let option of filteredOptions | async" [value]="option.title">
-                            {{option.title}}
-                          </mat-option>
-                        </mat-autocomplete>
-                      </mat-form-field>
-                </form> -->
+
+                 
             </div>
         </div>
     </div>
@@ -196,10 +182,12 @@
                             </mat-panel-title>
                         </mat-expansion-panel-header>
                         <p class="faqs-expansion-panel-body__p body-1">
-                            Ofrecemos +200 compañias de servicios y recargas electrónicas
+                            Ofrecemos +200 compañías de servicios y recargas electrónicas
                             disponibles en México:
-                            <a href="https://telmex.com/" class="faqs-expansion-panel-body__a body-1" target="_blank"
-                                rel="noopener noreferrer">Telmex</a>, Izzi, CFE, Telcel, Movistar, Unefon, Virgin
+                            <a href="https://telmex.com/" class="faqs-expansion-panel-body__a body-1" target="_blank" rel="noopener noreferrer">Telmex</a>, 
+                            <a href="https://www.izzi.mx/home" class="faqs-expansion-panel-body__a body-1" target="_blank" rel="noopener noreferrer">Izzi</a>, 
+                            <a href="https://www.cfe.mx/Pages/default.aspx" class="faqs-expansion-panel-body__a body-1" target="_blank" rel="noopener noreferrer">CFE</a>, 
+                            <a href="https://www.telcel.com/" class="faqs-expansion-panel-body__a body-1" target="_blank" rel="noopener noreferrer">Telcel</a>, Movistar, Unefon, Virgin
                             Mobile, Bait, OUI,
                             WEEX, Pillofon, AT&T, TotalPlay, Google Play, Netflix, Steam y
                             muchos mas!!
@@ -617,7 +605,7 @@
                         <mat-expansion-panel-header>
                             <mat-panel-title>
                                 <h3 class="faqs-expansion-panel-head__h3" #item22>
-                                    ¿En dónde reporto mis depositos en Pagaqui?
+                                    ¿En dónde reporto mis depósitos en Pagaqui?
                                 </h3>
                             </mat-panel-title>
                         </mat-expansion-panel-header>
@@ -897,7 +885,7 @@
                         <mat-expansion-panel-header>
                             <mat-panel-title>
                                 <h3 class="faqs-expansion-panel-head__h3" #item32>
-                                    ¿En dónde reporto mis depositos en Planetaemx?
+                                    ¿En dónde reporto mis depósitos en Planetaemx?
                                 </h3>
                             </mat-panel-title>
                         </mat-expansion-panel-header>

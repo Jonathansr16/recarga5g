@@ -49,7 +49,7 @@ export class RegisterStepsService {
                 {
                     img: "assets/img/register-registro.png",
                     alt: "registro para la venta de recargas con Pagaqui sin costo alguno",
-                    description: "Registrate para vender recargas con Pagaqui",
+                    description: "Regístrate para vender recargas con Pagaqui",
         
                 },
         
@@ -63,14 +63,14 @@ export class RegisterStepsService {
                 {
                     img: "assets/img/register-deposito.png",
                     alt: "Notificiación de depositos Pagaqui",
-                    description: "Deposita y notifica tus depositos Pagaqui en la plataforma",
+                    description: "Deposita y notifica tus depósitos Pagaqui en la plataforma",
         
                 },
         
                 {
                     img: "assets/img/register-ganancias.png",
                     alt: "Genera ingresos extras veniendo recargas con pagaqui",
-                    description: "Listo! podras generar ganancias por cada venta que realices",
+                    description: "¡Listo! podrás generar ganancias por cada venta que realices",
         
                 }
             ]
@@ -84,28 +84,28 @@ export class RegisterStepsService {
             {
                 img: "assets/img/register-registro.png",
                 alt: "registro para la venta de recargas con Planetaemx sin costo alguno",
-                description: "Registrate para vender recargas con Planetaemx",
+                description: "Regístrate para vender recargas con Planetaemx.",
     
             },
     
             {
                 img: "assets/img/register-correo.png",
                 alt: "Ingresa a Planetaemx con los datos de acceso que podras encontrar en el correo de bienvenida",
-                description: "Espera nuestro correo con tus datos de acceso",
+                description: "Espera nuestro correo con tus datos de acceso.",
     
             },
     
             {
                 img: "assets/img/register-deposito.png",
                 alt: "Notificiación de depositos Planetaemx",
-                description: "Deposita y notifica tus depositos Planetaemx en la plataforma",
+                description: "Deposita y notifica tus depósitos Planetaemx en la plataforma.",
     
             },
     
             {
                 img: "assets/img/register-ganancias.png",
                 alt: "Genera ingresos extras por cada deposito que reportes",
-                description: "Listo! podras generar ganancias por cada deposito que realices y notifiques",
+                description: "¡Listo! podrás generar ganancias por cada deposito que realices y notifiques.",
     
             }
         ]
@@ -119,7 +119,7 @@ export class RegisterStepsService {
                 {
                     img: "assets/img/register-registro.png",
                     alt: "registro para la venta de recargas nacional sin costo alguno",
-                    description: "Registrate para vender recargas multiregión",
+                    description: "Regístrate para vender recargas multirregión",
         
                 },
         
@@ -133,14 +133,14 @@ export class RegisterStepsService {
                 {
                     img: "assets/img/register-deposito.png",
                     alt: "Notificiación tu deposito en la plataforma",
-                    description: "Deposita y notifica tus depositos en la plataforma",
+                    description: "Deposita y notifica tus depósitos en la plataforma",
         
                 },
         
                 {
                     img: "assets/img/register-ganancias.png",
                     alt: "Genera ingresos extras veniendo recargas con | Recarga5g.com",
-                    description: "Listo! podras generar ganancias por la venta de tus recargas",
+                    description: "¡Listo! podrás generar ganancias por la venta de tus recargas",
         
                 }
             ]
@@ -153,7 +153,7 @@ export class RegisterStepsService {
         {
             img: "assets/img/register-registro.png",
             alt: "registro para la venta de recargas sin costo alguno",
-            description: "Registrate para vender recargas a cualquier compañia",
+            description: "Regístrate para vender recargas a cualquier compañía",
 
         },
 
@@ -167,14 +167,14 @@ export class RegisterStepsService {
         {
             img: "assets/img/register-deposito.png",
             alt: "Notificiación de depositos",
-            description: "Deposita y notifica tus depositos en la plataforma",
+            description: "Deposita y notifica tus depósitos en la plataforma",
 
         },
 
         {
             img: "assets/img/register-ganancias.png",
             alt: "Genera ingresos extras veniendo recargas",
-            description: "Listo! podras generar ganancias por cada venta que realices",
+            description: "¡Listo! podrás generar ganancias por cada venta que realices",
 
         }
     ]
@@ -189,7 +189,7 @@ export class RegisterStepsService {
                 {
                     img: "assets/img/register-registro.png",
                     alt: "registro para la venta de tarjetas de regalo",
-                    description: "Registrate para vender tarjetas de regalo",
+                    description: "Regístrate para vender tarjetas de regalo",
         
                 },
         
@@ -203,14 +203,14 @@ export class RegisterStepsService {
                 {
                     img: "assets/img/register-deposito.png",
                     alt: "Notificiación de depositos Pagaqui",
-                    description: "Deposita y notifica tus depositos para saldo de servicios",
+                    description: "Deposita y notifica tus depósitos para saldo de servicios",
         
                 },
         
                 {
                     img: "assets/img/register-ganancias.png",
                     alt: "Genera ingresos extras veniendo tarjetas",
-                    description: "Listo! podras generar ganancias por cada venta de pin electrónico",
+                    description: "¡Listo! podrás generar ganancias por cada venta de pin electrónico",
         
                 }
             ]

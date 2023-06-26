@@ -29,7 +29,7 @@ export class PinesComponent implements OnInit{
       keywords: "como vender tarjetas de regalo, tarjeta de regalo, tarjeta de regalo amazon, pines electrónicos, como vender pines electrónicos, vender pines, vender pines electrónicos, google play, google play tarjetas, vender tarjetas de regalo, spotify",
       url: "recarga5g.com/consulta/pines",
       type: "website",
-      image: "/assets/img/Venta-recargas.png",
+      image: "https://recarga5g.com/Venta-recargas.png",
       card: "summary_large_image",
       creator: "@recargascelular"
     }

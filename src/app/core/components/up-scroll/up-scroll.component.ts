@@ -1,4 +1,4 @@
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Component, HostListener,  Inject, PLATFORM_ID, } from '@angular/core';
 
 @Component({
@@ -16,22 +16,29 @@ export class UpScrollComponent {
   @HostListener('window: scroll')
   scrollUp(): void {
 
+    if (isPlatformBrowser(this.plataform_id)) { 
+
     const scrollPosition = window.scrollY|| this.document.documentElement.scrollTop || this.document.body.scrollTop || 0;
 
- 
     if(scrollPosition >= this.topPosToStartShowing) {
       this.activeScroll = true;
     } else {
       this.activeScroll = false
     }
+    }
+
    }
 
    gotoTop() {
-    window.scroll({ 
-      top: 0, 
-      left: 0, 
-      behavior: 'smooth' 
-    });
+
+    if (isPlatformBrowser(this.plataform_id)) { 
+
+      window.scroll({ 
+        top: 0, 
+        left: 0, 
+        behavior: 'smooth' 
+      });
+    }
   }
 
 

@@ -41,8 +41,6 @@ export class ContentfulService {
     return from (this.cdaClient.getEntry(id));
   }
 
-
-
   markdownToHtml(md: any) {
     return marked(md)
   }

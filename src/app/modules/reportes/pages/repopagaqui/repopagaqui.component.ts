@@ -16,7 +16,7 @@ export class RepopagaquiComponent implements OnInit {
       keywords: "Notificación de depósito Pagaqui, Reporte de deposito para vender recargas Pagaqui",
       url: 'recarga5g.com/plataforma/reportePagaqui',
       type: 'website',
-      image: '/assets/img/Venta-recargas.png',
+      image: 'https://recarga5g.com/Venta-recargas.png',
       card: 'summary_large_image',
       creator: '@recargascelular'
      }

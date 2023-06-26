@@ -27,7 +27,7 @@ export class BlogComponent implements OnInit {
     keywords: 'Promociones Telcel, Promociones Bait, Avisos Recarga5g.com, Blog Recarga5g.com, Recarga5g, Recarga5g.com, articulos Recarga5g.com',
     url: 'recarga5g.com/ayuda/blog',
     type: 'website',
-    image: '/assets/img/Venta-recargas.png',
+    image: 'https://recarga5g.com/Venta-recargas.png',
     card: 'summary_large_image',
     creator: '@recargascelular',
   }
@@ -39,7 +39,6 @@ export class BlogComponent implements OnInit {
     
     this.contenfulService.getPosts().then((posts: any) => {
       this.posts$= posts
-      console.log(posts)
     });
 
     this.meta.generateTags({

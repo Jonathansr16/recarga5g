@@ -6,14 +6,18 @@ import { NofoundComponent } from '@core/components/not-found/not-found.component
 
 const routes: Routes = [
 
-  { path: '', component: HomeComponent },
+  { 
+    path: '', 
+    component: HomeComponent },
   
+  { 
+    path: '', 
+    redirectTo: '/', pathMatch: 'full' },
   {
-    path: 'registro', component: RegistroComponent
+    path: 'registro', 
+    component: RegistroComponent
   },
   
-  { path: '', redirectTo: '/', pathMatch: 'full' },
- 
 
   {
     path: 'plataforma',
@@ -43,8 +47,8 @@ const routes: Routes = [
   },
 
   // NOT FOUND 
-  { path: '**', redirectTo: '/Error/404'},
   { path: '**', component: NofoundComponent, pathMatch: 'full'},
+  { path: '**', redirectTo: '/Error/404'},
 ];
 
 @NgModule({

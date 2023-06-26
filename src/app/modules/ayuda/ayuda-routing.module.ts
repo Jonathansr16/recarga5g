@@ -9,7 +9,7 @@ const routes: Routes = [
      { path: 'faqs', component: FaqsComponent },
       { path: 'contacto', component: ContactoComponent },
       { path: 'blog', component: BlogComponent },
-      { path: 'blog/article/:id', component: PostComponent },
+      { path: 'blog/article/:id', component: PostComponent, data: { prerender: true } },
       { path: '**', redirectTo: '/Error/404'}
     
 ];

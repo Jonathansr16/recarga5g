@@ -17,7 +17,7 @@ export class CondicionesComponent implements OnInit {
   keywords: 'Condiciones para venta de recargas, condiciones para vender tiempo aire, Recarga5g.com, telcel, venta de recargas telcel',
   url: 'recarga5g.com/legal/condiciones',
   type: 'website',
-  image: '/assets/img/Venta-recargas.png',
+  image: 'https://recarga5g.com/Venta-recargas.png',
   card: 'summary_large_image',
   creator: '@recargascelular',
  }

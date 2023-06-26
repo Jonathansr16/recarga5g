@@ -60,7 +60,7 @@ import { Inject, Injectable, RendererFactory2 } from "@angular/core";
                 styles: [],
                 data: {}
             });
-            const canonical = document.querySelector("link[rel='canonical']")
+            const canonical = this.document.querySelector("link[rel='canonical']")
             const head = this.document.head;
 
             if (head === null) {

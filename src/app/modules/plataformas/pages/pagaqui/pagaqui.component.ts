@@ -55,7 +55,7 @@ export class PagaquiComponent implements OnInit, AfterViewInit{
     type: "website",
     card: "summary_large_image",
     creator: "@recargascelular",
-    image: "/assets/img/Venta-recargas.png",
+    image: "https://recarga5g.com/Venta-recargas.png",
   }
 
 

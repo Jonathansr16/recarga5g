@@ -30,7 +30,7 @@ export class ServiciosComponent implements OnInit{
     keywords: "como vender pago de servicios, pago de servicio telmex, cobro por recibo telmex, pago de servicio izzi, cobro por recibo izzi, cobro de recibo, pago de servicios, Pago de recibo de luz, cobro de recibo de luz, recibo CFE",
     url: "recarga5g.com/consulta/servicios",
     type: "website",
-    image: "/assets/img/Venta-recargas.png",
+    image: "https://recarga5g.com/Venta-recargas.png",
     card: "summary_large_image",
     creator: "@recargascelular"
   }

@@ -31,7 +31,7 @@ export class RecargasComponent implements OnInit {
     keywords: "como vender recargas, como vender recargas electrónicas, como vender recargas telefonicas, vende recargas telcel, venta de recargas, vender recargas, vender recarga telce, telcel, bait, recargas bait, como vender recargas bait, pillofon, como vender recargas pillofon",
     url: "recarga5g.com/consulta/recargas",
     type: "website",
-    image: "/assets/img/Venta-recargas.png",
+    image: "https://recarga5g.com/Venta-recargas.png",
     card: "summary_large_image",
     creator: "@recargascelular"
   }

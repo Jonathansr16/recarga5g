@@ -16,7 +16,7 @@ export class RepoplanetaemxComponent implements OnInit {
     keywords: 'Notificación de depositos para venta de recargas, reporte de depositos para vender recargas, Reporte de deposito planetaemx, Reporte de deposito Recargaki, Notificación de depósito Planetaemx, notificación de depósito Recargaki, Recarga5g.com',
     url: 'recarga5g.com/reporte/reportePlanetaemx',
   type: 'website',
-  image: '/assets/img/Venta-recargas.png',
+  image: 'https://recarga5g.com/Venta-recargas.png',
   card: 'summary_large_image',
   creator: '@recargascelular',
   }

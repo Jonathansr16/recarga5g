@@ -17,7 +17,7 @@ export class ContactoComponent implements OnInit {
       keywords: "Contacto para venta de recargas, Contacto Pagaqui, Contacto Planetaemx, Contacto Recargaki, Contacto recargas electrónicas, Recarga5g.com, Contacto para vender recargas elecrtrónicas con excelentes comisiones",
       url: "recarga5g.com/ayuda/contacto",
       type: "website",
-      image: "/assets/img/Venta-recargas.png",
+      image: "https://recarga5g.com/Venta-recargas.png",
       card: "summary_large_image",
       creator: "@recargascelular"
     }

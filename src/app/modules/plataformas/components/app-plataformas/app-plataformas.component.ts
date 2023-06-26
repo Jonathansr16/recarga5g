@@ -1,8 +1,9 @@
-import { Component, ViewChild, ElementRef, Input, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, Input, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 
 
 //*Librerias externas importadas
 import { Swiper, Autoplay, Pagination, Navigation, SwiperOptions, EffectFade } from 'swiper';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
     selector: 'app-plataformas',
@@ -27,12 +28,17 @@ export class AppPlataformasComponent implements AfterViewInit{
     
     }
 
-    ngAfterViewInit(): void {
+    constructor( @Inject(PLATFORM_ID) private plataform_id: Object) {
+
+    }
+        ngAfterViewInit(): void {
         this.carouselAppPlataformas();
     }
 
     carouselAppPlataformas(): void {
-        const app = this.carousel?.nativeElement;
-        new Swiper(app, this.config);
+        if (isPlatformBrowser(this.plataform_id)) {
+            const app = this.carousel?.nativeElement;
+            new Swiper(app, this.config);
+        }
     }
 }

@@ -18,7 +18,7 @@ export class RegistroComponent implements OnInit {
   keywords: "Venta de recargas, recargas electrónicas, recargas telefónicas, recargas telcel, venta de recargas telcel, recargas electronicas telcel, tiempo aire telcel, Telcel registro para vender tiempo aire, registro para venta de recargas para negocio, registro para vender recargas, recargas electronicas 7.5% comision, comision 7.5, comision 7.5 por la venta de recargas, vender recargas",
   url: 'recarga5g.com/registro',
   type: 'website',
-  image: '/assets/img/Venta-recargas.png',
+  image: 'https://recarga5g.com/Venta-recargas.png',
   card: 'summary_large_image',
   creator: '@recargascelular'
  }

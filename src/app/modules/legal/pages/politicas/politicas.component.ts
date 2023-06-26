@@ -17,7 +17,7 @@ export class PoliticasComponent implements OnInit {
     keywords: "Condiciones para vender recargas, politicas recarga5g.com, Bait, telcel, recargas electronicas 7.5% comision, recarga5g.com",
     url: 'recarga5g.com/legal/politicas',
     type: 'website',
-    image: '/assets/img/Venta-recargas.png',
+    image: 'https://recarga5g.com/Venta-recargas.png',
     card: 'summary_large_image',
     creator: '@recargascelular',
   }

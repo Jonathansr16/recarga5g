@@ -27,6 +27,10 @@
     margin-right: auto;
     padding: 45px 90px;
     position: relative;
+
+    @include responsive(550px) {
+      padding: 25px 30px;
+    }
   }
   &-content {
     border-bottom: 2px solid #ddd7d7;

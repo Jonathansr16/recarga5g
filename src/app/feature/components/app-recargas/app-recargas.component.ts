@@ -1,4 +1,5 @@
-import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, ElementRef, ViewChild, AfterViewInit, PLATFORM_ID, Inject } from '@angular/core';
 
 //*Librerias externas importadas
 import { Swiper, Autoplay, Pagination, Navigation, SwiperOptions, EffectFade } from 'swiper';
@@ -11,6 +12,8 @@ import { Swiper, Autoplay, Pagination, Navigation, SwiperOptions, EffectFade } f
 export class AppRecargasComponent implements AfterViewInit {
 
   @ViewChild('carouselApp') _carouselApp?: ElementRef;
+
+  constructor( @Inject(PLATFORM_ID) private plataform_id: Object) {}
 
   //*Config of carousel App
   private config: SwiperOptions = {
@@ -32,7 +35,10 @@ export class AppRecargasComponent implements AfterViewInit {
 
   //* INIT CAROUSEL APP
     carouselApp(): void {
-    const carousel = this._carouselApp?.nativeElement;
-    new Swiper(carousel, this.config)
+      if (isPlatformBrowser(this.plataform_id)) {
+        const carousel = this._carouselApp?.nativeElement;
+        new Swiper(carousel, this.config)
+      }
+   
   }
 }

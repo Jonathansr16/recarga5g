@@ -47,7 +47,7 @@ export class PlanetaemxComponent implements OnInit {
   keywords: "Planetaemx, Recargaki, App Recargaki, App Planetaemx, Cuentas planetaemx, cuentas bancarias planetaemx, cuentas recargaki, cuentas bancarias recargaki, manual planetaemx, manual recargaki, manuales planetaemx, manuales recargaki, vender recargas, plataforma para vender recargas, comision por deposito, venta recargas, comision 7.5 recargas, comision 7.5% recargas, venta de recargas movistar, Movistar, tiempo aire movistar, vender recargas movistar",
   url: 'recarga5g.com/plataforma/planetaemx',
   type: 'website',
-  image: '/assets/img/Venta-recargas.png',
+  image: 'https://recarga5g.com/Venta-recargas.png',
   card: 'summary_large_image',
   creator: '@recargascelular'
  }

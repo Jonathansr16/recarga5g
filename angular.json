@@ -167,8 +167,29 @@
 					"builder": "@nguniversal/builders:prerender",
 					"options": {
 						"routes": [
-							"/"
-						]
+							"/",
+							"/registro",
+							"/plataforma/pagaqui",
+							"/plataforma/planetaemx",
+							"/consulta/recargas",
+							"/consulta/servicios",
+							"/consulta/pines",
+							"/reporte/reportePagaqui",
+							"/reporte/reportePlanetaemx",
+							"/ayuda/faqs",
+							"/ayuda/contacto",
+							"/ayuda/blog",
+							"/ayuda/blog/article/1rPNWMt1B4NW3M6dnr0JKh",
+							"/ayuda/blog/article/4valbgmZeMq8zXc9Q5HHSH",
+							"/ayuda/blog/article/6ekGBmK81O3APhvCaIV6Wk",
+							"/ayuda/blog/article/7L1myHWJyrtCd6sD5qwJvf",
+							"/ayuda/blog/article/5UgAboFr1eZ5YbjmfyNRbD",
+							"/legal/politicas",
+							"/legal/condiciones",
+							"/Error/404"
+						],
+						"guessRoutes": false
+						
 					},
 					"configurations": {
 						"production": {

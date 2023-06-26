@@ -2,22 +2,22 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from '@inicio/pages/home/home.component';
 import { RegistroComponent } from '@inicio/pages/registro/registro.component';
-import { NofoundComponent } from '@core/components/nofound/nofound.component';
+import { NofoundComponent } from '@core/components/not-found/not-found.component';
 
 const routes: Routes = [
 
   { path: '', component: HomeComponent },
-
-  { path: 'home', component: HomeComponent },
-
+  
   {
     path: 'registro', component: RegistroComponent
   },
-
+  
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+ 
 
   {
     path: 'plataforma',
-    loadChildren: () => import('@plataformas/plataformas.module').then(p => p.PlataformasModule)
+    loadChildren: () => import('@plataformas/plataformas.module').then(p => p.PlataformasModule),
   },
 
   //* CONSULTA
@@ -42,8 +42,9 @@ const routes: Routes = [
     loadChildren: () => import('@legal/legal.module').then(l => l.LegalModule)
   },
 
-
-  { path: '**', component: NofoundComponent },
+  // NOT FOUND 
+  { path: '**', redirectTo: '/Error/404'},
+  { path: '**', component: NofoundComponent, pathMatch: 'full'},
 ];
 
 @NgModule({

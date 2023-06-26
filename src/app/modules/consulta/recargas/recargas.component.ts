@@ -15,7 +15,6 @@ import { RegisterStepsService } from '@core/services/register-steps.service';
   selector: 'app-recargas',
   templateUrl: './recargas.component.html',
   styleUrls: ['./recargas.component.scss', '../consulta.component.scss'],
-  providers: [ProductosService]
 })
 export class RecargasComponent implements OnInit {
 

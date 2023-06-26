@@ -1,6 +1,6 @@
-import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, ViewChildren, QueryList, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, ViewChildren, QueryList, Inject, PLATFORM_ID } from '@angular/core';
 
-import { Meta, Title } from '@angular/platform-browser';
+import {Title } from '@angular/platform-browser';
 
 //* Servicios importados
 import { razonesModel } from '@core/models/razones.model';
@@ -23,6 +23,7 @@ import { MetaTagService } from '@core/services/meta-tag.service';
 import { RazonesService } from '@inicio/services/razones.service';
 import { NegocioService } from '@inicio/services/negocio.service';
 import { CanonicalLinkService } from '@core/services/canonical-link.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -60,10 +61,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private readonly _productosService: ProductosService,  private readonly _razonesService: RazonesService, private readonly _negocioService: NegocioService,
     private readonly _metodosService: MetodosVentaService, private readonly _stepsService: RegisterStepsService,
     private readonly _metaTagService: MetaTagService,
-    private linkService: CanonicalLinkService,
-    private readonly title: Title, private meta: Meta) { 
+    private linkService: CanonicalLinkService,  @Inject(PLATFORM_ID) private plataform_id: Object, 
+    private readonly title: Title) { 
    
-    
     }
 
   ngOnInit(): void {
@@ -151,12 +151,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
         rootMargin: '0px 0px -50% 0px'
       });
 
-    this.counters?.forEach(element => {
+      if (isPlatformBrowser(this.plataform_id)) {
+
+
+           this.counters?.forEach(element => {
       const item = element.nativeElement;
       observer.observe(item)
     });
-
-
+      }
   }
 
   updateCount = (num: any, maxNum: number) => {

@@ -5,12 +5,12 @@ import { RouterModule } from '@angular/router';
 //*COMPONENT
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { NofoundComponent } from './components/nofound/nofound.component';
+import { UpScrollComponent } from './components/up-scroll/up-scroll.component';
+import { ContactBtnComponent } from './components/contact-btn/contact-btn.component';
+import { NofoundComponent } from '@notFound/not-found.component';
 
 //* Components of Angular Material
 import { MaterialModule } from '@shared/material/material.module';
-import { UpScrollComponent } from './components/up-scroll/up-scroll.component';
-import { ContactBtnComponent } from './components/contact-btn/contact-btn.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 
@@ -18,9 +18,9 @@ import {MatMenuModule} from '@angular/material/menu';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    NofoundComponent,
     UpScrollComponent,
     ContactBtnComponent,
+    NofoundComponent
   ],
   imports: [
     CommonModule,
@@ -32,9 +32,10 @@ import {MatMenuModule} from '@angular/material/menu';
   ], exports: [
     HeaderComponent,
     FooterComponent,
-    NofoundComponent,
     UpScrollComponent,
     ContactBtnComponent,
+    NofoundComponent
+
   ],
   providers:[
     

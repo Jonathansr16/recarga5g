@@ -4,15 +4,14 @@ import { ContactoComponent } from '@ayuda/pages/contacto/contacto.component';
 import { FaqsComponent } from '@ayuda/pages/faqs/faqs.component';
 import { BlogComponent } from '@ayuda/pages/blog/blog.component';
 import { PostComponent } from '@ayuda/pages/post/post.component';
-import { NofoundComponent } from '@core/components/nofound/nofound.component';
 
 const routes: Routes = [
+     { path: 'faqs', component: FaqsComponent },
       { path: 'contacto', component: ContactoComponent },
-      { path: 'faqs', component: FaqsComponent },
       { path: 'blog', component: BlogComponent },
       { path: 'blog/article/:id', component: PostComponent },
-      { path: '**', component: NofoundComponent }
-
+      { path: '**', redirectTo: '/Error/404'}
+    
 ];
 
 @NgModule({

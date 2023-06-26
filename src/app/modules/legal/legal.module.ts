@@ -17,7 +17,7 @@ import {MatTabsModule} from '@angular/material/tabs';
   imports: [
     LegalRoutingModule,
     MaterialModule,
-    MatTabsModule
+    MatTabsModule,
   ]
 })
 export class LegalModule { }

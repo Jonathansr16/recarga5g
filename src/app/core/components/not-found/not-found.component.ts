@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-nofound',
-  templateUrl: './nofound.component.html',
-  styleUrls: ['./nofound.component.scss']
+  templateUrl: './not-found.component.html',
+  styleUrls: ['./not-found.component.scss']
 })
 export class NofoundComponent {
 

@@ -13,7 +13,6 @@ import { MetaTagService } from '../../../../core/services/meta-tag.service';
 export class FaqsComponent implements OnInit, AfterViewInit {
 
   @ViewChild('autocompleteInput') _autocompleteInput?: ElementRef;
-  @ViewChild('autocompleteUl') _autocompleteUl?: ElementRef;
   @ViewChildren('autocompleteLi') _autocompleteLi? : QueryList<ElementRef>
   panelOpenState = false;
   item: number =0;
@@ -57,13 +56,16 @@ this.metaTagService.generateTags({
     this.item = index;
   }
 
+  scrollTitle(e: HTMLElement): void {
+
+    e.scrollIntoView({ behavior: "smooth", block: "start", inline: "start" });
+  }
   /* =========== AUTOCOMPLETE SEARCH  =========== */
    filterData() {
-
-      const list = this._autocompleteUl?.nativeElement;
+  
       const input = this._autocompleteInput?.nativeElement;
 
-      input?.addEventListener("keyup", (e: any) => {
+      this.renderer2.listen(input, "keyup", (e: any)=> {
 
         if (e.target.matches("#search")) {
          
@@ -82,8 +84,8 @@ this.metaTagService.generateTags({
           })
         }
        
+      })
 
-      });
 
 
   }

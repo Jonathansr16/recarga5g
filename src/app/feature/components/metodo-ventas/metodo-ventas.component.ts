@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChildren, ElementRef, Inject, PLATFORM_ID, QueryList, Renderer2 } from '@angular/core';
-
+import { Component, OnInit, Inject, PLATFORM_ID,Renderer2 } from '@angular/core';
 import { MetodosVentaService } from '@core/services/metodos-venta.service';
 import { metodosVentaModel } from '@core/models/metodos-venta.model';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
@@ -8,11 +7,10 @@ import { DOCUMENT, isPlatformBrowser } from '@angular/common';
   selector: 'app-metodo-ventas',
   templateUrl: './metodo-ventas.component.html',
   styleUrls: ['./metodo-ventas.component.scss'],
-  providers: [MetodosVentaService]
+
 })
 export class MetodoVentasComponent implements OnInit{
 
-@ViewChildren('modal') modalItems?: QueryList<ElementRef> 
 
   metodoVentas: metodosVentaModel[] = [];
   isModalOpen: boolean = false;
@@ -43,14 +41,12 @@ this.blockScrollDocument();
   blockScrollDocument():void {
     if (isPlatformBrowser(this.plataform_id)) {
       this.renderer2.addClass(this.document.body, 'blockScrollModal')
-        //  this.document.body.classList.add('blockScrollModal');
        }
   }
 
   unblockScrollDocument():void {
     if (isPlatformBrowser(this.plataform_id)) {
       this.renderer2.removeClass(this.document.body, 'blockScrollModal')
-      // this.document.body.classList.remove('blockScrollModal');
     }
   }
 }

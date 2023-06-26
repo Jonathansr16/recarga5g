@@ -39,7 +39,7 @@
   &__container {
     grid-template-columns: 1fr;
   }
-  &-box {
+  &-accordeon {
     @include grid(1, 1em);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 3em;
@@ -56,60 +56,68 @@
 
   &-titles__h2 {
     text-align: center;
+    cursor: pointer;
+    margin: 0.5em 0;
   }
 
-  &-expansion-panel {
+  &-accordeon {
     margin-bottom: 1em;
 
-    &-head__h3 {
+    &__h3 {
       font-size: 1.1rem;
       color: var(--c-title);
       font-weight: 500;
     }
 
-    &-body__a {
+    &__a {
       text-decoration: underline;
       font-weight: bold;
       color: var(--c-primary);
     }
 
-    &-body__a:hover {
+    &__a:hover {
       text-decoration: none;
     }
 
-    &-body__li {
-      padding: 10px 0;
+    &__li {
+      padding: 15px 20px;
     }
 
-    &-body__span {
+    &__span {
       font-weight: bold;
     }
 
-    &-body__img--2 {
+    &__img--title {
+      width: 35px;
+      height: 35px;
+      display: inline-block;
+    }
+
+    &__img {
       max-width: 850px;
       margin-left: auto;
       margin-right: auto;
     }
 
-    &-footer__icon--notificacion {
+    &__icon--notificacion {
       width: 32px;
       height: 32px;
       font-size: 32px;
     }
 
-    &-footer--actions {
+    &__actions {
       @include flexible(flex, row, wrap, flex-start, center);
       gap: 1.5em;
       margin-top: 1em;
     }
 
-    &-footer--app {
+    &__app {
       @include flexible(flex, row, wrap, center, center);
       gap: 1.5em;
       margin-top: 1em;
     }
 
-    &-footer__img--app {
+    &__img--app {
       max-width: 200px;
     }
   }
@@ -125,48 +133,7 @@
   background: var(--c-card);
 }
 
-//* ============= FAQS SEARCH =============
 
-.search-content {
-  position: relative;
-}
-
-.input__icon {
-  position: absolute;
-  top: 50%;
-  right: 11px;
-  transform: translateY(-50%);
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: var(--color-primary);
-}
-
-.form__input {
-  font-size: 1rem;
-  border: 1px solid var(--c-title);
-  color: var(--c-title);
-  border-radius: 0.5rem;
-  outline: none;
-  padding: 1rem;
-  background: none;
-  z-index: 1;
-  width: 100%;
-
-  &::placeholder {
-    color: var(--c-text);
-  }
-}
-
-// *============= INPUT FOCUS =============
-
-.form__input:focus {
-  border: 1.5px solid var(--c-primary);
-}
-
-.form__input:focus::placeholder {
-  color: var(--c-title);
-  font-weight: bold;
-}
 
 // *============= AUTOCOMPLETE =============
 .autocomplete-list {
@@ -195,16 +162,6 @@
   }
 }
 
-.search__li {
-  position: relative;
-}
-
-.search__li:hover > .autocomplete-list {
-  transform: translateY(0);
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
 
 .autocomplete-list__li.dataFilter {
   display: none;
@@ -222,4 +179,84 @@
 
 .autocom-box li:hover {
   background: #efefef;
+}
+
+
+//*
+.busqueda {
+  position: relative;
+
+  &__li {
+    position: relative;
+  }
+
+  &__input {
+    width: 350px;
+    height: 60px;
+    background-color: transparent;
+    font-size: 1rem;
+    color: var(--c-text);
+    outline: none;
+    padding: 0.6em 0.3em;
+    border-bottom: 1px solid rgb(128, 128, 128);
+    z-index: 2;
+  }
+
+  &__input:focus {
+    color: var(--c-text);
+  }
+
+  &__label {
+    color: var(--c-text);
+    position: absolute;
+    top: 0;
+    left: 5px;
+    font-size: 1rem;
+    transform: translateY(10px);
+    transition: transform .5s, color .3s;
+    z-index: 1;
+  }
+
+  &__line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--c-primary);
+    transform: scale(0);
+    transform-origin: left bottom;
+    transition: transform .4s;
+  }
+
+
+  &__input:focus, &__input:not(:placeholder-shown) {
+    color: var(--c-text);
+  }
+
+  &__input:focus + &__label, &__input:not(:placeholder-shown) + &__label {
+    transform: translateY(-12px) scale(.7);
+    transform-origin: top left;
+    color: var(--c-primary);
+    font-size: 1.2rem;
+  }
+
+  &__input:focus ~ &__line, &__input:not(:placeholder-shown) ~ &__line {
+    transform: scale(1);
+
+  }
+
+}
+
+
+.busqueda__li:hover > .autocomplete-list {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.autocomplete-list__li.dataFilter {
+  display: none;
+  transition: all 300ms ease;
 }

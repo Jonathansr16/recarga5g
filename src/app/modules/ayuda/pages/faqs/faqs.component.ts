@@ -9,19 +9,27 @@ import {
   Renderer2,
   PLATFORM_ID,
   Inject,
+  inject,
 } from '@angular/core';
 
 import { Title } from '@angular/platform-browser';
 import { metaTagModel } from '@core/models/meta-tag.model';
 import { MetaTagService } from '../../../../core/services/meta-tag.service';
 import { isPlatformBrowser } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @Component({
   selector: 'app-faqs',
+  standalone: true,
   templateUrl: './faqs.component.html',
   styleUrls: ['./faqs.component.scss'],
+  imports: [
+    MatIconModule,
+    MatExpansionModule,
+  ]
 })
-export class FaqsComponent implements OnInit, AfterViewInit {
+export default  class FaqsComponent implements OnInit, AfterViewInit {
   @ViewChild('autocompleteInput') _autocompleteInput?: ElementRef;
   @ViewChildren('autocompleteLi') _autocompleteLi?: QueryList<ElementRef>;
   panelOpenState = false;
@@ -41,12 +49,11 @@ export class FaqsComponent implements OnInit, AfterViewInit {
     creator: '@recargascelular',
   };
 
-  constructor(
-    private readonly renderer2: Renderer2,
-    private readonly title: Title,
-    private metaTagService: MetaTagService,
-    @Inject(PLATFORM_ID) private plataform_id: Object
-  ) {}
+
+  private readonly renderer2 = inject( Renderer2);
+  private readonly title = inject( Title);
+  private readonly metaTagService = inject( MetaTagService);
+  private platform_id = inject(PLATFORM_ID);
 
   ngOnInit(): void {
     this.title.setTitle(
@@ -63,20 +70,20 @@ export class FaqsComponent implements OnInit, AfterViewInit {
   }
   /* =========== REDIRECT TITLE TO TITLE CONTENT =========== */
   inView(e: HTMLElement, index: number): void {
-    if (isPlatformBrowser(this.plataform_id)) {
+    if (isPlatformBrowser(this.platform_id)) {
       e.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
       this.item = index;
     }
   }
 
   scrollTitle(e: HTMLElement): void {
-    if (isPlatformBrowser(this.plataform_id)) {
+    if (isPlatformBrowser(this.platform_id)) {
       e.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
     }
   }
   /* =========== AUTOCOMPLETE SEARCH  =========== */
   filterData() {
-    if (isPlatformBrowser(this.plataform_id)) {
+    if (isPlatformBrowser(this.platform_id)) {
       const input = this._autocompleteInput?.nativeElement;
 
       this.renderer2.listen(input, 'keyup', (e: any) => {

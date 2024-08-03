@@ -1,28 +1,29 @@
 <!-- ============= PRODUCTOS ============= -->
-<div class="productos mb-3">
-  <div class="productos__container container">
+<div class="productos">
+  <div class="productos__container">
 
       <div class="productos-title">
-          <h3 class="productos-title__h3 headline-3">Nuestros Productos</h3>
+          <h3 class="productos-title__h3 text-slate-700 font-bold pb-2 text-3xl lg:text-5xl my-4 text-center">Nuestros Productos</h3>
       </div>
 
       <div class="productos-filter">
 
-          <div #filters class="productos-options">
-              <button [class.isBtnActive]="btnCategoryActive === 'todo'"  (click)="filterProduct('todo')" #btnFilter mat-raised-button class="productos-options__button" data-filter="todo">Todo</button>
-              <button [class.isBtnActive]="btnCategoryActive === 'recargas'" (click)="filterProduct('recargas')" #btnFilter mat-raised-button class="productos-options__button" data-filter="recargas">Recargas</button>
-              <button [class.isBtnActive]="btnCategoryActive === 'servicios'" (click)="filterProduct('servicios')" #btnFilter mat-raised-button class="productos-options__button" data-filter="servicios">Servicios</button>
-              <button [class.isBtnActive]="btnCategoryActive === 'pines'" (click)="filterProduct('pines')" #btnFilter mat-raised-button class="productos-options__button" data-filter="pines">Pines</button>
+          <div #filters class="productos-options flex flex-row flex-wrap items-center justify-center gap-6 mb-4">
+            @for (btnCategory of categorias; track $index) {
+              <button (click)="btnFilterActive(btnCategory.id)" [ngClass]="{ 'bg-red-500 text-white': btnCategoryActive === btnCategory.id, 'bg-red-50 text-red-700': btnCategoryActive != btnCategory.id }" class="productos-options__button px-4 py-2 rounded-lg" data-filter="recargas">{{btnCategory.nombre}}</button>
+            }
           </div>
 
-          <div class="productos-list">
-            <div #productItem *ngFor="let item of productos[0].item" class="productos-list-item" [attr.data-category]="item.category">
-              <img class="productos-list-item__img" [src]="item.url" loading="lazy" width="200" height="180" [alt]="item.category">
-          </div>     
-          
-            <!-- <div #productItem *ngFor="let item of productos[0].item" class="productos-list-item" [attr.data-category]="item.category" [hidden]="!isImageVisible(item.category)">
-                  <img class="productos-list-item__img" [src]="item.url" loading="lazy" [alt]="item.category">
-              </div>         -->
+          <div class="productos-list flex flex-row flex-wrap items-center justify-center gap-6">
+            @for (companie of productos[0].item; track $index) {
+                @if(btnCategoryActive === companie.idCategory || btnCategoryActive === 0)  {
+                    <div #productItem class="productos-list-item" [attr.data-category]="companie.category"  [ngClass]="{'showItem': btnCategoryActive === companie.idCategory}"
+                    >
+                      <img class="productos-list-item__img max-w-48 max-h-48 w-full h-full" [src]="companie.url" loading="lazy" width="200" height="180" [alt]="companie.category">
+                  </div>     
+                }
+            }
+               
           </div>
       </div>
   </div>

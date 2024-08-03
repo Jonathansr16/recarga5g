@@ -1,0 +1,190 @@
+<div class="banner banner-plataformas wow animate__animated animate__fadeInUp">
+   
+    <div class="banner-plataformas__container container mb-3">
+        <picture class="banner-plataformas__picture ">
+            <source media="(min-width:1200px)" srcset="/assets/img/plataformas/planetaemx/banner-plataforma-planetaemx.png" type="image/png">
+        <source media="screen and (max-width: 950px)" srcset="/assets/img/plataformas/planetaemx/banner-plataforma-planetaemx__responsive.png" type="image/png">
+        <img src="/assets/img/plataformas/planetaemx/banner-plataforma-planetaemx.png" class="banner-plataformas__img banner__img" width="1280" height="572" alt="Conoce & registrate en nuestras plataformas Pagaqui y obten una comisión por cada venta que realizes en recargas & pago de servicios">
+        </picture>
+    
+    </div>
+</div>
+
+<!-- ============= SECCION CAROSUSEL PRODUCTOS ============= -->
+ @for (product of productsPlanetaemx(); track $index) {
+     <app-carousel-productos [products]="product"></app-carousel-productos>
+ }
+
+<!-- ============= SECCION APP PLATAFORMAS ============= -->
+ @for (app of planetaemxApp(); track $index) {
+     <app-mobile-app [plataforma]="app"></app-mobile-app>
+ }
+
+<!-- ============= SECCION MONTOS ============= -->
+ @for (amount of montosPlanetaemx(); track $index) {
+     <app-montos [monto]="amount"></app-montos>
+ }
+
+<!-- ============= SECCION CUENTAS ============= -->
+<div class="cuentas mb-3" id="cuentas-planetaemx">
+    <div class="cuentas__container container">
+       
+            <h2 class="cuentas__h2 headline-2">Cuentas bancarias Planetaemx</h2>
+      
+        <p class="cuentas__p body-1">
+            📌Recuerda que puedes realizar tus depósitos y/o transferencias los 365 días del año incluyendo días domingos y días festivos a la cuenta de  
+            <strong class="cuentas__strong body-1"> We Send Digital</strong>
+         </p>
+     
+   
+        <div class="cuentas-table">
+            <table class="cuentas__table cuentas-planetaemx__table">
+                <thead class="cuentas__thead cuentas-planetaemx__thead">
+                    <tr class="cuentas__tr cuentas-planetaemx__tr">
+                        <th class="cuentas__th cuentas-planetaemx__th headline-6">
+                            BANCO
+                        </th>
+
+                        <th class="cuentas__th cuentas-planetaemx__th headline-6">
+                            CUENTA
+                        </th>
+
+                        <th class="cuentas__th headline-6">
+                            CLAVE
+                        </th>
+
+                        <th class="cuentas__th cuentas-planetaemx__th headline-6">
+                            NOMBRE
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody class="cuenta__tbody">
+                    @for (cuenta of cuentasPlanetaemx(); track $index) {
+                        <tr class="cuentas__tr--body">
+                            <td class="cuentas__td cuentas-planetaemx__td body-1" data-label="BANCO">
+                                {{cuenta.banco | uppercase}}
+                            </td>
+    
+                            <td class="cuentas__td cuentas-planetaemx__td body-1" data-label="CUENTA">
+                                {{cuenta.cuenta}}
+                            </td>
+    
+                            <td class="cuentas__td cuentas-planetaemx__td body-1" data-label="CLAVE">
+                                {{cuenta.clave}}
+                            </td>
+    
+                            <td class="cuentas__td cuentas-planetaemx__td body-1" data-label="NOMBRE">
+                                {{cuenta.nombre}}
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- ============= SECCION POLITICAS DE APLICACIÓN DEPOSITOS ============= -->
+<div class="politicas mb-3">
+    <div class="politicas__container container">
+        <div class="politicas-title">
+            <h2 class="politicas-title__h2 headline-2">Política de depósitos Planetaemx</h2>
+            <p class="politicas-title__p headline-6">El abono de depósitos reportados en nuestra página web o vía WhatsApp serán aplicados según sea algunos de los siguientes criterios:</p>
+       
+            <ul class="politicas__ul">
+                @for (policy of planetaemxPolicies(); track $index) {
+                    <li class="politicas__li body-1">
+                        {{policy.condicion}}
+                    </li>
+                }
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<!-- ============= SECCION APLICACIÓN DE DEPOSITOS ============= -->
+<div class="aplicacion mb-3">
+
+    <div class="aplicacion__container container">
+        <h2 class="aplicacion__h2 headline-2">
+            Horario Planetaemx
+        </h2>
+
+        <div class="aplicacion-box">
+        <div class="aplicacion-content">
+
+            <p class="aplicacion-content__p aplicacion-content__p--1 body-1">Si ya realizaste algún deposito a los números de cuenta correspondiente a tu plataforma, recuerda que el siguiente paso es notificar todos tus depósitos y/o transferencias ya sea a través de nuestra página web en la sección Reportes seleccionando tu plataforma. O bien vía WhatsApp, ambos métodos son válidos elije el que mejor te convenga. Si elijes vía WhatsApp, es necesario que proporciones a tu asesor ejecutivo lo siguiente: Numero de usuario & foto o captura de tu ficha</p>
+       
+           <p class="aplicacion-content__p headline-5">
+            Aplicación de <strong class="aplicacion-content__strong">depositos Planetaemx</strong>:
+           </p>
+
+           <p class="aplicacion-content__p body-1">
+            Lunes a Viernes: <br>
+            9:00am a 6:00pm
+           </p>
+
+           <p class="aplicacion-content__p body-1">
+            Sabados: <br>
+            9:00am a 12:00pm
+           </p>
+
+        </div>
+
+        <div class="aplicacion-aviso">
+
+            <h3 class="aplicacion-aviso__h3 headline-3">Aviso</h3>
+            <p class="aplicacion-aviso__p body-1">
+                Recuerda que no solicitamos información confidencial como claves de acceso o nips, ni acceso a tu equipo para realizar actualizaciones, si recibes una llamada de este tipo puedes estar siendo víctima de un fraude.
+            </p>
+            <img src="/assets/img/aviso__aplicacion.png" class="aplicacion-aviso__img" width="633" height="550" loading="lazy" alt="Recargas Electronicas lider nacional en la venta de tiempo aire">
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- ============= SECCION METODOS VENTA ============= -->
+<div class="metodos-planetaemx container mb-3">
+    <h2 class="metodos-planetaemx__h2 headline-2">Métodos de venta de recargas multirregión</h2>
+    <app-metodo-ventas></app-metodo-ventas>
+</div>
+
+<!-- ============= SECCION MANUALES ============= -->
+ @for (manual of planetaemxManuals(); track $index) {
+     <app-manuales [manuales]="manual"></app-manuales>
+ }
+
+<!-- ============= SECCION REGISTER ============= -->
+<div class="register-planetaemx mb-3">
+    <div class="register-planetaemx__container container">
+
+        <div class="register-planetaemx__left">
+            <h2 class="register-planetaemx__h2 headline-4 head-4">
+                ¿Cómo vender recargas movistar?
+            </h2>
+
+            <h3 class="register-planetaemx__h3 headline-3">
+                Venta de recargas hasta 7.5% de comisión fijo
+            </h3>
+
+            <p class="register-planetaemx__p body-1 mb-1">
+                Nuestras comisiones son simplemente excepcionales. Te brindamos la posibilidad de obtener altas ganancias por cada recarga que vendas. Cuantas más vendas, más ganarás. ¡Es así de simple!
+            </p>
+
+            <p class="register-planetaemx__p body-1 mb-1">
+                Sabemos que tu tiempo y esfuerzo son valiosos es por lo que nos aseguramos de que te sientas recompensado por tu arduo trabajo y dedicación.
+            </p>
+
+            <a class="register-planetaemx__a" routerLink="/registro" mat-raised-button color="primary">Registrarme</a>
+
+        </div>
+        <div class="register-planetaemx__right">
+            @for (step of registerStepPlanetaemx(); track $index) {
+                <app-register-steps [step]="step"></app-register-steps>
+            }
+        </div>
+    </div>
+</div>

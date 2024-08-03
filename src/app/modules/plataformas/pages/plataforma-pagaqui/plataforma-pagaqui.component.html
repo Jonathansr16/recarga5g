@@ -1,0 +1,262 @@
+<div class="banner-plataformas wow animate__animated animate__fadeInUp">
+   <div class="banner-plataformas__container container mb-3">
+    <picture class="banner-plataformas__picture">
+        <source media="(min-width:1200px)" srcset="/assets/img/plataformas/pagaqui/banner-plataforma-pagaqui.png" type="image/png">
+        <source media="screen and (max-width: 950px)" srcset="/assets/img/plataformas/pagaqui/banner-plataforma-pagaqui__responsive.png" type="image/jpg">
+        <img src="/assets/img/plataformas/pagaqui/banner-plataforma-pagaqui.png" class="banner-plataformas__img banner__img" width="1280" height="571" alt="Conoce & registrate en nuestras plataformas Pagaqui y obten una comisión por cada venta que realizes en recargas & pago de servicios">
+    </picture>
+   </div>
+</div>
+
+<!-- ============= SECCION CAROSUSEL PRODUCTOS ============= -->
+ @for (product of productsPagaqui(); track $index) {
+     <app-carousel-productos [products]="product"></app-carousel-productos>
+ }
+
+<!-- ============= SECCION APP PLATAFORMAS ============= -->
+ @for (app of appPagaqui(); track $index) {
+     <app-mobile-app [plataforma]="app"></app-mobile-app>
+ }
+<!-- ============= SECCION APP PLATAFORMAS ============= -->
+<div class="comision-pagaqui mb-3 ">
+    <div class="comision-pagaqui__container container">
+       
+            <span class="badge comision-pagaqui__badge badge-4 headline-5">Comisión Pagaqui
+                <mat-icon class="badge__icon" aria-hidden="false" aria-label="Example home icon" fontIcon="request_quote"></mat-icon>
+            </span>
+        <h3 class="comision-pagaqui__h3 headline-3">¿Como veo mi comisión en Pagaqui?</h3>
+   
+        <p class="comision-pagaqui__p body-1">
+            Por cada venta que realizas de tiempo aire, pin electrónico o cobro de servicios recibe un porcentaje de comisión que incrementa tus ingresos mensuales.
+        </p>
+
+        <p class="body-1">
+            ¡Aprovecha esta oportunidad y comienza a ganar más hoy mismo vendiendo recargas electrónicas con excelentes comisiones! Tu éxito está a solo un clic de distancia."
+        </p>
+
+        <button (click)="openVideo()" class="comision-pagaqui__btn" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+            <mat-icon>play_arrow</mat-icon>
+        </button>
+
+        <ng-template #modalTemplate let-modalRef="modalRef">
+            <h2 mat-dialog-title>Comisión por venta de recargas</h2>
+            <mat-dialog-content class="mat-typography">
+
+                <iframe *ngIf="showVideo" title="Video comisión pagaqui" src="https://ik.imagekit.io/taerecargas/Recargas/comisiones-pagaqui.mp4?updatedAt=1676500791802" frameborder="0" class="comision-pagaqui__iframe" width="850" height="360"></iframe>
+           
+            </mat-dialog-content>
+            <mat-dialog-actions align="end">
+                <button routerLink="/registro" mat-button [mat-dialog-close]="true" cdkFocusInitial>Registrarme</button>
+                <button mat-button mat-dialog-close>Cerrar</button>
+            </mat-dialog-actions>
+            
+
+        </ng-template>
+   </div>
+</div>
+
+<!-- ============= SECCION MONTOS ============= -->
+ @for (amount of amountsPagaqui(); track $index) {
+     <app-montos [monto]="amount"></app-montos>
+ }
+
+<!-- ============= SECCION CUENTAS ============= -->
+<div class="cuentas mb-3">
+    <div class="cuentas__container container">
+        <span class="badge cuentas_badge headline-5">Cuentas Pagaqui
+            <mat-icon class="badge__icon" aria-hidden="false" aria-label="Example home icon" fontIcon="request_quote"></mat-icon>
+        </span>
+
+        <h2 class="cuentas__h2 headline-2">Cuentas bancarias <span class="span--pagaqui headline-2">
+            Pagaqui
+        </span> 
+    </h2>
+        <p class="cuentas__p body-1">📌No se aceptan depositós con cheque de otros bancos (SALVO BUEN COBRO), Los numeros de cuenta están a nombre de <strong class="cuentas__strong body-1">TA3 SA DE CV</strong> </p>
+     
+   
+        <div class="cuentas-table">
+            <table class="cuentas__table cuentas-pagaqui__table">
+                <thead class="cuentas__thead cuentas-pagaqui__thead">
+                    <tr class="cuentas__tr cuentas-pagaqui__tr">
+                        <th class="cuentas__th cuentas-pagaqui__th headline-6">
+                            BANCO
+                        </th>
+
+                        <th class="cuentas__th cuentas-pagaqui__th headline-6">
+                            CUENTA
+                        </th>
+
+                        <th class="cuentas__th cuentas-pagaqui__th headline-6">
+                            CLAVE
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody class="cuenta__tbody">
+                    @for (account of accountPagaqui(); track $index) {
+                        <tr class="cuentas__tr--body" >
+                            <td class="cuentas__td cuentas-pagaqui__td body-1" data-label="BANCO">
+                                {{account.banco | uppercase}}
+                            </td>
+    
+                            <td class="cuentas__td cuentas-pagaqui__td body-1" data-label="CUENTA">
+                                {{account.cuenta}}
+                            </td>
+    
+                            <td class="cuentas__td cuentas-pagaqui__td body-1" data-label="CLAVE">
+                                {{account.clave}}
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="cuentas-referencia cuentas mb-3">
+    <div class="cuentas-referencia cuentas__container container">
+        <span class="badge cuentas_badge headline-5">Cuentas Con Referencia</span>
+        <h3 class="cuentas-referencia__h3 cuentas__h3 headline-3">Cuentas bancarias <span class="span--pagaqui headline-3">
+            Pagaqui
+        </span>  con referencia</h3>
+        <p class="cuentas-referencia__p cuentas__p body-1">📌La notificación y abono del depósito se realiza de manera automática al hacer el pago con la referencia correcta. </p>
+        <p class="cuentas-referencia__p cuentas__p body-1">📌Para montos menores a <span class="cuentas__strong body-1">$999 pesos</span>, la plataforma hará un cobro de $4 pesos. </p>
+        <p class="cuentas-referencia__p cuentas__p body-1">📌Para montos superiores a <span class="cuentas__strong body-1">$1,000 pesos</span> no tendrá costo alguno. </p>
+        <p class="cuentas-referencia__p cuentas__p body-1">📌Compra mínima con referencia <span class="cuentas__strong body-1">$200 pesos sin centavos</span></p>
+
+        <div class="cuentas-table">
+            <table class="cuentas__table">
+                <thead class="cuentas__thead cuentas-pagaqui__thead">
+                    <tr class="cuentas__tr cuentas-pagaqui__tr">
+                        <th class="cuentas__th cuentas-pagaqui__th headline-6">
+                            BANCO
+                        </th>
+
+                        <th class="cuentas__th cuentas-pagaqui__th headline-6">
+                            CUENTA
+                        </th>
+
+                    </tr>
+                </thead>
+
+                <tbody class="cuenta__tbody">
+                    @for (account of accountPagaqui(); track $index) {
+                        <tr class="cuentas__tr--body" >
+                            <td class="cuentas__td cuentas-pagaqui__td body-1" data-label="BANCO">
+                                {{account.banco | uppercase}}
+                            </td>
+    
+                            <td class="cuentas__td cuentas-pagaqui__td body-1" data-label="CUENTA">
+                                {{account.cuenta}} <span class="cuentas__strong body-1">+ Referencia</span> 
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<!-- ============= SECCION APLICACIÓN DE DEPOSITOS ============= -->
+<div class="aplicacion mb-3">
+
+    <div class="aplicacion__container container">
+        <h2 class="aplicacion__h2 headline-2">
+            Horario
+             <span class="span--pagaqui headline-2">
+                Pagaqui
+            </span> 
+        </h2>
+
+        <div class="aplicacion-box">
+        <div class="aplicacion-content">
+
+            <p class="aplicacion-content__p aplicacion-content__p--1 body-1">Si ya realizaste algún deposito a los números de cuenta correspondiente a tu plataforma, recuerda que el siguiente paso es notificar todos tus depósitos y/o transferencias ya sea a través de nuestra página web en la sección Reportes seleccionando tu plataforma. O bien vía WhatsApp, ambos métodos son válidos elije el que mejor te convenga. Si elijes vía WhatsApp, es necesario que proporciones a tu asesor ejecutivo lo siguiente: Numero de usuario & foto o captura de tu ficha</p>
+       
+           <p class="aplicacion-content__p headline-5">
+            Aplicación de <strong class="aplicacion-content__strong">depositos Pagaqui</strong>:
+           </p>
+
+           <p class="aplicacion-content__p body-1">
+            Lunes a Viernes: <br>
+            9:00am a 6:00pm
+           </p>
+
+           <p class="aplicacion-content__p body-1">
+            Sabados: <br>
+            9:00am a 4:00pm
+           </p>
+
+        </div>
+
+        <div class="aplicacion-aviso">
+
+            <h3 class="aplicacion-aviso__h3 headline-3">Aviso</h3>
+            <p class="aplicacion-aviso__p body-1">
+                Recuerda que no solicitamos información confidencial como claves de acceso o nips, ni acceso a tu equipo para realizar actualizaciones, si recibes una llamada de este tipo puedes estar siendo víctima de un fraude.
+            </p>
+
+            <div class="aplicacion-aviso__image img-custom">
+                <img src="/assets/img/aviso__aplicacion.png" class="aplicacion-aviso__img" width="633" height="550" loading="lazy" alt="Recargas Electronicas lider nacional en la venta de tiempo aire">
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- ============= SECCION POLITICAS DE APLICACIÓN DEPOSITOS ============= -->
+<div class="politicas">
+    <div class="politicas__container container">
+        <div class="politicas-title">
+            <h2 class="politicas-title__h2 headline-2">Política de depósitos Pagaqui</h2>
+            <p class="politicas-title__p headline-6">El abono de depósitos reportados en nuestra página web o vía WhatsApp serán aplicados según sea algunos de los siguientes criterios:</p>
+       
+            <ul class="politicas__ul">
+                @for (policy of policiesPagaqui(); track $index) {
+                    <li class="politicas__li body-1">
+                        {{policy.condicion}}
+                    </li>
+                }
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<!-- ============= SECCION METODOS DE VENTA ============= -->
+<div class="metodos-pagaqui container mb-3">
+    <h2 class="metodos-pagaqui__h2 headline-2">Métodos de venta de tiempo aire</h2>
+    <app-metodo-ventas></app-metodo-ventas>
+</div>
+
+<!-- ============= SECCION MANUALES ============= -->
+ @for (manual of manualsPagaqui(); track $index) {
+     <app-manuales [manuales]="manual"></app-manuales>
+ }
+
+<!-- ============= SECCION REGISTER ============= -->
+<div class="register-pagaqui">
+
+    <div class="register-pagaqui__container container">
+
+        <div class="register-pagaqui__left mb-2">
+            @for (step of registerStepPagaqui(); track $index) {
+                <app-register-steps [step]="step"></app-register-steps>
+            }
+        </div>
+
+        <div class="register-pagaqui__right">
+            <h2 class="register-pagaqui__h2 headline-4 head-4">¿Cómo vender recargas Telcel?</h2>
+            <h3 class="register-pagaqui__h3 headline-3">Registro para la venta de recargas con comision del 7%</h3>
+
+            <p class="register-pagaqui__p body-1 mb-1">
+                No pierdas más tiempo buscando oportunidades de negocio limitadas. Únete a nosotros y conviértete en un vendedor de recargas exitoso con comisiones excepcionales. Estamos aquí para apoyarte en cada paso del camino y ayudarte a alcanzar tus metas financieras.
+            </p>
+
+            <a class="register-pagaqui__a" routerLink="/registro" mat-raised-button color="primary">Registrarme</a>
+
+        </div>
+    </div>
+</div>

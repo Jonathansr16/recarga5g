@@ -1,14 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 import { Title } from '@angular/platform-browser';
 import { metaTagModel } from '@core/models/meta-tag.model';
 import { MetaTagService } from '@core/services/meta-tag.service';
 
 @Component({
   selector: 'app-contacto',
+  standalone: true,
   templateUrl: './contacto.component.html',
-  styleUrls: ['./contacto.component.scss']
+  styleUrls: ['./contacto.component.scss'],
+  imports: [
+    MatIconModule,
+  ]
 })
-export class ContactoComponent implements OnInit {
+export default class ContactoComponent implements OnInit {
 
     //? META TAG
     tag: metaTagModel = {
@@ -22,7 +27,8 @@ export class ContactoComponent implements OnInit {
       creator: "@recargascelular"
     }
 
-  constructor(private _metaTagService: MetaTagService, private readonly title: Title) { }
+    private _metaTagService = inject(MetaTagService); 
+    private readonly title = inject( Title );
 
   ngOnInit(): void {
     this.title.setTitle('Recarga5g.com | Contáctanos por cualquier de nuestros medios de contacto para asesorarte y obtener más información para vender recargas a cualquier compañia con excelentes comisiones');

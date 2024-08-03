@@ -1,61 +1,58 @@
-<mat-toolbar class="header">
-    <div class="container header__container">
+<mat-toolbar class="header bg-transparent shadow shadow-red-300/30">
+    <div class="container header__container w-full relative flex flex-row flex-wrap items-center justify-between">
   
       <button routerLink="" mat-button class="logo" target="_blank">
-        <span class="logo__span headline-6">Recarga5g.com</span>
+        <span class="logo__span font-sans text-base font-semibold">Recarga5g.com</span>
       </button>
   
-      <div class="nav-overlay" [ngClass]="{ 'activeNavOverlay': activeNavOverlay}"></div>
-      <div #nav class="nav light-menu" [ngClass]="{ 'nav--active': active}">
+      <div class="nav-overlay fixed h-0 w-0 top-0 left-0 z-10 hidden" [ngClass]="{ 'activeNavOverlay': activeNavOverlay()}"></div>
+      <div #nav class="nav light-menu bg-inherit" [ngClass]="{ 'nav--active': active()}">
   
-        <div #navMenu class="nav-menu">
-          <a mat-button class="nav-menu__a menu-option" routerLink="" routerLinkActive="active" (click)="closeNav()" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+        <div #navMenu class="nav-menu flex flex-row flex-nowrap items-center justify-center gap-x-12">
+          <a class="nav-menu__a menu-option font-sans text-base font-normal text-slate-700" routerLink="/" routerLinkActive="active" (click)="closeNav()" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
        
-          <button class="nav-submenu menu-option" mat-button [matMenuTriggerFor]="plataformas">
-            Plataformas
-          </button>
-  
+          <button class="nav-submenu menu-option font-sans text-base font-normal text-slate-700" [matMenuTriggerFor]="plataformas">Plataformas</button>
           <mat-menu #plataformas="matMenu" class="submenu">
-            <a class="nav-menu__a nav-submenu__a menu-option" routerLink="plataforma/pagaqui" routerLinkActive="active" (click)="closeNav()"  mat-menu-item>Pagaqui</a>
-            <a class="nav-menu__a nav-submenu__a menu-option" routerLink="plataforma/planetaemx" routerLinkActive="active" (click)="closeNav()"  mat-menu-item>Planetaemx</a>
+            <a class="nav-menu__a nav-submenu__a menu-option font-sans text-base font-medium text-slate-700" routerLink="plataformas/plataforma-pagaqui" routerLinkActive="active" (click)="closeNav()"  mat-menu-item>Pagaqui</a>
+            <a class="nav-menu__a nav-submenu__a menu-option font-sans text-base font-medium text-slate-700" routerLink="plataformas/plataforma-planetaemx" routerLinkActive="active" (click)="closeNav()"  mat-menu-item>Planetaemx</a>
           </mat-menu>
   
-          <button class="nav-submenu  menu-option" mat-button [matMenuTriggerFor]="consultar">Consultar</button>
+          <button class="nav-submenu menu-option font-sans text-base font-normal text-slate-700" [matMenuTriggerFor]="consultar">Consultar</button>
   
           <mat-menu #consultar="matMenu">
-            <a class="nav-menu__a nav-submenu__a menu-option"  routerLink="consulta/recargas" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Como vender recargas</a>
-            <a class="nav-menu__a nav-submenu__a menu-option"  routerLink="consulta/servicios" routerLinkActive="active" (click)="closeNav()"  mat-menu-item>Como vender pago de servicios</a>
-            <a class="nav-menu__a nav-submenu__a menu-option"  routerLink="consulta/pines" routerLinkActive="active" (click)="closeNav()"  mat-menu-item>Como vender pines electrónicos</a>
+            <a class="nav-menu__a nav-submenu__a menu-option font-sans text-base font-normal text-slate-700 px-4 flex relative items-center justify-start text-left w-full min-h-12 hover:bg-zinc-100"  routerLink="consulta/recargas" routerLinkActive="active" (click)="closeNav()">Como vender recargas</a>
+            <a class="nav-menu__a nav-submenu__a menu-option font-sans text-base font-normal text-slate-700 px-4  flex relative items-center justify-start text-left w-full min-h-12 pb-2 hover:bg-zinc-100" routerLink="consulta/servicios" routerLinkActive="active" (click)="closeNav()">Como vender pago de servicios</a>
+            <a class="nav-menu__a nav-submenu__a menu-option font-sans text-base font-normal text-slate-700 px-4  flex relative items-center justify-start text-left w-full min-h-12 hover:bg-zinc-100"  routerLink="consulta/pines" routerLinkActive="active" (click)="closeNav()">Como vender pines electrónicos</a>
           </mat-menu>
   
-          <button class="nav-submenu menu-option" mat-button [mat-menu-trigger-for]="notificar">Notificar</button>
+          <button class="nav-submenu menu-option font-sans text-base font-normal text-slate-700"[mat-menu-trigger-for]="notificar">Notificar</button>
   
           <mat-menu #notificar="matMenu">
-            <a class="nav-menu__a nav-submenu__a menu-option" routerLink="reporte/reportePagaqui" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Deposito Pagaqui</a>
-            <a class="nav-menu__a nav-submenu__a menu-option" routerLink="reporte/reportePlanetaemx" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Deposito Planetaemx</a>
+            <a class="nav-menu__a nav-submenu__a menu-option font-sans text-base font-normal text-slate-700" routerLink="reporte/reportePagaqui" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Deposito Pagaqui</a>
+            <a class="nav-menu__a nav-submenu__a menu-option font-sans text-base font-normal text-slate-700" routerLink="reporte/reportePlanetaemx" routerLinkActive="active" (click)="closeNav()" mat-menu-item>Deposito Planetaemx</a>
           </mat-menu>
   
-          <button class="nav-submenu  menu-option" mat-button [mat-menu-trigger-for]="ayuda">Ayuda</button>
+          <button class="nav-submenu  menu-option font-sans text-base font-normal text-slate-700" [mat-menu-trigger-for]="ayuda">Ayuda</button>
   
           <mat-menu #ayuda="matMenu">
-            <a class="nav-menu__a nav-submenu__a menu-option" routerLinkActive="active" (click)="closeNav()" routerLink="ayuda/faqs" mat-menu-item>Preguntas frecuentes</a>
-            <a class="nav-menu__a nav-submenu__a menu-option" routerLinkActive="active" (click)="closeNav()" routerLink="ayuda/contacto" mat-menu-item>Contacto</a>
-            <a class="nav-menu__a nav-submenu__a menu-option" routerLinkActive="active" (click)="closeNav()" routerLink="ayuda/blog" mat-menu-item>Blog</a>
+            <a class="nav-menu__a nav-submenu__a menu-option font-sans text-base font-normal text-slate-700" routerLinkActive="active" (click)="closeNav()" routerLink="ayuda/faqs" mat-menu-item>Preguntas frecuentes</a>
+            <a class="nav-menu__a nav-submenu__a menu-option font-sans text-base font-normal text-slate-700" routerLinkActive="active" (click)="closeNav()" routerLink="ayuda/contacto" mat-menu-item>Contacto</a>
+            <a class="nav-menu__a nav-submenu__a menu-option font-sans text-base font-normal text-slate-700" routerLinkActive="active" (click)="closeNav()" routerLink="ayuda/blog" mat-menu-item>Blog</a>
           </mat-menu>
   
-          <button class="nav-menu__close" (click)="closeNav()" mat-icon-button
+          <button class="nav-menu__close block pointer-events-none lg:hidden lg:pointer-events-auto" (click)="closeNav()" mat-icon-button
             aria-label="Example icon button with a home icon">
             <mat-icon>close</mat-icon>
           </button>
   
-          <a class="nav-menu__register" routerLink="registro" (click)="closeNav()" mat-flat-button color="primary">Registrarme</a>
+          <a class="nav-menu__register hidden font-sans pointer-events-none lg:block lg:pointer-events-auto" routerLink="registro" (click)="closeNav()" mat-flat-button color="primary">Registrarme</a>
   
         </div>
   
       </div>
   
-      <div class="r-bottons">
-        <button #btnTheme  class="r-theme light-btn" mat-icon-button
+      <div class="r-bottons flex flex-row flex-nowrap items-center justify-end">
+        <button #btnTheme class="r-theme light-btn" mat-icon-button
           matTooltip="Seleccione para cambiar de tema para la pagina"
           aria-label="Example icon button with a palette icon">
           <mat-icon class="r-theme__icon r-theme__icon-sun" fontIcon="sunny"></mat-icon>
@@ -63,8 +60,8 @@
         </button>
 
 
-        <a class="r-bottons__a" routerLink="registro" mat-flat-button color="primary">Registrarme</a>
-        <button (click)="openNav()" class="r-bottons__bar" mat-icon-button
+        <a class="r-bottons__a font-sans text-sm py-2 px-4 bg-red-500 text-white" routerLink="registro" color="primary">Registrarme</a>
+        <button (click)="openNav()" class="nav-toggle__btn block lg:hidden" mat-icon-button
           aria-label="Example icon button with a vertical three dot icon">
           <mat-icon fontIcon="grid_view"></mat-icon>
         </button>

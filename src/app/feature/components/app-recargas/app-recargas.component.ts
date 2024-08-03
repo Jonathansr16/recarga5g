@@ -3,11 +3,16 @@ import { Component, ElementRef, ViewChild, AfterViewInit, PLATFORM_ID, Inject } 
 
 //*Librerias externas importadas
 import { Swiper, Autoplay, Pagination, Navigation, SwiperOptions, EffectFade } from 'swiper';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-recargas',
+  standalone: true,
   templateUrl: './app-recargas.component.html',
-  styleUrls: ['./app-recargas.component.scss']
+  styleUrls: ['./app-recargas.component.scss'],
+  imports: [
+    MatIconModule
+  ]
 })
 export class AppRecargasComponent implements AfterViewInit {
 

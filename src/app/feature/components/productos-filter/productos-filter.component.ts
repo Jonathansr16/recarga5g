@@ -1,54 +1,40 @@
-import { Component, OnInit, ViewChildren, QueryList, ElementRef, Renderer2, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ProductosService } from '@core/services/productos.service';
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule } from '@angular/common';
+import { productoModel } from '@core/models/productos.model';
 
 
 @Component({
   selector: 'app-filter-productos',
+  standalone: true,
   templateUrl: './productos-filter.component.html',
   styleUrls: ['./productos-filter.component.scss'],
+  imports: [
+    CommonModule
+  ],
+ 
 })
 export class ProductosFilterComponent implements OnInit {
 
-  productos: any[] = [];
-  categorias: string[] = ['Todos', 'Recargas', 'Servicios', 'Pines']; // Reemplaza con tus categorías
+  productos: productoModel[] = [];
+  categorias = [
+    { id: 0, nombre: 'Todos' },
+    { id: 1, nombre: 'Recargas' },
+    { id: 2, nombre: 'Servicios' },
+    { id: 3, nombre: 'Pines' }
+  ]
+  btnCategoryActive = 0;
 
-  @ViewChildren('productItem') itemsProduct?: QueryList<ElementRef>
-  selectedCategory: string = 'todo';
-  btnCategoryActive: string = 'todo'
-
-  constructor(private _productoService: ProductosService, private renderer2: Renderer2, @Inject(PLATFORM_ID) private plataform_id: Object ) { }
+  private readonly _productoService = inject( ProductosService);
 
   ngOnInit(): void {
     this.productos = this._productoService.getProductos();
  
   }
 
- filterProduct(category: string) {
-
-  this.btnCategoryActive = category;
-  if (isPlatformBrowser(this.plataform_id)) {
-    this.itemsProduct?.forEach(element => {
-      const imageCategory = element.nativeElement.getAttribute('data-category');
-      this.renderer2.removeClass(element.nativeElement, 'hiddenItem');
-      this.renderer2.addClass(element.nativeElement, 'showItem');
-      if(category === 'todo' || imageCategory === category) {
-    
-        this.renderer2.removeClass(element.nativeElement, 'hiddenItem');
-        this.renderer2.addClass(element.nativeElement, 'showItem');
-    
-      } else {
-    
-        this.renderer2.removeClass(element.nativeElement, 'showItem');
-        this.renderer2.addClass(element.nativeElement, 'hiddenItem');
-      }
-    });
-
+  btnFilterActive(index: number) {
+    this.btnCategoryActive = index
   }
-
- 
- }
-
 
 
 }

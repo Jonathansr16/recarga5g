@@ -1,65 +1,86 @@
-@import "_mixin";
-@import "_keyframe";
+// @import "_mixin";
+ @import "_keyframe";
 
-.productos__container {
-  grid-template-columns: 1fr;
-}
+// .productos__container {
+//   grid-template-columns: 1fr;
+// }
 
-.productos-title {
-  &__h3 {
-    text-align: center;
-  }
-}
+// .productos-title {
+//   &__h3 {
+//     text-align: center;
+//   }
+// }
 
-.productos-options {
-  @include flexible(flex, row, wrap, center, center);
-  gap: 1.5em;
-  margin-bottom: 1.5em;
+// .productos-options {
+//   @include flexible(flex, row, wrap, center, center);
+//   gap: 1.5em;
+//   margin-bottom: 1.5em;
 
-  &__button {
-    background-color: var(--c-light-primary);
-    color: var(--c-secondary);
-  }
+//   &__button {
+//     background-color: var(--c-light-primary);
+//     color: var(--c-secondary);
+//   }
 
-  &__button--isactive {
-    background-color: var(--c-primary);
-    color: var(--c-white);
-  }
-}
+//   &__button--isactive {
+//     background-color: var(--c-primary);
+//     color: var(--c-white);
+//   }
+// }
 
-.productos-list {
-  @include flexible(flex, row, wrap, center, center);
-  gap: 1.5em;
+// .productos-list {
+//   @include flexible(flex, row, wrap, center, center);
+//   gap: 1.5em;
 
-  &-item {
-    max-width: 250px;
-  }
+//   &-item {
+//     max-width: 250px;
+//   }
 
-  &-item.showItem {
+//   &-item.showItem {
+//     display: block;
+//     animation: showItem 0.5s ease;
+//   }
+
+//   &-item.hiddenItem {
+//     display: none;
+//   }
+
+//   &-item__img {
+//     max-width: 200px;
+//     max-height: 180px;
+//     object-fit: contain;
+//   }
+// }
+
+// .isBtnActive {
+//   background-color: var(--c-secondary);
+//   color: #fff;
+// }
+
+// .producActive {
+//   display: block;
+// }
+
+// .productHidden {
+//   display: none;
+// }
+
+
+.showItem {
     display: block;
     animation: showItem 0.5s ease;
-  }
+}
 
-  &-item.hiddenItem {
+.hiddenItem {
     display: none;
-  }
-
-  &-item__img {
-    max-width: 200px;
-    max-height: 180px;
-    object-fit: contain;
-  }
 }
 
-.isBtnActive {
-  background-color: var(--c-secondary);
-  color: #fff;
-}
-
-.producActive {
-  display: block;
-}
-
-.productHidden {
-  display: none;
+@keyframes showItem {
+    0% {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }

@@ -13,7 +13,9 @@
 </div>
 
 <!-- ============= SECCIÓN CAROUSEL SERVICIOS ============= -->
-<app-carousel-productos [productos]="servicio" *ngFor="let servicio of servicios"></app-carousel-productos>
+ @for (servicio of servicios(); track $index) {
+   <app-carousel-productos [products]="servicio"></app-carousel-productos>
+ }
 
 <!-- ============= SECCIÓN COBRO SERVICES ============= -->
 <div class="cobro-services mb-3">
@@ -266,7 +268,9 @@
     </div>
 
     <div class="register-services__right mb-3">
-      <app-register-steps [step]="stepService" *ngFor="let stepService of registerServices"></app-register-steps>
+      @for (step of registerServices(); track $index) {
+        <app-register-steps [step]="step"></app-register-steps>
+      }
     </div>
   </div>
 </div>

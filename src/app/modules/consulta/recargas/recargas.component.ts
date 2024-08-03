@@ -1,4 +1,5 @@
-import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit, inject, signal } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 import { Title } from '@angular/platform-browser';
 
 //* Modelos importados
@@ -10,19 +11,29 @@ import { registerStepsModel } from '@core/models/register-steps-model';
 import { MetaTagService } from '@core/services/meta-tag.service';
 import { ProductosService } from '@core/services/productos.service';
 import { RegisterStepsService } from '@core/services/register-steps.service';
+import { CarouselProductosComponent } from '@feature/components/carousel-productos/carousel-productos.component';
+import { MetodoVentasComponent } from '@feature/components/metodo-ventas/metodo-ventas.component';
+import { RegisterStepsComponent } from '@feature/components/register/register-steps.component';
 
 @Component({
   selector: 'app-recargas',
+  standalone: true,
   templateUrl: './recargas.component.html',
   styleUrls: ['./recargas.component.scss', '../consulta.component.scss'],
+  imports: [
+    CarouselProductosComponent,
+    MatIconModule,
+    MetodoVentasComponent,
+    RegisterStepsComponent
+  ]
 })
-export class RecargasComponent implements OnInit {
+export default class RecargasComponent implements OnInit {
 
   @ViewChild('recargasSwiper')tae?: ElementRef;
-  recargas: productoModel[] = [];
-  stepRecargas: registerStepsModel[] = [];
+  recargas = signal<productoModel[]>([]);
+  stepRecargas = signal<registerStepsModel[]>([]);
 
-  
+
   //? META TAG
   tag: metaTagModel = {
 
@@ -36,27 +47,27 @@ export class RecargasComponent implements OnInit {
     creator: "@recargascelular"
   }
 
+private readonly _recargasService = inject( ProductosService);
+private readonly _stepRecargasService = inject( RegisterStepsService);
+private readonly _metaTagService = inject( MetaTagService);
+private readonly title = inject( Title);
 
-  constructor(private readonly _recargasService: ProductosService,
-              private readonly _stepRecargasService: RegisterStepsService,
-              private readonly _metaTagService: MetaTagService,
-              private readonly title: Title) {}
 
     ngOnInit(): void {
 
       this.title.setTitle('Recarga5g.com | Como vender recargas en todas las compañias nacionales')
-   
+
       this._metaTagService.generateTags( {
       ...this.tag
       });
 
-        this.recargas= this._recargasService.getRecargas();
-        this.stepRecargas = this._stepRecargasService.getStepsRecargas();
-   
+        this.recargas.set( this._recargasService.getRecargas() );
+        this.stepRecargas.set( this._stepRecargasService.getStepsRecargas() );
+
 
       }
 
 
 
- 
+
 }

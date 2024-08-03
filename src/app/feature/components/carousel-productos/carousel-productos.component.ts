@@ -1,10 +1,11 @@
 import { isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, Inject, Input, PLATFORM_ID, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, input, PLATFORM_ID, ViewChild} from '@angular/core';
 
 import { Swiper, Autoplay, Pagination, Navigation, SwiperOptions} from 'swiper';
 
 @Component({
   selector: 'app-carousel-productos',
+  standalone: true,
   templateUrl: './carousel-productos.component.html',
   styleUrls: ['./carousel-productos.component.scss'],
 
@@ -13,9 +14,10 @@ export class CarouselProductosComponent implements AfterViewInit {
 
   @ViewChild('productosSwiper') prodSwiper?: ElementRef;
   
-  @Input() productos: any;
+  products = input.required<any>();
   
-  constructor( @Inject(PLATFORM_ID) private plataform_id: Object) { }
+  private readonly platform_id = inject(PLATFORM_ID);
+  // @Inject(PLATFORM_ID) private plataform_id: Object
 
 private config: SwiperOptions = {
   modules: [Navigation,Pagination, Autoplay],
@@ -70,8 +72,9 @@ private config: SwiperOptions = {
 
 
   carouselContinue(): void {
-    if (isPlatformBrowser(this.plataform_id)) {
+    if (isPlatformBrowser(this.platform_id)) {
       const _prodSwiper= this.prodSwiper?.nativeElement;
+      console.log(_prodSwiper)
       new Swiper(_prodSwiper,this.config);
      }
 

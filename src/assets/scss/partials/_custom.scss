@@ -2,6 +2,14 @@
 
 @include mat.core();
 
+
+// Use the default configuration.
+$my-typography: mat.define-typography-config();
+@include mat.typography-hierarchy($my-typography);
+// $custom-typography: mat.define-typography-config(
+//     $font-family: 'Roboto'   
+// );
+
 //* LIGHT THEME CUSTOM
 $light-theme: mat.define-light-theme(
     (
@@ -9,7 +17,7 @@ $light-theme: mat.define-light-theme(
             primary: mat.define-palette(mat.$red-palette, 700),
             accent: mat.define-palette(mat.$indigo-palette, 500),
         ),
-        typography: mat.define-typography-config(),
+        // typography: $custom-typography,
         density: 0,
     )
 );
@@ -21,6 +29,8 @@ $dark-theme: mat.define-dark-theme(
             primary: mat.define-palette(mat.$indigo-palette, 500),
             accent: mat.define-palette(mat.$red-palette, 500),
         ),
+        // typography: $custom-typography,
+
     )
 );
 

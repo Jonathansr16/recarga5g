@@ -9,6 +9,7 @@ export interface productosModel {
     url: string,
     label: string;
     category?: string;
+    idCategory: 1 | 2 | 3;
 }
 
 export interface ImgProducto {

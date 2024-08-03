@@ -1,39 +1,39 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { MaterialModule } from "@shared/material/material.module";
-//* Components
-import { CarouselProductosComponent } from "@feature/components/carousel-productos/carousel-productos.component";
+// import { NgModule } from "@angular/core";
+// import { CommonModule } from "@angular/common";
+// import { MaterialModule } from "@shared/material/material.module";
+// //* Components
+// import { CarouselProductosComponent } from "@feature/components/carousel-productos/carousel-productos.component";
 
-import { MetodoVentasComponent } from "@feature/components/metodo-ventas/metodo-ventas.component";
-import { ProductosFilterComponent } from "@feature/components/productos-filter/productos-filter.component";
-import { AppRecargasComponent } from '@feature/components/app-recargas/app-recargas.component';
-import { RegisterStepsComponent } from "./components/register/register-steps.component";
+// import { MetodoVentasComponent } from "@feature/components/metodo-ventas/metodo-ventas.component";
+// import { ProductosFilterComponent } from "@feature/components/productos-filter/productos-filter.component";
+// import { AppRecargasComponent } from '@feature/components/app-recargas/app-recargas.component';
+// import { RegisterStepsComponent } from "./components/register/register-steps.component";
 
-import { RouterModule } from "@angular/router";
+// import { RouterModule } from "@angular/router";
 
 
-@NgModule({
-    declarations: [
-        CarouselProductosComponent,
+// @NgModule({
+//     declarations: [
+//         CarouselProductosComponent,
  
-        MetodoVentasComponent,
-        ProductosFilterComponent,
-        AppRecargasComponent,
-        RegisterStepsComponent, 
-    ],
-    imports: [
-        MaterialModule,
-        CommonModule,
-        RouterModule
-    ],
-    exports: [
-        CarouselProductosComponent,
+//         MetodoVentasComponent,
+//         ProductosFilterComponent,
+//         AppRecargasComponent,
+//         RegisterStepsComponent, 
+//     ],
+//     imports: [
+//         MaterialModule,
+//         CommonModule,
+//         RouterModule
+//     ],
+//     exports: [
+//         CarouselProductosComponent,
        
-        MetodoVentasComponent,
-        ProductosFilterComponent,
-        AppRecargasComponent,
-        RegisterStepsComponent,  
-    ],
-})
+//         MetodoVentasComponent,
+//         ProductosFilterComponent,
+//         AppRecargasComponent,
+//         RegisterStepsComponent,  
+//     ],
+// })
 
-export class FeatureModule { }
+// export class FeatureModule { }

@@ -1,52 +1,47 @@
-import { Component, OnInit, Inject, PLATFORM_ID,Renderer2 } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { MetodosVentaService } from '@core/services/metodos-venta.service';
-import { metodosVentaModel } from '@core/models/metodos-venta.model';
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { MetodosVentaModel } from '@core/models/metodos-venta.model';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-metodo-ventas',
+  standalone: true,
   templateUrl: './metodo-ventas.component.html',
   styleUrls: ['./metodo-ventas.component.scss'],
+  imports: [
+    CommonModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDialogModule,
+  ],
 
 })
 export class MetodoVentasComponent implements OnInit{
 
-
-  metodoVentas: metodosVentaModel[] = [];
+  metodoVentas: MetodosVentaModel[] = [];
   isModalOpen: boolean = false;
 
-  constructor(private _metodosService: MetodosVentaService, 
-              @Inject(DOCUMENT) private document: Document, 
-              private renderer2: Renderer2,
-              @Inject(PLATFORM_ID) private plataform_id: Object) {}
+  private readonly _metodosService = inject( MetodosVentaService);
+  private readonly dialog = inject(MatDialog);
+
+
 
   ngOnInit(): void {
     this.metodoVentas = this._metodosService.getmetodosVenta();
   }
 
-  openDialog(item= {}): void{
-    this.isModalOpen = true;
-    this._metodosService.openModal(item);
 
-this.blockScrollDocument();
-  }
-
-  closeDialog(item = {}): void {
-    this.isModalOpen = false;
-     this._metodosService.closeModal(item);
-    
-     this.unblockScrollDocument();
-  }
-
-  blockScrollDocument():void {
-    if (isPlatformBrowser(this.plataform_id)) {
-      this.renderer2.addClass(this.document.body, 'blockScrollModal')
-       }
-  }
-
-  unblockScrollDocument():void {
-    if (isPlatformBrowser(this.plataform_id)) {
-      this.renderer2.removeClass(this.document.body, 'blockScrollModal')
-    }
-  }
+toggleDialog(temlateRef: any): void {
+  
+   
+    this.dialog.open(temlateRef, {
+      width: '450px',
+      enterAnimationDuration:  '0ms',
+      exitAnimationDuration: '0ms'
+    })
+  
+}
 }

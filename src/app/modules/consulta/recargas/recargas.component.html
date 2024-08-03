@@ -12,7 +12,9 @@
 </div>
 
 <!-- ============= CAORUSEL RECARGAS ============= -->
-<app-carousel-productos  [productos]="recarga" *ngFor="let recarga of recargas"></app-carousel-productos>
+ @for (recarga of recargas(); track $index) {
+     <app-carousel-productos  [products]="recarga"></app-carousel-productos>
+ }
 
 <!-- ============= SECCIÓN COBRO SERVICES ============= -->
 <div class="cobro-services mb-3">
@@ -231,7 +233,9 @@
 <div class="register-recargas mb-3">
     <div class="register-recargas__container container">
         <div class="register-recargas__left">
-            <app-register-steps [step]="step" *ngFor="let step of stepRecargas"></app-register-steps>
+            @for (step of stepRecargas(); track $index) {
+                <app-register-steps [step]="step"></app-register-steps>
+            }
         </div>
 
         <div class="register-recargas__right">

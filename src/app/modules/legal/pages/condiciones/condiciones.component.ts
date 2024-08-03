@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { metaTagModel } from '@core/models/meta-tag.model';
 import { MetaTagService } from '@core/services/meta-tag.service';
 
 @Component({
   selector: 'app-condiciones',
+  standalone: true,
   templateUrl: './condiciones.component.html',
   styleUrls: ['./condiciones.component.scss']
 })
-export class CondicionesComponent implements OnInit {
+export default class CondicionesComponent implements OnInit {
 
     //? META TAG
  tag: metaTagModel = {
@@ -22,7 +23,8 @@ export class CondicionesComponent implements OnInit {
   creator: '@recargascelular',
  }
 
-  constructor(private readonly title: Title, private readonly meta: MetaTagService) { }
+ private readonly title = inject( Title ); 
+ private readonly meta = inject( MetaTagService );
 
   ngOnInit(): void {
     this.title.setTitle('Recarga5g.com | Consulta nuestras condiciones de uso de nuestras plataformas');

@@ -1,18 +1,29 @@
-import { Component, Inject, OnInit, PLATFORM_ID, ViewEncapsulation } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID, ViewEncapsulation, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { ContentfulService } from '@ayuda/services/contentful.service';
 import { _countGroupLabelsBeforeOption } from '@angular/material/core';
 import { MetaTagService } from '@core/services/meta-tag.service';
+import { MatIconModule } from '@angular/material/icon';
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { CommonModule } from '@angular/common';
+import { MarkdownPipe } from '@core/pipes/markdown.pipe';
 
 
 @Component({
   selector: 'app-post',
+  standalone: true,
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss'],
   template: '<div [innerHTML]="somehtmlCode"> </div>',
   encapsulation: ViewEncapsulation.None,
+  imports: [
+    CommonModule,
+    MatIconModule,
+    ShareButtonsModule,
+    MarkdownPipe,
+  ]
  
 })
 export class PostComponent implements OnInit {
@@ -20,8 +31,10 @@ export class PostComponent implements OnInit {
   id: any = '';
   post$: Observable<any> | undefined;
 
-  constructor(private activatedRouter: ActivatedRoute, private contentful: ContentfulService, private readonly title: Title,
-              private readonly meta: MetaTagService) { }
+  private activatedRouter = inject( ActivatedRoute);
+  private contentful = inject( ContentfulService );
+  private readonly title = inject(Title);
+  private readonly meta = inject(MetaTagService)
 
   ngOnInit(): void {
 

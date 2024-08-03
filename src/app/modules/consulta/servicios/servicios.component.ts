@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 //* Modelos importados
@@ -10,17 +10,31 @@ import { metaTagModel } from '@core/models/meta-tag.model';
 import { ProductosService } from '@core/services/productos.service';
 import { RegisterStepsService } from '@core/services/register-steps.service';
 import { MetaTagService } from '@core/services/meta-tag.service';
+import { CarouselProductosComponent } from '@feature/components/carousel-productos/carousel-productos.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MetodoVentasComponent } from '@feature/components/metodo-ventas/metodo-ventas.component';
+import { RegisterStepsComponent } from '@feature/components/register/register-steps.component';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-servicios',
+  standalone: true,
   templateUrl: './servicios.component.html',
-  styleUrls: ['./servicios.component.scss','../consulta.component.scss']
+  styleUrls: ['./servicios.component.scss','../consulta.component.scss'],
+  imports: [
+    CommonModule,
+    CarouselProductosComponent,
+    MatIconModule,
+    MetodoVentasComponent,
+    RegisterStepsComponent,
+  ]
 })
-export class ServiciosComponent implements OnInit{
+export default class ServiciosComponent implements OnInit{
 
-  servicios: productoModel[] = [];
-  registerServices: registerStepsModel[] = [];
+  
+  servicios = signal<productoModel[]>([]);
+  registerServices = signal<registerStepsModel[]>([]);
   
   //? META TAG
   tag: metaTagModel = {
@@ -35,15 +49,17 @@ export class ServiciosComponent implements OnInit{
     creator: "@recargascelular"
   }
 
-  constructor(private readonly _servicios: ProductosService, private _register: RegisterStepsService, private readonly _metaTagService: MetaTagService,
-              private readonly title: Title) { }
-
+  private readonly _servicios = inject( ProductosService ); 
+  private readonly _register = inject( RegisterStepsService ); 
+  private readonly _metaTagService = inject( MetaTagService );
+  private readonly title = inject( Title );
+  
   ngOnInit(): void {
 
     this.title.setTitle('Recarga5g.com | Como cobrar recibo de servicios: Telmex, Izzi, CFE y mucho mas!')
 
-    this.servicios = this._servicios.getServicios();
-    this.registerServices = this._register.getStepsServicios();
+    this.servicios.set( this._servicios.getServicios() );
+    this.registerServices.set( this._register.getStepsServicios() );
 
     this._metaTagService.generateTags( {
       ...this.tag

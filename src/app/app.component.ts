@@ -1,48 +1,61 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { Component,HostBinding, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
-import { NavigationEnd, Router, Routes } from '@angular/router';
+import { Component,HostBinding, HostListener, inject, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { ContactBtnComponent } from '@core/components/contact-btn/contact-btn.component';
+import { FooterComponent } from '@core/components/footer/footer.component';
+import { HeaderComponent } from '@core/components/header/header.component';
+import { UpScrollComponent } from '@core/components/up-scroll/up-scroll.component';
 
-import { GoogleTagManagerService } from 'angular-google-tag-manager';
-
-
+//  import { GoogleTagManagerModule, GoogleTagManagerService } from 'angular-google-tag-manager';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [
+    RouterOutlet,
+    UpScrollComponent,
+    HeaderComponent,
+    ContactBtnComponent,
+    FooterComponent,
+  
+  ],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrl: './app.component.scss',
+
 })
 export class AppComponent  implements OnInit{
   title = 'recarga5g.com';
-
 
   showBtnScroll: boolean = false;
   private scrollHeight = 700;
 
   @HostBinding('class') componetCssClass: any;
 
-  constructor(@Inject(DOCUMENT) private document: Document,
-    @Inject(PLATFORM_ID) private platform_id: Object,
-    private gtmService: GoogleTagManagerService,
-    private router: Router,
-   
-  ) {
-    if(isPlatformBrowser (this.platform_id)) { 
-      this.gtmService.addGtmToDom();
-    }
+  private readonly document = inject(DOCUMENT);
+  private readonly platform_id = inject(PLATFORM_ID);
+  private readonly router = inject(Router);
+ 
+  // private gtmService: GoogleTagManagerService,
+  
+
+  constructor() {
+    // if(isPlatformBrowser (this.platform_id)) { 
+    //   this.gtmService.addGtmToDom();
+    // }
    }
 
 ngOnInit(): void {
-  this.router.events.forEach(home => {
-    if (home instanceof NavigationEnd) {
-      const gtmTag = {
-        event: 'Page',
-        pageName: home.url
-      };
-      this.gtmService.pushTag(gtmTag);
-    }
+  // this.router.events.forEach(home => {
+  //   if (home instanceof NavigationEnd) {
+  //     const gtmTag = {
+  //       event: 'Page',
+  //       pageName: home.url
+  //     };
+  //     this.gtmService.pushTag(gtmTag);
+  //   }
 
 
-  })
+  // })
 }
 
   @HostListener('window:scroll')

@@ -1,14 +1,21 @@
-import { AfterViewInit, Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Renderer2, viewChild, ViewChild } from '@angular/core';
 import { MatButton } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-contact-btn',
+  standalone: true,
   templateUrl: './contact-btn.component.html',
-  styleUrls: ['./contact-btn.component.scss']
+  styleUrls: ['./contact-btn.component.scss'],
+  imports: [
+    MatIconModule
+  ]
 })
 export class ContactBtnComponent implements AfterViewInit{
 
-  @ViewChild('btnToggle') btn?: MatButton;
+  // @ViewChild('btnToggle') btn?: MatButton;
+btn = viewChild<ElementRef>('btnToggle');
+
 
   constructor(private renderer2: Renderer2){}
 
@@ -18,14 +25,16 @@ export class ContactBtnComponent implements AfterViewInit{
   }
 
   activeMenu() {
-    const btnMenu = this.btn?._elementRef.nativeElement;
+    // const btnMenu = this.btn?._elementRef.nativeElement;
 
-    this.renderer2.listen(btnMenu, "click", () => {
+    const btnToggle = this.btn()?.nativeElement;
 
-      if(btnMenu.classList.contains('active')) {
-        this.renderer2.removeClass(btnMenu, 'active');
+    this.renderer2.listen(btnToggle, "click", () => {
+
+      if(btnToggle.classList.contains('active')) {
+        this.renderer2.removeClass(btnToggle, 'active');
       } else {
-        this.renderer2.addClass(btnMenu, 'active');
+        this.renderer2.addClass(btnToggle, 'active');
 
       }
 

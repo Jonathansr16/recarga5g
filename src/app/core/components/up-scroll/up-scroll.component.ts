@@ -1,10 +1,16 @@
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Component, HostListener,  Inject, PLATFORM_ID, } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-up-scroll',
+  standalone: true,
   templateUrl: './up-scroll.component.html',
-  styleUrls: ['./up-scroll.component.scss']
+  styleUrls: ['./up-scroll.component.scss'],
+  imports: [
+    CommonModule,
+    MatIconModule
+  ]
 })
 export class UpScrollComponent {
 

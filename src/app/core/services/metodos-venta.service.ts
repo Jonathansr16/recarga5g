@@ -1,138 +1,131 @@
 import { Injectable } from '@angular/core';
-import { metodosModalModel, metodosVentaModel } from '@core/models/metodos-venta.model';
+import { MetodosModalModel, MetodosVentaModel } from '@core/models/metodos-venta.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MetodosVentaService {
 
-  metodoVenta: metodosVentaModel[] = [
+  metodoVenta: MetodosVentaModel[] = [
 
     {
       id: 1,
-      img: "/assets/img/ventas-pc.png",
-      title1: "Vende de tu computadora",
-      description: "Para empezar a vender recargas electrónicas desde tu computadora, solo necesitas tener acceso a internet y registrarte en una plataforma de recargas electrónicas. Una vez registrado, podrás ofrecer una amplia variedad de recargas para diferentes operadoras y dispositivos electrónicos",
-      modal: [
-        {
-          imgModal: "/assets/img/plataformas-web.png",
-          titleModal: "¿Como vender recarga desde una computadora?",
-          descrptionModal: "Venta de recargas AT&T desde un equipo de  computo"
-        }
-      
-      ],
-
-      list: [
+      img: '/assets/img/laptop.png',
+      title: "Plataforma Web",
+      description: "Vende recargas Telcel, con excelentes comisiones, con tu smartphone o computadora ingresa al portal con tu navegador de preferencia.",
+      modal: {
+          img: "/assets/img/plataformas-web.png",
+          subTitle: "¿Como vender recarga desde una computadora?",
+          descrption: "Venta de recargas AT&T desde un equipo de  computo",
+          list: [
         {
           iconName: "laptop_mac",
-          descriptionStep: "Equipo de computo"
+          description: "Equipo de computo"
         },
 
         {
           iconName: "wifi",
-          descriptionStep: "Conexión a internet"
+          description: "Conexión a internet"
         },
 
         {
           iconName: "domain_verification",
-          descriptionStep: "Navegador de su preferencia"
+          description: "Navegador de su preferencia"
         },
 
         {
           iconName: "travel_explore",
-          descriptionStep: "Link de acceso a la plataforma"
+          description: "Link de acceso a la plataforma"
         },
 
         {
           iconName: "person_pin",
-          descriptionStep: "Datos de acceso"
+          description: "Datos de acceso"
         }
       ],
-      showModal: false
+     
+    },
+
+     
 
     },
 
     {
       id: 2,
-      img: "/assets/img/ventas-phone.svg",
-      title1: "Vende de tu Smarthphone o Tablet",
-      description: "Con solo unos pocos toques en tu pantalla, podrás ofrecer una amplia variedad de recargas para diferentes operadoras y dispositivos electrónicos. Además, la aplicación de recargas electrónicas se encargará del procesamiento de la transacción y de la entrega de la recarga al cliente, lo que te permitirá ofrecer un servicio rápido y eficiente desde cualquier lugar.",
-      modal: [
-        {
-          imgModal: "/assets/img/smartphone.png",
-          titleModal: "¿Como puedo vender recargas electrónicas desde mi celular o tablet",
-          descrptionModal: "Venta de recargas AT&T desde un equipo de  computo"
-        }
-      ],
-
-      list: [
-        {
-          iconName: "archive",
-          descriptionStep: "Descarga la App desde la tienda oficial"
-        },
-
-        {
-          iconName: "person_pin",
-          descriptionStep: "Datos de acceso"
-        },
-
-        {
-          iconName: "payments",
-          descriptionStep: "Saldo suficiente"
-        },
-
-        {
-          iconName: "checklist_rtl",
-          descriptionStep: "Listo!! podras comenzar a realizar recargar y pagar servicios a cualquier compañia"
-        }
-      ],
-
-      showModal: false
-
+      img: "/assets/img/smartphone.webp",
+      title: "App",
+      description: "Descarga la app desde la tienda oficial para vender recargas telcel",
+      modal: {
+          img: "/assets/img/smartphone.png",
+          subTitle: "¿Como puedo vender recargas electrónicas desde mi celular o tablet",
+          descrption: "Venta de recargas AT&T desde un equipo de  computo",
+          list: [
+            {
+              iconName: "archive",
+              description: "Descarga la App desde la tienda oficial"
+            },
+    
+            {
+              iconName: "person_pin",
+              description: "Datos de acceso"
+            },
+    
+            {
+              iconName: "payments",
+              description: "Saldo suficiente"
+            },
+    
+            {
+              iconName: "checklist_rtl",
+              description: "Listo!! podras comenzar a realizar recargar y pagar servicios a cualquier compañia"
+            }
+          ],
+        
+    },
     },
 
     {
       id: 3,
-      img: "/assets/img/ventas-sms.png",
-      title1: "Vende con tan solo un simple SMS",
-      description: "Vender recargas electrónicas enviando un simple SMS es una opción ideal para aquellos que no tienen acceso a una computadora o teléfono inteligente, y para aquellos que buscan una manera fácil y rápida de generar ingresos adicionales para su negocio.",
-      modal: [
-        {
-          imgModal: "/assets/img/sms.png",
-          titleModal: "¿Como puedo vender recargas electrónicas enviando un SMS?",
-          descrptionModal: "Venta de recargas AT&T desde un equipo de  computo"
-        }
-      ],
+      img: "/assets/img/sms.webp",
+      title: "Vía SMS",
+      description: "Vender recargas electrónicas enviando un simple SMS.",
+      modal: {
+        
+          img: "/assets/img/sms.png",
+          subTitle: "¿Como puedo vender recargas electrónicas enviando un SMS?",
+          descrption: "Venta de recargas AT&T desde un equipo de  computo",
+          list: [
+            {
+              iconName: "security_update_good",
+              description: "Telefono celular"
+            },
+    
+            {
+              iconName: "person_pin",
+              description: "Datos de acceso"
+            },
+    
+            {
+              iconName: "how_to_reg",
+              description: "Vincular tu numero celular a la plataforma"
+            },
+    
+            {
+              iconName: "payments",
+              description: "Saldo suficiente"
+            },
+          ],
+        
+    },
 
-      list: [
-        {
-          iconName: "security_update_good",
-          descriptionStep: "Telefono celular"
-        },
+     
 
-        {
-          iconName: "person_pin",
-          descriptionStep: "Datos de acceso"
-        },
-
-        {
-          iconName: "how_to_reg",
-          descriptionStep: "Vincular tu numero celular a la plataforma"
-        },
-
-        {
-          iconName: "payments",
-          descriptionStep: "Saldo suficiente"
-        },
-      ],
-
-      showModal: false
 
     },
 
   ];
 
-  getmetodosVenta(): metodosVentaModel[] {
+  getmetodosVenta(): MetodosVentaModel[] {
     return this.metodoVenta;
   }
 

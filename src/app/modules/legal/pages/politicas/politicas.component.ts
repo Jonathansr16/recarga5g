@@ -1,14 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { metaTagModel } from '@core/models/meta-tag.model';
 import { MetaTagService } from '@core/services/meta-tag.service';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-politicas',
+  standalone: true,
   templateUrl: './politicas.component.html',
-  styleUrls: ['./politicas.component.scss']
+  styleUrls: ['./politicas.component.scss'],
+  imports: [
+    MatTabsModule
+  ]
 })
-export class PoliticasComponent implements OnInit {
+export default class PoliticasComponent implements OnInit {
 
   //? META TAG
   tag: metaTagModel = {
@@ -21,7 +26,9 @@ export class PoliticasComponent implements OnInit {
     card: 'summary_large_image',
     creator: '@recargascelular',
   }
-  constructor(private readonly title: Title, private readonly meta: MetaTagService) { }
+  
+  private readonly title = inject(Title);
+  private readonly meta = inject(MetaTagService);
 
   ngOnInit(): void {
     this.title.setTitle('Recarga5g.com | nuestras políticas para aplicacion de depósitos, recargas y pago de servicios')

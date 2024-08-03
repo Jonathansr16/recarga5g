@@ -1,11 +1,17 @@
-<div class="carousel-productos mb-3">
-    <div #productosSwiper class="carousel-productos__swiper swiper">
-        <div class="carousel-productos__wrapper swiper-wrapper">
-                <div  class="carousel-productos__li swiper-slide" *ngFor="let producto of productos.item">
-                    <img [src]="producto.url" class="carousel-productos__img" width="250" height="250" loading="lazy" alt="Recargas Electrónicas lider en la venta de recargas, pago de servicios y pines">  
-               </div>
+<div class="carousel-products relative w-[100vw] left-2/4 right-2/4 -mx-[50vw]">
+    <div class="relative overflow-hidden">
+        <div #productosSwiper class="carousel-productos__swiper swiper w-full h-full">
+            <div class="carousel-products__wrapper swiper-wrapper flex flex-row flex-nowrap relative ">
+             
+                @for (producto of products().item; track $index) {
+                    <div  class="carousel-product__card swiper-slide flex justify-center items-center w-64 h-64 bg-white">
+                        <img [src]="producto.url" class="carousel-products__img object-contain max-w-52 max-h-52 w-full h-full" width="250" height="250" loading="lazy" alt="Recargas Electrónicas lider en la venta de recargas, pago de servicios y pines">  
+                   </div>
+    
+                }
+            </div>
+           
         </div>
-       
     </div>
 </div>
 

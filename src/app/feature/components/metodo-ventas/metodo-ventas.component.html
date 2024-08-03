@@ -1,51 +1,99 @@
 <!-- ============= SECCION METODOS DE VENTA ============= -->
 
-<div class="cards">
-    <div class="card" *ngFor="let item of metodoVentas; let i = index">
-        <div class="card-content">
-            <img [src]="item.img" class="card-content__img" width="370" height="370" loading="lazy" [alt]="item.title1" />
-            <h3 class="card-content__h3 headline-4">{{ item.title1 }}</h3>
-            <p class="card-content__p body-2">{{ item.description }}</p>
-            <button #modalBtnOpen class="card-content__button" mat-raised-button color="primary"
-                (click)="openDialog(item)">
-                Leer mas..
-            </button>
-        </div>
+<div class="metodo-ventas relative grid grid-flow-col auto-cols-[1fr] gap-6">
+    @for (metodo of metodoVentas; track $index) {
 
-        <div #modal class="modal" [ngClass]="{ activeModal: item.showModal }">
-            <div class="modal-card">
-                <mat-icon class="modal-card__icon" (click)="closeDialog(item)" aria-hidden="false"
-                    aria-label="Example home icon" fontIcon="close"></mat-icon>
+        <div class="metodos-venta__card bg-gray-100 border-[1px] border-slate-100 rounded-2xl p-11">
+            <div class="metodos-venta__content">
 
-                <div class="modal-head" *ngFor="let headers of item.modal">
-                    <img class="modal-head__img" [src]="headers.imgModal"  width="90" height="90" loading="lazy" [alt]="headers.titleModal" />
-
-                    <div class="modal-title">
-                        <h4 class="modal-title__h4 headline-4">{{ headers.titleModal }}</h4>
-                        <p class="moda-title__p body-1">{{ headers.descrptionModal }}</p>
+                <div class="metodos-venta__header">
+                    <div class="metodos-ventas__box flex items-center justify-center rounded-xl w-48 h-48 mb-4 mx-auto ">
+                        <img [src]="metodo.img" class="card-content__img w-full h-full " loading="lazy" [alt]="metodo.title" />
                     </div>
                 </div>
+                <div class="metodos-venta__info">
+                    <p class="text-sm my-2 bg-red-100 text-red-700 font-semibold block px-6 py-2 rounded-lg max-h-52 max-w-52">Registro gratis</p>
+                    <h3 class="card-content__h3 text-3xl font-bold text-slate-800 mb-4">{{ metodo.title }}</h3>
 
-                <div class="modal-body">
-                    <ul class="modal-body__ul">
-                        <li class="modal-body__li" *ngFor="let modalList of item.list">
-                            <mat-icon class="modal-body__icon">{{
-                                modalList.iconName
-                                }}</mat-icon>
-                            <p class="modal-body__p body-1">
-                                {{ modalList.descriptionStep }}
-                            </p>
-                        </li>
-                    </ul>
+                    <p class="metodos-ventas__p">{{metodo.description}}</p>
                 </div>
-
-                <div class="modal-footer">
-                    <a routerLink="/registro" mat-raised-button color="primary" (click)="unblockScrollDocument()">Registrarme</a>
-                    <button mat-button class="modal-footer__button" (click)="closeDialog(item)">
-                        Cancelar
-                    </button>
+                <div class="metodos-venta__btn">
+                    <button (click)="toggleDialog(modalItem)" class="card-content__button mt-6 mb-4 mx-auto block w-11/12" mat-raised-button color="primary"
+                   >
+                    Leer mas..
+                </button>
                 </div>
+        
+    
             </div>
+    
+            
+            <div class="modal-card">
+        
+                <ng-template #modalItem class="modal-item">
+                    
+                        <h4 mat-dialog-title class="modal__4 text-2xl text-slate-700">{{ metodo.modal.subTitle }}</h4>
+        
+                        <mat-dialog-content  class="font-sans">
+                            <p class="modal__p text-slate-700">{{ metodo.modal.descrption}}</p>
+
+                            <ul class="modal-body__ul">
+                            @for (list of metodo.modal.list; track $index) {
+                                    <li class="modal-body__li flex items-center gap-4 py-4">
+                                        <mat-icon class="modal-body__icon">
+                                            {{ list.iconName }}
+                                        </mat-icon>
+                                        <p class="modal-body__p text-slate-700">
+                                            {{ list.description }}
+                                        </p>
+                                    </li>
+                                }
+                            </ul>
+                        </mat-dialog-content>
+
+                        <mat-dialog-actions align="end">
+                            <button mat-button mat-dialog-close>Cancelar</button>
+                            <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Inscribirme</button>
+                        </mat-dialog-actions>
+                 
+                </ng-template>
+             
+            </div>
+            <!-- <div #modal class="modal hidden" [ngClass]="{ activeModal: metodo.showModal }">
+                <div class="modal-card">
+                    <mat-icon class="modal-card__icon" (click)="closeDialog(metodo)" aria-hidden="false"
+                        aria-label="Example home icon" fontIcon="close"></mat-icon>
+    
+                    <div class="modal-head" *ngFor="let headers of metodo.modal">
+                        <img class="modal-head__img max-w-8 max-h-8 w-full h-full" [src]="headers.imgModal"  loading="lazy" [alt]="headers.titleModal" />
+    
+                        <div class="modal-title">
+                            <h4 class="modal-title__h4 headline-4">{{ headers.titleModal }}</h4>
+                            <p class="moda-title__p body-1">{{ headers.descrptionModal }}</p>
+                        </div>
+                    </div>
+    
+                    <div class="modal-body">
+                        <ul class="modal-body__ul">
+                            <li class="modal-body__li" *ngFor="let modalList of metodo.list">
+                                <mat-icon class="modal-body__icon">{{
+                                    modalList.iconName
+                                    }}</mat-icon>
+                                <p class="modal-body__p body-1">
+                                    {{ modalList.descriptionStep }}
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="modal-footer">
+                        <a routerLink="/registro" mat-raised-button color="primary" (click)="unblockScrollDocument()">Registrarme</a>
+                        <button mat-button class="modal-footer__button" (click)="closeDialog(metodo)">
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div> -->
         </div>
-    </div>
+    }
 </div>

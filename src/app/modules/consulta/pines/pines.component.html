@@ -12,7 +12,9 @@
 </div>
 
 <!-- ============= CAORUSEL PINES ============= -->
-<app-carousel-productos [productos]="pin" *ngFor="let pin of pines"></app-carousel-productos>
+ @for (pin of pines(); track $index) {
+   <app-carousel-productos [products]="pin"></app-carousel-productos>
+ }
 
 <!-- ============= SECCION COBRO PINES============= -->
 <div class="cobro-services mb-3">
@@ -192,7 +194,9 @@
   <div class="register-recargas__container container">
 
     <div class="register-recargas__left">
-      <app-register-steps [step]="step" *ngFor="let step of stepPines"></app-register-steps>
+      @for (step of stepPines(); track $index) {
+        <app-register-steps [step]="step"></app-register-steps>
+      }
     </div>
 
     <div class="register-recargas__right">

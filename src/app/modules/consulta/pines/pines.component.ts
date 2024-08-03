@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 import { Title } from '@angular/platform-browser';
 
 //* Modelos importados
@@ -10,16 +12,27 @@ import { registerStepsModel } from '@core/models/register-steps-model';
 import { MetaTagService } from '@core/services/meta-tag.service';
 import { ProductosService } from '@core/services/productos.service';
 import { RegisterStepsService } from '@core/services/register-steps.service';
+import { CarouselProductosComponent } from '@feature/components/carousel-productos/carousel-productos.component';
+import { MetodoVentasComponent } from '@feature/components/metodo-ventas/metodo-ventas.component';
+import { RegisterStepsComponent } from '@feature/components/register/register-steps.component';
 
 @Component({
   selector: 'app-pines',
+  standalone: true,
   templateUrl: './pines.component.html',
-  styleUrls: ['./pines.component.scss', '../consulta.component.scss']
+  styleUrls: ['./pines.component.scss', '../consulta.component.scss'],
+  imports: [
+    CommonModule,
+    CarouselProductosComponent,
+    MatIconModule,
+    MetodoVentasComponent,
+    RegisterStepsComponent
+  ]
 })
-export class PinesComponent implements OnInit{
+export default class PinesComponent implements OnInit{
 
-  pines: productoModel[] = [];
-  stepPines: registerStepsModel[] = [];
+  pines = signal<productoModel[]>([]);
+  stepPines = signal<registerStepsModel[]>([]);
 
     //? META TAG
     tag: metaTagModel = {
@@ -34,11 +47,10 @@ export class PinesComponent implements OnInit{
       creator: "@recargascelular"
     }
 
-  constructor(private readonly _pinesService: ProductosService,
-              private readonly _stepService: RegisterStepsService,
-              private readonly _metaTagService: MetaTagService,
-              private readonly title: Title
-              ){ }
+    private readonly _pinesService = inject( ProductosService);
+    private readonly _stepService = inject( RegisterStepsService);
+    private readonly _metaTagService = inject( MetaTagService);
+    private readonly  title = inject( Title);
 
   ngOnInit(): void {
     
@@ -47,8 +59,9 @@ export class PinesComponent implements OnInit{
       ...this.tag
     });
 
-    this.pines = this._pinesService.getPines();
-      this.stepPines = this._stepService.getStepsPines();
+    this.pines.set(this._pinesService.getPines());
+    this.stepPines.set(this._stepService.getStepsPines());
+  
 
 
   }

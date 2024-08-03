@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Inject, Injectable, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { inject, Injectable, PLATFORM_ID, Renderer2 } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +8,8 @@ export class ThemesService {
 
   private colorTheme: string = '';
  
-
-  constructor(  @Inject(PLATFORM_ID) private plataform_id: Object,private renderer2: Renderer2) {
-   
-  }
-
+   private readonly plataform_id = inject(PLATFORM_ID);
+   private readonly renderer2 = inject(Renderer2);
 
   initTheme() {
     if (isPlatformBrowser(this.plataform_id)) {

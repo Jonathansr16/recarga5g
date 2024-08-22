@@ -1,29 +1,27 @@
-<footer class="footer">
-    <div class="footer__container container">
+<footer class="footer w-full bg-slate-100">
+    <div class="footer__container container mx-auto grid grid-cols-1 lg:grid-cols-5 items-start justify-between gap-4 py-12 px-5">
 
-        <div class="footer__sec">
+        <div class="footer__sec px-4">
 
             <div class="footer-logo">
-                <picture class="footer-logo__picture">
-                    <img src="/assets/img/logo__footer.png" class="footer-logo__img" loading="lazy" height="70" width="184" alt="Recargas Electrónicas">
-                </picture>
+                    <img src="/assets/img/logo__footer.png" class="footer-logo__img w-full h-auto" loading="lazy"  alt="Recargas Electrónicas">  
             </div>
 
-            <p class="footer__p body-2">
+            <p class="footer__p text-base text-slate-700">
                 somos la empresa #1 en la venta de tiempo aire, pago de servicios y pines electrónicos, tenemos presencia en toda la republica mexicana.
             </p>
         </div>
 
         <div class="footer__sec">
-            <h4 class="footer__h4 headline-4"> Ayuda </h4>
+            <h4 class="footer__h4 text-2xl font-semibold text-slate-700 mb-4"> Ayuda </h4>
 
             <ul class="footer__ul">
-                <li class="footer__li footer-option">
+                <li class="footer__li pb-8 footer-option flex items-center text-base text-slate-700">
                     <mat-icon aria-hidden="false" class="footer__icon" color="primary" aria-label="Example home icon" fontIcon="keyboard_arrow_right"></mat-icon>
-                    <a routerLink="/ayuda/faqs" mat-button class="footer__a">Preguntas Frecuentes</a>
+                    <a routerLink="/ayuda/faqs" class="footer__a cursor-pointer">Preguntas Frecuentes</a>
                 </li>
 
-                <li class="footer__li footer-option">
+                <li class="footer__li pb-8 footer-option flex items-center text-base text-slate-700">
                     <mat-icon aria-hidden="false" class="footer__icon" color="primary" aria-label="Example home icon" fontIcon="keyboard_arrow_right"></mat-icon>
 
                     <button mat-button [matMenuTriggerFor]="plataformas">Plataformas</button>
@@ -37,13 +35,13 @@
                     
                 </li>
 
-                <li class="footer__li footer-option">
+                <li class="footer__li pb-8 footer-option flex items-center text-base text-slate-700">
                     <mat-icon aria-hidden="false" class="footer__icon" color="primary" aria-label="Example home icon" fontIcon="keyboard_arrow_right"></mat-icon>
-                    <a routerLink="/ayuda/contacto" mat-button class="footer__a">Contacto</a>
+                    <a routerLink="/ayuda/contacto" class="footer__a cursor-pointer">Contacto</a>
                 </li>
 
                
-                <li class="footer__li footer-option">
+                <li class="footer__li pb-6 footer-option flex items-center text-base text-slate-700">
                     <mat-icon aria-hidden="false" class="footer__icon" color="primary" aria-label="Example home icon" fontIcon="keyboard_arrow_right"></mat-icon>
                     <a routerLink="/ayuda/blog" mat-button class="footer__a">Blog</a>
                 </li>
@@ -52,14 +50,14 @@
         </div>
 
         <div class="footer__sec">
-            <h4 class="footer__h2 headline-4">Legal</h4>
+            <h4 class="footer__h4 text-2xl font-semibold text-slate-700 mb-4">Legal</h4>
 
             <ul class="footer__ul">
-                <li class="footer__li footer-option">
+                <li class="footer__li footer-option flex items-center text-base text-slate-700 pb-8">
                     <mat-icon aria-hidden="false" class="footer__icon" color="primary" aria-label="Example home icon" fontIcon="keyboard_arrow_right"></mat-icon>
                     <a routerLink="/legal/politicas" mat-button class="footer__a">Politicas</a>
                 </li>
-                <li class="footer__li footer-option">
+                <li class="footer__li footer-option flex items-center text-base text-slate-700 pb-8">
                     <mat-icon aria-hidden="false" class="footer__icon" color="primary" aria-label="Example home icon" fontIcon="keyboard_arrow_right"></mat-icon>
                     <a routerLink="/legal/condiciones" mat-button class="footer__a">Condiciones de uso</a>
                 </li>
@@ -68,40 +66,44 @@
         </div>
 
         <div class="footer__sec">
-            <h4 class="footer__h4 headline-4">Contacto</h4>
+            <h4 class="footer__h4 text-2xl font-semibold text-slate-700 mb-4">Contacto</h4>
 
             <ul class="footer__ul contacto__ul">
-                <li class="footer__li">
-                    <span class="footer__span--direccion headline-6">Dirección</span>
-                    <p class="footer__p body-2"> Delegación Benito Juarez Distrito Federal México DF <br>
+                <li class="footer__li mb-4 relative pl-9">
+                    <mat-icon class="maticon_location absolute top-0 left-0" fontIcon="location_on" color="primary"></mat-icon>
+                    <span class="text-lg text-slate-700 font-semibold mb-2 block">Dirección</span>
+                    <p class="footer__p text-base text-slate-700"> Delegación Benito Juarez Distrito Federal México DF <br>
                         Dirección Completa Solo Clientes Activos.</p>
                 </li>
 
-                <li class="footer__li">
-                    <span class="footer__span--direccion headline-6">Telefono:</span>
-                    <a href="tel:2717140102" class="footer__a body-1" aria-label="Telefono" target="_blank" rel="noopener noreferrer">+52 2717140102</a>
+                <li class="footer__li relative mb-4 pl-9">
+                    <mat-icon class="maticon_phone_in_talk absolute top-0 left-0" fontIcon="phone_in_talk" color="primary"></mat-icon>
+                    <span class="text-lg text-slate-700 font-semibold mb-2 block">Telefono:</span>
+                    <a href="tel:2717140102" class="footer__a text-base text-slate-700 block" aria-label="Telefono" target="_blank" rel="noopener noreferrer">+52 2717140102</a>
                 </li>
 
-                <li class="footer__li">
-                    <span class="footer__span--direccion headline-6">WhatsApp:</span>
-                    <a href="https://wa.me/522712141938" class="footer__a body-1" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">+52 2712141938</a>
+                <li class="footer__li relative mb-4 pl-9">
+                    <mat-icon class="maticon_forum absolute top-0 left-0" fontIcon="forum" color="primary"></mat-icon>
+                    <span class="text-lg text-slate-700 font-semibold mb-2 block">WhatsApp:</span>
+                    <a href="https://wa.me/522712141938" class="footer__a text-base text-slate-700 block" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">+52 2712141938</a>
                 </li>
 
-                <li class="footer__li">
-                    <span class="footer__span--direccion headline-6">Correo:</span>
-                    <a href="mailto:tae.celular@gmail.com" class="footer__a body-1" aria-label="Correo" target="_blank" rel="noopener noreferrer">tae.celular&#64;gmail.com</a>
+                <li class="footer__li relative mb-4 pl-9">
+                    <mat-icon class="maticon_mail absolute top-0 left-0" fontIcon="mail" color="primary"></mat-icon>
+                    <span class="text-lg text-slate-700 font-semibold mb-2 block">Correo:</span>
+                    <a href="mailto:tae.celular@gmail.com" class="footer__a text-base text-slate-700 block" aria-label="Correo" target="_blank" rel="noopener noreferrer">tae.celular&#64;gmail.com</a>
                 </li>
             </ul>
         </div>
 
         <div class="footer__sec">
-    <h4 class="footer__h4 headline-4">Horario de Atención</h4>
+          <h4 class="footer__h4 text-2xl font-semibold text-slate-700 mb-4">Horario de Atención</h4>
             <ul class="footer__ul atencion">
-                <li class="footer__li atencion__li">
-                    <span class="footer__span body-2"> Lunes- Viernes 9AM a 6PM </span>
+                <li class="footer__li atencion__li ">
+                    <span class="footer__span text-base text-slate-700"> Lunes- Viernes 9AM a 6PM </span>
                 </li>
-                <li class="footer__li atencion__li">
-                    <span class="footer__span body-2"> Sabado 9AM a 4PM </span>
+                <li class="footer__li atencion__li ">
+                    <span class="footer__span text-base text-slate-700"> Sabado 9AM a 4PM </span>
                 </li>
             </ul>
         </div>
@@ -109,7 +111,7 @@
     </div>
 
     <div class="copyright">
-        <div class="copyright__container container flex aling-center justify-between">
+        <div class="copyright__container container mx-auto flex aling-center justify-between">
 
             <div class="copyright__left">
                 <h3 class="footer__h6">

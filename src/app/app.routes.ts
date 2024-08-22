@@ -5,7 +5,7 @@ export const routes: Routes = [
  
     {
         path: '',
-        loadComponent: () => import('./modules/home/home.component')
+        loadComponent: () => import('./pages/home/home.component')
     },
 
     {
@@ -14,8 +14,8 @@ export const routes: Routes = [
     },
 
     {
-        path: '',
-        redirectTo: '/',
+        path: '**',
+        redirectTo: '',
         pathMatch: 'full'
     },
 

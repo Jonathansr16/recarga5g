@@ -1,6 +1,6 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { Component,HostBinding, HostListener, inject, Inject, OnInit, PLATFORM_ID } from '@angular/core';
-import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { Component,HostBinding, HostListener, inject, OnInit, PLATFORM_ID } from '@angular/core';
+import {  Router, RouterOutlet } from '@angular/router';
 import { ContactBtnComponent } from '@core/components/contact-btn/contact-btn.component';
 import { FooterComponent } from '@core/components/footer/footer.component';
 import { HeaderComponent } from '@core/components/header/header.component';

@@ -4,12 +4,12 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@inicio/*": ["src/app/modules/inicio/*"],
-      "@plataformas/*": ["src/app/modules/plataformas/*"],
-      "@consultas/*": ["src/app/modules/consulta/*"],
-      "@legal/*": ["src/app/modules/legal/*"],
-      "@reportes/*": ["src/app/modules/reportes/*"],
-      "@ayuda/*": ["src/app/modules/ayuda/*"],
+      "@inicio/*": ["src/app/pages/inicio/*"],
+      "@plataformas/*": ["src/app/pages/plataformas/*"],
+      "@consultas/*": ["src/app/pages/consulta/*"],
+      "@legal/*": ["src/app/pages/legal/*"],
+      "@reportes/*": ["src/app/pages/reportes/*"],
+      "@ayuda/*": ["src/app/pages/ayuda/*"],
       "@notFound/*": ["src/app/core/components/not-found/*"],
       "@shared/*": ["src/app/shared/*"],
       "@feature/*": ["src/app/feature/*"],

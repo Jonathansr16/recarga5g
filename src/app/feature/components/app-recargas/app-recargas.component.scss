@@ -1,66 +1,15 @@
-@import "_mixin";
 
 //* ============ SECTION APP RECARGAS ============
-.app-recargas__container {
-  grid-template-columns: 1fr;
-}
-.app-recargas__h3 {
-  text-align: center;
-  margin-bottom: 0.5em;
-}
-
-.app-recargas__h4 {
-  margin-left: 5px;
-  margin-bottom: 0.5em;
-  position: relative;
-}
-
-.app-recargas-content {
-  @include grid(2, 1em);
-  @include responsive(950px) {
-    grid-template-columns: 1fr;
-  }
+.app-phone {
+    &::after {
+        border-bottom-right-radius: 18px;
+        border-bottom-left-radius: 18px;
+    }
 }
 
 .app-recargas-list {
   &__li {
-    margin-bottom: 20px;
-    padding: 10px 0 10px 0px;
-    counter-increment: mynumbers;
-    position: relative;
-
-    &:before {
-      content: counter(mynumbers);
-      font-size: 2em;
-      display: inline-block;
-      width: 35px;
-      height: 35px;
-      line-height: 35px;
-      border-radius: 50%;
-      text-align: center;
-      background-color: var(--c-light-primary);
-      color: var(--c-primary);
-      margin-right: 8px;
-    }
-  }
-
-  &__span {
-    background-color: var(--c-light-primary);
-    color: var(--c-primary);
-    font-size: 2em;
-    border-radius: 50%;
-    padding: 10px 5px;
-  }
-}
-
-.app-recargas-action {
-  @include flexible(flex, row, wrap, center, center);
-  gap: 3em;
-
-  &__icon {
-    order: 2;
-    width: 24px;
-    height: 24px;
-    font-size: 24px;
+      counter-increment: mynumbers;
+ 
   }
 }

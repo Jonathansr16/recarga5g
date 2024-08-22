@@ -1,0 +1,14 @@
+
+.beneficios__label {
+  transition: 0.4ms;
+   &::before {
+    transition: 0.4s;
+   }
+
+}
+
+.section-hero-wrapper{
+  background-image: url('/assets/img/svg/herobg.svg');
+  object-fit: contain;
+  background-repeat: no-repeat
+}

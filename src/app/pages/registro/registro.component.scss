@@ -1,0 +1,87 @@
+
+//* ============ SECCION HERO REGISTRO ============
+.registro-hero {
+  grid-template-columns: 1fr;
+  background-color: var(--c-body);
+
+  &__img {
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+  }
+}
+
+.registro {
+  &__container {
+    grid-template-columns: 1fr;
+  }
+
+  &-content {
+    @include grid(2, 1em);
+    @include responsive(992px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+//* ============ SECCION REGISTRO ============
+.registro {
+  &-title {
+    &__h1,
+    &__p {
+      text-align: center;
+    }
+  }
+
+  &__steps {
+    @include grid(2, 1em);
+    margin: auto;
+    column-gap: 4em;
+    row-gap: 2em;
+    position: relative;
+    @include responsive(550px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__steps:before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0.07;
+    border: 12px solid var(--c-primary);
+  }
+
+  &__form {
+    margin-top: 3em;
+  }
+
+  &__frame {
+    height: 1100px;
+  }
+}
+
+.registro-item {
+  background-color: var(--c-card);
+  padding: 1em 0.7em;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin: auto;
+  @include flexible(flex, column, wrap, center, center);
+  &__h3 {
+    margin: 0.5em;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  &__img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40px;
+  }
+}

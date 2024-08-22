@@ -54,7 +54,7 @@ export class MetodosVentaService {
       id: 2,
       img: "/assets/img/smartphone.webp",
       title: "App",
-      description: "Descarga la app desde la tienda oficial para vender recargas telcel",
+      description: "Descarga la app desde la tienda oficial para vender recargas telcel en tu dispositivo Android o IOS.",
       modal: {
           img: "/assets/img/smartphone.png",
           subTitle: "¿Como puedo vender recargas electrónicas desde mi celular o tablet",
@@ -88,7 +88,7 @@ export class MetodosVentaService {
       id: 3,
       img: "/assets/img/sms.webp",
       title: "Vía SMS",
-      description: "Vender recargas electrónicas enviando un simple SMS.",
+      description: "Vender recargas electrónicas enviando un simple SMS. En tu telefono celular.",
       modal: {
         
           img: "/assets/img/sms.png",

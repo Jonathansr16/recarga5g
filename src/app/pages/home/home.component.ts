@@ -69,7 +69,7 @@ export default class HomeComponent implements OnInit, AfterViewInit {
   @ViewChildren('counter') counters?: QueryList<ElementRef>;
 
   showModal = signal<boolean>(false);
-  item = signal<razonesModel[]>([]);
+  whySellList = signal<razonesModel[]>([]);
   negocios = signal<negocioModel[]>([]);
   metodosVenta = signal<MetodosVentaModel[]>([]);
   stepsRegister = signal<registerStepsModel[]>([]);
@@ -222,7 +222,7 @@ export default class HomeComponent implements OnInit, AfterViewInit {
     );
 
     this.products.set( this._productosService.getProductos() );
-    this.item.set( this._razonesService.getRazones() );
+    this.whySellList.set( this._razonesService.getRazones() );
     this.negocios.set( this._negocioService.getNegocios() );
     this.metodosVenta.set( this._metodosService.getmetodosVenta() );
     this.stepsRegister.set( this._stepsService.getStepsHome() );

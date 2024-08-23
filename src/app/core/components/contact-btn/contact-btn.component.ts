@@ -1,6 +1,6 @@
-import { AfterViewInit, Component, ElementRef, Renderer2, viewChild, ViewChild } from '@angular/core';
-import { MatButton } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
+import { Component, signal } from '@angular/core';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-contact-btn',
@@ -8,37 +8,16 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './contact-btn.component.html',
   styleUrls: ['./contact-btn.component.scss'],
   imports: [
-    MatIconModule
+    CommonModule,
+    MatTooltipModule
   ]
 })
-export class ContactBtnComponent implements AfterViewInit{
+export class ContactBtnComponent {
 
-  // @ViewChild('btnToggle') btn?: MatButton;
-btn = viewChild<ElementRef>('btnToggle');
+  isFloatBtnActive = signal<boolean>(false);
 
-
-  constructor(private renderer2: Renderer2){}
-
-
-  ngAfterViewInit(): void {
-      this.activeMenu()
-  }
-
-  activeMenu() {
-    // const btnMenu = this.btn?._elementRef.nativeElement;
-
-    const btnToggle = this.btn()?.nativeElement;
-
-    this.renderer2.listen(btnToggle, "click", () => {
-
-      if(btnToggle.classList.contains('active')) {
-        this.renderer2.removeClass(btnToggle, 'active');
-      } else {
-        this.renderer2.addClass(btnToggle, 'active');
-
-      }
-
-    });
+  toggleBtnContact(): void {
+    this.isFloatBtnActive.update( value => !value);
   }
 
 }

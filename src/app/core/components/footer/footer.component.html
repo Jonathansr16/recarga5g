@@ -1,146 +1,198 @@
-<footer class="footer w-full bg-slate-100">
-    <div class="footer__container container mx-auto grid grid-cols-1 lg:grid-cols-5 items-start justify-between gap-4 py-12 px-5">
+<footer class="antialiased footer w-full bg-gray-100 dark:bg-gray-800">
+    <!-- py-12 px-6 lg:px-8py-12 px-6 lg:px-8 -->
+    <div class="footer__container container mx-auto grid grid-cols-1 lg:grid-cols-5 items-start justify-between gap-4 pt-8 px-5">
 
-        <div class="footer__sec px-4">
+        <div class="footer__sec w-full px-4 pb-2">
 
             <div class="footer-logo">
-                    <img src="/assets/img/logo__footer.png" class="footer-logo__img w-full h-auto" loading="lazy"  alt="Recargas Electrónicas">  
+                    <img src="/assets/img/logo__footer.png" class="footer-logo__img max-w-80 w-full h-auto mx-auto" loading="lazy"  alt="Recargas Electrónicas">  
             </div>
 
-            <p class="footer__p text-base text-slate-700">
+            <p class="footer__p text-sm text-slate-700 dark:text-white leading-relaxed -mt-8">
                 somos la empresa #1 en la venta de tiempo aire, pago de servicios y pines electrónicos, tenemos presencia en toda la republica mexicana.
             </p>
         </div>
 
-        <div class="footer__sec">
-            <h4 class="footer__h4 text-2xl font-semibold text-slate-700 mb-4"> Ayuda </h4>
+        <div class="footer__sec w-full px-4 pb-2">
+            <h4 class="footer__h4 text-2xl font-semibold text-slate-700 dark:text-white mb-8 relative before:content-[''] before:absolute before:z-[1] before:w-7 before:h-[3px] before:bg-red-500 dark:before:bg-sky-500 before:-bottom-2 before:left-0 after:absolute after:content-[''] after:z-[1] after:w-4 after:h-[3px] after:bg-red-500 dark:after:bg-sky-500 after:-bottom-2 after:left-9"> Ayuda </h4>
 
             <ul class="footer__ul">
-                <li class="footer__li pb-8 footer-option flex items-center text-base text-slate-700">
-                    <mat-icon aria-hidden="false" class="footer__icon" color="primary" aria-label="Example home icon" fontIcon="keyboard_arrow_right"></mat-icon>
-                    <a routerLink="/ayuda/faqs" class="footer__a cursor-pointer">Preguntas Frecuentes</a>
+                <li class="footer__li mb-4 footer-option">
+                    <a routerLink="/ayuda/faqs" class="footer__a inline-flex items-center cursor-pointer py-2 text-sm font-semibold rounded-lg group text-gray-800 hover:text-red-700 dark:text-white dark:hover:text-sky-500">
+                     <i class="material-icons text-red-700 dark:text-sky-500 translate-x-0 group-hover:translate-x-2 transition-transform ease-in-out duration-500">keyboard_double_arrow_right</i>
+                       <span class="pl-3">Preguntas Frecuentes </span> 
+                    </a> 
+
                 </li>
 
-                <li class="footer__li pb-8 footer-option flex items-center text-base text-slate-700">
-                    <mat-icon aria-hidden="false" class="footer__icon" color="primary" aria-label="Example home icon" fontIcon="keyboard_arrow_right"></mat-icon>
-
-                    <button mat-button [matMenuTriggerFor]="plataformas">Plataformas</button>
+                <li class="footer__li mb-4 footer-option text-base text-slate-700">
+              
+                    <button class="py-2 text-sm font-semibold inline-flex items-center rounded-lg group text-gray-800 hover:text-red-700 dark:text-white dark:hover:text-sky-500" [matMenuTriggerFor]="plataformas">
+                        <i class="material-icons text-red-700 dark:text-sky-500 translate-x-0 group-hover:translate-x-2 transition-transform ease-in-out duration-500">keyboard_double_arrow_right</i>
+                     <span class="pl-3"> Plataformas</span> 
+                    </button>
                     <mat-menu #plataformas="matMenu">
                       <button mat-menu-item routerLink="/plataforma/pagaqui">Pagaqui</button>
                       <button mat-menu-item routerLink="/plataforma/planetaemx">Planetaemx</button>
                     </mat-menu>
                     
-                  
-
-                    
+     
                 </li>
 
-                <li class="footer__li pb-8 footer-option flex items-center text-base text-slate-700">
-                    <mat-icon aria-hidden="false" class="footer__icon" color="primary" aria-label="Example home icon" fontIcon="keyboard_arrow_right"></mat-icon>
-                    <a routerLink="/ayuda/contacto" class="footer__a cursor-pointer">Contacto</a>
+                <li class="footer__li mb-4 footer-option text-base text-slate-700">
+                    <a routerLink="/ayuda/contacto" class="footer__a inline-flex items-center cursor-pointer py-2 text-sm font-semibold rounded-lg group text-gray-800 hover:text-red-700 dark:text-white dark:hover:text-sky-500">
+                        <i class="material-icons text-red-700 dark:text-sky-500 translate-x-0 group-hover:translate-x-2 transition-transform ease-in-out duration-500">keyboard_double_arrow_right</i>
+
+                     <span class="pl-3">
+                        Contacto
+                     </span>  
+                     </a>
+             
                 </li>
 
                
-                <li class="footer__li pb-6 footer-option flex items-center text-base text-slate-700">
-                    <mat-icon aria-hidden="false" class="footer__icon" color="primary" aria-label="Example home icon" fontIcon="keyboard_arrow_right"></mat-icon>
-                    <a routerLink="/ayuda/blog" mat-button class="footer__a">Blog</a>
+                <li class="footer__li mb-4 footer-option text-base text-slate-700">
+                    <a routerLink="/ayuda/blog" class="footer__a inline-flex items-center cursor-pointer py-2 text-sm font-semibold rounded-lg group text-gray-800 hover:text-red-700 dark:text-white dark:hover:text-sky-500">
+                        <i class="material-icons text-red-700 dark:text-sky-500 translate-x-0 group-hover:translate-x-2 transition-transform ease-in-out duration-500">keyboard_double_arrow_right</i>
+
+                     <span class="pl-3">
+                        Blog
+                     </span>  
+                    </a>
+                 
                 </li>
             </ul>
 
         </div>
 
-        <div class="footer__sec">
-            <h4 class="footer__h4 text-2xl font-semibold text-slate-700 mb-4">Legal</h4>
+        <div class="footer__sec w-full px-4 pb-2">
+            <h4 class="footer__h4 text-2xl font-semibold text-slate-700 dark:text-white mb-8 relative before:content-[''] before:absolute before:z-[1] before:w-7 before:h-[3px] before:bg-red-500 dark:before:bg-sky-500 before:-bottom-2 before:left-0 after:absolute after:content-[''] after:z-[1] after:w-4 after:h-[3px] after:bg-red-500 dark:after:bg-sky-500 after:-bottom-2 after:left-9">Legal</h4>
 
             <ul class="footer__ul">
-                <li class="footer__li footer-option flex items-center text-base text-slate-700 pb-8">
-                    <mat-icon aria-hidden="false" class="footer__icon" color="primary" aria-label="Example home icon" fontIcon="keyboard_arrow_right"></mat-icon>
-                    <a routerLink="/legal/politicas" mat-button class="footer__a">Politicas</a>
-                </li>
-                <li class="footer__li footer-option flex items-center text-base text-slate-700 pb-8">
-                    <mat-icon aria-hidden="false" class="footer__icon" color="primary" aria-label="Example home icon" fontIcon="keyboard_arrow_right"></mat-icon>
-                    <a routerLink="/legal/condiciones" mat-button class="footer__a">Condiciones de uso</a>
+                <li class="footer__li footer-option text-base text-slate-700 dark:text-white mb-4">
+                    <a routerLink="/legal/politicas" class="footer__a inline-flex items-center cursor-pointer py-2 text-sm font-semibold rounded-lg group text-gray-800 hover:text-red-700 dark:text-white dark:hover:text-sky-500">
+                        <i class="material-icons text-red-700 dark:text-sky-500 translate-x-0 group-hover:translate-x-2 transition-transform ease-in-out duration-500">keyboard_double_arrow_right</i>
+
+                     <span class="pl-3">
+                        Politicas
+                     </span>  
+                     </a>
+            
+                <li class="footer__li footer-option text-base text-slate-700 mb-4">
+                    <a routerLink="/legal/condiciones" class="footer__a inline-flex items-center cursor-pointer py-2 text-sm font-semibold rounded-lg group text-gray-800 hover:text-red-700 dark:text-white dark:hover:text-sky-500">
+                        <i class="material-icons text-red-700 dark:text-sky-500 translate-x-0 group-hover:translate-x-2 transition-transform ease-in-out duration-500">keyboard_double_arrow_right</i>
+
+                     <span class="pl-3">
+                        Condiciones de uso
+                     </span>  
+                     </a>
+                 
                 </li>
             </ul>
 
         </div>
 
-        <div class="footer__sec">
-            <h4 class="footer__h4 text-2xl font-semibold text-slate-700 mb-4">Contacto</h4>
+        <div class="footer__sec w-full px-4 pb-2">
+            <h4 class="footer__h4 text-2xl font-semibold text-slate-700 dark:text-white mb-8 relative before:content-[''] before:absolute before:z-[1] before:w-7 before:h-[3px] before:bg-red-500 dark:before:bg-sky-500 before:-bottom-2 before:left-0 after:absolute after:content-[''] after:z-[1] after:w-4 after:h-[3px] after:bg-red-500 dark:after:bg-sky-500 after:-bottom-2 after:left-9">Contacto</h4>
 
             <ul class="footer__ul contacto__ul">
                 <li class="footer__li mb-4 relative pl-9">
-                    <mat-icon class="maticon_location absolute top-0 left-0" fontIcon="location_on" color="primary"></mat-icon>
-                    <span class="text-lg text-slate-700 font-semibold mb-2 block">Dirección</span>
-                    <p class="footer__p text-base text-slate-700"> Delegación Benito Juarez Distrito Federal México DF <br>
+              
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 absolute top-0 left-0 text-red-700 dark:text-sky-500">
+                        <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
+                      </svg>
+                                
+                    <span class="text-base text-slate-700 dark:text-white font-semibold mb-2 block">Dirección</span>
+                    <p class="footer__p text-sm text-slate-700 dark:text-slate-300 leading-relaxed"> Delegación Benito Juarez Distrito Federal México DF <br>
                         Dirección Completa Solo Clientes Activos.</p>
                 </li>
 
                 <li class="footer__li relative mb-4 pl-9">
-                    <mat-icon class="maticon_phone_in_talk absolute top-0 left-0" fontIcon="phone_in_talk" color="primary"></mat-icon>
-                    <span class="text-lg text-slate-700 font-semibold mb-2 block">Telefono:</span>
-                    <a href="tel:2717140102" class="footer__a text-base text-slate-700 block" aria-label="Telefono" target="_blank" rel="noopener noreferrer">+52 2717140102</a>
+               
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 absolute top-0 left-0 text-red-700 dark:text-sky-500">
+                        <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clip-rule="evenodd" />
+                      </svg>
+                      
+                    <span class="text-base text-slate-700 dark:text-white font-semibold mb-2 block">Telefono:</span>
+                    <a href="tel:2717140102" class="footer__a text-sm text-slate-700 font-medium dark:text-slate-300 hover:text-red-700 dark:hover:text-sky-500 block tracking-wider" aria-label="Telefono" target="_blank" rel="noopener noreferrer">+52 271 714 0102</a>
                 </li>
 
                 <li class="footer__li relative mb-4 pl-9">
-                    <mat-icon class="maticon_forum absolute top-0 left-0" fontIcon="forum" color="primary"></mat-icon>
-                    <span class="text-lg text-slate-700 font-semibold mb-2 block">WhatsApp:</span>
-                    <a href="https://wa.me/522712141938" class="footer__a text-base text-slate-700 block" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">+52 2712141938</a>
+                   
+                    <img src="assets/img/svg/whatsapp_icon.svg" alt="WhatsApp" class="size-7 absolute top-0 left-0">
+                      
+                    <span class="text-base text-slate-700 dark:text-white font-semibold mb-2 block">WhatsApp:</span>
+                    <a href="https://wa.me/522712141938" class="footer__a text-sm text-slate-700 font-medium dark:text-slate-300 hover:text-red-700 dark:hover:text-sky-500 block tracking-wider" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">+52 271 214 1938</a>
                 </li>
 
                 <li class="footer__li relative mb-4 pl-9">
-                    <mat-icon class="maticon_mail absolute top-0 left-0" fontIcon="mail" color="primary"></mat-icon>
-                    <span class="text-lg text-slate-700 font-semibold mb-2 block">Correo:</span>
-                    <a href="mailto:tae.celular@gmail.com" class="footer__a text-base text-slate-700 block" aria-label="Correo" target="_blank" rel="noopener noreferrer">tae.celular&#64;gmail.com</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 absolute top-0 left-0 text-red-700 dark:text-sky-500">
+                        <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+                        <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+                      </svg>
+                    <span class="text-lg text-slate-700 dark:text-white font-semibold mb-2 block">Correo:</span>
+                    <a href="mailto:tae.celular@gmail.com" class="footer__a text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-red-700 dark:hover:text-sky-500  block tracking-wider" aria-label="Correo" target="_blank" rel="noopener noreferrer">tae.celular&#64;gmail.com</a>
                 </li>
             </ul>
         </div>
 
-        <div class="footer__sec">
-          <h4 class="footer__h4 text-2xl font-semibold text-slate-700 mb-4">Horario de Atención</h4>
-            <ul class="footer__ul atencion">
-                <li class="footer__li atencion__li ">
-                    <span class="footer__span text-base text-slate-700"> Lunes- Viernes 9AM a 6PM </span>
+        <div class="footer__sec w-full px-4 b-2">
+          <h4 class="footer__h4 text-2xl font-semibold text-slate-700 dark:text-white mb-8 relative before:content-[''] before:absolute before:z-[1] before:w-7 before:h-[3px] before:bg-red-500 dark:before:bg-sky-500 before:-bottom-2 before:left-0 after:absolute after:content-[''] after:z-[1] after:w-4 after:h-[3px] after:bg-red-500 dark:after:bg-sky-500 after:-bottom-2 after:left-9">Horario de Atención</h4>
+            <ul class="footer__ul atencion mb-4">
+                <li class="footer__li atencion__li relative mb-4 pl-9">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 absolute top-0 left-0 text-red-700 dark:text-sky-500">
+                        <path d="M12.75 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM7.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM8.25 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM9.75 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM10.5 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM12.75 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM14.25 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" />
+                        <path fill-rule="evenodd" d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z" clip-rule="evenodd" />
+                      </svg>
+                      
+                    <span class="footer__span text-sm text-slate-700 dark:text-slate-300"> Lunes- Viernes 9AM a 6PM </span>
                 </li>
-                <li class="footer__li atencion__li ">
-                    <span class="footer__span text-base text-slate-700"> Sabado 9AM a 4PM </span>
+                <li class="footer__li atencion__li relative mb-4 pl-9">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 absolute top-0 left-0 text-red-700 dark:text-sky-500">
+                        <path d="M12.75 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM7.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM8.25 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM9.75 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM10.5 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM12.75 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM14.25 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" />
+                        <path fill-rule="evenodd" d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z" clip-rule="evenodd" />
+                      </svg>
+                    <span class="footer__span text-sm text-slate-700 dark:text-slate-300"> Sabado 9AM a 4PM </span>
                 </li>
             </ul>
+
+            <div class="social pb-4">
+                <h5 class="text-sm text-left font-semibold pb-4 text-slate-700 dark:text-slate-300">Siguenos en:</h5>
+                <ul class="social__ul flex items-center justify-start mx-auto gap-6">
+                    <li class="social__li">
+                        <a href="https://www.facebook.com/recargas.electronicas.com.mx/"  matTooltip="Siguenos en Facebook" matTooltipPosition="above" class="social__a" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/img/social__facebook.png" class="social__img" width="35" height="35" loading="lazy" alt="red social recargas5g.com">
+                        </a>
+                    </li>
+                    <li class="social__li">
+                        <a href="https://twitter.com/recargascelular" class="social__a"  matTooltip="Siguenos en Twitter" matTooltipPosition="above" aria-label="Twiiter" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/img/social__twitter.png" class="social__img" width="35" height="35" loading="lazy" alt="red social recargas5g.com">
+                        </a>
+                    </li>
+                    <li class="social__li">
+                        <a href="https://www.instagram.com/recargascelular/" class="social__a"  matTooltip="Siguenos en Instagram" matTooltipPosition="above" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/img/social__instagram.png" class="social__img" width="35" height="35" loading="lazy" alt="red social recargas5g.com">
+                        </a>
+                    </li>
+                   
+              
+                </ul>
+            </div>
         </div>
 
     </div>
 
-    <div class="copyright">
-        <div class="copyright__container container mx-auto flex aling-center justify-between">
+    <div class="copyright py-4 border-t-[1px] border-slate-300 dark:border-slate-700">
+        <div class="copyright__container container mx-auto flex flex-col lg:flex-row items-center justify-center px-6 lg:px-8">
 
-            <div class="copyright__left">
-                <h3 class="footer__h6">
-                    <a href="https://www.recargas.electronicas.com.mx/" class="footer__a body-2"  target="_blank" rel="noopener noreferrer">&#169; 2023 Recargas Electrónicas SA. DE. CV.</a>
-                </h3>
-
-                <p class="footer__p body-2">| Todos los derechos reservados</p>
-            </div>
+            <h3 class="footer__h6">
+                    <a href="https://www.recargas.electronicas.com.mx/" class="footer__a text-sm lg:text-base text-slate-800 dark:text-white"  target="_blank" rel="noopener noreferrer">&#169; 2024 Recargas Electrónicas SA. DE. CV. </a>
+                </h3> 
+                 <p class="footer__p text-sm lg:text-base text-gray-800 dark:text-white pl-2 tracking-normal"> | Todos los derechos reservados</p>
+            
 
 
-            <ul class="social__ul">
-                <li class="social__li">
-                    <a href="https://www.facebook.com/recargas.electronicas.com.mx/"  matTooltip="Siguenos en Facebook" matTooltipPosition="above" class="social__a" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-                        <img src="assets/img/social__facebook.png" class="social__img" width="35" height="35" loading="lazy" alt="red social recargas5g.com">
-                    </a>
-                </li>
-                <li class="social__li">
-                    <a href="https://twitter.com/recargascelular" class="social__a"  matTooltip="Siguenos en Twitter" matTooltipPosition="above" aria-label="Twiiter" target="_blank" rel="noopener noreferrer">
-                        <img src="assets/img/social__twitter.png" class="social__img" width="35" height="35" loading="lazy" alt="red social recargas5g.com">
-                    </a>
-                </li>
-                <li class="social__li">
-                    <a href="https://www.instagram.com/recargascelular/" class="social__a"  matTooltip="Siguenos en Instagram" matTooltipPosition="above" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                        <img src="assets/img/social__instagram.png" class="social__img" width="35" height="35" loading="lazy" alt="red social recargas5g.com">
-                    </a>
-                </li>
-               
-          
-            </ul>
+       
         </div>
     </div>
 </footer>

@@ -1,14 +1,13 @@
 import { isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, inject, input, PLATFORM_ID, ViewChild} from '@angular/core';
-
 import { Swiper, Autoplay, Pagination, Navigation, SwiperOptions} from 'swiper';
 
 @Component({
   selector: 'app-carousel-productos',
   standalone: true,
-  template: `<div class="carousel-products relative w-screen -mx-[50vw] left-2/4 right-2/4">
-    <div class="relative">
-        <div #productosSwiper class="carousel-productos__swiper swiper w-full h-full">
+  template: `
+  <div class="carousel-products">
+  <div #productosSwiper class="carousel-productos__swiper swiper w-full h-full">
             <div class="carousel-products__wrapper swiper-wrapper flex flex-row flex-nowrap relative">
                 @for (producto of products().item; track $index) {
                     <div  class="carousel-product__card swiper-slide flex justify-center items-center w-64 h-64 ">
@@ -17,8 +16,8 @@ import { Swiper, Autoplay, Pagination, Navigation, SwiperOptions} from 'swiper';
                 }
             </div>
         </div>
-    </div>
-</div>`,
+  </div>
+`,
 
 })
 export class CarouselProductosComponent implements AfterViewInit {

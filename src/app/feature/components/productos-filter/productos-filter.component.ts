@@ -7,21 +7,22 @@ import { MatRippleModule } from '@angular/material/core';
 @Component({
   selector: 'app-filter-productos',
   standalone: true,
-  template: ` <div class="productos">
-    <div class="productos__container">
-      <div class="productos-title">
+  template: ` <div class="products">
+    <div class="products__container">
+
+    <div class="products-row mb-8 lg:mb-16 flex flex-col lg:flex-row items-center justify-center lg:justify-between">
+      <div class="products-title mb-4">
+        <span class="text-2xl font-semibold text-red-700 dark:text-sky-500 mb-3">Tiempo aire, pago de servicios y pines</span>
         <h3
-          class="productos-title__h3 text-slate-700 dark:text-white font-bold pb-2 text-3xl lg:text-5xl my-4 text-center">
-        <span class="relative before:content-[''] before:absolute before:bg-red-400 dark:before:bg-blue-400 before:right-0 before:left-0 before:h-1 before:-z-[5] before:bottom-3">
-          Nuestros Productos
-        </span>
+          class="productos-title__h3 text-slate-700 dark:text-white font-bold pb-2 text-3xl lg:text-5xl my-b text-center relative before:content-[''] before:absolute before:bg-red-400 before:dark:bg-blue-400 before:right-0 before:left-0 before:h-1 before:-z-[5] before:bottom-0">
+      
+        Nuestros Productos
         </h3>
       </div>
 
-      <div class="productos-filter">
-        <div
+      <div
           #filters
-          class="productos-options flex flex-row flex-wrap items-center justify-center gap-6 mb-4"
+          class="products-options flex flex-row flex-wrap items-center justify-center gap-6 mb-4"
         >
           @for (btnCategory of categorias; track $index) {
           <button
@@ -29,31 +30,36 @@ import { MatRippleModule } from '@angular/material/core';
           [matRippleColor]="'rgba(255, 255, 255, .2)'"
             (click)="btnFilterActive(btnCategory.id)"
             [ngClass]="{
-              'bg-red-500 text-white': btnCategoryActive === btnCategory.id,
-              'bg-red-50 text-red-700': btnCategoryActive != btnCategory.id
+              'bg-red-500 text-white border-red-500': btnCategoryActive === btnCategory.id,
+              'bg-white text-slate-700 border-slate-200': btnCategoryActive != btnCategory.id
             }"
-            class="productos-options__button px-4 py-2 rounded-lg transition-all"
+            class="products-options__button border-[1px] py-2 px-3 lg:py-3 lg:px-8  rounded-lg transition-all font-medium text-base shadow"
             data-filter="recargas"
           >
             {{ btnCategory.nombre }}
           </button>
           }
-        </div>
+      </div>
+    </div>
 
+
+
+      <div class="products-filter">
+       
         <div
-          class="productos-list flex flex-row flex-wrap items-center justify-center gap-6"
+          class="products-list flex flex-row flex-wrap items-center justify-center gap-6"
         >
           @for (companie of productos[0].item; track $index) {
           @if(btnCategoryActive === companie.idCategory || btnCategoryActive ===
           0) {
           <div
             #productItem
-            class="productos-list-item"
+            class="products-list-item"
             [attr.data-category]="companie.category"
             [ngClass]="{ showItem: btnCategoryActive === companie.idCategory }"
           >
             <img
-              class="productos-list-item__img max-w-48 max-h-48 w-full h-full"
+              class="products-list-item__img max-w-48 max-h-48 w-full h-full"
               [src]="companie.url"
               loading="lazy"
               width="200"

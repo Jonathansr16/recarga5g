@@ -1,4 +1,4 @@
-import { inject, Injectable, PLATFORM_ID, Renderer2, signal, WritableSignal } from '@angular/core';
+import { computed, inject, Injectable, PLATFORM_ID, Renderer2, RendererFactory2, signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
@@ -6,67 +6,80 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class ThemesService {
 
-  private readonly renderer2 = inject(Renderer2);
-
-  //* Para soporte SSR y SSG 
-  private readonly CLIENT_RENDER = typeof window !== 'undefined' && typeof localStorage !== 'undefined';
+  private readonly rendererFactory2 = inject(RendererFactory2);
+  private readonly renderer2: Renderer2 = this.rendererFactory2.createRenderer(null, null)
+  private readonly platformId = inject(PLATFORM_ID);
 
   //* Nombre de la variable en el LocalStorage
   private readonly LS_THEME = 'theme';
 
-  //* Valor de la selección previa por el usuario
-  private readonly selectedTheme = this.CLIENT_RENDER ? localStorage.getItem(this.LS_THEME) as AppTheme | undefined : undefined;
-
-  private readonly platform = inject(PLATFORM_ID);
   //* Signal para el tema actual
-  currentTheme = signal<AppTheme | undefined>(this.selectedTheme);
+  #currentTheme = signal<AppTheme | undefined>(this.getStoredTheme());
+  #isDarkTheme = computed(() => this.#currentTheme() === AppTheme.DARK);  // Computed automáticamente a partir del tema actual
 
+  public themeChange = computed(() => this.#isDarkTheme());
+
+  //* Inicializa el tema según el valor almacenado o la preferencia del sistema
   initTheme() {
-    if (this.CLIENT_RENDER) {
-      this.applyTheme(this.selectedTheme ?? (this.isSystemDark() ? AppTheme.DARK : AppTheme.LIGHT));
-    }
-  }
-
-  updateTheme(theme: AppTheme) {
-    if (this.CLIENT_RENDER) {
+    if (isPlatformBrowser(this.platformId)) {
+      const theme = this.#currentTheme() ?? (this.isSystemDark() ? AppTheme.DARK : AppTheme.LIGHT);
       this.applyTheme(theme);
-      this.setColorTheme(theme);
     }
   }
 
+  //* Cambia y guarda el tema
+  updateTheme(theme: AppTheme) {
+    if (isPlatformBrowser(this.platformId)) {
+      this.applyTheme(theme);
+      this.setStoredTheme(theme);
+  
+    }
+  }
+
+
+  //* Alterna entre temas
+  toggleTheme() {
+    const newTheme = this.#currentTheme() === AppTheme.DARK ? AppTheme.LIGHT : AppTheme.DARK;
+    this.updateTheme(newTheme);
+
+  }
+
+
+
+  //* Aplica el tema y actualiza el Signal
   private applyTheme(theme: AppTheme) {
-    const previousTheme = this.currentTheme();
+    const previousTheme = this.#currentTheme();
     if (previousTheme) {
       this.renderer2.removeClass(document.body, previousTheme);
     }
     this.renderer2.addClass(document.body, theme);
-    this.currentTheme.set(theme);
+    this.#currentTheme.set(theme);
   }
 
-  private setColorTheme(theme: AppTheme) {
-    localStorage.setItem(this.LS_THEME, theme);
-  }
-
-  private isSystemDark(): boolean {
-    return this.CLIENT_RENDER && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
-
-  toggleTheme() {
-    const currentTheme = this.currentTheme();
-    // const newTheme = currentTheme === AppTheme.DARK ? AppTheme.LIGHT : AppTheme.DARK;
-    // this.updateTheme(newTheme);
-   
-    if(currentTheme === AppTheme.DARK) {
-      this.updateTheme(AppTheme.LIGHT);
-    } else {
-      this.updateTheme(AppTheme.DARK);
-
+  //* Guarda el tema en el LocalStorage
+  private setStoredTheme(theme: AppTheme) {
+    if (this.isClientRender()) {
+      localStorage.setItem(this.LS_THEME, theme);
     }
   }
 
+  //* Obtiene el tema almacenado en el LocalStorage
+  private getStoredTheme(): AppTheme | undefined {
+    return this.isClientRender() ? localStorage.getItem(this.LS_THEME) as AppTheme | undefined : undefined;
+  }
 
+  //* Verifica si el sistema tiene preferencia por el tema oscuro
+  private isSystemDark(): boolean {
+    return this.isClientRender() && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  //* Verifica si se está en un entorno de cliente
+  private isClientRender(): boolean {
+    return typeof window !== 'undefined' && typeof localStorage !== 'undefined';
+  }
 
 }
+
 
 export enum AppTheme {
   LIGHT = 'light',

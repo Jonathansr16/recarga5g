@@ -1,11 +1,10 @@
-import { ChangeDetectionStrategy, Component, OnInit, TemplateRef, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject, signal } from '@angular/core';
 import { MetodosVentaService } from '@core/services/metodos-venta.service';
 import { MetodosVentaModel } from '@core/models/metodos-venta.model';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-metodo-ventas',
@@ -39,12 +38,14 @@ export class MetodoVentasComponent implements OnInit{
     this.metodoVentas = this._metodosService.getmetodosVenta();
   }
 
-  toggleModal(index: number) {
+  openModal(index: number) {
     
     this.isActiveModal.set(index);
-  
   }
 
+  closeModal() {
+    this.isActiveModal.set(-1);
+  }
 // toggleDialog(temlateRef: TemplateRef<any>): void {
   
 //     this.dialog.open(temlateRef, {

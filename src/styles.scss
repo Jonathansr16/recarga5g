@@ -41,7 +41,7 @@ $dark-theme: mat.define-dark-theme(
 );
 
 
-.light-theme {
+.light{
     @include mat.all-component-themes($light-theme);
     --c-title: #555166;
     --c-text: #263238;
@@ -55,7 +55,7 @@ $dark-theme: mat.define-dark-theme(
     
 }
 
-.dark-theme {
+.dark {
     @include mat.all-component-colors($dark-theme);
     --c-title: #ffffff;
     --c-text: #e9e9ea;

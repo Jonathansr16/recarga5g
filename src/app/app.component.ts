@@ -5,6 +5,7 @@ import { ContactBtnComponent } from '@core/components/contact-btn/contact-btn.co
 import { FooterComponent } from '@core/components/footer/footer.component';
 import { HeaderComponent } from '@core/components/header/header.component';
 import { UpScrollComponent } from '@core/components/up-scroll/up-scroll.component';
+import { ThemesService } from '@core/services/themes.service';
 
 //  import { GoogleTagManagerModule, GoogleTagManagerService } from 'angular-google-tag-manager';
 
@@ -34,17 +35,17 @@ export class AppComponent  implements OnInit{
   private readonly document = inject(DOCUMENT);
   private readonly platform_id = inject(PLATFORM_ID);
   private readonly router = inject(Router);
+ private readonly themeService = inject(ThemesService);
  
+
   // private gtmService: GoogleTagManagerService,
   
-
-  constructor() {
-    // if(isPlatformBrowser (this.platform_id)) { 
-    //   this.gtmService.addGtmToDom();
-    // }
-   }
+constructor() {
+}
 
 ngOnInit(): void {
+  this.themeService.initTheme();  // Esto aplicará el tema basado en el sistema o configuración guardada.
+
   // this.router.events.forEach(home => {
   //   if (home instanceof NavigationEnd) {
   //     const gtmTag = {

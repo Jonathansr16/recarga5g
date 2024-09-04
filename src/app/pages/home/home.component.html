@@ -162,38 +162,6 @@
 
 
 
-  <!-- <div class="section-razones px-6 lg:px-8 pb-6 mb-20">
-    <div class="razones__container container mx-auto">
-      <div class="razones-titles">
-        <span
-          class="razones-titles__span text-2xl lg:text-3xl text-red-700 dark:text-blue-400 font-semibold text-center block">¿Por
-          qué
-          vender recargas Bait, Movistar?</span>
-        <h3
-          class="razones-titles__h3 pb-2 text-3xl lg:text-4xl text-slate-700 dark:text-white font-bold my-4 text-center">
-          Vende recargas electrónicas de todas las compañías de telefonía
-          celular en México
-        </h3>
-      </div>
-
-      <div class="razones-list">
-        <ul class="razones-list__ul grid grid-cols-1 lg:grid-cols-3 gap-4">
-          @for (razon of item(); track $index) {
-          <li class="razones-list__li red-100 rounded-xl p-4 shadow-md dark:bg-slate-700">
-            <mat-icon class="mat-18 razones-list__icon text-center my-3 text-4xl" color="primary">{{ razon.nameIcon
-              }}</mat-icon>
-            <h4 class="razones-list__h4 font-semibold text-lg lg:text-xl text-slate-700 dark:text-white text-left mb-4">
-              {{ razon.title }}
-            </h4>
-            <p class="razones-list__p text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-              {{ razon.description }}
-            </p>
-          </li>
-          }
-        </ul>
-      </div>
-    </div>
-  </div> -->
 
   <!-- ============= SECCION SISTEMA ============= -->
   <div class="section-sistema px-6 lg:px-8 pb-6 mb-20">
@@ -328,7 +296,7 @@
             @for (item of listInversion; track $index) {
             <li class="inversion__li my-6 basis-2/4 mt-4 max-w-2/4 pl-3 pr-3">
               <span
-                class="relative beneficios__label z-[2] text-base text-slate-600  font-medium block py-3 px-4 rounded-md border-l-2 border-l-red-500 bg-white dark:text-slate-700 shadow-lg hover:text-white hover:before:w-full before:content-[''] before:absolute before:-z-[1] before:left-0 before:bottom-0 before:w-0 before:h-full before:bg-red-500">
+                class="relative beneficios__label z-[2] text-base text-slate-700 dark:text-slate-300 font-medium block py-3 px-4 rounded-md border-l-2 border-l-red-500 dark:border-l-blue-500 bg-white shadow-lg dark:bg-slate-700 hover:text-white hover:before:w-full before:content-[''] before:absolute before:-z-[1] before:left-0 before:bottom-0 before:w-0 before:h-full before:bg-red-500 dark:before:bg-blue-500">
                 {{ item.label }}
               </span>
             </li>
@@ -339,36 +307,59 @@
     </div>
   </div>
 
-  <!-- ============= SECCION NEGOCIO ============= -->
-  <div class="section-negocio px-6 lg:px-8 pb-6 mb-20">
-    <div class="negocio__container container mx-auto">
-      <div class="negocios-left">
-        <div class="negocio-titles">
-          <p class="negocios-titles__p text-center text-red-700 dark:text-blue-400 text-xl sm:text-2xl lg:text-3xl font-semibold">
+
+  <div class="section-negocios px-6 lg:px-8 pb-6 mb-20">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16">
+        <div class="mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right">
+    
+          <p class="negocios-titles__p text-left text-red-700 dark:text-blue-400 text-xl font-semibold">
             Venta de recargas telcel para negocio
           </p>
-          <h2 class="negocio__h2 text-3xl lg:text-5xl text-center font-semibold text-slate-700 dark:text-white my-2">
-            Venta de recargas
-            <span
-              class="relative before:content-[''] before:absolute before:bg-red-400 before:dark:bg-blue-400 before:right-0 before:left-0 before:h-1 before:-z-[5] before:bottom-2">para
-              todo tipo de negocio</span>
+          <h2 class="negocio__h2 text-3xl lg:text-5xl text-left font-bold text-slate-700 dark:text-white my-2">
+            Venta de recargas para todo tipo de negocio
+    
           </h2>
+  
+          <p class="mt-4 text-gray-600 dark:text-slate-300 text-left leading-relaxed">
+            Sumate a los miles de negocios que ofrecen un servicio extra, con una inversión minima recuperaras tu inversión de forma inmediata + % de comsiones,
+            Lo mas interesante es que podras recargar nuevamente cuando y como lo deseas. Sin pagos forzosos, penalizaciones ni anualidades.
+  
+          </p>
+          <a
+            href="#"
+            class="mt-8 inline-block rounded bg-red-600 dark:bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-red-700 dark:hover:bg-indigo-700 focus:outline-none focus:ring"
+          >
+            Registrarme ahora mismo
+          </a>
         </div>
-      </div>
-
-      <div class="negocio-right grid grid-cols-1 lg:grid-cols-4 gap-y-12 gap-x-10 mt-12">
+  
+        <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
         @for (negocio of negocios(); track $index) {
-        <div class="negocio-category bg-gray-100 dark:bg-slate-700 py-2 px-8 rounded-3xl">
-          <img [src]="negocio.nameIcon" class="negocio-category__img max-w-14 max-h-14 w-full h-full mt-8 mb-4 mx-auto"
-            loading="lazy" [alt]="negocio.label" />
-          <h3 class="negocio-category__h3 text-xl text-center text-slate-700 dark:text-white font-semibold my-4">
-            {{ negocio.typeNegocio }}
-          </h3>
-        </div>
+          <div
+            class="block rounded-xl border border-gray-100 dark:border-gray-700 p-4 shadow-sm focus:outline-none focus:ring"
+            href="#"
+          >
+            <span class="inline-block rounded-lg bg-gray-100 dark:bg-gray-700 p-3">
+  
+              <img [src]="negocio.nameIcon" class="negocio-category__img size-9 mx-auto"
+              loading="lazy" [alt]="negocio.label" />
+   
+            </span>
+  
+            <h2 class="mt-2 font-bold text-slate-700 dark:text-white">{{negocio.typeNegocio}}</h2>
+  
+            <!-- <p class="hidden sm:mt-1 sm:block text-sm sm:text-gray-600">
+             Venta de recargas para todo tipo de negocio
+            </p> -->
+          </div>
         }
+  
+        </div>
       </div>
     </div>
   </div>
+
 
   <!-- ============= SECCION METODOS VENTA ============= -->
   <div class="section-sales-methods px-6 lg:px-8 pb-6 mb-20 relative">

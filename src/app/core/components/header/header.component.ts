@@ -6,6 +6,7 @@ import {
   PLATFORM_ID,
   inject,
   signal,
+  OnInit,
 } from '@angular/core';
 import { MatButton, MatButtonModule } from '@angular/material/button';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
@@ -53,7 +54,7 @@ import { ClickOutsideDirective } from '@core/directives/click-outside.directive'
   
   ]
 })
-export class HeaderComponent {
+export class HeaderComponent{
 
   isOpen = signal<boolean>(false);
   active = signal<boolean>(false);
@@ -68,6 +69,7 @@ export class HeaderComponent {
   private readonly renderer2 = inject(Renderer2);
   private readonly platform_id = inject(PLATFORM_ID);
   private readonly themeService = inject(ThemesService)
+
 
   openNav(): void {
     this.active.set(true);

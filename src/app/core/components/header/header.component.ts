@@ -1,14 +1,12 @@
 import {
   Component,
-  ElementRef,
   Renderer2,
-  ViewChild,
   PLATFORM_ID,
   inject,
   signal,
-  OnInit,
+  
 } from '@angular/core';
-import { MatButton, MatButtonModule } from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterLink, RouterLinkActive } from '@angular/router';
@@ -18,6 +16,7 @@ import {MatRippleModule} from '@angular/material/core';
 import { ThemesService } from '@core/services/themes.service';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { ClickOutsideDirective } from '@core/directives/click-outside.directive';
+import { MenuItem } from './interfaces/header.interface';
 
 @Component({
   selector: 'app-header',
@@ -59,16 +58,93 @@ export class HeaderComponent{
   isOpen = signal<boolean>(false);
   active = signal<boolean>(false);
   activeNavOverlay = signal<boolean>(false);
-
   isOpenSidebar = signal<boolean>(false);
-
-  @ViewChild('nav') nav?: ElementRef;
-  @ViewChild('btnTheme') btnTheme?: MatButton;
 
   private readonly document = inject(DOCUMENT);
   private readonly renderer2 = inject(Renderer2);
   private readonly platform_id = inject(PLATFORM_ID);
   private readonly themeService = inject(ThemesService)
+
+  isOpenMenu = signal<number>(-1);
+
+
+  navbarItems = signal<MenuItem[]>(
+
+    [
+      { 
+        label: "Inicio",
+        routerLink: "/", 
+      },
+
+      {
+        label: 'Plataformas',
+        items: [
+            {
+              label: 'Conoce nuestras plataformas',
+              items: [
+                { label: 'Pagaqui',    routerLink: 'plataformas/pagaqui' },
+                { label: 'Planetaemx', routerLink: 'plataformas/planetaemx'},
+              ]
+            }
+          
+        ]
+      },
+
+      {
+        label: 'Medios de venta',
+        items: [
+          {
+            label: 'Como vender',
+            items: [
+                { label: 'pagina web', icon: 'web', routerLink: 'medio-venta/pagina' },
+                { label: 'Aplicación móvil', icon: 'phone_iphone', routerLink: 'medio-venta/app' },
+                { label: 'Vía SMS', icon: 'sms', routerLink: 'medio-venta/sms' }
+            ]
+          }
+        ]
+      },
+
+      {
+        label: 'Notificar',
+        items: [
+          {
+            label: 'Notificación de pagos',
+            items: [
+                      { label: 'Depósito Pagaqui',              routerLink: '' },
+                      { label: 'Depósito Recargaki/Planetaemx', routerLink: '' }
+            ]
+          }
+        ]
+      },
+
+      {
+        label: 'Ayuda',
+        items: [
+          {
+            label: '¿Dudas?',
+            items: [
+              { label: 'Politícas y condiciones', routerLink: '' },
+              { label: 'Condiciones de uso', routerLink: '' },
+              { label: 'Contacto', routerLink: '' }
+            ]
+          }
+        ]
+      },
+
+      {
+        label: 'Mas',
+        items: [
+          {
+            label: 'Extra',
+            items: [
+              { label: 'Nuestro blog', routerLink: ''}
+            ]
+          }
+        ]
+      }
+    ]
+
+  );
 
 
   openNav(): void {
@@ -99,8 +175,14 @@ export class HeaderComponent{
     this.themeService.toggleTheme();
   }
 
-  toggleMenu(): void {
-    this.isOpen.update( currentValue => !currentValue);
+
+  toggleMenu(index: number) {
+
+    if(index === this.isOpenMenu()) {
+      this.isOpenMenu.set(-1)
+    } else {
+      this.isOpenMenu.set(index);
+    }
   }
 
   toggleSidebar(): void {
@@ -108,5 +190,4 @@ export class HeaderComponent{
   }
 
 }
-
 

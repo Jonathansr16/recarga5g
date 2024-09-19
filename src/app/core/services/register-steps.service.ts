@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { registerStepsModel } from '@core/models/register-steps-model';
+import { registerStepsModel } from '@core/interfaces/register-steps-model';
 
 
 @Injectable({

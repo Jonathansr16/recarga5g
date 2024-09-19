@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ProductosService } from '@core/services/productos.service';
 import { CommonModule } from '@angular/common';
-import { productoModel } from '@core/models/productos.model';
+import { productoModel } from '@core/interfaces/productos.model';
 import { MatRippleModule } from '@angular/material/core';
 
 @Component({

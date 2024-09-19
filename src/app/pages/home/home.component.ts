@@ -6,7 +6,6 @@ import {
   AfterViewInit,
   ViewChildren,
   QueryList,
-  Inject,
   PLATFORM_ID,
   signal,
 } from '@angular/core';
@@ -14,17 +13,12 @@ import {
 import { Title } from '@angular/platform-browser';
 
 //* Servicios importados
-import { razonesModel } from '@core/models/razones.model';
-import { negocioModel } from '@core/models/negocios.model';
-import { productoModel } from '@core/models/productos.model';
-import { MetodosVentaModel } from '@core/models/metodos-venta.model';
-import { registerStepsModel } from '@core/models/register-steps-model';
-import { metaTagModel } from '@core/models/meta-tag.model';
-
-//* Librerias externas usadas
-//T-WRITER JS
-// @ts-ignore
-import Typewriter from 't-writer.js';
+import { razonesModel } from '@core/interfaces/razones.model';
+import { negocioModel } from '@core/interfaces/negocios.model';
+import { productoModel } from '@core/interfaces/productos.model';
+import { MetodosVentaModel } from '@core/interfaces/metodos-venta.model';
+import { registerStepsModel } from '@core/interfaces/register-steps-model';
+import { metaTagModel } from '@core/interfaces/meta-tag.model';
 
 //*INTERFACES
 import { MetodosVentaService } from '@core/services/metodos-venta.service';
@@ -34,15 +28,16 @@ import { MetaTagService } from '@core/services/meta-tag.service';
 import { RazonesService } from '@core/services/razones.service';
 import { CanonicalLinkService } from '@core/services/canonical-link.service';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
 import { CarouselProductosComponent } from '@feature/components/carousel-productos/carousel-products.component';
 import { ProductosFilterComponent } from '@feature/components/productos-filter/productos-filter.component';
 import { RegisterStepsComponent } from '@feature/components/register/register-steps.component';
 import { MetodoVentasComponent } from '@feature/components/metodo-ventas/metodo-ventas.component';
 import { inject } from '@angular/core';
 import { NegocioService } from '@core/services/negocio.service';
-import { MatButtonModule } from '@angular/material/button';
+
 import { AppRecargasComponent } from "@feature/components/app-recargas/app-recargas.component";
+import { CarouselApp } from '@feature/components/app-recargas/interface/app.interface';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -52,18 +47,17 @@ import { AppRecargasComponent } from "@feature/components/app-recargas/app-recar
   providers: [RazonesService, NegocioService],
   imports: [
     CommonModule,
-    MatIconModule,
+    RouterLink,
     CarouselProductosComponent,
     ProductosFilterComponent,
     MetodoVentasComponent,
     AppRecargasComponent,
     RegisterStepsComponent,
-    MatButtonModule,
     AppRecargasComponent
 ]
 })
 export default class HomeComponent implements OnInit, AfterViewInit {
-  @ViewChild('productosSwiper') prodSwiper?: ElementRef;
+  @ViewChild('carouselHome') carouselHome?: ElementRef;
   @ViewChild('menuAbout') menuAbout?: ElementRef;
   @ViewChild('textDinamic') textDinamico?: ElementRef;
   @ViewChildren('counter') counters?: QueryList<ElementRef>;
@@ -131,7 +125,6 @@ export default class HomeComponent implements OnInit, AfterViewInit {
     image: 'https://recarga5g.com/Venta-recargas.png',
   };
 
-
   private readonly _productosService = inject( ProductosService);
   private readonly _razonesService   = inject( RazonesService);
   private readonly _negocioService   = inject( NegocioService);
@@ -142,6 +135,70 @@ export default class HomeComponent implements OnInit, AfterViewInit {
   private readonly title             = inject( Title);
   private readonly platform_id       = inject(PLATFORM_ID);
 
+  readonly listApp = [
+
+    {
+      id: 1,
+      title: 'Registrate',
+      label: 'Regístrate gratis'
+    },
+
+    {
+      id: 2,
+      title: 'Deposita',
+      label: 'Deposita desde $100, a una de las cuentas bancarias autorizadas'
+    },
+
+    {
+      id: 3,
+      title: 'Notifica',
+      label: 'Registra tu comprobante en el portal'
+    },
+
+    {
+      id: 4,
+      title: 'Recibe',
+      label: 'Obten una comisión por tus ventas'
+    },
+
+    {
+      id: 5,
+      title: 'Recupera',
+      label: '¡Listo! Así de fácil podrás realizar recargas a cualquier compañía.'
+    }
+  ];
+
+  appImages: CarouselApp[] = [
+
+    {
+      id: 1,
+      img: {
+      lightUrl: 'assets/img/companies/recargas-app_light.webp',
+      darkUrl: 'assets/img/companies/recargas-app_dark.webp',
+      alt: 'App para venta de recargas',
+      }
+    },
+
+    {
+      id: 2,
+      img: {
+      lightUrl: 'assets/img/companies/servicios-app_light.webp',
+      darkUrl: 'assets/img/companies/servicios-app_dark.webp',
+      alt: 'App para pago de servicios',
+      }
+    },
+
+    {
+      id: 3,
+      img:{
+      lightUrl: 'assets/img/companies/pines-app_light.webp',
+      darkUrl: 'assets/img/companies/pines-app_dark.webp',
+      alt: 'App para venta de pines electrónicos',
+  
+    }
+  }
+
+  ]
 
  readonly listBeneficios = [
 
@@ -213,8 +270,7 @@ export default class HomeComponent implements OnInit, AfterViewInit {
       id: 6,
       label: 'Diferente metodos de venta'
     }
-  ]
-
+  ];
 
   ngOnInit(): void {
     this.title.setTitle(
@@ -240,43 +296,11 @@ export default class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.typewrite();
+
     this.counterAnimation();
   }
 
-  //* INIT TYPE WRITTER
-  typewrite(): void {
-    if (isPlatformBrowser(this.platform_id)) {
-      const text = this.textDinamico?.nativeElement;
-      const writter = new Typewriter(
-        text,
 
-        {
-          loop: true,
-          typeSpeed: 150,
-          deleteSpeed: 150,
-          typeColor: 'var(--c-primary)',
-          cursorColor: 'var(--c-title)',
-        }
-      );
-
-      writter
-        .strings(
-          400,
-          'Telcel',
-          'Bait',
-          'AT&T',
-          'Movistar',
-          'IZZI',
-          'Telmex',
-          'Google play',
-          'Netflix',
-          'Cinepolis VIP',
-          'y muchos mas!!'
-        )
-        .start();
-    }
-  }
 
   //* FUNCTION FOR OPEN MENU NAV
   aboutAnimate() {
@@ -325,5 +349,9 @@ export default class HomeComponent implements OnInit, AfterViewInit {
     }
   };
 
+
+  animateCarouselHome() {
+    
+  }
 
 }

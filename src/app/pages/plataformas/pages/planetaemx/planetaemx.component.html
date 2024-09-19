@@ -16,9 +16,7 @@
  }
 
 <!-- ============= SECCION APP PLATAFORMAS ============= -->
- @for (app of planetaemxApp(); track $index) {
-     <app-mobile-app [plataforma]="app"></app-mobile-app>
- }
+    <app-recargas [carouselImages]="appRecargaki()"></app-recargas>
 
 <!-- ============= SECCION MONTOS ============= -->
  @for (amount of montosPlanetaemx(); track $index) {

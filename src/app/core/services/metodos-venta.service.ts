@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MetodosModalModel, MetodosVentaModel } from '@core/models/metodos-venta.model';
+import { MetodosModalModel, MetodosVentaModel } from '@core/interfaces/metodos-venta.model';
 
 @Injectable({
   providedIn: 'root'

@@ -1,8 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { metaTagModel } from '@core/models/meta-tag.model';
+import { metaTagModel } from '@core/interfaces/meta-tag.model';
 import { MetaTagService } from '@core/services/meta-tag.service';
-import { MatTabsModule } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-politicas',
@@ -10,7 +9,7 @@ import { MatTabsModule } from '@angular/material/tabs';
   templateUrl: './politicas.component.html',
   styleUrls: ['./politicas.component.scss'],
   imports: [
-    MatTabsModule
+
   ]
 })
 export default class PoliticasComponent implements OnInit {

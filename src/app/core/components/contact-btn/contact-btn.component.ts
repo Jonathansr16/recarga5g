@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
-import {MatTooltipModule} from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-contact-btn',
@@ -9,7 +8,6 @@ import {MatTooltipModule} from '@angular/material/tooltip';
   styleUrls: ['./contact-btn.component.scss'],
   imports: [
     CommonModule,
-    MatTooltipModule
   ]
 })
 export class ContactBtnComponent {
@@ -20,4 +18,4 @@ export class ContactBtnComponent {
     this.isFloatBtnActive.update( value => !value);
   }
 
-}
+}k

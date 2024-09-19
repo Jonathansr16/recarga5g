@@ -6,13 +6,8 @@ import {
   signal,
   
 } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { MatMenuModule } from '@angular/material/menu';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import {MatRippleModule} from '@angular/material/core';
 import { ThemesService } from '@core/services/themes.service';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { ClickOutsideDirective } from '@core/directives/click-outside.directive';
@@ -27,11 +22,6 @@ import { MenuItem } from './interfaces/header.interface';
     CommonModule,
     RouterLink,
     RouterLinkActive,
-    MatMenuModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatRippleModule,
     ClickOutsideDirective,
   ],
   providers: [

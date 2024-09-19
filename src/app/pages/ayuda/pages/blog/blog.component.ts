@@ -5,7 +5,7 @@ import { Title } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 
 import { ContentfulService } from '@ayuda/services/contentful.service';
-import { metaTagModel } from '@core/models/meta-tag.model';
+import { metaTagModel } from '@core/interfaces/meta-tag.model';
 import { MetaTagService } from '@core/services/meta-tag.service';
 import {  Entry } from 'contentful';
 import { NgxPaginationModule } from 'ngx-pagination';

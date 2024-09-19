@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { negocioModel } from "@core/models/negocios.model";
+import { negocioModel } from "@core/interfaces/negocios.model";
 
 @Injectable()
 export class NegocioService {

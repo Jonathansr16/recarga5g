@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { metaTagModel } from '@core/models/meta-tag.model';
+import { metaTagModel } from '@core/interfaces/meta-tag.model';
 import { MetaTagService } from '@core/services/meta-tag.service';
 @Component({
   selector: 'app-reporte-pagaqui',

@@ -3,17 +3,15 @@ import { Title } from '@angular/platform-browser';
 
 
 //*Interfaces importados
-import { plataformaProductosModel } from '@core/models/app-plataformas.model';
-import { cuentasPlanetaemxModel } from '@core/models/cuentas-plataformas.model';
-import { manualesModel } from '@core/models/manuales-plataformas.models';
-import { metaTagModel } from '@core/models/meta-tag.model';
-import { montosModel } from '@core/models/montos-plataformas.model';
-import { condicionesPlataformasModel } from '@core/models/politicas-plataformas.model';
-import { productoModel } from '@core/models/productos.model';
-import { registerStepsModel } from '@core/models/register-steps-model';
+import { cuentasPlanetaemxModel } from '@core/interfaces/cuentas-plataformas.model';
+import { manualesModel } from '@core/interfaces/manuales-plataformas.models';
+import { metaTagModel } from '@core/interfaces/meta-tag.model';
+import { montosModel } from '@core/interfaces/montos-plataformas.model';
+import { condicionesPlataformasModel } from '@core/interfaces/politicas-plataformas.model';
+import { productoModel } from '@core/interfaces/productos.model';
+import { registerStepsModel } from '@core/interfaces/register-steps-model';
 
 //* Servicios importados
-import { AppPlataformasService } from '@plataformas/services/app-plataformas.service';
 import { CuentasPlataformasService } from '@plataformas/services/cuentas-plataformas.service';
 import { ManualesPlataformasService } from '@plataformas/services/manuales-plataformas.service';
 import { MontosPlataformasService } from '@plataformas/services/montos-platafromas.service';
@@ -22,13 +20,15 @@ import { MetaTagService } from '@core/services/meta-tag.service';
 import { ProductosService } from '@core/services/productos.service';
 import { RegisterStepsService } from '@core/services/register-steps.service';
 import { CommonModule } from '@angular/common';
+
+//* Componentes
 import { CarouselProductosComponent } from '@feature/components/carousel-productos/carousel-products.component';
-import { MobileAppComponent } from '@plataformas/components/mobile-app/mobile-app.component';
 import { MontosComponent } from '@plataformas/components/montos/montos.component';
 import { MetodoVentasComponent } from '@feature/components/metodo-ventas/metodo-ventas.component';
 import { ManualesComponent } from '@plataformas/components/manuales/manuales.component';
 import { RegisterStepsComponent } from '@feature/components/register/register-steps.component';
-
+import { CarouselApp } from '@feature/components/app-recargas/interface/app.interface';
+import { AppRecargasComponent } from '@feature/components/app-recargas/app-recargas.component';
 
 @Component({
   selector: 'app-planetaemx',
@@ -36,7 +36,6 @@ import { RegisterStepsComponent } from '@feature/components/register/register-st
   templateUrl: './planetaemx.component.html',
   styleUrls: ['./planetaemx.component.scss', '../plataformas.scss'],
   providers: [ 
-    AppPlataformasService, 
     MontosPlataformasService, 
     CuentasPlataformasService, 
     ManualesPlataformasService, 
@@ -44,7 +43,7 @@ import { RegisterStepsComponent } from '@feature/components/register/register-st
   imports: [
     CommonModule,
     CarouselProductosComponent,
-    MobileAppComponent,
+    AppRecargasComponent,
     MontosComponent,
     MetodoVentasComponent,
     ManualesComponent,
@@ -54,7 +53,50 @@ import { RegisterStepsComponent } from '@feature/components/register/register-st
 export default class PlanetaemxComponent implements OnInit {
 
   productsPlanetaemx = signal<productoModel[]>([]);
-  planetaemxApp= signal<plataformaProductosModel[]>([]);
+ 
+  appRecargaki= signal<CarouselApp[]>([
+
+    {
+      id: 1,
+      img: {
+        lightUrl: '/assets/img/plataformas/planetaemx/app-recarki_sesion.webp',
+        alt: 'Inición de sesión para la venta de recargas bait'
+      }
+    },
+
+    {
+      id: 2,
+      img: {
+        lightUrl: '/assets/img/plataformas/planetaemx/app-recarki_recargas.webp',
+        alt: 'Sistema de recargas'
+      }
+    },
+
+    {
+      id: 3,
+      img: {
+        lightUrl: '/assets/img/plataformas/planetaemx/app-recarki_servicios.webp',
+        alt: 'Sistema para cobro de servicios'
+      }
+    },
+
+    {
+      id: 4,
+      img: {
+        lightUrl: '/assets/img/plataformas/planetaemx/app-recarki_ventas.webp',
+        alt: 'Reporte de ventas de recargas'
+      }
+    },
+
+    {
+      id: 5,
+      img: {
+        lightUrl: '/assets/img/plataformas/planetaemx/app-recarki_reporte.webp',
+        alt: 'Reporte de ventas de recargas'
+      }
+    }
+
+  ]);
   montosPlanetaemx = signal<montosModel[]>([]);
   cuentasPlanetaemx = signal<cuentasPlanetaemxModel[]>([]);
   planetaemxManuals = signal<manualesModel[]>([]);
@@ -76,7 +118,6 @@ export default class PlanetaemxComponent implements OnInit {
 
 
  private readonly _productosPlanetaemx = inject(ProductosService);
- private readonly _productoPlanetaemx = inject(AppPlataformasService);
  private readonly _montosPlanetaemx = inject(MontosPlataformasService);
  private readonly _cuentasPlanetaemx = inject(CuentasPlataformasService);
  private readonly _manualesPlanetaemx = inject(ManualesPlataformasService);
@@ -89,7 +130,6 @@ export default class PlanetaemxComponent implements OnInit {
     this.titulo.setTitle('Recarga5g.com | Planetaemx plataforma para la venta de recargas Bait');
 
     this.productsPlanetaemx.set( this._productosPlanetaemx.getRecargasServicios() );
-    this.planetaemxApp.set( this._productoPlanetaemx.getProductosPlanetaemx() );
     this.montosPlanetaemx.set( this._montosPlanetaemx.getMontosPlanetae() );
     this.cuentasPlanetaemx.set( this._cuentasPlanetaemx.getCuentasPlanetaemx() );
     this.planetaemxManuals.set( this._manualesPlanetaemx.getManualesPlanetaemx() );

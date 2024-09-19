@@ -3,9 +3,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { Title } from '@angular/platform-browser';
 
 //* Modelos importados
-import { metaTagModel } from '@core/models/meta-tag.model';
-import { productoModel } from '@core/models/productos.model';
-import { registerStepsModel } from '@core/models/register-steps-model';
+import { metaTagModel } from '@core/interfaces/meta-tag.model';
+import { productoModel } from '@core/interfaces/productos.model';
+import { registerStepsModel } from '@core/interfaces/register-steps-model';
 
 //* Servicios importados
 import { MetaTagService } from '@core/services/meta-tag.service';

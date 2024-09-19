@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { manualesModel } from "@core/models/manuales-plataformas.models";
+import { manualesModel } from "@core/interfaces/manuales-plataformas.models";
 
 
 Injectable()

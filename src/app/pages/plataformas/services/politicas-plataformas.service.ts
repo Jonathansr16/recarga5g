@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { condicionesPlataformasModel } from "@core/models/politicas-plataformas.model";
+import { condicionesPlataformasModel } from "@core/interfaces/politicas-plataformas.model";
 
 Injectable
 export class PoliticasPlataformasService {

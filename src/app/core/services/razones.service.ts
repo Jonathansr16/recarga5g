@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { razonesModel } from "@core/models/razones.model";
+import { razonesModel } from "@core/interfaces/razones.model";
 
 @Injectable()
 export class RazonesService {

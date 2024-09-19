@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { montosModel } from "@core/models/montos-plataformas.model";
+import { montosModel } from "@core/interfaces/montos-plataformas.model";
 
 
 Injectable()

@@ -1,7 +1,6 @@
 import { trigger } from '@angular/animations';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Component, HostListener,  inject, PLATFORM_ID, Renderer2, signal, } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-up-scroll',
@@ -10,13 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrls: ['./up-scroll.component.scss'],
   imports: [
     CommonModule,
-    MatIconModule
   ],
-  // animations: [
-  //   trigger('animateArrow', [
-
-  //   ])
-  // ]
 })
 export class UpScrollComponent {
 
@@ -26,10 +19,7 @@ export class UpScrollComponent {
 
 private readonly document = inject(DOCUMENT);
 private readonly plataform_id = inject(PLATFORM_ID);
-private readonly renderer2 = inject(Renderer2);
 
-  // constructor(@Inject(DOCUMENT) private document: Document,
-  //             @Inject(PLATFORM_ID) private plataform_id: Object) {}
 
   @HostListener('window: scroll')
   scrollUp(): void {

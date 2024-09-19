@@ -2,9 +2,9 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 //* Modelos importados
-import { productoModel } from '@core/models/productos.model';
-import { registerStepsModel } from '@core/models/register-steps-model';
-import { metaTagModel } from '@core/models/meta-tag.model';
+import { productoModel } from '@core/interfaces/productos.model';
+import { registerStepsModel } from '@core/interfaces/register-steps-model';
+import { metaTagModel } from '@core/interfaces/meta-tag.model';
 
 //* Servicios importados
 import { ProductosService } from '@core/services/productos.service';

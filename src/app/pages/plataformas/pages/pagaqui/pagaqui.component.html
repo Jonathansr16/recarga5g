@@ -1,25 +1,49 @@
 <div class="banner-plataformas wow animate__animated animate__fadeInUp">
-   <div class="banner-plataformas__container container mb-3">
+   <div class="banner-plataformas__container container flex items-center justify-center mx-auto mt-10 py-4 shadow rounded-lg">
     <picture class="banner-plataformas__picture">
-        <source media="(min-width:1200px)" srcset="/assets/img/plataformas/pagaqui/banner-plataforma-pagaqui.png" type="image/png">
+        <source media="(min-width:1200px)" srcset="/assets/img/plataformas/pagaqui/banner-recargas_web.png" type="image/png">
         <source media="screen and (max-width: 950px)" srcset="/assets/img/plataformas/pagaqui/banner-plataforma-pagaqui__responsive.png" type="image/jpg">
-        <img src="/assets/img/plataformas/pagaqui/banner-plataforma-pagaqui.png" class="banner-plataformas__img banner__img" width="1280" height="571" alt="Conoce & registrate en nuestras plataformas Pagaqui y obten una comisión por cada venta que realizes en recargas & pago de servicios">
+        <img src="/assets/img/plataformas/pagaqui/banner-recargas_web.png" class="banner-plataform w-full h-full" alt="Conoce & registrate en nuestras plataformas Pagaqui y obten una comisión por cada venta que realizes en recargas & pago de servicios">
     </picture>
    </div>
 </div>
 
 <!-- ============= SECCION CAROSUSEL PRODUCTOS ============= -->
- @for (product of productsPagaqui(); track $index) {
-     <app-carousel-productos [products]="product"></app-carousel-productos>
- }
+ <div class="section-carousel my-20">
+     @for (product of productsPagaqui(); track $index) {
+         <app-carousel-productos [products]="product"></app-carousel-productos>
+     }
+ </div>
 
 <!-- ============= SECCION APP PLATAFORMAS ============= -->
- @for (app of appPagaqui(); track $index) {
-     <app-mobile-app [plataforma]="app"></app-mobile-app>
- }
+
+<div class="section_app mb-20">
+
+    <div class="app-container container mx-auto">
+
+        <p class="app__p text-left text-red-700 dark:text-blue-400 text-xl font-semibold">
+            Comisión por venta
+        </p>
+      
+          <h2 class="app__h2 text-3xl lg:text-5xl text-left font-bold text-slate-700 dark:text-white my-2">
+            Obten una comisión hasta del 7% fijo por venta realizada
+          </h2>
+
+          <div class="app-row">
+            <div class="app-col">
+                <app-recargas [carouselImages]="appPagaqui()"></app-recargas>
+            </div>
+            <div class="app-col">
+                
+            </div>
+          </div>
+
+    </div>
+</div>
+
 <!-- ============= SECCION APP PLATAFORMAS ============= -->
 <div class="comision-pagaqui mb-3 ">
-    <div class="comision-pagaqui__container container">
+    <div class="comision-pagaqui__container container mx-auto">
        
             <span class="badge comision-pagaqui__badge badge-4 headline-5">Comisión Pagaqui
                 <mat-icon class="badge__icon" aria-hidden="false" aria-label="Example home icon" fontIcon="request_quote"></mat-icon>

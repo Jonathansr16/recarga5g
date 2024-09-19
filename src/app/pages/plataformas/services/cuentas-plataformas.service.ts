@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { cuentasPagaquiModel, cuentasPlanetaemxModel } from "@core/models/cuentas-plataformas.model";
+import { cuentasPagaquiModel, cuentasPlanetaemxModel } from "@core/interfaces/cuentas-plataformas.model";
 
 
 Injectable()

@@ -1,10 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject, signal } from '@angular/core';
 import { MetodosVentaService } from '@core/services/metodos-venta.service';
-import { MetodosVentaModel } from '@core/models/metodos-venta.model';
+import { MetodosVentaModel } from '@core/interfaces/metodos-venta.model';
 import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-metodo-ventas',
@@ -13,9 +11,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
   styleUrls: ['./metodo-ventas.component.scss'],
   imports: [
     CommonModule,
-    MatIconModule,
-    MatButtonModule,
-    MatDialogModule,
+ 
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
  
@@ -30,7 +26,7 @@ export class MetodoVentasComponent implements OnInit{
 
 
   private readonly _metodosService = inject( MetodosVentaService);
-  private readonly dialog = inject(MatDialog);
+
 
 
  

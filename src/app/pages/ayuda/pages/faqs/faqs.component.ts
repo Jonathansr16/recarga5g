@@ -16,8 +16,7 @@ import { Title } from '@angular/platform-browser';
 import { metaTagModel } from '@core/interfaces/meta-tag.model';
 import { MetaTagService } from '../../../../core/services/meta-tag.service';
 import { isPlatformBrowser } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
-import { MatExpansionModule } from '@angular/material/expansion';
+
 
 @Component({
   selector: 'app-faqs',
@@ -25,8 +24,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
   templateUrl: './faqs.component.html',
   styleUrls: ['./faqs.component.scss'],
   imports: [
-    MatIconModule,
-    MatExpansionModule,
+
   ]
 })
 export default  class FaqsComponent implements OnInit, AfterViewInit {

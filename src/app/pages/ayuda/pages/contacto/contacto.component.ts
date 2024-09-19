@@ -1,5 +1,4 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
 import { Title } from '@angular/platform-browser';
 import { metaTagModel } from '@core/interfaces/meta-tag.model';
 import { MetaTagService } from '@core/services/meta-tag.service';
@@ -10,7 +9,6 @@ import { MetaTagService } from '@core/services/meta-tag.service';
   templateUrl: './contacto.component.html',
   styleUrls: ['./contacto.component.scss'],
   imports: [
-    MatIconModule,
   ]
 })
 export default class ContactoComponent implements OnInit {

@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-manuales',
@@ -7,7 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './manuales.component.html',
   styleUrls: ['./manuales.component.scss'],
   imports: [
-    MatIconModule,
+    
     
   ]
 })

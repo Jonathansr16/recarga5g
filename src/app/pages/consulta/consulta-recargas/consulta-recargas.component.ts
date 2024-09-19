@@ -1,5 +1,4 @@
 import { Component, ViewChild, ElementRef, OnInit, inject, signal } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
 import { Title } from '@angular/platform-browser';
 
 //* Modelos importados
@@ -22,7 +21,6 @@ import { RegisterStepsComponent } from '@feature/components/register/register-st
   styleUrls: ['./consulta-recargas.component.scss', '../consulta.component.scss'],
   imports: [
     CarouselProductosComponent,
-    MatIconModule,
     MetodoVentasComponent,
     RegisterStepsComponent
   ]

@@ -2,9 +2,8 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, ElementRef, ViewChild, AfterViewInit, PLATFORM_ID, inject, signal, OnInit, input } from '@angular/core';
 
 //*Librerias externas importadas
-import { Swiper, Autoplay, Pagination, Navigation, SwiperOptions, EffectFade } from 'swiper';
-import { MatIconModule } from '@angular/material/icon';
-import { MatRippleModule } from '@angular/material/core';
+// import { Swiper, Autoplay, Pagination, Navigation, SwiperOptions, EffectFade } from 'swiper';
+
 import { ThemesService } from '@core/services/themes.service';
 import { CarouselApp } from './interface/app.interface';
 
@@ -15,8 +14,7 @@ import { CarouselApp } from './interface/app.interface';
   styleUrls: ['./app-recargas.component.scss'],
   imports: [
     CommonModule,
-    MatIconModule,
-    MatRippleModule,
+
   ],
   
 })
@@ -33,17 +31,17 @@ export class AppRecargasComponent implements AfterViewInit, OnInit {
  isDarkTheme = this.themeService.themeChange;
 
   //*Config of carousel App
-  private config: SwiperOptions = {
-    modules: [Navigation, Pagination, Autoplay, EffectFade],
-    loop: true,
-    effect: 'fade',
-    grabCursor: true,
-    slidesPerView: 1,
-    autoplay: {
-      delay: 1500,
-    },
+  // private config: SwiperOptions = {
+  //   modules: [Navigation, Pagination, Autoplay, EffectFade],
+  //   loop: true,
+  //   effect: 'fade',
+  //   grabCursor: true,
+  //   slidesPerView: 1,
+  //   autoplay: {
+  //     delay: 1500,
+  //   },
 
-  }
+  // }
 
   ngOnInit(): void {
   }
@@ -55,10 +53,10 @@ export class AppRecargasComponent implements AfterViewInit, OnInit {
 
   //* INIT CAROUSEL APP
   carouselApp(): void {
-    if (isPlatformBrowser(this.plataform_id)) {
-      const carousel = this._carouselApp?.nativeElement;
-      new Swiper(carousel, this.config)
-    }
+    // if (isPlatformBrowser(this.plataform_id)) {
+    //   const carousel = this._carouselApp?.nativeElement;
+    //   new Swiper(carousel, this.config)
+    // }
 
   }
 }

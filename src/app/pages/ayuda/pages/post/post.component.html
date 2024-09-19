@@ -19,13 +19,13 @@
        <h1 class="post__h1 headline-3">{{ post.fields.title }}</h1>
        <div class="post-details">
          <div class="post-details__author">
-           <mat-icon
+           <!-- <mat-icon
              class="post-details__icon"
              color="primary"
              aria-hidden="false"
              aria-label="Example home icon"
              fontIcon="badge"
-           ></mat-icon>
+           ></mat-icon> -->
            <p class="post-details__p body-2">Foto: 
             <a class="post-details__a body-2" [href]="post.fields.urlAuthor" target="_blank" rel="noopener noreferrer">
               {{ post.fields.author }}
@@ -34,13 +34,13 @@
          </div>
  
          <div class="post-details__time">
-           <mat-icon
+           <!-- <mat-icon
              class="post-details__icon"
              color="primary"
              aria-hidden="false"
              aria-label="Example home icon"
              fontIcon="calendar_month"
-           ></mat-icon>
+           ></mat-icon> -->
  
            <p class="post-details__p body-2">
              {{ post.fields.date | date : "mediumDate" }}
@@ -61,8 +61,8 @@
       <ul class="post-categorias__ul mb-1">
         <li class="post-categorias__li body-2" *ngFor="let categoria of post.metadata.tags">
 
-          <mat-icon class="post-categorias__icon" aria-hidden="false" aria-label="Example tag icon" fontIcon="sell"></mat-icon>
-            {{categoria.sys.id}}
+          <!-- <mat-icon class="post-categorias__icon" aria-hidden="false" aria-label="Example tag icon" fontIcon="sell"></mat-icon>
+            {{categoria.sys.id}} -->
 
         </li>
       </ul>
@@ -72,14 +72,14 @@
     <div class="post-shared">
       <p class="post-shared__p headline-6">Comparte esta nota!</p>
    
-      <share-buttons class="post-share" [theme]="'default'"
+      <!-- <share-buttons class="post-share" [theme]="'default'"
       [include]="['facebook','twitter','telegram','messenger','whatsapp','sms','email','print','copy']"
       [show]="5"
       [showText]="true"
       [title]="post.fields.title"
       [description]="post.fields.imgArticle.fields.description"
       [image]="post.fields.imgArticle.fields.file.url" 
-      ></share-buttons>
+      ></share-buttons> -->
     </div>
    </div>
 

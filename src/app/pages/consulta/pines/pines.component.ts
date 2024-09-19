@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
 import { Title } from '@angular/platform-browser';
 
 //* Modelos importados
@@ -24,7 +23,6 @@ import { RegisterStepsComponent } from '@feature/components/register/register-st
   imports: [
     CommonModule,
     CarouselProductosComponent,
-    MatIconModule,
     MetodoVentasComponent,
     RegisterStepsComponent
   ]

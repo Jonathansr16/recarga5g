@@ -18,4 +18,4 @@ export class ContactBtnComponent {
     this.isFloatBtnActive.update( value => !value);
   }
 
-}k
+}

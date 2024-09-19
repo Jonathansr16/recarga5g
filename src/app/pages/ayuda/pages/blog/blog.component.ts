@@ -1,14 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
 import { Title } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 
 import { ContentfulService } from '@ayuda/services/contentful.service';
 import { metaTagModel } from '@core/interfaces/meta-tag.model';
 import { MetaTagService } from '@core/services/meta-tag.service';
-import {  Entry } from 'contentful';
-import { NgxPaginationModule } from 'ngx-pagination';
+// import {  Entry } from 'contentful';
 import { Observable } from 'rxjs';
 
 
@@ -21,13 +19,12 @@ import { Observable } from 'rxjs';
   imports: [
     CommonModule,
     RouterLink,
-    MatIconModule,
-    NgxPaginationModule
+
   ]
 })
 export default class BlogComponent implements OnInit {
 
-  posts$: Entry<any>[] = [];
+  // posts$: Entry<any>[] = [];
   p: number = 1;
   article: Observable<any> | undefined;
  
@@ -50,9 +47,9 @@ export default class BlogComponent implements OnInit {
   ngOnInit(): void {
     this.title.setTitle('Recarga5g.com | Consulta nuestros artículos mas recientes');
     
-    this.contenfulService.getPosts().then((posts: any) => {
-      this.posts$= posts
-    });
+    // this.contenfulService.getPosts().then((posts: any) => {
+    //   this.posts$= posts
+    // });
 
     this.meta.generateTags({
       ...this.tag

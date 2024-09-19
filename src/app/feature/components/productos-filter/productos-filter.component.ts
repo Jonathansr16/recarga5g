@@ -2,7 +2,6 @@ import { Component, OnInit, inject } from '@angular/core';
 import { ProductosService } from '@core/services/productos.service';
 import { CommonModule } from '@angular/common';
 import { productoModel } from '@core/interfaces/productos.model';
-import { MatRippleModule } from '@angular/material/core';
 
 @Component({
   selector: 'app-filter-productos',
@@ -27,7 +26,7 @@ import { MatRippleModule } from '@angular/material/core';
           @for (btnCategory of categorias; track $index) {
           <button
           matRipple 
-          [matRippleColor]="'rgba(255, 255, 255, .2)'"
+        
             (click)="btnFilterActive(btnCategory.id)"
             [ngClass]="{
               'bg-red-500 text-white border-red-500': btnCategoryActive === btnCategory.id,
@@ -73,7 +72,7 @@ import { MatRippleModule } from '@angular/material/core';
     </div>
   </div>`,
   styleUrls: ['./productos-filter.component.scss'],
-  imports: [CommonModule, MatRippleModule],
+  imports: [CommonModule],
 })
 export class ProductosFilterComponent implements OnInit {
   productos: productoModel[] = [];

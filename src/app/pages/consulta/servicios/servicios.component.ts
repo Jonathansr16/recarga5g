@@ -11,7 +11,6 @@ import { ProductosService } from '@core/services/productos.service';
 import { RegisterStepsService } from '@core/services/register-steps.service';
 import { MetaTagService } from '@core/services/meta-tag.service';
 import { CarouselProductosComponent } from '@feature/components/carousel-productos/carousel-products.component';
-import { MatIconModule } from '@angular/material/icon';
 import { MetodoVentasComponent } from '@feature/components/metodo-ventas/metodo-ventas.component';
 import { RegisterStepsComponent } from '@feature/components/register/register-steps.component';
 import { CommonModule } from '@angular/common';
@@ -25,7 +24,6 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     CarouselProductosComponent,
-    MatIconModule,
     MetodoVentasComponent,
     RegisterStepsComponent,
   ]

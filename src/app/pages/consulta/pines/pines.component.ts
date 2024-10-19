@@ -4,16 +4,18 @@ import { Title } from '@angular/platform-browser';
 
 //* Modelos importados
 import { metaTagModel } from '@core/interfaces/meta-tag.model';
-import { productoModel } from '@core/interfaces/productos.model';
 import { registerStepsModel } from '@core/interfaces/register-steps-model';
+import { ProductCarousel } from '@feature/components/carousel-productos/interfaces/product-carousel.interface';
 
 //* Servicios importados
 import { MetaTagService } from '@core/services/meta-tag.service';
-import { ProductosService } from '@core/services/productos.service';
+import { ProductCarouselService } from '@feature/components/carousel-productos/services/product-carousel.service';
 import { RegisterStepsService } from '@core/services/register-steps.service';
-import { CarouselProductosComponent } from '@feature/components/carousel-productos/carousel-products.component';
+
+//*components
 import { MetodoVentasComponent } from '@feature/components/metodo-ventas/metodo-ventas.component';
 import { RegisterStepsComponent } from '@feature/components/register/register-steps.component';
+import { ProductCarouselComponent } from '@feature/components/carousel-productos/product-carousel.component';
 
 @Component({
   selector: 'app-pines',
@@ -22,14 +24,14 @@ import { RegisterStepsComponent } from '@feature/components/register/register-st
   styleUrls: ['./pines.component.scss', '../consulta.component.scss'],
   imports: [
     CommonModule,
-    CarouselProductosComponent,
+    ProductCarouselComponent,
     MetodoVentasComponent,
     RegisterStepsComponent
   ]
 })
 export default class PinesComponent implements OnInit{
 
-  pines = signal<productoModel[]>([]);
+  carouselPines = signal<ProductCarousel[]>([]);
   stepPines = signal<registerStepsModel[]>([]);
 
     //? META TAG
@@ -45,7 +47,8 @@ export default class PinesComponent implements OnInit{
       creator: "@recargascelular"
     }
 
-    private readonly _pinesService = inject( ProductosService);
+
+    private readonly _productCarouselService = inject(ProductCarouselService);
     private readonly _stepService = inject( RegisterStepsService);
     private readonly _metaTagService = inject( MetaTagService);
     private readonly  title = inject( Title);
@@ -57,7 +60,7 @@ export default class PinesComponent implements OnInit{
       ...this.tag
     });
 
-    this.pines.set(this._pinesService.getPines());
+    this.carouselPines.set(this._productCarouselService.getPines());
     this.stepPines.set(this._stepService.getStepsPines());
   
 

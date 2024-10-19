@@ -8,66 +8,112 @@ import {
   QueryList,
   PLATFORM_ID,
   signal,
+  CUSTOM_ELEMENTS_SCHEMA,
 } from '@angular/core';
-
+import { CommonModule, isPlatformBrowser, NgOptimizedImage } from '@angular/common';
 import { Title } from '@angular/platform-browser';
+import { inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 //* Servicios importados
+import { CanonicalLinkService } from '@core/services/canonical-link.service';
 import { razonesModel } from '@core/interfaces/razones.model';
 import { negocioModel } from '@core/interfaces/negocios.model';
-import { productoModel } from '@core/interfaces/productos.model';
 import { MetodosVentaModel } from '@core/interfaces/metodos-venta.model';
-import { registerStepsModel } from '@core/interfaces/register-steps-model';
-import { metaTagModel } from '@core/interfaces/meta-tag.model';
-
-//*INTERFACES
 import { MetodosVentaService } from '@core/services/metodos-venta.service';
-import { RegisterStepsService } from '@core/services/register-steps.service';
-import { ProductosService } from '@core/services/productos.service';
 import { MetaTagService } from '@core/services/meta-tag.service';
 import { RazonesService } from '@core/services/razones.service';
-import { CanonicalLinkService } from '@core/services/canonical-link.service';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { CarouselProductosComponent } from '@feature/components/carousel-productos/carousel-products.component';
-import { ProductosFilterComponent } from '@feature/components/productos-filter/productos-filter.component';
-import { RegisterStepsComponent } from '@feature/components/register/register-steps.component';
-import { MetodoVentasComponent } from '@feature/components/metodo-ventas/metodo-ventas.component';
-import { inject } from '@angular/core';
 import { NegocioService } from '@core/services/negocio.service';
+import { ProductCarouselService } from '@feature/components/carousel-productos/services/product-carousel.service';
 
+import { ProductosFilterComponent } from '@feature/components/productos-filter/productos-filter.component';
+import { MetodoVentasComponent } from '@feature/components/metodo-ventas/metodo-ventas.component';
 import { AppRecargasComponent } from "@feature/components/app-recargas/app-recargas.component";
 import { CarouselApp } from '@feature/components/app-recargas/interface/app.interface';
-import { RouterLink } from '@angular/router';
+import { ProductCarousel } from '@core/interfaces/product-carousel.interface';
+import { ProductCarouselComponent } from '@feature/components/carousel-productos/product-carousel.component';
+
+import { metaTagModel } from '@core/interfaces/meta-tag.model';
+import { SwiperOptions } from 'swiper/types';
+import { RegisterComponent } from '@feature/components/register/register.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   standalone: true,
-  styleUrls: ['./home.component.scss'],
-  providers: [RazonesService, NegocioService],
+  styleUrl: './home.component.scss',
+
   imports: [
     CommonModule,
+    NgOptimizedImage,
     RouterLink,
-    CarouselProductosComponent,
+    ProductCarouselComponent,
     ProductosFilterComponent,
     MetodoVentasComponent,
     AppRecargasComponent,
-    RegisterStepsComponent,
-    AppRecargasComponent
-]
+    AppRecargasComponent,
+    RegisterComponent
+  ],
+
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  styles: [`
+    
+    `]
 })
 export default class HomeComponent implements OnInit, AfterViewInit {
-  @ViewChild('carouselHome') carouselHome?: ElementRef;
+  @ViewChild('swiperHero') swiperHero!: ElementRef;
   @ViewChild('menuAbout') menuAbout?: ElementRef;
-  @ViewChild('textDinamic') textDinamico?: ElementRef;
-  @ViewChildren('counter') counters?: QueryList<ElementRef>;
+  @ViewChildren('counter') countersElements!: QueryList<ElementRef>;
+
+  public allProducts = signal<ProductCarousel[]>([]);
+
+  swiperConfig: SwiperOptions = {
+
+    direction: 'horizontal',
+    effect: "fade",
+    slidesPerView: 1,
+    navigation: true,
+    spaceBetween: 30,
+    loop: true,
+    grabCursor: false,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    speed: 500
+  }
 
   showModal = signal<boolean>(false);
   whySellList = signal<razonesModel[]>([]);
   negocios = signal<negocioModel[]>([]);
   metodosVenta = signal<MetodosVentaModel[]>([]);
-  stepsRegister = signal<registerStepsModel[]>([]);
-  products = signal<productoModel[]>([]);
+
+  slideHero = signal<any[]>([
+
+    {
+      id: 1,
+      img: {
+        src: './assets/img/banner-home_web.webp',
+        alt: 'venta de tarjetas electrónicas para negocios'
+      }
+    },
+
+    {
+      id: 2,
+      img: {
+        src: './assets/img/banner-home-pines_web.webp',
+        alt: 'venta de tarjetas electrónicas para negocios'
+      }
+    },
+
+    {
+      id: 3,
+      img: {
+        src: './assets/img/banner-home__productos.webp',
+        alt: 'Nuestro productos recargas, pago de servicios'
+      }
+    }
+  ]);
 
   records = [
     {
@@ -107,9 +153,10 @@ export default class HomeComponent implements OnInit, AfterViewInit {
       count: 200
     },
 
-  
-  ]
-  
+
+  ];
+
+ 
   //? META TAG
   tag: metaTagModel = {
     title:
@@ -125,15 +172,31 @@ export default class HomeComponent implements OnInit, AfterViewInit {
     image: 'https://recarga5g.com/Venta-recargas.png',
   };
 
-  private readonly _productosService = inject( ProductosService);
-  private readonly _razonesService   = inject( RazonesService);
-  private readonly _negocioService   = inject( NegocioService);
-  private readonly _metodosService   = inject( MetodosVentaService);
-  private readonly _stepsService     = inject( RegisterStepsService);
-  private readonly _metaTagService   = inject( MetaTagService);
-  private readonly _linkService      = inject(CanonicalLinkService);
-  private readonly title             = inject( Title);
-  private readonly platform_id       = inject(PLATFORM_ID);
+  // counters = [
+  //   { label: 'Años en el mercado', value: 20 },
+  //   { label: 'Clientes felices', value: 40000 },
+  //   { label: 'Productos y compañías', value: 200 },
+  //   { label: 'Puntos de venta', value: 300 }
+  // ];
+
+  counterItems = signal([
+    { label: 'Años en el mercado', value: 20 },
+    { label: 'Clientes felices', value: 4000 },
+    { label: 'Productos y compañías', value: 200 },
+    { label: 'Puntos de venta', value: 300 }
+  ])
+
+    // Signal para almacenar los valores de los contadores actuales
+    initialValues = signal([0, 0, 0, 0]); // Valores iniciales de los contadores
+  
+  private readonly title = inject(Title);
+  private readonly platform_id = inject(PLATFORM_ID);
+  private readonly _productCarouselService = inject(ProductCarouselService);
+  private readonly _razonesService = inject(RazonesService);
+  private readonly _negocioService = inject(NegocioService);
+  private readonly _metodosService = inject(MetodosVentaService);
+  private readonly _metaTagService = inject(MetaTagService);
+  private readonly _linkService = inject(CanonicalLinkService);
 
   readonly listApp = [
 
@@ -168,39 +231,38 @@ export default class HomeComponent implements OnInit, AfterViewInit {
     }
   ];
 
-  appImages: CarouselApp[] = [
-
-    {
+  carosuelAppImages = signal<CarouselApp[]>([
+        {
       id: 1,
       img: {
-      lightUrl: 'assets/img/companies/recargas-app_light.webp',
-      darkUrl: 'assets/img/companies/recargas-app_dark.webp',
-      alt: 'App para venta de recargas',
+        lightUrl: '/assets/img/companies/recargas-app_light.webp',
+        darkUrl: '/assets/img/companies/recargas-app_dark.webp',
+        alt: 'App para venta de recargas',
       }
     },
 
     {
       id: 2,
       img: {
-      lightUrl: 'assets/img/companies/servicios-app_light.webp',
-      darkUrl: 'assets/img/companies/servicios-app_dark.webp',
-      alt: 'App para pago de servicios',
+        lightUrl: '/assets/img/companies/servicios-app_light.webp',
+        darkUrl: '/assets/img/companies/servicios-app_dark.webp',
+        alt: 'App para pago de servicios',
       }
     },
 
     {
       id: 3,
-      img:{
-      lightUrl: 'assets/img/companies/pines-app_light.webp',
-      darkUrl: 'assets/img/companies/pines-app_dark.webp',
-      alt: 'App para venta de pines electrónicos',
-  
+      img: {
+        lightUrl: '/assets/img/companies/pines-app_light.webp',
+        darkUrl: '/assets/img/companies/pines-app_dark.webp',
+        alt: 'App para venta de pines electrónicos',
+
+      }
     }
-  }
+  ])
 
-  ]
 
- readonly listBeneficios = [
+  readonly listBeneficios = [
 
     {
       iconClass: 'check_circle',
@@ -272,16 +334,47 @@ export default class HomeComponent implements OnInit, AfterViewInit {
     }
   ];
 
+  ventajas = signal<Ventajas[]>([
+    {
+      id: 1,
+      iconClass: 'how_to_reg',
+      title: 'Registro Simple y Sin Complicaciones',
+      description: 'Crea tu cuenta en minutos a través de nuestra plataforma'
+    },
+
+    {
+      id: 2,
+      iconClass: 'devices',
+      title: 'Variedad de Operadores y Servicios Disponibles',
+      description: 'Accede a múltiples opciones de recarga desde una sola plataforma, incluyendo servicios, tarjetas de regalo y más.'
+    },
+
+    {
+      id: 3,
+      iconClass: 'devices',
+      title: 'Variedad de Operadores y Servicios Disponibles',
+      description: 'Accede a múltiples opciones de recarga desde una sola plataforma, incluyendo servicios, tarjetas de regalo y más.'
+    },
+
+    {
+      id: 4,
+      iconClass: 'devices',
+      title: 'Variedad de Operadores y Servicios Disponibles',
+      description: 'Accede a múltiples opciones de recarga desde una sola plataforma, incluyendo servicios, tarjetas de regalo y más.'
+    },
+
+  
+  ])
+
   ngOnInit(): void {
     this.title.setTitle(
       'Recarga5g.com | Vende tiempo aire, pago de servicios y pines hasta un 7.5% de comisión'
     );
 
-    this.products.set( this._productosService.getProductos() );
-    this.whySellList.set( this._razonesService.getRazones() );
-    this.negocios.set( this._negocioService.getNegocios() );
-    this.metodosVenta.set( this._metodosService.getmetodosVenta() );
-    this.stepsRegister.set( this._stepsService.getStepsHome() );
+    this.allProducts.set(this._productCarouselService.getProductCarousel())
+    this.whySellList.set(this._razonesService.getRazones());
+    this.negocios.set(this._negocioService.getNegocios());
+    this.metodosVenta.set(this._metodosService.getmetodosVenta());
 
     this._linkService.removeCanonicalLink();
     this._linkService.addTag({
@@ -297,10 +390,19 @@ export default class HomeComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
 
+      this.swiperInit()
     this.counterAnimation();
   }
 
 
+
+  swiperInit(): void {
+    if(isPlatformBrowser(this.platform_id)) {
+      const swiper = this.swiperHero.nativeElement;
+      Object.assign(swiper, this.swiperConfig);
+      swiper.initialize(); // Asegura que Swiper se inicialice con la configuración
+    }
+  }
 
   //* FUNCTION FOR OPEN MENU NAV
   aboutAnimate() {
@@ -312,46 +414,56 @@ export default class HomeComponent implements OnInit, AfterViewInit {
   counterAnimation(): void {
     if (isPlatformBrowser(this.platform_id)) {
       const observer = new IntersectionObserver(
-        (entries, obj) => {
-          entries.forEach((entry: any) => {
+        (entries) => {
+          entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              let target = +entry.target.dataset.number;
-              let number = entry.target;
+              console.log('Elemento visible')
+           
+              let targetValue = +entry.target.getAttribute('data-number')!;
+              let index = this.countersElements.toArray().findIndex(el => el.nativeElement === entry.target);
 
-              setTimeout(() => {
-                this.updateCount(number, target);
-              }, 400);
+          
+              // Buscamos el índice del elemento observado
+            this.startCounting(index, targetValue);
+            observer.unobserve(entry.target);  // Deja de observar el elemento
             }
           });
         },
         {
           threshold: 0.5,
-          rootMargin: '0px 0px -50% 0px',
+          rootMargin: '0px 0px -30% 0px',
         }
       );
 
-      this.counters?.forEach((element) => {
-        const item = element.nativeElement;
-        observer.observe(item);
+      // Inicia la observación de cada contador
+      this.countersElements?.forEach((element) => {
+        observer.observe(element.nativeElement);
+      
       });
     }
   }
 
-  updateCount = (num: any, maxNum: number) => {
-    let currentNum = +num.innerText;
-
-    if (currentNum < maxNum) {
-      num.innerText = currentNum + 10;
-
+  // Función que maneja el incremento gradual de los números
+  startCounting(index: number, maxValue: number): void {
+    let currentValue = this.initialValues()[index];
+    if (currentValue < maxValue) {
+      this.initialValues.update( (vals) => {
+        const newVals = [...vals]; // Copia los valores actuales
+        newVals[index] += Math.ceil(maxValue / 100); // Incrementa el valor
+        return newVals; // Retorna los nuevos valores
+      })
+      // this.initialValues.mutate((vals) => (vals[index] += Math.ceil(maxValue / 100)));
       setTimeout(() => {
-        this.updateCount(num, maxNum);
-      }, 4);
+        this.startCounting(index, maxValue);
+      }, 20); // Controla el tiempo de actualización
     }
-  };
-
-
-  animateCarouselHome() {
-    
   }
+}
 
+
+interface Ventajas {
+  id: number;
+  iconClass: string;
+  title: string;
+  description: string;
 }

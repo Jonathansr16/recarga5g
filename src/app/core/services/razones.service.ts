@@ -1,7 +1,9 @@
 import { Injectable } from "@angular/core";
 import { razonesModel } from "@core/interfaces/razones.model";
 
-@Injectable()
+@Injectable({ 
+    providedIn: 'root'
+})
 export class RazonesService {
 
 

@@ -10,10 +10,10 @@
       "@legal/*": ["src/app/pages/legal/*"],
       "@reportes/*": ["src/app/pages/reportes/*"],
       "@ayuda/*": ["src/app/pages/ayuda/*"],
-      "@notFound/*": ["src/app/core/components/not-found/*"],
       "@shared/*": ["src/app/shared/*"],
       "@feature/*": ["src/app/feature/*"],
-      "@core/*": ["src/app/core/*"]
+      "@core/*": ["src/app/core/*"],
+
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
@@ -27,7 +27,6 @@
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
-    "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "bundler",
     "importHelpers": true,

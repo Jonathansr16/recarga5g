@@ -9,7 +9,7 @@ import { MetaTagService } from '@core/services/meta-tag.service';
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.scss']
 })
-export class RegistroComponent implements OnInit {
+export default class RegistroComponent implements OnInit {
 
 
     //? META TAG

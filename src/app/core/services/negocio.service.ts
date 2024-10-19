@@ -1,7 +1,9 @@
 import { Injectable } from "@angular/core";
 import { negocioModel } from "@core/interfaces/negocios.model";
 
-@Injectable()
+@Injectable({ 
+    providedIn: 'root'
+})
 export class NegocioService {
 
     negocio: negocioModel[] =[

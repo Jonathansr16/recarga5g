@@ -5,7 +5,7 @@ export const consultaRoutes: Routes = [
 
     {
         path: 'recargas',
-        loadComponent: () => import('@consultas/consulta-recargas/consulta-recargas.component')
+        loadComponent: () => import('@consultas/recargas/consulta-recargas.component')
     },
 
     {

@@ -1,10 +1,10 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Component,HostBinding, HostListener, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import {  Router, RouterOutlet } from '@angular/router';
-import { ContactBtnComponent } from '@core/components/contact-btn/contact-btn.component';
-import { FooterComponent } from '@core/components/footer/footer.component';
-import { HeaderComponent } from '@core/components/header/header.component';
-import { UpScrollComponent } from '@core/components/up-scroll/up-scroll.component';
+import { ContactBtnComponent } from '@shared/contact-btn/contact-btn.component';
+import { FooterComponent } from '@shared/footer/footer.component';
+import { HeaderComponent } from '@shared/header/header.component';
+import { UpScrollComponent } from '@shared/up-scroll/up-scroll.component';
 import { ThemesService } from '@core/services/themes.service';
 
 //  import { GoogleTagManagerModule, GoogleTagManagerService } from 'angular-google-tag-manager';
@@ -12,16 +12,9 @@ import { ThemesService } from '@core/services/themes.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    RouterOutlet,
-    UpScrollComponent,
-    HeaderComponent,
-    ContactBtnComponent,
-    FooterComponent,
-  
-  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  imports: [RouterOutlet, UpScrollComponent, HeaderComponent, ContactBtnComponent, FooterComponent]
 
 })
 export class AppComponent  implements OnInit{

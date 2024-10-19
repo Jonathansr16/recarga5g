@@ -8,6 +8,12 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/home/home.component')
     },
 
+
+    {
+        path: 'registro',
+        loadComponent: () => import('./pages/registro/registro.component')
+    },
+
     {
         path: 'plataformas',
         loadChildren: () => import('@plataformas/plataformas.routes').then( (r) => r.PlataformasRoutes)

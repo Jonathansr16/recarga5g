@@ -6,7 +6,9 @@ export default {
   darkMode: 'selector',
   theme: { 
     extend: {
-      
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif']
+      }
     },
   },
   plugins: [],

@@ -10,8 +10,8 @@ import { metaTagModel } from '@core/interfaces/meta-tag.model';
 import { MetaTagService } from '@core/services/meta-tag.service';
 
 //* Componentes
-import { MetodoVentasComponent } from '@feature/components/metodo-ventas/metodo-ventas.component';
 import { CarouselApp } from '@feature/components/app-recargas/interface/app.interface';
+import { SalesMethodComponent } from '@feature/components/sales-method/sales-method.component';
 import { AppRecargasComponent } from '@feature/components/app-recargas/app-recargas.component';
 import { ProductCarousel } from '@core/interfaces/product-carousel.interface';
 import { ProductCarouselService } from '@feature/components/carousel-productos/services/product-carousel.service';
@@ -28,7 +28,7 @@ import { RegisterComponent } from '@feature/components/register/register.compone
     CommonModule,
     ProductCarouselComponent,
     AppRecargasComponent,
-    MetodoVentasComponent,
+    SalesMethodComponent,
     RegisterComponent
   ]
 })

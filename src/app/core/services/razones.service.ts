@@ -26,8 +26,8 @@ export class RazonesService {
         {
             id: 3,
             nameIcon: "devices",
-            title: "Metodos de venta",
-            description: "Vende recargas electrónicas desde tu smarphone tablet o desktop"
+            title: "Métodos de venta",
+            description: "Vende recargas electrónicas desde tu smartphone, tablet o desktop"
         },
 
         {
@@ -56,8 +56,8 @@ export class RazonesService {
         {
             id: 7,
             nameIcon: "system_update",
-            title: "Aplicación de depositos automatico",
-            description: "Genera una referencia para tus depositos y transferencias bancarias para la aplicación de tus compras de manera automatica sin necesidad de notificarlos en tu portal",
+            title: "Aplicación de depósitos automático",
+            description: "Genera una referencia para tus depósitos y transferencias bancarias para la aplicación de tus compras de manera automática sin necesidad de notificarlos en tu portal",
 
         },
 
@@ -75,7 +75,7 @@ export class RazonesService {
             id: 9,
             nameIcon: "format_list_bulleted_add",
             title: "Ampliación de la oferta de productos y servicios",
-            description: "Ofrece recargas a cualquier compañia: Telcel, Movistar, Bait, Unefon, AT&T, cobra +200 compañias de servicios: CFE, IZZI, Telmex, Televia",
+            description: "Ofrece recargas a cualquier compañía: Telcel, Movistar, Bait, Unefon, AT&T, cobra +200 compañías de servicios: CFE, IZZI, Telmex, Televia",
 
         },
         

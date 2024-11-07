@@ -1,6 +1,5 @@
 <!-- ============= BANNER HOME ============= -->
-<div class="home__container">
-  <div class="section-hero-wrapper space-container ">
+<section class="section-hero-wrapper space-container">
     <swiper-container class="swiper-hero__container w-full h-auto mx-auto" #swiperHero init="false">
       @for (slide of slideHero(); track $index) {
       <swiper-slide class="home-slide" >
@@ -11,15 +10,13 @@
       </swiper-slide>
       }
     </swiper-container>
-  </div>
+</section>
 
-  <!-- ============= SECCIÓN CAROUSEL PRODCUCTOS ============= -->
-  <div class="section-carousel-products space-container">
+  <section class="section-carousel-products space-container">
     <app-product-carousel [products]="allProducts()"> </app-product-carousel>
-  </div>
+  </section>
 
-  <!-- ============= SECCIÓN BENEFICIOS ============= -->
-  <div class="section-beneficios space-container">
+  <section class="section-beneficios space-container">
     <div
       class="beneficios__container container mx-auto grid grid-cols-1 lg:grid-cols-[1fr,1fr] items-center justify-center gap-8 relative">
   
@@ -32,22 +29,22 @@
       
       <div class="beneficios-left">
         <div class="beneficios-titles">
-          <p class="beneficios-titles__h3 relative subtitle">
-            Recargas Telcel
-          </p>
+          <strong title="venta" class="beneficios-titles__h3 relative subtitle">
+            Recargas multiregión para todo negocio
+          </strong>
           <h1 class="beneficios-p mb-4 title-1">
             Venta de
-            <strong class="text-strong">
-              Recargas Telcel
-            </strong>
-            para cualquier negocio
+            <span class="text-strong">
+              Recargas electrónicas
+            </span>
+           hasta un 7.5% de comisión
           </h1>
         </div>
 
         <p class="beneficios-right__p text line-2 mb-4">
-          Elije la mejor manera para que vendas recargas a través de tu
+          Elije la mejor manera para que puedas realizar <strong>ventas de recargas Telcel</strong> y otras compañías disponibles en México. Con tu equipo de trabajo:
           computadora o laptop ingresando al portal de ventas de recargas
-          electrónicas desde tu navegador de preferencia, por mensaje SMS
+          electrónicas desde tu navegador de preferencia, o bien desde tu celular por mensaje SMS
           gratuito o descargando la aplicación desde la tienda oficial.
         </p>
 
@@ -57,42 +54,33 @@
         </p>
 
         <div class="beneficios-list my-4">
-          <ul class="beneficios-list__ul flex flex-wrap items-center mt-4">
-            @for (beneficio of listBeneficios; track $index) {
-            <li class="beneficios-list__li basis-2/4 my-4 lg:max-w-2/4 pl-3 pr-3">
-              <span
-                class="beneficios__label text-small relative z-[2]  block py-3 px-4 rounded-md border-l-2 border-l-red-500 dark:border-l-blue-500 bg-white dark:bg-slate-700 shadow-lg hover:text-white hover:before:w-full before:content-[''] before:transition-[width] before:duration-300 before:rounded-md before:absolute before:-z-[1] before:left-0 before:bottom-0 before:w-0 before:h-full before:bg-red-500 dark:before:bg-blue-500">
-                {{ beneficio.label }}
-              </span>
-            </li>
-            }
-          </ul>
+          <app-advantage-list [listOptions]="listBenefit"></app-advantage-list>
         </div>
 
-        <a class="middle none center mr-4 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase bg-red-500 text-white border-red-500 shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"   routerLink="/registro">
+        <a class="middle none center mr-4 rounded-lg py-3 px-6 font-sans text-sm font-semibold  bg-red-600 text-white border-red-500 shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"  routerLink="/registro">
           Registrarme ahora
         </a>
+      
       </div>
       <div class="beneficios-right">
         <img ngSrc="/assets/img/ventas_telcel.webp"
           class="beneficios-left__img max-w-[650px] w-full h-auto object-contain mx-auto" loading="lazy" width="650"
-          height="650" alt="Descubre todos los beneficios que podras obtener vendiendo recargas electrónicas" />
+          height="650" alt="Descubre todos los beneficios que podras obtener vendiendo recargas electrónicas"/>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ============= SECCIÓN PORQUE VENDER ============= -->
-  <div class="section-why-sell space-container">
+  <section class="section-why-sell space-container">
     <div class="why-sell__container container mx-auto">
-      <span class="why-sell__span subtitle text-center block">
+      <strong class="why-sell__span subtitle text-center block">
         ¿Por qué vender recargas?
-      </span>
-      <h3 class="why-sell__h3 pb-2 title-2 my-4 text-center">
-        Vende <strong class="text-strong">
-          recargas electrónicas
-        </strong> de todas las compañías de telefonía celular
+      </strong>
+      <h2 class="why-sell__h3 pb-2 title-2 my-4 text-center">
+        Vende <span class="text-strong">
+        recargas electrónicas
+        </span> de todas las compañías de telefonía celular
         en México
-      </h3>
+      </h2>
 
       <div class="why-sell__items flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
         @for (reason of whySellList(); track $index) {
@@ -115,20 +103,19 @@
         }
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ============= SECCION SISTEMA ============= -->
-  <div class="section-sistema space-container">
+  <section class="section-sistema space-container">
     <div class="sistema__container container mx-auto grid grid-cols-1 lg:grid-cols-[1fr,1fr] justify-between gap-4">
       <div class="sistema__left">
-        <p class="subtitle text-left">
+        <strong class="subtitle text-left">
           Sistema para vender recargas
-        </p>
+        </strong>
         <h3 class="sistema__h3 title-2 pb-2">
-          <strong class="text-strong">
+          <span class="text-strong">
             Sistema de recargas
-          </strong>
-          mas seguro y estable
+          </span>
+          más seguro y estable
         </h3>
 
         <p class="sistema__p text mb-4">
@@ -136,14 +123,14 @@
             rel="noopener noreferrer">
             Recargas Electrónicas
           </a>
-          te ofrece el sistema de recargas mas robusta con todas las compañias
-          de telefonia disponibles en México, para que puedas ofrecer a tus
-          clientes venta de rercargas con variedad de compañias de telefonia
+          te ofrece el sistema de recargas más robusta con todas las compañías
+          de telefonía disponibles en México, para que puedas ofrecer a tus
+          clientes venta de recargas con variedad de compañías de telefonía
           mientras generas el retorno de tu inversión + ganancias.
         </p>
 
         <p class="sistema__p text mb-4">
-          Eliges el canal de venta que mas te interese, Ya sea desde la App, SMS
+          Eliges el canal de venta que más te interese, Ya sea desde la App, SMS
           o desde la plataforma web. Nuestro sistema es fácil de usar,
           garantizando una experiencia de usuario excepcional. Ofrece a tus
           clientes. Contamos con compañias:
@@ -169,83 +156,66 @@
         <a href="https://open.spotify.com/" class="sistema__link text-link" target="_blank"
           rel="noopener noreferrer">Spotify</a>,
         <a href="https://www.netflix.com/mx/" class="sistema__link text-link" target="_blank"
-          rel="noopener noreferrer">Netflix</a>,
+          rel="noopener noreferrer">Netflix</a>.
 
-        <p class="text mb-4">
-          & mucho mas compañias, Estamos constantemente agregando mas compañias
+        <p class="text my-4">
+          Estamos constantemente agregando más compañias
           de recargas, pago de servicios y tarjeta de regalos!
         </p>
-
-
       </div>
 
       <div class="sistema__right">
-        <img ngSrc="/assets/img/sistema_recargas.webp" class="sistema__img w-full max-w-[650px] h-auto mx-auto"
-          width="650" height="650" matTooltip="Venta de recargas para celulares, computadoras y via SMS" loading="lazy"
-          alt="venta de recargas para celulares, computadora o via SMS con excelentes comisiones" />
+        <img src="/assets/img/sistema_recargas.webp" class="sistema__img w-full max-w-[650px] h-auto mx-auto"
+          width="650" height="650" loading="lazy"
+          alt="Venta de recargas por smartphone, computadoras y via SM" />
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ============= SECTION PRODUCTOS ============= -->
-  <div class="section-productos space-container">
+  <section class="section-productos space-container">
     <div class="productos__container container mx-auto">
       <app-filter-productos></app-filter-productos>
     </div>
-  </div>
+  </section>
 
-  <!-- ============= SECCION  NOTIFICACION DEPOSITOS ============= -->
-  <div class="section-inversion space-container">
+  <section class="section-inversion space-container">
     <div class="inversion__container container mx-auto">
       <h3 class="inversion-titles__h2 title-1 pb-2 my-4 text-center">
         <span class="text-strong">Montos para vender recargas</span>
         multiregion
       </h3>
 
-      <div class="inversion-box grid grid-cols-1 lg:grid-cols-[1fr,1fr]">
-        <div class="inversion-right img-custom">
+      <div class="inversion-row grid grid-cols-1 lg:grid-cols-[1fr,1fr]">
+        <div class="inversion-col order-2 lg:order-1 img-custom">
           <img src="/assets/img/montos-recargas.webp" class="inversion-right__img max-w-[650px] w-full h-full mx-auto"
             loading="lazy" width="650" height="650"
             alt="Deposita un monto minimo y empieza a vender recargas a cualquier compañia" />
         </div>
 
-        <div class="inversion-subtitle">
-          <h3
-            class="inversion-subtitle__h3 text-slate-700 dark:text-slate-300 font-bold pb-2 text-3xl lg:text-4xl my-4">
-            Deposita un monto mínimo de $100 y empieza a vender recargas
-          </h3>
-
-
-          <p class="inversion__p text mb-4">
+        <div class="inversion-col order-1 lg:order-2 mt-8">
+   
+          <p class="inversion-p text mb-4">
             Con una inversión minima de $100 pesos. Podras realizar recargas a
             cualquier compañia, pagar algun servicio o ofrecer tarjetas de
             regalo. Con un retorno de tu inversión inmediata, ademas de una
             comisión extra.
           </p>
 
-          <p class="inversion__p text">
+          <p class="inversion-p text">
             No te quedes sin saldo. Podras recarga saldo nuevamente los 24/7 los
             365 días del año, incluyendo días festivos y días domingos.
             Realizando tus depósitos en alguno de los establecimientos
             participantes.
           </p>
 
-          <ul class="inversion__ul flex flex-wrap mt-4">
-            @for (item of listInversion; track $index) {
-            <li class="inversion__li my-6 basis-2/4 mt-4 max-w-2/4 pl-3 pr-3">
-              <span
-                class="relative beneficios__label z-[2] text-xs lg:text-sm text-slate-700 dark:text-slate-300 font-medium block py-3 px-4 rounded-md border-l-2 border-l-red-500 dark:border-l-sky-500 bg-white shadow-lg dark:bg-slate-700 hover:text-white hover:before:w-full before:content-[''] before:absolute before:-z-[1] before:left-0 before:bottom-0 before:w-0 before:h-full before:bg-red-500 dark:before:bg-blue-500">
-                {{ item.label }}
-              </span>
-            </li>
-            }
-          </ul>
+          <app-advantage-list [listOptions]="listInversion"></app-advantage-list>
+    
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="section-segurity space-container">
+  <section class="section-segurity space-container">
       <div class="segurity__container container mx-auto">
         <h3 class="text-center text-3xl font-bold text-gray-700 dark:text-white md:text-4xl lg:text-5xl">Plataforma para vender recargas</h3>
         <p class="mt-4 text-center text-gray-600 dark:text-gray-300">Registrate totalmente gratis y empieza a generar ganancias extras a tu negocio</p>
@@ -299,111 +269,65 @@
           </div>
         </div>
       </div>
-  </div>
+  </section>
 
-  <div class="section-negocios space-container ">
-    <div class="negocios__container container mx-auto relative">
-   
-      <div class="absolute inset-0 hidden h-max dark:block lg:my-auto">
-        <div aria-hidden="true" class="grid grid-cols-2 -space-x-52 opacity-30 dark:opacity-70 2xl:mx-auto 2xl:max-w-6xl">
-          <div class="h-60 bg-gradient-to-br from-primary to-purple-400 blur-3xl dark:from-blue-700/30"></div>
-          <div class="h-72 rounded-full bg-gradient-to-r from-cyan-400 to-sky-300 blur-3xl dark:from-transparent dark:to-indigo-600/30"></div>
-        </div>
-      </div>
 
-      <div class="negocios__row grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16">
-        <div class="negocios__col mx-auto relative">
-       
-          <div aria-hidden="true" class="scroll-rotate none lg:block absolute opacity-50 text-gray-400" style="right: 0%; bottom: 0%; transform: rotate(100deg);">
-            <svg class="bi bi-bounding-box-circles" width="1.5rem" height="1.5rem" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M12.5 2h-9V1h9v1zm-10 1.5v9h-1v-9h1zm11 9v-9h1v9h-1zM3.5 14h9v1h-9v-1z" clip-rule="evenodd"></path>
-              <path fill-rule="evenodd" d="M14 3a1 1 0 100-2 1 1 0 000 2zm0 1a2 2 0 100-4 2 2 0 000 4zm0 11a1 1 0 100-2 1 1 0 000 2zm0 1a2 2 0 100-4 2 2 0 000 4zM2 3a1 1 0 100-2 1 1 0 000 2zm0 1a2 2 0 100-4 2 2 0 000 4zm0 11a1 1 0 100-2 1 1 0 000 2zm0 1a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-            </svg>
-          </div>
+<section class="section-business space-container">
+  <div class="business-container container mx-auto">
 
-          <div aria-hidden="true" class="scroll-rotate none lg:block absolute opacity-50 text-gray-600" style="right: 30%; top: 0%; transform: rotate(100deg);">
-            <svg class="bi bi-bounding-box-circles" width="1.5rem" height="1.5rem" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M12.5 2h-9V1h9v1zm-10 1.5v9h-1v-9h1zm11 9v-9h1v9h-1zM3.5 14h9v1h-9v-1z" clip-rule="evenodd"></path>
-              <path fill-rule="evenodd" d="M14 3a1 1 0 100-2 1 1 0 000 2zm0 1a2 2 0 100-4 2 2 0 000 4zm0 11a1 1 0 100-2 1 1 0 000 2zm0 1a2 2 0 100-4 2 2 0 000 4zM2 3a1 1 0 100-2 1 1 0 000 2zm0 1a2 2 0 100-4 2 2 0 000 4zm0 11a1 1 0 100-2 1 1 0 000 2zm0 1a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-            </svg>
-          </div>
-          <p class="negocios-titles__p text-left subtitle">
-            Venta de recargas telcel para negocio
-          </p>
-          <h2 class="negocio__h2 title-1 text-left mb-4">
-            Venta de recargas <span class="text-strong">para todo tipo de negocio</span>
-          </h2>
+    <strong class="business-titles__p subtitle text-center block ">
+      Venta de recargas telcel para negocio
+    </strong>
+    <h3 class="business-title title-1 mb-4 text-center">
+      Venta de recargas para <span class="text-strong">todo tipo de negocio</span>
+    </h3>
 
-          <p class="inversion__p mb-4 text">
-            Sumate a los miles de negocios que ofrecen un servicio extra, con
-            una inversión minima recuperaras tu inversión de forma inmediata + %
-            de comsiones, Lo mas interesante es que podras recargar nuevamente
-            cuando y como lo deseas. Sin pagos forzosos, penalizaciones ni
-            anualidades.
-          </p>
+    <div class="business-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-14 gap-x-6 mt-10">
 
-          <p class="text">
-            Incluir recargas de saldo para teléfonos móviles, servicios digitales, TV por suscripción y transporte en tu
-            negocio es una manera rápida y rentable de atraer más clientes y diversificar tus ingresos. No importa si
-            administras una tienda, farmacia, restaurante o cualquier otro tipo de comercio, la venta de recargas es una
-            alternativa rentable con alta demanda.
-
-          </p>
-
-          <a href="#"
-            class="mt-8 inline-block rounded bg-red-600 dark:bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-red-700 dark:hover:bg-indigo-700 focus:outline-none focus:ring">
-            Registrarme ahora mismo
-          </a>
-        </div>
-
-        <div class="negocios__col grid grid-cols-2 gap-4 sm:grid-cols-3 ">
-         
-          @for (negocio of negocios(); track $index) {
-          <div
-            class="block rounded-xl border border-gray-100 dark:border-gray-700 p-4 shadow-sm focus:outline-none focus:ring"
-            href="#">
-            <span class="inline-block rounded-lg bg-gray-100 dark:bg-slate-700 p-3">
-              <img [src]="negocio.nameIcon" class="negocio-category__img size-9 mx-auto" loading="lazy"
-                [alt]="negocio.label" />
-            </span>
-
-            <p class="mt-2 title-subsection">
-              {{ negocio.typeNegocio }}
-            </p>
-
-          </div>
-          }
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============= SECCION METODOS VENTA ============= -->
-  <div class="section-sales-methods space-container relative">
+      @for (bs of listBusiness; track $index) {
+        <article class="business-article flex flex-row items-center justify-start gap-5 max-w-80 w-full shadow-card rounded-[100px] p-2 bg-white dark:bg-slate-700">
+            <div class="business-image size-14 flex items-center justify-center bg-slate-100 dark:bg-blue-100 rounded-[50%]" >
+           
+              <i class="material-icons material-symbols-rounded text-3xl font-normal" [class]="bs.iconClassColor">{{bs.iconClassName}}</i>
+              <!--  -->
+            </div>
   
-    <div class="sales-methods__container container mx-auto">
-      <span class="sale-methods__subtile subtitle text-center block">Diferentes metodos de venta</span>
-      <h2 class="sales-methods__h2 title-1 text-center mb-10">
+            <h4 class="business-type text-slate-700 font-medium dark:text-white">{{bs.typeBusiness}}</h4>
+            
+        </article>
+      }
+     
+    </div>
+
+  </div>
+</section>
+
+
+<app-sales-method [titleChannel]="'Como vender recargas Bait'"></app-sales-method>
+  <!-- <section class="section-sales-methods space-container relative">
+  
+    <div class="sales-methods-container container mx-auto">
+      <span class="sale-methods-subtile subtitle text-center block">Diferentes metodos de venta</span>
+      <h2 class="sales-methods-h2 title-1 text-center mb-10">
         Como
         <span class="text-strong">vender recargas Bait</span>
       </h2>
 
       <app-metodo-ventas></app-metodo-ventas>
     </div>
-  </div>
+  </section> -->
 
-  <!-- ============= SECCION APP RECARGAS ============= -->
-  <div class="section-app-recargas space-container">
-    <div class="app-container container mx-auto">
-      <h4 class="app-recargas__h4 subtitle text-center my-2">
+  <section class="section-app-recargas space-container">
+    <div class="app-recargas-container container mx-auto">
+      <strong class="app-recargas-h4 subtitle text-center my-2">
         App para la venta de recargas
-      </h4>
+      </strong>
 
-      <h3 class="app-recargas__h3 title-1 text-center">
+      <h3 class="app-recargas-h3 title-1 text-center">
         App para recargas Bait, <span class="text-strong">Pago de servicios y pines</span>
       </h3>
 
-      <div class="max-w-screen-xl mx-auto app-recargas-row grid lg:grid-cols-2 justify-center items-center gap-4 mt-8">
+      <div class="app-recargas-wrapper max-w-screen-xl mx-auto app-recargas-row grid lg:grid-cols-2 justify-center items-center gap-4 mt-8">
         <div class="app-recargas-col w-full self-center">
           @for (item of listApp; track $index) {
           <div class="app-recargas__step px-6 py-6 shadow-md rounded-xl my-8 bg-gray-100 dark:bg-slate-700">
@@ -429,10 +353,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ============= SECCION ABOUT ============= -->
-  <div class="section-about space-container">
+  <section class="section-about space-container">
     <div
       class="about__container max-w-screen-xl mx-auto app-recargas-row grid lg:grid-cols-2 justify-center items-center gap-4 mt-8">
 
@@ -507,30 +430,30 @@
     </div>
 
 
-  </div>
+  </section>
   
   <app-register></app-register>
 
-  <div
+  <section
     class="section-dudas container mx-auto px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 bg-red-600 dark:bg-blue-900 rounded-3xl">
 
     <div class="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16">
       <div class="mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right">
         <h2 class="text-3xl font-bold sm:text-4xl text-white">¿Dudas?</h2>
 
-        <p class="mt-4 text-gray-200">
+        <p class="mt-4 text-white">
           Si aun tienes dudas, no dudes en contactarnos, para asesorarte, nuestro asesor te atendera con mucho gusto
         </p>
 
-        <a href="#" class="mt-8 inline-block rounded bg-white text-red-700 px-12 py-3 text-sm font-medium">
+        <a routerLink="/registro" class="mt-8 inline-block rounded bg-white text-red-700 px-12 py-3 text-sm font-medium">
           Registrarme
         </a>
       </div>
 
       <div class="mx-auto">
         <div class="mt-4 flex flex-wrap justify-center gap-4">
-          <a class="relative flex gap-4 items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-red-500 rounded-lg focus:ring-4 focus:outline-none focus:ring-red-500 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            href="#">
+          <a class="relative flex gap-4 items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-red-600 rounded-lg focus:ring-4 focus:outline-none focus:ring-red-500 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            href="tel:+522717140102" target="_blank" rel="noopener noreferrer">
             Llamar a mi asesor
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
               stroke="currentColor" class="size-6">
@@ -539,11 +462,14 @@
             </svg>
           </a>
 
-          <a class="contact__link" href="#">
+        
+
+          <a class="contact__link" href="https://wa.me/522223239170?text=Recargas%20Electrónicas" target="_blank" rel="noopener noreferrer" aria-label="Contactar por whatsApp">
 
             <img src="assets/img/whatsapp_contact.png" alt="">
           </a>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+

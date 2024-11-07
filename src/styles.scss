@@ -1,7 +1,10 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+// @import "tailwindcss/base";
+// @import "tailwindcss/components";
+// @import "tailwindcss/utilities";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
   @keyframes ripple-animation {
     to {
@@ -9,12 +12,12 @@
       opacity: 0;
     }
   }
-  
+
   button {
     position: relative;
     overflow: hidden;
   }
-  
+
 
 // * * STYLES FOR TITLES
 
@@ -25,7 +28,7 @@
   }
 
   &-2 {
-    @apply text-3xl font-bold sm:text-4xl text-gray-700 dark:text-gray-100; 
+    @apply text-3xl font-bold sm:text-4xl text-gray-700 dark:text-gray-100;
   }
 
   &-subsection {
@@ -37,7 +40,7 @@
   @apply text-sm lg:text-base text-slate-600 dark:text-slate-300 leading-loose;
 
   &-strong {
-    @apply  font-bold text-red-500 dark:text-blue-300 relative before:content-[''] before:absolute before:bg-red-400 before:dark:bg-sky-400 before:right-0 before:left-0 before:h-1 before:-z-[5] before:-bottom-0
+    @apply  font-bold text-red-500 dark:text-blue-300 relative
 
   }
 
@@ -57,9 +60,10 @@
 }
 
 .subtitle {
-  @apply text-2xl text-red-700 dark:text-blue-400 font-semibold;
+  @apply text-2xl text-sky-700 font-semibold;
 }
 
 .space-container {
   @apply px-6 lg:px-8 pb-6 mb-20;
 }
+

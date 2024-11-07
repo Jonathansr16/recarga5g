@@ -28,7 +28,7 @@ import { MetaTagService } from '@core/services/meta-tag.service';
 
 //* Components
 import { ProductCarouselComponent } from '@feature/components/carousel-productos/product-carousel.component';
-import { MetodoVentasComponent } from '@feature/components/metodo-ventas/metodo-ventas.component';
+import { SalesMethodComponent } from '@feature/components/sales-method/sales-method.component';
 import { AppRecargasComponent } from '../../../../feature/components/app-recargas/app-recargas.component';
 import { CarouselApp } from '@feature/components/app-recargas/interface/app.interface';
 import { ProductCarousel } from '@core/interfaces/product-carousel.interface';
@@ -46,7 +46,7 @@ import { ProductsComponent } from '@feature/components/products/products.compone
     CommonModule,
     ProductCarouselComponent,
     ProductsComponent,
-    MetodoVentasComponent,
+    SalesMethodComponent,
     AppRecargasComponent,
     RegisterComponent
   ],

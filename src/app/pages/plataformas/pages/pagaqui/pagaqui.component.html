@@ -1,4 +1,4 @@
-<div class="banner-plataformas">
+<section class="banner-plataformas">
     <div
         class="banner-plataformas__container container flex items-center justify-center mx-auto mt-10 pt-4 shadow rounded-lg">
         <picture class="banner-plataformas__picture">
@@ -10,23 +10,23 @@
                 alt="Conoce & registrate en nuestras plataformas Pagaqui y obten una comisión por cada venta que realizes en recargas & pago de servicios">
         </picture>
     </div>
-</div>
+</section>
 
 <div class="section-carousel-pagaqui my-20">
     <app-product-carousel [products]="productCarousel()"></app-product-carousel>
 </div>
 
 
-<div class="section-sistema-pagaqui px-4 sm:px-6 lg:px-8 mb-20">
+<section class="section-sistema-pagaqui px-4 sm:px-6 lg:px-8 mb-20">
     <div class="sistema-pagaqui__container container mx-auto grid grid-cols-1 lg:grid-cols-[1fr,1fr] justify-between gap-4">
       <div class="sistema-pagaqui__left">
         <p class="sistema-pagaqui__p relative subtitle">
           Plataforma segura e intuitiva
         </p>
-        <h3 class="sistema-pagaqui__h3 title-1 pb-4">
-          Venta de recargas electrónicas Telcel |
-          <span class="text-strong">Pagaqui</span>
-        </h3>
+        <h1 class="sistema-pagaqui__h3 title-1 pb-4">
+          Venta de recargas electrónicas
+          <span class="text-strong">7% comisión</span>
+        </h1>
 
         <p class="sistema-pagaqui__p text mb-4">
             Con <strong>Pagaqui</strong> obten una comisión extra por cada venta que realices
@@ -48,8 +48,6 @@
             los 365 días del año incluyendo dias festivos y días domingo.
         </p>
 
-        
-        <div class="sistema-pagaqui__list">
             <ul class="sistema-pagaqui__ul flex flex-wrap items-center mt-4  ">
                 <li class="sistema-pagaqui__li  basis-2/4 my-4 w-full lg:max-w-[50%] pl-3 pr-3">
                     <span
@@ -76,7 +74,7 @@
                     </span>
                 </li>
             </ul>
-        </div>
+        
       </div>
 
       <div class="sistema-pagaqui__right">
@@ -85,10 +83,10 @@
           alt="Venta de recargas pagaqui" />
       </div>
     </div>
-</div>
+</section>
 
 
-<div class="section-app-pagaqui px-4 sm:px-6 lg:px-8 mb-20">
+<section class="section-app-pagaqui px-4 sm:px-6 lg:px-8 mb-20">
     <div class="app-pagaqui__container container mx-auto">
         <p
             class="app-pagaqui-plataforma__subtitle text-2xl text-red-700 dark:text-blue-400 font-semibold  text-center">
@@ -193,10 +191,10 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 
 
-<div class="section-comision-pagaqui px-4 sm:px-6 lg:px-8 mb-20">
+<section class="section-comision-pagaqui px-4 sm:px-6 lg:px-8 mb-20">
         <div class="comision-pagaqui container mx-auto bg-gradient-to-tr from-red-600 to-red-800 py-20 px-14 rounded-3xl">
             <h3 class="text-3xl font-semibold text-white text-center mb-4">Comisión por recargas</h3>
             
@@ -257,15 +255,12 @@
             </div> -->
             
         </div>
-</div>
-
+</section>
 
 <!-- component -->
-
 <app-products></app-products>
 
-
-<div class="section-bancos-pagaqui mb-20 px-4 sm:px-6 lg:px-8">
+<section class="section-bancos-pagaqui mb-20 px-4 sm:px-6 lg:px-8">
     <div class="bancos-pagaqui__container container mx-auto">
 
         <div class="bancos-pagaqui__row flex gap-3 flex-col lg:flex-row">
@@ -291,9 +286,9 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="section-noreferencia  px-4 sm:px-6 lg:px-8 mb-20">
+<section class="section-noreferencia  px-4 sm:px-6 lg:px-8 mb-20">
     <div class="noreferencia__container container mx-auto">
 
         <div class="noreferencia__row flex flex-row flex-wrap items-start">
@@ -367,15 +362,10 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 
 
+<app-sales-method [titleChannel]="'Metodos de venta pagaqui'"></app-sales-method>
 
-<div class="section-metodos-ventas px-6 lg:px-8 pb-6 mb-20">
-    <div class="container mx-auto">
-        <h3 class="text-slate-700 dark:text-white font-bold mb-4 text-3xl lg:text-5xl text-center">Metodos de venta pagaqui</h3>
-        <app-metodo-ventas></app-metodo-ventas>
-    </div>
-</div>
 
 <app-register></app-register>

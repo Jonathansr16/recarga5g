@@ -1,0 +1,103 @@
+<!-- ============= SECCION METODOS DE VENTA ============= -->
+
+
+ <section class="sl-channel relative space-container">
+
+    <h2 class="sl-channel-title text-center mb-8 title-2">{{titleChannel()}}</h2>
+
+    <div class="sl-channel-container relative grid grid-cols-1 lg:grid-cols-3 gap-6 mx-auto container">
+       <ng-container *ngFor="let method of metodoVentas; let i = index">
+
+           <article
+               class="sl-channelCard flex flex-col items-center justify-center transition-transform ease-out duration-500 hover:-translate-y-3 bg-white overflow-hidden dark:bg-slate-700 font-semibold text-center rounded-3xl border border-slate-100 dark:border-slate-600 shadow-lg p-10 max-w-96 relative">
+               <span
+                   class="sl-channelCard-ribbon absolute text-sm top-0 right-0 rounded-bl-3xl rounded-tr-3xl bg-red-600 dark:bg-blue-500 text-white px-4 py-2 font-semibold z-[1]">
+                   Excelentes comisiones
+               </span>
+               <img class="sl-channelCard-img mb-3 w-28 h-28 rounded-full shadow-lg mx-auto object-contain" 
+                   [src]="method.img.src"
+                   [alt]="method.img.alt"
+                   loading="lazy">
+    
+               <header>
+                   <h3 class="sl-channelCard-subTitle title-subsection"> {{ method.title }} </h3>
+                   <span class="sl-channelCard-label text-sm text-red-600 dark:text-blue-300"> Registro gratis </span>
+                   <p class="sl-channelCard-description text font-normal"> {{method.description}} </p>
+               </header>
+    
+               <footer>
+                   <button 
+                       (click)="openModal(i)"
+                        aria-haspopup="true"
+                        [attr.aria-expanded]="isActiveModal() === i"
+                       class="sl-channelCard-btn bg-red-600 dark:bg-indigo-600 px-8 py-2 mt-8 rounded-3xl text-white font-semibold uppercase tracking-wide">
+                       Leer mas
+                   </button>
+               </footer>
+           </article>
+ 
+           <!-- Renderizar el modal solo cuando se active -->
+           <ng-container *ngIf="isActiveModal() === i">
+               <ng-container *ngTemplateOutlet="modalTemplate; context: { method: method, index: i }"></ng-container>
+           </ng-container>
+    
+           <!-- Template del Modal -->
+           <ng-template #modalTemplate let-item="method" let-index="index">
+               <div class="sl-channelModal-wrapper fixed flex items-center justify-center inset-0 size-full z-20 outline-none transition-all duration-500 overflow-hidden"
+                   [ngClass]="{ 'visible opacity-100' : isActiveModal() === i, 'invisible opacity-0 ': isActiveModal() !== i}"
+                   [id]="'modal-' + index" 
+                   role="dialog">
+       
+                   <div class="sl-channelModal-overlay fixed inset-0 size-full bg-black bg-opacity-50" aria-hidden="true"></div>
+       
+                   <div class="sl-channelModal-card w-auto transition-all duration-300 transform relative p-6 shadow-lg rounded-md  pointer-events-auto bg-white dark:bg-slate-700 text-gray-800 max-w-screen-sm mx-auto"
+                       [ngClass]="{ 'translate-y-0 opacity-100 pointer-events-auto': isActiveModal() === i, '-translate-y-full opacity-0 pointer-events-none': isActiveModal() !== i}">
+       
+       
+                           <header class="sl-channelModal-header">
+       
+                               <div class="sl-channelModal-row flex items-center justify-between space-x-4">
+                                   <h4 class="sl-channelModal-title font-semibold text-gray-800 text-xl dark:text-white basis-11/12 bg-red-200">{{ item.modalInfo.subTitle}}</h4>
+       
+                                   <button (click)="closeModal()" class="sl-channelModal-btn text-gray-600 focus:outline-none hover:text-gray-700 basis-1/12 bg-cyan-200" aria-label="Cerrar modal">
+                                       <svg xmlns="http://www.w3.org/2000/svg" class="size-8 mx-auto" fill="none" viewBox="0 0 24 24"
+                                           stroke="currentColor">
+                                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                               d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                       </svg>
+                                   </button>
+                               </div>
+       
+                               <p class="sl-channelModal-description mt-2 text-sm text-gray-500 dark:text-gray-300">
+                                   {{item.modalInfo.description}}
+                               </p>
+                           </header>
+       
+       
+                           <div class="sl-channelModal-body mt-5">
+       
+                               <ul class="sl-channelModal-ul" aria-label="Lista de pasos">
+                                   @for (list of item.modalInfo.listSteps; track $index) {
+                                   <li class="sl-channelModal-li flex items-center gap-4 py-4">
+       
+                                       <p class="sl-channelModal-p text-slate-700 dark:text-slate-300 text-sm">
+                                           {{ list.info }}
+                                       </p>
+                                   </li>
+                                   }
+                               </ul>
+                           </div>
+       
+                   </div>
+               </div>
+           </ng-template>
+        
+       </ng-container>
+       
+   
+
+        
+    </div>
+
+
+</section>

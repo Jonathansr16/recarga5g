@@ -79,18 +79,32 @@ export class HeaderComponent{
       },
 
       {
-        label: 'Medios de venta',
+        label: 'Nuestros productos',
         items: [
           {
             label: 'Como vender',
             items: [
-                { label: 'pagina web', icon: 'web', routerLink: 'medio-venta/pagina' },
-                { label: 'Aplicación móvil', icon: 'phone_iphone', routerLink: 'medio-venta/app' },
-                { label: 'Vía SMS', icon: 'sms', routerLink: 'medio-venta/sms' }
+                { label: 'recargas', icon: 'web', routerLink: 'medio-venta/pagina' },
+                { label: 'pago de servicios', icon: 'phone_iphone', routerLink: 'medio-venta/app' },
+                { label: 'tarjeta de regalo', icon: 'sms', routerLink: 'medio-venta/sms' }
             ]
           }
         ]
       },
+
+      // {
+      //   label: 'Medios de venta',
+      //   items: [
+      //     {
+      //       label: 'Como vender',
+      //       items: [
+      //           { label: 'pagina web', icon: 'web', routerLink: 'medio-venta/pagina' },
+      //           { label: 'Aplicación móvil', icon: 'phone_iphone', routerLink: 'medio-venta/app' },
+      //           { label: 'Vía SMS', icon: 'sms', routerLink: 'medio-venta/sms' }
+      //       ]
+      //     }
+      //   ]
+      // },
 
       {
         label: 'Notificar',

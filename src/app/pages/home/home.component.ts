@@ -71,19 +71,19 @@ export default class HomeComponent implements OnInit, AfterViewInit {
   @ViewChildren('counter') countersElements!: QueryList<ElementRef>;
 
   //? META TAG
-  tag: metaTagModel = {
-    title:
-      'Recarga5g.com | Vende tiempo aire, pago de servicios y pines hasta un 7.5% de comisión',
-    description:
-      'Vende recargar a cualquier compañía telefónica hasta 7.5% de comisión fija, paga servicios de todos tus clientes y pines electrónicos. Telcel, Unefón, Izzi, CFE, Google Play, Spotify y muchos más!',
-    keywords:
-      'Venta de recargas, recargas electrónicas, recargas telefónicas, recargas telcel, recargas electronicas telcel, venta de recargas telcel, recargas electronicas 7.5% comision, comision 7.5, comision 7.5 por la venta de recargas, vender recargas, tiempo aire telcel, Telcel',
-    url: 'recarga5g.com',
-    type: 'website',
-    card: 'summary_large_image',
-    creator: '@recargascelular',
-    image: 'https://recarga5g.com/Venta-recargas.png',
-  };
+  // tag: metaTagModel = {
+  //   title:
+  //     'Recarga5g.com | Vende tiempo aire, pago de servicios y pines hasta un 7.5% de comisión',
+  //   description:
+  //     'Vende recargar a cualquier compañía telefónica hasta 7.5% de comisión fija, paga servicios de todos tus clientes y pines electrónicos. Telcel, Unefón, Izzi, CFE, Google Play, Spotify y muchos más!',
+  //   keywords:
+  //     'Venta de recargas, recargas electrónicas, recargas telefónicas, recargas telcel, recargas electronicas telcel, venta de recargas telcel, recargas electronicas 7.5% comision, comision 7.5, comision 7.5 por la venta de recargas, vender recargas, tiempo aire telcel, Telcel',
+  //   url: 'recarga5g.com',
+  //   type: 'website',
+  //   card: 'summary_large_image',
+  //   creator: '@recargascelular',
+  //   image: 'https://recarga5g.com/Venta-recargas.png',
+  // };
 
   public allProducts = signal<ProductCarousel[]>([]);
 
@@ -292,32 +292,32 @@ export default class HomeComponent implements OnInit, AfterViewInit {
     {
       id: 1,
       title: 'Registrate',
-      label: 'Regístrate gratis',
+      label: 'Llena un formulario con tus datos y espera nuestro correo con tus datos de acceso',
     },
 
     {
       id: 2,
       title: 'Deposita',
-      label: 'Deposita desde $100, a una de las cuentas bancarias autorizadas',
+      label: 'Deposita desde una inversión minima de $100, a una de las cuentas bancarias autorizadas',
     },
 
     {
       id: 3,
       title: 'Notifica',
-      label: 'Registra tu comprobante en el portal',
+      label: 'Notifica tu comprobante de pago en el portal, y obten el monto correspondiente en saldo',
     },
 
     {
       id: 4,
       title: 'Recibe',
-      label: 'Obten una comisión por tus ventas',
+      label: 'Obten un porcentaje de comisión por cada venta que realices',
     },
 
     {
       id: 5,
       title: 'Recupera',
       label:
-        '¡Listo! Así de fácil podrás realizar recargas a cualquier compañía.',
+        '¡Listo! Así de fácil podrás recuperar tu inversión + una comisión extra a tu negocio, mientras ofrecer venta de recargas',
     },
   ];
 
@@ -464,16 +464,13 @@ export default class HomeComponent implements OnInit, AfterViewInit {
 
     this.allProducts.set(this._productCarouselService.getProductCarousel());
     this.whySellList.set(this._razonesService.getRazones());
-    // this.metodosVenta.set(this._metodosService.getmetodosVenta());
 
-    this._linkService.removeCanonicalLink();
-    this._linkService.addTag({
-      rel: 'canonical',
-      href: 'https://recarga5g.com/',
-    });
-
-    this._metaTagService.generateTags({
-      ...this.tag,
+    this._metaTagService.updateMetaTag({
+      title: 'Inicio |  Vende tiempo aire, pago de servicios y pines hasta un 7.5% de comisión',
+      description: 'Plataforma mas segura y confiable',
+      keywords: 'recarga5g, recarga5g.com, recargas electronicas 7.5% comision, Recargas electrónicas, comision 7.5 por la venta de recargas, sistema de recargas, Pago de servicios, Pines electrónicos, Sistema de recargas, vender recargas multiregion, Plataforma para vender recargas, Venta de recargas, Como vender recargas, App para recargas',
+      url: 'https://recarga5g.com/',
+      typeContent: 'website'
     });
   }
 

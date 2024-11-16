@@ -5,6 +5,11 @@ export const routes: Routes = [
  
     {
         path: '',
+        data: {
+            title: 'Inicio',
+            description: 'Bienvenido a Recarga5G, la mejor plataforma para realizar recargas electrónicas en México',
+            keywords: 'Recargas electrónicas, Pago de servicios, Pines electrónicos, México'
+        },
         loadComponent: () => import('./pages/home/home.component')
     },
 

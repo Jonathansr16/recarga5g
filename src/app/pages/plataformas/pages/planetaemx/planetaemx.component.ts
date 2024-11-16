@@ -39,18 +39,6 @@ export default class PlanetaemxComponent implements OnInit {
 
   title: any;
 
-    //* META TAG
- tag: metaTagModel = {
-  title: 'Recarga5g.com | Planetaemx plataforma para la venta de recargas Bait',
-  description: 'Obtén una comisión hasta un 7.5% fijo en todos tus depósitos, Genera ganancias extras a tu negocio vendiendo recargas Bait, Telcel, Movistar y muchos mas',
-  keywords: "Planetaemx, Recargaki, App Recargaki, App Planetaemx, Cuentas planetaemx, cuentas bancarias planetaemx, cuentas recargaki, cuentas bancarias recargaki, manual planetaemx, manual recargaki, manuales planetaemx, manuales recargaki, vender recargas, plataforma para vender recargas, comision por deposito, venta recargas, comision 7.5 recargas, comision 7.5% recargas, venta de recargas movistar, Movistar, tiempo aire movistar, vender recargas movistar",
-  url: 'recarga5g.com/plataforma/planetaemx',
-  type: 'website',
-  image: 'https://recarga5g.com/Venta-recargas.png',
-  card: 'summary_large_image',
-  creator: '@recargascelular'
- }
-
 
  private readonly productCarouselService = inject(ProductCarouselService);
  private readonly planetaemxService = inject(PlanetaemxService);
@@ -63,8 +51,12 @@ export default class PlanetaemxComponent implements OnInit {
 
     this.productCarousel.set( this.productCarouselService.getAllProducts() );
     this.appRecargaki.set( this.planetaemxService.getAppRecargaki())
-    this.metaTagService.generateTags({
-        ...this.tag
+    this.metaTagService.updateMetaTag({
+      title: 'Plataformas | Planetaemx plataforma para la venta de recargas multiregion',
+      description: 'Obtén una comisión hasta un 7.5% fijo en todos tus depósitos, Genera ganancias extras a tu negocio vendiendo recargas Bait, Telcel, Movistar y muchos mas',
+      keywords: "Planetaemx, Recargaki, App Recargaki, App Planetaemx, Cuentas planetaemx, cuentas bancarias planetaemx, cuentas recargaki, cuentas bancarias recargaki, manual planetaemx, manual recargaki, manuales planetaemx, manuales recargaki, vender recargas, plataforma para vender recargas, comision por deposito, venta recargas, comision 7.5 recargas, comision 7.5% recargas, venta de recargas movistar, Movistar, tiempo aire movistar, vender recargas movistar",
+      url: 'recarga5g.com/plataforma/planetaemx',
+      typeContent: 'website',
     })
   }
 

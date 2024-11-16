@@ -11,10 +11,10 @@ import { ProductCarouselService } from '@feature/components/carousel-productos/s
 import { RegisterStepsService } from '@core/services/register-steps.service';
 
 //*components
-import { ProductCarousel } from '@feature/components/carousel-productos/interfaces/product-carousel.interface';
+// import { ProductCarousel } from '@feature/components/carousel-productos/interfaces/product-carousel.interface';
 import { ProductCarouselComponent } from '@feature/components/carousel-productos/product-carousel.component';
-import { MetodoVentasComponent } from '@feature/components/metodo-ventas/metodo-ventas.component';
-import { RegisterStepsComponent } from '@feature/components/register/register-steps.component';
+// import { MetodoVentasComponent } from '@feature/components/metodo-ventas/metodo-ventas.component';
+// import { RegisterStepsComponent } from '@feature/components/register/register-steps.component';
 
 @Component({
   selector: 'app-consulta-recargas',
@@ -22,16 +22,16 @@ import { RegisterStepsComponent } from '@feature/components/register/register-st
   templateUrl: './consulta-recargas.component.html',
   styleUrls: ['./consulta-recargas.component.scss', '../consulta.component.scss'],
   imports: [
-   ProductCarouselComponent,
-    MetodoVentasComponent,
-    RegisterStepsComponent
+  //  ProductCarouselComponent,
+  //   MetodoVentasComponent,
+  //   RegisterStepsComponent
   ]
 })
 export default class ConsultaRecargasComponent implements OnInit {
 
   @ViewChild('recargasSwiper')tae?: ElementRef;
   
-  carouselRecargas = signal<ProductCarousel[]>([]);
+  // carouselRecargas = signal<ProductCarousel[]>([]);
   stepRecargas = signal<registerStepsModel[]>([]);
 
   //? META TAG
@@ -56,11 +56,11 @@ private readonly title = inject( Title);
 
       this.title.setTitle('Recarga5g.com | Como vender recargas en todas las compañias nacionales')
 
-      this.metaTagService.generateTags( {
-      ...this.tag
-      });
+      // this.metaTagService.generateTags( {
+      // ...this.tag
+      // });
 
-        this.carouselRecargas.set( this.productCarouselService.getRecargas() );
+        // this.carouselRecargas.set( this.productCarouselService.getRecargas() );
         this.stepRecargas.set( this.stepRecargasService.getStepsRecargas() );
       }
 

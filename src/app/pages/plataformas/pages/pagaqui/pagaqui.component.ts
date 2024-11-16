@@ -70,18 +70,18 @@ export default class PlataformaPagaquiComponent
 
 
   //? META TAG
-  tag: metaTagModel = {
-    title: 'Recarga5g.com | Consulta como vender recargas electrónicas',
-    description:
-      'Con un único saldo vende recargas electrónicas, pago de servicios y pines electrónicos hasta un 7% de comisión',
-    keywords:
-      'Pagaqui, cuentas Pagaqui, cuenta bancarias pagaqui, cuentas para saldo de recargas, app pagaqui, aplicación pagaqui, Plataforma para venta de recargas, Plataforma para venta de recargas telefonicas, manuales pagaqui, manual de usuario pagaqui, comision 7%, comisión por venta de recargas, Bait, venta de recargas bait, tiempo aire bait, vender recargas bait',
-    url: 'recarga5g.com/plataforma/pagaqui',
-    type: 'website',
-    card: 'summary_large_image',
-    creator: '@recargascelular',
-    image: 'https://recarga5g.com/Venta-recargas.png',
-  };
+  // tag: metaTagModel = {
+  //   title: 'Recarga5g.com | Consulta como vender recargas electrónicas',
+  //   description:
+  //     'Con un único saldo vende recargas electrónicas, pago de servicios y pines electrónicos hasta un 7% de comisión',
+  //   keywords:
+  //     'Pagaqui, cuentas Pagaqui, cuenta bancarias pagaqui, cuentas para saldo de recargas, app pagaqui, aplicación pagaqui, Plataforma para venta de recargas, Plataforma para venta de recargas telefonicas, manuales pagaqui, manual de usuario pagaqui, comision 7%, comisión por venta de recargas, Bait, venta de recargas bait, tiempo aire bait, vender recargas bait',
+  //   url: 'recarga5g.com/plataforma/pagaqui',
+  //   type: 'website',
+  //   card: 'summary_large_image',
+  //   creator: '@recargascelular',
+  //   image: 'https://recarga5g.com/Venta-recargas.png',
+  // };
 
   
   private readonly productCarouselService = inject(ProductCarouselService);
@@ -101,9 +101,16 @@ export default class PlataformaPagaquiComponent
     this.appPagaqui.set(this.pagaquiService.getAppPagaqui());
     this.registerStepPagaqui.set(this.stepPagaquiService.getStepsPagaqui());
 
-    this.metaTagService.generateTags({
-      ...this.tag,
-    });
+  
+    this.metaTagService.updateMetaTag(
+      {
+        title: 'Plataformas | Pagaqui comisión hasta un 7% por venta de recargas',
+        description: 'Con un unico saldo vende recargas, pago de servicios y tarjeta de regalo',
+        keywords: 'Pagaqui, recargas electronicas 7%,  comision 7 por la venta de recargas, contacto pagaqui, cuentas pagaqui, app pagaqui',
+        url: 'https://recarga5g.com/plataformas/pagaqui',
+        typeContent: 'website'
+      }
+    )
   }
 
   ngAfterViewInit(): void {}

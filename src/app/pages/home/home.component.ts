@@ -2,13 +2,14 @@ import {
   Component,
   ElementRef,
   OnInit,
-  ViewChild,
   AfterViewInit,
   ViewChildren,
   QueryList,
   PLATFORM_ID,
   signal,
   CUSTOM_ELEMENTS_SCHEMA,
+  viewChildren,
+  computed,
 } from '@angular/core';
 import {
   CommonModule,
@@ -20,255 +21,176 @@ import { inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 //* Services
-import { CanonicalLinkService } from '@core/services/canonical-link.service';
 import { MetaTagService } from '@core/services/meta-tag.service';
 import { RazonesService } from '@core/services/razones.service';
-import { ProductCarouselService } from '@feature/components/carousel-productos/services/product-carousel.service';
-import { MetodosVentaService } from '@core/services/metodos-venta.service';
-
-//*interfaces
-import { razonesModel } from '@core/interfaces/razones.model';
-import { negocioModel } from '@core/interfaces/negocios.model';
-
+import { ProductCarouselService } from '@feature/components/product-carousel/services/product-carousel.service';
 
 //* Components
-import { ProductosFilterComponent } from '@feature/components/productos-filter/productos-filter.component';
+import { ProductsFilterComponent } from '@feature/components/products-filter/products-filter.component';
 import AdvantageListComponent from '@feature/components/advantage-list/advantage-list.component';
 import { SalesMethodComponent } from '@feature/components/sales-method/sales-method.component';
 import { AppRecargasComponent } from '@feature/components/app-recargas/app-recargas.component';
 import { CarouselApp } from '@feature/components/app-recargas/interface/app.interface';
-import { ProductCarousel } from '@core/interfaces/product-carousel.interface';
-import { ProductCarouselComponent } from '@feature/components/carousel-productos/product-carousel.component';
+import {
+  ImgCarousel,
+  ProductCarousel,
+} from '@core/interfaces/product-carousel.interface';
+import { ProductCarouselComponent } from '@feature/components/product-carousel/product-carousel.component';
 
-import { metaTagModel } from '@core/interfaces/meta-tag.model';
-import { SwiperOptions } from 'swiper/types';
-import { RegisterComponent } from '@feature/components/register/register.component';
+// import { SwiperOptions } from 'swiper/types';
+import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
 import { AdvantageList } from '@core/interfaces/advantage-list.interface';
+
+import { BenefitsListModel } from '@core/interfaces/benefits-list.interface';
+import { BannerCarouselComponent } from '../../feature/components/banner-carousel/banner-carousel.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   standalone: true,
-
   imports: [
     CommonModule,
     NgOptimizedImage,
     RouterLink,
     ProductCarouselComponent,
-    ProductosFilterComponent,
+    ProductsFilterComponent,
     SalesMethodComponent,
     AppRecargasComponent,
     AppRecargasComponent,
-    RegisterComponent,
     AdvantageListComponent,
+    RegisterStepsComponent,
+    BannerCarouselComponent,
   ],
 
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export default class HomeComponent implements OnInit, AfterViewInit {
-  @ViewChild('swiperHero') swiperHero!: ElementRef;
-  @ViewChild('menuAbout') menuAbout?: ElementRef;
-  @ViewChildren('counter') countersElements!: QueryList<ElementRef>;
 
-  //? META TAG
-  // tag: metaTagModel = {
-  //   title:
-  //     'Recarga5g.com | Vende tiempo aire, pago de servicios y pines hasta un 7.5% de comisión',
-  //   description:
-  //     'Vende recargar a cualquier compañía telefónica hasta 7.5% de comisión fija, paga servicios de todos tus clientes y pines electrónicos. Telcel, Unefón, Izzi, CFE, Google Play, Spotify y muchos más!',
-  //   keywords:
-  //     'Venta de recargas, recargas electrónicas, recargas telefónicas, recargas telcel, recargas electronicas telcel, venta de recargas telcel, recargas electronicas 7.5% comision, comision 7.5, comision 7.5 por la venta de recargas, vender recargas, tiempo aire telcel, Telcel',
-  //   url: 'recarga5g.com',
-  //   type: 'website',
-  //   card: 'summary_large_image',
-  //   creator: '@recargascelular',
-  //   image: 'https://recarga5g.com/Venta-recargas.png',
-  // };
+ @ViewChildren('counter') countersElements!: QueryList<ElementRef>;
+  // countersElements = viewChildren< QueryList<ElementRef> >('counter');
+
+
+  private readonly title = inject(Title);
+  private readonly _metaTagService = inject(MetaTagService);
+  private readonly platform_id = inject(PLATFORM_ID);
+  private readonly _productCarouselService = inject(ProductCarouselService);
+  private readonly _razonesService = inject(RazonesService);
 
   public allProducts = signal<ProductCarousel[]>([]);
 
-  swiperConfig: SwiperOptions = {
-    direction: 'horizontal',
-    effect: 'fade',
-    slidesPerView: 1,
-    navigation: true,
-    spaceBetween: 30,
-    loop: true,
-    grabCursor: false,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    speed: 500,
-  };
-
   showModal = signal<boolean>(false);
-  whySellList = signal<razonesModel[]>([]);
-  negocios = signal<negocioModel[]>([]);
-  // metodosVenta = signal<MetodosVentaModel[]>([]);
+  whySellList = signal<BenefitsListModel[]>([]);
 
-  slideHero = signal<any[]>([
+  slideHero = signal<ImgCarousel[]>([
     {
       id: 1,
-      img: {
-        src: './assets/img/banner-home_web.webp',
-        alt: 'venta de tarjetas electrónicas para negocios',
-      },
+      src: 'assets/img/banner-tipo-negocio.webp',
+      alt: 'venta de recargas, pago de servicios para negocios',
     },
 
     {
       id: 2,
-      img: {
-        src: './assets/img/banner-home-pines_web.webp',
-        alt: 'venta de tarjetas electrónicas para negocios',
-      },
+      src: 'assets/img/banner-recargas-multiregion.webp',
+      alt: 'venta de recargas electrónicas en mexico para todo tipo de negocio',
     },
 
     {
       id: 3,
-      img: {
-        src: './assets/img/banner-home__productos.webp',
-        alt: 'Nuestro productos recargas, pago de servicios',
-      },
+      src: 'assets/img/banner-servicios.webp',
+      alt: 'Cobra cualquier servicio en cuestion de minutos',
+    },
+    {
+      id: 4,
+      src: 'assets/img/banner-pines.webp',
+      alt: 'Ofrece un servicio adicional a tu negocio con nuestras tarjeta de regalo',
     },
   ]);
 
-  records = [
-    {
-      img: {
-        src: '/assets',
-        alt: '',
-      },
-      label: 'Clientes Felices',
-      count: 4000,
-    },
-
-    {
-      img: {
-        src: '',
-        alt: '',
-      },
-      label: 'Años en el mercado',
-      count: 20,
-    },
-
-    {
-      img: {
-        src: '',
-        alt: '',
-      },
-      label: 'Puntos de venta',
-      count: 1800,
-    },
-
-    {
-      img: {
-        src: '',
-        alt: '',
-      },
-      label: 'Compañias de Servicios',
-      count: 200,
-    },
-  ];
-
   listBusiness = [
-
     {
       id: 1,
       iconClassName: 'store',
       iconClassColor: 'text-fuchsia-600',
-      typeBusiness: 'Tienda de Abarrotes'
+      typeBusiness: 'Tienda de Abarrotes',
     },
 
     {
       id: 2,
       iconClassName: 'liquor',
       iconClassColor: 'text-rose-600',
-      typeBusiness: 'Vinaterias'
+      typeBusiness: 'Vinaterias',
     },
 
     {
       id: 3,
       iconClassName: 'handyman',
       iconClassColor: 'text-blue-600',
-      typeBusiness: 'Ferreterias'
+      typeBusiness: 'Ferreterias',
     },
 
     {
       id: 4,
       iconClassName: 'restaurant',
       iconClassColor: 'text-emerald-700',
-      typeBusiness: 'Restaurantes'
+      typeBusiness: 'Restaurantes',
     },
 
     {
       id: 5,
       iconClassName: 'local_cafe',
       iconClassColor: 'text-orange-700',
-      typeBusiness: 'Cyber Cafes'
+      typeBusiness: 'Cyber Cafes',
     },
 
     {
       id: 6,
       iconClassName: 'medication_liquid',
       iconClassColor: 'text-cyan-700',
-      typeBusiness: 'Farmacias'
+      typeBusiness: 'Farmacias',
     },
 
     {
       id: 7,
       iconClassName: 'breakfast_dining',
       iconClassColor: 'text-amber-600',
-      typeBusiness: 'Panaderias'
+      typeBusiness: 'Panaderias',
     },
 
     {
       id: 8,
       iconClassName: 'snowshoeing',
       iconClassColor: 'text-red-600',
-      typeBusiness: 'Zapaterias'
+      typeBusiness: 'Zapaterias',
     },
 
     {
       id: 9,
       iconClassName: 'description',
       iconClassColor: 'text-violet-600',
-      typeBusiness: 'Papelerias'
+      typeBusiness: 'Papelerias',
     },
 
     {
       id: 10,
       iconClassName: 'car_repair',
       iconClassColor: 'text-rose-600',
-      typeBusiness: 'Refaccionarias'
+      typeBusiness: 'Refaccionarias',
     },
-
 
     {
       id: 11,
       iconClassName: 'checkroom',
       iconClassColor: 'text-cyuan-600',
-      typeBusiness: 'Tiendas de ropa'
+      typeBusiness: 'Tiendas de ropa',
     },
-
 
     {
       id: 12,
       iconClassName: 'storefront',
       iconClassColor: 'text-green-700',
-      typeBusiness: 'Fruteria'
-    }
-
-
-   
-  ]
-
-  // counters = [
-  //   { label: 'Años en el mercado', value: 20 },
-  //   { label: 'Clientes felices', value: 40000 },
-  //   { label: 'Productos y compañías', value: 200 },
-  //   { label: 'Puntos de venta', value: 300 }
-  // ];
+      typeBusiness: 'Fruteria',
+    },
+  ];
 
   counterItems = signal([
     { label: 'Años en el mercado', value: 20 },
@@ -277,34 +199,28 @@ export default class HomeComponent implements OnInit, AfterViewInit {
     { label: 'Puntos de venta', value: 300 },
   ]);
 
-  // Signal para almacenar los valores de los contadores actuales
   initialValues = signal([0, 0, 0, 0]); // Valores iniciales de los contadores
-
-  private readonly title = inject(Title);
-  private readonly platform_id = inject(PLATFORM_ID);
-  private readonly _productCarouselService = inject(ProductCarouselService);
-  private readonly _razonesService = inject(RazonesService);
-  private readonly _metodosService = inject(MetodosVentaService);
-  private readonly _metaTagService = inject(MetaTagService);
-  private readonly _linkService = inject(CanonicalLinkService);
 
   readonly listApp = [
     {
       id: 1,
       title: 'Registrate',
-      label: 'Llena un formulario con tus datos y espera nuestro correo con tus datos de acceso',
+      label:
+        'Llena un formulario con tus datos y espera nuestro correo con tus datos de acceso',
     },
 
     {
       id: 2,
       title: 'Deposita',
-      label: 'Deposita desde una inversión minima de $100, a una de las cuentas bancarias autorizadas',
+      label:
+        'Deposita desde una inversión minima de $100, a una de las cuentas bancarias autorizadas',
     },
 
     {
       id: 3,
       title: 'Notifica',
-      label: 'Notifica tu comprobante de pago en el portal, y obten el monto correspondiente en saldo',
+      label:
+        'Notifica tu comprobante de pago en el portal, y obten el monto correspondiente en saldo',
     },
 
     {
@@ -351,7 +267,6 @@ export default class HomeComponent implements OnInit, AfterViewInit {
   ]);
 
   public listBenefit: AdvantageList[] = [
-
     {
       id: 1,
       label: 'Mayor flujo de clientes',
@@ -359,40 +274,38 @@ export default class HomeComponent implements OnInit, AfterViewInit {
 
     {
       id: 2,
-      label: 'Comisiones ajustadas a tu negocio'
+      label: 'Comisiones ajustadas a tu negocio',
     },
 
     {
       id: 3,
-      label: 'Variedad de compañías de recargas y servicios'
+      label: 'Variedad de compañías de recargas y servicios',
     },
 
     {
-     id: 4,
-      label: 'Recupera tu inversión + comisión'
+      id: 4,
+      label: 'Recupera tu inversión + comisión',
     },
 
     {
       id: 5,
-      label: 'Soporte personalizado'
+      label: 'Soporte personalizado',
     },
     {
       id: 6,
-      label: 'Diferenciador a tu negocio'
+      label: 'Diferenciador a tu negocio',
     },
     {
       id: 6,
-      label: 'Adatado para cualquier tipo de negocio'
+      label: 'Adatado para cualquier tipo de negocio',
     },
     {
       id: 7,
-      label: 'Aplicación de compras inmediatas'
-    }
+      label: 'Aplicación de compras inmediatas',
+    },
   ];
 
-
-
- public  listInversion = [
+  public listInversion = [
     {
       id: 1,
       label: 'Sin pagos forzosos ni anualidades.',
@@ -424,7 +337,7 @@ export default class HomeComponent implements OnInit, AfterViewInit {
     },
   ];
 
-  ventajas = signal<Ventajas[]>([
+  advantageList = signal<Ventajas[]>([
     {
       id: 1,
       iconClass: 'how_to_reg',
@@ -442,16 +355,16 @@ export default class HomeComponent implements OnInit, AfterViewInit {
 
     {
       id: 3,
-      iconClass: 'devices',
-      title: 'Variedad de Operadores y Servicios Disponibles',
+      iconClass: 'point_of_sale',
+      title: 'retorno de inversión inmediata',
       description:
-        'Accede a múltiples opciones de recarga desde una sola plataforma, incluyendo servicios, tarjetas de regalo y más.',
+        'Con una inversión minima desde $100 podras vender recargas hasta tarjeta de regalo, obten tu inversión + un porcentaje de comisión extra',
     },
 
     {
       id: 4,
-      iconClass: 'devices',
-      title: 'Variedad de Operadores y Servicios Disponibles',
+      iconClass: 'support_agent',
+      title: 'soporte personalizado',
       description:
         'Accede a múltiples opciones de recarga desde una sola plataforma, incluyendo servicios, tarjetas de regalo y más.',
     },
@@ -466,32 +379,21 @@ export default class HomeComponent implements OnInit, AfterViewInit {
     this.whySellList.set(this._razonesService.getRazones());
 
     this._metaTagService.updateMetaTag({
-      title: 'Inicio |  Vende tiempo aire, pago de servicios y pines hasta un 7.5% de comisión',
-      description: 'Plataforma mas segura y confiable',
-      keywords: 'recarga5g, recarga5g.com, recargas electronicas 7.5% comision, Recargas electrónicas, comision 7.5 por la venta de recargas, sistema de recargas, Pago de servicios, Pines electrónicos, Sistema de recargas, vender recargas multiregion, Plataforma para vender recargas, Venta de recargas, Como vender recargas, App para recargas',
+      title:
+        'recarga5g.com | Vende recargas electrónicas, pago de servicios y pines hasta un 7.5% de comisión',
+      description:
+        'Descubre Recarga5G: gana hasta un 7.5% de comisión vendiendo recargas electrónicas, pago de servicios y pines. Fácil, rápido y rentable para tu negocio',
+      keywords:
+        'recarga5g, recarga5g.com, recargas electronicas 7.5% comision, recargas electronicas, comision 7.5 por la venta de recargas, sistema de recargas, pago de servicios, sistema de recargas, vender recargas multiregion, plataforma para vender recargas, venta de recargas, como vender recargas, app para recargas',
       url: 'https://recarga5g.com/',
-      typeContent: 'website'
+      typeContent: 'website',
     });
   }
 
   ngAfterViewInit(): void {
-    this.swiperInit();
     this.counterAnimation();
   }
 
-  swiperInit(): void {
-    if (isPlatformBrowser(this.platform_id)) {
-      const swiper = this.swiperHero.nativeElement;
-      Object.assign(swiper, this.swiperConfig);
-      swiper.initialize(); // Asegura que Swiper se inicialice con la configuración
-    }
-  }
-
-  //* FUNCTION FOR OPEN MENU NAV
-  aboutAnimate() {
-    const menu = this.menuAbout?.nativeElement;
-    menu.classList.toggle('menuActive');
-  }
 
   //* FUNCTIONS FOR COUNTER RECORD SECTION
   counterAnimation(): void {

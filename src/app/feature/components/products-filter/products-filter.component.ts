@@ -1,38 +1,37 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductCarousel } from '../../../core/interfaces/product-carousel.interface';
-import { ProductCarouselService } from '../carousel-productos/services/product-carousel.service';
-
+import { ProductCarousel } from '@core/interfaces/product-carousel.interface';
+import { ProductCarouselService } from '../product-carousel/services/product-carousel.service';
 
 @Component({
-  selector: 'app-filter-productos',
+  selector: 'app-filter-products',
   standalone: true,
   template: ` 
 
-    <div class="products__wrapper">
+    <div class="products-wrapper">
 
-    <div class="products__row mb-8 lg:mb-16 flex flex-col lg:flex-row items-center justify-center lg:justify-between">
-      <div class="products__col product-title mb-4">
-        <p class="subtitle mb-3">Tiempo aire, pago de servicios y pines</p>
+    <div class="products-row mb-8 lg:mb-16 flex flex-col lg:flex-row items-center justify-center lg:justify-between">
+      <div class="products-col product-title mb-4">
+        <span class="subtitle mb-3">Tiempo aire, pago de servicios y pines</span>
         <h3
-          class="products__h3 title-1">
-           <span class="text-strong">
+          class="products-title">
+           <span class="products-label text-primary">
            Nuestros Productos
           </span> 
             
         </h3>
       </div>
 
-      <div class="products__col flex flex-row flex-wrap items-center justify-center gap-6 mb-4">
+      <div class="products-col flex flex-row flex-wrap items-center justify-center gap-6 mb-4">
           @for (btnCategory of btnCategories(); track btnCategory.id) {
        
           <button
            (click)="handlerCategory(btnCategory.category)"
           [ngClass]="{
-              'bg-red-600 text-white border-red-600': btnCategory.category === categoryActive(),
-              'bg-white text-slate-700 border-slate-200': btnCategory.category != categoryActive()
+              'text-white': btnCategory.category === categoryActive(),
+              'bg-white text-slate-800 border-slate-200': btnCategory.category != categoryActive()
             }"
-          class="middle none center mr-4 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+          class="products-btn-category btn-primary font-sans uppercase mr-4 text-xs font-bold shadow-slate-500/20 hover:shadow-slate-500/20">
           {{ btnCategory.category }}
     </button>
           }
@@ -44,14 +43,14 @@ import { ProductCarouselService } from '../carousel-productos/services/product-c
         <div
           class="products"
         >
-        <ul class="products__ul products-list flex flex-row flex-wrap items-center justify-center  gap-x-6 gap-y-12">
+        <ul class="products-list flex flex-row flex-wrap items-center justify-center  gap-x-6 gap-y-12">
           @for (companie of allProducts(); track $index) {
           
             @if(categoryActive() === companie.typeService || categoryActive() === 'Todos') {
 
-            <li class="products__li"  [ngClass]="{ showItem: companie.typeService === categoryActive() }">
+            <li class="products-list-item"  [ngClass]="{ showItem: companie.typeService === categoryActive() }">
               <img
-                class="products-list-item__img max-w-48  w-full h-auto"
+                class="products-list-img max-w-48 w-full h-auto"
                 [src]="companie.img.src"
                 loading="lazy"
                 width="200"
@@ -68,12 +67,12 @@ import { ProductCarouselService } from '../carousel-productos/services/product-c
       </div>
  
 `,
-  styleUrls: ['./productos-filter.component.scss'],
+  styleUrls: ['./products-filter.component.scss'],
   imports: [
     CommonModule, 
   ],
 })
-export class ProductosFilterComponent implements OnInit {
+export class ProductsFilterComponent implements OnInit {
 
   btnCategories = signal<BtnCategory[]>([
     { id: 0, category: 'Todos' },

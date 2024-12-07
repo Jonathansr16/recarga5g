@@ -31,9 +31,9 @@ export default class ReportePagaquiComponent implements OnInit {
   ngOnInit(): void {
     this.title.setTitle('Recarga5g.com | Reporte de depósitos y/o transferencias Pagaqui');
 
-    this.meta.generateTags({
-      ...this.tag
-    })
+    // this.meta.generateTags({
+    //   ...this.tag
+    // })
   }
 
 }

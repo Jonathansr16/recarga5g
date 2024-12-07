@@ -58,9 +58,9 @@ export default  class FaqsComponent implements OnInit, AfterViewInit {
       'Recarga5g.com | Consulta las preguntas mas frecuentes y resuelve todas tus dudas para vender recargas, pago de servicios y pines electrónicos'
     );
 
-    this.metaTagService.generateTags({
-      ...this.tag,
-    });
+    // this.metaTagService.generateTags({
+    //   ...this.tag,
+    // });
   }
 
   ngAfterViewInit(): void {

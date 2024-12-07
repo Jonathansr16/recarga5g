@@ -3,10 +3,11 @@ export interface ProductCarousel {
     id: number,
     typeService: 'Recargas' | 'Servicios' | 'Pines';
     company: string;
-    img: ProductImg
+    img: ImgCarousel
 }
 
-export interface ProductImg {
+export interface ImgCarousel {
+    id: number;
     src: string;
     alt: string;
 }

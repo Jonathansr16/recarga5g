@@ -28,9 +28,9 @@ export default class ReportePlanetaemxComponent implements OnInit {
   ngOnInit(): void {
     this.title.setTitle('Recarga5g.com | Reporte de depósitos y/o transferencias Planetaemx');
 
-    this.meta.generateTags({
-      ...this.tag
-    })
+    // this.meta.generateTags({
+    //   ...this.tag
+    // })
   }
 
 }

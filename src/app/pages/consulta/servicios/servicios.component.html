@@ -13,7 +13,7 @@
 </div>
 
 <!-- ============= SECCIÓN CAROUSEL SERVICIOS ============= -->
-
+<app-product-carousel [products]="carouselServices()"></app-product-carousel>
 
 <!-- ============= SECCIÓN COBRO SERVICES ============= -->
 <div class="cobro-services mb-3">
@@ -192,7 +192,7 @@
     <h3 class="devices-services__h3 headline-3">
       Métodos de venta para cobro de servicios
     </h3>
-    <app-metodo-ventas></app-metodo-ventas>
+|     <app-sales-method [titleChannel]="'Metodos'"></app-sales-method>
   </div>
 </div>
 
@@ -237,38 +237,4 @@
 </div>
 
 <!-- ============= SECCION REGISTER SERVICES ============= -->
-<div class="register-services">
-  <div class="register-services__container container">
-    <div class="register-services__left">
-      <span class="headline-4 head-4">Registro para el cobro de servicios</span>
-      <h3 class="register-services__h3 headline-3">
-        Plataforma para cobro de recibo Telmex, IZZI
-      </h3>
-
-      <p class="register-services__p body-1 mb-1">
-        No dejes pasar más tiempo valioso lidiando con complicaciones en tus
-        cobros. Únete a
-        <strong class="keyword__strong keyword__compani body-1">Recargas5g.com</strong>
-        y descubre una forma más fácil y eficiente de cobrar por tus servicios.
-        Maximiza tu tiempo y recursos, y enfócate en lo que realmente importa:
-        hacer crecer tu negocio.
-      </p>
-
-      <p class="register-services__p body-1 mb-1">
-        ¡Haz que tus cobros de servicios sean más simples y rápidos con
-        <strong class="keyword__strong keyword__compani body-1">Recargas5g.com</strong>! Regístrate hoy mismo y comienza
-        a disfrutar de la comodidad y
-        seguridad que brinda nuestra plataforma."
-      </p>
-
-      <a class="register-services__a radius-20" mat-raised-button color="primary" routerLink="/registro">Registrarme
-        ahora</a>
-    </div>
-
-    <div class="register-services__right mb-3">
-      @for (step of registerServices(); track $index) {
-        <app-register-steps [step]="step"></app-register-steps>
-      }
-    </div>
-  </div>
-</div>
+<app-register-steps></app-register-steps>

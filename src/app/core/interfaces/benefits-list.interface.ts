@@ -1,4 +1,5 @@
-export interface razonesModel {
+
+export interface BenefitsListModel {
     id: number;
     nameIcon: string;
     title: string;

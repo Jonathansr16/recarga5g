@@ -51,9 +51,9 @@ export default class BlogComponent implements OnInit {
     //   this.posts$= posts
     // });
 
-    this.meta.generateTags({
-      ...this.tag
-    })
+    // this.meta.generateTags({
+    //   ...this.tag
+    // })
 
 
    

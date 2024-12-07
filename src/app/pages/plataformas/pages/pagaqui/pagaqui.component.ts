@@ -13,29 +13,22 @@ import { CommonModule } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 
 //* Interfaces importados
-import { cuentasPagaquiModel } from '@core/interfaces/cuentas-plataformas.model';
-import { horarioPlataformasModel } from '@core/interfaces/horario-plataformas.model';
-import { manualesModel } from '@core/interfaces/manuales-plataformas.models';
 import { metaTagModel } from '@core/interfaces/meta-tag.model';
-import { montosModel } from '@core/interfaces/montos-plataformas.model';
-import { condicionesPlataformasModel } from '@core/interfaces/politicas-plataformas.model';
 import { registerStepsModel } from '@core/interfaces/register-steps-model';
 
 //* Servicios importados
 
-import { RegisterStepsService } from '@core/services/register-steps.service';
 import { MetaTagService } from '@core/services/meta-tag.service';
-
+import { RegisterStepsService } from '@core/services/register-steps.service';
+import { PagaquiService } from './services/pagaqui.service';
+import { ProductCarouselService } from '@feature/components/product-carousel/services/product-carousel.service';
 //* Components
-import { ProductCarouselComponent } from '@feature/components/carousel-productos/product-carousel.component';
+import { ProductCarouselComponent } from '@feature/components/product-carousel/product-carousel.component';
 import { SalesMethodComponent } from '@feature/components/sales-method/sales-method.component';
 import { AppRecargasComponent } from '../../../../feature/components/app-recargas/app-recargas.component';
 import { CarouselApp } from '@feature/components/app-recargas/interface/app.interface';
 import { ProductCarousel } from '@core/interfaces/product-carousel.interface';
-import { ProductCarouselService } from '@feature/components/carousel-productos/services/product-carousel.service';
-import { PagaquiService } from './services/pagaqui.service';
-import { RegisterComponent } from '@feature/components/register/register.component';
-import { ProductsComponent } from '@feature/components/products/products.component';
+import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
 
 @Component({
   selector: 'app-plataforma-pagaqui',
@@ -45,10 +38,9 @@ import { ProductsComponent } from '@feature/components/products/products.compone
   imports: [
     CommonModule,
     ProductCarouselComponent,
-    ProductsComponent,
     SalesMethodComponent,
     AppRecargasComponent,
-    RegisterComponent
+    RegisterStepsComponent
   ],
 })
 export default class PlataformaPagaquiComponent
@@ -61,11 +53,7 @@ export default class PlataformaPagaquiComponent
 
   productCarousel = signal<ProductCarousel[]>([]);
   appPagaqui = signal<CarouselApp[]>([]);
-  accountPagaqui = signal<cuentasPagaquiModel[]>([]);
-  amountsPagaqui = signal<montosModel[]>([]);
-  manualsPagaqui = signal<manualesModel[]>([]);
-  policiesPagaqui = signal<condicionesPlataformasModel[]>([]);
-  schedulesPagaqui = signal<horarioPlataformasModel[]>([]);
+
   registerStepPagaqui = signal<registerStepsModel[]>([]);
 
 
@@ -104,9 +92,9 @@ export default class PlataformaPagaquiComponent
   
     this.metaTagService.updateMetaTag(
       {
-        title: 'Plataformas | Pagaqui comisión hasta un 7% por venta de recargas',
-        description: 'Con un unico saldo vende recargas, pago de servicios y tarjeta de regalo',
-        keywords: 'Pagaqui, recargas electronicas 7%,  comision 7 por la venta de recargas, contacto pagaqui, cuentas pagaqui, app pagaqui',
+        title: 'Plataformas | Pagaqui venta de recargas electrónicas telcel para negocios',
+        description: 'Plataforma para venta de recargas electrónicas Telcel, y mas servicios en MX, desde tu negocio',
+        keywords: 'pagaqui, venta de recargas telcel, recargas telcel, tiempo aire telcel, vender recargas telcel, contacto pagaqui, cuentas pagaqui, vender recargas mexico',
         url: 'https://recarga5g.com/plataformas/pagaqui',
         typeContent: 'website'
       }

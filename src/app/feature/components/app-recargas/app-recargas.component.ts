@@ -1,81 +1,91 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, ElementRef, ViewChild, PLATFORM_ID, inject, OnInit, input, CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  ViewChild,
+  PLATFORM_ID,
+  inject,
+  OnInit,
+  input,
+  ChangeDetectionStrategy,
+  afterNextRender,
+  CUSTOM_ELEMENTS_SCHEMA,
+  viewChild,
+} from '@angular/core';
 
 import { ThemesService } from '@core/services/themes.service';
 import { CarouselApp } from './interface/app.interface';
-import { Swiper, SwiperOptions } from 'swiper/types';
+import { SwiperOptions } from 'swiper/types';
+// import { Swiper, SwiperOptions } from 'swiper/types';
 
 @Component({
   selector: 'app-recargas',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-  <div class="app">
-
-  <!-- component -->
-
-    <div
-    class="relative flex items-center justify-center mx-auto border-gray-800 dark:border-gray-900 bg-gray-800 dark:bg-gray-900 border-4 rounded-[2.5rem] h-[588px] w-[283px] shadow-xl">
-    <!-- <span
+    <div class="app">
+      <div
+        class="relative flex items-center justify-center mx-auto border-gray-800 dark:border-gray-900 bg-gray-800 dark:bg-gray-900 border-4 rounded-[2.5rem] h-[588px] w-[283px] shadow-xl"
+      >
+        <!-- <span
         class="w-[148px] h-[18px] bg-gray-800 dark:bg-gray-900 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute z-10">
     </span> -->
 
-    <span class="border border-black bg-black w-3 h-3 mt-2 rounded-full top-0 absolute z-10 left-1/2 -translate-x-1/2"></span>
+        <span
+          class="border border-black bg-black w-3 h-3 mt-2 rounded-full top-0 absolute z-10 left-1/2 -translate-x-1/2"
+        ></span>
 
+        <span
+          class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-600 absolute -start-[7px] top-[124px] rounded-s-lg"
+        >
+        </span>
 
-    <span
-        class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-600 absolute -start-[7px] top-[124px] rounded-s-lg">
-    </span>
+        <span
+          class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-600 absolute -start-[7px] top-[178px] rounded-s-lg"
+        >
+        </span>
 
-    <span
-        class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-600 absolute -start-[7px] top-[178px] rounded-s-lg">
-    </span>
-
-    <span
-        class="h-[64px] w-[3px] bg-gray-800 dark:bg-gray-600 absolute -end-[7px] top-[142px] rounded-e-lg">
-    </span>
-    <div class="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-500">
-
-        <swiper-container init="false" #swiperApp class="swiper-app">
+        <span
+          class="h-[64px] w-[3px] bg-gray-800 dark:bg-gray-600 absolute -end-[7px] top-[142px] rounded-e-lg"
+        >
+        </span>
+        <div
+          class="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-500"
+        >
+          <swiper-container init="false" #swiperApp class="swiper-app">
             @for (product of carouselImages(); track $index) {
-                <swiper-slide class="swiper-app__slide">
-                <img [src]="product.img.lightUrl" class="swiper-app__img swiper-app__img--light dark:hidden w-[272px] h-[572px]"
-                [alt]="product.img.alt" />
-                <img [src]="product.img.darkUrl" class="swiper-app__img swiper-app__img--dark hidden dark:block w-[272px] h-[572px]"
-                [alt]="product.img.alt" />
+            <swiper-slide class="swiper-app__slide">
+              <img
+                [src]="product.img.lightUrl"
+                class="swiper-app__img swiper-app__img--light dark:hidden w-[272px] h-[572px]"
+                [alt]="product.img.alt"
+              />
+              <img
+                [src]="product.img.darkUrl"
+                class="swiper-app__img swiper-app__img--dark hidden dark:block w-[272px] h-[572px]"
+                [alt]="product.img.alt"
+              />
             </swiper-slide>
             }
-            
-        </swiper-container>
-       
+          </swiper-container>
+        </div>
+      </div>
     </div>
-</div>
-</div>
-
   `,
   styles: `
-  
+
   `,
-  imports: [
-    CommonModule,
-  ],
-
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
-  
+  imports: [CommonModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppRecargasComponent implements OnInit {
-
-  
-@ViewChild('swiperApp') carouselApp!: ElementRef;
-
-  carouselImages = input.required<CarouselApp[]>()
-
+export class AppRecargasComponent {
+  swAppElement = viewChild.required<ElementRef>('swiperApp');
   private readonly plataform_id = inject(PLATFORM_ID);
   private readonly themeService = inject(ThemesService);
 
- isDarkTheme = this.themeService.themeChange;
+  carouselImages = input.required<CarouselApp[]>();
+  isDarkTheme = this.themeService.themeChange;
 
-  //*Config of carousel App
   private swiperAppConfig: SwiperOptions = {
     loop: true,
     effect: 'fade',
@@ -88,28 +98,13 @@ export class AppRecargasComponent implements OnInit {
       disableOnInteraction: false,
     },
     speed: 500,
-  
-  }
-
-  ngOnInit(): void {
-  }
-
- 
+  };
 
   ngAfterViewInit(): void {
-    this.carouselAppInit();
-  }
-
-
-  // //* INIT CAROUSEL APP
-  carouselAppInit(): void {
     if (isPlatformBrowser(this.plataform_id)) {
-      const swiperElement = this.carouselApp.nativeElement;
-
-      Object.assign(swiperElement, this.swiperAppConfig);
-      swiperElement.initialize();
-     
+      const swApp = this.swAppElement().nativeElement;
+      Object.assign(swApp, this.swiperAppConfig);
+      swApp.initialize();
     }
-
   }
 }

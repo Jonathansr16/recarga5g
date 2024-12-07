@@ -12,7 +12,8 @@
 </div>
 
 <!-- ============= CAORUSEL RECARGAS ============= -->
-<app-product-carousel [products]="carouselRecargas()"></app-product-carousel>
+<!-- <app-product-carousel [products]="carouselRecargas()"></app-product-carousel> -->
+ <app-product-carousel [products]="carouselRecargas()"></app-product-carousel>
 <!-- ============= SECCIÓN COBRO SERVICES ============= -->
 <div class="cobro-services mb-3">
     <div class="cobro-services__container container">
@@ -147,7 +148,7 @@
 <!-- ============= SECCION METODOS VENTAS ============= -->
 <div class="metodos-venta container mb-3">
     <h2 class="metodos-venta__h2 headline-2">¿Cómo vender recargas telcel?</h2>
-    <app-metodo-ventas></app-metodo-ventas>
+    <app-sales-method [titleChannel]="'Como vender'"></app-sales-method>
 </div>
 
 <!-- ============= SECCION WHY RECARGAS ============= -->
@@ -227,37 +228,4 @@
 </div>
 
 <!-- ============= SECCION REGISTRO RECARGAS ============= -->
-<div class="register-recargas mb-3">
-    <div class="register-recargas__container container">
-        <div class="register-recargas__left">
-            @for (step of stepRecargas(); track $index) {
-                <app-register-steps [step]="step"></app-register-steps>
-            }
-        </div>
-
-        <div class="register-recargas__right">
-            <h2 class="register-recargas__h2 headline-4 head-4">
-                ¿Cómo vender recargas Bait?
-            </h2>
-
-            <h3 class="register-recargas__h3 headline-3">
-                Registro para la venta de recargas bait para cualquier tipo de negocio
-            </h3>
-
-            <p class="register-recargas__p body-1 mb-1">
-                No pierdas más tiempo buscando oportunidades de negocio limitadas. Únete
-                a nosotros y conviértete en un vendedor de recargas exitoso con
-                comisiones excepcionales. Estamos aquí para apoyarte en cada paso del
-                camino y ayudarte a alcanzar tus metas financieras.
-            </p>
-
-            <p class="register-recargas__p body-1 mb-1">
-                ¡Aprovecha esta oportunidad y comienza a ganar más hoy mismo vendiendo
-                <strong class="body-1 keyword__strong">recargas electrónicas bait</strong>
-                con excelentes comisiones! Tu éxito está a solo un clic de distancia."
-            </p>
-            <a class="register-recargas__a body-1" routerLink="/registro" mat-raised-button
-                color="primary">Registrarme</a>
-        </div>
-    </div>
-</div>
+<app-register-steps></app-register-steps>

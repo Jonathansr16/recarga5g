@@ -13,6 +13,7 @@ export class ProductCarouselService {
       company: 'telcel',
       typeService: 'Recargas',
       img: {
+        id: 1,
         src: '/assets/img/companies/recargas/telcel.png',
         alt: 'Venta de recargas Telcel',
       },
@@ -23,6 +24,7 @@ export class ProductCarouselService {
       company: 'Bait',
       typeService: 'Recargas',
       img: {
+        id: 2,
         src: '/assets/img/companies/recargas/bait.png',
         alt: 'venta de recargas Bait',
       },
@@ -33,6 +35,7 @@ export class ProductCarouselService {
       company: 'Unefon',
       typeService: 'Recargas',
       img: {
+        id: 3,
         src: '/assets/img/companies/recargas/unefon.png',
         alt: 'venta de recargas unefon',
       },
@@ -43,6 +46,7 @@ export class ProductCarouselService {
       company: 'AT&T',
       typeService: 'Recargas',
       img: {
+        id: 4,
         src: '/assets/img/companies/recargas/att.png',
         alt: 'venta de recargas AT&T',
       },
@@ -53,6 +57,7 @@ export class ProductCarouselService {
       company: 'Virgin Mobile',
       typeService: 'Recargas',
       img: {
+        id: 5,
         src: '/assets/img/companies/recargas/virgin.png',
         alt: 'venta de recargas Virgin',
       },
@@ -63,6 +68,7 @@ export class ProductCarouselService {
       company: 'Movistar',
       typeService: 'Recargas',
       img: {
+        id: 6,
         src: '/assets/img/companies/recargas/movistar.png',
         alt: 'venta de recargas Movistar',
       },
@@ -73,6 +79,7 @@ export class ProductCarouselService {
       company: 'Week',
       typeService: 'Recargas',
       img: {
+        id: 7,
         src: '/assets/img/companies/recargas/weex.png',
         alt: 'venta de recargas Week',
       },
@@ -83,6 +90,7 @@ export class ProductCarouselService {
       company: 'Gugacom',
       typeService: 'Recargas',
       img: {
+        id: 8,
         src: '/assets/img/companies/recargas/gugacom.png',
         alt: '',
       },
@@ -93,6 +101,7 @@ export class ProductCarouselService {
       company: 'Wimotelecom',
       typeService: 'Recargas',
       img: {
+        id: 9,
         src: '/assets/img/companies/recargas/wimotelecom.png',
         alt: 'Venta de recargas Wimotelecom',
       },
@@ -103,6 +112,7 @@ export class ProductCarouselService {
       company: 'OUI',
       typeService: 'Recargas',
       img: {
+        id: 10,
         src: '/assets/img/companies/recargas/oui.png',
         alt: 'Venta de recargas Oui',
       },
@@ -113,6 +123,7 @@ export class ProductCarouselService {
       company: 'simpaty',
       typeService: 'Recargas',
       img: {
+        id: 11,
         src: '/assets/img/companies/recargas/simpati.png',
         alt: 'Venta de recargas Simpaty',
       },
@@ -123,6 +134,7 @@ export class ProductCarouselService {
       company: 'FlashMobile',
       typeService: 'Recargas',
       img: {
+        id: 12,
         src: '/assets/img/companies/recargas/flashmobile.png',
         alt: 'Venta de recargas FlashMobile',
       },
@@ -135,6 +147,7 @@ export class ProductCarouselService {
       company: 'Telmex',
       typeService: 'Servicios',
       img: {
+        id: 100,
         src: '/assets/img/companies/servicios/telmex.png',
         alt: 'Pago de servicio Telmex',
       },
@@ -145,6 +158,7 @@ export class ProductCarouselService {
       company: 'TotalPlay',
       typeService: 'Servicios',
       img: {
+        id: 101,
         src: '/assets/img/companies/servicios/totalplay.png',
         alt: 'Compañia para cobro de servicio Total Play',
       },
@@ -155,6 +169,7 @@ export class ProductCarouselService {
       company: 'Sky',
       typeService: 'Servicios',
       img: {
+        id: 102,
         src: '/assets/img/companies/servicios/sky.png',
         alt: 'Pago de servicio Sky',
       },
@@ -165,6 +180,7 @@ export class ProductCarouselService {
       company: 'IZZI',
       typeService: 'Servicios',
       img: {
+        id: 103,
         src: '/assets/img/companies/servicios/izzi.png',
         alt: 'Pago de servicios IZZI',
       },
@@ -175,6 +191,7 @@ export class ProductCarouselService {
       company: 'CFE',
       typeService: 'Servicios',
       img: {
+        id: 104,
         src: '/assets/img/companies/servicios/cfe.png',
         alt: 'Pago de servicios CFE',
       },
@@ -185,6 +202,7 @@ export class ProductCarouselService {
       company: 'Dish',
       typeService: 'Servicios',
       img: {
+        id: 105,
         src: '/assets/img/companies/servicios/dish.png',
         alt: 'Pago de servicios Dish',
       },
@@ -195,6 +213,7 @@ export class ProductCarouselService {
       company: 'Infonavit',
       typeService: 'Servicios',
       img: {
+        id: 106,
         src: '/assets/img/companies/servicios/infonavit.png',
         alt: 'Pago de servicios Infonavit',
       },
@@ -205,6 +224,7 @@ export class ProductCarouselService {
       company: 'Avon',
       typeService: 'Servicios',
       img: {
+        id: 107,
         src: '/assets/img/companies/servicios/avon.png',
         alt: 'Pago de servicios Avon',
       },
@@ -215,6 +235,7 @@ export class ProductCarouselService {
       company: 'Jafra',
       typeService: 'Servicios',
       img: {
+        id: 108,
         src: '/assets/img/companies/servicios/jafra.png',
         alt: 'Pago de servicios Jafra',
       },
@@ -225,6 +246,7 @@ export class ProductCarouselService {
       company: 'Tupperware',
       typeService: 'Servicios',
       img: {
+        id: 109,
         src: '/assets/img/companies/servicios/tupperware.png',
         alt: 'Pago de servicios Tupperware',
       },
@@ -235,6 +257,7 @@ export class ProductCarouselService {
       company: 'Gas natural',
       typeService: 'Servicios',
       img: {
+        id: 110,
         src: '/assets/img/companies/servicios/gas_natural.png',
         alt: 'Pago de servicios gas natural',
       },
@@ -245,6 +268,7 @@ export class ProductCarouselService {
       company: 'Televia',
       typeService: 'Servicios',
       img: {
+        id: 111,
         src: '/assets/img/companies/servicios/televia.png',
         alt: 'Pago de servicios televia',
       },
@@ -255,6 +279,7 @@ export class ProductCarouselService {
       company: 'Lebel',
       typeService: 'Servicios',
       img: {
+        id: 112,
         src: '/assets/img/companies/servicios/lebel.png',
         alt: 'Pago de servicios Lebel',
       },
@@ -267,6 +292,7 @@ export class ProductCarouselService {
       company: 'Google Play',
       typeService: 'Pines',
       img: {
+        id: 200,
         src: '/assets/img/companies/pines/googleplay100.png',
         alt: 'Venta de pines google play',
       },
@@ -277,6 +303,7 @@ export class ProductCarouselService {
       company: 'Spotify',
       typeService: 'Pines',
       img: {
+        id: 201,
         src: '/assets/img/companies/pines/spotify115.png',
         alt: 'Venta de pines spotify',
       },
@@ -287,6 +314,7 @@ export class ProductCarouselService {
       company: 'Netflix',
       typeService: 'Pines',
       img: {
+        id: 202,
         src: '/assets/img/companies/pines/netflix.png',
         alt: 'Venta de pines Netflix',
       },
@@ -297,6 +325,7 @@ export class ProductCarouselService {
       company: 'Steam',
       typeService: 'Pines',
       img: {
+        id: 203,
         src: '/assets/img/companies/pines/steam215.png',
         alt: 'Venta de pines Steam',
       },
@@ -307,6 +336,7 @@ export class ProductCarouselService {
       company: 'Cinepolis',
       typeService: 'Pines',
       img: {
+        id: 204,
         src: '/assets/img/companies/pines/cinepolis_vip.png',
         alt: 'Venta de pines Cinepolis',
       },
@@ -317,6 +347,7 @@ export class ProductCarouselService {
       company: 'Nintendo',
       typeService: 'Pines',
       img: {
+        id: 205,
         src: '/assets/img/companies/pines/nintendo.png',
         alt: 'venta de pines Nintendo',
       },
@@ -327,6 +358,7 @@ export class ProductCarouselService {
       company: 'Amazon',
       typeService: 'Pines',
       img: {
+        id: 206,
         src: '/assets/img/companies/pines/amazon_gift300.png',
         alt: 'Venta de pines Amazon',
       },
@@ -337,6 +369,7 @@ export class ProductCarouselService {
       company: 'Starbuck',
       typeService: 'Pines',
       img: {
+        id: 207,
         src: '/assets/img/companies/pines/starbucks_card200.png',
         alt: 'Venta de pines Starbuck',
       },
@@ -347,6 +380,7 @@ export class ProductCarouselService {
       company: 'Free Fire',
       typeService: 'Pines',
       img: {
+        id: 208,
         src: '/assets/img/companies/pines/amazon_gift300.png',
         alt: 'Venta de pines Free Fire',
       },
@@ -357,6 +391,7 @@ export class ProductCarouselService {
       company: 'Microsoft 365 Empresas',
       typeService: 'Pines',
       img: {
+        id: 209,
         src: '/assets/img/companies/pines/microsoft365empresa3949.png',
         alt: 'Venta de pines Microsoft 365 Empresas',
       },
@@ -367,6 +402,7 @@ export class ProductCarouselService {
       company: 'Roblox',
       typeService: 'Pines',
       img: {
+        id: 210,
         src: '/assets/img/companies/pines/roblox200.png',
         alt: 'Venta de pines Roblox',
       },
@@ -377,6 +413,7 @@ export class ProductCarouselService {
       company: 'Uber eats',
       typeService: 'Pines',
       img: {
+        id: 211,
         src: '/assets/img/companies/pines/uber_eats300.png',
         alt: 'Venta de pines Uber Eats',
       },
@@ -387,6 +424,7 @@ export class ProductCarouselService {
       company: 'Cinemex',
       typeService: 'Pines',
       img: {
+        id: 212,
         src: '/assets/img/companies/pines/cinemex120.png',
         alt: 'Venta de pines Cinemex',
       },

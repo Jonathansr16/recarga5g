@@ -2,20 +2,20 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
-//* Modelos importados
+//* Interfaces importados
 import { metaTagModel } from '@core/interfaces/meta-tag.model';
 import { registerStepsModel } from '@core/interfaces/register-steps-model';
-import { ProductCarousel } from '@feature/components/carousel-productos/interfaces/product-carousel.interface';
+import { ProductCarousel } from '@core/interfaces/product-carousel.interface';
 
 //* Servicios importados
 import { MetaTagService } from '@core/services/meta-tag.service';
-import { ProductCarouselService } from '@feature/components/carousel-productos/services/product-carousel.service';
-import { RegisterStepsService } from '@core/services/register-steps.service';
+import { ProductCarouselService } from '@feature/components/product-carousel/services/product-carousel.service';
 
 //*components
-import { MetodoVentasComponent } from '@feature/components/metodo-ventas/metodo-ventas.component';
-import { RegisterStepsComponent } from '@feature/components/register/register-steps.component';
-import { ProductCarouselComponent } from '@feature/components/carousel-productos/product-carousel.component';
+import { ProductCarouselComponent } from '@feature/components/product-carousel/product-carousel.component';
+import { SalesMethodComponent } from '@feature/components/sales-method/sales-method.component';
+import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
+
 
 @Component({
   selector: 'app-pines',
@@ -25,9 +25,9 @@ import { ProductCarouselComponent } from '@feature/components/carousel-productos
   imports: [
     CommonModule,
     ProductCarouselComponent,
-    MetodoVentasComponent,
-    RegisterStepsComponent
-  ]
+    SalesMethodComponent,
+    RegisterStepsComponent,
+]
 })
 export default class PinesComponent implements OnInit{
 
@@ -48,20 +48,24 @@ export default class PinesComponent implements OnInit{
     }
 
 
-    private readonly _productCarouselService = inject(ProductCarouselService);
-    private readonly _stepService = inject( RegisterStepsService);
-    private readonly _metaTagService = inject( MetaTagService);
+    private readonly productCarouselService = inject(ProductCarouselService);
+  
+    private readonly metaTagService = inject( MetaTagService);
     private readonly  title = inject( Title);
 
   ngOnInit(): void {
-    
-    this.title.setTitle('Recarga5g.com | Venta de tarjetas de regalo Google play, Amazon, Netflix')
-    this._metaTagService.generateTags( {
-      ...this.tag
-    });
+    this.metaTagService.updateMetaTag({
+      title: 'Consulta | Pines Ofrece un servicio extra a tu negocio',
+      description: '',
+      keywords: '',
+      url: 'https://recarga5g.com/consulta/pines',
+      typeContent: 'website'
+    })
+    this.title.setTitle('Recarga5g.com | Venta de tarjetas de regalo Google play, Amazon, Netflix');
 
-    this.carouselPines.set(this._productCarouselService.getPines());
-    this.stepPines.set(this._stepService.getStepsPines());
+
+
+    this.carouselPines.set(this.productCarouselService.getPines());
   
 
 

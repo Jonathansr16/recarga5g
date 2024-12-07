@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { razonesModel } from "@core/interfaces/razones.model";
+import { BenefitsListModel } from "@core/interfaces/benefits-list.interface";
 
 @Injectable({ 
     providedIn: 'root'
@@ -7,7 +7,7 @@ import { razonesModel } from "@core/interfaces/razones.model";
 export class RazonesService {
 
 
-  private razones: razonesModel[] = [
+  private razones: BenefitsListModel[] = [
 
         {
             id: 1,
@@ -85,7 +85,7 @@ export class RazonesService {
     ]
 
 
-    getRazones(): razonesModel[] {
+    getRazones(): BenefitsListModel[] {
         return this.razones;
     }
 }

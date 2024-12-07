@@ -3,10 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { ContentfulService } from '@ayuda/services/contentful.service';
-import { _countGroupLabelsBeforeOption } from '@angular/material/core';
 import { MetaTagService } from '@core/services/meta-tag.service';
-import { MatIconModule } from '@angular/material/icon';
-import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+
 import { CommonModule } from '@angular/common';
 import { MarkdownPipe } from '@core/pipes/markdown.pipe';
 
@@ -19,10 +17,10 @@ import { MarkdownPipe } from '@core/pipes/markdown.pipe';
   template: '<div [innerHTML]="somehtmlCode"> </div>',
   encapsulation: ViewEncapsulation.None,
   imports: [
-    CommonModule,
-    MatIconModule,
-    ShareButtonsModule,
-    MarkdownPipe,
+    // CommonModule,
+    // MatIconModule,
+    // ShareButtonsModule,
+    // MarkdownPipe,
   ]
  
 })
@@ -42,19 +40,19 @@ export class PostComponent implements OnInit {
 
   
       this.id = this.activatedRouter.snapshot.paramMap.get('id');
-      this.post$ = this.contentful.getPost(this.id);
+      // this.post$ = this.contentful.getPost(this.id);
       this.post$?.subscribe(data => {
         
-        this.meta.generateTags({
-          title: data.fields.title,
-          description: data.fields.summary,
-          keywords: data.fields.category,
-          url: `recarga5g.com/blog/article/${data.sys.id}`,
-          type: 'article',
-          image: data.fields.imgArticle.fields.file.url,
-          card: 'summary_large_image',
-          creator: '@recargascelular',
-        })
+        // this.meta.generateTags({
+        //   title: data.fields.title,
+        //   description: data.fields.summary,
+        //   keywords: data.fields.category,
+        //   url: `recarga5g.com/blog/article/${data.sys.id}`,
+        //   type: 'article',
+        //   image: data.fields.imgArticle.fields.file.url,
+        //   card: 'summary_large_image',
+        //   creator: '@recargascelular',
+        // })
       })
    
   

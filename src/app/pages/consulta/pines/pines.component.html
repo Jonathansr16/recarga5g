@@ -218,7 +218,7 @@
 <!-- ============= SECCION METODOS VENTAS ============= -->
 <div class="metodos-venta container mb-3">
   <h2 class="metodos-venta__h2 headline-2">Vender tarjetas de regalo</h2>
-  <app-metodo-ventas></app-metodo-ventas>
+ <app-sales-method [titleChannel]="'venta'"></app-sales-method>
 </div>
 
 <!-- ============= SECCION POLITICAS RECARGAS ============= -->
@@ -265,46 +265,5 @@
   </div>
 </div>
 
-<!-- ============= SECCION REGISTRO RECARGAS ============= -->
-<div class="register-recargas mb-3">
-  <div class="register-recargas__container container">
-    <div class="register-recargas__left">
-      @for (step of stepPines(); track $index) {
-      <app-register-steps [step]="step"></app-register-steps>
-      }
-    </div>
-
-    <div class="register-recargas__right">
-      <h2 class="register-recargas__h2 headline-4 head-4">
-        ¿Cómo vender tarjetas de regalo?
-      </h2>
-
-      <h3 class="register-recargas__h3 headline-3">
-        Registro para la venta de tarjetas de regalo
-      </h3>
-
-      <p class="register-recargas__p body-1 mb-1">
-        Imagina la comodidad de adquirir tus pines electrónicos desde la
-        comodidad de tu hogar, sin necesidad de desplazarte ni esperar largas
-        filas. Con solo unos clics, tendrás a tu alcance tarjetas electrónicas
-        que te permitirán disfrutar de Google Play, Spotify y Netflix al máximo.
-      </p>
-
-      <p class="register-recargas__p body-1 mb-1">
-        Trabajamos directamente con proveedores autorizados para garantizar la
-        calidad y seguridad de cada
-        <strong class="body-1 keyword__strong">Tarjeta de regalo</strong> que
-        ofrecemos. Ya sea que busques crédito para tus aplicaciones favoritas,
-        acceso ilimitado a música o tus series y películas preferidas, ¡lo
-        tenemos cubierto!
-      </p>
-      <a
-        class="register-recargas__a body-1"
-        routerLink="/registro"
-        mat-raised-button
-        color="primary"
-        >Registrarme</a
-      >
-    </div>
-  </div>
-</div>
+<app-register-steps></app-register-steps>
+<app-registro></app-registro>

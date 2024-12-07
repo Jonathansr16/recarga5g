@@ -31,9 +31,9 @@ export default class ContactoComponent implements OnInit {
   ngOnInit(): void {
     this.title.setTitle('Recarga5g.com | Contáctanos por cualquier de nuestros medios de contacto para asesorarte y obtener más información para vender recargas a cualquier compañia con excelentes comisiones');
  
-    this._metaTagService.generateTags( {
-      ...this.tag
-    })
+    // this._metaTagService.generateTags( {
+    //   ...this.tag
+    // })
 
   }
 

@@ -8,16 +8,16 @@ import { metaTagModel } from '@core/interfaces/meta-tag.model';
 //* Servicios importados
 
 import { MetaTagService } from '@core/services/meta-tag.service';
+import { ProductCarouselService } from '@feature/components/product-carousel/services/product-carousel.service';
 
 //* Componentes
 import { CarouselApp } from '@feature/components/app-recargas/interface/app.interface';
 import { SalesMethodComponent } from '@feature/components/sales-method/sales-method.component';
 import { AppRecargasComponent } from '@feature/components/app-recargas/app-recargas.component';
 import { ProductCarousel } from '@core/interfaces/product-carousel.interface';
-import { ProductCarouselService } from '@feature/components/carousel-productos/services/product-carousel.service';
-import { ProductCarouselComponent } from '@feature/components/carousel-productos/product-carousel.component';
+import { ProductCarouselComponent } from '@feature/components/product-carousel/product-carousel.component';
 import { PlanetaemxService } from '@plataformas/services/planetaemx.service';
-import { RegisterComponent } from '@feature/components/register/register.component';
+import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
 
 @Component({
   selector: 'app-planetaemx',
@@ -29,7 +29,7 @@ import { RegisterComponent } from '@feature/components/register/register.compone
     ProductCarouselComponent,
     AppRecargasComponent,
     SalesMethodComponent,
-    RegisterComponent
+    RegisterStepsComponent
   ]
 })
 export default class PlanetaemxComponent implements OnInit {

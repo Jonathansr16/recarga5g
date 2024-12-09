@@ -14,10 +14,10 @@ import { ProductCarouselService } from '@feature/components/product-carousel/ser
 import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
 
 @Component({
-  selector: 'app-servicios',
+  selector: 'app-pago-servicios',
   standalone: true,
-  templateUrl: './servicios.component.html',
-  styleUrls: ['./servicios.component.scss','../consulta.component.scss'],
+  templateUrl: './pago-servicios.component.html',
+  styleUrls: ['./pago-servicios.component.scss','../productos.component.scss'],
   imports: [
     CommonModule,
     ProductCarouselComponent,
@@ -25,7 +25,7 @@ import { RegisterStepsComponent } from '@feature/components/register-steps/regis
     RegisterStepsComponent,
 ]
 })
-export default class ServiciosComponent implements OnInit{
+export default class PagoServiciosComponent implements OnInit{
 
   carouselServices = signal<ProductCarousel[]>([]);
   

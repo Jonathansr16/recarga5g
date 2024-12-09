@@ -18,10 +18,10 @@ import { RegisterStepsComponent } from '@feature/components/register-steps/regis
 
 
 @Component({
-  selector: 'app-pines',
+  selector: 'app-venta-pines',
   standalone: true,
-  templateUrl: './pines.component.html',
-  styleUrls: ['./pines.component.scss', '../consulta.component.scss'],
+  templateUrl: './venta-pines.component.html',
+  styleUrls: ['./venta-pines.component.scss','../productos.component.scss'],
   imports: [
     CommonModule,
     ProductCarouselComponent,
@@ -29,7 +29,7 @@ import { RegisterStepsComponent } from '@feature/components/register-steps/regis
     RegisterStepsComponent,
 ]
 })
-export default class PinesComponent implements OnInit{
+export default class VentaPinesComponent implements OnInit{
 
   carouselPines = signal<ProductCarousel[]>([]);
   stepPines = signal<registerStepsModel[]>([]);

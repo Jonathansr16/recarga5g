@@ -82,11 +82,11 @@ export class HeaderComponent{
         label: 'Nuestros productos',
         items: [
           {
-            label: 'Como vender',
+            label: 'Lo que tenemos para ti',
             items: [
-                { label: 'recargas', icon: 'web', routerLink: 'medio-venta/pagina' },
-                { label: 'pago de servicios', icon: 'phone_iphone', routerLink: 'medio-venta/app' },
-                { label: 'tarjeta de regalo', icon: 'sms', routerLink: 'medio-venta/sms' }
+                { label: 'recargas', icon: 'web', routerLink: 'productos/recargas' },
+                { label: 'pago de servicios', icon: 'phone_iphone', routerLink: 'productos/servicios' },
+                { label: 'tarjeta de regalo', icon: 'sms', routerLink: 'productos/pines' }
             ]
           }
         ]

@@ -2,7 +2,6 @@ import { Routes } from "@angular/router";
 
 export const routes: Routes = [
     
- 
     {
         path: '',
         data: {
@@ -13,7 +12,6 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/home/home.component')
     },
 
-
     {
         path: 'registro',
         loadComponent: () => import('./pages/registro/registro.component')
@@ -22,6 +20,11 @@ export const routes: Routes = [
     {
         path: 'plataformas',
         loadChildren: () => import('@plataformas/plataformas.routes').then( (r) => r.PlataformasRoutes)
+    },
+
+    {
+        path: 'productos',
+        loadChildren: () => import('@productos/productos.routes').then ( (consultRoute) => consultRoute.consultaRoutes)
     },
 
     {

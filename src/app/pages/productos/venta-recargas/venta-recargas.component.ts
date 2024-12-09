@@ -17,17 +17,17 @@ import { SalesMethodComponent } from '@feature/components/sales-method/sales-met
 import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
 
 @Component({
-  selector: 'app-consulta-recargas',
+  selector: 'app-venta-recargas',
   standalone: true,
-  templateUrl: './consulta-recargas.component.html',
-  styleUrls: ['./consulta-recargas.component.scss', '../consulta.component.scss'],
+  templateUrl: './venta-recargas.component.html',
+  styleUrls: ['./venta-recargas.component.scss','../productos.component.scss'],
   imports: [
     ProductCarouselComponent,
     RegisterStepsComponent,
     SalesMethodComponent
   ]
 })
-export default class ConsultaRecargasComponent implements OnInit {
+export default class VentaRecargasComponent implements OnInit {
 
   @ViewChild('recargasSwiper')tae?: ElementRef;
   

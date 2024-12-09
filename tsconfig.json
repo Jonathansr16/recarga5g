@@ -6,7 +6,7 @@
     "paths": {
       "@inicio/*": ["src/app/pages/inicio/*"],
       "@plataformas/*": ["src/app/pages/plataformas/*"],
-      "@consultas/*": ["src/app/pages/consulta/*"],
+       "@productos/*": ["src/app/pages/productos/*"],
       "@legal/*": ["src/app/pages/legal/*"],
       "@reportes/*": ["src/app/pages/reportes/*"],
       "@ayuda/*": ["src/app/pages/ayuda/*"],

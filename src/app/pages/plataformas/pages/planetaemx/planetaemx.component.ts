@@ -3,18 +3,18 @@ import { CommonModule } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 
 //*Interfaces importados
-import { metaTagModel } from '@core/interfaces/meta-tag.model';
+import { metaTagModel } from 'src/app/interfaces/meta-tag.model';
 
 //* Servicios importados
 
-import { MetaTagService } from '@core/services/meta-tag.service';
+import { MetaTagService } from 'src/app/services/meta-tag.service';
 import { ProductCarouselService } from '@feature/components/product-carousel/services/product-carousel.service';
 
 //* Componentes
 import { CarouselApp } from '@feature/components/app-recargas/interface/app.interface';
 import { SalesMethodComponent } from '@feature/components/sales-method/sales-method.component';
 import { AppRecargasComponent } from '@feature/components/app-recargas/app-recargas.component';
-import { ProductCarousel } from '@core/interfaces/product-carousel.interface';
+import { ProductCarousel } from 'src/app/interfaces/product-carousel.interface';
 import { ProductCarouselComponent } from '@feature/components/product-carousel/product-carousel.component';
 import { PlanetaemxService } from '@plataformas/services/planetaemx.service';
 import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';

@@ -1,6 +1,6 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductCarousel } from '@core/interfaces/product-carousel.interface';
+import { ProductCarousel } from 'src/app/interfaces/product-carousel.interface';
 import { ProductCarouselService } from '../product-carousel/services/product-carousel.service';
 
 @Component({

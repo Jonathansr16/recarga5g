@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { faqHead } from "@core/interfaces/faqs.model";
+import { faqHead } from "src/app/interfaces/faqs.model";
 
 @Injectable()
 export class FaqsService {

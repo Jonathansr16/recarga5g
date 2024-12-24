@@ -1,54 +1,356 @@
-<div class="registro-hero container mb-3  wow animate__animated animate__fadeInUp">
-    <picture class="registro-hero__picture">
-        <source media="(min-width: 1200px)" srcset="assets/img/Banner-registro.png" type="image/png">
-       <source media="screen and (max-width: 950px)" srcset="assets/img/Banner-registro__responsive.png" type="image/png">
-        <img src="assets/img/Banner-registro.png" class="registro-hero__img" alt="El mejor sistema para venta de recargas">
-    </picture>
-</div>
+<section
+  class="register flex items-center justify-center min-h-screen"
+>
+  <!-- left image -->
+  <div
+    class="register-col w-1/2 hidden lg:block bg-gray-100 dark:bg-slate-700 h-full px-8 py-10"
+  >
+    <img
+      src="assets/img/svg/login.svg"
+      alt="Registro para la venta de recargas"
+      class="object-contain"
+    />
+    <p class="text-slate-800 -mt-28">
+      Registrate totalmente gratis a
+      <strong class="text-red-700 font-medium underline cursor-pointer"
+        >Recarga5g.com</strong
+      >, empieza a vender recargas a cualquier compañia, desde una inversión
+      minimia de $100
+    </p>
+  </div>
+  <!-- right form -->
+  <div class="register-col p-0 lg:p-24 md:p-16 sm:p-14 w-full lg:w-1/2">
+    <h1
+      class="register-title text-xl md:text-2xl font-bold leading-tight mt-12 text-slate-800 dark:text-white">
+      Registro para vender recargas
+    </h1>
+    <p class="text-sm">
+      Para darlo de alta en nuestra plataforma de venta de Tiempo Aire & Pago de
+      Servicios por favor llena adecuadamente el siguiente formulario.
+    </p>
+    <form autocomplete="off" [formGroup]="signUpForm" (ngSubmit)="register()">
+      <div class="mt-4">
+        <label
+          for="bussines"
+          class="block text-sm font-medium text-gray-700 dark:text-white"
+        >
+          Nombre del negocio:
+        </label>
+        <input
+          type="text"
+          id="bussines"
+          placeholder="Indica el nombre de tu negocio o establecimiento"
+          class="w-full block text-sm text-slate-800 dark:text-white p-2.5 rounded-lg bg-gray-50 dark:bg-gray-700 mt-2 border dark:border-slate-600 focus:border-blue-500 dark:focus:border-slate-500 focus:bg-white dark:focus:bg-slate-600 focus:outline-none dark:placeholder-slate-400"
+          formControlName="bussinesName"
+          appNotSpecialCharacter
+        />
 
-<div class="registro">
-    <div class="registro__container container">
+        <p class="flex items-center mt-2 text-xs text-slate-500 dark:text-slate-300">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-5 h-5 mr-2"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          Si no tienes un negocio ignora el campo.
+        </p>
+      </div>
 
-        <div class="registro-title">
-            <h1 class="registro-title__h1 headline-2">Registro para la venta de recargas electrónicas</h1>
-            <p class="registro-title__p body-1">El mejor sistema para la venta de recargas, pago de servicios & pines electrónicos.</p>
+      <div class="mt-4">
+        <label
+          for="fullName"
+          class="block text-sm font-medium text-gray-700 dark:text-white"
+        >
+          Nombre completo del titular:
+        </label>
+        <input
+          type="text"
+          id="fullName"
+          placeholder="* Indica el nombre completo del titular"
+          formControlName="fullName"
+          class="w-full block text-sm text-slate-800 dark:text-white p-2.5 rounded-lg bg-gray-50 dark:bg-gray-700 mt-2 border dark:border-slate-600 focus:border-blue-500 dark:focus:border-slate-500 focus:bg-white dark:focus:bg-slate-600 focus:outline-none dark:placeholder-slate-400"
+          [ngClass]="isInvalidField('fullName') ? 'border-red-500 dark:border-sky-500' : ''"
+        />
+        @if( isInvalidField('fullName') ) {
+          <span class="text-xs text-red-600 dark:text-sky-400 font-medium pl-2.5">Campo nombre es obligatorio</span>
+        }
+      </div>
+
+      <div class="mt-4">
+        <label
+          for="email"
+          class="block text-sm font-medium text-gray-700 dark:text-white"
+        >
+          Correo electrónico:
+        </label>
+        <input
+          type="text"
+          id="email"
+          placeholder="* Indica tu correo electrónico"
+          class="w-full block text-sm text-slate-800 dark:text-white p-2.5 rounded-lg bg-gray-50 dark:bg-gray-700 mt-2 border dark:border-slate-600 focus:border-blue-500 dark:focus:border-slate-500 focus:bg-white dark:focus:bg-slate-600 focus:outline-none dark:placeholder-slate-400"
+          [ngClass]="isInvalidField('email') ? 'border-red-500 dark:border-sky-500' : ''"
+          formControlName="email"
+        />
+
+        @if( isInvalidField('email') ) {
+          <span class="text-xs text-red-600 dark:text-sky-400 font-medium pl-2.5">Campo correo es obligatorio</span>
+        }
+      </div>
+
+      <div class="mt-4">
+        <label
+          for="phoneNumber"
+          class="block text-sm font-medium text-gray-700 dark:text-white"
+        >
+          Numero telefonico:
+        </label>
+        <div class="relative mt-2">
+          <div
+            class="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none"
+          >
+            <svg
+              class="w-4 h-4 text-gray-500 dark:text-gray-400"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 19 18"
+            >
+              <path
+                d="M18 13.446a3.02 3.02 0 0 0-.946-1.985l-1.4-1.4a3.054 3.054 0 0 0-4.218 0l-.7.7a.983.983 0 0 1-1.39 0l-2.1-2.1a.983.983 0 0 1 0-1.389l.7-.7a2.98 2.98 0 0 0 0-4.217l-1.4-1.4a2.824 2.824 0 0 0-4.218 0c-3.619 3.619-3 8.229 1.752 12.979C6.785 16.639 9.45 18 11.912 18a7.175 7.175 0 0 0 5.139-2.325A2.9 2.9 0 0 0 18 13.446Z"
+              />
+            </svg>
+          </div>
+          <input
+            type="text"
+            id="phoneNumber"
+            placeholder="Indica tu numero"
+            formControlName="phoneNumber"
+            class="w-full block text-sm text-slate-800 dark:text-white p-2.5 rounded-lg bg-gray-50 dark:bg-gray-700 mt-2 border dark:border-slate-600 focus:border-blue-500 dark:focus:border-slate-500 focus:bg-white dark:focus:bg-slate-600 focus:outline-none dark:placeholder-slate-400 ps-10"
+            [ngClass]="isInvalidField('phoneNumber') ? 'border-red-500 dark:border-sky-500' : ''"
+            appOnlyNumbers
+            [maxlength]="10"
+          />
+        </div>
+        @if( isInvalidField('phoneNumber') ) {
+          <span class="text-xs text-red-600 dark:text-sky-400 font-medium pl-2.5">Campo numero es obligatorio</span>
+        }
+      </div>
+
+      <div class="mt-4" formGroupName="address">
+        <div class="form-group grid md:grid-cols-2 md:gap-6">
+          
+          <!-- <div>
+            <label
+            for="zip"
+            class="block text-sm font-medium text-gray-700 dark:text-white"
+          >
+            CP:
+          </label>
+            <div class="relative w-full">
+            <input
+            type="text"
+            id="zip"
+            formControlName="zip"
+            placeholder="Indica el codigo postal"
+            class="w-full block text-sm text-slate-800 dark:text-white py-2.5 pl-2.5 pr-12 rounded-lg bg-gray-50 dark:bg-gray-700 mt-2 border dark:border-slate-600 focus:border-blue-500 dark:focus:border-slate-500 focus:bg-white dark:focus:bg-slate-600 focus:outline-none dark:placeholder-slate-400"
+            [ngClass]="isInvalidField('address.zip') ? 'border-red-500' : ''"
+            [maxlength]="5"
+            [minlength]="5"
+            appOnlyNumbers
+            appNotSpecialCharacter
+            #inputCol
+            
+          />
+              <button
+                type="button"
+                class="absolute block top-0 right-0 size-[41px] end-0 p-2.5 z-10 text-sm font-medium text-white bg-red-700 dark:bg-blue-600 rounded-e-lg border border-red-700 dark:border-blue-700 hover:bg-red-800 dark:hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-red-400  dark:focus:ring-blue-800"
+                [disabled]="!signUpForm.get('address.zip')?.valid"
+                [ngClass]="!signUpForm.get('address.zip')?.valid ? 'opacity-75 pointer-events-none' : 'opacity-100'"
+                >
+                <svg
+                  class="w-4 h-4"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                  />
+                </svg>
+              </button>
+            </div>
+            @if( isInvalidField('address.zip') ) {
+              <span class="text-xs text-red-600 font-medium pl-2.5">Campo cp es obligatorio</span>
+            }
+          </div> -->
+       
+        <div class="w-full">
+            <label
+              for="zip"
+              id="zip"
+              class="block text-sm font-medium text-gray-700 dark:text-white"
+            >
+              codigo postal:
+            </label>
+            <input
+              type="text"
+              id="zip"
+              placeholder="* Indica el codigo postal"
+              class="w-full block text-sm text-slate-800 dark:text-white p-2.5 rounded-lg bg-gray-50 dark:bg-gray-700 mt-2 border dark:border-slate-600 focus:border-blue-500 dark:focus:border-slate-500 focus:bg-white dark:focus:bg-slate-600 focus:outline-none dark:placeholder-slate-400"
+              formControlName="zip"
+              appOnlyNumbers
+              [maxlength]="5"
+              [ngClass]="isInvalidField('address.zip') ? 'border-red-500 dark:border-sky-500' : ''"
+            />
+            @if( isInvalidField('address.zip') ) {
+              <span class="text-xs text-red-600 dark:text-sky-400 font-medium pl-2.5">Campo cp es obligatorio</span>
+            }
+          </div> 
+
+          <div class="w-full">
+            <label
+              for="state"
+              class="block text-sm font-medium text-gray-700 dark:text-white"
+              >Estado:
+            </label>
+            
+
+            <!-- <input
+            type="text"
+            id="state"
+            class="w-full block text-sm text-slate-800 dark:text-white mt-2 p-2.5 rounded-lg bg-gray-50 dark:bg-gray-700 border dark:border-slate-600 focus:border-blue-500 dark:focus:border-slate-500 focus:bg-white dark:focus:bg-slate-600 focus:outline-none dark:placeholder-slate-400"
+            formControlName="state"
+          /> -->
+           <select
+              id="state"
+              class="w-full block text-sm text-slate-800 dark:text-white mt-2 p-2.5 rounded-lg border border-gray-300 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 focus:outline-none dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              formControlName="state"
+              [ngClass]="isInvalidField('address.state') ? 'border-red-500 dark:border-sky-500' : ''"
+            >
+              <option value="">* Seleccione una opción</option>
+
+              @for (state of states; let i = $index; track $index) {
+              <option [ngValue]="state">{{ state.state }}</option>
+              }
+            </select>
+            @if( isInvalidField('address.state') ) {
+              <span class="text-xs text-red-600 dark:text-sky-400 font-medium pl-2.5">Campo estado es obligatorio</span>
+            }
+          </div>
         </div>
 
-        <div class="registro-content">
+        <div class="form-group grid md:grid-cols-2 md:gap-6 mt-4">
+          <div class="w-full">
+            <label
+              for="municipDeleg"
+              class="block text-sm font-medium text-gray-700 dark:text-white"
+            >
+              Municipio:
+            </label>
+            <input
+              type="text"
+              id="municipDeleg"
+              placeholder="* Indica tu municipio"
+              class="w-full block text-sm text-slate-800 dark:text-white mt-2 p-2.5 rounded-lg bg-gray-50 dark:bg-gray-700 border dark:border-slate-600 focus:border-blue-500 dark:focus:border-slate-500 focus:bg-white dark:focus:bg-slate-600 focus:outline-none dark:placeholder-slate-400"
+              formControlName="municipDeleg"
+              [ngClass]="isInvalidField('address.municipDeleg') ? 'border-red-500 dark:border-sky-500' : ''"
+            />
+            @if( isInvalidField('address.municipDeleg') ) {
+              <span class="text-xs text-red-600 dark:text-sky-400 font-medium pl-2.5">Campo municipio es obligatorio</span>
+            }
 
-            <div class="registro__steps">
+          </div>
 
-                <div class="registro-item">
-                <img src="assets/img/register-registro.png" alt="registro para venta de recargas, pago de servicios" loading="lazy" class="registro-item__img">
-                    <h3 class="registro-item__h3">Registrate para vender recargas</h3>
-                    <p class="registro-item__p body-2">registraste llenando el formulario con tus datos correspondientes.</p>
-                </div>
+          <div class="w-full">
+            <label
+              for="col"
+              class="block text-sm font-medium text-gray-700 dark:text-white"
+            >
+              Colonia:
+            </label>
+            <input
+              type="text"
+              id="col"
+              class="w-full block text-sm text-slate-800 dark:text-white mt-2 p-2.5 rounded-lg bg-gray-50 dark:bg-gray-700 border dark:border-slate-600 focus:border-blue-500 dark:focus:border-slate-500 focus:bg-white dark:focus:bg-slate-600 focus:outline-none dark:placeholder-slate-400"
+              formControlName="col"
+              [ngClass]="isInvalidField('address.col') ? 'border-red-500 dark:border-sky-500' : ''"
+            />
+            @if( isInvalidField('address.col') ) {
+              <span class="text-xs text-red-600 dark:text-sky-400 font-medium pl-2.5">Campo colonia es obligatorio</span>
+            }
+            <!-- <select
+              id="col"
+              class="w-full block text-sm text-slate-800 dark:text-white mt-2 p-2.5 rounded-lg border border-gray-300 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 focus:outline-none dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              formControlName="col"
+            >
+              <option value="">Seleccione una opción</option>
 
-                <div class="registro-item">
-                    <img src="assets/img/register-correo.png" alt="Mensaje de bienvenida para venta de recargas" loading="lazy" class="registro-item__img">
-                    <h3 class="registro-item__h3 headline-4">Espera nuestro correo con tus datos de acceso</h3>
-                    <p class="registro-item__p body-2">con los datos que proporciones te estaremos enviando tus datos de acceso.</p>
-                </div>
-
-                <div class="registro-item">
-                    <img src="assets/img/FAQ__notificacion.png" alt="Notifica tu deposito para que puedas vender tiempo aire" loading="lazy" class="registro-item__img">
-                    <h3 class="registro-item__h3 headline-4">deposita y notifica hasta un deposito minimo de $100</h3>
-                    <p class="registro-item__p body-2">Verifica en tu correo electrónico en tu bandeja de entrada los datos de acceso.</p>
-                </div>
-
-                <div class="registro-item">
-                    <img src="assets/img/ganancias-recargas.png" alt="Genera ganancias extras a tu negocio ofreciendo recargas a tus clientes" loading="lazy" class="registro-item__img">
-                    <h3 class="registro-item__h3 headline-4">Listo! podras generar ganancias extras a tu negocio</h3>
-                    <p class="registro-item_p body-2">Obten excelentes comisiones ajustadas a tus necesidades, haz crecer tu negocio.</p>
-                </div>
-
-            </div>
-
-            <div class="registro__form">
-                <!-- <iframe width="100%" height="1110" allowfullscreen src="https://www.emailmeform.com/builder/embed/EDcPZxcByOf4" class="registro__frame" allow="camera" title="registro para la venta de recargas electronicas"><a href="https://www.emailmeform.com/builder/embed/EDcPZxcByOf4">Fill out form.</a></iframe> -->
-            </div>
-
+              @for (col of dataByZip().codigo_postal.colonias; let i = $index; track $index) {
+              <option [ngValue]="col">{{ col}}</option>
+              }
+            </select> -->
+          </div>
         </div>
-    </div>
+
+        <div class="mt-4">
+          <label
+            for="street"
+            class="block text-sm font-medium text-gray-700 dark:text-white"
+          >
+            Calle:
+          </label>
+          <input
+            type="text"
+            id="street"
+            placeholder="* Indica tu calle"
+            class="w-full block text-sm text-slate-800 dark:text-white p-2.5 rounded-lg bg-gray-50 dark:bg-gray-700 mt-2 border dark:border-slate-600 focus:border-blue-500 dark:focus:border-slate-500 focus:bg-white dark:focus:bg-slate-600 focus:outline-none dark:placeholder-slate-400"
+            formControlName="street"
+            [ngClass]="isInvalidField('address.street') ? 'border-red-500 dark:border-sky-500' : ''"
+          />
+          @if( isInvalidField('address.street') ) {
+            <span class="text-xs text-red-600 dark:text-sky-400 font-medium pl-2.5">Campo calle es obligatorio</span>
+          }
+        </div>
+      </div>
+
+      <!-- <div class="text-right mt-2">
+                    <a href="#" class="text-sm font-semibold text-gray-700 hover:text-blue-700 focus:text-blue-700">¿Ya tienes una cuenta?</a>
+                  </div> -->
+
+      <button
+        type="submit"
+        class="w-full block bg-red-700 dark:bg-blue-600 border border-red-700 dark:border-blue-700 text-white font-semibold rounded-lg px-4 py-3 mt-6 hover:bg-red-800 dark:hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-red-300 dark:focus:ring-blue-400"
+        (click)="register()"
+      >
+        Registrarme
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- <div class="form-section">
+  <pre>
+    {{ signUpForm.value | json }}
+  </pre>
 </div>
 
+<div class="form-section">
+  <pre>
+    Estado del formulario: {{  signUpForm.valid }}
+    <br>
+      Status: {{  signUpForm.status}}
+    </pre>
+</div>
+
+ -->

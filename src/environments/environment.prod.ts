@@ -2,7 +2,21 @@ export const environment = {
   production: true,
 
   //imagekit
-  publicKey: "your public key",
-  urlEndPoint: "Your endpoint",
-  authenticationEndpoint: "you authenticationEndPoint"
+  imgKit: {
+    publicKey: "",
+    urlEndPoint: "",
+    authenticationEndpoint: ""
+  },
+ 
+
+  //DIPOMEX
+  dipomex: {
+    publicKey: '',
+    urlEndPoint: ''
+  },
+
+  sendGrid: {
+    API_KEY: '',
+    toSend: ''
+  }
 };

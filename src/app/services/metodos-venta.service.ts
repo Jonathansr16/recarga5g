@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SalesChannel } from '@core/interfaces/sales-channel';
+import { SalesChannel } from 'src/app/interfaces/sales-channel';
 
 @Injectable({
   providedIn: 'root'

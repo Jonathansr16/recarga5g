@@ -2,13 +2,13 @@ import { Component, ViewChild, ElementRef, OnInit, inject, signal } from '@angul
 import { Title } from '@angular/platform-browser';
 
 //* Modelos importados
-import { ProductCarousel } from '@core/interfaces/product-carousel.interface';
-import { registerStepsModel } from '@core/interfaces/register-steps-model';
+import { ProductCarousel } from 'src/app/interfaces/product-carousel.interface';
+import { registerStepsModel } from 'src/app/interfaces/register-steps-model';
 
 //* Servicios importados
-import { MetaTagService } from '@core/services/meta-tag.service';
+import { MetaTagService } from 'src/app/services/meta-tag.service';
 import { ProductCarouselService } from '@feature/components/product-carousel/services/product-carousel.service';
-import { RegisterStepsService } from '@core/services/register-steps.service';
+import { RegisterStepsService } from 'src/app/services/register-steps.service';
 
 //*components
 

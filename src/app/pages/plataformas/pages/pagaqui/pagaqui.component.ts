@@ -13,13 +13,13 @@ import { CommonModule } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 
 //* Interfaces importados
-import { metaTagModel } from '@core/interfaces/meta-tag.model';
-import { registerStepsModel } from '@core/interfaces/register-steps-model';
+import { metaTagModel } from 'src/app/interfaces/meta-tag.model';
+import { registerStepsModel } from 'src/app/interfaces/register-steps-model';
 
 //* Servicios importados
 
-import { MetaTagService } from '@core/services/meta-tag.service';
-import { RegisterStepsService } from '@core/services/register-steps.service';
+import { MetaTagService } from 'src/app/services/meta-tag.service';
+import { RegisterStepsService } from 'src/app/services/register-steps.service';
 import { PagaquiService } from './services/pagaqui.service';
 import { ProductCarouselService } from '@feature/components/product-carousel/services/product-carousel.service';
 //* Components
@@ -27,7 +27,7 @@ import { ProductCarouselComponent } from '@feature/components/product-carousel/p
 import { SalesMethodComponent } from '@feature/components/sales-method/sales-method.component';
 import { AppRecargasComponent } from '../../../../feature/components/app-recargas/app-recargas.component';
 import { CarouselApp } from '@feature/components/app-recargas/interface/app.interface';
-import { ProductCarousel } from '@core/interfaces/product-carousel.interface';
+import { ProductCarousel } from 'src/app/interfaces/product-carousel.interface';
 import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
 
 @Component({

@@ -1,49 +1,146 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { metaTagModel } from '@core/interfaces/meta-tag.model';
-import { MetaTagService } from '@core/services/meta-tag.service';
-
+import { CommonModule } from '@angular/common';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
+import { PostalDirectoryService } from './postal-directory.service';
+import { States } from 'src/app/interfaces/address.interface';
+import { OnlyNumbersDirective } from '@shared/directives/only-numbers.directive';
+import { NotSpecialCharacterDirective } from '@shared/directives/not-special-character.directive';
+import { MetaTagService } from 'src/app/services/meta-tag.service';
+import { SignupService } from './signup.service';
 @Component({
   selector: 'app-registro',
   standalone: true,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    OnlyNumbersDirective,
+    NotSpecialCharacterDirective
+  ],
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.scss']
 })
 export default class RegistroComponent implements OnInit {
 
+  signUpForm!: FormGroup;
+  private formBuilder = inject(FormBuilder);
+  private readonly metaTagService = inject(MetaTagService);
+  private readonly addressService = inject(PostalDirectoryService);
+  private readonly signupService = inject(SignupService);
+  states: States[] = [];
+  // dataByZip = signal<Address>({   
+  //   error: false,
+  //   message: '',
+  //   codigo_postal: {
+  //     estado: '',
+  //     estado_abreviatura: '',
+  //     municipio: '',
+  //     centro_reparto: '',
+  //     codigo_postal: '',
+  //     colonias: []
+  //   }
+  //   });
 
-    //? META TAG
-//  tag: metaTagModel = {
-//   title: 'Recarga5g.com | Registro, afíliate con nosotros, obtén y disfruta de los beneficios que tenemos para ti',
-//   description: 'Vende recargar a cualquier compañía telefónica hasta 7.5% de comisión fija, paga servicios de todos tus clientes y pines electrónicos. Telcel, Unefón, Izzi, CFE, Google Play, Spotify y muchos más!',
-//   keywords: "Venta de recargas, recargas electrónicas, recargas telefónicas, recargas telcel, venta de recargas telcel, recargas electronicas telcel, tiempo aire telcel, Telcel registro para vender tiempo aire, registro para venta de recargas para negocio, registro para vender recargas, recargas electronicas 7.5% comision, comision 7.5, comision 7.5 por la venta de recargas, vender recargas",
-//   url: 'recarga5g.com/registro',
-//   type: 'website',
-//   image: 'https://recarga5g.com/Venta-recargas.png',
-//   card: 'summary_large_image',
-//   creator: '@recargascelular'
-//  }
+  cols = signal<string[]>([]);
 
-  // constructor(private readonly title: Title,private readonly _metaTagService: MetaTagService) { }
+ private initSignUpForm() {
+    this.signUpForm = this.formBuilder.group({
+      bussinesName: [''],
+      fullName: ['', [Validators.required, Validators.min(10)]],
+      email: ['', [Validators.required]],
+      phoneNumber: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+      address: this.formBuilder.group({
+        zip: ['', [Validators.required, Validators.pattern(/^\d{5}$/)]],
+        state: ['', [Validators.required,]],
+        municipDeleg: ['', [Validators.required]],
+        col: ['', [Validators.required]],
+        street: ['', [Validators.required]],
+      }),
 
-  private readonly metaTagService = inject( MetaTagService);
+    })
+  }
+
+  constructor() {
+    this.initSignUpForm();
+  }
+
+  isInvalidField(field: string) {
+    return this.signUpForm.get(field)?.invalid && this.signUpForm.get(field)?.touched;
+  }
+
+  // getDataByZip(): void {
+  //   const zipValue = this.signUpForm.get('address.zip')?.value;
+
+  //   if (zipValue) {
+  //     this.addressService.getDatabyZip(zipValue).subscribe({
+  //       next: (resp) => {
+  //         console.log(resp);
+  //       },
+  //       error: (errMsg) => {
+  //         console.log(errMsg);
+  //       }
+  //     });
+  //   }
+  // }
 
   ngOnInit(): void {
-    // this.title.setTitle('Recarga5g.com | Registro, afíliate con nosotros, obtén y disfruta de los beneficios que tenemos para ti')
+    this.states = this.addressService.stateofCountry;
+
+    // this.signUpForm.get('address.zip')?.valueChanges.subscribe( (value ) => {
+    //  const addressGroup = this.signUpForm.get('address') as FormGroup;
+    //   if(this.signUpForm.get('address.zip')?.valid) {
+    //       addressGroup.get('state')?.enable();
+    //       addressGroup.get('municipDeleg')?.enable();
+    //       addressGroup.get('col')?.enable();
+    //       addressGroup.get('street')?.enable();
+    //   } else {
+    //      addressGroup.get('state')?.disable();
+    //      addressGroup.get('municipDeleg')?.disable();
+    //      addressGroup.get('col')?.disable();
+    //      addressGroup.get('street')?.disable();
+    //   }
+    // })
+
+  }
+
+  register() {
+
+    if (this.signUpForm.invalid) {
+      this.markFormGroupTouched(this.signUpForm); 
+      return;
+    }
+
+    const formValues = this.signUpForm.value;
+    this.cleanForm()
+  }
+
+  private markFormGroupTouched(formGroup: FormGroup) {
+    Object.values(formGroup.controls).forEach((control) => {
+      if (control instanceof FormGroup) {
+        this.markFormGroupTouched(control);
+      } else {
+        control.markAsTouched();
+      }
+    });
+  }
+
+  private cleanForm() {
+    this.signUpForm.reset({
+      bussinesName: '',
+      fullName: '',
+      email: '',
+      phoneNumber: '',
+      address: {
+        zip: '',
+        state: '',
+        municipDeleg: '',
+        col: '',
+        street: ''
+      }
+    });
   
-    // this.metaTagService.updateMetaTag({
-    //   Title: '',
-    // })
-    //  this._metaTagService.generateTags({
-    //   title: this.tag.title,
-    //   description: this.tag.description,
-    //   keywords: this.tag.keywords,
-    //   url: this.tag.url,
-    //   type: this.tag.type,
-    //   image: this.tag.image,
-    //   card: this.tag.card,
-    //   creator: this.tag.creator
-    // })
+     
   }
 
 }

@@ -11,7 +11,7 @@ import {
   AfterViewInit,
   viewChild,
 } from '@angular/core';
-import { ImgCarousel } from '@core/interfaces/product-carousel.interface';
+import { ImgCarousel } from 'src/app/interfaces/product-carousel.interface';
 
 import { NgOptimizedImage } from '@angular/common';
 import { SwiperOptions } from 'swiper/types';

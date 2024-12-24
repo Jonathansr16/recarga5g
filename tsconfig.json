@@ -6,14 +6,13 @@
     "paths": {
       "@inicio/*": ["src/app/pages/inicio/*"],
       "@plataformas/*": ["src/app/pages/plataformas/*"],
-       "@productos/*": ["src/app/pages/productos/*"],
+      "@productos/*": ["src/app/pages/productos/*"],
       "@legal/*": ["src/app/pages/legal/*"],
       "@reportes/*": ["src/app/pages/reportes/*"],
       "@ayuda/*": ["src/app/pages/ayuda/*"],
       "@shared/*": ["src/app/shared/*"],
       "@feature/*": ["src/app/feature/*"],
-      "@core/*": ["src/app/core/*"],
-
+      "@interfaces/*": ["src/app/interfaces/*"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

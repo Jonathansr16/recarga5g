@@ -3,9 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 
 //* Servicios importados
-import { ProductCarousel } from '@core/interfaces/product-carousel.interface';
-import { RegisterStepsService } from '@core/services/register-steps.service';
-import { MetaTagService } from '@core/services/meta-tag.service';
+import { ProductCarousel } from 'src/app/interfaces/product-carousel.interface';
 import { SalesMethodComponent } from '@feature/components/sales-method/sales-method.component';
 
 //* COMPONENTS

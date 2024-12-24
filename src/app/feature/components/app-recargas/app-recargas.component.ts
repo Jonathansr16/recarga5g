@@ -13,7 +13,7 @@ import {
   viewChild,
 } from '@angular/core';
 
-import { ThemesService } from '@core/services/themes.service';
+import { ThemesService } from 'src/app/services/themes.service';
 import { CarouselApp } from './interface/app.interface';
 import { SwiperOptions } from 'swiper/types';
 // import { Swiper, SwiperOptions } from 'swiper/types';

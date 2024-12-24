@@ -1,6 +1,6 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, inject, input, PLATFORM_ID, ViewChild } from '@angular/core';
-import { ProductCarousel } from '@core/interfaces/product-carousel.interface';
+import { ProductCarousel } from 'src/app/interfaces/product-carousel.interface';
 // import { SwiperOptions } from 'swiper/types';
 
 @Component({

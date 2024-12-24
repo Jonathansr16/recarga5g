@@ -3,10 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { ContentfulService } from '@ayuda/services/contentful.service';
-import { MetaTagService } from '@core/services/meta-tag.service';
+import { MetaTagService } from 'src/app/services/meta-tag.service';
 
 import { CommonModule } from '@angular/common';
-import { MarkdownPipe } from '@core/pipes/markdown.pipe';
+import { MarkdownPipe } from '@shared/pipes/markdown.pipe';
 
 
 @Component({

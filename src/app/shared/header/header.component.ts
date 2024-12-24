@@ -8,10 +8,10 @@ import {
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { ThemesService } from '@core/services/themes.service';
+import { ThemesService } from 'src/app/services/themes.service';
 import { animate, style, transition, trigger } from '@angular/animations';
-import { ClickOutsideDirective } from '@core/directives/click-outside.directive';
-import { MenuItem } from './interfaces/header.interface';
+import { ClickOutsideDirective } from '@shared/directives/click-outside.directive';
+import { MenuItem } from '@interfaces/header.interface';
 
 @Component({
   selector: 'app-header',

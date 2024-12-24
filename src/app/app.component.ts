@@ -5,7 +5,7 @@ import { ContactBtnComponent } from '@shared/contact-btn/contact-btn.component';
 import { FooterComponent } from '@shared/footer/footer.component';
 import { HeaderComponent } from '@shared/header/header.component';
 import { UpScrollComponent } from '@shared/up-scroll/up-scroll.component';
-import { ThemesService } from '@core/services/themes.service';
+import { ThemesService } from 'src/app/services/themes.service';
 
 //  import { GoogleTagManagerModule, GoogleTagManagerService } from 'angular-google-tag-manager';
 

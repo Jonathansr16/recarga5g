@@ -21,27 +21,27 @@ import { inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 //* Services
-import { MetaTagService } from '@core/services/meta-tag.service';
-import { RazonesService } from '@core/services/razones.service';
+import { MetaTagService } from 'src/app/services/meta-tag.service';
+import { RazonesService } from 'src/app/services/razones.service';
 import { ProductCarouselService } from '@feature/components/product-carousel/services/product-carousel.service';
 
 //* Components
 import { ProductsFilterComponent } from '@feature/components/products-filter/products-filter.component';
-import AdvantageListComponent from '@feature/components/advantage-list/advantage-list.component';
+import  AdvantageListComponent   from '@feature/components/advantage-list/advantage-list.component';
 import { SalesMethodComponent } from '@feature/components/sales-method/sales-method.component';
 import { AppRecargasComponent } from '@feature/components/app-recargas/app-recargas.component';
 import { CarouselApp } from '@feature/components/app-recargas/interface/app.interface';
-import {
-  ImgCarousel,
-  ProductCarousel,
-} from '@core/interfaces/product-carousel.interface';
 import { ProductCarouselComponent } from '@feature/components/product-carousel/product-carousel.component';
+
+//* Interfaces
+import {ImgCarousel, ProductCarousel} from 'src/app/interfaces/product-carousel.interface';
+
 
 // import { SwiperOptions } from 'swiper/types';
 import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
-import { AdvantageList } from '@core/interfaces/advantage-list.interface';
+import { AdvantageList } from 'src/app/interfaces/advantage-list.interface';
 
-import { BenefitsListModel } from '@core/interfaces/benefits-list.interface';
+import { BenefitsListModel } from 'src/app/interfaces/benefits-list.interface';
 import { BannerCarouselComponent } from '../../feature/components/banner-carousel/banner-carousel.component';
 
 @Component({

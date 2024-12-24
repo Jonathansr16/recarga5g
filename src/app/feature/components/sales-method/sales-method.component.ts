@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject, input, signal } from '@angular/core';
-import { MetodosVentaService } from '@core/services/metodos-venta.service';
+import { MetodosVentaService } from 'src/app/services/metodos-venta.service';
 import { CommonModule } from '@angular/common';
-import { SalesChannel } from '@core/interfaces/sales-channel';
+import { SalesChannel } from 'src/app/interfaces/sales-channel';
 
 @Component({
   selector: 'app-sales-method',

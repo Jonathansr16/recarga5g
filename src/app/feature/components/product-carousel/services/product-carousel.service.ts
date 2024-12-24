@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { ProductCarousel } from '@core/interfaces/product-carousel.interface';
+import { ProductCarousel } from 'src/app/interfaces/product-carousel.interface';
 
 @Injectable({
   providedIn: 'root',

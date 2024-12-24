@@ -10,7 +10,7 @@ export class ClickOutsideDirective implements  OnInit, OnDestroy {
   private readonly renderer2 = inject(Renderer2);
   appClickOutside = input.required<boolean>()
   outSideClick = output<void>();
-  private listener: (() => void) | undefined;
+  private unlistener: (() => void) | undefined;
 
   onDocumentClick = (event: Event) => {
     if (!this.elementRef.nativeElement.parentElement.contains(event.target)) {
@@ -21,7 +21,7 @@ export class ClickOutsideDirective implements  OnInit, OnDestroy {
   
 
   ngOnInit(): void {
-    this.listener = this.renderer2.listen(
+    this.unlistener = this.renderer2.listen(
       'document',
       'click',
       this.onDocumentClick
@@ -29,8 +29,8 @@ export class ClickOutsideDirective implements  OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if (this.listener) {
-      this.listener();
+    if (this.unlistener) {
+      this.unlistener();
     }
   }
 

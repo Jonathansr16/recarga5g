@@ -10,7 +10,7 @@ import {
   viewChild,
   ViewChild,
 } from '@angular/core';
-import { ProductCarousel } from '@core/interfaces/product-carousel.interface';
+import { ProductCarousel } from 'src/app/interfaces/product-carousel.interface';
 // import { SwiperOptions } from 'swiper/types';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { SwiperOptions } from 'swiper/types';
@@ -63,7 +63,6 @@ export class ProductCarouselComponent {
   private swiperParams: SwiperOptions = {
     spaceBetween: 40,
    grabCursor: true,
-   freeMode: true,
    centeredSlides: true,
    navigation: false,
    speed: 4500,

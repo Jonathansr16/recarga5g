@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { AdvantageList } from '@core/interfaces/advantage-list.interface';
+import { AdvantageList } from 'src/app/interfaces/advantage-list.interface';
 
 @Component({
   selector: 'app-advantage-list',

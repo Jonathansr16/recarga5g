@@ -3,12 +3,12 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 //* Interfaces importados
-import { metaTagModel } from '@core/interfaces/meta-tag.model';
-import { registerStepsModel } from '@core/interfaces/register-steps-model';
-import { ProductCarousel } from '@core/interfaces/product-carousel.interface';
+import { metaTagModel } from 'src/app/interfaces/meta-tag.model';
+import { registerStepsModel } from 'src/app/interfaces/register-steps-model';
+import { ProductCarousel } from 'src/app/interfaces/product-carousel.interface';
 
 //* Servicios importados
-import { MetaTagService } from '@core/services/meta-tag.service';
+import { MetaTagService } from 'src/app/services/meta-tag.service';
 import { ProductCarouselService } from '@feature/components/product-carousel/services/product-carousel.service';
 
 //*components

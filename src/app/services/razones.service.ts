@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { BenefitsListModel } from "@core/interfaces/benefits-list.interface";
+import { BenefitsListModel } from "src/app/interfaces/benefits-list.interface";
 
 @Injectable({ 
     providedIn: 'root'

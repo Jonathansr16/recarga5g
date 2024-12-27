@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
+import { environment } from '@envs/environment.development';
 import sendGrid from '@sendgrid/mail';
-import { environment } from 'src/environments/environment.prod';
 
 
 @Injectable({
@@ -17,13 +17,13 @@ export class SignupService {
   private toSend = environment.sendGrid.toSend;
 
 
-  sendMail(templateHTML: string): Promise<void> {
+  sendMail(): Promise<void> {
     const msg = {
-      to: this.toSend,
       from: this.toSend,
+      to: this.toSend,
       subject: 'REGISTRO | VENTA DE TIEMPO AIRE',
       text: 'Tienes un nuevo cliente no lo hagas esperar!',
-      html: templateHTML
+      html: '<strong>it works!</strong>'
     };
 
    return sendGrid
@@ -35,8 +35,9 @@ export class SignupService {
       console.log(err)
     })
 
- 
   }
+
+  
 
 // using Twilio SendGrid's v3 Node.js Library
 // https://github.com/sendgrid/sendgrid-nodejs

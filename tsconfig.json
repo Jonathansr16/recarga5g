@@ -12,7 +12,9 @@
       "@ayuda/*": ["src/app/pages/ayuda/*"],
       "@shared/*": ["src/app/shared/*"],
       "@feature/*": ["src/app/feature/*"],
-      "@interfaces/*": ["src/app/interfaces/*"]
+      "@interfaces/*": ["src/app/interfaces/*"],
+      "@envs/*": ["src/environments/*"]
+
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

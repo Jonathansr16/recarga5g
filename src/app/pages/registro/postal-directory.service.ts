@@ -1,33 +1,9 @@
-import { inject, Injectable } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs';
-import { Address } from '../../interfaces/address.interface';
-import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
-import { environment } from 'src/environments/environment.prod';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PostalDirectoryService {
-  constructor() {}
-
-  private readonly http = inject(HttpClient);
-  private readonly urlEndPoint = environment.dipomex.urlEndPoint;
-  private readonly publicKey = environment.dipomex.publicKey;
-
-  getDatabyZip(zip: number): Observable<Address> {
-    const header = new HttpHeaders({
-      APIKEY: this.publicKey,
-    });
-    return this.http.get<Address>(`${this.urlEndPoint}?cp=${zip}`, {
-      headers: header,
-    }).pipe(
-      catchError( (err: HttpErrorResponse) => {
-      
-        console.error('Error al obtener los datos del código postal:', err.error.message);
-        return throwError(() => new Error('No se pudo obtener la información. Intente nuevamente.'));
-      })
-    )
-  }
 
   stateofCountry = [
     {
@@ -127,36 +103,36 @@ export class PostalDirectoryService {
       state: 'San Luis Potosi',
     },
     {
-      id: 2,
+      id: 25,
       state: 'Sinaloa',
     },
     {
-      id: 25,
+      id: 26,
       state: 'Sonora',
     },
     {
-      id: 26,
+      id: 27,
       state: 'Tabasco',
     },
     {
-      id: 27,
+      id: 28,
       state: 'Tamaulipas',
     },
     {
-      id: 28,
+      id: 29,
       state: 'Tlaxcala',
     },
     {
-      id: 29,
+      id: 30,
       state: 'Veracruz-Llave',
     },
     {
-      id: 30,
+      id: 31,
       state: 'Yucatan',
     },
 
     {
-      id: 31,
+      id: 32,
       state: 'Zacatecas',
     },
   ];

@@ -6,10 +6,10 @@ import {
   signal,
   
 } from '@angular/core';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { CommonModule, DOCUMENT, isPlatformBrowser, NgClass } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemesService } from 'src/app/services/themes.service';
-import { animate, style, transition, trigger } from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ClickOutsideDirective } from '@shared/directives/click-outside.directive';
 import { MenuItem } from '@interfaces/header.interface';
 
@@ -22,6 +22,7 @@ import { MenuItem } from '@interfaces/header.interface';
     CommonModule,
     RouterLink,
     RouterLinkActive,
+    NgClass,
     ClickOutsideDirective,
   ],
 
@@ -37,7 +38,9 @@ import { MenuItem } from '@interfaces/header.interface';
         style({ transform: 'scale(1)', opacity: 1 }),
         animate('75ms ease-in', style({ transform: 'scale(0.95)', opacity: 0 }))
       ])
-    ])
+    ]),
+
+    
   
   ]
 })
@@ -119,19 +122,19 @@ export class HeaderComponent{
         ]
       },
 
-      {
-        label: 'Ayuda',
-        items: [
-          {
-            label: '¿Dudas?',
-            items: [
-              { label: 'Politícas y condiciones', routerLink: '' },
-              { label: 'Condiciones de uso', routerLink: '' },
-              { label: 'Contacto', routerLink: '' }
-            ]
-          }
-        ]
-      },
+      // {
+      //   label: 'Ayuda',
+      //   items: [
+      //     {
+      //       label: '¿Dudas?',
+      //       items: [
+      //         { label: 'Politícas y condiciones', routerLink: '' },
+      //         { label: 'Condiciones de uso', routerLink: '' },
+      //         { label: 'Contacto', routerLink: '' }
+      //       ]
+      //     }
+      //   ]
+      // },
 
       {
         label: 'Mas',

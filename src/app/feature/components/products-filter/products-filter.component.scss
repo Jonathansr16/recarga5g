@@ -1,24 +1,21 @@
-.showItem {
-    display: block;
-    animation: showItem 0.5s ease;
-}
+// .showItem {
+//     display: block;
+//     animation: showItem 0.5s ease;
+// }
 
-.hiddenItem {
-    display: none;
-}
+// .hiddenItem {
+//     display: none;
+// }
 
-@keyframes showItem {
-    0% {
-        transform: scale(0.6);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-        color:  rgba(255, 255, 255, .1);
+// @keyframes showItem {
+//     0% {
+//         transform: scale(0.6);
+//         opacity: 0;
+//     }
+//     100% {
+//         transform: scale(1);
+//         opacity: 1;
+//         color:  rgba(255, 255, 255, .1);
      
-    }
-}
-
-
-
+//     }
+// }

@@ -30,7 +30,7 @@ import { RouterLink } from '@angular/router';
     >
       @for (banner of banners(); track banner.id; let firstItem = $first) {
       <swiper-slide
-        class="sw-hero-slide max-w-[2000px] w-full block h-auto flex-shrink-0"
+        class="sw-hero-slide max-w-[1920px] w-full block h-auto flex-shrink-0"
         
       >
         <a class="sw-hero-link" routerLink="/registro">

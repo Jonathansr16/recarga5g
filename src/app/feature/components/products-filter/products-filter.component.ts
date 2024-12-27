@@ -2,12 +2,12 @@ import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductCarousel } from 'src/app/interfaces/product-carousel.interface';
 import { ProductCarouselService } from '../product-carousel/services/product-carousel.service';
+import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-filter-products',
   standalone: true,
   template: ` 
-
     <div class="products-wrapper">
 
     <div class="products-row mb-8 lg:mb-16 flex flex-col lg:flex-row items-center justify-center lg:justify-between">
@@ -38,8 +38,6 @@ import { ProductCarouselService } from '../product-carousel/services/product-car
       </div>
     </div>
 
-   
-       
         <div
           class="products"
         >
@@ -48,7 +46,7 @@ import { ProductCarouselService } from '../product-carousel/services/product-car
           
             @if(categoryActive() === companie.typeService || categoryActive() === 'Todos') {
 
-            <li class="products-list-item"  [ngClass]="{ showItem: companie.typeService === categoryActive() }">
+              <li class="products-list-item" [@showItem] [ngClass]="companie.typeService === categoryActive() ||  categoryActive() === 'Todos'  ? 'block' : 'hidden'">
               <img
                 class="products-list-img max-w-48 w-full h-auto"
                 [src]="companie.img.src"
@@ -71,6 +69,23 @@ import { ProductCarouselService } from '../product-carousel/services/product-car
   imports: [
     CommonModule, 
   ],
+  animations: [
+    trigger('showItem', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'scale(0.9)' }),
+        animate('300ms ease-out', style({ opacity: 1, transform: 'scale(1)' }))
+      ]),
+      transition(':leave', [
+        animate('300ms ease-in', style({ opacity: 0, transform: 'scale(0.6)' }))
+      ])
+      // transition('* => active', [
+      //   animate('1s ease-in', keyframes([
+      //     style({ transform: 'scale(0.6', opacity: 0, offset: 0}),
+      //     style( { transform: 'scale(1)', opacity: 1, offset: 1})
+      //   ]))
+      // ])
+    ])
+  ]
 })
 export class ProductsFilterComponent implements OnInit {
 

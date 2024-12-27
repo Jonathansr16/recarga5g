@@ -3,8 +3,8 @@
 
 export default {
   content: [
-    './src/**/*.{html,ts}', // Asegúrate de incluir todas las rutas de tus archivos donde usas clases de Tailwind.
-    './src/app/**/*.{html,ts}',
+     "./src/**/*.{html,ts}"
+
   ],
   darkMode: 'selector',
   theme: { 

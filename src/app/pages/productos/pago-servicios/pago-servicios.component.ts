@@ -12,16 +12,15 @@ import { ProductCarouselService } from '@feature/components/product-carousel/ser
 import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
 
 @Component({
-  selector: 'app-pago-servicios',
-  standalone: true,
-  templateUrl: './pago-servicios.component.html',
-  styleUrls: ['./pago-servicios.component.scss','../productos.component.scss'],
-  imports: [
-    CommonModule,
-    ProductCarouselComponent,
-    SalesMethodComponent,
-    RegisterStepsComponent,
-]
+    selector: 'app-pago-servicios',
+    templateUrl: './pago-servicios.component.html',
+    styleUrls: ['./pago-servicios.component.scss', '../productos.component.scss'],
+    imports: [
+        CommonModule,
+        ProductCarouselComponent,
+        SalesMethodComponent,
+        RegisterStepsComponent,
+    ]
 })
 export default class PagoServiciosComponent implements OnInit{
 

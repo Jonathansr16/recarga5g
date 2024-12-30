@@ -14,35 +14,29 @@ import { ClickOutsideDirective } from '@shared/directives/click-outside.directiv
 import { MenuItem } from '@interfaces/header.interface';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
-  imports: [
-    CommonModule,
-    RouterLink,
-    RouterLinkActive,
-    NgClass,
-    ClickOutsideDirective,
-  ],
-
-  animations: [
-
-    //*contenedor y dispador de las animaciones
-    trigger('isOpen', [
-      transition(':enter', [
-        style({ transform: 'scale(0.95)', opacity: 0 }),
-        animate('100ms ease-out', style({ transform: 'scale(1)', opacity: 1 }))
-      ]),
-      transition(':leave', [
-        style({ transform: 'scale(1)', opacity: 1 }),
-        animate('75ms ease-in', style({ transform: 'scale(0.95)', opacity: 0 }))
-      ])
-    ]),
-
-    
-  
-  ]
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss'],
+    imports: [
+        CommonModule,
+        RouterLink,
+        RouterLinkActive,
+        NgClass,
+        ClickOutsideDirective,
+    ],
+    animations: [
+        //*contenedor y dispador de las animaciones
+        trigger('isOpen', [
+            transition(':enter', [
+                style({ transform: 'scale(0.95)', opacity: 0 }),
+                animate('100ms ease-out', style({ transform: 'scale(1)', opacity: 1 }))
+            ]),
+            transition(':leave', [
+                style({ transform: 'scale(1)', opacity: 1 }),
+                animate('75ms ease-in', style({ transform: 'scale(0.95)', opacity: 0 }))
+            ])
+        ]),
+    ]
 })
 export class HeaderComponent{
 

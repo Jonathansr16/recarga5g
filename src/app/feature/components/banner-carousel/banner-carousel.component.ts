@@ -19,11 +19,10 @@ import { SwiperContainer } from 'swiper/element';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-banner-carousel',
-  standalone: true,
-  imports: [CommonModule, NgOptimizedImage, RouterLink],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  template: `
+    selector: 'app-banner-carousel',
+    imports: [CommonModule, NgOptimizedImage, RouterLink],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    template: `
     <swiper-container init="false"
       class="sw-hero-container flex relative p-0 mx-auto size-full overflow-hidden"
       #swBannerElement
@@ -49,8 +48,8 @@ import { RouterLink } from '@angular/router';
       }
     </swiper-container>
   `,
-  styles: [
-    `
+    styles: [
+        `
 
       swiper-container::part(button-prev) {
         padding: 9px 14px;
@@ -72,8 +71,8 @@ import { RouterLink } from '@angular/router';
         background: #1d1f33;
       }
     `,
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BannerCarouselComponent implements AfterViewInit {
   swContainer = signal<SwiperContainer | null>(null);

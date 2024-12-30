@@ -4,17 +4,13 @@ import { CommonModule } from '@angular/common';
 import { SalesChannel } from 'src/app/interfaces/sales-channel';
 
 @Component({
-  selector: 'app-sales-method',
-  standalone: true,
-  templateUrl: './sales-method.component.html',
-  styleUrls: ['./sales-method.component.scss'],
-  imports: [
-    CommonModule,
- 
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
- 
-
+    selector: 'app-sales-method',
+    templateUrl: './sales-method.component.html',
+    styleUrls: ['./sales-method.component.scss'],
+    imports: [
+        CommonModule,
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SalesMethodComponent implements OnInit{
 

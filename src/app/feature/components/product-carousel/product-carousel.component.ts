@@ -17,12 +17,11 @@ import { SwiperOptions } from 'swiper/types';
 
 
 @Component({
-  selector: 'app-product-carousel',
-  standalone: true,
-  imports: [CommonModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  template: `
+    selector: 'app-product-carousel',
+    imports: [CommonModule],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    template: `
     <swiper-container
       init="false"
       #swiperProduct
@@ -45,7 +44,7 @@ import { SwiperOptions } from 'swiper/types';
     </swiper-container>
 
   `,
-  styles: [`
+    styles: [`
   swiper-container::part(wrapper) {
     -webkit-transition-timing-function:linear!important;
 -o-transition-timing-function:linear!important;

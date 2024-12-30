@@ -20,17 +20,16 @@ import { PlanetaemxService } from '@plataformas/services/planetaemx.service';
 import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
 
 @Component({
-  selector: 'app-planetaemx',
-  standalone: true,
-  templateUrl: './planetaemx.component.html',
-  styleUrls: ['./planetaemx.component.scss', '../plataformas.scss'],
-  imports: [
-    CommonModule,
-    ProductCarouselComponent,
-    AppRecargasComponent,
-    SalesMethodComponent,
-    RegisterStepsComponent
-  ]
+    selector: 'app-planetaemx',
+    templateUrl: './planetaemx.component.html',
+    styleUrls: ['./planetaemx.component.scss', '../plataformas.scss'],
+    imports: [
+        CommonModule,
+        ProductCarouselComponent,
+        AppRecargasComponent,
+        SalesMethodComponent,
+        RegisterStepsComponent
+    ]
 })
 export default class PlanetaemxComponent implements OnInit {
 

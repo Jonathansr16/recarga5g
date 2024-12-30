@@ -17,15 +17,14 @@ import { SalesMethodComponent } from '@feature/components/sales-method/sales-met
 import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
 
 @Component({
-  selector: 'app-venta-recargas',
-  standalone: true,
-  templateUrl: './venta-recargas.component.html',
-  styleUrls: ['./venta-recargas.component.scss','../productos.component.scss'],
-  imports: [
-    ProductCarouselComponent,
-    RegisterStepsComponent,
-    SalesMethodComponent
-  ]
+    selector: 'app-venta-recargas',
+    templateUrl: './venta-recargas.component.html',
+    styleUrls: ['./venta-recargas.component.scss', '../productos.component.scss'],
+    imports: [
+        ProductCarouselComponent,
+        RegisterStepsComponent,
+        SalesMethodComponent
+    ]
 })
 export default class VentaRecargasComponent implements OnInit {
 

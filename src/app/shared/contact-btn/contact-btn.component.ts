@@ -2,13 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
 
 @Component({
-  selector: 'app-contact-btn',
-  standalone: true,
-  templateUrl: './contact-btn.component.html',
-  styleUrls: ['./contact-btn.component.scss'],
-  imports: [
-    CommonModule,
-  ]
+    selector: 'app-contact-btn',
+    templateUrl: './contact-btn.component.html',
+    styleUrls: ['./contact-btn.component.scss'],
+    imports: [
+        CommonModule,
+    ]
 })
 export class ContactBtnComponent {
 

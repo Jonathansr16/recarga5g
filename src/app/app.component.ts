@@ -10,12 +10,10 @@ import { ThemesService } from 'src/app/services/themes.service';
 //  import { GoogleTagManagerModule, GoogleTagManagerService } from 'angular-google-tag-manager';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  imports: [RouterOutlet, UpScrollComponent, HeaderComponent, ContactBtnComponent, FooterComponent]
-
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    imports: [RouterOutlet, UpScrollComponent, HeaderComponent, ContactBtnComponent, FooterComponent]
 })
 export class AppComponent  implements OnInit{
   title = 'recarga5g.com';

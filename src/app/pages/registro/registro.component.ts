@@ -10,16 +10,15 @@ import { NotSpecialCharacterDirective } from '@shared/directives/not-special-cha
 import { MetaTagService } from 'src/app/services/meta-tag.service';
 import { SignupService } from './signup.service';
 @Component({
-  selector: 'app-registro',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    OnlyNumbersDirective,
-    NotSpecialCharacterDirective
-  ],
-  templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.scss']
+    selector: 'app-registro',
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        OnlyNumbersDirective,
+        NotSpecialCharacterDirective
+    ],
+    templateUrl: './registro.component.html',
+    styleUrls: ['./registro.component.scss']
 })
 export default class RegistroComponent implements OnInit {
 

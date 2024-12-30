@@ -3,12 +3,11 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { AdvantageList } from 'src/app/interfaces/advantage-list.interface';
 
 @Component({
-  selector: 'app-advantage-list',
-  standalone: true,
-  imports: [
-    CommonModule,
-  ],
-  template: `
+    selector: 'app-advantage-list',
+    imports: [
+        CommonModule,
+    ],
+    template: `
    <ul class="advantage__ul flex flex-wrap items-center mt-4">
             @for (option of listOptions(); track $index) {
             <li class="advantage__li basis-2/4 my-4 w-full lg:w-2/4 pl-3 pr-3">
@@ -21,7 +20,7 @@ import { AdvantageList } from 'src/app/interfaces/advantage-list.interface';
             }
           </ul>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class AdvantageListComponent {
 

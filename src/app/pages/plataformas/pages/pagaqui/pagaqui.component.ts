@@ -31,17 +31,16 @@ import { ProductCarousel } from 'src/app/interfaces/product-carousel.interface';
 import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
 
 @Component({
-  selector: 'app-plataforma-pagaqui',
-  standalone: true,
-  templateUrl: './pagaqui.component.html',
-  styleUrls: ['./pagaqui.component.scss', '../plataformas.scss'],
-  imports: [
-    CommonModule,
-    ProductCarouselComponent,
-    SalesMethodComponent,
-    AppRecargasComponent,
-    RegisterStepsComponent
-  ],
+    selector: 'app-plataforma-pagaqui',
+    templateUrl: './pagaqui.component.html',
+    styleUrls: ['./pagaqui.component.scss', '../plataformas.scss'],
+    imports: [
+        CommonModule,
+        ProductCarouselComponent,
+        SalesMethodComponent,
+        AppRecargasComponent,
+        RegisterStepsComponent
+    ]
 })
 export default class PlataformaPagaquiComponent
   implements OnInit, AfterViewInit

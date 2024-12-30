@@ -19,10 +19,9 @@ import { SwiperOptions } from 'swiper/types';
 // import { Swiper, SwiperOptions } from 'swiper/types';
 
 @Component({
-  selector: 'app-recargas',
-  standalone: true,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
+    selector: 'app-recargas',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `
     <div class="app">
       <div
         class="relative flex items-center justify-center mx-auto border-gray-800 dark:border-gray-900 bg-gray-800 dark:bg-gray-900 border-4 rounded-[2.5rem] h-[588px] w-[283px] shadow-xl"
@@ -72,11 +71,11 @@ import { SwiperOptions } from 'swiper/types';
       </div>
     </div>
   `,
-  styles: `
+    styles: `
 
   `,
-  imports: [CommonModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    imports: [CommonModule],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppRecargasComponent {
   swAppElement = viewChild.required<ElementRef>('swiperApp');

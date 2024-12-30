@@ -18,16 +18,15 @@ import { RegisterStepsComponent } from '@feature/components/register-steps/regis
 
 
 @Component({
-  selector: 'app-venta-pines',
-  standalone: true,
-  templateUrl: './venta-pines.component.html',
-  styleUrls: ['./venta-pines.component.scss','../productos.component.scss'],
-  imports: [
-    CommonModule,
-    ProductCarouselComponent,
-    SalesMethodComponent,
-    RegisterStepsComponent,
-]
+    selector: 'app-venta-pines',
+    templateUrl: './venta-pines.component.html',
+    styleUrls: ['./venta-pines.component.scss', '../productos.component.scss'],
+    imports: [
+        CommonModule,
+        ProductCarouselComponent,
+        SalesMethodComponent,
+        RegisterStepsComponent,
+    ]
 })
 export default class VentaPinesComponent implements OnInit{
 

@@ -45,24 +45,22 @@ import { BenefitsListModel } from 'src/app/interfaces/benefits-list.interface';
 import { BannerCarouselComponent } from '../../feature/components/banner-carousel/banner-carousel.component';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  standalone: true,
-  imports: [
-    CommonModule,
-    NgOptimizedImage,
-    RouterLink,
-    ProductCarouselComponent,
-    ProductsFilterComponent,
-    SalesMethodComponent,
-    AppRecargasComponent,
-    AppRecargasComponent,
-    AdvantageListComponent,
-    RegisterStepsComponent,
-    BannerCarouselComponent,
-  ],
-
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    imports: [
+        CommonModule,
+        NgOptimizedImage,
+        RouterLink,
+        ProductCarouselComponent,
+        ProductsFilterComponent,
+        SalesMethodComponent,
+        AppRecargasComponent,
+        AppRecargasComponent,
+        AdvantageListComponent,
+        RegisterStepsComponent,
+        BannerCarouselComponent,
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export default class HomeComponent implements OnInit, AfterViewInit {
 

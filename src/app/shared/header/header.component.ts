@@ -7,9 +7,9 @@ import {
   
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser, NgClass } from '@angular/common';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { ThemesService } from 'src/app/services/themes.service';
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import { animate, style, transition, trigger } from '@angular/animations';
 import { ClickOutsideDirective } from '@shared/directives/click-outside.directive';
 import { MenuItem } from '@interfaces/header.interface';
 
@@ -45,13 +45,15 @@ export class HeaderComponent{
   activeNavOverlay = signal<boolean>(false);
   isOpenSidebar = signal<boolean>(false);
 
+  isActiveMenu = signal<boolean>(false);
+
   private readonly document = inject(DOCUMENT);
   private readonly renderer2 = inject(Renderer2);
   private readonly platform_id = inject(PLATFORM_ID);
-  private readonly themeService = inject(ThemesService)
+  private readonly themeService = inject(ThemesService);
+  private readonly router = inject(Router);
 
   isOpenMenu = signal<number>(-1);
-
 
   navbarItems = signal<MenuItem[]>(
 
@@ -109,8 +111,8 @@ export class HeaderComponent{
           {
             label: 'Notificación de pagos',
             items: [
-                      { label: 'Depósito Pagaqui',              routerLink: '' },
-                      { label: 'Depósito Recargaki/Planetaemx', routerLink: '' }
+                      { label: 'Depósito Pagaqui',              routerLink: 'reportes/pagaqui' },
+                      { label: 'Depósito Recargaki/Planetaemx', routerLink: 'reportes/recargaki-planetaemx' }
             ]
           }
         ]
@@ -144,6 +146,8 @@ export class HeaderComponent{
     ]
 
   );
+
+
 
 
   openNav(): void {
@@ -187,6 +191,24 @@ export class HeaderComponent{
   toggleSidebar(): void {
     this.isOpenSidebar.update( currentValue => !currentValue)
   }
+  
+  isSubMenuActive(items?: MenuItem[]): boolean {
+    if (!items) return false;
+    return items.some(item =>
+      item.routerLink
+        ? this.router.isActive(item.routerLink, false)
+        : this.isSubMenuActive(item.items) // Recursively check nested items
+    );
+  }
+
+  // isItemActive(item: MenuItem): boolean {
+  //   if (item.routerLink) {
+  //     return this.router.isActive(item.routerLink, false);
+  //   }
+  //   return false; // Ensure a boolean is always returned
+  // }
+
+
 
 }
 

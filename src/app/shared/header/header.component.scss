@@ -18,6 +18,12 @@
     backdrop-filter: blur(10px);
 }
 
+.active-link{
+    @apply bg-slate-700 text-white dark:bg-gray-600 dark:text-white;
+}
+
+
+
 @keyframes reduce-header {
     0% {
         box-shadow: none;

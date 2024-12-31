@@ -1,15 +1,15 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { metaTagModel } from 'src/app/interfaces/meta-tag.model';
-import { MetaTagService } from 'src/app/services/meta-tag.service';
+import { metaTagModel } from '@interfaces/meta-tag.model';
+import { MetaTagService } from '@services/meta-tag.service';
 
 @Component({
-  selector: 'app-reporte-planetaemx',
+  selector: 'app-recargaki-planetaemx',
   standalone: true,
-  templateUrl: './reporte-planetaemx.component.html',
-  styleUrls: ['./reporte-planetaemx.component.scss', '../../reportes.component.scss']
+  templateUrl: './recargaki-planetaemx.component.html',
+  styleUrl: './recargaki-planetaemx.component.scss'
 })
-export default class ReportePlanetaemxComponent implements OnInit {
+export default class RecargakiPlanetaemxComponent implements OnInit {
 
   tag:metaTagModel = {
     title: 'Recarga5g.com | Reporte de depósitos y/o transferencias Planetaemx',

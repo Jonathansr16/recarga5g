@@ -28,6 +28,11 @@ export const routes: Routes = [
     },
 
     {
+        path: 'reportes',
+        loadChildren: () => import('@reportes/report-routes').then ( (reportRoute) => reportRoute.reportRoutes)
+    },
+
+    {
         path: '**',
         redirectTo: '',
         pathMatch: 'full'

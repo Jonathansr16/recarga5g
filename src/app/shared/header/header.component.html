@@ -1,6 +1,6 @@
 
 <!-- component -->
- <header class="header header-animate bg-[#ffffff4d] dark:bg-[#0000004d] shadow-md shadow-slate-400/10 dark:shadow-slate-500/10 antialiased fixed top-0 left-0 w-full text-gray-700 dark:text-gray-200 md:backdrop-blur-0 backdrop-blur-[10px] z-30">
+ <header class="header header-animate bg-slate-50/80 dark:bg-[#0000004d] shadow-md shadow-slate-400/10 dark:shadow-slate-500/10 antialiased fixed top-0 left-0 w-full text-gray-700 dark:text-gray-200 md:backdrop-blur-0 backdrop-blur-[10px] z-30">
   <div class="container w-fullshadow md:shadow-none flex flex-col lg:flex-row lg:items-center justify-between px-4 mx-auto lg:px-8 gap-4">
       <!-- Logo y Branding -->
       <div class="logo flex flex-row items-center justify-between p-4">
@@ -32,12 +32,16 @@
       
       <nav class="navbar">
       <!-- Barra de Navegación -->
-      <ul [ngClass]="isOpenSidebar() ? 'flex' : 'hidden'" class="flex-col lg:flex-row flex-grow pb-4 md:pb-0 items-center justify-end lg:justify-center lg:flex" role="menu">
+      <ul [ngClass]="isOpenSidebar() ? 'flex' : 'hidden'" class="flex-col lg:flex-row flex-grow pb-4 md:pb-0 items-center lg:justify-center lg:flex" role="menu">
        @for (item of navbarItems(); let i = $index; track i) {
-         <li class="relative w-full md:w-auto py-2" role="menuitem">
+         <li class="relative w-full lg:w-auto py-2" role="menuitem">
        
             <ng-container *ngIf="item.items && item.items.length > 0; else singleItem">
-              <button type="button" (click)="toggleMenu(i)" class="flex flex-row text-gray-900 dark:text-white bg-gray-200 items-center justify-between lg:justify-start w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark:bg-transparent dark:focus:text-white dark:hover:text-white dark:focus:bg-gray-600 dark:hover:bg-gray-700 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" aria-haspopup="true" [attr.aria-expanded]="isOpenMenu() === i">
+              <button 
+              type="button" 
+              (click)="toggleMenu(i)" 
+              [ngClass]="{'active-link': isSubMenuActive(item.items)}"
+              class="w-full lg:w-auto lg:inline relative flex flex-row text-gray-900 dark:text-white bg-gray-200 items-center justify-between lg:justify-start px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark:bg-transparent dark:focus:text-white dark:hover:text-white dark:focus:bg-gray-600 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 dark:hover:bg-gray-700 focus:bg-gray-200 focus:outline-none focus:shadow-outline" aria-haspopup="true" [attr.aria-expanded]="isOpenMenu() === i">
                 <span>{{item.label}}</span>
                 <!-- SVG de icono -->
                 <svg fill="currentColor" viewBox="0 0 20 20"
@@ -55,7 +59,11 @@
                   <ul class="dropdown__items p-2">
                     @for (subItem of item.items[0].items; track $index) {
                       <li >
-                        <a [routerLink]="subItem.routerLink" class="flex items-center rounded-lg px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300">
+                        <a 
+                        [routerLink]="subItem.routerLink" 
+                        routerLinkActive="active-link" 
+                        class="relative flex items-center rounded-lg px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300"
+                        >
                           <!-- Icono y texto del subítem -->
                           @if (subItem.icon) {
                             <i class="text-base material-icons">{{subItem.icon}}</i>
@@ -70,7 +78,12 @@
             </ng-container>
           
             <ng-template #singleItem>
-              <a [routerLink]="item.routerLink" class="text-gray-900 dark:text-white bg-gray-200 items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark:bg-transparent dark:focus:text-white dark:hover:text-white dark:focus:bg-gray-600 dark:hover:bg-gray-700 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+              <a  
+              [routerLink]="item.routerLink"
+              routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{ exact: true }"
+
+              class="w-full lg:w-auto lg:inline relative flex text-gray-900 dark:text-white bg-gray-200 items-center px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark:bg-transparent dark:focus:text-white dark:hover:text-white dark:focus:bg-gray-600 dark:hover:bg-gray-700 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
                 {{item.label}}
               </a>
             </ng-template>

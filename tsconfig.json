@@ -13,6 +13,7 @@
       "@shared/*": ["src/app/shared/*"],
       "@feature/*": ["src/app/feature/*"],
       "@interfaces/*": ["src/app/interfaces/*"],
+      "@services/*": ["src/app/services/*"],
       "@envs/*": ["src/environments/*"]
 
     },

@@ -1,17 +1,17 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { metaTagModel } from 'src/app/interfaces/meta-tag.model';
-import { MetaTagService } from 'src/app/services/meta-tag.service';
+import { metaTagModel } from '@interfaces/meta-tag.model';
+import { MetaTagService } from '@services/meta-tag.service';
 @Component({
-  selector: 'app-reporte-pagaqui',
+  selector: 'app-pagaqui',
   standalone: true,
-  templateUrl: './reporte-pagaqui.component.html',
-  styleUrls: ['./reporte-pagaqui.component.scss','../../reportes.component.scss'],
+  templateUrl: './pagaqui.component.html',
+  styleUrl: './pagaqui.component.scss',
   imports: [
     
   ]
 })
-export default class ReportePagaquiComponent implements OnInit {
+export default class PagaquiComponent implements OnInit {
 
     //* META TAG
     tag: metaTagModel = {

@@ -6,7 +6,9 @@ import {
   ElementRef,
   inject,
   input,
+  OnInit,
   PLATFORM_ID,
+  signal,
   viewChild,
   ViewChild,
 } from '@angular/core';
@@ -14,86 +16,66 @@ import { ProductCarousel } from 'src/app/interfaces/product-carousel.interface';
 // import { SwiperOptions } from 'swiper/types';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { SwiperOptions } from 'swiper/types';
-
+import { SwiperContainer } from 'swiper/element';
 
 @Component({
-    selector: 'app-product-carousel',
-    imports: [CommonModule],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    template: `
+  selector: 'app-product-carousel',
+  imports: [CommonModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  template: `
     <swiper-container
+    #swiper
       init="false"
-      #swiperProduct
-      class="sw-product flex flex-row w-full h-full mx-auto overflow-hidden"
+      class="sw-product [mask-image:linear-gradient(to_right,transparent_0,#ffffff_128px,#ffffff_calc(100%_-_128px),transparent_100%)] dark:[mask-image:linear-gradient(to_right,transparent_0,#000000_128px,#000000_calc(100%_-_128px),transparent_100%)]  flex flex-row w-full h-full mx-auto overflow-hidden"
     >
       @for(product of products(); track $index ) {
 
-      <swiper-slide class="sw-product-slide max-w-[180px] w-full h-auto m-auto" lazy="true">
+      <swiper-slide
+        class="sw-product-slide max-w-[180px] w-full h-auto m-auto mask"
+      >
         <img
           [src]="product.img.src"
           class="sw-product-img object-contain"
           loading="lazy"
-          width="180"
-          height="180"
           [alt]="product.img.alt"
-
         />
       </swiper-slide>
       }
     </swiper-container>
-
   `,
-    styles: [`
-  swiper-container::part(wrapper) {
-    -webkit-transition-timing-function:linear!important;
--o-transition-timing-function:linear!important;
-transition-timing-function:linear!important;
-  }
-    `]
+  styles: [
+    `
+      swiper-container::part(wrapper) {
+        transition-timing-function: linear !important;
+      }
+    `,
+  ],
 })
-export class ProductCarouselComponent {
+export class ProductCarouselComponent implements OnInit {
   products = input.required<ProductCarousel[]>();
-  swProductElement = viewChild.required<ElementRef>('swiperProduct');
+  swiper = viewChild<ElementRef<SwiperContainer>>('swiper');
 
-  platform_id= inject(PLATFORM_ID);
-  // @ViewChild('swiperProduct') swProduct: ElementRef | undefined;
+  options = signal<SwiperOptions>({});
+  platformId = inject(PLATFORM_ID);
 
-  private swiperParams: SwiperOptions = {
-    spaceBetween: 40,
-   grabCursor: true,
-   centeredSlides: true,
-   navigation: false,
-   speed: 4500,
-   loop: true,
-   slidesPerView: 'auto',
-   autoplay: {
-     delay: 0.5,
-     disableOnInteraction: false,
-      },
-    breakpoints: {
-     0: { /* when window >=0px - webflow mobile landscape/portriat */
-       spaceBetween: 30,
-     },
-         480: { /* when window >=0px - webflow mobile landscape/portriat */
-       spaceBetween: 30,
-     },
-     767: { /* when window >= 767px - webflow tablet */
-       spaceBetween: 40,
-     },
-     992: { /* when window >= 988px - webflow desktop */
-       spaceBetween: 40,
-     }
-  }
-
-}
-
-  ngAfterViewInit(): void {
-        if(isPlatformBrowser(this.platform_id)) {
-          const swProduct = this.swProductElement().nativeElement;
-          Object.assign(swProduct, this.swiperParams);
-          swProduct.initialize(); // Inicializa Swiper
-
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+    
+      const swiperElement = this.swiper()!.nativeElement;
+      
+      swiperElement.autoplay = {
+        delay: 0,
+        disableOnInteraction: false
+      };
+      swiperElement.slidesPerView= 'auto';
+      swiperElement.direction= 'horizontal';      
+      swiperElement.loop = true;
+      swiperElement.speed= 4000;
+      swiperElement.grabCursor = true;
+      swiperElement.initialize();
+    
     }
   }
+
 }

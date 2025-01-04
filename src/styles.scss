@@ -1,7 +1,48 @@
+@use '@fontsource/poppins';
+@use "@fontsource-variable/material-symbols-outlined";
+@use "@fontsource/material-icons";
+.material-symbols-outlined {
+    font-family: "Material Symbols Outlined";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px; /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  }
+
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
 @tailwind base;
 
 @layer base {
-h1 { @apply lg:text-5xl text-4xl font-bold tracking-tight text-gray-700 md:text-5xl dark:text-white;}
+h1 { @apply lg:text-6xl text-4xl font-bold tracking-tight text-gray-700 md:text-5xl dark:text-white;}
 h2 {  @apply font-bold lg:text-5xl sm:text-4xl text-3xl text-gray-700 dark:text-gray-100;}
 h3 { @apply lg:text-4xl text-3xl font-bold text-slate-700 dark:text-white mb-2;}
 }
@@ -11,7 +52,7 @@ h3 { @apply lg:text-4xl text-3xl font-bold text-slate-700 dark:text-white mb-2;}
 
 @layer components {
 .title-subsection {@apply text-lg font-semibold text-slate-700 dark:text-white mb-2;}
-.text {@apply text-sm lg:text-base leading-loose;}
+.text {@apply text-sm lg:text-base leading-loose text-gray-700 dark:text-gray-300; }
 .text-primary{@apply font-bold text-red-500 dark:text-sky-400;}
 .text-small {@apply lg:text-sm text-xs text-slate-700 dark:text-slate-300 font-medium;}
 .space-container {@apply px-6 lg:px-8 pb-6 mb-20;}
@@ -21,3 +62,4 @@ h3 { @apply lg:text-4xl text-3xl font-bold text-slate-700 dark:text-white mb-2;}
 }
 
 @tailwind utilities;
+

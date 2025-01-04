@@ -114,7 +114,7 @@
 
       <!-- Botones de Tema -->
       <div class="lg:flex hidden items-center gap-4">
-        <a class="btn-register-responsive text-sm py-2 px-4 btn-primary" routerLink="/registro">
+        <a class="btn-register-responsive text-sm py-2 px-4 @apply rounded-lg font-semibold text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] dark:shadow-blue-500/30 dark:hover:shadow-blue-600/20 focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none bg-red-600 border-red-600 dark:bg-blue-600 dark:border-blue-600" routerLink="/registro">
           Registrarme
         </a>
         <button type="button" class="toggle-theme p-2 rounded-[50%] bg-[linear-gradient(45deg,_#ff7c6b,_#ffd54d)] dark:bg-[linear-gradient(45deg,_#3366ff,_#ad14b8)] " aria-label="Toggle Theme" (click)="toggleTheme()">

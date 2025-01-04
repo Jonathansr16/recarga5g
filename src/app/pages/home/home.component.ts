@@ -8,8 +8,6 @@ import {
   PLATFORM_ID,
   signal,
   CUSTOM_ELEMENTS_SCHEMA,
-  viewChildren,
-  computed,
 } from '@angular/core';
 import {
   CommonModule,
@@ -32,9 +30,9 @@ import { SalesMethodComponent } from '@feature/components/sales-method/sales-met
 import { AppRecargasComponent } from '@feature/components/app-recargas/app-recargas.component';
 import { CarouselApp } from '@feature/components/app-recargas/interface/app.interface';
 import { ProductCarouselComponent } from '@feature/components/product-carousel/product-carousel.component';
-
+import { BentoItemComponent } from '@feature/components/bento-item/bento-item.component';
 //* Interfaces
-import {ImgCarousel, ProductCarousel} from 'src/app/interfaces/product-carousel.interface';
+import {ProductCarousel} from 'src/app/interfaces/product-carousel.interface';
 
 
 // import { SwiperOptions } from 'swiper/types';
@@ -42,24 +40,25 @@ import { RegisterStepsComponent } from '@feature/components/register-steps/regis
 import { AdvantageList } from 'src/app/interfaces/advantage-list.interface';
 
 import { BenefitsListModel } from 'src/app/interfaces/benefits-list.interface';
-import { BannerCarouselComponent } from '../../feature/components/banner-carousel/banner-carousel.component';
+import { HeroCarousel } from '@interfaces/hero-carousel.interface';
 
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
     imports: [
-        CommonModule,
-        NgOptimizedImage,
-        RouterLink,
-        ProductCarouselComponent,
-        ProductsFilterComponent,
-        SalesMethodComponent,
-        AppRecargasComponent,
-        AppRecargasComponent,
-        AdvantageListComponent,
-        RegisterStepsComponent,
-        BannerCarouselComponent,
-    ],
+    CommonModule,
+    NgOptimizedImage,
+    RouterLink,
+    ProductCarouselComponent,
+    ProductsFilterComponent,
+    SalesMethodComponent,
+    AppRecargasComponent,
+    AppRecargasComponent,
+    AdvantageListComponent,
+    RegisterStepsComponent,
+    // BentoItemComponent
+],
+
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export default class HomeComponent implements OnInit, AfterViewInit {
@@ -79,31 +78,21 @@ export default class HomeComponent implements OnInit, AfterViewInit {
   showModal = signal<boolean>(false);
   whySellList = signal<BenefitsListModel[]>([]);
 
-  slideHero = signal<ImgCarousel[]>([
-    {
-      id: 1,
-      src: 'assets/img/banner-tipo-negocio.webp',
-      alt: 'venta de recargas, pago de servicios para negocios',
-    },
-
-    {
-      id: 2,
-      src: 'assets/img/banner-recargas-multiregion.webp',
-      alt: 'venta de recargas electrónicas en mexico para todo tipo de negocio',
-    },
-
-    {
-      id: 3,
-      src: 'assets/img/banner-servicios.webp',
-      alt: 'Cobra cualquier servicio en cuestion de minutos',
-    },
-    {
-      id: 4,
-      src: 'assets/img/banner-pines.webp',
-      alt: 'Ofrece un servicio adicional a tu negocio con nuestras tarjeta de regalo',
-    },
-  ]);
-
+  slideHero = signal<HeroCarousel[]>([
+      {
+        id: 1,
+        label: '',
+        title: '',
+        textOne: '',
+        textlink: '',
+        routerLink: '',
+        imgHero: {
+          src: '',
+          alt: ''
+        }
+      }
+  ])
+ 
   listBusiness = [
     {
       id: 1,

@@ -1,15 +1,15 @@
 
 <!-- component -->
  <header class="header header-animate bg-slate-50/80 dark:bg-[#0000004d] shadow-md shadow-slate-400/10 dark:shadow-slate-500/10 antialiased fixed top-0 left-0 w-full text-gray-700 dark:text-gray-200 md:backdrop-blur-0 backdrop-blur-[10px] z-30">
-  <div class="container w-fullshadow md:shadow-none flex flex-col lg:flex-row lg:items-center justify-between px-4 mx-auto lg:px-8 gap-4">
+  <div class="container  w-fullshadow md:shadow-none flex flex-col lg:flex-row lg:items-center justify-between px-4 mx-auto lg:px-8 gap-4">
       <!-- Logo y Branding -->
-      <div class="logo flex flex-row items-center justify-between p-4">
+      <div class="logo flex flex-row items-center justify-between p-4 animate-fade-in-down">
         <a routerLink="/" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">
           Recarga5g
         </a>
 
         <!-- Botón de Registro y Menú Responsive -->
-        <div class="flex lg:hidden items-center gap-6">
+        <div class="flex lg:hidden items-center gap-6 animate-fade-in-down">
           <a class="btn-register-responsive text-sm py-2 px-4 bg-red-600 text-white dark:bg-blue-700 font-semibold rounded-lg" routerLink="/registro">
             Registrarme
           </a>
@@ -30,7 +30,7 @@
         </div>
       </div>
       
-      <nav class="navbar">
+      <nav class="navbar animate-fade-in-down">
       <!-- Barra de Navegación -->
       <ul [ngClass]="isOpenSidebar() ? 'flex' : 'hidden'" class="flex-col lg:flex-row flex-grow pb-4 md:pb-0 items-center lg:justify-center lg:flex" role="menu">
        @for (item of navbarItems(); let i = $index; track i) {
@@ -113,7 +113,7 @@
     </nav>
 
       <!-- Botones de Tema -->
-      <div class="lg:flex hidden items-center gap-4">
+      <div class="lg:flex hidden items-center gap-4 animate-fade-in-down">
         <a class="btn-register-responsive text-sm py-2 px-4 @apply rounded-lg font-semibold text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] dark:shadow-blue-500/30 dark:hover:shadow-blue-600/20 focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none bg-red-600 border-red-600 dark:bg-blue-600 dark:border-blue-600" routerLink="/registro">
           Registrarme
         </a>

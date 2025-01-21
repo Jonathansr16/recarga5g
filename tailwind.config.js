@@ -1,3 +1,4 @@
+import animations from '@midudev/tailwind-animations'
 
 /** @type {import('tailwindcss').Config} */
 
@@ -10,7 +11,7 @@ export default {
   theme: { 
     extend: {
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif']
+        interVariable: ['Inter Variable', 'sans-serif']
       },
 
       boxShadow: {
@@ -18,5 +19,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [animations],
 }

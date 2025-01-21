@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, inject, OnInit, signal, CUSTOM_ELEMENTS_SCHEMA, ViewChild, ElementRef, viewChild, PLATFORM_ID } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
@@ -9,6 +9,7 @@ import { OnlyNumbersDirective } from '@shared/directives/only-numbers.directive'
 import { NotSpecialCharacterDirective } from '@shared/directives/not-special-character.directive';
 import { MetaTagService } from 'src/app/services/meta-tag.service';
 import { SignupService } from './signup.service';
+import { SwiperContainer } from 'swiper/element';
 @Component({
     selector: 'app-registro',
     imports: [
@@ -18,15 +19,20 @@ import { SignupService } from './signup.service';
         NotSpecialCharacterDirective
     ],
     templateUrl: './registro.component.html',
-    styleUrls: ['./registro.component.scss']
-})
+    styleUrls: ['./registro.component.scss'],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+
+  })
 export default class RegistroComponent implements OnInit {
 
   signUpForm!: FormGroup;
   private formBuilder = inject(FormBuilder);
+  private readonly platformId = inject(PLATFORM_ID);
+  
   private readonly metaTagService = inject(MetaTagService);
   private readonly addressService = inject(PostalDirectoryService);
   private readonly signupService = inject(SignupService);
+   swiper = viewChild<ElementRef<SwiperContainer>>('swSteps');
   states: States[] = [];
   // dataByZip = signal<Address>({   
   //   error: false,
@@ -84,7 +90,26 @@ export default class RegistroComponent implements OnInit {
   // }
 
   ngOnInit(): void {
-    this.states = this.addressService.stateofCountry;
+
+        if (isPlatformBrowser(this.platformId)) { 
+          const swiperElement = this.swiper()!.nativeElement;
+
+          swiperElement.autoplay = {
+            delay: 0,
+            disableOnInteraction: false,
+          };
+          swiperElement.direction= 'horizontal';
+          swiperElement.effect = 'fade';
+          swiperElement.slidesPerView = 'auto';
+          swiperElement.slidesPerGroup = 1;
+          swiperElement.direction = 'horizontal';
+          swiperElement.loop = true;
+          swiperElement.speed = 6500;
+          swiperElement.grabCursor = true;
+          swiperElement.navigation  = true;
+          swiperElement.initialize();
+        }
+    
 
     // this.signUpForm.get('address.zip')?.valueChanges.subscribe( (value ) => {
     //  const addressGroup = this.signUpForm.get('address') as FormGroup;

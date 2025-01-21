@@ -25,7 +25,7 @@ import { SwiperContainer } from 'swiper/element';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   template: `
     <swiper-container
-    #swiper
+      #swiper
       init="false"
       class="sw-product [mask-image:linear-gradient(to_right,transparent_0,#ffffff_128px,#ffffff_calc(100%_-_128px),transparent_100%)] dark:[mask-image:linear-gradient(to_right,transparent_0,#000000_128px,#000000_calc(100%_-_128px),transparent_100%)]  flex flex-row w-full h-full mx-auto overflow-hidden"
     >
@@ -53,29 +53,27 @@ import { SwiperContainer } from 'swiper/element';
   ],
 })
 export class ProductCarouselComponent implements OnInit {
+  private readonly platformId = inject(PLATFORM_ID);
   products = input.required<ProductCarousel[]>();
-  swiper = viewChild<ElementRef<SwiperContainer>>('swiper');
+  private readonly swiper = viewChild<ElementRef<SwiperContainer>>('swiper');
 
   options = signal<SwiperOptions>({});
-  platformId = inject(PLATFORM_ID);
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-    
       const swiperElement = this.swiper()!.nativeElement;
-      
+
       swiperElement.autoplay = {
         delay: 0,
-        disableOnInteraction: false
+        disableOnInteraction: false,
       };
-      swiperElement.slidesPerView= 'auto';
-      swiperElement.direction= 'horizontal';      
+      swiperElement.slidesPerView = 'auto';
+      swiperElement.slidesPerGroup = 1;
+      swiperElement.direction = 'horizontal';
       swiperElement.loop = true;
-      swiperElement.speed= 4000;
+      swiperElement.speed = 4000;
       swiperElement.grabCursor = true;
       swiperElement.initialize();
-    
     }
   }
-
 }

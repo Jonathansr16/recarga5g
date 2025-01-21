@@ -13,7 +13,7 @@ import { AdvantageList } from 'src/app/interfaces/advantage-list.interface';
             <li class="advantage__li basis-2/4 my-4 w-full lg:w-2/4 pl-3 pr-3">
              
                 <p
-                  class="advantage_label text-small relative z-[2]  block py-3 px-4 rounded-md border-l-2 border-l-red-500 dark:border-l-blue-500 bg-white dark:bg-slate-700 shadow-lg hover:text-white hover:before:w-full before:content-[''] before:transition-[width] before:duration-300 before:rounded-md before:absolute before:-z-[1] before:left-0 before:bottom-0 before:w-0 before:h-full before:bg-red-500 dark:before:bg-blue-500">
+                  class="advantage_label text-sm relative z-[2]  block py-3 px-4 rounded-md border-l-2 border-l-red-500 dark:border-l-blue-500 bg-white dark:bg-slate-700 shadow-lg hover:text-white hover:before:w-full before:content-[''] before:transition-[width] before:duration-300 before:rounded-md before:absolute before:-z-[1] before:left-0 before:bottom-0 before:w-0 before:h-full before:bg-red-500 dark:before:bg-blue-500">
                   {{ option.label }}
                 </p>       
             </li>

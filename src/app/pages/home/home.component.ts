@@ -59,7 +59,7 @@ import { HeroCarousel } from '@interfaces/hero-carousel.interface';
     // BentoItemComponent
 ],
 
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export default class HomeComponent implements OnInit, AfterViewInit {
 
@@ -216,12 +216,12 @@ export default class HomeComponent implements OnInit, AfterViewInit {
       label: 'Obten un porcentaje de comisión por cada venta que realices',
     },
 
-    {
-      id: 5,
-      title: 'Recupera',
-      label:
-        '¡Listo! Así de fácil podrás recuperar tu inversión + una comisión extra a tu negocio, mientras ofrecer venta de recargas',
-    },
+    // {
+    //   id: 5,
+    //   title: 'Recupera',
+    //   label:
+    //     '¡Listo! Así de fácil podrás recuperar tu inversión + una comisión extra a tu negocio, mientras ofrecer venta de recargas',
+    // },
   ];
 
   carosuelAppImages = signal<CarouselApp[]>([

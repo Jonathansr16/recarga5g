@@ -1,6 +1,8 @@
-@use '@fontsource/poppins';
+// @use '@fontsource/poppins';
 @use "@fontsource-variable/material-symbols-outlined";
 @use "@fontsource/material-icons";
+
+
 .material-symbols-outlined {
     font-family: "Material Symbols Outlined";
     font-weight: normal;
@@ -41,12 +43,6 @@
   }
 @tailwind base;
 
-@layer base {
-h1 { @apply lg:text-6xl text-4xl font-bold tracking-tight text-gray-700 md:text-5xl dark:text-white;}
-h2 {  @apply font-bold lg:text-5xl sm:text-4xl text-3xl text-gray-700 dark:text-gray-100;}
-h3 { @apply lg:text-4xl text-3xl font-bold text-slate-700 dark:text-white mb-2;}
-}
-
 
 @tailwind components;
 
@@ -58,7 +54,7 @@ h3 { @apply lg:text-4xl text-3xl font-bold text-slate-700 dark:text-white mb-2;}
 .space-container {@apply px-6 lg:px-8 pb-6 mb-20;}
 .subtitle { @apply text-lg lg:text-2xl text-sky-700 dark:text-red-500 font-semibold;}
 .btn-primary {@apply rounded-lg py-3 px-6 text-sm font-semibold text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] dark:shadow-blue-500/30 dark:hover:shadow-blue-600/20 focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none bg-red-600 border-red-600 dark:bg-blue-600 dark:border-blue-600;}
-.btn-link {@apply text-sky-700 dark:text-red-400 font-semibold;}
+.btn-link {@apply text-sky-700 dark:text-cyan-500 font-semibold;}
 }
 
 @tailwind utilities;

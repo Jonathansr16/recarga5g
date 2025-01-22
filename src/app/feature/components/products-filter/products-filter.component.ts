@@ -6,7 +6,7 @@ import {
   output,
   signal,
 } from '@angular/core';
-import { NgClass } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 import { ProductCarousel } from 'src/app/interfaces/product-carousel.interface';
 import { ProductCarouselService } from '../product-carousel/services/product-carousel.service';
 import { animate, style, transition, trigger } from '@angular/animations';
@@ -17,17 +17,18 @@ import { animate, style, transition, trigger } from '@angular/animations';
     <button
       type="button"
       (click)="handlerCategory()"
-      [ngClass]="{
-        'bg-gray-800 dark:bg-gray-800  text-gray-200':
-          selectedCategory() === titleBtn()
-      }"
+      [class]="
+        selectedCategory() === titleBtn()
+          ? 'bg-gray-800 dark:bg-gray-800 text-gray-200'
+          : 'text-slate-700 dark:text-slate-400'
+      "
       class="transition-colors font-medium px-3 text-sm rounded-lg whitespace-nowrap flex flex-1 gap-[0.625rem] items-center h-8"
     >
       <span>{{ titleBtn() }}</span>
       <ng-content select="[btnIcon]"></ng-content>
     </button>
   `,
-  imports: [NgClass],
+  imports: [CommonModule],
 })
 export class BtnFilterComponent {
   titleBtn = input.required<Category>();
@@ -75,18 +76,16 @@ export class BtnFilterComponent {
         </div>
 
         <div
-          class="products-actions shadow-md p-2 inline-flex item-center flex-wrap rounded-xl justify-center gap-4 bg-gray-900"
+          class="products-actions shadow-md p-2 inline-flex item-center flex-wrap rounded-xl justify-center gap-4 bg-slate-100 dark:bg-gray-900"
         >
           <app-btn-filter
             titleBtn="Todos"
             [selectedCategory]="selectedCategory()"
-            (filterCategory)="setCategory('Todos')"
-          />
+            (filterCategory)="setCategory('Todos')"/>
           <app-btn-filter
             titleBtn="Recargas"
             [selectedCategory]="selectedCategory()"
-            (filterCategory)="setCategory('Recargas')"
-          >
+            (filterCategory)="setCategory('Recargas')">
             <svg
               btnIcon
               xmlns="http://www.w3.org/2000/svg"
@@ -106,8 +105,7 @@ export class BtnFilterComponent {
           <app-btn-filter
             titleBtn="Servicios"
             [selectedCategory]="selectedCategory()"
-            (filterCategory)="setCategory('Servicios')"
-          >
+            (filterCategory)="setCategory('Servicios')">
             <svg
               btnIcon
               xmlns="http://www.w3.org/2000/svg"
@@ -127,8 +125,7 @@ export class BtnFilterComponent {
           <app-btn-filter
             titleBtn="Pines"
             [selectedCategory]="selectedCategory()"
-            (filterCategory)="setCategory('Pines')"
-          >
+            (filterCategory)="setCategory('Pines')">
             <svg
               btnIcon
               xmlns="http://www.w3.org/2000/svg"
@@ -149,37 +146,258 @@ export class BtnFilterComponent {
       </div>
 
       <div class="products">
-        <div class="product-section flex flex-row gap-4">
-
-      
-        @switch (selectedCategory()) { 
-          @case ('Todos') {
-       
+        <div class="product-section flex flex-wrap lg:flex-nowrap flex-row gap-4 overflow-hidden">
+          @switch (selectedCategory()) { 
+          
+            @case ('Todos') {
           <div
-            class="product-section-col relative w-1/2 flex flex-col justify-center animate-fade-in">
+            class="w-full lg:w-1/2  product-section-col relative flex flex-col justify-center animate-slide-in-top"
+          >
             <h3 class="text-4xl text-slate-700 dark:text-white font-semibold">
               Todos nuestros productos
             </h3>
 
-            <p class="mt-8 text-slate-600 dark:text-slate-300 max-w-2xl text-balance">En un mundo en constante evolución, los negocios que innovan son los que se mantienen relevantes. 
-              Si buscas ofrecer más valor a tus clientes y aumentar tus ingresos, nuestros servicios son la elección ideal. Te ofrecemos herramientas prácticas, rentables y fáciles de implementar para que transformes tu negocio en un punto de referencia.</p>
+            <p
+              class="mt-8 text-slate-600 dark:text-slate-300 max-w-2xl text-balance"
+            >
+              En un mundo en constante evolución, los negocios que innovan son
+              los que se mantienen relevantes. Si buscas ofrecer más valor a tus
+              clientes y aumentar tus ingresos, nuestros servicios son la
+              elección ideal. Te ofrecemos herramientas prácticas, rentables y
+              fáciles de implementar para que transformes tu negocio en un punto
+              de referencia.
+            </p>
+
+            <ul class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4 mt-8">
+              <li class="flex gap-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  class="size-6"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"
+                  />
+                </svg>
+                <p>Cientos de compañia de telefonia y servicios</p>
+              </li>
+
+              <li class="flex gap-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  class="size-6"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"
+                  />
+                </svg>
+                <p>
+                  Venta de recargas, pago de servicios y pines en una sola
+                  plataforma
+                </p>
+              </li>
+
+              <li class="flex gap-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  class="size-6"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"
+                  />
+                </svg>
+                <p>Seguro y confiable</p>
+              </li>
+
+              <li class="flex gap-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  class="size-6"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"
+                  />
+                </svg>
+                <p>Comisiones mejores del mercado</p>
+              </li>
+            </ul>
           </div>
-          <div class="product-section-col w-1/2 animate-slide-up-fade">
-            <div class="relative bg-gray-100 before:absolute before:inset-0 before:scale-x-110 before:border-y before:border-gray-200 after:absolute after:inset-0 after:scale-y-110 after:border-x after:border-gray-200 dark:bg-gray-800 dark:before:border-gray-700 dark:after:border-gray-700">
-              <div class="relative h-96 overflow-clip py-10 sm:h-[32rem] lg:p-20">
-                <img src="assets/img/registro.webp" class="mx-auto rounded-t-3xl border object-cover object-top shadow-2xl dark:border-transparent" alt="">
+          <div
+            class="w-full lg:w-1/2 animate-slide-up-fade relative bg-gray-100 before:absolute before:inset-0 before:scale-x-110 before:border-y before:border-gray-200 after:absolute after:inset-0 after:scale-y-110 after:border-x after:border-gray-200 dark:bg-gray-800 dark:before:border-gray-700 dark:after:border-gray-700">
+            <div
+              class="circle-shape-wrapper absolute bottom-0 left-2/4 -translate-x-2/4  pointer-events-none "
+              aria-hidden="true"
+            >
+              <div
+                class="circle-shape blur-[160px] opacity-80 bg-gradient-to-tr from-blue-500 to-blue-500/30 rounded-full size-80 -z-0"
+              ></div>
+            </div>
+
+            <div class="relative h-96 overflow-clip py-10 sm:h-[32rem] lg:p-20">
+              <img
+                src="assets/img/companies/devices.webp"
+                class="mx-auto rounded-t-3xl object-cover object-top  dark:border-transparent"
+                alt=""
+              />
+            </div>
+          </div>
+          } 
+
+           @case('Recargas') {
+          <div
+            class="relative w-full lg:w-1/2 flex flex-col justify-center animate-slide-in-top"
+          >
+            <h3 class="text-4xl text-slate-700 dark:text-white font-semibold">
+              Recargas electrónicas
+            </h3>
+            <p
+              class="mt-8 text-slate-600 dark:text-slate-300 max-w-2xl text-balance"
+            >
+              En un mundo en constante evolución, los negocios que innovan son
+              los que se mantienen relevantes. Si buscas ofrecer más valor a tus
+              clientes y aumentar tus ingresos, nuestros servicios son la
+              elección ideal. Te ofrecemos herramientas prácticas, rentables y
+              fáciles de implementar para que transformes tu negocio en un punto
+              de referencia.
+            </p>
+          </div>
+          <div class="w-full lg:w-1/2 animate-slide-up-fade">
+            <div
+              class="relative bg-gray-100 before:absolute before:inset-0 before:scale-x-110 before:border-y before:border-gray-200 after:absolute after:inset-0 after:scale-y-110 after:border-x after:border-gray-200 dark:bg-gray-800 dark:before:border-gray-700 dark:after:border-gray-700"
+            >
+              <div
+                class="circle-shape-wrapper absolute bottom-0 left-2/4 -translate-x-2/4  pointer-events-none "
+                aria-hidden="true"
+              >
+                <div
+                  class="circle-shape blur-[160px] opacity-80 bg-gradient-to-tr from-blue-500 to-blue-500/30 rounded-full size-80 -z-0"
+                ></div>
+              </div>
+              <div
+                class="relative h-96 overflow-clip py-10 sm:h-[32rem] lg:p-20"
+              >
+                <img
+                  src="assets/img/companies/recargas.webp"
+                  class="mx-auto rounded-t-3xl object-cover object-top  dark:border-transparent"
+                  alt=""
+                />
               </div>
             </div>
           </div>
-      
-        } @case('Recargas') { 
+          } 
 
-        } @case('Servicios'){
-
-         } @case('Pines') {
-          
-          } }
+          @case('Servicios') {
+          <div
+            class="relative w-full lg:w-1/2 flex flex-col justify-center animate-fade-in"
+          >
+            <h3 class="text-4xl text-slate-700 dark:text-white font-semibold">
+              Pago de servicios
+            </h3>
+            <p
+              class="mt-8 text-slate-600 dark:text-slate-300 max-w-2xl text-balance"
+            >
+              En un mundo en constante evolución, los negocios que innovan son
+              los que se mantienen relevantes. Si buscas ofrecer más valor a tus
+              clientes y aumentar tus ingresos, nuestros servicios son la
+              elección ideal. Te ofrecemos herramientas prácticas, rentables y
+              fáciles de implementar para que transformes tu negocio en un punto
+              de referencia.
+            </p>
           </div>
+          <div class="col w-full lg:w-1/2 animate-slide-up-fade">
+            <div
+              class="relative bg-gray-100 before:absolute before:inset-0 before:scale-x-110 before:border-y before:border-gray-200 after:absolute after:inset-0 after:scale-y-110 after:border-x after:border-gray-200 dark:bg-gray-800 dark:before:border-gray-700 dark:after:border-gray-700"
+            >
+              <div
+                class="circle-shape-wrapper absolute bottom-0 left-2/4 -translate-x-2/4  pointer-events-none "
+                aria-hidden="true"
+              >
+                <div
+                  class="circle-shape blur-[160px] opacity-80 bg-gradient-to-tr from-blue-500 to-blue-500/30 rounded-full size-80 -z-0"
+                ></div>
+              </div>
+
+              <div
+                class="relative h-96 overflow-clip py-10 sm:h-[32rem] lg:p-20"
+              >
+                <img
+                  src="assets/img/companies/servicios.webp"
+                  class="mx-auto rounded-t-3xl object-cover object-top  dark:border-transparent"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          } 
+
+          @case('Pines') {
+          <div
+            class="relative w-full lg:w-1/2 flex flex-col justify-center animate-fade-in"
+          >
+            <h3 class="text-4xl text-slate-700 dark:text-white font-semibold">
+              Pines
+            </h3>
+            <p
+              class="mt-8 text-slate-600 dark:text-slate-300 max-w-2xl text-balance"
+            >
+              En un mundo en constante evolución, los negocios que innovan son
+              los que se mantienen relevantes. Si buscas ofrecer más valor a tus
+              clientes y aumentar tus ingresos, nuestros servicios son la
+              elección ideal. Te ofrecemos herramientas prácticas, rentables y
+              fáciles de implementar para que transformes tu negocio en un punto
+              de referencia.
+            </p>
+          </div>
+          <div class="col w-full lg:w-1/2 animate-slide-up-fade">
+            <div
+              class="relative bg-gray-100 before:absolute before:inset-0 before:scale-x-110 before:border-y before:border-gray-200 after:absolute after:inset-0 after:scale-y-110 after:border-x after:border-gray-200 dark:bg-gray-800 dark:before:border-gray-700 dark:after:border-gray-700"
+            >
+              <div
+                class="circle-shape-wrapper absolute bottom-0 left-2/4 -translate-x-2/4  pointer-events-none "
+                aria-hidden="true"
+              >
+                <div
+                  class="circle-shape blur-[160px] opacity-80 bg-gradient-to-tr from-blue-500 to-blue-500/30 rounded-full size-80 -z-0"
+                ></div>
+              </div>
+
+              <div
+                class="relative h-96 overflow-clip py-10 sm:h-[32rem] lg:p-20"
+              >
+                <img
+                  src="assets/img/companies/pines.webp"
+                  class="mx-auto rounded-t-3xl object-cover object-top  dark:border-transparent"
+                  alt="pines electrónicos"
+                />
+              </div>
+            </div>
+          </div>
+          } 
+        }
+        </div>
         <!-- <ul
           class="products-list flex flex-row flex-wrap items-center justify-center  gap-x-6 gap-y-12"
         >

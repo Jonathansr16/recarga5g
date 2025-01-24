@@ -10,7 +10,7 @@ export class PagaquiService {
     {
       id: 1,
       img: {
-        lightUrl: '/assets/img/plataformas/pagaqui/app-pagaqui__sesion.webp',
+        src: '/assets/img/plataformas/pagaqui/app-pagaqui__sesion.webp',
         alt: 'Inicio de sesión a sistema de recargas',
       },
     },
@@ -18,7 +18,7 @@ export class PagaquiService {
     {
       id: 2,
       img: {
-        lightUrl: '/assets/img/plataformas/pagaqui/app-pagaqui__home.webp',
+        src: '/assets/img/plataformas/pagaqui/app-pagaqui__home.webp',
         alt: 'Pantalla principal',
       },
     },
@@ -26,7 +26,7 @@ export class PagaquiService {
     {
       id: 3,
       img: {
-        lightUrl: '/assets/img/plataformas/pagaqui/app-pagaqui__servicios.webp',
+        src: '/assets/img/plataformas/pagaqui/app-pagaqui__servicios.webp',
         alt: 'Sistema para pago de servicios',
       },
     },
@@ -34,7 +34,7 @@ export class PagaquiService {
     {
       id: 4,
       img: {
-        lightUrl: '/assets/img/plataformas/pagaqui/app-pagaqui__pines.webp',
+        src: '/assets/img/plataformas/pagaqui/app-pagaqui__pines.webp',
         alt: 'Sistema para venta de tarjetas de regalo',
       },
     },

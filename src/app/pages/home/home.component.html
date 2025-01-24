@@ -25,11 +25,6 @@
 
   <div
     class="hero-container animate-fade-in-up text-balance z-10 max-w-screen-lg flex items-center justify-center flex-col mt-24 mx-auto pt-6 px-6 lg:px-8 pb-6">
-    <!-- <span
-      class="bg-purple-100 dark:bg-sky-50 uppercase border-purple-200 dark:border-sky-200 border text-purple-600 dark:text-sky-600 -ml-px rounded-full text-sm font-semibold px-3 py-1"
-    >
-      Excelentes comisiones
-    </span> -->
 
     <div
       class="font-medium text-base py-[0.375rem] px-4 rounded-md bg-purple-100 text-indigo-800 dark:text-slate-300 dark:bg-sky-300/10 shadow-sm inline-flex items-center gap-2">
@@ -381,10 +376,10 @@
             *ngFor="let item of listApp; index as i">
             <div class="app-recargas-step-row flex flex-row">
               <div class="app-recargas-step-col mr-4">
-                <i class="app-recargas-i text-base font-semibold rounded-full bg-red-700 dark:bg-blue-100 text-white dark:text-blue-700 w-4 h-4 p-4 flex items-center justify-center"
+                <span class="app-recargas-i text-base font-semibold rounded-full bg-red-700 dark:bg-blue-100 text-white dark:text-blue-700 w-4 h-4 p-4 flex items-center justify-center"
                   aria-hidden="true">
                   {{ item.id }}
-                </i>
+                </span>
               </div>
 
               <div class="app-recargas-step-col">
@@ -412,17 +407,17 @@
 <section class="section-inversion space-container">
   <div class="inversion__container container mx-auto">
     <div
-    class="font-medium text-base py-[0.375rem] px-4 rounded-md bg-purple-100 text-indigo-800 dark:text-slate-300 dark:bg-sky-300/10 shadow-sm flex items-center justify-center max-w-48 mx-auto w-full-44 gap-2 mb-4">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-      class="size-6">
-      <path stroke-linecap="round" stroke-linejoin="round"
-        d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-    </svg>
-    <span>
-      Inversión minima
-    </span>
+      class="font-medium text-base py-[0.375rem] px-4 rounded-md bg-purple-100 text-indigo-800 dark:text-slate-300 dark:bg-sky-300/10 shadow-sm flex items-center justify-center max-w-48 mx-auto w-full-44 gap-2 mb-4">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+      </svg>
+      <span>
+        Inversión minima
+      </span>
 
-  </div>
+    </div>
     <!-- <span class="subtitle block text-center">Inversión minima</span> -->
 
     <h3 class="inversion-titles__h2 text-3xl lg:text-5xl pb-2 text-center">
@@ -538,14 +533,18 @@
       adaptado para ti
     </span> -->
     <div
-    class="font-medium text-base py-[0.375rem] px-4 rounded-md bg-purple-100 text-indigo-800 dark:text-slate-300 dark:bg-sky-300/10 shadow-sm flex items-center justify-center max-w-48 mx-auto w-full-44 gap-2 mb-4">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z"/></svg>
- 
-    <span>
-      adaptado para ti
-    </span>
+      class="font-medium text-base py-[0.375rem] px-4 rounded-md bg-purple-100 text-indigo-800 dark:text-slate-300 dark:bg-sky-300/10 shadow-sm flex items-center justify-center max-w-48 mx-auto w-full-44 gap-2 mb-4">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6"
+        viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z" />
+      </svg>
 
-  </div>
+      <span>
+        adaptado para ti
+      </span>
+
+    </div>
     <h2 class="business-title mb-4 text-center text-4xl md:text-5xl lg:text-6xl">
       Venta de recargas para
       <span class="text-primary">todo tipo de negocio</span>
@@ -570,71 +569,20 @@
   </div>
 </section>
 
-<app-sales-method [titleChannel]="'Como vender recargas Bait'"></app-sales-method>
-
-<!-- <section class="section-about space-container" aria-labelledby="about-heading">
+<section class="section-method-sales">
   <div
-    class="about__container max-w-screen-xl mx-auto app-recargas-row grid lg:grid-cols-2 justify-center items-center gap-4 mt-8"
-  >
-    <div class="about-col lg:pr-4">
-      <div
-        class="relative overflow-hidden rounded-3xl bg-gray-900 px-6 pb-9 pt-64 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10"
-      >
-        <img
-          class="absolute inset-0 h-full w-full object-cover"
-          src="https://images.unsplash.com/photo-1630569267625-157f8f9d1a7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2669&q=80"
-          alt="Equipo de recargas electrónicas"
-          loading="lazy"
-        />
-        <div
-          class="absolute inset-0 bg-gray-900 opacity-50 mix-blend-multiply"
-        ></div>
-        <figure class="relative isolate">
-          <blockquote class="mt-6 text-xl font-semibold leading-8 text-white">
-            <p>
-              “"Nuestra misión es expandir nuestra red de venta de recargas para
-              cualquier negocio, con las mejores comisiones, es por ello que
-              seguimos innovando de manera constante, para ofrecerte un servicio
-              de calidad"”
-            </p>
-          </blockquote>
-          <figcaption class="mt-6 text-sm leading-6 text-gray-300">
-            <strong class="font-semibold text-white text-primary"
-              >Recargas Electróncias</strong
-            >
-            ,Distribuidor oficial
-          </figcaption>
-        </figure>
-      </div>
-    </div>
+  class="font-medium text-base py-[0.375rem] px-4 rounded-md bg-purple-100 text-indigo-800 dark:text-slate-300 dark:bg-sky-300/10 shadow-sm flex justify-center max-w-96 mx-auto items-center gap-2">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5a17.92 17.92 0 0 1-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+  <span>
+    elige la mejor manera para vender recargas
+  </span>
 
-    <div class="about-col">
-      <p class="subtitle">Un poco sobre nosotros</p>
-      <h2 id="about-heading" class="mt-2 title-2">Recargas Electrónicas</h2>
-      <div class="max-w-xl">
-        <p class="mt-6 text">
-          Somos la empresa distribuidora oficial en venta de recargas
-          electrónicas para negocios, con mas de +20 años en el mercado.
-        </p>
-        <p class="mt-6 text">
-          Con una amplia red de clientes en todo el territorio mexicano de
-          respaldo.
-        </p>
-        <p class="mt-6 text">
-          Seguimos de manera constante innovando para ofrecerte un servicio de
-          calidad.
-        </p>
-
-        <dl
-          class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-8 border-t border-gray-900/10 pt-10"
-          aria-label="Estadísticas de nuestra empresa"
-        >
-  
-        </dl>
-      </div>
-    </div>
-  </div>
-</section> -->
+</div>
+  <h2 class="text-4xl lg:text-5xl text-center mb-8 font-semibold">¿Como vender 
+   <span class="text-primary">recargas?</span>
+  </h2>
+  <app-sales-method></app-sales-method>
+</section>
 
 <section class="section-about">
   <div class="container mx-auto grid grid-cols-10 gap-4 px-4 py-20">
@@ -648,7 +596,7 @@
 
 
       <div
-        class="about-col relative flex flex-col gap-1 z-20 p-6 group group-hover:scale-110 transition-scale duration-1000 ease-in-out ">
+        class="about-col relative flex flex-col gap-1 z-20 p-6">
 
         <!-- CIRCLES -->
         <div class="circle-shape-wrapper absolute right-0 top-0 pointer-events-none -z-1" aria-hidden="true">
@@ -664,7 +612,13 @@
 
         </div>
 
-        <span class="text-purple-700 dark:text-cyan-500 font-semibold">¿Quienes somos?</span>
+        <div
+        class="font-medium text-base py-[0.375rem] px-4 rounded-md bg-purple-100 text-indigo-800 dark:text-slate-300 dark:bg-sky-300/10 shadow-sm flex items-center max-w-52 w-full-44 gap-2 mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/></svg>
+        <span>
+          ¿Quienes somos?
+        </span>
+      </div>
         <h2 class="text text-balance mb-4 text-3xl font-semibold">
           Recarga5g.com
         </h2>
@@ -735,7 +689,14 @@
       </div>
 
       <div class="select-none flex flex-col gap-1 z-20 p-6 justify-end h-full max-w-3xl">
-        <span class="text-purple-700  dark:text-cyan-500 font-semibold">Nuestras estadisticas</span>
+        <div
+        class="font-medium text-base py-[0.375rem] px-4 rounded-md bg-purple-100 text-indigo-800 dark:text-slate-300 dark:bg-sky-300/10 shadow-sm flex items-center max-w-52 w-full-44 gap-2 mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75Zm6.75-4.5c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625Zm6.75-4.5c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z"/></svg>
+
+        <span>
+          ¿Quienes somos?
+        </span>
+      </div>
         <h2 class="text text-balance mb-4 text-3xl font-semibold">
           Trayectoria
         </h2>
@@ -764,7 +725,13 @@
     <article
       class="col-span-10 md:col-span-4 relative rounded-lg backdrop-blur-md border border-gray-400/50 shadow-inner shadow-white/10">
       <div class="select-none flex flex-col gap-1 z-20 p-6 justify-end h-full">
-        <span class="text-purple-700 dark:text-cyan-500 font-semibold">Nuestra misión</span>
+        <div
+        class="font-medium text-base py-[0.375rem] px-4 rounded-md bg-purple-100 text-indigo-800 dark:text-slate-300 dark:bg-sky-300/10 shadow-sm flex items-center max-w-52 w-full-44 gap-2 mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"/></svg>
+        <span>
+         Nuestra misión
+        </span>
+      </div>
         <h2 class="text text-balance mb-4 text-3xl font-semibold">
           Venta de de recargas telefónicas
         </h2>
@@ -777,7 +744,7 @@
             de calidad"”
           </p>
         </blockquote>
-        <figcaption class="mt-6 text-sm leading-6 text-gray-700">
+        <figcaption class="mt-6 text-sm leading-6 text-gray-700 dark:text-gray-300">
           <strong class="font-semibold dark:text-white">Recargas Electróncias</strong>, Distribuidor oficial
         </figcaption>
       </div>
@@ -785,10 +752,25 @@
   </div>
 </section>
 
-<app-register-steps></app-register-steps>
+<section class="section-register">
+  <div
+  class="font-medium text-base py-[0.375rem] px-4 rounded-md bg-purple-100 text-indigo-800 dark:text-slate-300 dark:bg-sky-300/10 shadow-sm flex mx-auto items-center w-full max-w-[227px] gap-2">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+    class="size-6">
+    <path stroke-linecap="round" stroke-linejoin="round"
+      d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+  </svg>
+  <span>
+    Excelentes comisiones
+  </span>
+
+</div>
+<h2 class="text-4xl lg:text-5xl text-center font-medium">Registro para venta de recargas</h2>
+  <app-register-steps></app-register-steps>
+</section>
 
 <section
-  class="section-dudas container mx-auto px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 bg-red-600 dark:bg-blue-900 rounded-3xl">
+  class="section-dudas container mx-auto shadow-sm px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 bg-gradient-to-br from-red-700 to-red-900 dark:from-blue-700 dark:to-blue-900 rounded-3xl mb-20">
   <div class="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16">
     <div class="mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right">
       <h2 class="text-3xl font-bold sm:text-4xl text-white">¿Dudas?</h2>
@@ -798,7 +780,7 @@
         asesor te atendera con mucho gusto
       </p>
 
-      <a routerLink="/registro" class="mt-8 inline-block rounded bg-white text-red-700 px-12 py-3 text-sm font-medium">
+      <a routerLink="/registro" class="mt-8 inline-block rounded bg-white text-red-700 dark:text-blue-700 px-12 py-3 text-sm font-medium">
         Registrarme
       </a>
     </div>

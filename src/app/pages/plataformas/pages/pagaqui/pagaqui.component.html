@@ -12,41 +12,65 @@
     </div>
 </section>
 
-<div class="section-carousel-pagaqui my-20">
+<section class="section-carousel-pagaqui my-20">
     <app-product-carousel [products]="productCarousel()"></app-product-carousel>
-</div>
+</section>
 
 
 <section class="section-sistema-pagaqui px-4 sm:px-6 lg:px-8 mb-20">
-    <div class="sistema-pagaqui__container container mx-auto grid grid-cols-1 lg:grid-cols-[1fr,1fr] justify-between gap-4">
-      <div class="sistema-pagaqui__left">
-        <p class="sistema-pagaqui__p relative subtitle">
-          Plataforma segura e intuitiva
-        </p>
-        <h1 class="sistema-pagaqui__h3 title-1 pb-4">
-          Venta de recargas electrónicas
-          <span class="text-strong">7% comisión</span>
-        </h1>
+    <div
+        class="sistema-pagaqui__container relative container mx-auto grid grid-cols-1 lg:grid-cols-[1fr,1fr] justify-between gap-4">
 
-        <p class="sistema-pagaqui__p text mb-4">
-            Con <strong>Pagaqui</strong> obten una comisión extra por cada venta que realices
-        </p>
+        <div class="circle-shape-wrapper absolute top-0 left-2/4 pointer-events-none -translate-x-2/4"
+            aria-hidden="true">
+            <div
+                class="circle-shape blur-[160px] opacity-50 bg-gradient-to-tr from-blue-500 to-blue-100 rounded-full size-80 -z-0">
+            </div>
+        </div>
 
-        <p class="sistema-pagaqui__p text line-2 mb-4">
-            Con un unico saldo podras ofrecer a tus clientes <strong> venta de recargas a cualquier
-                compañia, pago de servicios y tarjeta de regalo</strong>.
-            Aprovecha la <strong>comisión por venta</strong> y genera ingresos adicionales. El registro es
-            totalmente gratuito, podras obtener asesoria personalizada
-            ante cualquier duda o inquietud acerca de la plataforma o depósitos.
-        </p>
+        <div class="circle-shape-wrapper absolute top-0 left-0 pointer-events-none" aria-hidden="true">
+            <div
+              class="circle-shape blur-[160px] opacity-50 bg-gradient-to-br from-blue-500 to-purple-400 rounded-full size-80 -z-0">
+            </div>
+          </div>
+
+        <div class="sistema-pagaqui__left">
+            <div
+                class="font-medium text-base py-[0.375rem] px-4 rounded-md bg-purple-100 text-indigo-800 dark:text-slate-300 dark:bg-sky-300/10 shadow-sm inline-flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                <span>
+                    Excelentes comisiones
+                </span>
+
+            </div>
+            <h1 class="sistema-pagaqui__1 text-[2.75rem] xl:text-6xl text-balance font-bold">
+                Venta de recargas electrónicas
+                <span class="text-span text-primary">7% comisión</span>
+            </h1>
+
+            <p class="sistema-pagaqui__p text mb-4">
+                Con <strong>Pagaqui</strong> obten una comisión extra por cada venta que realices
+            </p>
+
+            <p class="sistema-pagaqui__p text line-2 mb-4">
+                Con un unico saldo podras ofrecer a tus clientes <strong> venta de recargas a cualquier
+                    compañia, pago de servicios y tarjeta de regalo</strong>.
+                Aprovecha la <strong>comisión por venta</strong> y genera ingresos adicionales. El registro es
+                totalmente gratuito, podras obtener asesoria personalizada
+                ante cualquier duda o inquietud acerca de la plataforma o depósitos.
+            </p>
 
 
-        <p class="sistema-pagaqui__p text line-2 mb-4">
-            El sistema de recargas seguro, confiable respaldado con miles de clientes en todo el territorio
-            mexicano, ¿Te quedaste sin saldo?, no te preocupes, puede generar desde nuestra plataforma
-            tu numero de referencia y realizar tus compras en los establecimientos participantes los 24/7
-            los 365 días del año incluyendo dias festivos y días domingo.
-        </p>
+            <p class="sistema-pagaqui__p text line-2 mb-4">
+                El sistema de recargas seguro, confiable respaldado con miles de clientes en todo el territorio
+                mexicano, ¿Te quedaste sin saldo?, no te preocupes, puede generar desde nuestra plataforma
+                tu numero de referencia y realizar tus compras en los establecimientos participantes los 24/7
+                los 365 días del año incluyendo dias festivos y días domingo.
+            </p>
 
             <ul class="sistema-pagaqui__ul flex flex-wrap items-center mt-4  ">
                 <li class="sistema-pagaqui__li  basis-2/4 my-4 w-full lg:max-w-[50%] pl-3 pr-3">
@@ -74,24 +98,25 @@
                     </span>
                 </li>
             </ul>
-        
-      </div>
 
-      <div class="sistema-pagaqui__right">
-        <img src="/assets/img/plataformas/pagaqui/recargas-pagaqui.webp" class="sistema-pagaqui__img max-w-[650px] mx-auto w-full h-auto "
-          matTooltip="Venta de recargas para celulares, computadoras y via SMS" loading="lazy"
-          alt="Venta de recargas pagaqui" />
-      </div>
+        </div>
+
+        <div class="sistema-pagaqui__right">
+            <img src="/assets/img/plataformas/pagaqui/recargas-pagaqui.webp"
+                class="sistema-pagaqui__img max-w-[650px] mx-auto w-full h-auto "
+                matTooltip="Venta de recargas para celulares, computadoras y via SMS" loading="lazy"
+                alt="Venta de recargas pagaqui" />
+        </div>
     </div>
 </section>
 
 
 <section class="section-app-pagaqui px-4 sm:px-6 lg:px-8 mb-20">
     <div class="app-pagaqui__container container mx-auto">
-        <p
-            class="app-pagaqui-plataforma__subtitle text-2xl text-red-700 dark:text-blue-400 font-semibold  text-center">
+        <p class="app-pagaqui-plataforma__subtitle text-2xl text-red-700 dark:text-blue-400 font-semibold  text-center">
             App para venta de recargas, pago de servicios bait</p>
-        <h2 class="app-pagaqui__h2 text-3xl lg:text-4xl text-slate-700 dark:text-white font-bold text-center">App Pagaqui</h2>
+        <h2 class="app-pagaqui__h2 text-3xl lg:text-4xl text-slate-700 dark:text-white font-bold text-center">App
+            Pagaqui</h2>
 
         <div class="app-pagaqui__row flex justify-center items-center flex-wrap mt-10">
 
@@ -100,14 +125,16 @@
                 <ul class="app-pagaqui__ul flex flex-wrap flex-col">
 
 
-                    <li class="app-pagaqui__li relative mb-[30px] pt-[10px] pb-[10px] pl-14 before:absolute before:content-[counter(indexApp)] before:top-3 before:left-0 before:text-2xl before:size-8 before:text-center before:rounded-full before:bg-red-100 before:text-red-700">
+                    <li
+                        class="app-pagaqui__li relative mb-[30px] pt-[10px] pb-[10px] pl-14 before:absolute before:content-[counter(indexApp)] before:top-3 before:left-0 before:text-2xl before:size-8 before:text-center before:rounded-full before:bg-red-100 before:text-red-700">
                         <p class="text-sm lg:text-base text-gray-700 dark:text-gray-300">
                             Descarga la app desde la tienda oficial como <strong>Pagaqui</strong>
                         </p>
 
                     </li>
 
-                    <li class="app-pagaqui__li relative mb-[30px] pt-[10px] pb-[10px] pl-14 before:absolute before:content-[counter(indexApp)] before:top-3 before:left-0 before:text-2xl before:size-8 before:text-center before:rounded-full before:bg-red-100 before:text-red-700">
+                    <li
+                        class="app-pagaqui__li relative mb-[30px] pt-[10px] pb-[10px] pl-14 before:absolute before:content-[counter(indexApp)] before:top-3 before:left-0 before:text-2xl before:size-8 before:text-center before:rounded-full before:bg-red-100 before:text-red-700">
                         <p class="text-sm lg:text-base text-gray-700 dark:text-gray-300">
                             Si ya eres cliente <a class="text-base font-medium text-blue-600" href="">Pagaqui</a> o de
                             <strong>Recargas electrónicas</strong>,
@@ -116,29 +143,33 @@
 
                     </li>
 
-                    <li class="app-pagaqui__li relative mb-[30px] pt-[10px] pb-[10px] pl-14 before:absolute before:content-[counter(indexApp)] before:top-3 before:left-0 before:text-2xl before:size-8 before:text-center before:rounded-full before:bg-red-100 before:text-red-700">
+                    <li
+                        class="app-pagaqui__li relative mb-[30px] pt-[10px] pb-[10px] pl-14 before:absolute before:content-[counter(indexApp)] before:top-3 before:left-0 before:text-2xl before:size-8 before:text-center before:rounded-full before:bg-red-100 before:text-red-700">
                         <p class="text-sm lg:text-base text-gray-700 dark:text-gray-300">
                             Consulta y depósita un monto minimo de $100 a alguna de las cuentas de <b>TAE SA DE CV</b>
                         </p>
 
                     </li>
 
-                    <li class="app-pagaqui__li relative mb-[30px] pt-[10px] pb-[10px] pl-14 before:absolute before:content-[counter(indexApp)] before:top-3 before:left-0 before:text-2xl before:size-8 before:text-center before:rounded-full before:bg-red-100 before:text-red-700">
+                    <li
+                        class="app-pagaqui__li relative mb-[30px] pt-[10px] pb-[10px] pl-14 before:absolute before:content-[counter(indexApp)] before:top-3 before:left-0 before:text-2xl before:size-8 before:text-center before:rounded-full before:bg-red-100 before:text-red-700">
                         <p class="text-sm lg:text-base text-gray-700 dark:text-gray-300">
                             Notifica tu pago
                         </p>
 
                     </li>
 
-                    <li class="app-pagaqui__li relative mb-[30px] pt-[10px] pb-[10px] pl-14 before:absolute before:content-[counter(indexApp)] before:top-3 before:left-0 before:text-2xl before:size-8 before:text-center before:rounded-full before:bg-red-100 before:text-red-700">
+                    <li
+                        class="app-pagaqui__li relative mb-[30px] pt-[10px] pb-[10px] pl-14 before:absolute before:content-[counter(indexApp)] before:top-3 before:left-0 before:text-2xl before:size-8 before:text-center before:rounded-full before:bg-red-100 before:text-red-700">
                         <p class="text-sm lg:text-base text-gray-700 dark:text-gray-300">
                             Obten el saldo correspondiente
                         </p>
 
                     </li>
 
-                    <li class="app-pagaqui__li relative mb-[30px] pt-[10px] pb-[10px] pl-14 before:absolute before:content-[counter(indexApp)] before:top-3 before:left-0 before:text-2xl before:size-8 before:text-center before:rounded-full before:bg-red-100 before:text-red-700">
-                       
+                    <li
+                        class="app-pagaqui__li relative mb-[30px] pt-[10px] pb-[10px] pl-14 before:absolute before:content-[counter(indexApp)] before:top-3 before:left-0 before:text-2xl before:size-8 before:text-center before:rounded-full before:bg-red-100 before:text-red-700">
+
                         <p class="text-sm lg:text-base text-gray-700 dark:text-gray-300">
                             Realiza una venta y obten una comisión extra
                         </p>
@@ -154,8 +185,10 @@
             </div>
 
             <div class="app-pagaqui-col w-full lg:w-[30%]">
-                <h3 class="app-pagaqui__h3 font-semibold text-3xl text-gray-700 dark:text-white text-center">Descarga la aplicación</h3>
-                <p class="app-pagaqui__p text-gray-700 dark:text-gray-300 text-sm my-4 text-center">Bajate hoy mismo la app, empieza a realizar a cualquier compañia de telefonia, disponible para Android y IOS</p>
+                <h3 class="app-pagaqui__h3 font-semibold text-3xl text-gray-700 dark:text-white text-center">Descarga la
+                    aplicación</h3>
+                <p class="app-pagaqui__p text-gray-700 dark:text-gray-300 text-sm my-4 text-center">Bajate hoy mismo la
+                    app, empieza a realizar a cualquier compañia de telefonia, disponible para Android y IOS</p>
                 <div class="justify-center items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
                     <a href="#"
                         class="w-full sm:w-auto flex bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 text-white rounded-lg items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
@@ -195,30 +228,35 @@
 
 
 <section class="section-comision-pagaqui px-4 sm:px-6 lg:px-8 mb-20">
-        <div class="comision-pagaqui container mx-auto bg-gradient-to-tr from-red-600 to-red-800 py-20 px-14 rounded-3xl">
-            <h3 class="text-3xl font-semibold text-white text-center mb-4">Comisión por recargas</h3>
-            
-            <p class="text-base text-white leading-relaxed">
-                Con tu equipo de trabajo: Computadora o smartphone podras realizar ventas desde la plataforma o via SMS gratuito,
-                para todo tipo de negocio: cyber, tiendita de la esquina, abarrotes, farmacia, zapateria, vinoteria, ferreteria, etc.
-            </p>
+    <div class="comision-pagaqui container mx-auto bg-gradient-to-tr from-red-600 to-red-800 py-20 px-14 rounded-3xl">
+        <h3 class="text-3xl font-semibold text-white text-center mb-4">Comisión por recargas</h3>
 
-            <b class="text-white inline-block py-2">Telcel, Bait, Unefon, Movistar, AT&T, Internet del bienestar, rincel, Axios Mobile, Vasanta, Telmovil, Weex, FreedomPop, Wimo telecom</b>
-            <br>
-            <a href="https://youtu.be/GXyTKAV-Ur4?si=v0X5O2MgcB43LQpx" target="_blank" (click)="openVideo()"
-                    class="flex cursor-pointer items-center justify-center size-14 mt-4 mx-auto bg-white p-4 rounded-[50%] font-sans text-xs font-bold uppercase text-red-700 shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+        <p class="text-base text-white leading-relaxed">
+            Con tu equipo de trabajo: Computadora o smartphone podras realizar ventas desde la plataforma o via SMS
+            gratuito,
+            para todo tipo de negocio: cyber, tiendita de la esquina, abarrotes, farmacia, zapateria, vinoteria,
+            ferreteria, etc.
+        </p>
 
-             
-                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
-                      </svg>        
-                   
-                  
-            </a>
+        <b class="text-white inline-block py-2">Telcel, Bait, Unefon, Movistar, AT&T, Internet del bienestar, rincel,
+            Axios Mobile, Vasanta, Telmovil, Weex, FreedomPop, Wimo telecom</b>
+        <br>
+        <a href="https://youtu.be/GXyTKAV-Ur4?si=v0X5O2MgcB43LQpx" target="_blank" (click)="openVideo()"
+            class="flex cursor-pointer items-center justify-center size-14 mt-4 mx-auto bg-white p-4 rounded-[50%] font-sans text-xs font-bold uppercase text-red-700 shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
 
-          
 
-            <!-- <div 
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+            </svg>
+
+
+        </a>
+
+
+
+        <!-- <div 
             class="modal-video__wrapper fixed flex items-center justify-center inset-0 w-full h-full z-10 outline-none transition-all duration-500 overflow-hidden"
             [ngClass]="{'visible opacity-100': handlerModalVideo(), 'invisible opacity-0': !handlerModalVideo()}">
 
@@ -253,8 +291,8 @@
 
                 </div>
             </div> -->
-            
-        </div>
+
+    </div>
 </section>
 
 
@@ -263,21 +301,22 @@
 
         <div class="bancos-pagaqui__row flex gap-3 flex-col lg:flex-row">
             <div class="bancos-pagaqui__col w-full lg:w-1/2">
-                <p
-                class="bancos-pagaqui__subtitle text-xl lg:text-2xl text-red-700 dark:text-blue-400 font-semibold">
-                Cuentas bancarias para venta de recargas</p>
+                <p class="bancos-pagaqui__subtitle text-xl lg:text-2xl text-red-700 dark:text-blue-400 font-semibold">
+                    Cuentas bancarias para venta de recargas</p>
                 <h3 class="text-gray-700 dark:text-white font-bold text-3xl mb-4">Bancos para venta de recargas</h3>
-                <p class="text-gray-700 dark:text-gray-300">Realiza tus compras a alguna de las cuentas bancarias participantes, obten el monto
-                    en saldo correspondiente para que puedas realizar recargas a cualquier compañia, con excelentes comisiones
+                <p class="text-gray-700 dark:text-gray-300">Realiza tus compras a alguna de las cuentas bancarias
+                    participantes, obten el monto
+                    en saldo correspondiente para que puedas realizar recargas a cualquier compañia, con excelentes
+                    comisiones
                 </p>
-                <img src="assets/img/plataformas/pagaqui/bancos.webp" alt="Cuentas bancarias pagaqui para saldo" class="bancos-pagaqui__img">
+                <img src="assets/img/plataformas/pagaqui/bancos.webp" alt="Cuentas bancarias pagaqui para saldo"
+                    class="bancos-pagaqui__img">
 
                 <button
-                class="mx-auto block rounded-lg bg-red-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                data-ripple-light="true"
-              >
-                Consultar cuentas bancarias
-              </button>
+                    class="mx-auto block rounded-lg bg-red-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                    data-ripple-light="true">
+                    Consultar cuentas bancarias
+                </button>
             </div>
             <div class="bancos-pagaqui__col q-full lg:w-1/2">
                 <img src="assets/img/plataformas/pagaqui/conoce-bancos.webp" alt="">
@@ -286,33 +325,37 @@
     </div>
 </section>
 
-<section class="section-noreferencia  px-4 sm:px-6 lg:px-8 mb-20">
+<section class="section-noreferencia px-4 sm:px-6 lg:px-8 mb-20">
     <div class="noreferencia__container container mx-auto">
 
         <div class="noreferencia__row flex flex-row flex-wrap items-start">
-            
+
             <div class="noreferencia__col w-full lg:w-1/2">
-                <span
-                class="why-sell__span text-2xl text-red-700 dark:text-blue-400 font-semibold">
+                <span class="why-sell__span text-2xl text-red-700 dark:text-blue-400 font-semibold">
                     Referencia para compra de saldo
-              </span>
-                <h3 class="text-3xl lg:text-4xl text-slate-700 dark:text-white font-bold mt-2 mb-4">Recarga de saldo con referencia de pago</h3>
+                </span>
+                <h3 class="text-3xl lg:text-4xl text-slate-700 dark:text-white font-bold mt-2 mb-4">Recarga de saldo con
+                    referencia de pago</h3>
                 <p class="text-sm lg:text-base mb-4 text-slate-700 dark:text-slate-300">
-                    Solicita desde el portal tu numero de referencia, si costo alguno. 
+                    Solicita desde el portal tu numero de referencia, si costo alguno.
                 </p>
 
                 <p class="text-sm lg:text-base leading-relaxed text-slate-700 dark:text-slate-300 mb-4">
-                    El utilizar tu <strong>Referencia de pago pagaqui</strong> ayuda a identificar tu depósito y abonar de una manera más practica tu compra sin necesidad de realizar la <b>notificación de pago</b> en el portal. 
+                    El utilizar tu <strong>Referencia de pago pagaqui</strong> ayuda a identificar tu depósito y abonar
+                    de una manera más practica tu compra sin necesidad de realizar la <b>notificación de pago</b> en el
+                    portal.
                 </p>
 
                 <p class="text-sm lg:text-base leading-relaxed text-slate-700 dark:text-slate-300 mb-4">
-                    No todos los Bancos permiten el uso de tu referencia. Por tal motivo recomendamos checar en que Banco y tipo de pago podrás utilizarla.
+                    No todos los Bancos permiten el uso de tu referencia. Por tal motivo recomendamos checar en que
+                    Banco y tipo de pago podrás utilizarla.
                 </p>
 
-                <p class="font-semibold text-2xl text-slate-700 dark:text-slate-300 mb-4">Ventanilla</p>  
+                <p class="font-semibold text-2xl text-slate-700 dark:text-slate-300 mb-4">Ventanilla</p>
                 <ul class="list-decimal ">
                     <li class="lg:text-base text-sm text-slate-700 dark:text-slate-300  ml-8 mb-4 font-normal">
-                        Genera tu referencia de 10 dígitos en la plataforma <a href="https://pagaqui.com.mx/Login.aspx" target="_blank" class="text-blue-600 dark:text-sky-400 font-semibold">Pagaqui</a>
+                        Genera tu referencia de 10 dígitos en la plataforma <a href="https://pagaqui.com.mx/Login.aspx"
+                            target="_blank" class="text-blue-600 dark:text-sky-400 font-semibold">Pagaqui</a>
                     </li>
 
                     <li class="lg:text-base text-sm text-slate-700 dark:text-slate-300  ml-8 mb-4">
@@ -328,7 +371,7 @@
                     </li>
                 </ul>
 
-                <p class="font-bold text-2xl text-slate-700 dark:text-slate-300 mb-4">Transferencia</p>  
+                <p class="font-bold text-2xl text-slate-700 dark:text-slate-300 mb-4">Transferencia</p>
 
 
                 <ul class="list-decimal">
@@ -337,7 +380,7 @@
                     </li>
 
                     <li class="lg:text-base text-sm text-slate-700 dark:text-slate-300 ml-8 mb-4">
-                       En tu banca realiza una transferencia minima de $200 a alguna de las cuentas participantes
+                        En tu banca realiza una transferencia minima de $200 a alguna de las cuentas participantes
                     </li>
 
                     <li class="lg:text-base text-sm text-slate-700 dark:text-slate-300 ml-8 mb-4">
@@ -352,18 +395,19 @@
                         En concepto de pago debes colocar tu referencia <b>Pagaqui</b>
                     </li>
                 </ul>
-            
-                
+
+
             </div>
             <div class="noreferencia__col w-full lg:w-1/2">
-                <img src="assets/img/refe.webp" alt="Recargas con referencia" class="rounded-3xl mx-auto bg-gradient-to-tr from-red-600 to-red-800 dark:from-blue-600 dark:to-blue-800">
+                <img src="assets/img/refe.webp" alt="Recargas con referencia"
+                    class="rounded-3xl mx-auto bg-gradient-to-tr from-red-600 to-red-800 dark:from-blue-600 dark:to-blue-800">
             </div>
         </div>
     </div>
 </section>
 
 
-<app-sales-method [titleChannel]="'Metodos de venta pagaqui'"></app-sales-method>
+<app-sales-method></app-sales-method>
 
 
 <app-register-steps></app-register-steps>

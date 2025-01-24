@@ -6,7 +6,6 @@ export interface CarouselApp {
 
 
 export interface ImgCarousel {
-    lightUrl: string,
-    darkUrl?: string;
+    src: string;
     alt: string;
 }

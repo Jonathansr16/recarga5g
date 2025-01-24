@@ -10,7 +10,7 @@ export class PlanetaemxService {
     {
       id: 1,
       img: {
-        lightUrl: 'assets/img/plataformas/planetaemx/app-recargaki_sesion.webp',
+        src: 'assets/img/plataformas/planetaemx/app-recargaki_sesion.webp',
         alt: 'Inicio de sesión a recargaki'
       }
     },
@@ -18,7 +18,7 @@ export class PlanetaemxService {
     {
       id: 2,
       img: {
-        lightUrl: 'assets/img/plataformas/planetaemx/app-recargaki_recargas.webp',
+        src: 'assets/img/plataformas/planetaemx/app-recargaki_recargas.webp',
         alt: 'venta de recargas con recargaki'
       }
     },  
@@ -26,7 +26,7 @@ export class PlanetaemxService {
     {
       id: 3,
       img: {
-        lightUrl: 'assets/img/plataformas/planetaemx/app-recargaki_servicios.webp',
+        src: 'assets/img/plataformas/planetaemx/app-recargaki_servicios.webp',
         alt: 'cobro de servicios con recargaki'
       }
     },
@@ -34,7 +34,7 @@ export class PlanetaemxService {
     {
       id: 4,
       img: {
-        lightUrl: 'assets/img/plataformas/planetaemx/app-recargaki_ventas.webp',
+        src: 'assets/img/plataformas/planetaemx/app-recargaki_ventas.webp',
         alt: 'consulta de las ventas de recargas en recargaki'
       }
     },
@@ -42,7 +42,7 @@ export class PlanetaemxService {
     {
       id: 5,
       img: {
-        lightUrl: 'assets/img/plataformas/planetaemx/app-recargaki_reporte.webp',
+        src: 'assets/img/plataformas/planetaemx/app-recargaki_reporte.webp',
         alt: 'reporte de depósito recargaki'
       }
     }

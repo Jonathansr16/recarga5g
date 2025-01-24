@@ -13,7 +13,6 @@ import { CommonModule } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 
 //* Interfaces importados
-import { metaTagModel } from 'src/app/interfaces/meta-tag.model';
 import { registerStepsModel } from 'src/app/interfaces/register-steps-model';
 
 //* Servicios importados
@@ -45,8 +44,8 @@ import { RegisterStepsComponent } from '@feature/components/register-steps/regis
 export default class PlataformaPagaquiComponent
   implements OnInit, AfterViewInit
 {
-  @ViewChild('modalTemplate') template = {} as TemplateRef<any>;
-  @ViewChild('videoPagaqui') video?: ElementRef;
+  // @ViewChild('modalTemplate') template = {} as TemplateRef<any>;
+  // @ViewChild('videoPagaqui') video?: ElementRef;
 
   handlerModalVideo = signal<boolean>(false);
 
@@ -76,7 +75,6 @@ export default class PlataformaPagaquiComponent
 
   private readonly stepPagaquiService = inject(RegisterStepsService);
   private readonly metaTagService = inject(MetaTagService);
-  private readonly renderer2 = inject(Renderer2);
   private readonly title = inject(Title);
 
   ngOnInit(): void {
@@ -84,7 +82,7 @@ export default class PlataformaPagaquiComponent
       'Recarga5g.com | Consulta para vender recargas electrónicas'
     );
 
-    this.productCarousel.set(this.productCarouselService.getAllProducts());
+    this.productCarousel.set(this.productCarouselService.getRecargas());
     this.appPagaqui.set(this.pagaquiService.getAppPagaqui());
     this.registerStepPagaqui.set(this.stepPagaquiService.getStepsPagaqui());
 

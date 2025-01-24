@@ -2,18 +2,14 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import {
   Component,
   ElementRef,
-  ViewChild,
   PLATFORM_ID,
   inject,
-  OnInit,
   input,
   ChangeDetectionStrategy,
-  afterNextRender,
   CUSTOM_ELEMENTS_SCHEMA,
   viewChild,
 } from '@angular/core';
 
-import { ThemesService } from 'src/app/services/themes.service';
 import { CarouselApp } from './interface/app.interface';
 import { SwiperOptions } from 'swiper/types';
 // import { Swiper, SwiperOptions } from 'swiper/types';
@@ -54,16 +50,11 @@ import { SwiperOptions } from 'swiper/types';
           <swiper-container init="false" #swiperApp class="swiper-app">
             @for (product of carouselImages(); track $index) {
             <swiper-slide class="swiper-app__slide">
+          
               <img
-                [src]="product.img.lightUrl"
-                class="swiper-app__img swiper-app__img--light dark:hidden w-[272px] h-[572px]"
-                [alt]="product.img.alt"
-              />
-              <img
-                [src]="product.img.darkUrl"
-                class="swiper-app__img swiper-app__img--dark hidden dark:block w-[272px] h-[572px]"
-                [alt]="product.img.alt"
-              />
+                [src]="product.img.src"
+                class="swiper-app__img swiper-app__img w-[272px] h-[572px]"
+                [alt]="product.img.alt">
             </swiper-slide>
             }
           </swiper-container>
@@ -80,10 +71,8 @@ import { SwiperOptions } from 'swiper/types';
 export class AppRecargasComponent {
   swAppElement = viewChild.required<ElementRef>('swiperApp');
   private readonly plataform_id = inject(PLATFORM_ID);
-  private readonly themeService = inject(ThemesService);
 
   carouselImages = input.required<CarouselApp[]>();
-  isDarkTheme = this.themeService.themeChange;
 
   private swiperAppConfig: SwiperOptions = {
     loop: true,

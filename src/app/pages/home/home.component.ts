@@ -228,8 +228,7 @@ export default class HomeComponent implements OnInit, AfterViewInit {
     {
       id: 1,
       img: {
-        lightUrl: '/assets/img/companies/recargas-app_light.webp',
-        darkUrl: '/assets/img/companies/recargas-app_dark.webp',
+        src: '/assets/img/companies/recargas-app_light.webp',
         alt: 'App para venta de recargas',
       },
     },
@@ -237,8 +236,7 @@ export default class HomeComponent implements OnInit, AfterViewInit {
     {
       id: 2,
       img: {
-        lightUrl: '/assets/img/companies/servicios-app_light.webp',
-        darkUrl: '/assets/img/companies/servicios-app_dark.webp',
+        src: '/assets/img/companies/servicios-app_light.webp',
         alt: 'App para pago de servicios',
       },
     },
@@ -246,8 +244,7 @@ export default class HomeComponent implements OnInit, AfterViewInit {
     {
       id: 3,
       img: {
-        lightUrl: '/assets/img/companies/pines-app_light.webp',
-        darkUrl: '/assets/img/companies/pines-app_dark.webp',
+        src: '/assets/img/companies/pines-app_light.webp',
         alt: 'App para venta de pines electrónicos',
       },
     },

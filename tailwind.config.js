@@ -17,6 +17,11 @@ export default {
       boxShadow: {
        'card': '0px 10px 20px -10px rgb(7 0 52 / 10%)'
       },
+
+      colors: {
+        primary:'#d30f25',
+        secondary: '#1d4ed8',
+      }
     },
   },
   plugins: [animations],

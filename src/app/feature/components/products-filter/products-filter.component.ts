@@ -50,7 +50,7 @@ export class BtnFilterComponent {
       >
         <div class="products-col mb-4">
           <div
-            class="font-medium text-base py-[0.375rem] px-4 rounded-md bg-purple-100 text-indigo-800 dark:text-slate-300 dark:bg-sky-300/10 shadow-sm inline-flex items-center gap-2 mb-4"
+            class="font-medium text-base py-[0.375rem] px-4 rounded-md bg-slate-800 dark:bg-slate-700 text-slate-100 shadow-sm inline-flex items-center gap-2 mb-4"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -68,10 +68,8 @@ export class BtnFilterComponent {
             </svg>
             <span> Recargas, servicios y pines </span>
           </div>
-          <h3 class="products-title text-4xl lg:text-5xl">
-            <span class="products-label text-primary">
+          <h3 class="products-title text-4xl lg:text-5xl c-text font-semibold">
               Nuestros Productos
-            </span>
           </h3>
         </div>
 

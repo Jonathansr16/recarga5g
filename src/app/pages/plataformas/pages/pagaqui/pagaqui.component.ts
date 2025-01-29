@@ -32,7 +32,20 @@ import { RegisterStepsComponent } from '@feature/components/register-steps/regis
 @Component({
     selector: 'app-plataforma-pagaqui',
     templateUrl: './pagaqui.component.html',
-    styleUrls: ['./pagaqui.component.scss', '../plataformas.scss'],
+   styles: [`
+
+.platform-col::before {
+     inset-block-start: 0;
+      inline-size: 1px;
+     block-size: 100vh;
+    }
+
+    .platform-col::after {
+     inset-block-start: -1px;
+      inline-size: 100vw;
+     block-size: 1px;
+    }
+    `],
     imports: [
         CommonModule,
         ProductCarouselComponent,

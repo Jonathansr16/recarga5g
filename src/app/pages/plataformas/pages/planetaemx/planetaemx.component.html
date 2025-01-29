@@ -581,7 +581,9 @@
 <!-- ============= SECCION METODOS VENTA ============= -->
 <section class="section-sales-method">
     <h2 class="text-4xl lg:text-5xl text-center mb-8 font-semibold c-text">¿Como vender recargas Telcel?</h2>
-    <app-sales-method></app-sales-method>
+    <app-sales-method [customClass]="'bg-green-700 dark:bg-green-600'" 
+                      [customClassBtn]="'bg-green-700 hover:bg-green-800 dark:bg-green-600 dark:hover:bg-green-700 focus:ring-green-800 dark:focus:ring-green-700'"
+                      [customClassIcon]="'text-green-700 dark:text-emerald-500'"/>
 </section>
 
 

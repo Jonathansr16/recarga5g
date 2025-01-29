@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
 @Component({
     selector: 'app-sales-method',
     templateUrl: './sales-method.component.html',
-    styleUrls: ['./sales-method.component.scss'],
+    styles: [``],
     imports: [
         CommonModule, RouterLink
     ],
@@ -15,9 +15,13 @@ import { RouterLink } from '@angular/router';
 })
 export class SalesMethodComponent implements OnInit, OnDestroy{
 
+  customClass = input<string>();
+  customClassModal = input<string>();
+  customClassBtn = input<string>();
+  customClassIcon = input<string>();
+
   metodoVentas: SalesChannel[] = [];
   isOpenModal = signal<boolean>(false);
-
   isActiveModal = signal<number>(-1);
 
 private readonly renderer2= inject(Renderer2);

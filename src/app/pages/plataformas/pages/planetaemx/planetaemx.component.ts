@@ -22,7 +22,19 @@ import { RegisterStepsComponent } from '@feature/components/register-steps/regis
 @Component({
     selector: 'app-planetaemx',
     templateUrl: './planetaemx.component.html',
-    styleUrls: ['./planetaemx.component.scss', '../plataformas.scss'],
+    styles: [`
+      .platform-col::before {
+     inset-block-start: 0;
+      inline-size: 1px;
+     block-size: 100vh;
+    }
+
+    .platform-col::after {
+     inset-block-start: -1px;
+      inline-size: 100vw;
+     block-size: 1px;
+    }
+      `],
     imports: [
         CommonModule,
         ProductCarouselComponent,
@@ -48,7 +60,7 @@ export default class PlanetaemxComponent implements OnInit {
   ngOnInit(): void {
     this.titulo.setTitle('Recarga5g.com | Planetaemx plataforma para la venta de recargas Bait');
 
-    this.productCarousel.set( this.productCarouselService.getAllProducts() );
+    this.productCarousel.set( this.productCarouselService.getRecargas() );
     this.appRecargaki.set( this.planetaemxService.getAppRecargaki())
     this.metaTagService.updateMetaTag({
       title: 'Plataformas | Planetaemx plataforma para la venta de recargas multiregion',

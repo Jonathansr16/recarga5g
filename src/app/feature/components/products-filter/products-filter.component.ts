@@ -50,7 +50,7 @@ export class BtnFilterComponent {
       >
         <div class="products-col mb-4">
           <div
-            class="font-medium text-base py-[0.375rem] px-4 rounded-md bg-slate-800 dark:bg-slate-700 text-slate-100 shadow-sm inline-flex items-center gap-2 mb-4"
+            class="font-medium text-sm py-[0.375rem] px-4 rounded-md bg-slate-800 dark:bg-slate-700 text-slate-100 shadow-sm inline-flex items-center gap-2 mb-4"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -269,18 +269,19 @@ export class BtnFilterComponent {
             class="relative w-full lg:w-1/2 flex flex-col justify-center animate-slide-in-top"
           >
             <h3 class="text-4xl text-slate-700 dark:text-white font-semibold">
-              Recargas electrónicas
+             Vende Recargas electrónicas a todas las compañia de telefonía en México
             </h3>
             <p
               class="mt-8 text-slate-600 dark:text-slate-300 max-w-2xl text-balance"
             >
-              En un mundo en constante evolución, los negocios que innovan son
-              los que se mantienen relevantes. Si buscas ofrecer más valor a tus
-              clientes y aumentar tus ingresos, nuestros servicios son la
-              elección ideal. Te ofrecemos herramientas prácticas, rentables y
-              fáciles de implementar para que transformes tu negocio en un punto
-              de referencia.
+            te ofrecemos la oportunidad de vender recargas de las principales compañías de telefonía en México y ganar una comisión extra por cada transacción. ¡Convierte tu negocio en un centro de recargas y comienza a generar ganancias adicionales hoy mismo!
             </p>
+
+            <p
+              class="mt-8 text-slate-600 dark:text-slate-300 max-w-2xl text-balance"
+            >
+            Las recargas telefónicas son un servicio esencial que millones de personas necesitan todos los días, puedes convertirte en un aliado estratégico para tus clientes, ofreciéndoles un servicio práctico y confiable, mientras aumentas tus ingresos de manera constante.
+          </p>
           </div>
           <div class="w-full lg:w-1/2 animate-slide-up-fade">
             <div
@@ -317,13 +318,14 @@ export class BtnFilterComponent {
             <p
               class="mt-8 text-slate-600 dark:text-slate-300 max-w-2xl text-balance"
             >
-              En un mundo en constante evolución, los negocios que innovan son
-              los que se mantienen relevantes. Si buscas ofrecer más valor a tus
-              clientes y aumentar tus ingresos, nuestros servicios son la
-              elección ideal. Te ofrecemos herramientas prácticas, rentables y
-              fáciles de implementar para que transformes tu negocio en un punto
-              de referencia.
+            ofrecer a tus clientes la facilidad de pagar servicios como luz, agua, teléfono, internet y más, directamente en tu establecimiento. Además, por cada transacción que proceses, recibirás comisiones competitivas que incrementarán tus ganancias.
             </p>
+
+            <p
+              class="mt-8 text-slate-600 dark:text-slate-300 max-w-2xl text-balance"
+            >
+            conviértete en un aliado estratégico para tus clientes! Con nuestra plataforma segura y confiable, podrás ofrecer un servicio que todos necesitan, mientras aumentas tus ganancias de manera constante.
+          </p>
           </div>
           <div class="col w-full lg:w-1/2 animate-slide-up-fade">
             <div
@@ -361,12 +363,13 @@ export class BtnFilterComponent {
             <p
               class="mt-8 text-slate-600 dark:text-slate-300 max-w-2xl text-balance"
             >
-              En un mundo en constante evolución, los negocios que innovan son
-              los que se mantienen relevantes. Si buscas ofrecer más valor a tus
-              clientes y aumentar tus ingresos, nuestros servicios son la
-              elección ideal. Te ofrecemos herramientas prácticas, rentables y
-              fáciles de implementar para que transformes tu negocio en un punto
-              de referencia.
+            ¿Buscas una forma práctica y rápida de disfrutar de tus servicios digitales favoritos? En [Nombre de tu empresa], te ofrecemos tarjetas electrónicas de los mejores servicios como Spotify, Netflix, Google Play, Apple Music, YouTube Premium y mucho más. ¡Recárgalas al instante y sin complicaciones!
+            </p>
+
+            <p
+              class="mt-8 text-slate-600 dark:text-slate-300 max-w-2xl text-balance"
+            >
+            No importa si eres un amante de la música, un fanático de las series o un gamer apasionado, tenemos la tarjeta electrónica perfecta para ti. Compra ahora y disfruta de tus servicios favoritos sin complicaciones.
             </p>
           </div>
           <div class="col w-full lg:w-1/2 animate-slide-up-fade">
@@ -425,7 +428,7 @@ export class BtnFilterComponent {
       </div>
     </div>
   `,
-  styleUrls: ['./products-filter.component.scss'],
+  styles: [``],
   imports: [BtnFilterComponent],
   animations: [
     trigger('showItem', [

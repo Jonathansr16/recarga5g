@@ -1,9 +1,14 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
     selector: 'app-register-steps',
-    imports: [],
+    imports: [NgClass],
     templateUrl: './register-steps.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RegisterStepsComponent { }
+export class RegisterStepsComponent { 
+    customClass = input<string>();
+}
+
+

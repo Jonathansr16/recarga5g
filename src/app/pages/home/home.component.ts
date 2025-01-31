@@ -251,73 +251,66 @@ export default class HomeComponent implements OnInit, AfterViewInit {
   ]);
 
   public listBenefit: AdvantageList[] = [
+
     {
       id: 1,
-      label: 'Mayor flujo de clientes',
+      label: '✔ Comisiones ajustadas a tu negocio',
     },
 
     {
       id: 2,
-      label: 'Comisiones ajustadas a tu negocio',
+      label: '✔ Variedad de compañías de recargas y servicios',
     },
 
     {
       id: 3,
-      label: 'Variedad de compañías de recargas y servicios',
+      label: '✔ Recupera tu inversión + comisión',
     },
 
     {
       id: 4,
-      label: 'Recupera tu inversión + comisión',
+      label: '✔ Soporte personalizado',
     },
-
+  
     {
       id: 5,
-      label: 'Soporte personalizado',
+      label: '✔ Adatado para cualquier tipo de negocio',
     },
     {
       id: 6,
-      label: 'Diferenciador a tu negocio',
-    },
-    {
-      id: 6,
-      label: 'Adatado para cualquier tipo de negocio',
-    },
-    {
-      id: 7,
-      label: 'Aplicación de compras inmediatas',
+      label: '✔ Aplicación de compras inmediatas',
     },
   ];
 
   public listInversion = [
     {
       id: 1,
-      label: 'Sin pagos forzosos ni anualidades.',
+      label: '✔ Sin pagos forzosos ni anualidades.',
     },
 
     {
       id: 2,
-      label: 'Deposita como y cuando quieras.',
+      label: '✔ Deposita como y cuando quieras.',
     },
 
     {
       id: 3,
-      label: 'Aplicación de depósitos automático.',
+      label: '✔ Aplicación de depósitos automático.',
     },
 
     {
       id: 4,
-      label: 'Soporte continuo y personalizado.',
+      label: '✔ Soporte continuo y personalizado.',
     },
 
     {
       id: 5,
-      label: 'Excelentes comisiones.',
+      label: '✔ Excelentes comisiones.',
     },
 
     {
       id: 6,
-      label: 'Diferente metodos de venta',
+      label: '✔ Diferente metodos de venta',
     },
   ];
 

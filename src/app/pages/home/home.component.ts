@@ -73,25 +73,14 @@ export default class HomeComponent implements OnInit, AfterViewInit {
   private readonly _productCarouselService = inject(ProductCarouselService);
   private readonly _razonesService = inject(RazonesService);
 
-  public allProducts = signal<ProductCarousel[]>([]);
-
+  allProducts = signal<ProductCarousel[]>([]);
+  recargas = signal<ProductCarousel[]>([]);
+  servicios = signal<ProductCarousel[]>([]);
+  pines =  signal<ProductCarousel[]>([]);
   showModal = signal<boolean>(false);
   whySellList = signal<BenefitsListModel[]>([]);
 
-  slideHero = signal<HeroCarousel[]>([
-      {
-        id: 1,
-        label: '',
-        title: '',
-        textOne: '',
-        textlink: '',
-        routerLink: '',
-        imgHero: {
-          src: '',
-          alt: ''
-        }
-      }
-  ])
+
  
   listBusiness = [
     {
@@ -353,6 +342,10 @@ export default class HomeComponent implements OnInit, AfterViewInit {
     );
 
     this.allProducts.set(this._productCarouselService.getProductCarousel());
+    this.recargas.set(this._productCarouselService.getRecargas());
+    this.servicios.set(this._productCarouselService.getServicios());
+    this.pines.set(this._productCarouselService.getPines());
+
     this.whySellList.set(this._razonesService.getRazones());
 
     this._metaTagService.updateMetaTag({

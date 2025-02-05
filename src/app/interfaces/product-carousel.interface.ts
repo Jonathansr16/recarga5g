@@ -1,9 +1,10 @@
 
 export interface ProductCarousel {
     id: number,
-    typeService: 'Recargas' | 'Servicios' | 'Pines';
+    typeService: TypeService;
     company: string;
     img: ImgCarousel
+    siteweb?: string;
 }
 
 export interface ImgCarousel {
@@ -11,3 +12,6 @@ export interface ImgCarousel {
     src: string;
     alt: string;
 }
+
+export type TypeService = 'Recargas' | 'Servicios' | 'Pines';
+

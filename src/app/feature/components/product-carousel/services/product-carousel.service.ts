@@ -17,6 +17,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/recargas/telcel.png',
         alt: 'Venta de recargas Telcel',
       },
+      siteweb: 'https://www.telcel.com/'
     },
 
     {
@@ -28,6 +29,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/recargas/bait.png',
         alt: 'venta de recargas Bait',
       },
+      siteweb: 'https://mibait.com/'
     },
 
     {
@@ -39,6 +41,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/recargas/unefon.png',
         alt: 'venta de recargas unefon',
       },
+      siteweb: 'https://unefon.com.mx/'
     },
 
     {
@@ -50,6 +53,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/recargas/att.png',
         alt: 'venta de recargas AT&T',
       },
+      siteweb: 'https://www.att.com.mx/'
     },
 
     {
@@ -61,6 +65,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/recargas/virgin.png',
         alt: 'venta de recargas Virgin',
       },
+      siteweb: 'https://virginmobile.mx/'
     },
 
     {
@@ -72,17 +77,19 @@ export class ProductCarouselService {
         src: '/assets/img/companies/recargas/movistar.png',
         alt: 'venta de recargas Movistar',
       },
+      siteweb: 'https://www.movistar.com.mx/'
     },
 
     {
       id: 7,
-      company: 'Week',
+      company: 'Weex',
       typeService: 'Recargas',
       img: {
         id: 7,
         src: '/assets/img/companies/recargas/weex.png',
-        alt: 'venta de recargas Week',
+        alt: 'venta de recargas Weex',
       },
+      siteweb: 'https://weex.mx/'
     },
 
     {
@@ -92,7 +99,7 @@ export class ProductCarouselService {
       img: {
         id: 8,
         src: '/assets/img/companies/recargas/gugacom.png',
-        alt: '',
+        alt: 'https://queplan.mx/gugacom',
       },
     },
 
@@ -105,6 +112,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/recargas/wimotelecom.png',
         alt: 'Venta de recargas Wimotelecom',
       },
+      siteweb:'https://www.wimotelecom.com/'
     },
 
     {
@@ -116,28 +124,31 @@ export class ProductCarouselService {
         src: '/assets/img/companies/recargas/oui.png',
         alt: 'Venta de recargas Oui',
       },
+      siteweb: 'https://ouimovil.com/'
     },
 
     {
       id: 11,
-      company: 'simpaty',
+      company: 'Simpaty',
       typeService: 'Recargas',
       img: {
         id: 11,
         src: '/assets/img/companies/recargas/simpati.png',
         alt: 'Venta de recargas Simpaty',
       },
+      siteweb: 'https://www.simple.com.ve/ayuda/simpaty/'
     },
 
     {
       id: 12,
-      company: 'FlashMobile',
+      company: 'Flash Mobile MX',
       typeService: 'Recargas',
       img: {
         id: 12,
         src: '/assets/img/companies/recargas/flashmobile.png',
-        alt: 'Venta de recargas FlashMobile',
+        alt: 'Venta de recargas Flash Mobile Mx',
       },
+      siteweb: 'https://www.miflashmobile.mx/homepage'
     },
   ]);
 
@@ -151,6 +162,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/servicios/telmex.png',
         alt: 'Pago de servicio Telmex',
       },
+      siteweb: 'https://telmex.com/'
     },
 
     {
@@ -162,6 +174,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/servicios/totalplay.png',
         alt: 'Compañia para cobro de servicio Total Play',
       },
+      siteweb: 'https://www.totalplay.com.mx/'
     },
 
     {
@@ -173,6 +186,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/servicios/sky.png',
         alt: 'Pago de servicio Sky',
       },
+      siteweb: 'https://www.sky.com.mx/'
     },
 
     {
@@ -184,6 +198,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/servicios/izzi.png',
         alt: 'Pago de servicios IZZI',
       },
+      siteweb: 'https://www.izzi.mx/home'
     },
 
     {
@@ -195,6 +210,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/servicios/cfe.png',
         alt: 'Pago de servicios CFE',
       },
+      siteweb: 'https://www.cfe.mx/Pages/default.aspx'
     },
 
     {
@@ -206,6 +222,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/servicios/dish.png',
         alt: 'Pago de servicios Dish',
       },
+      siteweb: 'https://www.dish.com.mx/'
     },
 
     {
@@ -217,6 +234,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/servicios/infonavit.png',
         alt: 'Pago de servicios Infonavit',
       },
+      siteweb: 'https://micuenta.infonavit.org.mx/'
     },
 
     {
@@ -228,6 +246,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/servicios/avon.png',
         alt: 'Pago de servicios Avon',
       },
+      siteweb: 'https://www.mx.avon.com/REPSuite/loginMain.page'
     },
 
     {
@@ -239,6 +258,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/servicios/jafra.png',
         alt: 'Pago de servicios Jafra',
       },
+      siteweb: 'https://www.jafra.com.mx/'
     },
 
     {
@@ -250,17 +270,19 @@ export class ProductCarouselService {
         src: '/assets/img/companies/servicios/tupperware.png',
         alt: 'Pago de servicios Tupperware',
       },
+      siteweb: 'https://www.tupperware.com.mx/'
     },
 
     {
       id: 110,
-      company: 'Gas natural',
+      company: 'Gas natural Natury',
       typeService: 'Servicios',
       img: {
         id: 110,
         src: '/assets/img/companies/servicios/gas_natural.png',
-        alt: 'Pago de servicios gas natural',
+        alt: 'Pago de servicios gas natural Natury',
       },
+      siteweb: 'https://www.naturgy.com.mx/'
     },
 
     {
@@ -272,17 +294,19 @@ export class ProductCarouselService {
         src: '/assets/img/companies/servicios/televia.png',
         alt: 'Pago de servicios televia',
       },
+      siteweb: 'https://www.televia.com.mx/'
     },
 
     {
       id: 112,
-      company: 'Lebel',
+      company: 'Lbel',
       typeService: 'Servicios',
       img: {
         id: 112,
         src: '/assets/img/companies/servicios/lebel.png',
-        alt: 'Pago de servicios Lebel',
+        alt: 'Pago de servicios Lbel',
       },
+      siteweb: 'https://lbel.tiendabelcorp.com.mx/'
     },
   ]);
 
@@ -296,6 +320,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/pines/googleplay100.png',
         alt: 'Venta de pines google play',
       },
+      siteweb: 'https://play.google.com/store/games?hl=es_MX'
     },
 
     {
@@ -307,7 +332,9 @@ export class ProductCarouselService {
         src: '/assets/img/companies/pines/spotify115.png',
         alt: 'Venta de pines spotify',
       },
+      siteweb: 'https://open.spotify.com/intl-es'
     },
+
 
     {
       id: 202,
@@ -318,6 +345,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/pines/netflix.png',
         alt: 'Venta de pines Netflix',
       },
+      siteweb: 'https://www.netflix.com/mx/'
     },
 
     {
@@ -329,6 +357,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/pines/steam215.png',
         alt: 'Venta de pines Steam',
       },
+      siteweb: 'https://store.steampowered.com/?l=spanish'
     },
 
     {
@@ -340,6 +369,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/pines/cinepolis_vip.png',
         alt: 'Venta de pines Cinepolis',
       },
+      siteweb: 'https://store.steampowered.com/?l=spanish'
     },
 
     {
@@ -351,6 +381,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/pines/nintendo.png',
         alt: 'venta de pines Nintendo',
       },
+      siteweb: 'https://www.nintendo.com/es-mx/'
     },
 
     {
@@ -362,17 +393,19 @@ export class ProductCarouselService {
         src: '/assets/img/companies/pines/amazon_gift300.png',
         alt: 'Venta de pines Amazon',
       },
+      siteweb: 'https://www.amazon.com.mx/'
     },
 
     {
       id: 207,
-      company: 'Starbuck',
+      company: 'STARBUCKS',
       typeService: 'Pines',
       img: {
         id: 207,
         src: '/assets/img/companies/pines/starbucks_card200.png',
-        alt: 'Venta de pines Starbuck',
+        alt: 'Venta de pines STARBUCKS',
       },
+      siteweb: 'https://www.starbucks.com.mx/'
     },
 
     {
@@ -384,6 +417,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/pines/amazon_gift300.png',
         alt: 'Venta de pines Free Fire',
       },
+      siteweb: 'https://play.google.com/store/apps/details?id=com.dts.freefiremax&hl=es_MX'
     },
 
     {
@@ -395,6 +429,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/pines/microsoft365empresa3949.png',
         alt: 'Venta de pines Microsoft 365 Empresas',
       },
+      siteweb: 'https://www.microsoft.com/es-mx/microsoft-365/business'
     },
 
     {
@@ -406,6 +441,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/pines/roblox200.png',
         alt: 'Venta de pines Roblox',
       },
+      siteweb: 'https://www.roblox.com/es'
     },
 
     {
@@ -417,6 +453,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/pines/uber_eats300.png',
         alt: 'Venta de pines Uber Eats',
       },
+      siteweb: 'https://www.ubereats.com/mx'
     },
 
     {
@@ -428,6 +465,7 @@ export class ProductCarouselService {
         src: '/assets/img/companies/pines/cinemex120.png',
         alt: 'Venta de pines Cinemex',
       },
+      siteweb: 'https://www.cimex.com.mx/es/'
     },
   ]);
 

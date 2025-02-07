@@ -19,6 +19,7 @@ export class SalesMethodComponent implements OnInit, OnDestroy{
   customClassModal = input<string>();
   customClassBtn = input<string>();
   customClassIcon = input<string>();
+  customClassShadow = input<string>();
 
   metodoVentas: SalesChannel[] = [];
   isOpenModal = signal<boolean>(false);

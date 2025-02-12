@@ -83,9 +83,9 @@ export class HeaderComponent{
           {
             label: 'Lo que tenemos para ti',
             items: [
-                { label: 'recargas', icon: 'web', routerLink: 'productos/recargas' },
-                { label: 'pago de servicios', icon: 'phone_iphone', routerLink: 'productos/servicios' },
-                { label: 'tarjeta de regalo', icon: 'sms', routerLink: 'productos/pines' }
+                { label: 'recargas', routerLink: 'productos/recargas' },
+                { label: 'pago de servicios', routerLink: 'productos/servicios' },
+                { label: 'tarjeta de regalo', routerLink: 'productos/pines' }
             ]
           }
         ]
@@ -138,7 +138,7 @@ export class HeaderComponent{
           {
             label: 'Extra',
             items: [
-              { label: 'Nuestro blog', routerLink: ''}
+              { label: 'Nuestro blog', routerLink: '/ayuda/blog'}
             ]
           }
         ]
@@ -196,7 +196,13 @@ export class HeaderComponent{
     if (!items) return false;
     return items.some(item =>
       item.routerLink
-        ? this.router.isActive(item.routerLink, false)
+   
+        ? this.router.isActive(item.routerLink, {
+          paths: 'exact',       // Match the path exactly
+          queryParams: 'exact',  // Match query parameters exactly
+          fragment: 'ignored',  // Ignore the fragment
+          matrixParams: 'ignored' // Ignore matrix parameters
+        })
         : this.isSubMenuActive(item.items) // Recursively check nested items
     );
   }

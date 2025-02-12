@@ -1,3 +1,5 @@
+import { SafeHtml } from "@angular/platform-browser";
+
 export interface SalesChannel {
   readonly id: number;
   img: { src: string; alt: string };
@@ -15,7 +17,7 @@ interface SalesChannelModal {
 
 interface SalesChannelSteps {
   id: number;
-  iconClassName: string;
+  svgIcon: SafeHtml;
   info: string;
 }
 

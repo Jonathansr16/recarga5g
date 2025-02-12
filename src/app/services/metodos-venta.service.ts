@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { SalesChannel } from 'src/app/interfaces/sales-channel';
 
 @Injectable({
@@ -6,14 +7,14 @@ import { SalesChannel } from 'src/app/interfaces/sales-channel';
 })
 export class MetodosVentaService {
 
+    private readonly sanitizer = inject(DomSanitizer);
+  
+
   channels: SalesChannel[] = [
 
-    {
-      id: 1,
-      img: {
-        src: '/assets/img/laptop.png',
-        alt: 'Venta de recargas por computadora'
-      },
+    { 
+      id: 1, 
+      img: { src: 'assets/img/smart-devices.webp', alt: 'Venta de recargas en mexíco desde navegador' },
       title: "Plataforma Web",
       description: "Vende recargas Telcel, con excelentes comisiones, con tu smartphone o computadora ingresa al portal con tu navegador de preferencia.",
       modalInfo: {
@@ -23,31 +24,31 @@ export class MetodosVentaService {
 
           {
             id: 10,
-            iconClassName: "laptop_mac",
+            svgIcon: this.getSvg(``),
             info: "Equipo de computo"
           },
 
           {
             id: 11,
-            iconClassName: "wifi",
+            svgIcon: this.getSvg(``),
             info: "Conexión a internet"
           },
 
           {
             id: 12,
-            iconClassName: "domain_verification",
+            svgIcon: this.getSvg(``),
             info: "Navegador de su preferencia"
           },
 
           {
             id: 13,
-            iconClassName: "travel_explore",
+            svgIcon: this.getSvg(``),
             info: "Link de acceso a la plataforma"
           },
 
           {
             id: 14,
-            iconClassName: "person_pin",
+            svgIcon: this.getSvg(``),
             info: "Datos de acceso"
           }
         ],
@@ -58,10 +59,7 @@ export class MetodosVentaService {
 
     {
       id: 2,
-      img: {
-        src: '/assets/img/smartphone.webp',
-        alt: 'Venta de recargas multiregion desde la App'
-      },
+      img: { src: 'assets/img/smartphone.webp', alt: 'Venta de recargas telefonícas para Android y IOS' },
       title: "App",
       description: "Descarga la app desde la tienda oficial para vender recargas telcel en tu dispositivo Android o IOS.",
       modalInfo: {
@@ -70,25 +68,25 @@ export class MetodosVentaService {
         listSteps: [
           { 
             id: 20,
-            iconClassName: "archive",
+            svgIcon: this.getSvg(``),
             info: "Descarga la App desde la tienda oficial"
           },
 
           { 
             id: 21,
-            iconClassName: "person_pin",
+            svgIcon: this.getSvg(``),
             info: "Datos de acceso"
           },
 
           {
             id: 22,
-            iconClassName: "payments",
+            svgIcon: this.getSvg(``),
             info: "Saldo suficiente"
           },
 
           {
             id: 23,
-            iconClassName: "checklist_rtl",
+            svgIcon: this.getSvg(``),
             info: "Listo!! podras comenzar a realizar recargar y pagar servicios a cualquier compañia"
           }
         ],
@@ -98,10 +96,7 @@ export class MetodosVentaService {
 
     {
       id: 3,
-      img: {
-        src: '/assets/img/sms.webp',
-        alt: 'Ventas de recargas por SMS gratuito'
-      },
+      img: { src: 'assets/img/sms.webp', alt: 'Venta de recargas telefonícas via SMS' },
       title: "Vía SMS",
       description: "Vender recargas electrónicas enviando un simple SMS. En tu telefono celular.",
       modalInfo: {
@@ -111,25 +106,25 @@ export class MetodosVentaService {
         listSteps: [
           {
             id: 30,
-            iconClassName: "security_update_good",
+            svgIcon: this.getSvg(``),
             info: "Telefono celular"
           },
 
           {
             id: 31,
-            iconClassName: "person_pin",
+            svgIcon: this.getSvg(``),
             info: "Datos de acceso"
           },
 
           {
             id: 32,
-            iconClassName: "how_to_reg",
+            svgIcon: this.getSvg(``),
             info: "Vincular tu numero celular a la plataforma"
           },
 
           {
             id: 33,
-            iconClassName: "payments",
+            svgIcon: this.getSvg(``),
             info: "Saldo suficiente"
           },
         ],
@@ -143,12 +138,17 @@ export class MetodosVentaService {
     return this.channels;
   }
 
-  openModal(item: any) {
-    item.showModal = true;
-  }
+  // openModal(item: any) {
+  //   item.showModal = true;
+  // }
 
-  closeModal(item: any) {
-    item.showModal = false;
+  // closeModal(item: any) {
+  //   item.showModal = false;
+  // }
+
+  getSvg(svgCode: string): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(svgCode);
+
   }
 
   constructor() { }

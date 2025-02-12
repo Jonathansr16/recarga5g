@@ -182,7 +182,7 @@ export class BtnFilterComponent {
                     d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"
                   />
                 </svg>
-                <p>Cientos de compañia de telefonia y servicios</p>
+                <p>Cientos de compañía de telefonía y servicios</p>
               </li>
 
               <li class="flex gap-4">
@@ -363,14 +363,16 @@ export class BtnFilterComponent {
             <p
               class="mt-8 text-slate-600 dark:text-slate-300 max-w-2xl text-balance"
             >
-            ¿Buscas una forma práctica y rápida de disfrutar de tus servicios digitales favoritos? En [Nombre de tu empresa], te ofrecemos tarjetas electrónicas de los mejores servicios como Spotify, Netflix, Google Play, Apple Music, YouTube Premium y mucho más. ¡Recárgalas al instante y sin complicaciones!
+            Vender tarjetas de regalo es una excelente opción para emprendedores, influencers, estudiantes o cualquier persona que busque una fuente de ingresos adicional. Con nuestra plataforma, tendrás acceso a un negocio rentable, flexible y sin necesidad de inversión inicial.
             </p>
 
             <p
               class="mt-8 text-slate-600 dark:text-slate-300 max-w-2xl text-balance"
             >
-            No importa si eres un amante de la música, un fanático de las series o un gamer apasionado, tenemos la tarjeta electrónica perfecta para ti. Compra ahora y disfruta de tus servicios favoritos sin complicaciones.
+            No esperes más, únete a nuestra comunidad y descubre cómo vender tarjetas de regalo puede ser tu próximo paso hacia el éxito financiero. ¡Regístrate hoy y comienza a ganar comisiones excelentes!
             </p>
+
+          
           </div>
           <div class="col w-full lg:w-1/2 animate-slide-up-fade">
             <div

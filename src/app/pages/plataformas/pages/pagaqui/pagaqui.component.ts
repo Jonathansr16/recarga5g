@@ -28,6 +28,7 @@ import { AppRecargasComponent } from '../../../../feature/components/app-recarga
 import { CarouselApp } from '@feature/components/app-recargas/interface/app.interface';
 import { ProductCarousel } from 'src/app/interfaces/product-carousel.interface';
 import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-plataforma-pagaqui',
@@ -51,7 +52,8 @@ import { RegisterStepsComponent } from '@feature/components/register-steps/regis
         ProductCarouselComponent,
         SalesMethodComponent,
         AppRecargasComponent,
-        RegisterStepsComponent
+        RegisterStepsComponent,
+        RouterLink
     ]
 })
 export default class PlataformaPagaquiComponent
@@ -67,6 +69,43 @@ export default class PlataformaPagaquiComponent
 
   registerStepPagaqui = signal<registerStepsModel[]>([]);
 
+  ourProduct = [
+    {
+      id: 1, 
+      subtitle: 'Excelentes comisiones',
+      title: 'Venta de recargas telefónicas',
+      description: 'Venta de recargas telefónicas para todos los operadores móviles, incluyendo Telcel, Movistar, AT&T, y más. Con nosotros, podrás realizar recargas al instante, las 24 horas del día, los 7 días de la semana, desde la comodidad de tu hogar o negocio.',
+      link: '/productos/recargas',
+      img: { src: 'assets/img/recargas-article.webp', alt: 'Venta de recargas a cualquier compañía para negocio'},
+    },
+
+    {
+      id: 2, 
+      subtitle: 'Excelentes comisiones',
+      title: 'Pago de servicios',
+      description: 'Podrás realizar recargas al instante, las 24 horas del día, los 7 días de la semana, desde la comodidad de tu hogar o negocio',
+      link: '/productos/recargas',
+      img: { src: 'assets/img/servicios-article.webp', alt: 'Cobro por pago de servicios'}
+    },
+
+    {
+      id: 3,
+      subtitle: 'Excelentes comisiones',
+      title: 'Gift Card',
+      description: 'Venta de pines electrónicos para videojuegos, plataformas de streaming y otros servicios digitales, ideales para negocios que buscan diversificar su oferta y aumentar sus ingresos.',
+      link: '/productos/pines',
+      img: { src: 'assets/img/pines-article.webp', alt: 'Venta de tarjeta de regalo'}
+    },
+
+    {
+      id: 4,
+      subtitle: 'Proximamente..',
+      title: 'Terminales para puntos de venta',
+      description: 'Automiza y expande tus medios para el cobro de tus servicios, con excelentes comisiones, a traves de nuestras terminales',
+      img: { src: 'assets/img/recargas-article.webp', alt: ''}
+    },
+
+  ]
 
   //? META TAG
   // tag: metaTagModel = {

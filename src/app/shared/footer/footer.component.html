@@ -56,9 +56,13 @@
             <a
             [routerLink]="help.routerLink"
             class="footer__a inline-flex items-center cursor-pointer py-2 text-sm font-semibold rounded-lg group text-gray-800 hover:text-red-700 dark:text-white dark:hover:text-sky-500">
-            <i
-              class="material-icons text-red-700 dark:text-sky-500 translate-x-0 group-hover:translate-x-2 transition-transform ease-in-out duration-500">keyboard_double_arrow_right</i>
-            <span class="pl-3">{{help.label}}</span>
+      
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-5 text-red-700 dark:text-sky-500 translate-x-0 group-hover:translate-x-2 transition-transform ease-in-out duration-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
+            </svg>
+            <span class="pl-3">
+              {{help.label}}
+            </span>
           </a>
           </li>
         }
@@ -76,8 +80,10 @@
             <a
             [routerLink]="product.routerLink"
             class="footer__a inline-flex items-center cursor-pointer py-2 text-sm font-semibold rounded-lg group text-gray-800 hover:text-red-700 dark:text-white dark:hover:text-sky-500">
-            <i
-              class="material-icons text-red-700 dark:text-sky-500 translate-x-0 group-hover:translate-x-2 transition-transform ease-in-out duration-500">keyboard_double_arrow_right</i>
+           
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-5 text-red-700 dark:text-sky-500 translate-x-0 group-hover:translate-x-2 transition-transform ease-in-out duration-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
+            </svg>
             <span class="pl-3">{{product.label}}</span>
           </a>
           </li>

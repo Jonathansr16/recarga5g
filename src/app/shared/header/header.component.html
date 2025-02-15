@@ -1,37 +1,16 @@
 
 <!-- component -->
- <header class="header header-animate bg-slate-50/80 dark:bg-[#0000004d] shadow-md shadow-slate-400/10 dark:shadow-slate-500/10 antialiased fixed top-0 left-0 w-full text-gray-700 dark:text-gray-200 md:backdrop-blur-0 backdrop-blur-[10px] z-20">
-  <div class="container  w-fullshadow md:shadow-none flex flex-col lg:flex-row lg:items-center justify-between px-4 mx-auto lg:px-8 gap-4">
-      <!-- Logo y Branding -->
-      <div class="logo flex flex-row items-center justify-between p-4 animate-fade-in-down">
+<header class="header py-6 header-animate bg-slate-50/80 dark:bg-[#0000004d] shadow-md shadow-slate-400/10 dark:shadow-slate-500/10 antialiased fixed top-0 left-0 w-full text-gray-700 dark:text-gray-200 md:backdrop-blur-0 backdrop-blur-[10px] z-20">
+  <div class="container grid items-center justify-center md:justify-normal w-full grid-cols-[auto_1fr] mx-auto text-white gap-x-10 md:flex px-4 lg:px-0">
+   
+      <div class="logo md:flex-grow md:basis-0 flex justify-start animate-fade-in-down">
         <a routerLink="/" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">
           Recarga5g
         </a>
-
-        <!-- Botón de Registro y Menú Responsive -->
-        <div class="flex lg:hidden items-center gap-6 animate-fade-in-down">
-          <a class="btn-register-responsive text-sm py-2 px-4 bg-red-600 text-white dark:bg-blue-700 font-semibold rounded-lg" routerLink="/registro">
-            Registrarme
-          </a>
-          <button type="button" aria-label="Toggle Sidebar" class="rounded-lg focus:outline-none focus:shadow-outline" (click)="toggleSidebar()">
-            <!-- SVG de icono de menú -->
-            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-              @if (isOpenSidebar()) {
-              <path fill-rule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clip-rule="evenodd"></path>
-              } @else {
-              <path fill-rule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-                clip-rule="evenodd"></path>
-              }
-            </svg>
-          </button>
-        </div>
       </div>
       
-      <nav class="navbar animate-fade-in-down">
-      <!-- Barra de Navegación -->
+      <nav class="navbar animate-fade-in-down col-span-full overflow-x-auto row-[2/3] grid grid-rows-[0fr] transition-[grid-template-rows] data-[open]:grid-rows-[1fr] md:justify-center md:flex group/nav">
+   
       <ul [ngClass]="isOpenSidebar() ? 'flex' : 'hidden'" class="flex-col lg:flex-row flex-grow pb-4 md:pb-0 items-center lg:justify-center lg:flex" role="menu">
        @for (item of navbarItems(); let i = $index; track i) {
          <li class="relative w-full lg:w-auto py-2" role="menuitem">
@@ -43,7 +22,7 @@
               [ngClass]="{'active-link': isSubMenuActive(item.items)}"
               class="w-full lg:w-auto lg:inline relative flex flex-row text-gray-900 dark:text-white bg-gray-200 items-center justify-between lg:justify-start px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark:bg-transparent dark:focus:text-white dark:hover:text-white dark:focus:bg-gray-600 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 dark:hover:bg-gray-700 focus:bg-gray-200 focus:outline-none focus:shadow-outline" aria-haspopup="true" [attr.aria-expanded]="isOpenMenu() === i">
                 <span>{{item.label}}</span>
-                <!-- SVG de icono -->
+            
                 <svg fill="currentColor" viewBox="0 0 20 20"
                      [class]="{'rotate-180': isOpenMenu() === i, 'rotate-0': isOpenMenu() !== i}"
                      class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
@@ -64,7 +43,7 @@
                         routerLinkActive="active-link" 
                         class="relative flex items-center rounded-lg px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300"
                         >
-                          <!-- Icono y texto del subítem -->
+                      
                           @if (subItem.icon) {
                             <i class="text-base material-icons">{{subItem.icon}}</i>
                           }
@@ -92,7 +71,7 @@
 
        <li class="relative flex lg:hidden mt-6" role="menuitem">
         <button type="button" class="toggle-theme p-2 rounded-[50%] bg-[linear-gradient(45deg,_#ff7c6b,_#ffd54d)] dark:bg-[linear-gradient(45deg,_#3366ff,_#ad14b8)] " aria-label="Toggle Theme responsive" (click)="toggleTheme()">
-          <!-- SVG de icono de tema -->
+     
           
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
           stroke="currentColor"
@@ -112,13 +91,56 @@
       </ul>
     </nav>
 
-      <!-- Botones de Tema -->
-      <div class="lg:flex hidden items-center gap-4 animate-fade-in-down">
+   
+      <div class="flex md:flex-grow md:basis-0 items-center gap-4 mr-4 ml-auto md:ml-0 justify-end animate-fade-in-down">
+        <section class="md:relative flex items-center">
+          <button (click)="isOpenNotf.set(!isOpenNotf())" class="relative p-2 hover:bg-brand-gray/5 md:rounded-2xl border border-transparent hover:border-brand-gray/10 transition-all">
+            <span class="absolute top-0 left-1 size-4 text-xs rounded-[50%] bg-red-700 text-white font-semibold">1</span>
+            <svg width="24" height="24" class="text-slate-700 dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6"></path><path d="M9 17v1a3 3 0 0 0 6 0v-1"></path></svg>
+          </button>
+
+          @if (isOpenNotf()) {
+            <section class="animate-fade-in overflow-hidden right-2 animate-duration-100 max-h-[60vh] overflow-y-scroll hidden-scroll absolute bg-slate-200 dark:bg-[#0b1422] p-4 rounded-xl top-20 md:top-[calc(100%_+_.5rem)] md:-right-4 w-[calc(100%_-_1rem)] sm:w-[400px] z-50">
+              <h3 class="font-semibold text-lg text-slate-700 dark:text-white pb-2 border-b border-slate-400/50  dark:border-slate-500/50">Notificaciones</h3>
+              <!-- <div>
+                <h4 class="text-right text-xs text-slate-700 dark:text-white/60 py-2"> No leídas</h4>
+                <p class="text-sm  text-slate-700 dark:text-white/60 text-center">No hay notificaciones nuevas</p>
+              </div> -->
+
+              <div>
+                <h4 class="text-right text-xs text-slate-700 dark:text-white/60 py-2"> No leídas</h4>
+               
+                <a routerLink="/novedades/terminales" class="opacity-80 dark:opacity-60 hover:opacity-100 block p-2 last:border-b-0 relative border-b border-slate-200 dark:border-slate-500/50 hover:bg-line/40 transition">
+                  <h5 class="font-semibold max-w-[26ch] text-balance text-slate-700 dark:text-[inherit]">¡Nuevas ofertas del año: Adquiere tu terminal punto de venta hoy miso!</h5>
+                  <p class="text-sm text-balance text-slate-900 dark:text-white/80">Aprovecha las ofertas que tenemos hoy para ti</p>
+                  <img src="assets/img/terminales.webp" alt="Terminales para punto de venta" class="w-1/2 h-full rounded-md absolute top-0 right-0 opacity-40 -z-10" style="mask-image: linear-gradient(to left, rgb(0, 0, 0), rgba(0, 0, 0, 0));">
+                </a>
+              </div>
+              <div>
+                <h4 class="text-right text-xs text-slate-700 dark:text-white/60 py-2">Leídas</h4>
+              
+                <a routerLink="/novedades/terminales" class="opacity-80 dark:opacity-60 hover:opacity-100 block p-2 last:border-b-0 relative border-b border-slate-200 dark:border-slate-500/50 hover:bg-line/40 transition">
+                  <h5 class="font-semibold max-w-[26ch] text-balance text-slate-700 dark:text-[inherit]">¡Nuevas ofertas del año: Adquiere tu terminal punto de venta hoy miso!</h5>
+                  <p class="text-sm text-balance text-slate-900 dark:text-white/80">Aprovecha las ofertas que tenemos hoy para ti</p>
+                  <img src="assets/img/terminales.webp" alt="Terminales para punto de venta" class="w-1/2 h-full rounded-md absolute top-0 right-0 opacity-40 -z-10" style="mask-image: linear-gradient(to left, rgb(0, 0, 0), rgba(0, 0, 0, 0));">
+                </a>
+  
+                <a routerLink="/novedades/comisiones" class="opacity-80 dark:opacity-60 block p-2 last:border-b-0 relative border-b border-slate-200 dark:border-slate-500/50 hover:bg-line/40 transition">
+                  <h5 class="font-semibold max-w-[26ch] text-balance text-slate-700 dark:text-[inherit]">¡Nuevas ofertas del año: Adquiere tu terminal punto de venta hoy miso!</h5>
+                  <p class="text-sm text-balance text-slate-900 dark:text-white/80">Aprovecha las ofertas que tenemos hoy para ti</p>
+                  <img src="assets/img/terminales.webp" alt="Terminales para punto de venta" class="w-1/2 h-full rounded-md absolute top-0 right-0 opacity-40 -z-10" style="mask-image: linear-gradient(to left, rgb(0, 0, 0), rgba(0, 0, 0, 0));">
+                </a>
+              </div>
+  
+            </section>
+          }
+
+        </section>
         <a class="btn-register-responsive text-sm py-2 px-4 @apply rounded-lg font-semibold text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] dark:shadow-blue-500/30 dark:hover:shadow-blue-600/20 focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none bg-red-600 border-red-600 dark:bg-blue-600 dark:border-blue-600" routerLink="/registro">
           Registrarme
         </a>
-        <button type="button" class="toggle-theme p-2 rounded-[50%] bg-[linear-gradient(45deg,_#ff7c6b,_#ffd54d)] dark:bg-[linear-gradient(45deg,_#3366ff,_#ad14b8)] " aria-label="Toggle Theme" (click)="toggleTheme()">
-          <!-- SVG de icono de tema -->
+        <button type="button" class="hidden lg:block toggle-theme p-2 rounded-[50%] bg-[linear-gradient(45deg,_#ff7c6b,_#ffd54d)] dark:bg-[linear-gradient(45deg,_#3366ff,_#ad14b8)] " aria-label="Toggle Theme" (click)="toggleTheme()">
+      
           
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
           stroke="currentColor"
@@ -134,11 +156,22 @@
         </svg>
 
         </button>
+
+        <button type="button" aria-label="Toggle Sidebar" class="block lg:hidden rounded-lg focus:outline-none focus:shadow-outline text-slate-700 dark:text-white" (click)="toggleSidebar()">
+        
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+            @if (isOpenSidebar()) {
+            <path fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+            } @else {
+            <path fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+              clip-rule="evenodd"></path>
+            }
+          </svg>
+        </button>
       </div>
    
   </div>
 </header>
-
-
-
-

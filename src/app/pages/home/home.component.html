@@ -46,6 +46,7 @@
       </span>
     </h1>
 
+
     <p class="text-base lg:text-lg text-center mt-8 text-gray-700 dark:text-gray-300 font-normal mb-6">
       Forma parte de miles de clientes que generan grandes ganancias ofreciendo
       recargas. Con
@@ -322,6 +323,33 @@
       </li>
       }
     </ul>
+  </div>
+</section>
+
+<section class="section-terminales px-5 sm:px-6 lg:px-8 mb-20">
+  <div class="container mx-auto">
+    <div class="terminales-row flex flex-wrap ">
+      <div class="terminales-col">
+        <img src="assets/img/terminales.webp" class="w-[600px] h-auto" title="Terminales punto de venta Recarga5g.com" alt="terminales para puntos de venta" width="680" height="854" loading="lazy">
+      </div>
+      <div class="terminales-col mx-auto">
+
+        <div
+        class="font-medium text-sm py-[0.375rem] px-4 max-w-60 text-slate-100 rounded-lg md:text-center bg-slate-800 dark:bg-slate-700 shadow-sm flex items-center justify-center mx-auto gap-2 mb-2">
+
+        <span>
+          Adquiere el tuyo hoy mismo 
+        </span>
+
+      </div>
+        <h2 class="text-3xl lg:text-5xl font-semibold text-center c-text">Terminal punto de venta</h2>
+
+        <p class="max-w-2xl mt-4">Conoce nuestras terminales <strong>Terminal Punto de Venta (TPV)</strong>, con excelentes comisiones, estan disponibles para todo tipo de negocio, acepta todas las tarjetas de crédito y débito.</p>
+        <p class="max-w-2xl mt-4">Asesorate con nosotros y adquiere hoy mismo tu terminal, sin planes forzosos, anualidades ni penalizaciones.</p>
+        <img src="assets/img/bancos-tpv.webp" class="max-w-xl w-full" alt="Bancos para Terminales TPV"  title="Bancos para terminales TPV" loading="lazy">
+        <button class="mt-4 btn-primary mx-auto block w-full max-w-56">Leer mas</button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -748,7 +776,7 @@
       </div>
 
       <div class="app-recargas-col w-full self-center">
-        <app-recargas [carouselImages]="carosuelAppImages()"></app-recargas>
+        <app-recargas [carouselImages]="carosuelAppImages"></app-recargas>
       </div>
     </div>
   </div>
@@ -1213,254 +1241,75 @@
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
 
       <ul class="space-y-8">
-        <li class="text-sm leading-6">
-          <div class="relative group">
-            <div
-              class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-            </div>
-            <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-              <div class="space-x-4">
-
-                <div>
-                  <p class="text-lg font-semibold text-white mb-2">Juan Martínez</p>
-                  <p class="text-slate-200 text-md leading-normal">"¡Excelente plataforma! Las comisiones son muy
-                    buenas, y el proceso de venta de recargas es súper fácil. ¡Totalmente recomendado!"</p>
-                </div>
+        @for (testimonial of testimonialListOne; track $index) {
+          <li class="text-sm leading-6">
+            <div class="relative group">
+              <div
+                class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
               </div>
-              <p class="leading-normal text-gray-300 text-md">Juan M.</p>
-            </div>
-          </div>
-        </li>
-        <li class="text-sm leading-6">
-          <div class="relative group">
-            <div
-              class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-            </div>
-            <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-              <div class="space-x-4">
-                <div>
-                  <p class="text-lg font-semibold text-white mb-2">Farmacia margaritas</p>
-                  <p class="text-slate-200 text-md leading-normal">"Llevo mas de 2 años, con mi propia red de clientes,
-                    la atención al cliente muy amable"</p>
-
+              <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                <div class="space-x-4">
+  
+                  <div>
+                    <p class="text-lg font-semibold text-white mb-2">{{testimonial.fullName}}</p>
+                    <p class="text-slate-200 text-md leading-normal">"{{testimonial.comment}}"</p>
+                  </div>
                 </div>
+                <p class="leading-normal text-gray-300 text-md">{{testimonial.acronym}}.</p>
               </div>
-              <p class="leading-normal text-gray-300 text-md">FM.</p>
             </div>
-          </div>
-        </li>
-        <li class="text-sm leading-6">
-          <div class="relative group">
-            <div
-              class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-            </div>
-            <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-              <div class="space-x-4">
-                <div>
-                  <p class="text-lg font-semibold text-white mb-2">Papelería la gomita</p>
-                  <p class="text-slate-200 text-md leading-normal">"Muy contento con el servicio. La plataforma es
-                    intuitiva, y el soporte al cliente siempre está disponible para ayudar."</p>
-                </div>
-              </div>
-              <p class="leading-normal text-gray-300 text-md">PG.</p>
-            </div>
-
-          </div>
-        </li>
-        <li class="text-sm leading-6">
-          <div class="relative group">
-            <div
-              class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-            </div>
-            <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-              <div class="space-x-4">
-
-                <div>
-                  <p class="text-lg font-semibold text-white mb-2">Ferreteria Joselin</p>
-                  <p class="text-slate-200 text-md leading-normal"> "Las mejores comisiones del mercado. Además, la
-                    variedad de compañías que manejan es impresionante. ¡Mis clientes están felices!"</p>
-                </div>
-              </div>
-              <p class="leading-normal text-gray-300 text-md">
-                FJ.
-              </p>
-            </div>
-
-          </div>
-        </li>
+          </li>
+        }
+    
       </ul>
 
       <ul class="hidden space-y-8 sm:block">
-        <li class="text-sm leading-6">
-          <div class="relative group">
-            <div
-              class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-            </div>
-
-            <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-              <div class="space-x-4">
-
-                <div>
-                  <p class="text-lg font-semibold text-white mb-2">Anahi Ortega</p>
-                  <p class="text-slate-200 text-md leading-normal">"Manejan buenas compañias"</p>
-                </div>
+          @for (testimonial of testimonialListTwo; track $index) {
+          <li class="text-sm leading-6">
+            <div class="relative group">
+              <div
+                class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
               </div>
-              <p class="leading-normal text-gray-300 text-md">AO.</p>
-            </div>
-
-          </div>
-        </li>
-        <li class="text-sm leading-6">
-          <div class="relative group">
-            <div
-              class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-            </div>
-            <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-              <div class="space-x-4">
-
-                <div>
-                  <p class="text-lg font-semibold text-white mb-2">Valeria Pineda</p>
-                  <p class="text-slate-200 text-md leading-normal">
-                    "Tuve un problema para ubicar a mi distribuidor, gracias a Recargas Electrónicas
-                    puede ubicarlo, la atención siempre fue amable, 100% recomendado"
-
-                  </p>
-                </div>
-              </div>
-              <p class="leading-normal text-gray-300 text-md">
-                VP.
-              </p>
-            </div>
-
-          </div>
-        </li>
-        <li class="text-sm leading-6">
-          <div class="relative group">
-            <div
-              class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-            </div><a href="https://twitter.com/paraga" class="cursor-pointer">
+  
               <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
                 <div class="space-x-4">
-
+  
                   <div>
-                    <p class="text-lg font-semibold text-white mb-2">Diego Navarro</p>
-                    <p class="text-slate-200 text-md leading-normal">
-                      "Desde el primer día, me ha ido muy bien. Mis clientes aprecian la comodidad de recargar aquí, y
-                      yo disfruto las ganancias extras."
-                    </p>
+                    <p class="text-lg font-semibold text-white mb-2">{{testimonial.fullName}}</p>
+                    <p class="text-slate-200 text-md leading-normal">"{{testimonial.comment}}"</p>
                   </div>
                 </div>
-                <p class="leading-normal text-gray-300 text-md">DN</p>
+                <p class="leading-normal text-gray-300 text-md">{{testimonial.acronym}}.</p>
               </div>
-            </a>
-          </div>
-        </li>
-        <li class="text-sm leading-6">
-          <div class="relative group">
-            <div
-              class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+  
             </div>
-            <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-              <div class="space-x-4">
-
-                <div>
-                  <p class="text-lg font-semibold text-white mb-2">Tim Cook</p>
-                  <p class="text-slate-200 text-md">CEO of Apple</p>
-                </div>
-              </div>
-              <p class="leading-normal text-gray-300 text-md">Diam quis enim lobortis scelerisque
-                fermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittis
-                aliquam malesuada bibendum.</p>
-            </div>
-
-          </div>
-        </li>
-      </ul>
-
+          </li>
+   
+        }
+        </ul>
 
       <ul class="hidden space-y-8 lg:block">
-        <li class="text-sm leading-6">
-          <div class="relative group">
-            <div
-              class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-            </div><a href="https://twitter.com/satyanadella" class="cursor-pointer">
-              <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                <div class="flex items-center space-x-4"><img
-                    src="https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg"
-                    class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella">
-                  <div>
-                    <h3 class="text-lg font-semibold text-white">Satya Nadella</h3>
-                    <p class="text-gray-500 text-md">CEO of Microsoft</p>
-                  </div>
+          @for (testimonial of testimonialListThree; track $index) {
+            <li class="text-sm leading-6">
+              <div class="relative group">
+                <div
+                  class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
                 </div>
-                <p class="leading-normal text-gray-300 text-md">Tortor dignissim convallis aenean et
-                  tortor at. At ultrices mi tempus imperdiet nulla malesuada. Id cursus metus aliquam
-                  eleifend mi. Quis ipsum suspendisse ultrices gravida dictum fusce ut.</p>
-              </div>
-            </a>
-          </div>
-        </li>
-        <li class="text-sm leading-6">
-          <div class="relative group">
-            <div
-              class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-            </div><a href="https://twitter.com/dan_schulman" class="cursor-pointer">
-              <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                <div class="flex items-center space-x-4"><img
-                    src="https://pbs.twimg.com/profile_images/516916920482672641/3jCeLgFb_400x400.jpeg"
-                    class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Dan Schulman">
-                  <div>
-                    <h3 class="text-lg font-semibold text-white">Dan Schulman</h3>
-                    <p class="text-gray-500 text-md">CEO of PayPal</p>
+    
+                <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                  <div class="space-x-4">
+    
+                    <div>
+                      <p class="text-lg font-semibold text-white mb-2">{{testimonial.fullName}}</p>
+                      <p class="text-slate-200 text-md leading-normal">"{{testimonial.comment}}"</p>
+                    </div>
                   </div>
+                  <p class="leading-normal text-gray-300 text-md">{{testimonial.acronym}}.</p>
                 </div>
-                <p class="leading-normal text-gray-300 text-md">Quam pellentesque nec nam aliquam sem
-                  et tortor consequat id. Enim sit amet venenatis urna cursus.</p>
+    
               </div>
-            </a>
-          </div>
-        </li>
-        <li class="text-sm leading-6">
-          <div class="relative group">
-            <div
-              class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-            </div><a href="https://twitter.com/satyanadella" class="cursor-pointer">
-              <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                <div class="flex items-center space-x-4"><img
-                    src="https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg"
-                    class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella">
-                  <div>
-                    <h3 class="text-lg font-semibold text-white">Satya Nadella</h3>
-                    <p class="text-gray-500 text-md">CEO of Microsoft</p>
-                  </div>
-                </div>
-                <p class="leading-normal text-gray-300 text-md">Tortor dignissim convallis aenean et
-                  tortor at. At ultrices mi tempus imperdiet nulla malesuada. Id cursus metus aliquam
-                  eleifend mi. Quis ipsum suspendisse ultrices gravida dictum fusce ut.</p>
-              </div>
-            </a>
-          </div>
-        </li>
-        <li class="text-sm leading-6">
-          <div class="relative group">
-            <div
-              class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-            </div><a href="https://twitter.com/dan_schulman" class="cursor-pointer">
-              <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                <div class="flex items-center space-x-4"><img
-                    src="https://pbs.twimg.com/profile_images/516916920482672641/3jCeLgFb_400x400.jpeg"
-                    class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Dan Schulman">
-                  <div>
-                    <h3 class="text-lg font-semibold text-white">Dan Schulman</h3>
-                    <p class="text-gray-500 text-md">CEO of PayPal</p>
-                  </div>
-                </div>
-                <p class="leading-normal text-gray-300 text-md">Quam pellentesque nec nam aliquam sem
-                  et tortor consequat id. Enim sit amet venenatis urna cursus.</p>
-              </div>
-            </a>
-          </div>
-        </li>
+            </li>
+          }
       </ul>
 
 

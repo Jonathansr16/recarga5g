@@ -40,12 +40,12 @@ import { MenuItem } from '@interfaces/header.interface';
 })
 export class HeaderComponent{
 
-  isOpen = signal<boolean>(false);
-  active = signal<boolean>(false);
-  activeNavOverlay = signal<boolean>(false);
-  isOpenSidebar = signal<boolean>(false);
-
-  isActiveMenu = signal<boolean>(false);
+  isOpen = signal(false);
+  active = signal(false);
+  isOpenNotf = signal(false)
+  activeNavOverlay = signal(false);
+  isOpenSidebar = signal(false);
+  isActiveMenu = signal(false);
 
   private readonly document = inject(DOCUMENT);
   private readonly renderer2 = inject(Renderer2);
@@ -83,9 +83,10 @@ export class HeaderComponent{
           {
             label: 'Lo que tenemos para ti',
             items: [
-                { label: 'recargas', routerLink: 'productos/recargas' },
-                { label: 'pago de servicios', routerLink: 'productos/servicios' },
-                { label: 'tarjeta de regalo', routerLink: 'productos/pines' }
+                { label: 'Recargas', routerLink: 'productos/recargas' },
+                { label: 'Pago de Servicios', routerLink: 'productos/servicios' },
+                { label: 'Tarjetas de Regalo', routerLink: 'productos/pines' },
+                { label: 'Terminales', routerLink: 'productos/terminales' }
             ]
           }
         ]

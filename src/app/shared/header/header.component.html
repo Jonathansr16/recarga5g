@@ -9,7 +9,7 @@
         </a>
       </div>
       
-      <nav class="navbar animate-fade-in-down col-span-full overflow-x-auto row-[2/3] grid grid-rows-[0fr] transition-[grid-template-rows] data-[open]:grid-rows-[1fr] md:justify-center md:flex group/nav">
+      <nav class="navbar animate-fade-in-down col-span-full row-[2/3] grid grid-rows-[0fr] transition-[grid-template-rows] data-[open]:grid-rows-[1fr] md:justify-center md:flex group/nav">
    
       <ul [ngClass]="isOpenSidebar() ? 'flex' : 'hidden'" class="flex-col lg:flex-row flex-grow pb-4 md:pb-0 items-center lg:justify-center lg:flex" role="menu">
        @for (item of navbarItems(); let i = $index; track i) {

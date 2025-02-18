@@ -29,6 +29,7 @@ import { CarouselApp } from '@feature/components/app-recargas/interface/app.inte
 import { ProductCarousel } from 'src/app/interfaces/product-carousel.interface';
 import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
 import { RouterLink } from '@angular/router';
+import { DoubtsComponent } from '@feature/components/doubts/doubts.component';
 
 @Component({
     selector: 'app-plataforma-pagaqui',
@@ -49,11 +50,12 @@ import { RouterLink } from '@angular/router';
     `],
     imports: [
         CommonModule,
+        RouterLink,
         ProductCarouselComponent,
         SalesMethodComponent,
         AppRecargasComponent,
         RegisterStepsComponent,
-        RouterLink
+        DoubtsComponent
     ]
 })
 export default class PlataformaPagaquiComponent

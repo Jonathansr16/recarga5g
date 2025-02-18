@@ -41,6 +41,7 @@ import { AdvantageList } from 'src/app/interfaces/advantage-list.interface';
 
 import { BenefitsListModel } from 'src/app/interfaces/benefits-list.interface';
 import { ReasonForSellingService } from '@services/razones.service';
+import { DoubtsComponent } from '@feature/components/doubts/doubts.component';
 
 @Component({
   selector: 'app-home',
@@ -56,6 +57,7 @@ import { ReasonForSellingService } from '@services/razones.service';
     AppRecargasComponent,
     AdvantageListComponent,
     RegisterStepsComponent,
+    DoubtsComponent
     // BentoItemComponent
   ],
 

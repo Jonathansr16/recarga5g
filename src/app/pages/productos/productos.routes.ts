@@ -16,5 +16,10 @@ export const consultaRoutes: Routes = [
     {
         path: 'pines',
         loadComponent: () => import('@productos/venta-pines/venta-pines.component')
+    }, 
+
+    {
+        path: 'terminales',
+        loadComponent: () => import('@productos/terminales/terminales.component')
     }
 ];

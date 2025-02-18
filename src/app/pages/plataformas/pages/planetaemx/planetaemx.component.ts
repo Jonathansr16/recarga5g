@@ -18,6 +18,7 @@ import { ProductCarousel } from 'src/app/interfaces/product-carousel.interface';
 import { ProductCarouselComponent } from '@feature/components/product-carousel/product-carousel.component';
 import { PlanetaemxService } from '@plataformas/services/planetaemx.service';
 import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
+import { DoubtsComponent } from '@feature/components/doubts/doubts.component';
 
 @Component({
     selector: 'app-planetaemx',
@@ -40,7 +41,8 @@ import { RegisterStepsComponent } from '@feature/components/register-steps/regis
         ProductCarouselComponent,
         AppRecargasComponent,
         SalesMethodComponent,
-        RegisterStepsComponent
+        RegisterStepsComponent,
+        DoubtsComponent
     ]
 })
 export default class PlanetaemxComponent implements OnInit {
@@ -49,6 +51,28 @@ export default class PlanetaemxComponent implements OnInit {
  appRecargaki = signal<CarouselApp[]>([]);
 
   title: any;
+
+  listBenefit = [
+    {
+      title: 'Comisión por depósito',
+      isActive: true,
+    },
+
+    {
+      title: 'Excelentes comisiones',
+      isActive: false,
+    },
+
+    {
+      title: 'Administra 2 tipos de saldos para recargas y para servicios',
+      isActive: false,
+    },
+
+    {
+      title: 'Reporta todas tus compras en el portal',
+      isActive: true
+    }
+  ]
 
 
  private readonly productCarouselService = inject(ProductCarouselService);

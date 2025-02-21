@@ -2,6 +2,20 @@
 
 
  <section class="sl-channel relative space-container">
+  
+    <div class="circle-shape-wrapper absolute ml-[580px] top-48 left-0 pointer-events-none -z-1"
+    aria-hidden="true">
+    <div
+      class="circle-shape blur-[160px] opacity-50 bg-gradient-to-tr from-blue-500 to-blue-500/30 rounded-full size-80 -z-0">
+    </div>
+  </div>
+
+  <div class="circle-shape-wrapper absolute bottom-4 left-2/4 -translate-x-2/4 pointer-events-none -z-1"
+  aria-hidden="true">
+  <div
+    class="circle-shape blur-[160px] opacity-50 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-full size-80 -z-0">
+  </div>
+</div>
 
     <div class="sl-channel-container relative grid grid-cols-1 lg:grid-cols-3 gap-6 mx-auto container justify-items-center">
        <ng-container *ngFor="let method of metodoVentas; let i = index">

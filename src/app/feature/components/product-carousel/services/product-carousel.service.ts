@@ -10,11 +10,11 @@ export class ProductCarouselService {
   #recargas = signal<ProductCarousel[]>([
     {
       id: 1,
-      company: 'telcel',
+      company: 'Telcel',
       typeService: 'Recargas',
       img: {
         id: 1,
-        src: '/assets/img/companies/recargas/telcel.png',
+        src: '/assets/img/companies/recargas/telcel.webp',
         alt: 'Venta de recargas Telcel',
       },
       siteweb: 'https://www.telcel.com/'
@@ -26,7 +26,7 @@ export class ProductCarouselService {
       typeService: 'Recargas',
       img: {
         id: 2,
-        src: '/assets/img/companies/recargas/bait.png',
+        src: '/assets/img/companies/recargas/bait.webp',
         alt: 'venta de recargas Bait',
       },
       siteweb: 'https://mibait.com/'
@@ -38,7 +38,7 @@ export class ProductCarouselService {
       typeService: 'Recargas',
       img: {
         id: 3,
-        src: '/assets/img/companies/recargas/unefon.png',
+        src: '/assets/img/companies/recargas/unefon.webp',
         alt: 'venta de recargas unefon',
       },
       siteweb: 'https://unefon.com.mx/'
@@ -50,7 +50,7 @@ export class ProductCarouselService {
       typeService: 'Recargas',
       img: {
         id: 4,
-        src: '/assets/img/companies/recargas/att.png',
+        src: '/assets/img/companies/recargas/att.webp',
         alt: 'venta de recargas AT&T',
       },
       siteweb: 'https://www.att.com.mx/'
@@ -62,7 +62,7 @@ export class ProductCarouselService {
       typeService: 'Recargas',
       img: {
         id: 5,
-        src: '/assets/img/companies/recargas/virgin.png',
+        src: '/assets/img/companies/recargas/virgin.webp',
         alt: 'venta de recargas Virgin',
       },
       siteweb: 'https://virginmobile.mx/'
@@ -74,7 +74,7 @@ export class ProductCarouselService {
       typeService: 'Recargas',
       img: {
         id: 6,
-        src: '/assets/img/companies/recargas/movistar.png',
+        src: '/assets/img/companies/recargas/movistar.webp',
         alt: 'venta de recargas Movistar',
       },
       siteweb: 'https://www.movistar.com.mx/'
@@ -86,7 +86,7 @@ export class ProductCarouselService {
       typeService: 'Recargas',
       img: {
         id: 7,
-        src: '/assets/img/companies/recargas/weex.png',
+        src: '/assets/img/companies/recargas/weex.webp',
         alt: 'venta de recargas Weex',
       },
       siteweb: 'https://weex.mx/'
@@ -98,7 +98,7 @@ export class ProductCarouselService {
       typeService: 'Recargas',
       img: {
         id: 8,
-        src: '/assets/img/companies/recargas/gugacom.png',
+        src: '/assets/img/companies/recargas/gugacom.webp',
         alt: 'https://queplan.mx/gugacom',
       },
     },
@@ -109,7 +109,7 @@ export class ProductCarouselService {
       typeService: 'Recargas',
       img: {
         id: 9,
-        src: '/assets/img/companies/recargas/wimotelecom.png',
+        src: '/assets/img/companies/recargas/wimotelecom.webp',
         alt: 'Venta de recargas Wimotelecom',
       },
       siteweb:'https://www.wimotelecom.com/'
@@ -121,7 +121,7 @@ export class ProductCarouselService {
       typeService: 'Recargas',
       img: {
         id: 10,
-        src: '/assets/img/companies/recargas/oui.png',
+        src: '/assets/img/companies/recargas/oui.webp',
         alt: 'Venta de recargas Oui',
       },
       siteweb: 'https://ouimovil.com/'
@@ -129,14 +129,14 @@ export class ProductCarouselService {
 
     {
       id: 11,
-      company: 'Simpaty',
+      company: 'Internet del bienestar',
       typeService: 'Recargas',
       img: {
         id: 11,
-        src: '/assets/img/companies/recargas/simpati.png',
-        alt: 'Venta de recargas Simpaty',
+        src: '/assets/img/companies/recargas/internetparaelbienestar.webp',
+        alt: 'Venta de recargas Internet para el Bienestar',
       },
-      siteweb: 'https://www.simple.com.ve/ayuda/simpaty/'
+      siteweb: 'https://internetparaelbienestar.mx/'
     },
 
     {
@@ -145,11 +145,23 @@ export class ProductCarouselService {
       typeService: 'Recargas',
       img: {
         id: 12,
-        src: '/assets/img/companies/recargas/flashmobile.png',
+        src: '/assets/img/companies/recargas/flashmobile.webp',
         alt: 'Venta de recargas Flash Mobile Mx',
       },
       siteweb: 'https://www.miflashmobile.mx/homepage'
     },
+    {
+      id: 13,
+      company: 'ABIB',
+      typeService: 'Recargas',
+      img: {
+        id: 12,
+        src: '/assets/img/companies/recargas/abib.webp',
+        alt: 'Venta de recargas ABIB',
+      },
+      siteweb: 'https://abib.com.mx/#/inicio'
+    },
+  
   ]);
 
   #servicios = signal<ProductCarousel[]>([
@@ -159,7 +171,7 @@ export class ProductCarouselService {
       typeService: 'Servicios',
       img: {
         id: 100,
-        src: '/assets/img/companies/servicios/telmex.png',
+        src: '/assets/img/companies/servicios/telmex.webp',
         alt: 'Pago de servicio Telmex',
       },
       siteweb: 'https://telmex.com/'
@@ -171,7 +183,7 @@ export class ProductCarouselService {
       typeService: 'Servicios',
       img: {
         id: 101,
-        src: '/assets/img/companies/servicios/totalplay.png',
+        src: '/assets/img/companies/servicios/totalplay.webp',
         alt: 'Compañia para cobro de servicio Total Play',
       },
       siteweb: 'https://www.totalplay.com.mx/'
@@ -183,7 +195,7 @@ export class ProductCarouselService {
       typeService: 'Servicios',
       img: {
         id: 102,
-        src: '/assets/img/companies/servicios/sky.png',
+        src: '/assets/img/companies/servicios/sky.webp',
         alt: 'Pago de servicio Sky',
       },
       siteweb: 'https://www.sky.com.mx/'
@@ -195,7 +207,7 @@ export class ProductCarouselService {
       typeService: 'Servicios',
       img: {
         id: 103,
-        src: '/assets/img/companies/servicios/izzi.png',
+        src: '/assets/img/companies/servicios/izzi.webp',
         alt: 'Pago de servicios IZZI',
       },
       siteweb: 'https://www.izzi.mx/home'
@@ -207,7 +219,7 @@ export class ProductCarouselService {
       typeService: 'Servicios',
       img: {
         id: 104,
-        src: '/assets/img/companies/servicios/cfe.png',
+        src: '/assets/img/companies/servicios/cfe.webp',
         alt: 'Pago de servicios CFE',
       },
       siteweb: 'https://www.cfe.mx/Pages/default.aspx'
@@ -219,7 +231,7 @@ export class ProductCarouselService {
       typeService: 'Servicios',
       img: {
         id: 105,
-        src: '/assets/img/companies/servicios/dish.png',
+        src: '/assets/img/companies/servicios/dish.webp',
         alt: 'Pago de servicios Dish',
       },
       siteweb: 'https://www.dish.com.mx/'
@@ -231,7 +243,7 @@ export class ProductCarouselService {
       typeService: 'Servicios',
       img: {
         id: 106,
-        src: '/assets/img/companies/servicios/infonavit.png',
+        src: '/assets/img/companies/servicios/infonavit.webp',
         alt: 'Pago de servicios Infonavit',
       },
       siteweb: 'https://micuenta.infonavit.org.mx/'
@@ -243,7 +255,7 @@ export class ProductCarouselService {
       typeService: 'Servicios',
       img: {
         id: 107,
-        src: '/assets/img/companies/servicios/avon.png',
+        src: '/assets/img/companies/servicios/avon.webp',
         alt: 'Pago de servicios Avon',
       },
       siteweb: 'https://www.mx.avon.com/REPSuite/loginMain.page'
@@ -255,7 +267,7 @@ export class ProductCarouselService {
       typeService: 'Servicios',
       img: {
         id: 108,
-        src: '/assets/img/companies/servicios/jafra.png',
+        src: '/assets/img/companies/servicios/jafra.webp',
         alt: 'Pago de servicios Jafra',
       },
       siteweb: 'https://www.jafra.com.mx/'
@@ -267,7 +279,7 @@ export class ProductCarouselService {
       typeService: 'Servicios',
       img: {
         id: 109,
-        src: '/assets/img/companies/servicios/tupperware.png',
+        src: '/assets/img/companies/servicios/tupperware.webp',
         alt: 'Pago de servicios Tupperware',
       },
       siteweb: 'https://www.tupperware.com.mx/'
@@ -279,7 +291,7 @@ export class ProductCarouselService {
       typeService: 'Servicios',
       img: {
         id: 110,
-        src: '/assets/img/companies/servicios/gas_natural.png',
+        src: '/assets/img/companies/servicios/gas_natural.webp',
         alt: 'Pago de servicios gas natural Natury',
       },
       siteweb: 'https://www.naturgy.com.mx/'
@@ -291,7 +303,7 @@ export class ProductCarouselService {
       typeService: 'Servicios',
       img: {
         id: 111,
-        src: '/assets/img/companies/servicios/televia.png',
+        src: '/assets/img/companies/servicios/televia.webp',
         alt: 'Pago de servicios televia',
       },
       siteweb: 'https://www.televia.com.mx/'
@@ -303,11 +315,24 @@ export class ProductCarouselService {
       typeService: 'Servicios',
       img: {
         id: 112,
-        src: '/assets/img/companies/servicios/lebel.png',
+        src: '/assets/img/companies/servicios/lebel.webp',
         alt: 'Pago de servicios Lbel',
       },
       siteweb: 'https://lbel.tiendabelcorp.com.mx/'
     },
+
+    {
+      id: 113,
+      company: 'Elektra',
+      typeService: 'Servicios',
+      img: {
+        id: 113,
+        src: '/assets/img/companies/servicios/elektraabonossemanales.webp',
+        alt: 'Pago de servicios Elektra',
+      },
+      siteweb: 'https://www.elektra.mx/'
+    },
+
   ]);
 
   #pines = signal<ProductCarousel[]>([

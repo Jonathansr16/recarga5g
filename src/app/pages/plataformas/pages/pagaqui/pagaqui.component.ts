@@ -78,7 +78,79 @@ export default class PlataformaPagaquiComponent
       title: 'Venta de recargas telefónicas',
       description: 'Venta de recargas telefónicas para todos los operadores móviles, incluyendo Telcel, Movistar, AT&T, y más. Con nosotros, podrás realizar recargas al instante, las 24 horas del día, los 7 días de la semana, desde la comodidad de tu hogar o negocio.',
       link: '/productos/recargas',
-      img: { src: 'assets/img/recargas-article.webp', alt: 'Venta de recargas a cualquier compañía para negocio'},
+      companies: [
+        {
+          company: 'Telcel',
+          img: {
+            src: 'assets/img/companies/recargas/telcel.png',
+            alt: 'Venta de recargas telcel'
+          }
+        },
+
+        {
+          company: 'Movistar',
+          img: {
+            src: 'assets/img/companies/recargas/movistar.png',
+            alt: 'Venta de recargas Movistar'
+          }
+        },
+
+        {
+          company: 'Bait',
+          img: {
+            src: 'assets/img/companies/recargas/bait.png',
+            alt: 'Venta de recargas Bait'
+          }
+        },
+
+        {
+          company: 'Virgin Mobile',
+          img: {
+            src: 'assets/img/companies/recargas/virgin.png',
+            alt: 'Venta de recargas virgin Mobile'
+          }
+        },
+
+        {
+          company: 'ATT',
+          img: {
+            src: 'assets/img/companies/recargas/att.png',
+            alt: 'Venta de recargas AT&T'
+          }
+        },
+
+        {
+          company: 'Axios Mobile',
+          img: {
+            src: 'assets/img/companies/recargas/axiosmobile.png',
+            alt: 'Venta de recargas Axios Mobile'
+          }
+        },
+
+        {
+          company: 'Vasanta',
+          img: {
+            src: 'assets/img/companies/recargas/vasanta.png',
+            alt: 'Venta de recargas Vasanta'
+          }
+        },
+
+        {
+          company: 'Unefon',
+          img: {
+            src: 'assets/img/companies/recargas/unefon.png',
+            alt: 'Venta de recargas Unefon'
+          }
+        },
+
+        {
+          company: 'Internet del bienestar',
+          img: {
+            src: 'assets/img/companies/recargas/internetparaelbienestar.png',
+            alt: 'Venta de recargas Bienestar'
+          }
+        },
+      ]
     },
 
     {
@@ -87,7 +159,79 @@ export default class PlataformaPagaquiComponent
       title: 'Pago de servicios',
       description: 'Podrás realizar recargas al instante, las 24 horas del día, los 7 días de la semana, desde la comodidad de tu hogar o negocio',
       link: '/productos/recargas',
-      img: { src: 'assets/img/servicios-article.webp', alt: 'Cobro por pago de servicios'}
+      companies: [
+        {
+          company: 'CFE',
+          img: {
+            src: 'assets/img/companies/servicios/cfe.png',
+            alt: 'cobro de servicios CFE'
+          }
+        },
+
+        {
+          company: 'Dish',
+          img: {
+            src: 'assets/img/companies/servicios/dish.png',
+            alt: 'Cobro de servicios Dish'
+          }
+        },
+
+        {
+          company: 'Telmex',
+          img: {
+            src: 'assets/img/companies/servicios/telmex.png',
+            alt: 'Cobro de servicios Telmex'
+          }
+        },
+
+
+        {
+          company: 'Televia',
+          img: {
+            src: 'assets/img/companies/servicios/televia.png',
+            alt: 'Cobro de servicios Televia'
+          }
+        },
+
+
+        {
+          company: 'Jafra',
+          img: {
+            src: 'assets/img/companies/servicios/jafra.png',
+            alt: 'Cobro de servicios Jafra'
+          }
+        },
+
+
+        {
+          company: 'Vetv',
+          img: {
+            src: 'assets/img/companies/servicios/vetv.png',
+            alt: 'Cobro de servicios Vetv'
+          }
+        },
+
+        {
+          company: 'Andrea',
+          img: {
+            src: 'assets/img/companies/servicios/calzadoandrea.png',
+            alt: 'Cobro de servicios Andrea'
+          }
+        },
+
+
+        {
+          company: 'Megacable',
+          img: {
+            src: 'assets/img/companies/servicios/megacable.png',
+            alt: 'Cobro de servicios Megacable'
+          }
+        },
+
+ 
+
+    
+      ]
     },
 
     {
@@ -96,7 +240,31 @@ export default class PlataformaPagaquiComponent
       title: 'Gift Card',
       description: 'Venta de pines electrónicos para videojuegos, plataformas de streaming y otros servicios digitales, ideales para negocios que buscan diversificar su oferta y aumentar sus ingresos.',
       link: '/productos/pines',
-      img: { src: 'assets/img/pines-article.webp', alt: 'Venta de tarjeta de regalo'}
+      companies: [
+        {
+          company: 'Netflix',
+          img: {
+            src: 'assets/img/companies/pines/netflix.png',
+            alt: 'Venta de giftcard Netflix'
+          }
+        },
+
+        {
+          company: 'Google Play',
+          img: {
+            src: 'assets/img/companies/pines/googleplay100.png',
+            alt: 'Venta de giftcard Google Play'
+          }
+        },
+
+        {
+          company: 'Amazon Prime Video',
+          img: {
+            src: 'assets/img/companies/pines/amazonprimevideounmes.png',
+            alt: 'Venta de giftcard Amazon Prime Video'
+          }
+        }
+      ]
     },
 
     {

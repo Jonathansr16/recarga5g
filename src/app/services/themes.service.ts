@@ -15,7 +15,7 @@ export class ThemesService {
 
   //* Signal para el tema actual
   #currentTheme = signal<AppTheme | undefined>(this.getStoredTheme());
-  #isDarkTheme = computed(() => this.#currentTheme() === AppTheme.DARK);  // Computed automáticamente a partir del tema actual
+  #isDarkTheme = computed(() => this.#currentTheme() === AppTheme.DARK);
 
   public themeChange = computed(() => this.#isDarkTheme());
 

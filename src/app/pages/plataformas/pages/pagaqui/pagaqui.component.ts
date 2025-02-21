@@ -1,22 +1,19 @@
 import {
   Component,
-  Renderer2,
-  ViewChild,
-  ElementRef,
-  TemplateRef,
   OnInit,
   AfterViewInit,
   inject,
   signal,
+  computed,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
 //* Interfaces importados
 import { registerStepsModel } from 'src/app/interfaces/register-steps-model';
 
 //* Servicios importados
-
 import { MetaTagService } from 'src/app/services/meta-tag.service';
 import { RegisterStepsService } from 'src/app/services/register-steps.service';
 import { PagaquiService } from './services/pagaqui.service';
@@ -28,25 +25,31 @@ import { AppRecargasComponent } from '../../../../feature/components/app-recarga
 import { CarouselApp } from '@feature/components/app-recargas/interface/app.interface';
 import { ProductCarousel } from 'src/app/interfaces/product-carousel.interface';
 import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
-import { RouterLink } from '@angular/router';
 import { DoubtsComponent } from '@feature/components/doubts/doubts.component';
+import { ProductsComponent } from '@plataformas/components/products/products.component';
+import { ThemesService } from '@services/themes.service';
+
 
 @Component({
     selector: 'app-plataforma-pagaqui',
     templateUrl: './pagaqui.component.html',
    styles: [`
 
-.platform-col::before {
-     inset-block-start: 0;
-      inline-size: 1px;
-     block-size: 100vh;
-    }
+   .app-pagaqui__li {
+    counter-increment:(indexApp);
+   }
 
-    .platform-col::after {
-     inset-block-start: -1px;
-      inline-size: 100vw;
-     block-size: 1px;
-    }
+// .platform-col::before {
+//      inset-block-start: 0;
+//       inline-size: 1px;
+//      block-size: 100vh;
+//     }
+
+//     .platform-col::after {
+//      inset-block-start: -1px;
+//       inline-size: 100vw;
+//      block-size: 1px;
+//     }
     `],
     imports: [
         CommonModule,
@@ -54,8 +57,9 @@ import { DoubtsComponent } from '@feature/components/doubts/doubts.component';
         ProductCarouselComponent,
         SalesMethodComponent,
         AppRecargasComponent,
+        ProductsComponent,
         RegisterStepsComponent,
-        DoubtsComponent
+        DoubtsComponent,
     ]
 })
 export default class PlataformaPagaquiComponent
@@ -71,211 +75,9 @@ export default class PlataformaPagaquiComponent
 
   registerStepPagaqui = signal<registerStepsModel[]>([]);
 
-  ourProduct = [
-    {
-      id: 1, 
-      subtitle: 'Excelentes comisiones',
-      title: 'Venta de recargas telefónicas',
-      description: 'Venta de recargas telefónicas para todos los operadores móviles, incluyendo Telcel, Movistar, AT&T, y más. Con nosotros, podrás realizar recargas al instante, las 24 horas del día, los 7 días de la semana, desde la comodidad de tu hogar o negocio.',
-      link: '/productos/recargas',
-      companies: [
-        {
-          company: 'Telcel',
-          img: {
-            src: 'assets/img/companies/recargas/telcel.png',
-            alt: 'Venta de recargas telcel'
-          }
-        },
+ theme = inject(ThemesService);
 
-        {
-          company: 'Movistar',
-          img: {
-            src: 'assets/img/companies/recargas/movistar.png',
-            alt: 'Venta de recargas Movistar'
-          }
-        },
-
-        {
-          company: 'Bait',
-          img: {
-            src: 'assets/img/companies/recargas/bait.png',
-            alt: 'Venta de recargas Bait'
-          }
-        },
-
-        {
-          company: 'Virgin Mobile',
-          img: {
-            src: 'assets/img/companies/recargas/virgin.png',
-            alt: 'Venta de recargas virgin Mobile'
-          }
-        },
-
-        {
-          company: 'ATT',
-          img: {
-            src: 'assets/img/companies/recargas/att.png',
-            alt: 'Venta de recargas AT&T'
-          }
-        },
-
-        {
-          company: 'Axios Mobile',
-          img: {
-            src: 'assets/img/companies/recargas/axiosmobile.png',
-            alt: 'Venta de recargas Axios Mobile'
-          }
-        },
-
-        {
-          company: 'Vasanta',
-          img: {
-            src: 'assets/img/companies/recargas/vasanta.png',
-            alt: 'Venta de recargas Vasanta'
-          }
-        },
-
-        {
-          company: 'Unefon',
-          img: {
-            src: 'assets/img/companies/recargas/unefon.png',
-            alt: 'Venta de recargas Unefon'
-          }
-        },
-
-        {
-          company: 'Internet del bienestar',
-          img: {
-            src: 'assets/img/companies/recargas/internetparaelbienestar.png',
-            alt: 'Venta de recargas Bienestar'
-          }
-        },
-      ]
-    },
-
-    {
-      id: 2, 
-      subtitle: 'Excelentes comisiones',
-      title: 'Pago de servicios',
-      description: 'Podrás realizar recargas al instante, las 24 horas del día, los 7 días de la semana, desde la comodidad de tu hogar o negocio',
-      link: '/productos/recargas',
-      companies: [
-        {
-          company: 'CFE',
-          img: {
-            src: 'assets/img/companies/servicios/cfe.png',
-            alt: 'cobro de servicios CFE'
-          }
-        },
-
-        {
-          company: 'Dish',
-          img: {
-            src: 'assets/img/companies/servicios/dish.png',
-            alt: 'Cobro de servicios Dish'
-          }
-        },
-
-        {
-          company: 'Telmex',
-          img: {
-            src: 'assets/img/companies/servicios/telmex.png',
-            alt: 'Cobro de servicios Telmex'
-          }
-        },
-
-
-        {
-          company: 'Televia',
-          img: {
-            src: 'assets/img/companies/servicios/televia.png',
-            alt: 'Cobro de servicios Televia'
-          }
-        },
-
-
-        {
-          company: 'Jafra',
-          img: {
-            src: 'assets/img/companies/servicios/jafra.png',
-            alt: 'Cobro de servicios Jafra'
-          }
-        },
-
-
-        {
-          company: 'Vetv',
-          img: {
-            src: 'assets/img/companies/servicios/vetv.png',
-            alt: 'Cobro de servicios Vetv'
-          }
-        },
-
-        {
-          company: 'Andrea',
-          img: {
-            src: 'assets/img/companies/servicios/calzadoandrea.png',
-            alt: 'Cobro de servicios Andrea'
-          }
-        },
-
-
-        {
-          company: 'Megacable',
-          img: {
-            src: 'assets/img/companies/servicios/megacable.png',
-            alt: 'Cobro de servicios Megacable'
-          }
-        },
-
- 
-
-    
-      ]
-    },
-
-    {
-      id: 3,
-      subtitle: 'Excelentes comisiones',
-      title: 'Gift Card',
-      description: 'Venta de pines electrónicos para videojuegos, plataformas de streaming y otros servicios digitales, ideales para negocios que buscan diversificar su oferta y aumentar sus ingresos.',
-      link: '/productos/pines',
-      companies: [
-        {
-          company: 'Netflix',
-          img: {
-            src: 'assets/img/companies/pines/netflix.png',
-            alt: 'Venta de giftcard Netflix'
-          }
-        },
-
-        {
-          company: 'Google Play',
-          img: {
-            src: 'assets/img/companies/pines/googleplay100.png',
-            alt: 'Venta de giftcard Google Play'
-          }
-        },
-
-        {
-          company: 'Amazon Prime Video',
-          img: {
-            src: 'assets/img/companies/pines/amazonprimevideounmes.png',
-            alt: 'Venta de giftcard Amazon Prime Video'
-          }
-        }
-      ]
-    },
-
-    {
-      id: 4,
-      subtitle: 'Proximamente..',
-      title: 'Terminales para puntos de venta',
-      description: 'Automiza y expande tus medios para el cobro de tus servicios, con excelentes comisiones, a traves de nuestras terminales',
-      img: { src: 'assets/img/recargas-article.webp', alt: ''}
-    },
-
-  ]
+ isDarkTheme = computed(() => this.theme.themeChange());
 
   //? META TAG
   // tag: metaTagModel = {
@@ -288,7 +90,7 @@ export default class PlataformaPagaquiComponent
   //   type: 'website',
   //   card: 'summary_large_image',
   //   creator: '@recargascelular',
-  //   image: 'https://recarga5g.com/Venta-recargas.png',
+  //   image: 'https://recarga5g.com/Venta-recargas.webp',
   // };
 
   
@@ -317,7 +119,9 @@ export default class PlataformaPagaquiComponent
         url: 'https://recarga5g.com/plataformas/pagaqui',
         typeContent: 'website'
       }
-    )
+    );
+    this.theme.initTheme();
+
   }
 
   ngAfterViewInit(): void {}

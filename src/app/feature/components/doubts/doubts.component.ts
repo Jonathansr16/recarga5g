@@ -1,10 +1,12 @@
 import { NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-doubts',
   imports: [
-    NgClass
+    NgClass,
+    RouterLink
   ],
   template: `
   <section class="section-dudas container mx-auto shadow-sm px-8 lg:px-0 mb-20">

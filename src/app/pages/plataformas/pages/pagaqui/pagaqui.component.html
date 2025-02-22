@@ -5,17 +5,21 @@
     <picture>
         <source 
         media="(min-width:1536px)" 
-        [srcset]="isDarkTheme() ? 'assets/img/plataformas/pagaqui/banner-recargas-web_dark.webp' : 'assets/img/plataformas/pagaqui/banner-recargas-web_light.webp'"
+        [srcset]="isDarkTheme() ? 'assets/img/plataformas/pagaqui/banner-plataforma-web_dark.webp' : 'assets/img/plataformas/pagaqui/banner-plataforma-web_light.webp'"
         type="image/webp"
         >
 
         <source 
         media="(min-width:340px)" 
-        [srcset]="isDarkTheme() ? 'assets/img/plataformas/pagaqui/banner-recargas-mobile_dark.webp' : 'assets/img/plataformas/pagaqui/banner-recargas-mobile_light.webp'"
+        [srcset]="isDarkTheme() ? 'assets/img/plataformas/pagaqui/banner-plataforma-mobile_dark.webp' : 'assets/img/plataformas/pagaqui/banner-plataforma-mobile_light.webp'"
         type="image/webp"
         >
 
-        <img [src]="isDarkTheme() ? 'assets/img/plataformas/pagaqui/banner-recargas-web_dark.webp' : 'assets/img/plataformas/pagaqui/banner-recargas-web_light.webp'" class="banner-plataform w-full h-auto">
+        <img 
+        width="1539"
+        height="385"
+        alt="Pagaqui plataforma para la venta de recargas electrónicas para negocios"
+        [src]="isDarkTheme() ? 'assets/img/plataformas/pagaqui/banner-plataforma-web_dark.webp' : 'assets/img/plataformas/pagaqui/banner-plataforma-web_light.webp'" class="banner-plataform w-full h-auto">
     </picture>
 
 

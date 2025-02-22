@@ -11,6 +11,8 @@ export interface ImgCarousel {
     id: number;
     src: string;
     alt: string;
+    width: string;
+    height: string;
 }
 
 export type TypeService = 'Recargas' | 'Servicios' | 'Pines';

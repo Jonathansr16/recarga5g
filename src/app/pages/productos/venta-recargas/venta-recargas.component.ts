@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, OnInit, inject, signal } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit, inject, signal, computed } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 //* Modelos importados
@@ -15,11 +15,12 @@ import { RegisterStepsService } from 'src/app/services/register-steps.service';
 import { ProductCarouselComponent } from '@feature/components/product-carousel/product-carousel.component';
 import { SalesMethodComponent } from '@feature/components/sales-method/sales-method.component';
 import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
+import { ThemesService } from '@services/themes.service';
 
 @Component({
     selector: 'app-venta-recargas',
     templateUrl: './venta-recargas.component.html',
-    styleUrls: ['./venta-recargas.component.scss', '../productos.component.scss'],
+    styles: [''],
     imports: [
         ProductCarouselComponent,
         RegisterStepsComponent,
@@ -32,6 +33,9 @@ export default class VentaRecargasComponent implements OnInit {
   
   carouselRecargas = signal<ProductCarousel[]>([]);
   stepRecargas = signal<registerStepsModel[]>([]);
+ theme = inject(ThemesService);
+
+ isDark = computed(() => this.theme.themeChange());
 
   //? META TAG
   // tag: metaTagModel = {
@@ -66,7 +70,7 @@ private readonly title = inject( Title);
       // ...this.tag
       // });
 
-        // this.carouselRecargas.set( this.productCarouselService.getRecargas() );
+         this.carouselRecargas.set( this.productCarouselService.getRecargas() );
         this.stepRecargas.set( this.stepRecargasService.getStepsRecargas() );
       }
 

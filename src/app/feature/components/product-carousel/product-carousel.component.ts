@@ -35,8 +35,10 @@ import { SwiperOptions } from 'swiper/types';
         <img
           [src]="product.img.src"
           class="sw-product-img object-contain"
-          loading="lazy"
           [alt]="product.img.alt"
+          [width]="product.img.width"
+          [height]="product.img.height"
+          loading="lazy"
         />
       </swiper-slide>
       }

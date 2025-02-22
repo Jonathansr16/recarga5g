@@ -1,19 +1,37 @@
-<!-- ============= HERO RECARGAS ============= -->
-<div class="hero-servicios mb-3 wow animate__animated animate__fadeIn">
-    <div class="hero-servicios__container container">
-        <picture class="hero-servicios__picture">
-            <source media="screen and (min-width: 1200px)" srcset="assets/img/Banner-consulta-recargas.png"
-                type="image/png" />
-            <source media="screen and (max-width: 950px)" srcset="assets/img/Banner-consulta-recargas__responsive.png"
-                type="image/png" />
-            <img src="assets/img/Banner-consulta-recargas.png" class="hero-servicios__img" width="1280" height="572" alt="Venta de recargas a cualquier compañia con excelentes comisiones" />
-        </picture>
+<section class="banner-plataformas">
+    <div
+      class="banner-plataformas__container container flex items-center justify-center mx-auto mt-20 pt-4 shadow rounded-lg">
+  
+      <picture>
+          <source 
+          media="(min-width:1536px)" 
+          [srcset]="isDark() ? 'assets/img/banner-recargas-web_dark.webp' : 'assets/img/banner-recargas-web_light.webp'"
+          type="image/webp"
+          >
+  
+          <source 
+          media="(min-width:340px)" 
+          [srcset]="isDark() ? 'assets/img/banner-recargas-mobile_dark.webp' : 'assets/img/banner-recargas-mobile_light.webp'"
+          type="image/webp"
+          >
+  
+          <img 
+          width="1539"
+          height="385"
+          alt="Pagaqui plataforma para la venta de recargas electrónicas para negocios"
+          [src]="isDark() ? 'assets/img/banner-recargas-web_dark.webp' : 'assets/img/banner-recargas-web_light.webp'" class="banner-plataform w-full h-auto">
+      </picture>
+  
+  
     </div>
-</div>
+</section>
+  
 
 <!-- ============= CAORUSEL RECARGAS ============= -->
 <!-- <app-product-carousel [products]="carouselRecargas()"></app-product-carousel> -->
- <app-product-carousel [products]="carouselRecargas()"></app-product-carousel>
+ <section class="container mx-auto my-20">
+     <app-product-carousel [products]="carouselRecargas()"></app-product-carousel>
+ </section>
 <!-- ============= SECCIÓN COBRO SERVICES ============= -->
 <div class="cobro-services mb-3">
     <div class="cobro-services__container container">

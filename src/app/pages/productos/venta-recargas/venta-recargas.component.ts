@@ -16,15 +16,17 @@ import { ProductCarouselComponent } from '@feature/components/product-carousel/p
 import { SalesMethodComponent } from '@feature/components/sales-method/sales-method.component';
 import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
 import { ThemesService } from '@services/themes.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-venta-recargas',
     templateUrl: './venta-recargas.component.html',
     styles: [''],
     imports: [
+        RouterLink,
         ProductCarouselComponent,
         RegisterStepsComponent,
-        SalesMethodComponent
+        SalesMethodComponent,
     ]
 })
 export default class VentaRecargasComponent implements OnInit {

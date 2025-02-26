@@ -1,3 +1,4 @@
+import { SafeHtml } from "@angular/platform-browser";
 
 export interface MegaMenuItem {
     /**
@@ -80,6 +81,7 @@ export interface MenuItem {
      * Icon of the item.
      */
     icon?: string;
+    svgIcon?: SafeHtml;
     /**
      * Callback to execute when item is clicked.
      */

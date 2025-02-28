@@ -20,7 +20,7 @@ import { RegisterStepsComponent } from '@feature/components/register-steps/regis
 @Component({
     selector: 'app-venta-pines',
     templateUrl: './venta-pines.component.html',
-    styleUrls: ['./venta-pines.component.scss', '../productos.component.scss'],
+    styleUrls: ['./venta-pines.component.scss'],
     imports: [
         CommonModule,
         ProductCarouselComponent,

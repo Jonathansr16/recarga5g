@@ -244,7 +244,67 @@ export class ProductCarouselService {
       },
       siteweb: 'https://tienda.vasanta.com.mx/'
     },
+
+    {
+      id: 18,
+      company: 'Pillofon',
+      typeService: 'Recargas',
+      img: {
+        id: 18,
+        src: '/assets/img/companies/recargas/pillofon.webp',
+        alt: 'Venta de recargas pillofon',
+        width: '300',
+        height: '109'
+      },
+      siteweb: 'https://pillofon.mx/'
+    },
+
+    {
+      id: 19,
+      company: 'Soriana',
+      typeService: 'Recargas',
+      img: {
+        id: 19,
+        src: '/assets/img/companies/recargas/sorianamovil.webp',
+        alt: 'Venta de recargas Soriana movil',
+        width: '300',
+        height: '109'
+      },
+      siteweb: 'https://www.sorianamovil.com/'
+    },
   
+
+    {
+      id: 20,
+      company: 'Rincel',
+      typeService: 'Recargas',
+      img: {
+        id: 20,
+        src: '/assets/img/companies/recargas/rincel.webp',
+        alt: 'Venta de recargas Rincel',
+        width: '300',
+        height: '109'
+      },
+      siteweb: 'https://rincel.com.mx/'
+    },
+  
+
+
+    {
+      id: 20,
+      company: 'Axios',
+      typeService: 'Recargas',
+      img: {
+        id: 20,
+        src: '/assets/img/companies/recargas/axios.webp',
+        alt: 'Venta de recargas Axios',
+        width: '300',
+        height: '109'
+      },
+      siteweb: 'https://axiosmobile.mx/'
+    },
+  
+
 
   ]);
 

@@ -1,150 +1,170 @@
-<!-- ============= HERO SERVICIOS ============= -->
-<div class="hero-servicios mb-3 wow animate__animated animate__fadeIn">
-  <div class="hero-servicios__container container">
-    <picture class="hero-servicios__picture">
-      <source media="screen and (min-width: 1200px)" srcset="assets/img/Banner-consulta-servicios.png"
-        type="image/png" />
-      <source media="screen and (max-width: 950px)" srcset="assets/img/Banner-consulta-servicios__responsive.png"
-        sizes="image/png" />
-      <img src="assets/img/Banner-consulta-servicios.png" class="hero-servicios__img" width="1280" height="572"
-        alt="Venta de recargas a cualquier compañia con excelentes comisiones" />
+<section class="banner-plataformas mb-20">
+  <div
+    class="banner-plataformas__container container flex items-center justify-center mx-auto mt-20 pt-4 shadow rounded-lg">
+
+    <picture>
+        <source 
+        media="(min-width:1536px)" 
+        [srcset]="isDarkTheme() ? 'assets/img/banner-servicios-web_dark.webp' : 'assets/img/banner-servicios-web_light.webp'"
+        type="image/webp"
+        >
+
+        <source 
+        media="(min-width:340px)" 
+        [srcset]="isDarkTheme() ? 'assets/img/banner-servicios-mobile_dark.webp' : 'assets/img/banner-servicios-mobile_light.webp'"
+        type="image/webp"
+        >
+
+        <img 
+        width="1539"
+        height="385"
+        alt="Cobro de pago de servicios con excelentes comisiones"
+        title="Cobro de pago de servicios con excelentes comisiones para negocios"
+        [src]="isDarkTheme() ? 'assets/img/banner-servicios-web_dark.webp' : 'assets/img/banner-servicios-web_light.webp'" class="banner-plataform w-full h-auto">
     </picture>
+
   </div>
-</div>
+</section>
 
 <!-- ============= SECCIÓN CAROUSEL SERVICIOS ============= -->
-<app-product-carousel [products]="carouselServices()"></app-product-carousel>
+ <section class="container mx-auto mb-20">
+   <app-product-carousel [products]="carouselServices()"></app-product-carousel>
+ </section>
 
-<!-- ============= SECCIÓN COBRO SERVICES ============= -->
-<div class="cobro-services mb-3">
-  <div class="cobro-services__container container">
-    <div class="cobro-services__left">
-      <span class="cobro-services__span head-4 headline-4">Pago de servicios</span>
-      <h1 class="cobro-services__h1 headline-3">Cobro por pago de servicios</h1>
+ <section class="sale-services mb-20">
 
-      <p class="cobro-services__p body-1 mb-1">
-        Con Recarga5g.com, puedes aceptar
-        <strong class="body-1 keyword__strong">pagos de servicios</strong> de
-        forma segura y sin complicaciones. Nuestra plataforma te brinda la
-        capacidad de procesar pagos de manera fácil y rápida:
-        <a href="https://telmex.com/" class="cobro-services__a keyword__compani btn-underline body-1" target="_blank"
-          rel="noopener noreferrer">Telmex</a>,
-        <a href="https://www.izzi.mx/home" class="cobro-services__a keyword__compani btn-underline body-1"
-          target="_blank" rel="noopener noreferrer">IZZI</a>,
-        <a href="https://www.cfe.mx/Pages/default.aspx" class="cobro-services__a keyword__compani btn-underline body-1"
-          target="_blank" rel="noopener noreferrer">CFE</a>,
-        <a href="https://www.totalplay.com.mx/" class="cobro-services__a keyword__compani btn-underline body-1"
-          target="_blank" rel="noopener noreferrer">Total Play</a>,
-        <a href="https://www.sky.com.mx/" class="cobro-services__a keyword__compani btn-underline body-1"
-          target="_blank" rel="noopener noreferrer">SKY</a>
-        ofreciendo a tus clientes una opción conveniente para realizar
-        transacciones.
+  <div class="sale-services container mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="sale-services-row">
+      <h1 class="text-center text-4xl lg:text-5xl font-semibold c-text mb-6 lg:leading-[1.1]">Recibe pago de servicios en tu negocio</h1>
+      <p class="text-center w-full lg:max-w-3xl lg:mx-auto mb-10">Registrate totalmente gratis en unos cuantos pasos sencillos, deposita o transfiere un monto minimo
+        para que puedas realizar cualquier <strong>pago de servicio</strong> agua, luz, internet y mucho mas
       </p>
 
-      <p class="cobro-services__p body-1 mb-1">
-        No importa si ofreces servicios de telefonía, televisión por cable,
-        internet o cualquier otro servicio,
-        <strong class="cobro-services__strong keyword__strong keyword__compani">Recarga5g.com</strong>
-        es la solución perfecta para recibir pagos de tus clientes de manera
-        ágil y segura.
-      </p>
-
-      <a class="cobro-services__a radius-20" mat-raised-button color="primary" routerLink="/registro">Registrarme
-        ahora</a>
-    </div>
-
-    <div class="cobro-services__right">
-      <div class="cobro-services__item">
-        <img src="assets/img/process__icon.png" class="cobro-services__img" width="90" height="90" loading="lazy"
-          alt="Cobro de servicios con Recarga5g.com" />
-        <p class="cobro-services__p--item headline-6">
-          Cobra cualquier recibo y obtén una comisión.
-        </p>
-      </div>
-      <div class="cobro-services__item">
-        <img src="assets/img/recibos__icon.png" class="cobro-services__img" width="90" height="90" loading="lazy"
-          alt="Valida y realiza +200 compañias de servicios facilmente" />
-
-        <p class="cobro-services__p--item headline-6">
-          Recuperas tu inversión y ganas la comisión cuando cobras en tu negocio
-        </p>
-      </div>
-      <div class="cobro-services__item">
-        <img src="assets/img/negocio__icon.png" class="cobro-services__img" width="90" height="90" loading="lazy"
-          alt="Ganancias adicionales a tu negocio" />
-        <p class="cobro-services__p--item headline-6">
-          Tu ganancia en efectivo será la comisión adicional que cobres al
-          cliente.
-        </p>
-      </div>
-      <div class="cobro-services__item">
-        <img src="assets/img/asesoria__icon.png" class="cobro-services__img" width="90" height="90" loading="lazy"
-          alt="Asesoria totalmente personalizada" />
-        <p class="cobro-services__p--item headline-6">Asesoria personalizada</p>
+      <img src="assets/img/recibos.webp" class="sale-services__img mx-auto" width="650" height="650" alt="Recibe pago de servicios en tu negocio con excelentes comisiones" loading="lazy">
+   
+      <div class="relative">
+        <span aria-hidden="true" class="hidden lg:block bg-gray-200 dark:bg-gray-700/40 h-[0.125rem] absolute top-4 left-44 right-44 -z-[1]"></span>
+        <div class="grid grid-col-1 lg:grid-cols-4 gap-12">
+          <article class="sale-service-article text-center">
+            <div class="font-bold bg-gray-900 text-white rounded-[50%] inline-flex items-center justify-center size-9 mb-3">1</div>
+            <h3 class="font-semibold text-lg">Ingresa a nuestro portal para cobrar servicios</h3>
+            <p class="text-center">Ingresa a la plataforma con tus datos de acceso</p>
+          </article>
+  
+          <article class="sale-service-article text-center">
+            <div class="font-bold bg-gray-900 text-white rounded-[50%] inline-flex items-center justify-center size-9 mb-3">2</div>
+            <h3 class="font-semibold text-lg">Saldo para pago de servicios</h3>
+            <p class="text-center">Recarga saldo depositando o transfiriendo un monto minimo</p>
+          </article>
+  
+          <article class="sale-service-article text-center">
+            <div class="font-bold bg-gray-900 text-white rounded-[50%] inline-flex items-center justify-center size-9 mb-3">2</div>
+            <h3 class="font-semibold text-lg">Captura de linea pago para cobrar servicio</h3>
+            <p class="text-center">Captura la linea de pago en nuestro porta y recibe una comisión extra</p>
+          </article>
+  
+          <article class="sale-service-article text-center">
+            <div class="font-bold bg-gray-900 text-white rounded-[50%] inline-flex items-center justify-center size-9 mb-3">2</div>
+            <h3 class="font-semibold text-lg">Recibe pagos servicios agua, luz</h3>
+            <p class="text-center">Asi de facil podras cobrar cualquier servicio con <strong>recarga5g.com</strong> </p>
+          </article>
+        </div>
       </div>
     </div>
   </div>
-</div>
+ </section>
 
-<!-- ============= SECCION WHY-SERVICES ============= -->
-<div class="why-services mb-3">
-  <div class="why-services__container container">
-    <h2 class="why-services__h2 headline-3">
-      Cobro de servicios de manera fácil y segura
-    </h2>
+<section class="mb-20">
+  <div class="platform-service container mx-auto">
 
-    <div class="why-services__items">
-      <ul class="why-services__ul">
-        <li class="why-services__li">
-          <!-- <mat-icon class="why-services__icon" aria-hidden="false" aria-label="Example home icon"
-            fontIcon="notifications_active"></mat-icon> -->
-          <p class="why-services__p body-1">
-            Deposita y notifica tus depósitos para pago de servicios
-          </p>
-        </li>
+    <div class="platform-row">
+      <div class="platform-service-col">
+        <h2 class="text-3xl lg:text-4xl font-semibold c-text">Plataforma para recibir pago de servicios</h2>
+      </div>
+      <div class="platform-service-col">
+        <img src="assets/img/plataforma-servicios.webp" class="" width="700" height="602" alt="Plataforma para cobrar servicios para todo tipo de negocio" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
 
-        <li class="why-services__li">
-          <!-- <mat-icon class="why-services__icon" aria-hidden="false" aria-label="Example home icon"
-            fontIcon="request_quote"></mat-icon> -->
-          <p class="why-services__p body-1">
-            El cliente te visita y presenta su recibo. Solo debes cobrar recibos
-            vigentes. No debes recibir recibos vencidos.
-          </p>
-        </li>
-
-        <li class="why-services__li">
-          <!-- <mat-icon class="why-services__icon" aria-hidden="false" aria-label="Example home icon"
-            fontIcon="point_of_sale"></mat-icon> -->
-          <p class="why-services__p body-1">
-            Captura el número de referencia en la plataforma.
-          </p>
-        </li>
-
-        <li class="why-services__li">
-          <!-- <mat-icon class="why-services__icon" aria-hidden="false" aria-label="Example home icon"
-            fontIcon="ads_click"></mat-icon> -->
-          <p class="why-services__p body-1">
-            Paga cualquier recibo con unos cuantos click
-          </p>
-        </li>
-        <li class="why-services__li">
-          <!-- <mat-icon class="why-services__icon" aria-hidden="false" aria-label="Example home icon"
-            fontIcon="currency_exchange"></mat-icon> -->
-
-          <p class="why-services__p body-1">
-            Cobra el importe del recibo de tu cliente más tu comisión que
-            obtuviste en tu plataforma
-          </p>
-        </li>
-
+<section class="razones mb-20">
+  <div class="container mx-auto px-5 sm:px-6 lg:px-8">
+    <h4 class="c-text font-semibold text-3xl pb-4">¿Por qué recibir pago de servicios en mi negocio?</h4>
+    <p class="mb-12"> Ahora puedes pagar tus servicios básicos o ayudar a tus clientes a hacerlo de manera rápida y sencilla.</p>
  
-      </ul>
+  <div class="razones-list mb-10 border-b">
+      <div class="razones-row">
+          <h5 class="c-text text-lg font-semibold">Plataforma para recibir pago de servicios segura y estable</h5>
+          <p class="mb-6 lg:max-w-96 text-pretty">Con recarga5g.com podras recibir mas +200 compañias de servicios agua, luz, telefonia, intenet y mucho mas</p>
 
-      <a class="why-services__a radius-20" mat-raised-button color="primary" routerLink="/registro">Registrarme
-        ahora</a>
-    </div>
+          <ul class="razones-ul grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 border-slate-500/20 dark:border-slate-600/50 border-b pb-6">
+              <li>
+                  <div class="flex flex-row gap-2 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z"/></svg>
+                      <h6 class="font-semibold text-lg">Ganancias por pago de servicios</h6>
+                  </div>
+                  <p>Con una pequeña inversión podras realizar cualquier pago: luz, agua, internet. Con excelentes comisiones</p>
+              </li>
+              <li>
+                  <div class="flex flex-row gap-2 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-8" viewBox="0 0 512 512"><circle fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32" cx="256" cy="56" r="40"/><path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32" d="M204.23 274.44c2.9-18.06 4.2-35.52-.5-47.59-4-10.38-12.7-16.19-23.2-20.15L88 176.76c-12-4-23.21-10.7-24-23.94-1-17 14-28 29-24 0 0 88 31.14 163 31.14s162-31 162-31c18-5 30 9 30 23.79 0 14.21-11 19.21-24 23.94l-88 31.91c-8 3-21 9-26 18.18-6 10.75-5 29.53-2.1 47.59l5.9 29.63 37.41 163.9c2.8 13.15-6.3 25.44-19.4 27.74S308 489 304.12 476.28l-37.56-115.93q-2.71-8.34-4.8-16.87L256 320l-5.3 21.65q-2.52 10.35-5.8 20.48L208 476.18c-4 12.85-14.5 21.75-27.6 19.46s-22.4-15.59-19.46-27.74l37.39-163.83z"/></svg>
+                      <h6 class="font-semibold text-lg">Atrae mas clientes a tu negocio cobrando servicios a tu negocio</h6>
+                  </div>
+                  <p> 
+                    Muchos clientes prefieren pagar sus servicios en un solo lugar, lo que aumenta el tráfico en tu negocio.
+                  </p>
+              </li>
+              <li >
+                  <div class="flex flex-row gap-2 mb-2">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"/></svg>
+
+                      <h6 class="font-semibold text-lg">Amplía tu Oferta de Servicios</h6>
+                  </div>
+                  <p> 
+                    Diversificar tu negocio con el cobro de servicios te permite ofrecer más opciones a tus clientes, lo que mejora tu competitividad en el mercado.
+                  </p>
+              </li>
+          </ul>
+      </div>
   </div>
+
+  <div class="razones-list mb-10 border-b">
+    <div class="razones-row">
+        <ul class="razones-ul grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 border-slate-500/20 dark:border-slate-600/50 border-b pb-6">
+            <li>
+                <div class="flex flex-row gap-2 mb-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+                  </svg>
+                  
+                    <h6 class="font-semibold text-lg">Servicios de Alta Demanda</h6>
+                </div>
+                <p>Los pagos de servicios básicos como agua, luz, internet y telefonía son necesidades recurrentes para millones de personas. Esto garantiza un flujo constante de clientes.</p>
+            </li>
+            <li>
+                <div class="flex flex-row gap-2 mb-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"></path></svg>
+                    <h6 class="font-semibold text-lg">Atrae mas clientes a tu negocio cobrando servicios a tu negocio</h6>
+                </div>
+                <p> 
+                  Muchos clientes prefieren pagar sus servicios en un solo lugar, lo que aumenta el tráfico en tu negocio.
+                </p>
+            </li>
+            <li >
+                <div class="flex flex-row gap-2 mb-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                    <h6 class="font-semibold text-lg">Comisiones Recurrentes por cobro de servicios para tu negocio</h6>
+                </div>
+                <p> 
+                  Los servicios básicos se pagan mensualmente, lo que significa que tus clientes volverán a ti cada mes, generando ingresos recurrentes para tu negocio.
+                </p>
+            </li>
+        </ul>
+    </div>
 </div>
+  </div>
+</section> 
 
 <!-- ============= SECCION WHO-SERVICES ============= -->
 <div class="recibo-services mb-3">

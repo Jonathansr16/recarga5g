@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 
@@ -10,11 +10,16 @@ import { SalesMethodComponent } from '@feature/components/sales-method/sales-met
 import { ProductCarouselComponent } from '@feature/components/product-carousel/product-carousel.component';
 import { ProductCarouselService } from '@feature/components/product-carousel/services/product-carousel.service';
 import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
+import { ThemesService } from '@services/themes.service';
 
 @Component({
     selector: 'app-pago-servicios',
     templateUrl: './pago-servicios.component.html',
-    styleUrls: ['./pago-servicios.component.scss', '../productos.component.scss'],
+    styles: [`
+        .razones-list {
+          border-image: linear-gradient(to right, transparent, rgb(148 163 184 / .25), transparent) 1;
+        }
+      `],
     imports: [
         CommonModule,
         ProductCarouselComponent,
@@ -25,6 +30,10 @@ import { RegisterStepsComponent } from '@feature/components/register-steps/regis
 export default class PagoServiciosComponent implements OnInit{
 
   carouselServices = signal<ProductCarousel[]>([]);
+  
+   theme = inject(ThemesService);
+  
+   isDarkTheme = computed(() => this.theme.themeChange());
   
   //? META TAG
   // tag: metaTagModel = {

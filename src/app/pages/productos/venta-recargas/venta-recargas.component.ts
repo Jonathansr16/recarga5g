@@ -33,8 +33,9 @@ export default class VentaRecargasComponent implements OnInit {
 
   @ViewChild('recargasSwiper')tae?: ElementRef;
   
-  carouselRecargas = signal<ProductCarousel[]>([]);
-  stepRecargas = signal<registerStepsModel[]>([]);
+  carouselRecargas :ProductCarousel[] = [];
+  companiesRecargas: ProductCarousel[] = [];
+  stepRecargas: registerStepsModel[] =[];
  theme = inject(ThemesService);
 
  isDark = computed(() => this.theme.themeChange());
@@ -72,8 +73,9 @@ private readonly title = inject( Title);
       // ...this.tag
       // });
 
-         this.carouselRecargas.set( this.productCarouselService.getRecargas() );
-        this.stepRecargas.set( this.stepRecargasService.getStepsRecargas() );
+         this.carouselRecargas = this.productCarouselService.getRecargas();
+         this.companiesRecargas = this.productCarouselService.getRecargas();
+        this.stepRecargas = this.stepRecargasService.getStepsRecargas();
       }
 
 }

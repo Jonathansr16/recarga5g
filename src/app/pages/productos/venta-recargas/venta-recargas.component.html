@@ -30,7 +30,7 @@
 <!-- ============= CAORUSEL RECARGAS ============= -->
 <!-- <app-product-carousel [products]="carouselRecargas()"></app-product-carousel> -->
  <section class="container mx-auto my-20">
-     <app-product-carousel [products]="carouselRecargas()"></app-product-carousel>
+     <app-product-carousel [products]="carouselRecargas"></app-product-carousel>
  </section>
 
  <section class="relative features mb-20 px-5 sm:px-6 lg:px-8">
@@ -178,8 +178,8 @@
     </div>
  </section>
 
- <section class="beneficios mb-20 px-5 sm:px-6 lg:px-8 ">
-    <div class="container mx-auto">
+ <section class="beneficios mb-2 ">
+    <div class="container mx-auto px-5 sm:px-6 lg:px-8">
         <div class="section-title max-w-2xl mb-12">
             <h4 class="c-text font-semibold text-3xl pb-4">Beneficios de vender recargas electrónicas</h4>
             <p class=""> comienza a ganar dinero desde hoy. Las recargas electrónicas son un servicio esencial para millones de personas, y tú puedes ser parte de este mercado en crecimiento.</p>
@@ -293,19 +293,20 @@
 
 
  <div class="relative sale mb-20">
-    <div class="sale-container container mx-auto relative">
-        <div class="absolute top-0 left-0 -z-[1]" aria-hidden="true">
+    <div class="sale-container container mx-auto relative overflow-hidden px-5 sm:px-6 lg:px-8">
+        <div class="hidden lg:block absolute top-0 left-0 -z-[1]" aria-hidden="true">
             <svg width="793" height="1000" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M72.634 1C51.254 30.5 7.035 111.8 3.148 153c-4.86 51.5-3.615 119.627 26.24 186.5 78.909 176.752 314.874 122.5 463.078 145 103.937 15.779 173.12 38.363 234.698 115.5 67.056 84 79.624 180.667 49.077 283.5-39.359 132.5-140.429 191-258.993 266.5-125.302 79.79-445.1 159.5-445.1 159.5" stroke="#999" stroke-dasharray="7 7"/></svg>
         </div>
 
-        <section class="sale-row flex flex-row max-w-7xl mx-auto space-x-4 mb-20">
-            <div class="sale-col w-full lg:w-1/2">
+        <section class="sale-row flex flex-col lg:flex-row max-w-7xl mx-auto lg:space-x-4 mb-20">
+            <div class="sale-col w-full lg:w-1/2 ">
+                <span class="font-medium text-sm py-[0.375rem] px-4 max-w-60 text-slate-100 rounded-lg md:text-center bg-slate-800 dark:bg-slate-700 shadow-sm flex items-center justify-center  gap-2 mb-2">Vende de donde quieras</span>
                 <h3 class="text-3xl c-text font-semibold mb-4">¿Qué necesito para vender recargas en mi negocio?</h3>
                 <p class="mb-4">Emprender en la <strong>venta de recargas electrónicas</strong> es una excelente oportunidad para generar ingresos de forma sencilla y sin grandes inversiones. Con nuestro sistema, puedes vender recargas desde cualquier medio disponible: SMS gratuito, página web o aplicación móvil, adaptándose a tus necesidades y las de tus clientes.</p>
                 <!-- <p>Ya sea a través de SMS gratuito, una página web o una aplicación móvil, te brindamos las herramientas necesarias para que comiences a generar ingresos de manera rápida y sencilla.</p> -->
         
                 <ul class="mt-4">
-                    <li class="p-4 flex">
+                    <li class="p-2 lg:p-4 flex">
                         <span class="why-sell-icon w-12 h-12 inline-flex items-center justify-center rounded-full bg-red-100 text-red-600 dark:bg-indigo-100 dark:text-indigo-600 mb-4 flex-shrink-0">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"/></svg>
                         </span>
@@ -318,7 +319,7 @@
                         </div>
                     </li>
 
-                    <li class="p-4 flex">
+                    <li class="p-2 lg:p-4 flex">
                         <span class="why-sell-icon w-12 h-12 inline-flex items-center justify-center rounded-full bg-red-100 text-red-600 dark:bg-indigo-100 dark:text-indigo-600 mb-4 flex-shrink-0">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8.25V18a2.25 2.25 0 0 0 2.25 2.25h13.5A2.25 2.25 0 0 0 21 18V8.25m-18 0V6a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 6v2.25m-18 0h18M5.25 6h.008v.008H5.25V6ZM7.5 6h.008v.008H7.5V6Zm2.25 0h.008v.008H9.75V6Z"/></svg>
                         </span>
@@ -331,7 +332,7 @@
                         </div>
                     </li>
 
-                    <li class="p-4 flex">
+                    <li class="p-2 lg:p-4 flex">
                         <span class="why-sell-icon w-12 h-12 inline-flex items-center justify-center rounded-full bg-red-100 text-red-600 dark:bg-indigo-100 dark:text-indigo-600 mb-4 flex-shrink-0">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg>
                         </span>
@@ -345,18 +346,20 @@
                     </li>
                 </ul>
             </div>
-            <div class="sale-col w-full lg:w-1/2 mx-auto">
+            <div class="sale-col w-full lg:w-1/2 mx-auto mt-10 lg:mt-0">
                 <img src="assets/img/venta-recargas-pc.webp" alt="Venta de recargas por computadora" loading="lazy">
 
                 <!-- <img class="mx-auto" src="assets/img/requesitos-venta-recargas.webp" alt="Venta de tiempo aire" loading="lazy"> -->
             </div>
         </section>
 
-        <section class="sale-row flex flex-row max-w-7xl mx-auto space-x-4 ">
-            <div class="sale-col w-full lg:w-1/2">
+        <section class="sale-row flex flex-col lg:flex-row max-w-7xl mx-auto lg:space-x-4 ">
+            <div class="sale-col w-full lg:w-1/2 order-2 lg:order-1 mt-10 lg:mt-0">
                 <img class="mx-auto" src="assets/img/requesitos-venta-recargas.webp" alt="Venta de tiempo aire" loading="lazy">
             </div>
-            <div class="sale-col w-full lg:w-1/2">
+            <div class="sale-col w-full lg:w-1/2 order-1 lg:order-2">
+                <span class="font-medium text-sm py-[0.375rem] px-4 max-w-48 text-slate-100 rounded-lg md:text-center bg-slate-800 dark:bg-slate-700 shadow-sm flex items-center justify-center gap-2 mb-2">Para todo tipo</span>
+
                 <h3 class="text-3xl c-text font-semibold mb-4">Ofrece Recargas Telefónicas Tiempo Aire en tu Negocio</h3>
                 <p class="lg:pl-6 mb-6">Puedes ofrecer recargas telefónicas de tiempo aire a tus clientes, convirtiendo tu local en un punto de venta exitoso. Las recargas electrónicas son un servicio esencial para millones de personas, y al incluirlas en tu negocio, no solo generarás ganancias adicionales, sino que también atraerás más clientes.</p>
                 <p class="lg:pl-6 ">No importa si tienes una tienda, un restaurante o un pequeño negocio, ofrecer recargas telefónicas de tiempo aire con [Nombre de tu Empresa] es la oportunidad que estabas esperando. ¡Convierte tu negocio en un punto de venta exitoso y comienza a ganar dinero hoy mismo!</p>
@@ -364,73 +367,55 @@
         </section>
     </div>
  </div>
-<!-- ============= SECCION PORQUE VENDER RECARGAS ============= -->
-<!-- <section class="benficios mb-3">
-    <div class="recargas-why__container container">
-        <h2 class="recargas-why__h2 headline-3">
-            Sistema de recargas mas confiable
-        </h2>
 
-        <div class="recargas-why__content">
-            <div class="recargas-why__left">
-                <span class="recargas-why__span headline-4 head-4">Mas de 20 años liderando el mercado de venta de
-                    tiempo aire</span>
-                <h3 class="recargas-why__h3 headline-3">
-                    Beneficios de vender recargas
-                </h3>
+<section class="mb-20 ganancias">
+    <div class="container mx-auto relative overflow-hidden px-5 sm:px-6 lg:px-8">
 
-                <p class="recargas-why__p body-1 mb-1">
-                    Sabemos que tu tiempo y esfuerzo son valiosos, por lo que hemos
-                    diseñado un sistema transparente y sin complicaciones para que puedas
-                    rastrear y recibir tus comisiones
-                    <strong class="body-1 keyword__strong">Bait</strong> de manera rápida
-                    y precisa. Nos aseguramos de que te sientas recompensado por tu arduo
-                    trabajo y dedicación.
-                </p>
-
-                <ul class="recargas-why__ul">
-                    <li class="recargas-why__li">
-                       
-                        <p class="recargas-why__p body-1">Comisiones fijas</p>
-                    </li>
-                    <li class="recargas-why__li">
-                     
-                        <p class="recargas-why__p body-1">
-                            Constante innovación agregando compañas de recargas y pago de
-                            servicios.
-                        </p>
-                    </li>
-                    <li class="recargas-why__li">
-                    
-                        <p class="recargas-why__p body-1">
-                            Plataforma con menos intermitencia en el mercado.
-                        </p>
-                    </li>
-                    <li class="recargas-why__li">
-                   
-                            Pequeña inversión con grandes beneficios.
-                        </p>
-                    </li>
+        <div class="ganancias-row flex flex-col lg:flex-row">
+            <div class="ganancias-col w-full lg:w-1/2">
+                <h2 class="text-3xl font-semibold c-text">Aumenta tus ganancias vendiendo recargas telcel y mas compañias en tu negocio</h2>
+                <p class="mt-4 w-full lg:max-w-2xl">¿Estás buscando una forma sencilla, rentable y de bajo riesgo para incrementar tus ingresos? ¡Tenemos la solución perfecta para ti! Agregar <strong>recargas Telcel y de otras compañías</strong> a tu negocio es la oportunidad que estabas esperando para atraer más clientes, fidelizar a los que ya tienes y, lo mejor de todo, generar ganancias adicionales todos los días.</p>
+                <p class="mt-4 w-full lg:max-w-2xl">Al ofrecer este servicio en tu negocio, no solo brindas un producto de alta demanda, sino que también te posicionas como un punto de referencia para tus clientes. </p>
+         
+                <h3 class="text-3xl font-semibold c-text mt-6">¿Qué compañías puedes ofrecer?</h3>
+                <p class="mt-4 w-full lg:max-w-2xl">No solo te limites a Telcel, ¡amplía tu oferta! Puedes vender recargas de todas las compañías líderes en el mercado, como:</p>
+                <ul class="list-disc pl-4 lg:pl-8 py-6">
+                    <li class="pb-4">Telcel</li>
+                    <li class="pb-4">Movistar</li>
+                    <li class="pb-4">AT&T</li>
+                    <li class="pb-4">Pillofon</li>
+                    <li class="pb-4">Bait</li>
+                    <li class="pb-4">Internet del bienestar</li>
                 </ul>
             </div>
-
-            <div class="recargas-why__right">
-                <img src="assets/img/svg/Store.svg" class="recargas-why__img" width="500" height="363" loading="lazy"
-                    alt="Beneficios de vender recargas con Recarga5g.com" />
+            <div class="ganancias-col w-full lg:w-1/2">
+                <img src="assets/img/ganancias-recargas.webp" width="700" height="700" alt="Ganancias por vender recargas">
             </div>
         </div>
     </div>
-</section> -->
-
-<section class="mb-20">
-    <div class="container mx-auto">
-        <h2 class="text-3xl font-semibold c-text">Aumenta tus ganancias vendiendo recargas telcel y mas compañias en tu negocio</h2>
-    </div>
 </section>
 
-<section class="mb-20">
-    <div class="container mx-auto">
-        <h2 class="text-3xl font-semibold c-text">Aprende cómo vender recargas telefónicas</h2>
+<section class="mb-20 bg-red-700 dark:bg-blue-800">
+    <div class="px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-14">
+        <div class="flex flex-col mb-16 sm:text-center sm:mb-0">
+            <span class="mb-6 sm:mx-auto">
+                <div class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-accent-400">
+                    <svg stroke="currentColor" viewBox="0 0 52 52" class="w-10 h-10 text-white">
+                        <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                    </svg>
+                </div>
+            </span>
+          
+            <div class="mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+
+                <h2 class="text-3xl font-semibold text-white">Aprende cómo vender recargas telefónicas en tu negocio</h2>
+                <p class="leading-relaxed text-white mt-4">
+                    ¿Sabías que puedes convertir tu negocio en un punto de recargas y ganar dinero extra de manera sencilla y constante? Las recargas telefónicas son uno de los servicios más demandados en la actualidad, y ofrecerlas en tu establecimiento no solo te ayudará a atraer más clientes, sino también a aumentar tus ganancias sin esfuerzo.
+                </p>
+
+                <p class="leading-relaxed text-white mt-4 font-semibold">Telcel, Bait, Unefon, Movistar, Pillofon, Virgin, Internet del bienestar, Axios Mobile, AT&T, VASENTA, Macro play, Giit!, ABIB, Ultracel </p>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -502,15 +487,44 @@
     </div>
 </section>
 
-<!-- ============= SECCION METODOS VENTAS ============= -->
-<div class="metodos-venta container mb-3">
-    <h2 class="metodos-venta__h2 headline-2">¿Cómo vender recargas telcel?</h2>
-    <app-sales-method></app-sales-method>
-</div>
+<section class="recargas-nacionales mb-20">
+    <div class="container mx-auto">
+       <div class="section-row border-b border-slate-300/70 dark:border-slate-500/50 pb-8 relative">
+        
+                <div class="font-semibold text-sm py-[0.375rem] px-4 rounded-md bg-slate-800 dark:bg-slate-700 text-slate-100 shadow-sm flex justify-center max-w-52 mx-auto items-center gap-2">
+                    <span>Recargas nacionales</span>
+                </div>
+          
+            <h3 class="text-center c-text font-semibold text-5xl mb-6 lg:leading-[1.1]">Venta de recargas nacionales</h3>
 
-<!-- ============= SECCION WHY RECARGAS ============= -->
-<div class="recargas-nacionales">
-    <div class="recargas-nacionales__container container">
+            <ul class="companies-row grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 items-center justify-center gap-x-6 gap-y-12 max-w-3xl w-full mx-auto">
+                @for (company of companiesRecargas; track $index) {
+                    <li class="companies-col w-full px-4 relative group max-w-[180px] mx-auto">
+    
+                        <div class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600/20 to-pink-600/20 dark:from-purple-600/30 dark:to-pink-600/30 blur duration-400 group-hover:opacity-100 group-hover:duration-200"></div>
+                        <div class="relative bg-slate-100 dark:bg-slate-100/80 ring-1 shadow-sm ring-black/5 rounded-lg group-hover:scale-110 duration-1000"> 
+                            <a rel="noopener noreferrer" target="_blank" class="cursor-pointer block" [href]="company.siteweb">
+                                <img loading="lazy" [src]="company.img.src" [alt]="company.img.alt" [title]="company.img.alt"></a>
+                        </div>
+                    </li>
+                }
+
+            </ul>
+       </div>
+    </div>
+ </section>
+
+<!-- ============= SECCION METODOS VENTAS ============= -->
+<section class="metodos-venta mb-20">
+    <div class="container mx-auto">
+        <h2 class="metodos-venta__h2 text-5xl c-text font-semibold text-center mb-6 leading-[1.1]">¿Cómo vender recargas telcel?</h2>
+        <app-sales-method></app-sales-method>
+    </div>
+</section>
+
+
+<!-- <div class="recargas-nacionales">
+    <div class="recargas-nacionales__container container mx-auto">
         <div class="recargas-nacionales__left">
             <h2 class="recargas-nacionales__h2 headline-4 head-4">
                 Recargas Telefónicas
@@ -539,8 +553,7 @@
                     routerLink="/registro">Registrarme ahora</a>
                 <a class="recargas-nacionales__a my-button btn-underline" routerLink="/plataforma/pagaqui">Consultar
                     plataformas
-                    <!-- <mat-icon class="recargas-nacionales__icon" color="accent" aria-hidden="false"
-                        aria-label="Example home icon" fontIcon="outbound"></mat-icon> -->
+                   
                 </a>
             </div>
         </div>
@@ -549,40 +562,8 @@
             <img src="assets/img/caja-recargas.png" class="recargas-nacionales__img"  width="633" height="633" loading="lazy" alt="Recargas nacionales con Recarga5g.com"/>
         </div>
     </div>
-</div>
+</div> -->
 
-<!-- ============= SECCION POLITICAS RECARGAS ============= -->
-<div class="politicas-servicices mb-3">
-    <div class="politicas-services__container container">
-        <h3 class="politicas-services__h3 headline-3">
-            Políticas para aplicación de recargas
-        </h3>
-
-        <ul class="politicas-services__ul">
-            <li class="politicas-services__li list-option__li body-1">
-                Capturar el numero e importe correcto es responsabilidad del usuario.
-            </li>
-
-            <li class="politicas-services__li list-option__li body-1">
-                No hay devoluciones ni retiros de saldo una vez realizados.
-            </li>
-
-            <li class="politicas-services__li list-option__li body-1">
-                En casos en que la recarga no se haya realizado, deberá notificarlo a su
-                asistente ejecutivo, para ello debera proporcionarle su
-                <span class="politicas-services__span body-1 keyword__strong">usuario e imagen del error.</span>.
-            </li>
-
-            <li class="politicas-services__li list-option__li body-1">
-                En los casos en los cuales se detecten recargas aplicadas como exítosas
-                pero no se acredite el saldo al número indicado aunque aparezca como
-                exitosa la transacción, el cliente deberá llamar de forma directa a la
-                compañía o carrier a través de cualquiera de sus Centros de Atención a
-                Clientes (CAC).
-            </li>
-        </ul>
-    </div>
-</div>
 
 <!-- ============= SECCION REGISTRO RECARGAS ============= -->
 <app-register-steps></app-register-steps>

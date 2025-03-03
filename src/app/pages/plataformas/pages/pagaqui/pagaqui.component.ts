@@ -28,6 +28,9 @@ import { RegisterStepsComponent } from '@feature/components/register-steps/regis
 import { DoubtsComponent } from '@feature/components/doubts/doubts.component';
 import { ProductsComponent } from '@plataformas/components/products/products.component';
 import { ThemesService } from '@services/themes.service';
+import AdvantageListComponent from '@feature/components/advantage-list/advantage-list.component';
+import { AdvantageList } from '@interfaces/advantage-list.interface';
+import { randomUUID } from 'crypto';
 
 
 @Component({
@@ -38,22 +41,11 @@ import { ThemesService } from '@services/themes.service';
    .app-pagaqui__li {
     counter-increment:(indexApp);
    }
-
-// .platform-col::before {
-//      inset-block-start: 0;
-//       inline-size: 1px;
-//      block-size: 100vh;
-//     }
-
-//     .platform-col::after {
-//      inset-block-start: -1px;
-//       inline-size: 100vw;
-//      block-size: 1px;
-//     }
     `],
     imports: [
         CommonModule,
         RouterLink,
+        AdvantageListComponent,
         ProductCarouselComponent,
         SalesMethodComponent,
         AppRecargasComponent,
@@ -69,11 +61,37 @@ export default class PlataformaPagaquiComponent
   // @ViewChild('videoPagaqui') video?: ElementRef;
 
   handlerModalVideo = signal<boolean>(false);
+  productCarousel: ProductCarousel[] = [];
+  appPagaqui: CarouselApp[] = [];
+ 
 
-  productCarousel = signal<ProductCarousel[]>([]);
-  appPagaqui = signal<CarouselApp[]>([]);
+  listBenefits: AdvantageList[] = [
 
-  registerStepPagaqui = signal<registerStepsModel[]>([]);
+    {
+      id: 1,
+      label: 'Unico saldo para recargas, servicios y pines',
+      isActive: true,
+    },
+
+    {
+      id: 2,
+      label: 'Aplicación de compras con numero de referencia',
+      isActive: false
+    },
+
+    {
+      id: 3,
+      label: 'Comisión por venta',
+      isActive: false,
+    },
+
+    {
+      id: 4,
+      label: '+200 de compañias ',
+      isActive: true
+    }
+
+  ];
 
  theme = inject(ThemesService);
 
@@ -106,9 +124,9 @@ export default class PlataformaPagaquiComponent
       'Recarga5g.com | Consulta para vender recargas electrónicas'
     );
 
-    this.productCarousel.set(this.productCarouselService.getRecargas());
-    this.appPagaqui.set(this.pagaquiService.getAppPagaqui());
-    this.registerStepPagaqui.set(this.stepPagaquiService.getStepsPagaqui());
+    this.productCarousel = this.productCarouselService.getRecargas();
+    this.appPagaqui = this.pagaquiService.getAppPagaqui();
+  
 
   
     this.metaTagService.updateMetaTag(

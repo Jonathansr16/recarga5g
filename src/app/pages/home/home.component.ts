@@ -78,10 +78,10 @@ export default class HomeComponent implements OnInit, AfterViewInit {
 
   svgRef = viewChild.required<ElementRef>('svgContainer');
 
-  allProducts = signal<ProductCarousel[]>([]);
-  recargas = signal<ProductCarousel[]>([]);
-  servicios = signal<ProductCarousel[]>([]);
-  pines = signal<ProductCarousel[]>([]);
+  allProducts:ProductCarousel[] = [];
+  recargas:ProductCarousel[] = [];
+  servicios:ProductCarousel[] = [];
+  pines:ProductCarousel[] = [];
   showModal = signal<boolean>(false);
 
   //* Array of object simple
@@ -363,7 +363,7 @@ export default class HomeComponent implements OnInit, AfterViewInit {
     // },
   ];
 
-  carosuelAppImages : CarouselApp[] =[
+  carosuelAppImages: CarouselApp[] =[
     {
       id: 1,
       img: {
@@ -389,66 +389,78 @@ export default class HomeComponent implements OnInit, AfterViewInit {
     },
   ];
 
-  public listBenefit: AdvantageList[] = [
+  listBenefit: AdvantageList[] = [
     {
       id: 1,
       label: '✔ Comisiones ajustadas a tu negocio',
+      isActive: true,
     },
 
     {
       id: 2,
       label: '✔ Variedad de compañías de recargas y servicios',
+      isActive: false
     },
 
     {
       id: 3,
       label: '✔ Recupera tu inversión + comisión',
+      isActive: false
     },
 
     {
       id: 4,
       label: '✔ Soporte personalizado',
+      isActive: true,
     },
 
     {
       id: 5,
       label: '✔ Adaptado para cualquier tipo de negocio',
+      isActive: true
     },
     {
       id: 6,
       label: '✔ Aplicación de compras inmediatas',
+      isActive: false
     },
   ];
 
-  listInversion = [
+  listInversion: AdvantageList[] = [
     {
       id: 1,
       label: '✔ Sin pagos forzosos ni anualidades.',
+      isActive: false
     },
 
     {
       id: 2,
       label: '✔ Deposita como y cuando quieras.',
+      isActive: true
     },
 
     {
       id: 3,
       label: '✔ Aplicación de depósitos automático.',
+      isActive: true
     },
 
     {
       id: 4,
       label: '✔ Soporte continuo y personalizado.',
+      isActive: false
     },
 
     {
       id: 5,
       label: '✔ Excelentes comisiones.',
+      isActive: true
     },
 
     {
       id: 6,
       label: '✔ Diferente métodos de venta',
+      isActive: false
     },
   ];
 
@@ -490,10 +502,10 @@ export default class HomeComponent implements OnInit, AfterViewInit {
       'Recarga5g.com | Vende tiempo aire, pago de servicios y pines hasta un 7.5% de comisión'
     );
 
-    this.allProducts.set(this._productCarouselService.getProductCarousel());
-    this.recargas.set(this._productCarouselService.getRecargas());
-    this.servicios.set(this._productCarouselService.getServicios());
-    this.pines.set(this._productCarouselService.getPines());
+    this.allProducts = this._productCarouselService.getProductCarousel();
+    this.recargas = this._productCarouselService.getRecargas();
+    this.servicios = this._productCarouselService.getServicios();
+    this.pines = this._productCarouselService.getPines();
 
     this.reasonForSelling = this.reasonForSellingService.getReasonForSelling();
     this._metaTagService.updateMetaTag({
@@ -509,59 +521,59 @@ export default class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.counterAnimation();
+    // this.counterAnimation();
 
     
   }
 
   //* FUNCTIONS FOR COUNTER RECORD SECTION
-  counterAnimation(): void {
-    if (isPlatformBrowser(this.platform_id)) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              console.log('Elemento visible');
+  // counterAnimation(): void {
+  //   if (isPlatformBrowser(this.platform_id)) {
+  //     const observer = new IntersectionObserver(
+  //       (entries) => {
+  //         entries.forEach((entry) => {
+  //           if (entry.isIntersecting) {
+  //             console.log('Elemento visible');
 
-              let targetValue = +entry.target.getAttribute('data-number')!;
-              let index = this.countersElements
-                .toArray()
-                .findIndex((el) => el.nativeElement === entry.target);
+  //             let targetValue = +entry.target.getAttribute('data-number')!;
+  //             let index = this.countersElements
+  //               .toArray()
+  //               .findIndex((el) => el.nativeElement === entry.target);
 
-              // Buscamos el índice del elemento observado
-              this.startCounting(index, targetValue);
-              observer.unobserve(entry.target); // Deja de observar el elemento
-            }
-          });
-        },
-        {
-          threshold: 0.5,
-          rootMargin: '0px 0px -30% 0px',
-        }
-      );
+  //             // Buscamos el índice del elemento observado
+  //             this.startCounting(index, targetValue);
+  //             observer.unobserve(entry.target); // Deja de observar el elemento
+  //           }
+  //         });
+  //       },
+  //       {
+  //         threshold: 0.5,
+  //         rootMargin: '0px 0px -30% 0px',
+  //       }
+  //     );
 
-      // Inicia la observación de cada contador
-      this.countersElements?.forEach((element) => {
-        observer.observe(element.nativeElement);
-      });
-    }
-  }
+  //     // Inicia la observación de cada contador
+  //     this.countersElements?.forEach((element) => {
+  //       observer.observe(element.nativeElement);
+  //     });
+  //   }
+  // }
 
   // Función que maneja el incremento gradual de los números
-  startCounting(index: number, maxValue: number): void {
-    let currentValue = this.initialValues()[index];
-    if (currentValue < maxValue) {
-      this.initialValues.update((vals) => {
-        const newVals = [...vals]; // Copia los valores actuales
-        newVals[index] += Math.ceil(maxValue / 100); // Incrementa el valor
-        return newVals; // Retorna los nuevos valores
-      });
-      // this.initialValues.mutate((vals) => (vals[index] += Math.ceil(maxValue / 100)));
-      setTimeout(() => {
-        this.startCounting(index, maxValue);
-      }, 20); // Controla el tiempo de actualización
-    }
-  }
+  // startCounting(index: number, maxValue: number): void {
+  //   let currentValue = this.initialValues()[index];
+  //   if (currentValue < maxValue) {
+  //     this.initialValues.update((vals) => {
+  //       const newVals = [...vals]; // Copia los valores actuales
+  //       newVals[index] += Math.ceil(maxValue / 100); // Incrementa el valor
+  //       return newVals; // Retorna los nuevos valores
+  //     });
+  //     // this.initialValues.mutate((vals) => (vals[index] += Math.ceil(maxValue / 100)));
+  //     setTimeout(() => {
+  //       this.startCounting(index, maxValue);
+  //     }, 20); // Controla el tiempo de actualización
+  //   }
+  // }
 
   getSafeSvg(svgCode: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(svgCode);

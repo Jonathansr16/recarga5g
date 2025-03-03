@@ -514,7 +514,7 @@ export class ProductCarouselService {
       typeService: 'Pines',
       img: {
         id: 200,
-        src: '/assets/img/companies/pines/googleplay100.png',
+        src: '/assets/img/companies/pines/googleplay100.webp',
         alt: 'Venta de pines google play',
         width: '241',
         height: '351'
@@ -558,7 +558,7 @@ export class ProductCarouselService {
       typeService: 'Pines',
       img: {
         id: 203,
-        src: '/assets/img/companies/pines/steam215.png',
+        src: '/assets/img/companies/pines/steam215.webp',
         alt: 'Venta de pines Steam',
          width: '241',
         height: '351'
@@ -643,7 +643,7 @@ export class ProductCarouselService {
       typeService: 'Pines',
       img: {
         id: 209,
-        src: '/assets/img/companies/pines/microsoft365empresa3949.png',
+        src: '/assets/img/companies/pines/microsoft365empresa3949.webp',
         alt: 'Venta de pines Microsoft 365 Empresas',
          width: '241',
         height: '351'

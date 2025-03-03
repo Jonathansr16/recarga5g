@@ -54,7 +54,7 @@
  
         
             <ng-container *ngIf="isActiveModal() === i" #modalTemplate >
-                <div class="sl-channelModal-wrapper  fixed flex items-center justify-center inset-0 size-full z-20 outline-none overflow-hidden animate-slide-in-top animate-duration-500"
+                <div class="sl-channelModal-wrapper px-5 sm:px-6 lg:px-8 fixed flex items-center justify-center inset-0 size-full z-20 outline-none overflow-hidden animate-slide-in-top animate-duration-500"
                     [ngClass]="{ 'visible opacity-100' : isActiveModal() === i, 'invisible opacity-0 ': isActiveModal() !== i}"
                     [id]="'modal-' + i" 
                     role="dialog">

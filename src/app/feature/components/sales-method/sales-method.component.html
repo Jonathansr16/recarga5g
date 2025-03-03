@@ -1,7 +1,7 @@
 <!-- ============= SECCION METODOS DE VENTA ============= -->
 
 
-<section class="sl-channel relative space-container overflow-hidden">
+<section class="sl-channel relative overflow-hidden">
 
     <div class="circle-shape-wrapper absolute ml-[580px] top-48 left-0 pointer-events-none -z-1" aria-hidden="true">
         <div
@@ -17,7 +17,7 @@
     </div>
 
     <div
-        class="sl-channel-container relative grid grid-cols-1 lg:grid-cols-3 gap-6 mx-auto container justify-items-center">
+        class="sl-channel-container relative grid grid-cols-1 lg:grid-cols-3 gap-6 mx-auto px-4 sm:px-6 lg:px-8 container justify-items-center">
         <ng-container *ngFor="let method of metodoVentas; let i = index">
 
             <article [ngClass]="customClassShadow() ? customClassShadow() : 'shadow-red-500/10 dark:shadow-blue-600/10'"

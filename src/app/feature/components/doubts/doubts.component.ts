@@ -10,10 +10,8 @@ import { RouterLink } from '@angular/router';
   ],
   template: `
   <section class="section-dudas container mx-auto shadow-sm px-8 lg:px-0 mb-20">
-  <div
-    class="grid grid-cols-1 py-12  lg:py-16  gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16 bg-gradient-to-br rounded-3xl"
-    [ngClass]="bgClass() ? bgClass() : 'from-red-700 to-red-900 dark:from-blue-700 dark:to-blue-900'" 
-    >
+  <div class="grid grid-cols-1 px-6 py-12 lg:py-16 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16 bg-gradient-to-br rounded-3xl"
+    [ngClass]="bgClass() ? bgClass() : 'from-red-700 to-red-900 dark:from-blue-700 dark:to-blue-900'">
     <div class="mx-auto max-w-lg text-center lg:mx-0 lg:pl-10">
       <h5 class="text-3xl font-bold sm:text-4xl text-white relative">
         {{ title() }}
@@ -26,13 +24,13 @@ import { RouterLink } from '@angular/router';
 
       <a routerLink="/registro"
         [ngClass]="textBtn() ? textBtn() : 'text-red-700 dark:text-blue-700'"
-        class="mt-8 inline-block cursor-pointer rounded bg-white px-12 py-3 text-sm font-semibold shadow-lg">
+        class="mt-9 inline-block cursor-pointer rounded bg-white px-12 py-3 text-sm font-semibold shadow-lg">
         Registrarme
       </a>
     </div>
 
     <div class="mx-auto">
-      <div class="mt-4 flex flex-wrap justify-center gap-4">
+      <div class="flex flex-wrap justify-center gap-9">
         <a class="relative flex gap-4 items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-red-600 rounded-lg focus:ring-4 focus:outline-none focus:ring-red-500 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           href="tel:+522717140102" target="_blank" rel="noopener noreferrer">
           Llamar a mi asesor

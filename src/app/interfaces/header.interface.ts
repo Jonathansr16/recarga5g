@@ -82,6 +82,7 @@ export interface MenuItem {
      */
     icon?: string;
     svgIcon?: SafeHtml;
+    info?: string;
     /**
      * Callback to execute when item is clicked.
      */

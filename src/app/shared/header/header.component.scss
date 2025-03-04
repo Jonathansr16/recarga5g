@@ -1,15 +1,4 @@
 
-// .toggle-theme {
-
-//   &__btn--light {
-//    background: linear-gradient(45deg, hsl(7, 100%, 71%), hsl(46, 100%, 65%));
-//   }
-
-//   &__btn--dark {
-//      background: linear-gradient(45deg, hsl(225, 100%, 60%), hsl(296, 80%, 40%));
-//   }
-
-// }
 
 .header-animate {
     animation: reduce-header linear both;
@@ -22,6 +11,9 @@
     @apply bg-gray-800 text-gray-200 dark:bg-gray-600 dark:text-white;
 }
 
+.active-link .dropdown-menu-icon {
+    @apply bg-gray-600 text-slate-200 dark:bg-gray-500
+}
 
 
 @keyframes reduce-header {

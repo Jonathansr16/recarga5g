@@ -8,7 +8,7 @@
       "@plataformas/*": ["src/app/pages/plataformas/*"],
       "@productos/*": ["src/app/pages/productos/*"],
       "@legal/*": ["src/app/pages/legal/*"],
-      "@reportes/*": ["src/app/pages/reportes/*"],
+      "@notificaciones/*": ["src/app/pages/notificaciones/*"],
       "@ayuda/*": ["src/app/pages/ayuda/*"],
       "@shared/*": ["src/app/shared/*"],
       "@feature/*": ["src/app/feature/*"],

@@ -28,8 +28,8 @@ export const routes: Routes = [
     },
 
     {
-        path: 'reportes',
-        loadChildren: () => import('@reportes/report-routes').then ( (reportRoute) => reportRoute.reportRoutes)
+        path: 'notificar',
+        loadChildren: () => import('@notificaciones/notificaciones-routes').then ( (reportRoute) => reportRoute.reportRoutes)
     },
 
     {

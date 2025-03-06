@@ -42,7 +42,7 @@
                 </header>
 
                 <footer>
-                    <button (click)="openModal(i)" aria-haspopup="true" [attr.aria-expanded]="isActiveModal() === i"
+                    <button #btnModals (click)="openModal(i)" aria-haspopup="true" [attr.aria-expanded]="isActiveModal() === i"
                         class="sl-channelCard-btn px-8 py-2 mt-8 rounded-3xl text-white font-semibold uppercase tracking-wide"
                         [ngClass]="customClass() ? customClass() : 'bg-red-600 dark:bg-blue-600'">
                         Leer mas
@@ -51,24 +51,25 @@
             </article>
 
 
-            <ng-container *ngIf="isActiveModal() === i" #modalTemplate>
-                <div class="sl-channelModal-wrapper px-5 sm:px-6 lg:px-8 fixed flex items-center justify-center inset-0 size-full z-20 outline-none overflow-hidden animate-slide-in-top animate-duration-500"
-                    [ngClass]="{ 'visible opacity-100' : isActiveModal() === i, 'invisible opacity-0 ': isActiveModal() !== i}"
+            @if (isActiveModal() === i) {
+                <div  class="sl-channelModal-wrapper px-5 sm:px-6 lg:px-8 fixed flex items-center justify-center inset-0 size-full z-20 outline-none overflow-hidden animate-slide-in-top animate-duration-500"
+                    [ngClass]="isActiveModal() === i ? 'visible opacity-100' : 'invisible opacity-0'"
                     [id]="'modal-' + i" role="dialog">
-
+    
                     <div class="sl-channelModal-overlay fixed inset-0 size-full bg-black bg-opacity-50 backdrop-blur-md z-30"
                         aria-hidden="true"></div>
-
-                    <div class="sl-channelModal-card rounded-3xl max-w-screen-sm w-full relative shadow-lg pointer-events-auto bg-white dark:bg-slate-700 text-gray-800 mx-auto z-40"
-                        [ngClass]="{ 'opacity-100 pointer-events-auto': isActiveModal() === i, 'opacity-0 pointer-events-none': isActiveModal() !== i}">
-
+    
+                    <modal #modalItems
+                 class="sl-channelModal-card rounded-3xl max-w-screen-sm w-full relative shadow-lg pointer-events-auto bg-white dark:bg-slate-700 text-gray-800 mx-auto z-40"
+                    [ngClass]="isActiveModal() === i ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'">
+                  
                         <header class="sl-channelModal-header p-6 border-b border-gray-300/50 dark:border-slate-500/30">
-
+    
                             <div class="sl-channelModal-row flex items-center justify-between space-x-4">
                                 <h4
                                     class="sl-channelModal-title font-semibold text-gray-700 text-base dark:text-white basis-11/12 ">
                                     {{ method.modalInfo.subTitle}}</h4>
-
+    
                                 <button (click)="closeModal()"
                                     class="sl-channelModal-btn basis-1/12 text-rose-700 dark:text-rose-500"
                                     aria-label="Cerrar modal">
@@ -79,11 +80,11 @@
                                     </svg>
                                 </button>
                             </div>
-
+    
                         </header>
-
+    
                         <div class="sl-channelModal-body mt-3 px-6 pb-6">
-
+    
                             <ol class="sl-channelModal-ol" aria-label="Lista de pasos">
                                 @for (list of method.modalInfo.listSteps; track $index) {
                                 <li class="sl-channelModal-li flex items-center gap-4 py-4 ">
@@ -99,7 +100,7 @@
                                 }
                             </ol>
                         </div>
-
+    
                         <footer
                             class="flex items-center justify-end p-4 md:p-5 space-x-3 rtl:space-x-reverse border-t border-gray-200 rounded-b dark:border-gray-600">
                             <a data-modal-hide="extralarge-modal" routerLink="/registro"
@@ -110,10 +111,12 @@
                             <button data-modal-hide="extralarge-modal" type="button" (click)="closeModal()"
                                 class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Cancelar</button>
                         </footer>
-
-                    </div>
+    
+                    </modal>
                 </div>
-            </ng-container>
+            }
+     
+         
 
 
         </ng-container>

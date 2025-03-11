@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, Renderer2, inject, input, signal, PLATFORM_ID, viewChild, ElementRef, AfterViewInit, QueryList, viewChildren, ViewChildren } from '@angular/core';
 import { MetodosVentaService } from 'src/app/services/metodos-venta.service';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { SalesChannel } from 'src/app/interfaces/sales-channel';
 import { RouterLink } from '@angular/router';
+import { count } from 'node:console';
 
 @Component({
     selector: 'app-sales-method',
@@ -27,6 +28,7 @@ export class SalesMethodComponent implements OnInit, OnDestroy, AfterViewInit{
   isOpenModal = signal<boolean>(false);
   isActiveModal = signal<number>(-1);
 
+  conter = 0;
 // modals = viewChildren<QueryList<ElementRef>>('modalItems');
 // btnOpenModals = viewChildren<QueryList<ElementRef>>('btnModals');
 
@@ -40,6 +42,7 @@ export class SalesMethodComponent implements OnInit, OnDestroy, AfterViewInit{
 private readonly renderer2= inject(Renderer2);
 private readonly _metodosService = inject( MetodosVentaService);
 private readonly platform_Id = inject(PLATFORM_ID);
+private readonly document = inject(DOCUMENT);
 
 
   ngOnInit(): void {
@@ -48,7 +51,13 @@ private readonly platform_Id = inject(PLATFORM_ID);
 
   openModal(index: number) {
     if(isPlatformBrowser(this.platform_Id)) {
-      this.renderer2.setStyle(document.body, 'overflow', 'hidden')
+
+      const body = this.document.body;
+      const currentOverflow = window.getComputedStyle(body).overflow;
+
+      if (currentOverflow !== 'hidden') {
+        this.renderer2.setStyle(body, 'overflow', 'hidden');
+      }
       this.isActiveModal.set(index);
     }
   }
@@ -56,22 +65,18 @@ private readonly platform_Id = inject(PLATFORM_ID);
   closeModal() {
     if(isPlatformBrowser(this.platform_Id)) {
 
+      const body = this.document.body;
+      const currentOverflow = window.getComputedStyle(body).overflow;
+
       this.isActiveModal.set(-1);
-      this.renderer2.removeStyle(document.body, 'overflow');
+      if (currentOverflow === 'hidden') {
+        this.renderer2.removeStyle(body, 'overflow');    
+      }
     }
   }
 
   handlerDialog() {
 
-    // this.renderer2.listen('document', 'click', (e: Event) => {
-     
-    //   if (
-    //     e.target !== this.btnModal()?.nativeElement &&
-    //     e.target !== this.modal()?.nativeElement
-    //   ) {
-    //       this.closeModal()
-    //   }
-    // });
 
      this.unlistener = this.renderer2.listen('document', 'click', (e: Event) => {
      
@@ -92,8 +97,16 @@ private readonly platform_Id = inject(PLATFORM_ID);
   
     });
 
-    
-  
+        // this.renderer2.listen('document', 'click', (e: Event) => {
+     
+    //   if (
+    //     e.target !== this.btnModal()?.nativeElement &&
+    //     e.target !== this.modal()?.nativeElement
+    //   ) {
+    //       this.closeModal()
+    //   }
+    // });
+
 
   }
 
@@ -102,9 +115,9 @@ private readonly platform_Id = inject(PLATFORM_ID);
   }
 
   ngOnDestroy(): void {
-    if(isPlatformBrowser(this.platform_Id)) {
-      this.renderer2.removeStyle(document.body, 'overflow')
-    }
+    // if(isPlatformBrowser(this.platform_Id)) {
+    //   this.renderer2.removeClass(this.document.body, 'blockScroll');
+    // }
 
     if (this.unlistener) {
       this.unlistener();

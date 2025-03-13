@@ -1,5 +1,5 @@
 import { Component, computed, inject, OnInit, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 
 //* Servicios importados
@@ -11,6 +11,9 @@ import { ProductCarouselComponent } from '@feature/components/product-carousel/p
 import { ProductCarouselService } from '@feature/components/product-carousel/services/product-carousel.service';
 import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
 import { ThemesService } from '@services/themes.service';
+import { RouterLink } from '@angular/router';
+import { ProductComponent } from '@feature/components/product/product.component';
+import { DoubtsComponent } from '@feature/components/doubts/doubts.component';
 
 @Component({
     selector: 'app-pago-servicios',
@@ -21,16 +24,19 @@ import { ThemesService } from '@services/themes.service';
         }
       `],
     imports: [
-        CommonModule,
+    CommonModule,
+      RouterLink,
         ProductCarouselComponent,
+        ProductComponent,
         SalesMethodComponent,
         RegisterStepsComponent,
+        DoubtsComponent
     ]
 })
 export default class PagoServiciosComponent implements OnInit{
 
   carouselServices = signal<ProductCarousel[]>([]);
-  
+  productServices: ProductCarousel[] = [];
    theme = inject(ThemesService);
   
    isDarkTheme = computed(() => this.theme.themeChange());
@@ -56,7 +62,7 @@ export default class PagoServiciosComponent implements OnInit{
     this.title.setTitle('Recarga5g.com | Como cobrar recibo de servicios: Telmex, Izzi, CFE y mucho mas!')
    this.carouselServices.set( this.productCarouselService.getServicios());
 
-
+    this.productServices = this.productCarouselService.getServicios();
     // this._metaTagService.generateTags( {
     //   ...this.tag
     // })

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 //* Interfaces importados
@@ -15,6 +15,8 @@ import { ProductCarouselService } from '@feature/components/product-carousel/ser
 import { ProductCarouselComponent } from '@feature/components/product-carousel/product-carousel.component';
 import { SalesMethodComponent } from '@feature/components/sales-method/sales-method.component';
 import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
+import { ThemesService } from '@services/themes.service';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
@@ -23,6 +25,7 @@ import { RegisterStepsComponent } from '@feature/components/register-steps/regis
     styleUrls: ['./venta-pines.component.scss'],
     imports: [
         CommonModule,
+        RouterLink,
         ProductCarouselComponent,
         SalesMethodComponent,
         RegisterStepsComponent,
@@ -46,11 +49,11 @@ export default class VentaPinesComponent implements OnInit{
       creator: "@recargascelular"
     }
 
-
     private readonly productCarouselService = inject(ProductCarouselService);
-  
     private readonly metaTagService = inject( MetaTagService);
     private readonly  title = inject( Title);
+      theme = inject(ThemesService);
+    isDarkTheme = computed(() => this.theme.themeChange());
 
   ngOnInit(): void {
     this.metaTagService.updateMetaTag({

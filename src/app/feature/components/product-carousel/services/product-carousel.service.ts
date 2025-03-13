@@ -505,6 +505,180 @@ export class ProductCarouselService {
       siteweb: 'https://www.elektra.mx/'
     },
 
+    
+    {
+      id: 114,
+      company: 'arabela',
+      typeService: 'Servicios',
+      img: {
+        id: 114,
+        src: '/assets/img/companies/servicios/arabela.webp',
+        alt: 'Pago de servicios arabela',
+        width: '300',
+        height: '109'
+      },
+      siteweb: 'https://www.arabela.com/'
+    },
+
+    {
+      id: 115,
+      company: 'AT&T',
+      typeService: 'Servicios',
+      img: {
+        id: 115,
+        src: '/assets/img/companies/servicios/attfactura.webp',
+        alt: 'Pago de servicios AT&T factura',
+        width: '300',
+        height: '109'
+      },
+      siteweb: 'https://www.att.com.mx/'
+    },
+
+
+    {
+      id: 116,
+      company: 'Belcorp',
+      typeService: 'Servicios',
+      img: {
+        id: 116,
+        src: '/assets/img/companies/servicios/belcorp.webp',
+        alt: 'Pago de servicios Belcorp',
+        width: '300',
+        height: '109'
+      },
+      siteweb: 'https://www.somosbelcorp.com/'
+    },
+
+
+    {
+      id: 117,
+      company: 'Calzado Andrea',
+      typeService: 'Servicios',
+      img: {
+        id: 117,
+        src: '/assets/img/companies/servicios/calzadoandrea.webp',
+        alt: 'Pago de servicios Calzado Andrea',
+        width: '300',
+        height: '109'
+      },
+      siteweb: 'https://mx.andrea.com/'
+    },
+
+    {
+      id: 118,
+      company: 'VETV',
+      typeService: 'Servicios',
+      img: {
+        id: 118,
+        src: '/assets/img/companies/servicios/vetv.webp',
+        alt: 'Pago de servicios VETV',
+        width: '300',
+        height: '109'
+      },
+      siteweb: 'https://www.sky.com.mx/servicios/satelital?plan=prepago'
+    },
+
+    {
+      id: 119,
+      company: 'Gobierno de México',
+      typeService: 'Servicios',
+      img: {
+        id: 119,
+        src: '/assets/img/companies/servicios/gobiernomexico.webp',
+        alt: 'Pago de servicios Gobierno de México',
+        width: '300',
+        height: '109'
+      },
+      siteweb: 'https://sfpya.edomexico.gob.mx/recaudacion/'
+    },
+
+    {
+      id: 120,
+      company: 'Fuller',
+      typeService: 'Servicios',
+      img: {
+        id: 120,
+        src: '/assets/img/companies/servicios/fuller.webp',
+        alt: 'Pago de servicios Fuller',
+        width: '300',
+        height: '109'
+      },
+      siteweb: 'https://fuller.com.mx/'
+    },
+
+    {
+      id: 121,
+      company: 'Gobierno de Veracruz',
+      typeService: 'Servicios',
+      img: {
+        id: 121,
+        src: '/assets/img/companies/servicios/gobierno_veracruz.webp',
+        alt: 'Pago de servicios Gobierno de Veracruz',
+        width: '300',
+        height: '109'
+      },
+      siteweb: 'https://ovh.veracruz.gob.mx/ovh/loginTenencia.jsp'
+    },
+
+    {
+      id: 122,
+      company: 'Ilusion',
+      typeService: 'Servicios',
+      img: {
+        id: 122,
+        src: '/assets/img/companies/servicios/ilusion.webp',
+        alt: 'Pago de servicios Ilusion',
+        width: '300',
+        height: '109'
+      },
+      siteweb: 'https://www.ilusion.com/'
+    },
+
+    {
+      id: 123,
+      company: 'Stanhome',
+      typeService: 'Servicios',
+      img: {
+        id: 123,
+        src: '/assets/img/companies/servicios/stanhome.webp',
+        alt: 'Pago de servicios Stanhome',
+        width: '300',
+        height: '109'
+      },
+      siteweb: 'https://www.stanhome.com.mx/'
+    },
+
+    {
+      id: 124,
+      company: 'Betterware',
+      typeService: 'Servicios',
+      img: {
+        id: 124,
+        src: '/assets/img/companies/servicios/betterware.webp',
+        alt: 'Pago de servicios Betterware',
+        width: '300',
+        height: '109'
+      },
+      siteweb: 'https://betterware.com.mx/'
+    },
+
+
+    {
+      id: 124,
+      company: 'Price Shoes',
+      typeService: 'Servicios',
+      img: {
+        id: 124,
+        src: '/assets/img/companies/servicios/priceshoes.webp',
+        alt: 'Pago de servicios Price shoes',
+        width: '300',
+        height: '109'
+      },
+      siteweb: 'https://www.priceshoes.com//'
+    },
+
+
+
   ]);
 
   #pines = signal<ProductCarousel[]>([

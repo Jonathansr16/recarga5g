@@ -10,7 +10,7 @@ import { RouterLink } from '@angular/router';
   ],
   template: `
   <section class="section-dudas container mx-auto shadow-sm px-8 lg:px-0 mb-20">
-  <div class="grid grid-cols-1 px-6 py-12 lg:py-16 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16 bg-gradient-to-br rounded-3xl"
+  <div class="grid grid-cols-1 px-6 py-8 lg:py-16 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16 bg-gradient-to-br rounded-3xl"
     [ngClass]="bgClass() ? bgClass() : 'from-red-700 to-red-900 dark:from-blue-700 dark:to-blue-900'">
     <div class="mx-auto max-w-lg text-center lg:mx-0 lg:pl-10">
       <h5 class="text-3xl font-bold sm:text-4xl text-white relative">

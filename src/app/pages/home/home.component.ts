@@ -5,15 +5,12 @@ import {
   AfterViewInit,
   ViewChildren,
   QueryList,
-  PLATFORM_ID,
   signal,
   CUSTOM_ELEMENTS_SCHEMA,
   viewChild,
-  Renderer2,
 } from '@angular/core';
 import {
   CommonModule,
-  isPlatformBrowser,
   NgOptimizedImage,
 } from '@angular/common';
 import { DomSanitizer, SafeHtml, Title } from '@angular/platform-browser';
@@ -42,6 +39,7 @@ import { AdvantageList } from 'src/app/interfaces/advantage-list.interface';
 import { BenefitsListModel } from 'src/app/interfaces/benefits-list.interface';
 import { ReasonForSellingService } from '@services/razones.service';
 import { DoubtsComponent } from '@feature/components/doubts/doubts.component';
+import { ProductComponent } from '@feature/components/product/product.component';
 
 @Component({
   selector: 'app-home',
@@ -57,7 +55,8 @@ import { DoubtsComponent } from '@feature/components/doubts/doubts.component';
     AppRecargasComponent,
     AdvantageListComponent,
     RegisterStepsComponent,
-    DoubtsComponent
+    DoubtsComponent,
+    ProductComponent
     // BentoItemComponent
   ],
 
@@ -70,9 +69,8 @@ export default class HomeComponent implements OnInit, AfterViewInit {
 
   private readonly title = inject(Title);
   private readonly _metaTagService = inject(MetaTagService);
-  private readonly platform_id = inject(PLATFORM_ID);
   private readonly sanitizer = inject(DomSanitizer);
-  private readonly renderer2 = inject(Renderer2);
+
   private readonly _productCarouselService = inject(ProductCarouselService);
   private readonly reasonForSellingService = inject(ReasonForSellingService);
 

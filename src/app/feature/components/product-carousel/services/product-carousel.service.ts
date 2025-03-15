@@ -866,6 +866,48 @@ export class ProductCarouselService {
       },
       siteweb: 'https://www.cimex.com.mx/es/'
     },
+
+    {
+      id: 213,
+      company: 'Liverpool',
+      typeService: 'Pines',
+      img: {
+        id: 213,
+        src: '/assets/img/companies/pines/liverpool2000.png',
+        alt: 'Venta de pines Liverpool',
+         width: '241',
+        height: '351'
+      },
+      siteweb: 'https://www.liverpool.com.mx/tienda/home'
+    },
+
+    {
+      id: 214,
+      company: 'Razer gold',
+      typeService: 'Pines',
+      img: {
+        id: 214,
+        src: '/assets/img/companies/pines/rixty600.webp',
+        alt: 'Venta de pines Razer gold',
+         width: '241',
+        height: '351'
+      },
+      siteweb: 'https://gold.razer.com/mx/es'
+    },
+
+    {
+      id: 214,
+      company: 'Yotube Premium',
+      typeService: 'Pines',
+      img: {
+        id: 214,
+        src: '/assets/img/companies/pines/youtube139.webp',
+        alt: 'Venta de pines YouTube Premium',
+         width: '241',
+        height: '351'
+      },
+      siteweb: 'https://www.youtube.com/'
+    },
   ]);
 
   #carosuel = signal<ProductCarousel[]>([

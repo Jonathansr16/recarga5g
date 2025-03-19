@@ -17,6 +17,8 @@ import { SalesMethodComponent } from '@feature/components/sales-method/sales-met
 import { RegisterStepsComponent } from '@feature/components/register-steps/register-steps.component';
 import { ThemesService } from '@services/themes.service';
 import { RouterLink } from '@angular/router';
+import { ProductComponent } from '@feature/components/product/product.component';
+import { DoubtsComponent } from '@feature/components/doubts/doubts.component';
 
 
 @Component({
@@ -27,8 +29,10 @@ import { RouterLink } from '@angular/router';
         CommonModule,
         RouterLink,
         ProductCarouselComponent,
+        ProductComponent,
         SalesMethodComponent,
         RegisterStepsComponent,
+        DoubtsComponent
     ]
 })
 export default class VentaPinesComponent implements OnInit{
